@@ -1,0 +1,1249 @@
+{
+  "pages": [
+    {
+      "name": "section_eleven",
+      "elements": [
+        {
+          "type": "html",
+          "name": "s11q001",
+          "html": {
+            "default": "Please rate how strongly you disagree (1) or agree (7) with the following statements as descriptive of your team and the organization:",
+            "fr": "Évaluez dans quelle mesure vous êtes en désaccord (1) ou d’accord (7) avec les énoncés suivants comme étant représentatifs de votre équipe et de votre organisation :"
+          }
+        },
+        {
+          "type": "rating",
+          "name": "s11q002",
+          "title": {
+            "default": "My team understands clearly the target conditions for the next 5 (five) years in the future, and produces outcomes that match up with the purpose of the organization.",
+            "fr": "Mon équipe conçoit clairement les conditions ciblées pour les prochains 5 (cinq) ans dans l’avenir, et produit des résultats en phase avec l’objectif de l’organisation."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "s11q003",
+          "title": {
+            "default": "My team is running experiments on a daily basis to try to move toward the target conditions or key results.",
+            "fr": "Mon équipe procède quotidiennement à des mises à l’essai pour tenter de progresser vers les conditions ciblées ou les résultats clés."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "s11q004",
+          "title": {
+            "default": "Leaders understand clearly where my team and the organization are going, and where they want the team to be in five years.",
+            "fr": "Les chefs de file conçoivent clairement vers quoi mon équipe et l’organisation se dirigent et où ils souhaitent voir l’équipe dans cinq ans."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "s11q005",
+          "title": {
+            "default": "Leaders say positive things about my team and make employees proud to be a part of their organization.",
+            "fr": "Les chefs de file parlent en bien de mon équipe et, de ce fait, les employés sont fiers de faire partie de leur organisation."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "s11q006",
+          "title": {
+            "default": "Leaders challenge team members to think about old problems in new ways and to rethink some of their basic assumptions about their work.",
+            "fr": "Les chefs de file exhortent les membres de l’équipe à réfléchir de façon novatrice aux problèmes de longue date et à reconceptualiser certaines de leurs suppositions fondamentales au sujet de leur travail."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "s11q007",
+          "title": {
+            "default": "Leaders behave in a manner which is thoughtful of my team member interests and personal needs.",
+            "fr": "Les chefs de file tiennent compte, dans leur comportement, des intérêts et besoins personnels des membres de mon équipe."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        }
+      ],
+      "title": {
+        "default": "Transformation and Transformational Leadership",
+        "fr": "Transformation et leadership transformationnel"
+      },
+      "description": {
+        "fr": "Apprendre en quoi les chefs de file performants influent sur le rendement de la livraison de logiciels par l'impulsion qu'ils donnent à l'adoption des capacités techniques et de gestion des produits.",
+        "default": "Learn how effective leaders influence software delivery performance by driving the adoption of technical and product management capabilities."
+      }
+    },
+    {
+      "name": "section_ten",
+      "elements": [
+        {
+          "type": "html",
+          "name": "s10q001",
+          "html": {
+            "default": "Please rate how strongly you disagree (1) or agree (7) with the following statements as descriptive of your team and the organization:",
+            "fr": "Évaluez dans quelle mesure vous êtes en désaccord (1) ou d’accord (7) avec les énoncés suivants comme étant représentatifs de votre équipe et de votre organisation :"
+          }
+        },
+        {
+          "type": "rating",
+          "name": "s10q002",
+          "title": {
+            "default": "Learning is the key to improvement.",
+            "fr": "L’apprentissage est indispensable à l’amélioration."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "s10q003",
+          "title": {
+            "default": "Once we quit learning we endanger our capability to deliver efficient services to the clients in the future.",
+            "fr": "Dès que nous cessons d’apprendre, nous mettons en danger notre capacité à fournir des services efficaces aux clients à l'avenir.."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "s10q004",
+          "title": {
+            "default": "Learning is viewed as an investment, not an expense.",
+            "fr": "L’apprentissage est perçu comme un investissement plutôt qu’une dépense."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "s10q005",
+          "title": {
+            "default": "Their is a regular cadence of opportunities for employees to share their knowledge.",
+            "fr": "Les possibilités offertes aux employés de communiquer leur savoir suivent une cadence régulière."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "s10q006",
+          "title": {
+            "default": "Information is actively sought.",
+            "fr": "L’information est très recherchée."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "s10q007",
+          "title": {
+            "default": "Messengers are not punished when they deliver news of failures or other bad news.",
+            "fr": "Les messagers ne sont pas tenus coupables des mauvaises nouvelles, notamment les échecs, qu’ils annoncent."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "s10q008",
+          "title": {
+            "default": "Responsibilities are shared.",
+            "fr": "Les responsabilités sont partagées."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "s10q009",
+          "title": {
+            "default": "Cross-functional collaboration is encouraged and rewarded.",
+            "fr": "La collaboration interfonctionnelle est encouragée et récompensée."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "s10q010",
+          "title": {
+            "default": "Failures are treated primarily as opportunities to improve the system.",
+            "fr": "Les défaillances sont considérées essentiellement comme des occasions d’améliorer le système."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "s10q011",
+          "title": {
+            "default": "Employees feel supported by each other and that their feedback is valued.",
+            "fr": "Les employés estiment qu’ils s’appuient les uns les autres et que leurs commentaires sont appréciés."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "s10q012",
+          "title": {
+            "default": "Employees are given meaningful work that leverages their expertise.",
+            "fr": "On confie aux employés un travail valorisant qui met à profit leur savoir-faire."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "s10q013",
+          "title": {
+            "default": "My team’s culture interacts with the broader organizational culture.",
+            "fr": "La culture de mon équipe agit avec la culture organisationnelle au sens large, et vice-versa."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        }
+      ],
+      "title": {
+        "default": "Learning and Generative Culture",
+        "fr": "Apprentissage et culture génératrice"
+      },
+      "description": {
+        "fr": "Découvrir en quoi l’instauration d’une culture génératrice fondée sur la confiance contribue à l’amélioration du rendement organisationnel et dans la livraison de logiciels. Instaurer une culture d’apprentissage et en concevoir les retombées sur le rendement organisationnel.",
+        "default": "Discover how growing a generative, high-trust culture drives better organizational and software delivery performance. Grow a learning culture and understand its impact on your organization performance."
+      }
+    },
+    {
+      "name": "section_six",
+      "elements": [
+        {
+          "type": "html",
+          "name": "s06q001",
+          "html": {
+            "default": "Please rate how strongly you disagree (1) or agree (7) with the following statements.</br></br>On my team:",
+            "fr": "Évaluez dans quelle mesure vous êtes en désaccord (1) ou d’accord (7) avec les énoncés suivants.</br></br>Dans mon équipe :"
+          }
+          
+        },
+        {
+          "type": "rating",
+          "name": "s06q002",
+          "title": {
+            "default": "We are able to work on new ideas and experiment.",
+            "fr": "Nous sommes en mesure de travailler à de nouvelles idées et de procéder à des mises à l’essai."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "s06q003",
+          "title": {
+            "default": "We are able to do work and make changes without having to ask for permission.",
+            "fr": "Nous sommes en mesure d’exécuter le travail et d’apporter des changements sans devoir demander de permission."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "s06q004",
+          "title": {
+            "default": "We are able to make changes to user needs and specifications during a project.",
+            "fr": "Nous sommes en mesure d’apporter des changements aux besoins des utilisateurs et aux spécifications durant un projet."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "s06q005",
+          "title": {
+            "default": "Changes can be promoted to production without manual change approvals.",
+            "fr": "Nous pouvons favoriser la réalisation des changements à la production sans nécessiter d’approbation manuelle pour autant."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "s06q006",
+          "title": {
+            "default": "We have a clear understanding of the process to get changes approved for implementation.",
+            "fr": "Nous concevons clairement le processus d’approbation des changements en vue de leur mise en œuvre."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "s06q007",
+          "title": {
+            "default": "We are confident they can get changes through the approval process in a timely manner and knows the steps it takes to go from “submitted” to “accepted”.",
+            "fr": "Nous avons l’assurance qu’il est possible d’apporter des changements au processus d’approbation en temps voulu et que les étapes nécessaires pour passer de « soumis » à « accepté » sont connues."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "s06q008",
+          "title": {
+            "default": "Tools and platforms are agreed upon and tailored to the needs of the project.",
+            "fr": "Les outils et les plateformes sont convenus et adaptés en fonction des besoins du projet."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "s06q009",
+          "title": {
+            "default": "We promote team development and handle cross-functional activities..",
+            "fr": "Nous favorisons la création d’une synergie et nous nous occupons des activités interfonctionnelles."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "s06q010",
+          "title": {
+            "default": "We execute peer reviews which include comments, and approvals captured as part of the development process.",
+            "fr": "Nous effectuons des examens par les pairs qui touchent les commentaires et les approbations saisis dans le cadre du processus d’élaboration."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "s06q011",
+          "title": {
+            "default": "We consider the development platform as a product by evaluating the changes on multiple axes, including security, performance, and stability, as well as defects.",
+            "fr": "Nous considérons la plateforme de développement comme un produit par l’évaluation des changements selon plusieurs axes à la fois, dont la sécurité, le rendement et la stabilité, ainsi que des défauts."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "s06q012",
+          "title": {
+            "default": "We continuously improve business processes by identifying and eliminating bottlenecks.",
+            "fr": "Nous améliorons continuellement les processus opérationnels par le repérage et l’élimination des goulots d’étranglement."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        }
+      ],
+      "title": {
+        "default": "Team Experimentation and Streamlining Change Approval",
+        "fr": "Expérimentation en équipe et rationalisation de l'approbation des changements"
+      },
+      "description": {
+        "fr": "Accélérer l’innovation par la mise sur pied d’équipes habilitées qui peuvent mettre à l’essai de nouvelles idées sans nécessiter l’approbation de personnes de l’extérieur. Remplacer le processus lourd d’approbation des changements lourds par un examen par les pairs afin de bénéficier des avantages liés à un processus de diffusion d’une fiabilité et d’une conformité accrues sans pour autant sacrifier la vitesse.",
+        "default": "Innovate faster by building empowered teams that can try out new ideas without approval from people outside the team. Replace heavyweight change-approval process with peer review, to get the benefits of a more reliable, compliant release process without sacrificing speed."
+      }
+    },
+    {
+      "name": "section_two",
+      "elements": [
+        {
+          "type": "html",
+          "name": "s02q001",
+          "html": {
+            "default": "Please rate how strongly you disagree (1) or agree (7) with the following statements.</br></br>For the primary application or service my team works on:",
+            "fr": "Évaluez dans quelle mesure vous êtes en désaccord (1) ou d’accord (7) avec les énoncés suivants.</br></br>Pour l’application ou le service principal auquel mon équipe travaille :"
+          }
+        },
+        {
+          "type": "rating",
+          "name": "s02q002",
+          "title": {
+            "default": "Code commits result in an automated build of the software.",
+            "fr": "Les validations de code se traduisent par un script de construction automatisée du logiciel."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "s02q003",
+          "title": {
+            "default": "Code commits result in a series of automated tests being run.",
+            "fr": "Les validations de code se traduisent par la tenue d’une série de tests automatisés."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "s02q004",
+          "title": {
+            "default": "Automated builds and tests are executed successfully every day.",
+            "fr": "L’exécution des scripts de construction et des tests automatisés tests est réussie chaque jour."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "s02q005",
+          "title": {
+            "default": "Current builds are available to testers for exploratory testing.",
+            "fr": "Les testeurs ont accès aux scripts de construction qui ont cours pour procéder à des tests exploratoires."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "s02q006",
+          "title": {
+            "default": "Developers get feedback from the acceptance and performance tests every day.",
+            "fr": "Les développeurs reçoivent quotidiennement les commentaires relatifs aux tests d’acceptation et de rendement."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "s02q007",
+          "title": {
+            "default": "Our software is in a deployable state throughout its lifecycle.",
+            "fr": "Nos logiciels sont en mesure d’être déployés tout au long de leur cycle de vie."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "s02q008",
+          "title": {
+            "default": "My team prioritizes keeping the software deployable over working on new features.",
+            "fr": "Mon équipe cherche à maintenir la déployabilité des logiciels avant de travailler à de nouvelles fonctionnalités."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "s02q009",
+          "title": {
+            "default": "Fast feedback on the quality and deployability of the system is available to anyone on the team.",
+            "fr": "Tous les membres de l’équipe ont accès rapidement aux commentaires sur la qualité et la déployabilité du système."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "s02q010",
+          "title": {
+            "default": "When people get feedback that the system is not deployable (such as failing builds or tests), they make fixing these issues their highest priority.",
+            "fr": "Lorsque les effectifs apprennent que le système ne peut être déployé (à cause de scripts de construction ou de tests défaillants), ils cherchent avant toute chose à résoudre les problèmes s’y rapportant."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "s02q011",
+          "title": {
+            "default": "We can deploy our system to production, or to end users, at any time, on demand.",
+            "fr": "Nous pouvons déployer notre système à la production ou aux utilisateurs finaux en tout temps, à la demande."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "s02q012",
+          "title": {
+            "default": "Features undergo security review early in the design process.",
+            "fr": "Les fonctionnalités font l’objet d’un examen de sécurité au début du processus de conception."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "s02q013",
+          "title": {
+            "default": "Security reviews do not slow down the development cycle.",
+            "fr": "Les examens de sécurité n’occasionnent pas le ralentissement du cycle de développement."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "s02q014",
+          "title": {
+            "default": "Security requirements are included in the automated testing process.",
+            "fr": "Les exigences en matière de sécurité font partie du processus de test automatisé."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        }
+      ],
+      "title": {
+        "default": "Continuous Integration and Deployment",
+        "fr": "Intégration et déploiement continus"
+      },
+      "description": {
+        "fr": "Apprenez-en sur les erreurs fréquentes, les moyens de mesurer et la façon de rehausser vos initiatives d’intégration continue. Meilleures pratiques et approches pour automatiser les déploiements et réduire les interventions manuelles dans le processus de lancement.",
+        "default": "Learn about common mistakes, ways to measure, and how to improve on your continuous integration efforts. Best practices and approaches for deployment automation and reducing manual intervention in the release process."
+      }
+    },
+    {
+      "name": "section_four",
+      "elements": [
+        {
+          "type": "html",
+          "name": "s04q001",
+          "html": {
+            "default": "Please rate how strongly you disagree (1) or agree (7) with the following statements.</br></br>For the primary application or service my team works on:",
+            "fr": "Évaluez dans quelle mesure vous êtes en désaccord (1) ou d’accord (7) avec les énoncés suivants.</br></br>Pour l’application ou le service principal auquel mon équipe travaille :"
+          }
+        },
+        {
+          "type": "rating",
+          "name": "s04q002",
+          "title": {
+            "default": "We can make large-scale changes to the design of our system without the permission of somebody outside the team or creating significant work for other teams.",
+            "fr": "Nous pouvons apporter des changements à grande échelle à la conception de notre système sans demander la permission d’une personne extérieure à l’équipe ni alourdir le travail des autres équipes."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "s04q003",
+          "title": {
+            "default": "To complete our work, we do not need to communicate and coordinate with people outside the team.",
+            "fr": "Pour terminer notre travail, la communication et la coordination avec des personnes extérieures à l’équipe ne sont pas nécessaires."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "s04q004",
+          "title": {
+            "default": "We can deploy and release our product or service on demand, independently of other services it depends upon.",
+            "fr": "Nous pouvons déployer et diffuser notre produit ou service à la demande, en toute autonomie par rapport aux autres services qui en dépendent."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "s04q005",
+          "title": {
+            "default": "We can do most of our testing on demand, without requiring an integrated test environment.",
+            "fr": "Nous pouvons effectuer la plupart de nos tests à la demande, sans nécessiter un environnement de test intégré."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "s04q006",
+          "title": {
+            "default": "We perform deployments during normal business hours with negligible downtime.",
+            "fr": "Nous effectuons des déploiements pendant les heures ouvrables et le temps d’arrêt occasionné est négligeable."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "s04q007",
+          "title": {
+            "default": "My team feels that we are empowered to choose tools.",
+            "fr": "Mon équipe estime que nous sommes en mesure de choisir les outils."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "s04q008",
+          "title": {
+            "default": "My team proactively investigates new tools for new projects.",
+            "fr": "Mon équipe procède en amont à l’étude de nouveaux outils en vue de nouveaux projets."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        }
+      ],
+      "title": {
+        "default": "Architecture",
+        "fr": "Architecture"
+      },
+      "description": {
+        "fr": "Apprendre à passer d’une architecture étroitement couplée à une architecture axée sur le service et à base de microservices sans pour autant la reconstruire intégralement. Mettre les équipes en mesure de prendre des décisions éclairées sur les outils et les technologies.",
+        "default": "Learn about moving from a tightly coupled architecture to service-oriented and micro service architectures without re-architecting everything at once. Empower teams to make informed decisions on tools and technologies."
+      }
+    },
+    {
+      "name": "section_five",
+      "elements": [
+        {
+          "type": "html",
+          "name": "s05q001",
+          "html": {
+            "default": "Please rate how strongly you disagree (1) or agree (7) with the following statements.</br></br>On my team:",
+            "fr": "Évaluez dans quelle mesure vous êtes en désaccord (1) ou d’accord (7) avec les énoncés suivants.</br></br>Dans mon équipe :"
+          }
+        },
+        {
+          "type": "rating",
+          "name": "s05q002",
+          "title": {
+            "default": "Once we have access, we can independently provision and configure the cloud resources and capabilities required for our product or service on demand without raising tickets or requiring human interaction.",
+            "fr": "Une fois l’accès obtenu, nous pouvons fournir et configurer en toute autonomie les ressources et les capacités infonuagiques requises pour notre produit ou service à la demande, sans devoir envoyer de demandes ni recourir à une interaction humaine."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "s05q003",
+          "title": {
+            "default": "The service or product that we primarily work on is designed to be accessed from a broad range of devices (e.g. smartphones, tablets, laptops) over the network without the need for proprietary plug-ins or protocols.",
+            "fr": "Le service ou le produit auquel nous travaillons essentiellement est conçu pour être accessible à partir d’une vaste gamme d’appareils (p. ex., téléphones intelligents, tablettes, ordinateurs portables) sur le réseau sans nécessiter de modules externes ni de protocoles exclusifs."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "s05q004",
+          "title": {
+            "default": "The cloud our product or service runs on serves multiple teams and applications, with compute and infrastructure resources dynamically assigned and re-assigned based on demand.",
+            "fr": "L’infonuagique à la base du fonctionnement de notre produit ou service est bénéfique à de nombreuses équipes et applications, et l’attribution ou la réattribution des ressources de calcul et d’infrastructure est dynamique et en fonction de la demande."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "s05q005",
+          "title": {
+            "default": "We can dynamically increase or decrease the cloud resources available for the service or product that we primarily support based on demand.",
+            "fr": "Nous pouvons augmenter ou diminuer de façon dynamique les ressources infonuagiques offertes dans le cadre du service ou du produit que nous appuyons essentiellement en fonction de la demande."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "s05q006",
+          "title": {
+            "default": "We can monitor or control the quantity and/or cost of cloud resources used by the service or product that we primarily support.",
+            "fr": "Nous pouvons suivre l’évolution ou assurer la maîtrise de la quantité ou du coût des ressources infonuagiques employées par le service ou le produit que nous appuyons essentiellement."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        }
+      ],
+      "title": {
+        "default": "Cloud Infrastructure",
+        "fr": "Infrastructure en nuage"
+      },
+      "description": {
+        "fr": "Découvrir comment gérer fructueusement l’infrastructure infonuagique pour se hisser à des niveaux supérieurs d’agilité, de disponibilité et de visibilité des coûts.",
+        "default": "Find out how to manage cloud infrastructure effectively so you can achieve higher levels of agility, availability, and cost visibility."
+      }
+    },
+    {
+      "name": "section_nine",
+      "elements": [
+        {
+          "type": "html",
+          "name": "s09q001",
+          "html": {
+            "default": "Please rate how strongly you disagree (1) or agree (7) with the following statements.</br></br>On my team:",
+            "fr": "Évaluez dans quelle mesure vous êtes en désaccord (1) ou d’accord (7) avec les énoncés suivants.</br>Dans mon équipe :"
+          }
+        },
+        {
+          "type": "rating",
+          "name": "s09q002",
+          "title": {
+            "default": "We are good at limiting our work in process (WIP).",
+            "fr": "Nous parvenons bien à établir les limites de notre travail en cours (TEC)."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "s09q003",
+          "title": {
+            "default": "We strive to limit our WIP, and have processes in place to do so.",
+            "fr": "Nous tâchons d’établir les limites de notre TEC et nous avons des processus en place pour ce faire."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "s09q004",
+          "title": {
+            "default": "Our WIP limits lead to process improvement.",
+            "fr": "Les limites établies de notre TEC contribuent à l’amélioration des processus."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "s09q005",
+          "title": {
+            "default": "We are not often assigned to work on multiple mutually exclusive tasks.",
+            "fr": "On nous confie rarement du travail relatif à plusieurs tâches à la fois qui ne se recoupent pas."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "s09q006",
+          "title": {
+            "default": "When faced with too much work and too few people to do it, we prioritize work and focus on completing a small number of high-priority tasks.",
+            "fr": "Si nous avons trop de travail à exécuter et trop peu d’effectifs à cette fin, nous donnons priorité au travail et à l’achèvement d’un nombre réduit de tâches à priorité élevée."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "s09q007",
+          "title": {
+            "default": "Our work is visible to other teams and stakeholders.",
+            "fr": "Notre travail est visible pour les autres équipes et parties prenantes."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "s09q008",
+          "title": {
+            "default": "We use up to date visual displays and dashboards to manage the work at various stages of a process.",
+            "fr": "Nous avons recours à des soutiens visuels et à des tableaux de bord actualisés pour gérer le travail à divers stades du processus."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "s09q009",
+          "title": {
+            "default": "When looking at visual management displays we see the key process metrics the team cares about.",
+            "fr": "L’examen des soutiens de gestion visuelle permet de constater les principaux paramètres du processus dont l’équipe se soucie."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        }
+      ],
+      "title": {
+        "default": "Work In Process Limits and Visual Management",
+        "fr": "Limites des travaux en cours et gestion visuelle"
+      },
+      "description": {
+        "fr": "Définir les priorités des tâches, limiter la charge de travail de l’équipe, et se concentrer sur un nombre réduit de tâches à priorité élevée. Apprendre les principes de la gestion visuelle pour favoriser l’échange d’information. ",
+        "default": "Prioritize work, limit the amount of things that people are working on, and focus on getting a small number of high-priority tasks done. Learn about the principles of visual management to promote information sharing."
+      }
+    },
+    {
+      "name": "section_seven",
+      "elements": [
+        {
+          "type": "html",
+          "name": "s07q001",
+          "html": {
+            "default": "Please rate how strongly you disagree (1) or agree (7) with the following statements.</br></br>On my team:",
+            "fr": "Évaluez dans quelle mesure vous êtes en désaccord (1) ou d’accord (7) avec les énoncés suivants.</br></br>Dans mon équipe :"
+          }
+        },
+        {
+          "type": "rating",
+          "name": "s07q002",
+          "title": {
+            "default": "We actively collect customer feedback on product and features quality.",
+            "fr": "Nous recueillons activement les commentaires des clients sur la qualité des produits et des fonctionnalités."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "s07q003",
+          "title": {
+            "default": "We establish key metrics on customer satisfaction before gathering information from the customers.",
+            "fr": "Nous mettons en place les paramètres clés de la satisfaction de la clientèle avant de recueillir l’information auprès des cette dernière."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "s07q004",
+          "title": {
+            "default": "After seeking customer feedbacks, the team utilizes the response to understand the pain points and find solutions quickly.",
+            "fr": "Après avoir recueilli les commentaires de la clientèle, nous nous servons des suites données pour concevoir les sources d’agacement et découvrir rapidement des solutions."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "s07q005",
+          "title": {
+            "default": "We are able to use value streams to gain insight and guide necessary improvements to ensure we have the bandwidth to support functionality and the documentation to put it into place.",
+            "fr": "Nous sommes en mesure d’utiliser les flux de valeur pour nous familiariser avec les améliorations nécessaires et guider celles-ci afin de disposer de la bande passante nécessaire à la fonctionnalité et de la documentation nécessaire pour la mettre en place."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "s07q006",
+          "title": {
+            "default": "We focus on building, testing, and releasing code changes to an (production or testing) environment in small batches.",
+            "fr": "Nous prêtons attention à la création de changements de code, à leur mise à l’essai et à leur diffusion en petits lots dans un environnement (de production ou d’essai)."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "s07q007",
+          "title": {
+            "default": "Following production release, we are able to amplify feedback from users quickly using techniques (ex: AB testing) and enable short lead times faster.",
+            "fr": "Après la diffusion de production, nous sommes en mesure d’amplifier rapidement les commentaires des utilisateurs à l’aide de techniques (p. ex., les tests AB) et d’accélérer la compression des délais d’exécution."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "s07q008",
+          "title": {
+            "default": "Feedback received is simple, easy to understand and provides actionable information.",
+            "fr": "Les commentaires reçus sont simples, faciles à comprendre et il en découle une information exploitable."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "s07q009",
+          "title": {
+            "default": "Our features are sliced in a way that lend themselves to frequent production releases.",
+            "fr": "Nos fonctionnalités sont réparties de telle sorte qu’elles se prêtent de fréquentes versions de production."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "s07q010",
+          "title": {
+            "default": "Our features are decomposed in a way that allows a developer to complete the work in a week or less.",
+            "fr": "Nos fonctionnalités sont décomposées de telle sorte qu’elles permettent au promoteur de réaliser les travaux en une semaine ou moins."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "s07q011",
+          "title": {
+            "default": "Our work is decomposed into features that allow for minimum viable products (MVP) and rapid development, rather than complex and lengthy processes (an MVP has just enough features to get validated learning about the product & its continued development).",
+            "fr": "Notre travail est décomposé en des fonctionnalités permettant les plus petits produits viables (PPPV) et un développement rapide, plutôt qu’en des processus complexes et fastidieux (le PPPV comporte tout juste assez de fonctionnalités pour permettre la validation de l’apprentissage du produit et de son développement continu)."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        }
+      ],
+      "title": {
+        "default": "Customer Feedback and Work Visibility",
+        "fr": "Rétroaction des clients et visibilité du travail"
+      },
+      "description": {
+        "fr": "Favoriser des résultats organisationnels améliorés par la collecte des commentaires des clients et leur intégration à la conception des produits et des fonctionnalités. Concevoir et visualiser le flux du travail, à partir de l’idée jusqu’aux résultats pour le client, pour favoriser l’amélioration du rendement.",
+        "default": "Drive better organizational outcomes by gathering customer feedback and incorporating it into product and feature design. Understand and visualize the flow of work from idea to customer outcome in order to drive higher performance."
+      }
+    },
+    {
+      "name": "section_eight",
+      "elements": [
+        {
+          "type": "html",
+          "name": "s08q001",
+          "html": {
+            "default": "How do you watch and understand your systems at work? Please rate how strongly you disagree (1) or agree (7) with the following statements.</br></br>On my team:",
+            "fr": "Comment surveillez-vous et concevez-vous vos systèmes au travail? Évaluez dans quelle mesure vous êtes en désaccord (1) ou d’accord (7) avec les énoncés suivants.</br></br>Dans mon équipe :"
+          }
+        },
+        {
+          "type": "rating",
+          "name": "s08q002",
+          "title": {
+            "default": "We have a solution in place to report on the overall health of systems (e.g, are my systems functioning? / do my systems have sufficient resources available?).",
+            "fr": "Nous avons mis en place une solution pour rendre compte de la santé globale des systèmes (p. ex., mes systèmes fonctionnent-ils? disposent-ils de ressources suffisantes?)."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "s08q003",
+          "title": {
+            "default": "We have a solution in place to report on system state as experienced by customers (e.g., “do my customers know if my system is down and have a bad experience?”).",
+            "fr": "Nous avons mis en place une solution pour rendre compte de l’état du système selon l’expérience vécue par la clientèle (p. ex. « mes clients savent-ils si mon système est en panne et vivent-ils une mauvaise expérience? »)."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "s08q004",
+          "title": {
+            "default": "We have a solution in place for monitoring key business and systems metrics.",
+            "fr": "Nous avons mis en place une solution pour surveiller les principaux paramètres opérationnels et systémiques."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "s08q005",
+          "title": {
+            "default": "We have tooling in place that can help us with understanding and debugging our systems in production.",
+            "fr": "Nous avons mis en place un outillage qui nous permet de concevoir nos systèmes en cours de production et de les dépanner."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "s08q006",
+          "title": {
+            "default": "We have tooling in place that provides the ability to find information about things we did not previously know (e.g., we can identify “unknown unknowns”).",
+            "fr": "Nous avons mis en place un outillage qui donne la capacité de trouver de l’information sur des éléments qui nous étaient préalablement inconnus (p. ex., nous pouvons discerner les « éléments inconnus qui nous étaient inconnus »)."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "s08q007",
+          "title": {
+            "default": "We have access to tools and data which help us trace, understand, and diagnose infrastructure problems in our production environment, including interactions between services.",
+            "fr": "Nous avons accès à des outils et à des données qui nous permettent de repérer, de concevoir et de diagnostiquer les problèmes d’infrastructure dans notre environnement de production, y compris les interactions entre services."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "s08q008",
+          "title": {
+            "default": "Data from infrastructure and application performance monitoring tools is used to make business decisions.",
+            "fr": "Les données provenant des outils de surveillance du rendement de l’infrastructure et des applications servent à la prise de décisions opérationnelles."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "s08q009",
+          "title": {
+            "default": "Monitoring gives rapid feedback which helps quickly find and fix problems early in the project lifecycle.",
+            "fr": "La surveillance se traduit par des commentaires rapides qui permettent de déceler et de régler précocement les problèmes durant le cycle de vie du projet."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        }
+      ],
+      "title": {
+        "default": "Data Application Monitoring",
+        "fr": "Contrôle de l'application des données"
+      },
+      "description": {
+        "fr": "Améliorer la surveillance à l’échelle des plateformes d’infrastructure et de l’application tierce afin de pouvoir présenter rapidement des commentaires aux développeurs. Apprendre comment en arriver à un outillage permettant de concevoir le système de production et de le dépanner.",
+        "default": "Improve monitoring across infrastructure platforms and the application tier, so you can provide fast feedback to developers. Learn how to build tooling to help you to understand and debug your production system."
+      }
+    },
+    {
+      "name": "section_one",
+      "elements": [
+        {
+          "type": "html",
+          "name": "s01q001",
+          "html": {
+            "default": "Please rate how strongly you disagree (1) or agree (7) with the following statements.<br/><br/>For the primary application or service my team works on:",
+            "fr": "Évaluez dans quelle mesure vous êtes en désaccord (1) ou d’accord (7) avec les énoncés suivants.<br/><br/>Pour l’application ou le service principal auquel mon équipe travaille:"
+          }
+        },
+        {
+          "type": "rating",
+          "name": "s01q002",
+          "title": {
+            "default": "We can recover application code from the version control system.",
+            "fr": "Nous pouvons récupérer le code d’application du système de contrôle des versions."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "s01q003",
+          "title": {
+            "default": "We can reconfigure systems from files in the version control system.",
+            "fr": "Nous pouvons reconfigurer les systèmes à partir de fichiers du système de contrôle des versions."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "s01q004",
+          "title": {
+            "default": "It is easy to change code maintained by other teams if we need to.",
+            "fr": "Il est facile de modifier le code maintenu par les autres équipes, si besoin est."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "s01q005",
+          "title": {
+            "default": "It is easy to find examples in our codebase.",
+            "fr": "Il est facile de trouver des exemples dans notre base de codes."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "s01q006",
+          "title": {
+            "default": "It is easy to reuse other people’s code.",
+            "fr": "Il est facile de réutiliser le code des autres personnes."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "s01q007",
+          "title": {
+            "default": "It is easy to add new dependencies to a project.",
+            "fr": "Il est facile d’ajouter de nouvelles interrelations à un projet"
+          },
+          "isRequired": false,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "s01q008",
+          "title": {
+            "default": "It is easy to migrate to a new version of a dependency.",
+            "fr": "Il est facile de passer à la nouvelle version d’une interrelation."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "s01q009",
+          "title": {
+            "default": "Dependencies are stable and rarely break teams’ code.",
+            "fr": "Les interrelations sont stables et les infractions à notre code sont rares."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        }
+      ],
+      "title": {
+        "default": "Version Control and Code Maintainability",
+        "fr": "Contrôle des versions et maintenabilité du code"
+      },
+      "description": {
+        "default": "Learn how to implement better version control practices for reproducibility and traceability. Make it easy for developers to find, reuse, and change code, and keep dependencies up-to-date.",
+        "fr": "Apprendre comment mettre en œuvre des pratiques améliorées dans le contrôle des versions pour garantir la reproductibilité et la traçabilité. Faciliter la tâche des développeurs qui doivent trouver, réutiliser et modifier le code de même que tenir à jour les interrelations."
+      }
+    },
+    {
+      "name": "section_three",
+      "elements": [
+        {
+          "type": "html",
+          "name": "s03q001",
+          "html": {
+            "default": "Please rate how strongly you disagree (1) or agree (7) with the following statements.</br></br>For the primary application or service my team works on:",
+            "fr": "Évaluez dans quelle mesure vous êtes en désaccord (1) ou d’accord (7) avec les énoncés suivants.</br></br>Pour l’application ou le service principal auquel mon équipe travaille :"
+          }
+        },
+        {
+          "type": "rating",
+          "name": "s03q002",
+          "title": {
+            "default": "Developers primarily create and maintain acceptance tests.",
+            "fr": "Les développeurs ont pour fonction principale de créer des tests de validation et de les tenir à jour."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "s03q003",
+          "title": {
+            "default": "When the automated tests pass, we are confident the software is releasable.",
+            "fr": "Lorsque les tests automatisés réussissent, nous avons l’assurance que le logiciel peut être diffusé."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "s03q004",
+          "title": {
+            "default": "Test failures are likely to indicate a real defect.",
+            "fr": "Les défaillances révélées par les tests sont vraisemblablement révélatrices d’un défaut concret."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "s03q005",
+          "title": {
+            "default": "It is easy for developers to fix acceptance test failures.",
+            "fr": "Il est facile pour les développeurs de corriger les défaillances des tests de validation."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "s03q006",
+          "title": {
+            "default": "Developers use their own development environment to reproduce acceptance failures.",
+            "fr": "Les développeurs se servent de leur propre environnement de développement pour reproduire les défaillances de validation."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "s03q007",
+          "title": {
+            "default": "Automated tests are seamlessly integrated into our software delivery tools.",
+            "fr": "Les tests automatisés s’intègrent harmonieusement à nos outils de livraison de logiciels."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "s03q008",
+          "title": {
+            "default": "We continuously review and improve our test suite to better find defects and keep complexity and cost under control.",
+            "fr": "Nous procédons constamment à l’examen et à l’amélioration de notre série de tests pour déceler efficacement les défauts de même que maîtriser la complexité et les coûts."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "s03q009",
+          "title": {
+            "default": "Testers work alongside developers throughout the software development and delivery process.",
+            "fr": "Les testeurs travaillent de concert avec les développeurs tout au long du processus de développement et de livraison des logiciels."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "s03q010",
+          "title": {
+            "default": "Manual test activities such as exploratory testing, usability testing, and acceptance testing are performed continuously throughout the delivery process.",
+            "fr": "Les activités des tests manuels, comme les tests exploratoires, les tests de facilité d’utilisation et les tests de validation, sont exécutées constamment tout au long du processus de livraison."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "s03q011",
+          "title": {
+            "default": "Developers practice test-driven development by writing unit tests before writing production code for all changes to the codebase.",
+            "fr": "Les développeurs mettent en pratique le développement piloté par les tests : ils rédigent les tests unitaires avant de rédiger le code de production des changements apportés à la base de codes."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "s03q012",
+          "title": {
+            "default": "Adequate test data is available to run full automated test suites.",
+            "fr": "Des données de tests adéquates sont accessibles pour exécuter des séries de tests entièrement automatisés."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "s03q013",
+          "title": {
+            "default": "Test data can be acquired on demand.",
+            "fr": "Des données de tests peuvent être obtenues sur demande."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "s03q014",
+          "title": {
+            "default": "Test data does not limit or constrain the automated tests that we can run.",
+            "fr": "Les données de tests ne limitent ni n’entravent les tests automatisés que nous pouvons exécuter."
+          },
+          "isRequired": false,
+          "rateMax": 7
+        }
+      ],
+      "title": {
+        "default": "Continuous Testing",
+        "fr": "Tests en continu"
+      },
+      "description": {
+        "fr": "Améliorer la qualité des logiciels par la création de séries de tests automatisés fiables et l’exécution de toutes sortes de tests tout au long du cycle de vie de livraison des logiciels. Faire du déploiement des logiciels un processus fiable et peu risqué qu’on peut exécuter à la demande et en tout temps.",
+        "default": "Improve software quality by building reliable automated test suits and performing all kinds of testing throughout the software delivery lifecycle. Make deploying software a reliable, low-risk process that can be performed on demand at any time."
+      }
+    }
+  ],
+  "showQuestionNumbers": "off",
+  "showProgressBar": "false",
+  "showNavigationButtons": "false"
+}

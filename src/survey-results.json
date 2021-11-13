@@ -1,0 +1,507 @@
+{
+  "settings": {
+    "version": "0.0.1",
+    "scoreType": "percentage",
+    "scoreTags": "disabled",
+    "sectionsPrefix": "section_"
+  },
+  "sectionRecommendations": [
+    {
+      "name": "section_one",
+      "icon": "code-branch",
+      "recommendations": [
+        {
+          "level": "1",
+          "type": "list",
+          "title": {
+            "en": [
+              "Teams must be able to restore production services repeatedly and predictably (and, ideally, quickly) even when catastrophic events occur, so they must check in the following assets to their shared **version control repository**:\n- All application code and dependencies (for example, libraries and static content).\n-Any script used to create database schemas, application reference data, and so on.\n-All environment creation tools and artifacts described in the previous step (for example, VMware or AMI image building scripts or Chef recipes).\n-Any file used to create and compose containers (for example, Docker files and buildpacks).\n-All supporting automated tests and any manual test scripts.\n-Any script that supports code packaging, deployment, database migration, and environment provisioning.\n-Supporting project artifacts (for example, requirements documentation, deployment procedures, and release notes).\n-Container orchestration (for example, Kubernetes configuration, Mesos configuration, and Docker Swarm configuration).\n\nYou can improve **version control** in many ways. Here a few we recommend:\n- Ensure that every commit to version control triggers the automated creation of packages that can be deployed to any environment using only information in version control.\n-Make it possible to create production-like test environments on demand using only scripts and configuration information from version control, and to create packages using the automated process described in the previous approach.\n-Script testing and production infrastructure so that teams can add capacity or recover from disasters in a fully automated fashion.\n\n*Learn more about common pitfalls and ways to measure <a href=\"https://cloud.google.com/architecture/devops/devops-tech-version-control\" title=\"Version Control\" target=\"_blank\">Version Control</a>.*\n <hr /> The following practices can improve the **code maintainability**:\n- **Team collaboration**. Teams need to access and recommend changes to each other. This helps transfer of knowledge and unblocks teams to make changes to other parts of the codebases.\n- **Traceability**. It is essential to rapidly trace packages or deployments to its version in the event of an incident. This is crucial to make change to any changes to debug problems triggered by a dependency in the codebase.\n- **Code quality**. Run cross-team code maintenance to improve internal quality and reduce people to refactor the codes. This requires making changes to multiple parts of the codebase.\n*Learn more about how to measure <a href=\"https://cloud.google.com/architecture/devops/devops-tech-code-maintainability\" title=\"Code Maintainability\" target=\"_blank\">Code Maintainability</a>.* and common pitfalls of implementing it."
+            ],
+            "fr": [
+              "Les équipes doivent pouvoir restaurer les services de production de façon répétée et prévisible (et, idéalement, de manière rapide), même en cas d'événements catastrophiques. Elles doivent donc enregistrer les ressources suivantes dans leur dépôt partagé du **contrôle des versions**:\n- Le code d'application et les dépendances (par exemple, les bibliothèques et le contenu statique).\n-Tous les scripts utilisés pour créer des schémas de base de données, les données de référence d'une application, etc.\n-L'ensemble des outils et des artefacts de création d'environnement décrits à l'étape précédente (par exemple, les scripts de création d'images VMware ou AMI, ou les recettes Chef).\n-Tous les fichiers utilisés pour créer et configurer des conteneurs (par exemple, des fichiers et des packs de création Docker).\n-Tous les tests automatisés compatibles et tous les scripts de test manuels.\n-Tous les scripts compatibles avec le packaging de code, le déploiement, la migration de base de données et le provisionnement de l'environnement.\n-Les artefacts de projet compatibles (par exemple, documentation relative aux exigences, procédures de déploiement et notes de version).\n-Orchestration de conteneurs (par exemple, configuration Kubernetes, configuration Mesos et configuration Docker Swarm).\n\n Pour évaluer l'efficacité avec laquelle vos équipes utilisent **le contrôle des versions** dans leurs systèmes, essayez les recommandations suivantes:\n-Assurez-vous que chaque validation du contrôle des versions déclenche la création automatisée de progiciels qui peuvent être déployés dans n'importe quel environnement en utilisant uniquement l'information contenue dans le contrôle des versions.\n-Faites en sorte de créer des environnements de test de type production à la demande en utilisant uniquement les scripts et les informations de configuration provenant du contrôle des versions, et des progiciels à l'aide du processus automatisé décrit dans l'approche précédente.\n-Mettez en œuvre une infrastructure de test et de production de scripts permettant aux équipes d'ajouter de la capacité ou d'effectuer une reprise après sinistre de manière entièrement automatisée.\n*Pour en savoir plus sur les obstacles courants et les moyens de mesurer <a href=\"https://cloud.google.com/architecture/devops/devops-tech-version-control\" title=\"le contrôle des versions\" target=\"_blank\">le contrôle des versions</a>.*\n <hr /> Les pratiques suivantes peuvent permettre d'améliorer la **gestion du code** :\n- **Collaboration des équipes**. Les équipes ont besoin d'accéder les unes aux autres et de se recommander des changements. Cette démarche facilite le transfert des connaissances et le décloisonnement des équipes dans l'optique d'effectuer des changements à d'autres parties des bases de code.\n- **Traçabilité**. Celle-ci est essentielle afin de retracer rapidement les progiciels ou les interrelations vers leur version en cas d'incident. Elle joue un rôle crucial dans les changements apportés pour résoudre les problèmes déclenchés par une interrelation dans la base de codes.\n- **Qualité du code**. Effectuer la maintenance du code entre les équipes afin d'améliorer la qualité interne et de réduire le nombre de personnes qui remanient les codes. Cette démarche exige d'apporter des changements à plusieurs parties à la fois de la base de codes.\n*Pour en savoir plus sur les moyens de mesurer la <a href=\"https://cloud.google.com/architecture/devops/devops-tech-code-maintainability\" title=\"gestion du code\" target=\"_blank\">gestion du code</a>.* et les obstacles courants pour l'implémentation"
+            ]
+          }
+        },
+        {
+          "level": "3",
+          "type": "list",
+          "title": {
+            "en": [
+              "TBC"
+            ],
+            "fr": [
+              "À compléter"
+            ]
+          }
+        },
+        {
+          "level": "5",
+          "type": "list",
+          "title": {
+            "en": [
+              "TBC"
+            ],
+            "fr": [
+              "À compléter"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "section_two",
+      "icon": "rocket",
+      "recommendations": [
+        {
+          "level": "1",
+          "type": "list",
+          "title": {
+            "en": [
+              "The key elements in successfully implementing **continuous integration** are:\n- Each commit should trigger a build of the software.\n- Each commit should trigger a series of automated tests that provide feedback in a few minutes.\n\nTo implement these elements, you need the following:\n- An automated build process.\n-A suite of automated tests.\n-A CI system that runs the build and automated tests on every check-in. \n*Learn more about ways to measure and implement <a href=\"https://cloud.google.com/architecture/devops/devops-tech-continuous-integration\" title=\"Continuous Integration\" target=\"_blank\">Continuous Integration</a>.*\n <hr /> When you design your **automated deployment process**, we recommend that you follow these best practices:\n- Use the same deployment process for every environment, including production.\n-Allow anyone with the necessary credentials to deploy any version of the artifact to any environment on demand in a fully automated fashion.\n-Use the same packages for every environment. This rule means that you should keep environment-specific configuration separate from packages.\n-Make it possible to recreate the state of any environment from information stored in version control. \n*Learn more about common pitfalls and ways to improve in <a href=\"https://cloud.google.com/architecture/devops/devops-tech-deployment-automation\" title=\"Deployment Automation\" target=\"_blank\">Deployment Automation</a>.*\n <hr /> You can improve **software delivery performance** and **security quality** by doing the following:\n- Conduct security reviews.\n-Build preapproved code.\n-Integrate security review into every phase.\n-Test for security.\n-Invite InfoSec to demos. \n*Learn more about ways to measure and improve <a href=\"https://cloud.google.com/architecture/devops/devops-tech-shifting-left-on-security\" title=\"Shifting left on security\" target=\"_blank\">Security Quality</a>.*"
+            ],
+            "fr": [
+              "Voici les principaux éléments permettant de réussir la mise en œuvre de **l'intégration continue** :\n- Chaque commit doit déclencher un build du logiciel.\n-Chaque commit doit déclencher un ensemble de tests automatisés permettant d'obtenir des retours en quelques minutes.\n\nPour les mettre en œuvre, vous avez besoin des éléments suivants:\n- Un processus de compilation automatisé.\n-Une suite de tests automatisés.\n-Un système CI exécutant le build et les tests automatisés à chaque enregistrement. \n*Pour en savoir plus sur les moyens de mesurer et de mettre en oeuvre l'<a href=\"https://cloud.google.com/architecture/devops/devops-tech-continuous-integration\" title=\"intégration continue\" target=\"_blank\">intégration continue</a>.*\n <hr /> Lorsque vous concevez votre **processus de déploiement automatisé**, nous vous recommandons de respecter ces bonnes pratiques:\n- Utilisez le même processus de déploiement pour tous les environnements, y compris l'environnement de production.\n-Autorisez toute personne disposant des identifiants nécessaires à déployer n'importe quelle version de l'artefact de façon totalement automatisée dans n'importe quel environnement à la demande.\n-Utilisez les mêmes packages pour tous les environnements.\n-Faites en sorte qu'il soit possible de recréer l'état de n'importe quel environnement à partir des informations stockées dans le contrôle des versions.\n*Pour en savoir plus sur les obstacles courants et les moyens d'améliorer l'<a href=\"https://cloud.google.com/architecture/devops/devops-tech-deployment-automation\" title=\"automatisation du déploiement\" target=\"_blank\">automatisation du déploiement</a>.**\n <hr /> Voici comment améliorer **les performances de livraison des logiciels** et **la qualité de la sécurité**:\n- Réaliser des examens de sécurité.\n-Créer un code préapprouvé.\n-Intégrez un examen de sécurité à chaque phase.\n-Tester la sécurité.\n-Invitez InfoSec aux démos.\n*Pour en savoir plus sur les moyens de mesurer et d'améliorer le <a href=\"https://cloud.google.com/architecture/devops/devops-tech-shifting-left-on-security\" title=\"virage à gauche pour la sécurité\" target=\"_blank\">virage à gauche pour la sécurité</a>.*"
+            ]
+          }
+        },
+        {
+          "level": "3",
+          "type": "list",
+          "title": {
+            "en": [
+              "TBC"
+            ],
+            "fr": [
+              "À compléter"
+            ]
+          }
+        },
+        {
+          "level": "5",
+          "type": "list",
+          "title": {
+            "en": [
+              "TBC"
+            ],
+            "fr": [
+              "À compléter"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "section_three",
+      "icon": "infinity",
+      "recommendations": [
+        {
+          "level": "1",
+          "type": "list",
+          "title": {
+            "en": [
+              "To build quality into the software, you must **continually run both automated and manual tests** throughout the delivery process to validate the functionality and architecture of the system under development. This discipline has both an organizational and a technical component:\n\n **Organizational:** \n- Allow testers to work alongside developers throughout the software development and delivery process.\n- Perform manual test activities such as exploratory testing, usability testing, and acceptance testing throughout the delivery process.\n\n **Technical:** \n\n Building and maintaining a set of key automated test suites such as Units Tests and acceptance tests. If you have limited test automation, start building a skeleton deployment pipeline which includes:\n- Single unit test\n- Single acceptance test\n- Automated deployments scripts for a exploratory test environments\n- Increase test coverage and extend the deployments product as the product or service evolves. It is also recommended to write your **unit tests** before writing code to improve the code are testable and the tests are maintainable. Finally, you can write a small number of **acceptance tests** for the high-value functionality. Make sure you require developers to write unit and acceptance tests for any new functionality, and any functionality you are changing.\n*Learn more about ways to measure and improve <a href=\"https://cloud.google.com/architecture/devops/devops-tech-test-automation\" title=\"Continuous Testing\" target=\"_blank\">Continuous Testing</a>.*\n <hr /> The following practices can effectively and efficiently improve **test data management**:\n- Favor unit tests.\n-Minimize reliance on test data.\n-Isolate your test data.\n-Minimize reliance on test data stored in databases. Maintaining test data stored in databases can be particularly challenging for the reason of **poor test isolation** and **performance impact**.\n-Make test data readily available.\n*Learn more about how to implement and improve <a href=\"https://cloud.google.com/architecture/devops/devops-tech-test-data-management\" title=\"Test Data Management\" target=\"_blank\">Test Data Management</a>.*"
+            ],
+            "fr": [
+              "Pour assurer la qualité des logiciels, vous devez **continuellement exécuter des tests à la fois manuels et automatisés**, tout au long du processus de livraison, afin de valider les fonctionnalités et l'architecture du système en cours de développement. Cette discipline présente à la fois un composant organisationnel et un composant technique:\n\n**Composantes organisationnelles:**\n- Permettre aux testeurs de travailler de concert avec les développeurs tout au long du processus de développement et de livraison des logiciels.\n- Exécuter les activités des tests manuels, comme les tests exploratoires, les tests de facilité d'utilisation et les tests de validation, tout au long du processus de livraison.\n\n **Composantes techniques:**\n\n Créer et tenir à jour un ensemble de séries de tests automatisés clés comme les tests unitaires et les tests de validation; Si l'automatisation des tests dont vous disposez est limitée, commencez par créer un pipeline de déploiement paramétrable qui comprend :\n- un seul test unitaire;\n- un seul test de validation;\n- des scripts de déploiement automatisés qui sont adaptés aux environnements de tests exploratoires;\n- l'augmentation de la couverture des tests puis l'étendue du pipeline de déploiement à mesure que le produit ou le service évolue. Il est également recommandé de rédiger vos **tests unitaires** avant de rédiger le code pour faire en sorte que le code puisse être testé et que les tests soient faciles à gérer. Enfin, vous pouvez rédiger un nombre restreint de **tests de validation** de la fonctionnalité stratégique. Assurez-vous de demander aux développeurs de rédiger des tests unitaires et de validation des nouvelles fonctionnalités et de celles que vous modifiez.\n*Pour en savoir plus sur les moyens de mesurer et d'améliorer les <a href=\"https://cloud.google.com/architecture/devops/devops-tech-test-automation\" title=\"tests continus\" target=\"_blank\">tests continus</a>.*\n <hr /> Les pratiques suivantes peuvent améliorer de façon fructueuse et judicieuse la **gestion des données de test** :\n- Privilégier les tests unitaires. \n-Réduire la dépendance aux données de tests.\n-Isoler les données de vos tests.\n-Réduire la dépendance aux données de test stockées dans des bases de données. La maintenance des données de tests stockées dans des bases de données peut s'avérer particulièrement difficile en raison de la **mauvaise isolation du test** et **retombées sur la performance**.\n-Permettre un accès facile aux données des tests.\n*PPour en savoir plus sur les moyens de mettre en oeuvre et d'améliorer la <a href=\"https://cloud.google.com/architecture/devops/devops-tech-test-data-management\" title=\"gestion des données de tests\" target=\"_blank\">gestion des données de tests</a>.*"
+            ]
+          }
+        },
+        {
+          "level": "3",
+          "type": "list",
+          "title": {
+            "en": [
+              "TBC"
+            ],
+            "fr": [
+              "À compléter"
+            ]
+          }
+        },
+        {
+          "level": "5",
+          "type": "list",
+          "title": {
+            "en": [
+              "TBC"
+            ],
+            "fr": [
+              "À compléter"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "section_four",
+      "icon": "sitemap",
+      "recommendations": [
+        {
+          "level": "1",
+          "type": "list",
+          "title": {
+            "en": [
+              "Rather than re-architecting everything, we recommend an iterative approach to improving the design of your enterprise system. This approach is known as **evolutionary architecture**.\n\n When deciding whether to make a piece of functionality into a service, consider if it has the following traits:\n- Implements a single business function or capability.\n-Performs its function with minimal interaction with other services.\n-Is built, scaled, and deployed independently from other services.\n-Interacts with other services by using lightweight communication methods, for example, a message bus or HTTP endpoints.\n-Can be implemented with different tools, programming languages, data stores, and so on.\n*Learn more about how to implement <a href=\"https://cloud.google.com/architecture/devops/devops-tech-architecture\" title=\"Architecture\" target=\"_blank\">Architecture</a> for continuous delivery.*\n <hr /> The following are some ways you might **empower teams** to choose their own tools:\n- Establish a cross-team baseline.\n-Periodically review the tools.\n-Define a process for exceptions. \n\nTo make sure your team is empowered to make tool and technology decisions:\n- Periodically assess the tech stack.\n-Proactively investigate new tools for new projects\n-Schedule time to experiment with new tools.\n-Hold regular presentations to discuss new tools. \n*Learn more about <a href=\"https://cloud.google.com/architecture/devops/devops-tech-teams-empowered-to-choose-tools\" title=\"Empowering teams to choose tools\" target=\"_blank\">Empowering teams to choose tools</a>.*"
+            ],
+            "fr": [
+              "Plutôt que de reconstruire l'architecture nous recommandons une approche itérative visant à améliorer la conception de votre système d'entreprise. Cette approche est connue sous le nom **d'architecture évolutive**.\n\nLorsque vous décidez si une fonctionnalité doit prendre la forme d'un service, déterminez si elle présente les caractéristiques suivantes:\n- Elle met en œuvre une fonction ou une capacité métier unique.\n-Pour remplir sa fonction, elle requiert des interactions minimales avec d'autres services.\n-Elle est construite, mise à l'échelle et déployée indépendamment des autres services.\n-Elle interagit avec d'autres services au moyen de méthodes de communication légères, par exemple un bus de messages ou des points de terminaison HTTP.\n-Elle peut être mise en œuvre à l'aide de différents outils, langages de programmation, magasins de données, etc.\n*Pour en savoir plus sur les moyens de mettre en oeuvre l'<a href=\"https://cloud.google.com/architecture/devops/devops-tech-architecture\" title=\"architecture\" target=\"_blank\">architecture</a> pour la livraison continue.*\n <hr /> Voici quelques suggestions quant à **la manière de permettre aux équipes de choisir leurs propres outils**:\n- Établir une base de référence inter-équipes.\n-Passer régulièrement en revue les outils.\n-Définir un processus pour les exceptions.\n\nPour faire en sorte que votre équipe soit habilitée à prendre des décisions en matière d'outils et de technologie:\n- Évaluer périodiquement la pile technologique.\n-Explorer de manière proactive de nouveaux outils pour de nouveaux projets.\n-Prévoir du temps pour expérimenter de nouveaux outils.\n-Organisez des présentations régulières pour discuter de nouveaux outils.\n*Pour en savoir plus sur le fait de <a href=\"https://cloud.google.com/architecture/devops/devops-tech-teams-empowered-to-choose-tools\" title=\"permettre aux équipes de choisir leurs outils\" target=\"_blank\">permettre aux équipes de choisir leurs outils</a>.*"
+            ]
+          }
+        },
+        {
+          "level": "3",
+          "type": "list",
+          "title": {
+            "en": [
+              "TBC"
+            ],
+            "fr": [
+              "À compléter"
+            ]
+          }
+        },
+        {
+          "level": "5",
+          "type": "list",
+          "title": {
+            "en": [
+              "TBC"
+            ],
+            "fr": [
+              "À compléter"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "section_five",
+      "icon": "cloud",
+      "recommendations": [
+        {
+          "level": "1",
+          "type": "list",
+          "title": {
+            "en": [
+              "According to DORA's research your organization can achieve the expected benefits using following practices:\n- Improved software delivery performance: faster throughput and higher levels of stability.\n-Close collaboration with developers, operations teams, information security, procurement, and finance.\n-Better service availability.\n-Improved cost visibility.\n-Adopting Infrastructure-as-code.\n*Learn more about how to measure and implement <a href=\"https://cloud.google.com/architecture/devops/devops-tech-cloud-infrastructure\" title=\"Cloud Infrastructure\" target=\"_blank\">Cloud Infrastructure</a>.*"
+            ],
+            "fr": [
+              "Selon les recherches de DORA, votre organisation peut obtenir les avantages escomptés en utilisant les pratiques suivantes:\n- Amélioration des performances de livraison de logiciels : débit plus rapide et niveaux de stabilité supérieurs\n-Une étroite collaboration avec les développeurs, les équipes chargées des opérations, les équipes responsables de la sécurité de l'information, et les responsables des achats et de la finance.\n-Meilleure disponibilité du service.\n-Amélioration de la visibilité des coûts.\n-L'adoption de l'«infrastructure en tant que code».\n*Pour en savoir plus sur les moyens de mesurer et de mettre en oeuvre l'<a href=\"https://cloud.google.com/architecture/devops/devops-tech-cloud-infrastructure\" title=\"infrastructure infonuagique\" target=\"_blank\">infrastructure infonuagique</a>.*"
+            ]
+          }
+        },
+        {
+          "level": "3",
+          "type": "list",
+          "title": {
+            "en": [
+              "TBC"
+            ],
+            "fr": [
+              "À compléter"
+            ]
+          }
+        },
+        {
+          "level": "5",
+          "type": "list",
+          "title": {
+            "en": [
+              "TBC"
+            ],
+            "fr": [
+              "À compléter"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "section_six",
+      "icon": "vials",
+      "recommendations": [
+        {
+          "level": "1",
+          "type": "list",
+          "title": {
+            "en": [
+              "To **help your team to find the best solutions**, try some of these suggestions:\n- Give autonomy to your teams.\n-Provide information and context.\n-Leave the details to those doing the work.\n-Hold regular hackathons.\n-Encourage teams to iterate on and continually improve solutions to foster experimentation.\n-Allow developers and operators to talk to and observe customers.\n*Learn more about common pitfalls and ways to improve <a href=\"https://cloud.google.com/architecture/devops/devops-process-team-experimentation\" title=\"Team experimentation\" target=\"_blank\">Team experimentation</a>.*\n <hr /> To improve your **change approval processes**, focus on implementing the following:\n- Moving to a peer-review based process for individual changes, enforced at code check-in time, and supported by automated tests.\n-Finding ways to discover problems such as regressions, performance problems, and security issues in an automated fashion as soon as possible after changes are committed.\n-Performing ongoing analysis to detect and flag high risk changes early on so that they can be subjected to additional scrutiny.\n-Looking at the change process end-to-end, identifying bottlenecks, and experimenting with ways to shift validations into the development platform.\n-Implementing information security controls at the platform and infrastructure layer and in the development tool chain, rather than reviewing them manually as part of the software delivery process.\n*Learn more about how to implement <a href=\"https://cloud.google.com/architecture/devops/devops-process-streamlining-change-approval\" title=\"Streamlining change approval\" target=\"_blank\">Streamlining change approval</a>.*"
+            ],
+            "fr": [
+              "Pour **aider votre équipe à trouver les meilleures solutions**, essayez certaines de ces suggestions :\n- Donnez de l'autonomie à vos équipes. \n- Fournissez des informations et du contexte. \n-Laissez ceux qui effectuent le travail s'occuper des détails.\n-Organisez régulièrement des hackathons.\n-Incitez les équipes à répéter les tests et à améliorer continuellement les solutions pour encourager l'expérimentation\n-Autorisez les développeurs et les opérateurs à parler aux clients et à les observer.\n*Pour en savoir plus sur les obstacles courants et les moyens d'améliorer l'<a href=\"https://cloud.google.com/architecture/devops/devops-process-team-experimentation\" title=\"expérimentation en équipe\" target=\"_blank\">expérimentation en équipe</a>.*\n <hr /> L'amélioration de vos **processus d'approbation des changements** passe par l'instauration des mesures suivantes :\n- Passer à un processus fondé sur l'examen par les pairs en ce qui touche les changements individuels, lequel sera mis en application au moment de l'insertion du code et compatible avec les tests automatisés.\n- Trouver des moyens de déceler automatiquement des problèmes tels que les régressions, les problèmes de rendement et les enjeux de sécurité dès que possible après la validation des changements.\n- Effectuer des analyses en continu afin de détecter et de signaler au plus vite les changements à risque élevé afin qu'ils soient soumis à des vérifications supplémentaires.\n- Examiner le processus de changement de bout en bout, déceler les goulots d'étranglement et mettre à l'essai des façons par lesquelles transférer les validations vers la plateforme de développement.\n- Mettre en œuvre des contrôles de sécurité de l'information au niveau de la plateforme et de l'infrastructure, ainsi que dans la chaîne d'outils de développement, plutôt que de les examiner manuellement dans le cadre du processus de livraison des logiciels.\n*Pour en savoir plus sur les moyens de <a href=\"https://cloud.google.com/architecture/devops/devops-process-streamlining-change-approval\" title=\"rationaliser l'approbation des changements\" target=\"_blank\">rationaliser l'approbation des changements</a>.*"
+            ]
+          }
+        },
+        {
+          "level": "3",
+          "type": "list",
+          "title": {
+            "en": [
+              "TBC"
+            ],
+            "fr": [
+              "À compléter"
+            ]
+          }
+        },
+        {
+          "level": "5",
+          "type": "list",
+          "title": {
+            "en": [
+              "TBC"
+            ],
+            "fr": [
+              "À compléter"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "section_seven",
+      "icon": "eye",
+      "recommendations": [
+        {
+          "level": "1",
+          "type": "list",
+          "title": {
+            "en": [
+              "Increased engagement with customers and participation in product management processes contributes to stronger identification with your organization's goals and values.\nThe DevOps Capabilities indicate that a team should use the following pattern in order to maximize their chances of successfully solving **customer problems**:\n- Gather customer feedback first, before defining any potential features.\n- Validate that you're solving a real problem.\n- Iterate on a solution that actually solves that problem (and nothing more).\n- Ensure the solution results in a viable business (for example, the cost is less than the anticipated revenue).\n- Track key metrics to gauge success.\n- Iterate through the above to improve those metrics.\n*Learn more about common pitfalls and ways to improve <a href=\"https://cloud.google.com/architecture/devops/devops-process-customer-feedback\" title=\"Customer feedback\" target=\"_blank\">Customer feedback</a>.*\n <hr /> To implement and improve **work visibility** your team is adviced to:\n- Use value stream mapping to understand how work flows.\n-Visualize the current state of work.\n-Provide tools for visualizing and recording workflow.\n-Create a value stream map.\n-Share artifacts.\n*Learn more about the ways to measure and improve <a href=\"https://cloud.google.com/architecture/devops/devops-process-work-visibility-in-value-stream\" title=\"Visibility of work in the value stream\" target=\"_blank\">Visibility of work in the value stream</a>.*\n <hr /> **Working in small batches** is an essential principle in any discipline where feedback loops are important, or you want to learn quickly from your decisions. Research recommends that each feature or batch of work follow the agile concept:\n- **Independent.** Make batches of work as independent as possible from other batches, so that teams can work on them in any order, and deploy and validate them independent of other batches of work.\n- **Negotiable.** Each batch of work is iterable and can be renegotiated as feedback is received.\n- **Valuable.** Discrete batches of work are usable and provide value to the stakeholders.\n- **Estimable.** Enough information exists about the batches of work that you can easily estimate the scope.\n- **Small.** During a sprint, you should be able to complete batches of work in small increments of time, meaning hours to a couple days.\n- **Testable.** Each batch of work can be tested, monitored, and verified as working in the way users expect.\n*Learn more about ways to measure and implement <a href=\"https://cloud.google.com/architecture/devops/devops-process-working-in-small-batches\" title=\"Working in small batches\" target=\"_blank\">Working in small batches</a>.*"
+            ],
+            "fr": [
+              "La coopération accrue de la clientèle et la hausse de la participation aux processus de gestion des produits contribuent à mieux discerner les objectifs et les valeurs de votre organisation.\nLes Capacités DevOps indiquent que l'équipe doit recourir au schéma suivant afin d'optimiser ses possibilités de résoudre avec succès **les problèmes des clients** :\n- Recueillez d'abord les commentaires des clients, avant même de définir les fonctionnalités potentielles de votre solution.\n- Assurez-vous que votre objectif est de résoudre un problème réel.\n- Effectuez des itérations sur une solution qui résout réellement ce problème (et rien de plus).\n- Assurez-vous que la solution se traduit par une activité viable (par exemple, le coût doit être inférieur aux revenus attendus).\n- Effectuez le suivi des principaux paramètres pour évaluer la réussite.\n- Répéter les étapes précédentes pour améliorer ces paramètres.\n*Pour en savoir plus sur les obstacles courants et les moyens d'améliorer les <a href=\"https://cloud.google.com/architecture/devops/devops-process-customer-feedback\" title=\"commentaires des clients\" target=\"_blank\">commentaires des clients</a>*\n <hr /> Pour mettre et améliorer **la visibilité du travail** :\n- Utilisez la cartographie de la chaîne de valeur pour comprendre le déroulement du travail.\n-Visualiser l'état actuel du travail.\n-Fournir des outils de visualisation et d'enregistrement du flux de travail.\n-Cartographier les flux de valeur.\n-Partager les artéfacts.\n*Pour en savoir plus sur les moyens de mesurer et d'améliorer la <a href=\"https://cloud.google.com/architecture/devops/devops-process-work-visibility-in-value-stream\" title=\"visibilité du travail dans le flux de valeur\" target=\"_blank\">visibilité du travail dans le flux de valeur</a>.*\n <hr /> **Travailler par petits lots** est un principe déterminant dans les disciplines où les boucles d'asservissement sont importantes, ou lorsqu'on souhaite tirer un apprentissage rapide des décisions prises. Dans la recherche, il est recommandé que chaque fonctionnalité ou lot de travail soit conforme au concept Agile :\n- **Indépendant.** Faites en sorte que les lots de travail soient aussi indépendants que possible des autres lots afin que les équipes puissent les traiter dans n'importe quel ordre, puis déployez-les et validez-les indépendamment des autres lots de travail.\n-**Négociable.** Chaque lot de travail est itératif et peut être renégocié au fil des commentaires reçus.\n-**Valorisé.** Les lots de travail discrets sont utiles et apportent de la valeur aux parties prenantes.\n-**Estimable.** Il existe assez d'information sur les lots de travail pour vous permettre d'en évaluer facilement le champ d'application.\n-**Suffisamment petit.** Lors d'un sprint, vous devez être capable d'achever des lots de travail en de petits laps de temps, à savoir de quelques heures à quelques jours.\n-**Testable.** Chaque lot de travail peut être testé, surveillé et certifié conforme aux attentes des utilisateurs.\n*Pour en savoir plus sur les moyens de mesurer et de mettre en oeuvre <a href=\"https://cloud.google.com/architecture/devops/devops-process-working-in-small-batches\" title=\"travailler par petits lots\" target=\"_blank\">travailler par petits lots</a>.*"
+            ]
+          }
+        },
+        {
+          "level": "3",
+          "type": "list",
+          "title": {
+            "en": [
+              "TBC"
+            ],
+            "fr": [
+              "À compléter"
+            ]
+          }
+        },
+        {
+          "level": "5",
+          "type": "list",
+          "title": {
+            "en": [
+              "TBC"
+            ],
+            "fr": [
+              "À compléter"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "section_eight",
+      "icon": "database",
+      "recommendations": [
+        {
+          "level": "1",
+          "type": "list",
+          "title": {
+            "en": [
+              "To improve your team **monitoring effectiveness**, you should focus efforts on two main areas:\n- Collecting data from key areas throughout the value chain. \n-Using the collected data to make business decisions.\n*Learn more about how to implement and improve <a href=\"https://cloud.google.com/architecture/devops/devops-measurement-monitoring-systems\" title=\"Monitoring systems to inform business decisions\" target=\"_blank\">Monitoring systems to inform business decisions</a>.*\n <hr /> To improve **monitoring and observability**, your teams should have the following:\n- Reporting on the overall health of systems (Are my systems functioning? Do my systems have sufficient resources available?).\n-Reporting on system state as experienced by customers (Do my customers know if my system is down and have a bad experience?).\n-Monitoring for key business and systems metrics.\n-Tooling to help you understand and debug your systems in production.\n-Tooling to find information about things you did not previously know (that is, you can identify unknown unknowns).\n-Access to tools and data that help trace, understand, and diagnose infrastructure problems in your production environment, including interactions between services.\n\n Here are a few key measures to validate an effective implementation of monitoring and observability:\n-Your monitoring should tell you what is broken and help you understand why, before too much damage is done.\n-The key metric in the event of an outage or service degradation is time-to-restore (TTR).\n-A key contributor to TTR is the ability to rapidly understand what broke and the quickest path to restoring service (which may not involve immediately remediating the underlying problems).\n*Learn more about how to implement <a href=\"https://cloud.google.com/architecture/devops/devops-measurement-monitoring-and-observability\" title=\"Monitoring and observability.\" target=\"_blank\">Monitoring and observability</a>.*"
+            ],
+            "fr": [
+              "Pour améliorer l'efficacité du **suivi de votre équipe**, vous devez concentrer vos efforts sur deux domaines principaux:\n- Recueillir les données de domaines clés tout au long de la chaîne de valeur.\n- Utiliser les données recueillies pour prendre des décisions opérationnelles.\n*Pour en savoir plus sur les moyens de mettre en oeuvre et d'améliorer les <a href=\"https://cloud.google.com/architecture/devops/devops-measurement-monitoring-systems\" title=\"systèmes de surveillance pour des décisions opérationnelles éclairées\" target=\"_blank\">systèmes de surveillance pour des décisions opérationnelles éclairées</a>.*\n <hr /> Pour améliorer **la surveillance et l'observabilité**, vos équipes doivent disposer des éléments suivants :\n- Des rapports sur l'état général des systèmes (Mes systèmes fonctionnent-ils? Disposent-ils de suffisamment de ressources?)\n-Des rapports sur l'état du système tel qu'il est perçu par les clients (Mes clients savent-ils si mon système est en panne et vivent-ils une mauvaise expérience?)\n-La surveillance des principaux paramètres opérationnels et systémiques.\n-Un outillage permettant de concevoir le système de production et de le dépanner.\n-Un outillage pour trouver de l'information sur des éléments qui vous étaient préalablement inconnus (p. ex., vous pouvez discerner les « éléments inconnus qui vous étaient inconnus »).\n-L'accès à des outils et à des données qui permettent de repérer, de concevoir et de diagnostiquer les problèmes d'infrastructure dans votre environnement de production, y compris les interactions entre services.\n\n Voici quelques mesures clés pour valider une mise en œuvre efficace de la surveillance et de l'observabilité:\n-Votre solution de surveillance doit vous indiquer ce qui est défectueux et vous aider à comprendre pourquoi, avant que les dommages ne soient trop importants.\n-Le paramètre clé en cas de panne ou de détérioration du service est le délai de rétablissement (DDR).\n-L'un des principaux facteurs qui interviennent dans le DDR, c'est la capacité d'interpréter sans tarder ce qui est défectueux ainsi que le moyen le plus rapide de rétablir le service (il ne s'agit pas forcément ici de remédier dans l'immédiat aux problèmes sous-jacents).\n*Pour en savoir plus sur les moyens de mettre en oeuvre la <a href=\"https://cloud.google.com/architecture/devops/devops-measurement-monitoring-and-observability\" title=\"surveillance et l'observabilité\" target=\"_blank\">surveillance et l'observabilité</a>.*"
+            ]
+          }
+        },
+        {
+          "level": "3",
+          "type": "list",
+          "title": {
+            "en": [
+              "TBC"
+            ],
+            "fr": [
+              "À compléter"
+            ]
+          }
+        },
+        {
+          "level": "5",
+          "type": "list",
+          "title": {
+            "en": [
+              "TBC"
+            ],
+            "fr": [
+              "À compléter"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "section_nine",
+      "icon": "briefcase",
+      "recommendations": [
+        {
+          "level": "1",
+          "type": "list",
+          "title": {
+            "en": [
+              "To improve **work in process limits** when faced with too much work and too few people to do it:\n- Prioritize work.\n-Limit how much people work on.\n-Focus on completing a small number of high-priority tasks.\n-Make your work visible.\n-Set WIP limits that match your team's capacity for work.\n- Account for activities like production support, meeting time and technical debt.\n- Don't allow more WIP in any given part of the process than you have people to work on tasks.\n- Don't require people to split their time between multiple tasks.\n- When a particular piece of work is completed, move the card representing that work to the next column, and pull the highest priority piece of work waiting in the queue.\n-Set up a weekly meeting for stakeholders to prioritize all work in order.\n-Work to increase flow.\n- Improve work processes.\n*Learn more about common pitfalls and how to implement <a href=\"https://cloud.google.com/architecture/devops/devops-measurement-wip-limits\" title=\"Work in process limits\" target=\"_blank\">Work in process limits</a>.*\n <hr /> To improve effectiveness in **visual management**, systems must do the following:\n- Reflect information that the team cares about and will act on.\n-Be easy to understand.\n-Give the team information that is relevant to their work.\n-Be updated as part of daily work.\n*Learn more about how to implement and improve <a href=\"https://cloud.google.com/architecture/devops/devops-measurement-visual-management\" title=\"Visual management\" target=\"_blank\">Visual management</a>.*"
+            ],
+            "fr": [
+              "Pour améliorer les **limites du travail en cours** lorsqu'il y a trop de travail à exécuter et trop peu d'effectifs à cette fin :\n- Rendre votre travail visible.\n-Définir des limites de TEC qui correspondent aux capacités de l'équipe.\n-Tenez compte des activités telles que l'assistance à la production, les horaires de réunion et les contraintes techniques.\n-N'autorisez pas plus de TEC dans les parties du processus que vous avez d'effectifs pour exécuter les tâches.\n-Évitez d'exiger des effectifs qu'ils consacrent leur temps de travail à plusieurs tâches à la fois.\n-Lorsqu'une tâche particulière est terminée, déplacez la fiche correspondant à cette tâche vers la colonne suivante, puis remplacez-la par la fiche relative à la tâche la plus prioritaire en attente dans la file.\n-Organiser une réunion hebdomadaire avec les parties prenantes pour établir l'ordre de priorité des travaux.\n-Viser l'augmentation du flux de travail.\n-Optimiser les processus de travail.\n*Pour en savoir plus sur les obstacles courants et les moyens de mettre en oeuvre des <a href=\"https://cloud.google.com/architecture/devops/devops-measurement-wip-limits\" title=\"limites de travail en cours\" target=\"_blank\">limites de travail en cours</a>.*\n <hr /> Pour améliorer l'efficacité des **fonctionnalités de gestion visuelle**, les systèmes doivent :\n- Refléter l'information qui intéresse l'équipe et sur laquelle elle peut agir.\n-Être compréhensible.\n-Fournir à l'équipe de l'information pertinente à son travail.\n-Être mis à jour au quotidien.\n*Pour en savoir plus sur les moyens de mettre en oeuvre et d'améliorer la <a href=\"https://cloud.google.com/architecture/devops/devops-measurement-visual-management\" title=\"gestion visuelle\" target=\"_blank\">gestion visuelle</a>.*"
+            ]
+          }
+        },
+        {
+          "level": "3",
+          "type": "list",
+          "title": {
+            "en": [
+              "TBC"
+            ],
+            "fr": [
+              "À compléter"
+            ]
+          }
+        },
+        {
+          "level": "5",
+          "type": "list",
+          "title": {
+            "en": [
+              "TBC"
+            ],
+            "fr": [
+              "À compléter"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "section_ten",
+      "icon": "graduation-cap",
+      "recommendations": [
+        {
+          "level": "1",
+          "type": "list",
+          "title": {
+            "en": [
+              "Measuring **job satisfaction** in systems is hard but there is always ways to improve it:\n- Give employees the tools and resources needed to do their work.\n-Give employees meaningful work that leverages their expertise.\n*Lear more about common pitfalls and ways to improve <a href=\"https://cloud.google.com/architecture/devops/devops-culture-job-satisfaction\" title=\"Job satisfaction\" target=\"_blank\">Job satisfaction</a>.*\n <hr /> The following practices can be implemented to improve your **organizational culture**:\n- High cooperation. Create cross-functional teams that include representatives from each functional area of the software delivery process (business analysts, developers, quality engineers, ops, security, and so on).\n-Train the messengers. This means we want people to bring us bad news so we can make things better.\n-Share risks. Along with this, encourage shared responsibilities.\n-Encourage bridging. Break down silos.\n-Let failure lead to inquiry. Again, hold blameless post mortems.\n-Implement novelty. Encourage experimentation.\n*Learn more about how to implement <a href=\"https://cloud.google.com/architecture/devops/devops-culture-westrum-organizational-culture\" title=\"Westrum organizational culture\" target=\"_blank\">Westrum organizational culture</a>.*\n <hr /> Continuing to build a **learning culture** is directly related to how an organization encourages and invests in learning.\n- Have regular lunchtime meetings ('brown bags') where one person presents about a project they are working on in a new tech, or something they are investigating. Rotate the presentations among team members and reward people for presenting.\n-When people attend conferences, have them share the new ideas through presentations or trip reports. You can even host regular meetups or mini-conferences to increase networking and exposure to new technologies and ideas.\n-Encourage people to get certifications or external trainings. You can help with this by covering costs of external trainings and forming study groups that are a part of normal work activity.\n*Learn more about how to measure and implement <a href=\"https://cloud.google.com/architecture/devops/devops-culture-learning-culture\" title=\"Learning culture\" target=\"_blank\">Learning culture</a>.*"
+            ],
+            "fr": [
+              "Il est difficile de mesurer **la satisfaction au travail** dans les systèmes, mais il est toujours possible de l'améliorer:\n- Donner aux employés les outils et les ressources nécessaires pour faire leur travail.\n-Confier aux employés un travail valorisant qui met à profit leur savoir-faire.\n*Pour en savoir plus sur les obstacles courants et les moyens d'améliorer la <a href=\"https://cloud.google.com/architecture/devops/devops-culture-job-satisfaction\" title=\"satisfaction au travail\" target=\"_blank\">satisfaction au travail</a>.*\n <hr /> Vous pouvez instaurer les pratiques suivantes afin de rehausser votre **culture organisationnelle**:\n- Haute coopération. Créer des équipes pluridisciplinaires comprenant des représentants de chaque domaine fonctionnel du processus de livraison des logiciels (analystes de veille stratégique, développeurs, ingénieurs de la qualité, chargés des opérations, chargés de la sécurité, etc.).\n-Les messagers sont formés.Autrement dit, nous souhaitons que les mauvaises nouvelles soient bien relayées afin de pouvoir améliorer les choses.\n-Les risques sont partagés.Parallèlement à cet aspect, encouragez les responsabilités partagées.\n-La liaison est encouragée. Décloisonnez l'information.\n-Laisser un échec conduire à une enquête. Encore une fois, les rapports d'incident ne doivent pas occasionner de sanctions.\n-La nouveauté est mise en œuvre.Encouragez les mises à l'essai.\n*Pour en savoir plus sur les moyens de mettre en oeuvre la <a href=\"https://cloud.google.com/architecture/devops/devops-culture-westrum-organizational-culture\" title=\"culture organisationnelle de Westrum\" target=\"_blank\">culture organisationnelle de Westrum</a>.*\n <hr /> Le maintien d'une **culture de l'apprentissage** est directement lié à la façon dont une organisation encourage l'apprentissage et investit dans celui-ci.\n- Organisez à intervalles réguliers des dîners-rencontres où une personne présente un nouvel outil technologique qu'elle approfondit ou qu'elle étudie dans le cadre d'un projet. Attribuez l'ordre de présentation des exposés selon une rotation et récompensez les membres de l'équipe qui les présentent.\n-Demandez aux personnes qui assistent à des conférences de transmettre les nouvelles idées qu'elles en ont tirées à l'aide d'exposés ou de rapports de voyage.Vous pouvez même tenir à intervalles réguliers des rencontres ou des mini-conférences pour favoriser le réseautage et la diffusion des nouvelles technologies et idées.\n-Invitez les personnes à obtenir des attestations ou de la formation à l'externe.Vous pouvez les aider en ce sens en assumant le coût de la formation à l'externe et en constituant des groupes d'étude dont l'activité s'inscrit dans le déroulement normal du travail.\n*Pour en savoir plus sur les moyens d'améliorer et de mettre en oeuvre une <a href=\"https://cloud.google.com/architecture/devops/devops-culture-learning-culture\" title=\"culture d'apprentissage\" target=\"_blank\">culture d'apprentissage</a>.*"
+            ]
+          }
+        },
+        {
+          "level": "3",
+          "type": "list",
+          "title": {
+            "en": [
+              "TBC"
+            ],
+            "fr": [
+              "À compléter"
+            ]
+          }
+        },
+        {
+          "level": "5",
+          "type": "list",
+          "title": {
+            "en": [
+              "TBC"
+            ],
+            "fr": [
+              "À compléter"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "section_eleven",
+      "icon": "random",
+      "recommendations": [
+        {
+          "level": "1",
+          "type": "list",
+          "title": {
+            "en": [
+              "Your team can follow some general advices in order to increase your chances of success in **transformation**:\n- Set goals and enable team experimentation.\n-Build community structures to spread knowledge. There are many ways to do this: training center (sometimes referred to as a dojo), center of excellence (CoE), proof of concept (PoC) but stall, proof of concept as a template, proof of concept as a seed, communities of practice, big bang, bottom-up or grassroots, mashup.\n\nThe DevOps Capabilities presents some key principles:\n- Improvement work is never done.\n-Leaders and teams agree on and communicate measurable outcomes, and teams determine how to achieve them.\n-Large-scale change is achieved iteratively and incrementally.\n\nThese are five characteristics of a transformational leader that are highly correlated with software delivery performance:\n- Vision.\n-Inspirational communication.\n-Intellectual stimulation.\n-Supportive leadership.\n-Personal recognition.\n*Learn more about how to implement <a href=\"https://cloud.google.com/architecture/devops/devops-culture-transformational-leadership\" title=\"Transformational leadership\" target=\"_blank\">Transformational leadership</a> and <a href=\"https://cloud.google.com/architecture/devops/devops-culture-transform\" title=\"How to transform\" target=\"_blank\">How to transform</a>.*"
+            ],
+            "fr": [
+              "Votre équipe peut observer certains principes généraux afin d'accroître les possibilités de réussite en **transformation**.\n- Définir des objectifs et encourager l'expérimentation en équipe.\n-Construire des structures communautaires pour diffuser les connaissances. Pour ce faire, il existe plusieurs méthodes: centre de formation (parfois appelé dojo), centre d'excellence, démonstration de faisabilité qui reste à l'état pilote, démonstration de faisabilité en tant que modèle, démonstration de faisabilité en tant que source, groupes de pratique, approche Big Bang, de bas en haut, approche composite (mashup).\n\nLes Capacités DevOps présentent quelques principes clés:\n- Le travail d'amélioration n'est jamais terminé.\n-Les chefs de file et les équipes conviennent de résultats mesurables et communiquent ceux-ci, après quoi les équipes déterminent comment y parvenir.\n-Le changement à grande échelle est apporté de façon répétitive et progressive.\n\nIl s'agit de cinq caractéristiques d'un leader transformationnel qui sont fortement corrélées aux performances de livraison de logiciels:\n- Vision.\n-Communication inspirante.\n-Stimulation intellectuelle.\n-Leadership solidaire. \n-Reconnaissance personnelle.\n*Pour en savoir plus sur les moyens de mettre en oeuvre le <a href=\"https://cloud.google.com/architecture/devops/devops-culture-transformational-leadership\" title=\"leadership transformationnel\" target=\"_blank\">leadership transformationnel</a> et <a href=\"https://cloud.google.com/architecture/devops/devops-culture-transform\" title=\"réussir sa transformation\" target=\"_blank\">réussir sa transformation</a>.*"
+            ]
+          }
+        },
+        {
+          "level": "3",
+          "type": "list",
+          "title": {
+            "en": [
+              "TBC"
+            ],
+            "fr": [
+              "À compléter"
+            ]
+          }
+        },
+        {
+          "level": "5",
+          "type": "list",
+          "title": {
+            "en": [
+              "TBC"
+            ],
+            "fr": [
+              "À compléter"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "performance": [
+    {
+      "level": "low",
+      "title": {
+        "en": "Low",
+        "fr": "Faible"
+      },
+      "message": {
+        "en": "Based on your answers, it appears that some elements could be improved. Here are a few recommendations.",
+        "fr": "Selon vos réponses, il semblerait que certains éléments pourraient être améliorés. Voici quelques recommandations."
+      }
+    },
+    {
+      "level": "medium",
+      "title": {
+        "en": "Medium",
+        "fr": "Moyen"
+      },
+      "message": {
+        "en": "Based on your answers, you seem to have incorporated some key elements in your practice. Here are recommendations that may help you reach the next level!",
+        "fr": "Selon vos réponses, vous semblez avoir incorporé certains éléments clés dans votre pratique. Voici quelques recommandations"
+      }
+    },
+    {
+      "level": "high",
+      "title": {
+        "en": "High",
+        "fr": "Élevé"
+      },
+      "message": {
+        "en": "You seem to have incorporate many key elements in your practice. Congratulations!",
+        "fr": "À compléter"
+      }
+    }
+  ]
+}
