@@ -20,7 +20,8 @@ const vuexLocal = new VuexPersistence({
   reducer: (state: RootState) => ({
     toolData: state.toolData,
     currentPageNo: state.currentPageNo,
-    currentPageName: state.currentPageName
+    currentPageName: state.currentPageName,
+    displayWelcomeNotice: state.displayWelcomeNotice
   })
 });
 

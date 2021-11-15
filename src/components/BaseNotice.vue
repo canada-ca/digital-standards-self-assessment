@@ -33,6 +33,9 @@ export default Vue.extend({
   data() {
     return { checkbox: "false" };
   },
+  beforeMount() {
+    this.checkbox = this.$store.getters.returnDisplayWelcome ? "false" : "true";
+  },
   computed: {
     displayNoticeStatus() {
       return this.$store.getters.returnDisplayWelcome;

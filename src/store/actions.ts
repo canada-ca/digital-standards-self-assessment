@@ -164,7 +164,6 @@ export const actions: ActionTree<RootState, RootState> & Actions = {
       let toolData: any = getters.returnToolData;
       commit(MutationType.SetToolData, toolData);
       commit(MutationType.SetToolVersion, appConfigSettings.version);
-      commit(MutationType.SetDisplayNoticeStatus, state.displayWelcomeNotice);
       commit(MutationType.Initialized, undefined);
     }
     commit(MutationType.StopLoading, undefined);
@@ -186,7 +185,7 @@ export const actions: ActionTree<RootState, RootState> & Actions = {
           completed: false,
           questionsNames: [],
           userScore: 0,
-          maxScore: (value.getPageByName(sectionName).questions.length - 1) * 7,
+          maxScore: value.getPageByName(sectionName).questions.length * 5,
           questions: []
         };
         value.getPageByName(sectionName).questions.forEach(question => {
@@ -221,8 +220,18 @@ export const actions: ActionTree<RootState, RootState> & Actions = {
     if (section !== undefined) {
       value.questions.forEach(question => {
         if (question.value !== undefined) {
-          let score: number = +question.value;
-          sectionScore += score;
+          if (question.getType() === "rating") {
+            let score: number = +question.value;
+            sectionScore += score;
+          } else if (question.getType() === "radiogroup") {
+            let score = 0;
+            if (("" + question.value).toLowerCase() === "yes") {
+              score = 5;
+            } else if (("" + question.value).toLowerCase() === "no") {
+              score = 1;
+            }
+            sectionScore += score;
+          }
         }
       });
       section.userScore = sectionScore;

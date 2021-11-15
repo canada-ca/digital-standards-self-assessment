@@ -178,7 +178,11 @@ function generateLanguageToggle() {
 window.onload = function() {
   reloadTemplate();
   generateLanguageToggle();
-  window.history.replaceState({}, document.title, "/auto-evaluation-devops-self-assessment/#/");
+  window.history.replaceState(
+    {},
+    document.title,
+    "/auto-evaluation-devops-self-assessment/#/"
+  );
 };
 
 new Vue({

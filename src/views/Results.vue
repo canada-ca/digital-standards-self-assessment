@@ -42,6 +42,17 @@
             {{ $t("navigation.chooseAnotherSection") }}
           </button>
         </div>
+        <div class="col-3 col-sm-2 col-md-3">
+          <button
+            type="button"
+            class="btn btn-default"
+            style="width: inherit"
+            v-on:click="downloadSurveyAnswer()"
+            :key="$route.path"
+          >
+            {{ $t("export") }}
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -86,8 +97,7 @@ import { ActionTypes } from "@/store/actions";
   },
   methods: {
     getMaxScore(section: Section) {
-      let maxScore: number = (section.questions.length - 1) * 7;
-      return maxScore;
+      return section.questions.length * 5;
     }
   }
 })
@@ -113,6 +123,15 @@ export default class Results extends Vue {
       currentPage: this.$store.state.currentPageNo,
       data: this.$store.state.toolData
     });
+  }
+  downloadSurveyAnswer(): void {
+    const dataStr = "data:text/json;charset=utf-8," + this.buildSurveyFile();
+    var downloadAnchorNode = document.createElement("a");
+    downloadAnchorNode.setAttribute("href", dataStr);
+    downloadAnchorNode.setAttribute("download", "result.json");
+    document.body.appendChild(downloadAnchorNode); // required for firefox
+    downloadAnchorNode.click();
+    downloadAnchorNode.remove();
   }
   // async saveSurveyData(): Promise<boolean> {
   //   var responseStatus: boolean = false;

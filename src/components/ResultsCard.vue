@@ -20,7 +20,7 @@
 
 <script lang="ts">
 import { Component, Vue, Prop } from "vue-property-decorator";
-import { Question, SurveyModel } from "survey-vue";
+import { SurveyModel } from "survey-vue";
 import { Recommendations } from "@/types";
 import ResultRecommendations from "@/components/ResultRecommendations.vue";
 @Component({
