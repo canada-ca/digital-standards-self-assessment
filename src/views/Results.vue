@@ -42,17 +42,6 @@
             {{ $t("navigation.chooseAnotherSection") }}
           </button>
         </div>
-        <div class="col-3 col-sm-2 col-md-3">
-          <button
-            type="button"
-            class="btn btn-default"
-            style="width: inherit"
-            v-on:click="downloadSurveyAnswer()"
-            :key="$route.path"
-          >
-            {{ $t("export") }}
-          </button>
-        </div>
       </div>
     </div>
   </div>
@@ -156,6 +145,10 @@ export default class Results extends Vue {
   //   });
   //   return responseStatus;
   // }
+
+  /**
+   * Export survey result.
+   */
   exportResults() {
     const source = window.document.getElementById(
       this.$i18n.locale + "-content"

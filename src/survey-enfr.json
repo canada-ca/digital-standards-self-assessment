@@ -30,27 +30,22 @@
           }
         },
         {
-          "type": "radiogroup",
+          "type": "boolean",
           "name": "s01q002",
           "title": {
             "default": "Is senior management's approval required to make a routine change to your service?",
             "fr": "Is senior management's approval required to make a routine change to your service? (FR)"
           },
           "isRequired": false,
-          "choices": [
-            {
-              "value": "Yes",
-              "text": {
-                "fr": "Oui"
-              }
-            },
-            {
-              "value": "No",
-              "text": {
-                "fr": "Non"
-              }
-            }
-          ]
+          "defaultValue": false,
+          "labelTrue": {
+            "default": "Yes",
+            "fr": "Oui"
+           },
+           "labelFalse": {
+            "default": "No",
+            "fr": "Non"
+           }
         },
         {
           "type": "rating",
@@ -480,73 +475,58 @@
       },
       "elements": [
         {
-          "type": "radiogroup",
+          "type": "boolean",
           "name": "s02q01",
           "title": {
             "default": "Name examples of international, regional, or open standards or solutions, that your service has investigated during the development or design of your service?",
             "fr": "Name examples of international, regional, or open standards or solutions, that your service has investigated during the development or design of your service?(FR)"
           },
           "isRequired": false,
-          "choices": [
-            {
-              "value": "Yes",
-              "text": {
-                "fr": "Oui"
-              }
-            },
-            {
-              "value": "No",
-              "text": {
-                "fr": "Non"
-              }
-            }
-          ]
+          "defaultValue": "false",
+          "labelTrue": {
+            "default": "Yes",
+            "fr": "Oui"
+           },
+           "labelFalse": {
+            "default": "No",
+            "fr": "Non"
+           }
         },
         {
-          "type": "radiogroup",
+          "type": "boolean",
           "name": "s02q02",
           "title": {
             "default": "Please give an example of an international, regional, or open standard or solution that was leveraged for the purposes of this service.",
             "fr": "Please give an example of an international, regional, or open standard or solution that was leveraged for the purposes of this service.(FR)"
           },
           "isRequired": false,
-          "choices": [
-            {
-              "value": "Yes",
-              "text": {
-                "fr": "Oui"
-              }
-            },
-            {
-              "value": "No",
-              "text": {
-                "fr": "Non"
-              }
-            }
-          ]
+          "defaultValue": "false",
+          "labelTrue": {
+            "default": "Yes",
+            "fr": "Oui"
+           },
+           "labelFalse": {
+            "default": "No",
+            "fr": "Non"
+           }
         },
         {
-          "type": "radiogroup",
+          "type": "boolean",
           "name": "s02q03",
           "title": {
             "default": "Are you able to provide this assessment board with links to examples of contributions to open source communities made by the team?",
             "fr": "Are you able to provide this assessment board with links to examples of contributions to open source communities made by the team?(FR)"
           },
           "isRequired": false,
-          "choices": [
-            {
-              "value": "Yes",
-              "text": {
-                "fr": "Oui"
-              }
-            },
-            {
-              "value": "No",
-              "text": {
-                "fr": "Non"
-              }
-            }
-          ]
+          "defaultValue": false,
+          "labelTrue": {
+            "default": "Yes",
+            "fr": "Oui"
+           },
+           "labelFalse": {
+            "default": "No",
+            "fr": "Non"
+           }
         },
         {
           "type": "rating",
@@ -585,73 +565,58 @@
           }
         },
         {
-          "type": "radiogroup",
+          "type": "boolean",
           "name": "s02q06",
           "title": {
             "default": "Am I able to access your service from my mobile phone, on both Android and iIPhone systems and complete the full service workflow?",
             "fr": "Am I able to access your service from my mobile phone, on both Android and iIPhone systems and complete the full service workflow?(FR)"
           },
           "isRequired": false,
-          "choices": [
-            {
-              "value": "Yes",
-              "text": {
-                "fr": "Oui"
-              }
-            },
-            {
-              "value": "No",
-              "text": {
-                "fr": "Non"
-              }
-            }
-          ]
+          "defaultValue": false,
+          "labelTrue": {
+            "default": "Yes",
+            "fr": "Oui"
+           },
+           "labelFalse": {
+            "default": "No",
+            "fr": "Non"
+           }
         },
         {
-          "type": "radiogroup",
+          "type": "boolean",
           "name": "s02q07",
           "title": {
             "default": "Am I able to access your service using the browser of my choosing, for example, Edge, Chrome, or Firefox, and complete the full service workflow?",
             "fr": "Am I able to access your service using the browser of my choosing, for example, Edge, Chrome, or Firefox, and complete the full service workflow?(FR)"
           },
           "isRequired": false,
-          "choices": [
-            {
-              "value": "Yes",
-              "text": {
-                "fr": "Oui"
-              }
-            },
-            {
-              "value": "No",
-              "text": {
-                "fr": "Non"
-              }
-            }
-          ]
+          "defaultValue": false,
+          "labelTrue": {
+            "default": "Yes",
+            "fr": "Oui"
+           },
+           "labelFalse": {
+            "default": "No",
+            "fr": "Non"
+           }
         },
         {
-          "type": "radiogroup",
+          "type": "boolean",
           "name": "s02q08",
           "title": {
             "default": "Am I able to access your service from my tablet and complete the full service workflow?",
             "fr": "Am I able to access your service from my tablet and complete the full service workflow?(FR)"
           },
           "isRequired": false,
-          "choices": [
-            {
-              "value": "Yes",
-              "text": {
-                "fr": "Oui"
-              }
-            },
-            {
-              "value": "No",
-              "text": {
-                "fr": "Non"
-              }
-            }
-          ]
+          "defaultValue": false,
+          "labelTrue": {
+            "default": "Yes",
+            "fr": "Oui"
+           },
+           "labelFalse": {
+            "default": "No",
+            "fr": "Non"
+           }
         },
         {
           "type": "rating",
@@ -798,27 +763,22 @@
           }
         },
         {
-          "type": "radiogroup",
+          "type": "boolean",
           "name": "s02q17",
           "title": {
             "default": "When the team is looking to leverage technology, do they first investigate open source solutions? Please provide examples.",
             "fr": "When the team is looking to leverage technology, do they first investigate open source solutions? Please provide examples.(FR)"
           },
           "isRequired": false,
-          "choices": [
-            {
-              "value": "Yes",
-              "text": {
-                "fr": "Oui"
-              }
-            },
-            {
-              "value": "No",
-              "text": {
-                "fr": "Non"
-              }
-            }
-          ]
+          "defaultValue": false,
+          "labelTrue": {
+            "default": "Yes",
+            "fr": "Oui"
+           },
+           "labelFalse": {
+            "default": "No",
+            "fr": "Non"
+           }
         }
       ]
     },

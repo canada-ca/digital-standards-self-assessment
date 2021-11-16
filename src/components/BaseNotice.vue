@@ -2,9 +2,7 @@
   <div>
     <b-modal id="welcome-modal" size="xl">
       <template #modal-header>
-        <div v-html="markdownToHtml($t('notice.welcomeNoticeTitle'))">
-          >
-        </div>
+        <div v-html="markdownToHtml($t('notice.welcomeNoticeTitle'))"></div>
       </template>
       <template #default>
         <div v-html="markdownToHtml($t('notice.welcomeNoticeBody'))"></div>
