@@ -61,7 +61,7 @@ export default class LoadLocalSurvey extends Vue {
     if (!this.surveyData) {
       this.hasError = true;
     }
-    this.$emit("loadSurveyData", JSON.parse(this.surveyData));
+    this.$emit("surveyDataLoaded", JSON.parse(this.surveyData));
     this.$bvModal.hide("load-loacal-survey-modal");
   }
 

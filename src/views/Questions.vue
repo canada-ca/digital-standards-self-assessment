@@ -1,6 +1,6 @@
 <template>
   <div class="results">
-    <LoadLocalSurvey @loadSurveyData="onLoadSurveyData" />
+    <LoadLocalSurvey @surveyDataLoaded="onSurveyDataLoaded" />
     <AssessmentTool :survey="Survey" />
     <div class="page-actions">
       <div class="row" style="padding: 0 5px">
@@ -70,7 +70,7 @@ export default class Questions extends Vue {
   @Prop() public currentPageNo!: number;
   Survey: Model = new Model(surveyJSON);
 
-  onLoadSurveyData($event: SurveyFile) {
+  onSurveyDataLoaded($event: SurveyFile) {
     this.Survey.data = $event.data;
     this.Survey.currentPageNo = $event.currentPage;
   }
