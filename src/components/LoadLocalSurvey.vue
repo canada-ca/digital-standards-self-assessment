@@ -39,6 +39,13 @@
         <b-button
           class="btn btn-default"
           style="width: 120px"
+          @click="format()"
+        >
+          Format
+        </b-button>
+        <b-button
+          class="btn btn-default"
+          style="width: 120px"
           @click="cancel()"
         >
           {{ $t("loadLocalSurvey.cancel") }}
@@ -67,6 +74,10 @@ export default class LoadLocalSurvey extends Vue {
 
   cancel() {
     this.$bvModal.hide("load-loacal-survey-modal");
+  }
+
+  format() {
+    this.surveyData = JSON.stringify(JSON.parse(this.surveyData), null, 4);
   }
 
   onFileChanged($event: any) {
