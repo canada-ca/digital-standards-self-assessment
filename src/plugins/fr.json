@@ -19,6 +19,7 @@
     "surveyData": "Please paste survey data here or upload a suvery file(FR)",
     "OK": "OK(FR)",
     "cancel": "Cancel(FR)",
+    "format": "Format(FR)",
     "loadSurvey": "Load Survey(FR)",
     "downloadSurvey": "Download Survey(FR)",
     "validation": {

@@ -41,7 +41,7 @@
           style="width: 120px"
           @click="format()"
         >
-          Format
+          {{ $t("loadLocalSurvey.format") }}
         </b-button>
         <b-button
           class="btn btn-default"
