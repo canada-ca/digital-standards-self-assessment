@@ -223,11 +223,11 @@ export const actions: ActionTree<RootState, RootState> & Actions = {
           if (question.getType() === "rating") {
             let score: number = +question.value;
             sectionScore += score;
-          } else if (question.getType() === "radiogroup") {
+          } else if (question.getType() === "boolean") {
             let score = 0;
-            if (("" + question.value).toLowerCase() === "yes") {
+            if (question.value) {
               score = 5;
-            } else if (("" + question.value).toLowerCase() === "no") {
+            } else {
               score = 1;
             }
             sectionScore += score;

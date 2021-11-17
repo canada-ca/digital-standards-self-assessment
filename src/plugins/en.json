@@ -14,6 +14,18 @@
     "showNotice": "Show Welcome Message",
     "noProgress": "The DevOps self-assessment has not yet started. Please choose a section to complete."
   },
+  "loadLocalSurvey": {
+    "title": "Load Survey",
+    "surveyData": "Please paste survey data here or upload a suvery file",
+    "OK": "OK",
+    "cancel": "Cancel",
+    "format": "Format",
+    "loadSurvey": "Load Survey",
+    "downloadSurvey": "Download Survey",
+    "validation": {
+      "required": "Survey data can not be empty"
+    }
+  },
   "startAgain": "Start Again",
   "toPDF": "Print to PDF",
   "frenchContent": "French Content",

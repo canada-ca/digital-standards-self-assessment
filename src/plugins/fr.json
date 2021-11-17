@@ -14,6 +14,18 @@
     "showNotice": "Afficher le Message d'accueil",
     "noProgress":"L'auto-évaluation DevOps n'a pas encore commencée. Veuillez choisir une section à compléter."
   },
+  "loadLocalSurvey": {
+    "title": "Load Survey(FR)",
+    "surveyData": "Please paste survey data here or upload a suvery file(FR)",
+    "OK": "OK(FR)",
+    "cancel": "Cancel(FR)",
+    "format": "Format(FR)",
+    "loadSurvey": "Load Survey(FR)",
+    "downloadSurvey": "Download Survey(FR)",
+    "validation": {
+      "required": "Survey data can not be empty(FR)"
+    }
+  },
   "startAgain": "Recommencer",
   "toPDF": "Imprimer au format PDF",
   "frenchContent": "Contenu français",
