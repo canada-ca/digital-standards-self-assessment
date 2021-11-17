@@ -120,7 +120,6 @@ export default class Questions extends Vue {
     document.body.appendChild(downloadAnchorNode); // required for firefox
     downloadAnchorNode.click();
     downloadAnchorNode.remove();
-    //this.Survey.setValue("")
   }
 
   goToSectionResults() {
