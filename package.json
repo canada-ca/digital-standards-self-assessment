@@ -35,7 +35,9 @@
     "vue-router": "^3.5.1",
     "vue-search-select": "^2.9.3",
     "vuex": "^3.6.2",
-    "vuex-persist": "2.2.0"
+    "vuex-persist": "2.2.0",
+    "ansi-regex": ">=5.0.1",
+    "node-notifier": ">=8.0.1"
   },
   "devDependencies": {
     "@types/jest": "^25.2.3",
