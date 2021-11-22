@@ -1,10 +1,10 @@
 {
-  "name": "auto-evaluation-devops-self-assessment",
+  "name": "digital-standards-self-assessment",
   "version": "0.1.0",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/sara-sabr/auto-evaluation-devops-self-assessment"
+    "url": "https://github.com/canada-ca/digital-standards-self-assessment"
   },
   "scripts": {
     "serve": "vue-cli-service serve",

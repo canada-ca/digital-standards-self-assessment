@@ -5,7 +5,7 @@ module.exports = {
   /*publicPath: "./",*/
   publicPath:
     process.env.NODE_ENV === "production"
-      ? "/auto-evaluation-devops-self-assessment/"
+      ? "/digital-standards-self-assessment/"
       : "/",
 
   configureWebpack: {

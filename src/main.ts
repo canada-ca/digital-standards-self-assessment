@@ -97,8 +97,8 @@ function reloadTemplate() {
         {
           href:
             switchLanguage === "en"
-              ? "https://github.com/sara-sabr/auto-evaluation-devops-self-assessment"
-              : "https://github.com/sara-sabr/auto-evaluation-devops-self-assessment",
+              ? "https://github.com/canada-ca/digital-standards-self-assessment"
+              : "https://github.com/canada-ca/digital-standards-self-assessment",
           newWindow: true,
           text: switchLanguage === "en" ? "Code source" : "Source code"
         }
@@ -181,7 +181,7 @@ window.onload = function() {
   window.history.replaceState(
     {},
     document.title,
-    "/auto-evaluation-devops-self-assessment/#/"
+    "/digital-standards-self-assessment/#/"
   );
 };
 
