@@ -12,7 +12,7 @@ import { ActionTypes } from "./store/actions";
 export default Vue.extend({
   name: "App",
   components: {
-    BaseNotice,
+    BaseNotice
   },
   created() {
     if (this.$store.getters.isInitialized === false) {

@@ -7,41 +7,45 @@
       <template #default>
         <div class="form-group" :class="{ 'was-validated': hasError }">
           <textarea
+            readonly
             class="form-control"
             :class="{ 'text-danger': hasError }"
             id="surveyDataInput"
             rows="5"
             required
             :placeholder="$t('loadLocalSurvey.surveyData')"
-            v-model="surveyData"
+            :value="surveyDataForDisplay"
           ></textarea>
-          <div class="invalid-feedback">
-            {{ $t("loadLocalSurvey.validation.required") }}
+          <div class="text-danger mt-3" v-if="hasError">
+            {{ $t(errorMessage) }}
           </div>
         </div>
       </template>
       <template #modal-footer>
         <input
           type="file"
+          ref="fileUpload"
           class="btn btn-default mr-auto"
           :title="$t('loadFile')"
           value="Load"
           style="padding: 0"
           @change="onFileChanged($event)"
         />
+        <b-form-checkbox
+          class="m-auto"
+          v-model="format"
+          switch
+          size="lg"
+          @change="onToggleFormat"
+        >
+          {{ $t("loadLocalSurvey.format") }}
+        </b-form-checkbox>
         <b-button
           class="btn btn-primary"
           style="width: 120px"
           @click="loadLocalSurveyData"
         >
           {{ $t("loadLocalSurvey.OK") }}
-        </b-button>
-        <b-button
-          class="btn btn-default"
-          style="width: 120px"
-          @click="format()"
-        >
-          {{ $t("loadLocalSurvey.format") }}
         </b-button>
         <b-button
           class="btn btn-default"
@@ -56,28 +60,33 @@
 </template>
 
 <script lang="ts">
-import { ActionTypes } from "@/store/actions";
+import { decompress } from "compress-json";
 import Vue from "vue";
 import Component from "vue-class-component";
 @Component
 export default class LoadLocalSurvey extends Vue {
-  surveyData: string = "";
+  surveyData: any = {};
+  surveyDataForDisplay: string = "";
   hasError: boolean = false;
+  format: boolean = false;
+  errorMessage = "";
 
-  loadLocalSurveyData() {
-    if (!this.surveyData) {
+  $refs!: {
+    fileUpload: HTMLInputElement;
+  };
+
+  loadLocalSurveyData(): void {
+    if (!(!!this.surveyData && !!this.surveyData.name)) {
       this.hasError = true;
+      this.errorMessage = "loadLocalSurvey.validation.required";
+      return;
     }
-    this.$emit("surveyDataLoaded", JSON.parse(this.surveyData));
+    this.$emit("surveyDataLoaded", this.surveyData);
     this.$bvModal.hide("load-loacal-survey-modal");
   }
 
   cancel() {
     this.$bvModal.hide("load-loacal-survey-modal");
-  }
-
-  format() {
-    this.surveyData = JSON.stringify(JSON.parse(this.surveyData), null, 4);
   }
 
   onFileChanged($event: any) {
@@ -98,14 +107,40 @@ export default class LoadLocalSurvey extends Vue {
     this.loadSurveyFromFile(files[0]);
   }
 
+  onToggleFormat() {
+    if (this.surveyData && this.surveyData.name) {
+      this.surveyDataForDisplay = this.format
+        ? JSON.stringify(this.surveyData, null, 4)
+        : JSON.stringify(this.surveyData);
+    }
+  }
+
   loadSurveyFromFile(file: any) {
     const reader = new FileReader();
     reader.onload = (e: ProgressEvent) => {
       const result = reader.result as string;
       if (result === "undefined") {
+        this.hasError = true;
+        this.errorMessage = "loadLocalSurvey.validation.format";
+        this.$refs.fileUpload.value = "";
+        this.surveyData = {};
+        this.surveyDataForDisplay = "";
         return;
       }
-      this.surveyData = result;
+      try {
+        this.surveyData = decompress(JSON.parse(result));
+        this.surveyDataForDisplay = this.format
+          ? JSON.stringify(this.surveyData, null, 4)
+          : JSON.stringify(this.surveyData);
+        this.errorMessage = "";
+        this.hasError = false;
+      } catch (e) {
+        this.$refs.fileUpload.value = "";
+        this.surveyData = {};
+        this.surveyDataForDisplay = "";
+        this.hasError = true;
+        this.errorMessage = "loadLocalSurvey.validation.format";
+      }
     };
     reader.readAsText(file);
   }
