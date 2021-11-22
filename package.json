@@ -41,7 +41,11 @@
     "vuex": "^3.6.2",
     "vuex-persist": "2.2.0",
     "merge": ">=2.1.1",
-    "yargs-parser": ">=13.1.2"
+    "yargs-parser": ">=13.1.2",
+    "json-schema": ">=0.4.0",
+    "ansi-regex": ">=5.0.1",
+    "nth-check": ">=2.0.1",
+    "node-notifier": ">=8.0.1"
   },
   "devDependencies": {
     "@types/jest": "^25.2.3",
