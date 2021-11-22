@@ -16,14 +16,15 @@
   },
   "loadLocalSurvey": {
     "title": "Load Survey",
-    "surveyData": "Please paste survey data here or upload a suvery file",
+    "surveyData": "Please upload a suvery file",
     "OK": "OK",
     "cancel": "Cancel",
-    "format": "Format",
+    "format": "In Pretty Format",
     "loadSurvey": "Load Survey",
     "downloadSurvey": "Download Survey",
     "validation": {
-      "required": "Survey data can not be empty"
+      "required": "Please upload an survey data file",
+      "format": "Survey data file is in wrong format"
     }
   },
   "startAgain": "Start Again",

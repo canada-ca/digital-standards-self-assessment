@@ -58,7 +58,7 @@ import SurveyFile from "@/interfaces/SurveyFile";
 import surveyJSON from "@/survey-enfr.json";
 import { ActionTypes } from "@/store/actions";
 import LoadLocalSurvey from "@/components/LoadLocalSurvey.vue";
-
+import { compress } from "compress-json";
 @Component({
   components: {
     AssessmentTool,
@@ -81,12 +81,14 @@ export default class Questions extends Vue {
   }
 
   buildSurveyFile(): string {
-    return JSON.stringify({
-      name: "surveyResults",
-      version: this.$store.state.toolVersion,
-      currentPage: this.$store.state.currentPageNo,
-      data: this.$store.state.toolData
-    });
+    return JSON.stringify(
+      compress({
+        name: "surveyResults",
+        version: this.$store.state.toolVersion,
+        currentPage: this.$store.state.currentPageNo,
+        data: this.$store.state.toolData
+      })
+    );
   }
   async saveSurveyData(): Promise<boolean> {
     var responseStatus: boolean = false;
