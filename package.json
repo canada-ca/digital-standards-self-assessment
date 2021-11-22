@@ -29,7 +29,7 @@
     "lodash.isempty": "^4.4.0",
     "marked": "^2.0.1",
     "register-service-worker": "^1.7.2",
-    "showdown": "^1.9.1",
+    "showdown": ">=1.9.1",
     "ssri": ">=6.0.2",
     "survey-vue": "^1.8.36",
     "vue": "^2.6.12",
