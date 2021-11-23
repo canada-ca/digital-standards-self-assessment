@@ -1,6 +1,5 @@
 <template>
   <div class="results">
-    <LoadLocalSurvey @surveyDataLoaded="onSurveyDataLoaded" />
     <AssessmentTool :survey="Survey" />
     <div class="page-actions">
       <div class="row" style="padding: 0 5px">
@@ -24,26 +23,6 @@
             {{ $t("navigation.viewSectionResults") }}
           </button>
         </div>
-        <div class="col-3 col-sm-2 col-md-3">
-          <button
-            type="button"
-            class="btn btn-primary"
-            style="width: inherit"
-            v-on:click="downloadSurvey()"
-          >
-            {{ $t("loadLocalSurvey.downloadSurvey") }}
-          </button>
-        </div>
-        <div class="col-3 col-sm-2 col-md-3">
-          <button
-            type="button"
-            class="btn btn-primary"
-            style="width: inherit"
-            v-on:click="showLoadLocalSurveyDialog()"
-          >
-            {{ $t("loadLocalSurvey.loadSurvey") }}
-          </button>
-        </div>
       </div>
     </div>
   </div>
@@ -57,13 +36,10 @@ import BaseNavigation from "@/components/BaseNavigation.vue";
 import SurveyFile from "@/interfaces/SurveyFile";
 import surveyJSON from "@/survey-enfr.json";
 import { ActionTypes } from "@/store/actions";
-import LoadLocalSurvey from "@/components/LoadLocalSurvey.vue";
-import { compress } from "compress-json";
 @Component({
   components: {
     AssessmentTool,
-    BaseNavigation,
-    LoadLocalSurvey
+    BaseNavigation
   }
 })
 export default class Questions extends Vue {
@@ -81,14 +57,12 @@ export default class Questions extends Vue {
   }
 
   buildSurveyFile(): string {
-    return JSON.stringify(
-      compress({
-        name: "surveyResults",
-        version: this.$store.state.toolVersion,
-        currentPage: this.$store.state.currentPageNo,
-        data: this.$store.state.toolData
-      })
-    );
+    return JSON.stringify({
+      name: "surveyResults",
+      version: this.$store.state.toolVersion,
+      currentPage: this.$store.state.currentPageNo,
+      data: this.$store.state.toolData
+    });
   }
   async saveSurveyData(): Promise<boolean> {
     var responseStatus: boolean = false;
@@ -114,16 +88,6 @@ export default class Questions extends Vue {
     return responseStatus;
   }
 
-  downloadSurvey(): void {
-    const dataStr = "data:text/json;charset=utf-8," + this.buildSurveyFile();
-    var downloadAnchorNode = document.createElement("a");
-    downloadAnchorNode.setAttribute("href", dataStr);
-    downloadAnchorNode.setAttribute("download", "result.json");
-    document.body.appendChild(downloadAnchorNode); // required for firefox
-    downloadAnchorNode.click();
-    downloadAnchorNode.remove();
-  }
-
   goToSectionResults() {
     this.$store.dispatch(ActionTypes.UpdateSurveyData, this.Survey);
     this.saveSurveyData();
@@ -143,10 +107,6 @@ export default class Questions extends Vue {
     this.Survey.currentPageNo = this.$store.getters.returnCurrentPageNumber;
     this.Survey.data = this.$store.getters.resultsDataSections;
     this.Survey.locale = this.$i18n.locale;
-  }
-
-  showLoadLocalSurveyDialog() {
-    this.$bvModal.show("load-loacal-survey-modal");
   }
 }
 </script>

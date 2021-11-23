@@ -1,8 +1,25 @@
 <template>
   <div class="home">
+    <LoadLocalSurvey @surveyDataLoaded="onSurveyDataLoaded" />
     <b-button @click="displayWelcomeMessage()">{{
       $t("notice.displayWelcome")
     }}</b-button>
+    <b-button
+      type="button"
+      class="btn btn-primary ml-auto"
+      style="width: inherit"
+      v-on:click="downloadSurvey()"
+    >
+      {{ $t("loadLocalSurvey.downloadSurvey") }}
+    </b-button>
+    <b-button
+      type="button"
+      class="btn btn-primary"
+      style="width: inherit"
+      v-on:click="showLoadLocalSurveyDialog()"
+    >
+      {{ $t("loadLocalSurvey.loadSurvey") }}
+    </b-button>
     <div>
       <HomeSectionsContainer
         :sections="sections"
@@ -27,12 +44,14 @@ import { SectionRecommendation } from "@/store/state";
 import resultsData from "@/survey-results.json";
 import { returnAllSectionsByPrefix } from "@/store";
 import { ActionTypes } from "@/store/actions";
+import LoadLocalSurvey from "@/components/LoadLocalSurvey.vue";
 
 @Component({
   components: {
     AssessmentTool,
     BaseNavigation,
-    HomeSectionsContainer
+    HomeSectionsContainer,
+    LoadLocalSurvey
   },
   methods: {
     displayWelcomeMessage() {
@@ -112,6 +131,29 @@ export default class Home extends Vue {
         data: this.$store.state.toolData
       } as SurveyFile);
     }
+  }
+
+  buildSurveyFile(): string {
+    return JSON.stringify({
+      name: "surveyResults",
+      version: this.$store.state.toolVersion,
+      currentPage: this.$store.state.currentPageNo,
+      data: this.$store.state.toolData
+    });
+  }
+
+  downloadSurvey(): void {
+    const dataStr = "data:text/json;charset=utf-8," + this.buildSurveyFile();
+    var downloadAnchorNode = document.createElement("a");
+    downloadAnchorNode.setAttribute("href", dataStr);
+    downloadAnchorNode.setAttribute("download", "result.json");
+    document.body.appendChild(downloadAnchorNode); // required for firefox
+    downloadAnchorNode.click();
+    downloadAnchorNode.remove();
+  }
+
+  showLoadLocalSurveyDialog() {
+    this.$bvModal.show("load-loacal-survey-modal");
   }
 }
 </script>

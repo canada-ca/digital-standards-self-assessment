@@ -60,7 +60,6 @@
 </template>
 
 <script lang="ts">
-import { decompress } from "compress-json";
 import Vue from "vue";
 import Component from "vue-class-component";
 @Component
@@ -128,7 +127,7 @@ export default class LoadLocalSurvey extends Vue {
         return;
       }
       try {
-        this.surveyData = decompress(JSON.parse(result));
+        this.surveyData = JSON.parse(result);
         this.surveyDataForDisplay = this.format
           ? JSON.stringify(this.surveyData, null, 4)
           : JSON.stringify(this.surveyData);
