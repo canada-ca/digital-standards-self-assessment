@@ -40,13 +40,13 @@ import { ActionTypes } from "@/store/actions";
     return {
       cardStyleHover: {
         "box-shadow": "0 0 0 2px black",
-        cursor: "pointer",
+        cursor: "pointer"
       },
       cardStyle: {
         "box-shadow":
-          "0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19)",
+          "0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19)"
       },
-      hover: false,
+      hover: false
     };
   },
   computed: {
@@ -56,8 +56,8 @@ import { ActionTypes } from "@/store/actions";
       } else {
         return this.$data.cardStyle;
       }
-    },
-  },
+    }
+  }
 })
 export default class HomeSectionCard extends Vue {
   @Prop() public section!: PageModel;
@@ -93,7 +93,7 @@ export default class HomeSectionCard extends Vue {
     }
     let scorePercentage: string = new Intl.NumberFormat("en-CA", {
       style: "decimal",
-      maximumFractionDigits: 0,
+      maximumFractionDigits: 0
     }).format((thisSection.userScore / thisSection.maxScore) * 100);
     if (scorePercentage === "NaN") {
       return "0";
