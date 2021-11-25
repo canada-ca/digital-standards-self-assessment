@@ -2,7 +2,6 @@ import { MutationTree } from "vuex";
 import { Recommendations, RootState, Section } from "@/store/state";
 import { SurveyModel } from "survey-vue";
 
-
 export enum MutationType {
   /**
    * Sets app loading error status as ```false``` if successfully loaded app data
