@@ -80,13 +80,14 @@ export default class Home extends Vue {
     this.Survey.render();
   }
 
-  private loadQeustions(surveyJSON: any) {
+  private loadQeustions(surveyJSON: any, surveyData: any) {
     this.Survey.clear(true, true);
     const pageCount = this.Survey.PageCount;
     for (let i = 0; i < pageCount; i++) {
       this.Survey.removePage(this.Survey.pages[0]);
     }
     this.Survey.fromJSON(surveyJSON);
+    this.Survey.data = surveyData;
     this.sections = returnAllSectionsByPrefix(this.Survey, "section_");
     this.$store.dispatch(ActionTypes.UseSurveyJSON, {
       surveyJSON,
@@ -105,7 +106,7 @@ export default class Home extends Vue {
     if (!surveyJSON) {
       surveyJSON = defaultSurveyJSON;
     }
-    this.loadQeustions(surveyJSON);
+    this.loadQeustions(surveyJSON, this.$store.getters.returnToolData);
     this.Survey.css = {
       navigationButton: "btn survey-button"
     };
@@ -178,9 +179,8 @@ export default class Home extends Vue {
   }
 
   onSurveyDataLoaded($event: SurveyFile) {
-    this.loadQeustions($event.surveyJSON);
-    this.Survey.data = $event.data;
-    this.Survey.currentPageNo = $event.currentPage;
+    this.loadQeustions($event.surveyJSON, $event.data);
+    this.fileLoaded($event);
   }
 }
 </script>

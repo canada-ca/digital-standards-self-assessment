@@ -112,7 +112,10 @@ export type Actions = {
     context: ActionAugments,
     value: string
   ): void;
-  [ActionTypes.UseSurveyJSON](context: ActionAugments, value: any): void;
+  [ActionTypes.UseSurveyJSON](
+    context: ActionAugments,
+    value: { surveyJSON: any; surveyModel: SurveyModel }
+  ): void;
 };
 
 export const actions: ActionTree<RootState, RootState> & Actions = {
@@ -273,10 +276,17 @@ export const actions: ActionTree<RootState, RootState> & Actions = {
       commit(MutationType.SetCurrentPageName, value);
     }
   },
-  async [ActionTypes.UseSurveyJSON]({ commit }, value: any) {
-    if (value) {
-      commit(MutationType.SetSurveyJSON, value.surveyJSON);
-      commit(MutationType.SetSurveyModel, value.surveyModel);
-    }
+  async [ActionTypes.UseSurveyJSON](
+    { commit, dispatch, getters },
+    { surveyJSON, surveyModel }
+  ) {
+    commit(MutationType.SetSurveyJSON, surveyJSON);
+    commit(MutationType.SetSurveyModel, surveyModel);
+    const sectionsNames = getters.returnSectionsNamesGenerated;
+    commit(MutationType.SetSectionsNames, sectionsNames);
+    surveyModel.pages.forEach(page => {
+      dispatch(ActionTypes.UpdateSectionScore, page);
+    });
+    dispatch(ActionTypes.SetSections, surveyModel);
   }
 };

@@ -137,6 +137,7 @@ export const mutations: MutationTree<RootState> & Mutations = {
     state.currentPageName = payload;
   },
   [MutationType.UpdateSection](state: RootState, payload: Section) {
+    console.log("Update section ", payload.sectionName);
     state.sections = state.sections.map(section => {
       if (section.sectionName === payload.sectionName) {
         return { ...section, ...payload };

@@ -41,13 +41,13 @@ import { ActionTypes } from "@/store/actions";
     return {
       cardStyleHover: {
         "box-shadow": "0 0 0 2px black",
-        cursor: "pointer"
+        cursor: "pointer",
       },
       cardStyle: {
         "box-shadow":
-          "0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19)"
+          "0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19)",
       },
-      hover: false
+      hover: false,
     };
   },
   computed: {
@@ -57,51 +57,8 @@ import { ActionTypes } from "@/store/actions";
       } else {
         return this.$data.cardStyle;
       }
-    }
+    },
   },
-  methods: {
-    setIconClass(icon: string) {
-      let classDef: string = "fas fa-" + icon + " fa-4x";
-      return classDef;
-    },
-    getShortDescription(description: string) {
-      let maxLen = 280;
-      if (description.length <= maxLen) return description;
-      return (
-        description.substr(0, description.lastIndexOf(" ", maxLen)) + "... "
-      );
-    },
-    sectionScoreLevel(sectionName: string) {
-      const thisSection: Section = this.$store.getters.returnSectionByName(
-        sectionName
-      );
-      if (thisSection === undefined) {
-        return "0";
-      }
-      let scorePercentage: string = new Intl.NumberFormat("en-CA", {
-        style: "decimal",
-        maximumFractionDigits: 0
-      }).format((thisSection.userScore / thisSection.maxScore) * 100);
-      if (scorePercentage === "NaN") {
-        return "0";
-      }
-      return scorePercentage;
-    },
-    setStatusIcon(sectionName: string) {
-      const thisSection: Section = this.$store.getters.returnSectionByName(
-        sectionName
-      );
-      if (thisSection === undefined) {
-        return "far fa-circle";
-      } else if (thisSection.userScore === 0) {
-        return "far fa-circle";
-      } else if (thisSection.userScore > 0) {
-        return "fas fa-circle";
-      } else {
-        return "fas fa-circle";
-      }
-    }
-  }
 })
 export default class HomeSectionCard extends Vue {
   @Prop() public section!: PageModel;
@@ -115,6 +72,50 @@ export default class HomeSectionCard extends Vue {
     // this.$store.commit("updateCurrentPageName", sectionName);
     this.$store.dispatch(ActionTypes.UpdateCurrentPageName, sectionName);
     this.$router.push("/questions");
+  }
+
+  setIconClass(icon: string) {
+    let classDef: string = "fas fa-" + icon + " fa-4x";
+    return classDef;
+  }
+
+  getShortDescription(description: string) {
+    let maxLen = 280;
+    if (description.length <= maxLen) return description;
+    return description.substr(0, description.lastIndexOf(" ", maxLen)) + "... ";
+  }
+
+  sectionScoreLevel(sectionName: string) {
+    const thisSection: Section = this.$store.getters.returnSectionByName(
+      sectionName
+    );
+    if (thisSection === undefined) {
+      return "0";
+    }
+    console.log("get section score");
+    let scorePercentage: string = new Intl.NumberFormat("en-CA", {
+      style: "decimal",
+      maximumFractionDigits: 0,
+    }).format((thisSection.userScore / thisSection.maxScore) * 100);
+    if (scorePercentage === "NaN") {
+      return "0";
+    }
+    return scorePercentage;
+  }
+
+  setStatusIcon(sectionName: string) {
+    const thisSection: Section = this.$store.getters.returnSectionByName(
+      sectionName
+    );
+    if (thisSection === undefined) {
+      return "far fa-circle";
+    } else if (thisSection.userScore === 0) {
+      return "far fa-circle";
+    } else if (thisSection.userScore > 0) {
+      return "fas fa-circle";
+    } else {
+      return "fas fa-circle";
+    }
   }
 }
 </script>
