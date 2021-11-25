@@ -155,5 +155,10 @@ export default class Home extends Vue {
   showLoadLocalSurveyDialog() {
     this.$bvModal.show("load-loacal-survey-modal");
   }
+
+  onSurveyDataLoaded($event: SurveyFile) {
+    this.Survey.data = $event.data;
+    this.Survey.currentPageNo = $event.currentPage;
+  }
 }
 </script>

@@ -46,11 +46,6 @@ export default class Questions extends Vue {
   @Prop() public currentPageNo!: number;
   Survey: Model = new Model(surveyJSON);
 
-  onSurveyDataLoaded($event: SurveyFile) {
-    this.Survey.data = $event.data;
-    this.Survey.currentPageNo = $event.currentPage;
-  }
-
   goToHomePage() {
     this.$store.dispatch(ActionTypes.UpdateSurveyData, this.Survey);
     this.$router.push("/");
