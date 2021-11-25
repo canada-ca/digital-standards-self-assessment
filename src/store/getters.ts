@@ -68,6 +68,12 @@ export type Getters = {
    */
   returnSurveyModel(state: RootState): SurveyModel | undefined;
   /**
+   * Returns ```state.surveyJSON``` from the store
+   * @param state The application state.
+   * @returns a JSON object of survey defination
+   */
+  returnSurveyJSON(state: RootState): any;
+  /**
    * Returns ```state.currentPageNumber``` from the store
    * @param state The application state.
    * @returns A number
@@ -172,6 +178,9 @@ export const getters: GetterTree<RootState, RootState> & Getters = {
     } else {
       return state.surveyModel;
     }
+  },
+  returnSurveyJSON(state: RootState) {
+    return state.surveyJSON;
   },
   // Should use mapstate instead
   returnCurrentPageNumber(state: RootState) {

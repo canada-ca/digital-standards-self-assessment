@@ -15,6 +15,7 @@ export interface RootState {
   error: boolean;
   loading: boolean;
   initialized: boolean;
+  surveyJSON: any;
 }
 
 export interface Section {
@@ -88,5 +89,6 @@ export const state: RootState = {
   sectionsPrefix: "",
   error: false,
   loading: false,
-  initialized: false
+  initialized: false,
+  surveyJSON: undefined
 };

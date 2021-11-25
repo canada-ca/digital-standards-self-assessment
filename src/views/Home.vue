@@ -32,14 +32,14 @@
 
 <script lang="ts">
 import { Component, Vue, Watch } from "vue-property-decorator";
-import { Model, PageModel } from "survey-vue";
+import { Model, Page, PageModel } from "survey-vue";
 import showdown from "showdown";
 import AssessmentTool from "@/components/AssessmentTool.vue"; // @ is an alias to /src
 import HomeSectionsContainer from "@/components/HomeSectionsContainer.vue";
 import BaseNavigation from "@/components/BaseNavigation.vue";
 import SurveyFile from "@/interfaces/SurveyFile";
 import i18n from "@/plugins/i18n";
-import surveyJSON from "@/survey-enfr.json";
+import defaultSurveyJSON from "@/survey-enfr.json";
 import { SectionRecommendation } from "@/store/state";
 import resultsData from "@/survey-results.json";
 import { returnAllSectionsByPrefix } from "@/store";
@@ -60,7 +60,7 @@ import LoadLocalSurvey from "@/components/LoadLocalSurvey.vue";
   }
 })
 export default class Home extends Vue {
-  Survey: Model = new Model(surveyJSON);
+  Survey: Model = new Model({});
   sections: PageModel[] = returnAllSectionsByPrefix(this.Survey, "section_");
   sectionRecommendation: SectionRecommendation[] =
     resultsData.sectionRecommendations;
@@ -77,6 +77,21 @@ export default class Home extends Vue {
     this.Survey.currentPageNo = $event.currentPage;
     this.Survey.start();
     this.$store.dispatch(ActionTypes.UpdateSurveyData, this.Survey);
+    this.Survey.render();
+  }
+
+  private loadQeustions(surveyJSON: any) {
+    this.Survey.clear(true, true);
+    const pageCount = this.Survey.PageCount;
+    for (let i = 0; i < pageCount; i++) {
+      this.Survey.removePage(this.Survey.pages[0]);
+    }
+    this.Survey.fromJSON(surveyJSON);
+    this.sections = returnAllSectionsByPrefix(this.Survey, "section_");
+    this.$store.dispatch(ActionTypes.UseSurveyJSON, {
+      surveyJSON,
+      surveyModel: this.Survey
+    });
   }
 
   @Watch("$i18n.locale")
@@ -86,6 +101,11 @@ export default class Home extends Vue {
   }
 
   created() {
+    let surveyJSON = this.$store.getters.returnSurveyJSON;
+    if (!surveyJSON) {
+      surveyJSON = defaultSurveyJSON;
+    }
+    this.loadQeustions(surveyJSON);
     this.Survey.css = {
       navigationButton: "btn survey-button"
     };
@@ -138,7 +158,8 @@ export default class Home extends Vue {
       name: "surveyResults",
       version: this.$store.state.toolVersion,
       currentPage: this.$store.state.currentPageNo,
-      data: this.$store.state.toolData
+      data: this.$store.state.toolData,
+      surveyJSON: this.$store.state.surveyJSON
     });
   }
 
@@ -157,6 +178,7 @@ export default class Home extends Vue {
   }
 
   onSurveyDataLoaded($event: SurveyFile) {
+    this.loadQeustions($event.surveyJSON);
     this.Survey.data = $event.data;
     this.Survey.currentPageNo = $event.currentPage;
   }

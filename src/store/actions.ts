@@ -68,7 +68,8 @@ export enum ActionTypes {
    */
   UpdateSurveyData = "UPDATE_SURVEY_DATA",
   UpdateDisplayNotice = "UPDATE_DISPLAY_NOTICE",
-  UpdateCurrentPageName = "UPDATE_CURRENT_PAGE_NAME"
+  UpdateCurrentPageName = "UPDATE_CURRENT_PAGE_NAME",
+  UseSurveyJSON = "USE_SURVEY_JSON"
 }
 
 type ActionAugments = Omit<ActionContext<RootState, RootState>, "commit"> & {
@@ -111,6 +112,7 @@ export type Actions = {
     context: ActionAugments,
     value: string
   ): void;
+  [ActionTypes.UseSurveyJSON](context: ActionAugments, value: any): void;
 };
 
 export const actions: ActionTree<RootState, RootState> & Actions = {
@@ -269,6 +271,12 @@ export const actions: ActionTree<RootState, RootState> & Actions = {
   async [ActionTypes.UpdateCurrentPageName]({ commit }, value: string) {
     if (value.length > 0) {
       commit(MutationType.SetCurrentPageName, value);
+    }
+  },
+  async [ActionTypes.UseSurveyJSON]({ commit }, value: any) {
+    if (value) {
+      commit(MutationType.SetSurveyJSON, value.surveyJSON);
+      commit(MutationType.SetSurveyModel, value.surveyModel);
     }
   }
 };

@@ -2,6 +2,7 @@ import { MutationTree } from "vuex";
 import { Recommendations, RootState, Section } from "@/store/state";
 import { SurveyModel } from "survey-vue";
 
+
 export enum MutationType {
   /**
    * Sets app loading error status as ```false``` if successfully loaded app data
@@ -75,7 +76,8 @@ export enum MutationType {
   /**Sets ```state.initialized``` to ```true```
    * @param payload Contains ```undefined```
    */
-  Initialized = "INITIALIZED"
+  Initialized = "INITIALIZED",
+  SetSurveyJSON = "SET_SURVEY_JSON"
 }
 
 export type Mutations = {
@@ -103,6 +105,7 @@ export type Mutations = {
   [MutationType.StartLoading](state: RootState): void;
   [MutationType.StopLoading](state: RootState): void;
   [MutationType.Initialized](state: RootState): void;
+  [MutationType.SetSurveyJSON](state: RootState, payload: any): void;
 };
 
 export const mutations: MutationTree<RootState> & Mutations = {
@@ -164,5 +167,8 @@ export const mutations: MutationTree<RootState> & Mutations = {
   },
   [MutationType.Initialized](state: RootState) {
     state.initialized = true;
+  },
+  [MutationType.SetSurveyJSON](state: RootState, payload: any) {
+    state.surveyJSON = payload;
   }
 };
