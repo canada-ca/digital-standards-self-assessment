@@ -5,7 +5,6 @@
     tabindex="0"
     style="min-width: 30rem; margin-top: 15px; margin-bottom: 5px;"
     v-on:click="goToSection(section.name)"
-    :survey="survey"
     v-bind:style="cardStyles"
     @mouseover="hover = true"
     @mouseleave="hover = false"
@@ -92,7 +91,6 @@ export default class HomeSectionCard extends Vue {
     if (thisSection === undefined) {
       return "0";
     }
-    console.log("get section score");
     let scorePercentage: string = new Intl.NumberFormat("en-CA", {
       style: "decimal",
       maximumFractionDigits: 0,

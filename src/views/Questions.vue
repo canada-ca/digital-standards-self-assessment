@@ -33,8 +33,6 @@ import { Component, Prop, Vue, Watch } from "vue-property-decorator";
 import { Model } from "survey-vue";
 import AssessmentTool from "@/components/AssessmentTool.vue"; // @ is an alias to /src
 import BaseNavigation from "@/components/BaseNavigation.vue";
-import SurveyFile from "@/interfaces/SurveyFile";
-import surveyJSON from "@/survey-enfr.json";
 import { ActionTypes } from "@/store/actions";
 @Component({
   components: {
@@ -44,48 +42,14 @@ import { ActionTypes } from "@/store/actions";
 })
 export default class Questions extends Vue {
   @Prop() public currentPageNo!: number;
-  Survey: Model = new Model(surveyJSON);
+  Survey: Model = new Model(this.$store.getters.returnSurveyJSON);
 
   goToHomePage() {
     this.$store.dispatch(ActionTypes.UpdateSurveyData, this.Survey);
     this.$router.push("/");
   }
-
-  buildSurveyFile(): string {
-    return JSON.stringify({
-      name: "surveyResults",
-      version: this.$store.state.toolVersion,
-      currentPage: this.$store.state.currentPageNo,
-      data: this.$store.state.toolData
-    });
-  }
-  async saveSurveyData(): Promise<boolean> {
-    var responseStatus: boolean = false;
-    const saveFile = this.buildSurveyFile();
-
-    var requestOptions = {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/text"
-      },
-      mode: "no-cors" as RequestMode,
-      name: "surveyData",
-      body: saveFile
-    };
-    await fetch(
-      "https://doraselfassessment.azurewebsites.net/api/saveselfassessment",
-      requestOptions
-    ).then(function(response) {
-      if (response.status === 200) {
-        responseStatus = true;
-      }
-    });
-    return responseStatus;
-  }
-
   goToSectionResults() {
     this.$store.dispatch(ActionTypes.UpdateSurveyData, this.Survey);
-    this.saveSurveyData();
     this.$router.push("/sections");
   }
   @Watch("$i18n.locale")
