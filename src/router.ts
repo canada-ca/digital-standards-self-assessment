@@ -1,8 +1,5 @@
 import Vue from "vue";
 import Router from "vue-router";
-import Results from "./views/Results.vue";
-import Questions from "./views/Questions.vue";
-import TeamResults from "@/views/TeamResults.vue";
 import Home from "./views/Home.vue";
 
 Vue.use(Router);

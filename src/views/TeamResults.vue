@@ -82,11 +82,10 @@ export default class Results extends Vue {
 
   @Watch("$i18n.locale")
   changeLanguage(value: string, oldValue: string) {
-//    this.Survey.locale = value;
-//    this.Survey.render();
+    //    this.Survey.locale = value;
+    //    this.Survey.render();
   }
 
-  created() {
-  }
+  created() {}
 }
 </script>
