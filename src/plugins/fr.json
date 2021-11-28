@@ -4,7 +4,9 @@
     "viewSectionResults": "Résultats de la section",
     "chooseAnotherSection": "Choisir une autre section",
     "viewAllResults": "Tous les résultats",
-    "goBack": "Retour"
+    "viewTeamResults": "Team Results(FR)",
+    "goBack": "Retour",
+    "goHome": "Accueil"
   },
   "notice": {
     "displayWelcome": "Afficher le mot de bienvenue",
@@ -286,5 +288,8 @@
         ]
       }
     ]
+  },
+  "teamResults": {
+    "title": "Team Results(FR)"
   }
 }

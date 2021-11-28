@@ -122,12 +122,17 @@ export default class LoadLocalSurvey extends Vue {
         this.hasError = true;
         this.errorMessage = "loadLocalSurvey.validation.format";
         this.$refs.fileUpload.value = "";
-        this.surveyData = {};
+        this.surveyData = {
+          fileName: file.name,
+          hasError: true,
+          errorMessage: "loadLocalSurvey.validation.format"
+        };
         this.surveyDataForDisplay = "";
         return;
       }
       try {
         this.surveyData = JSON.parse(result);
+        this.surveyData.fileName = file.name;
         this.surveyDataForDisplay = this.format
           ? JSON.stringify(this.surveyData, null, 4)
           : JSON.stringify(this.surveyData);
@@ -135,7 +140,11 @@ export default class LoadLocalSurvey extends Vue {
         this.hasError = false;
       } catch (e) {
         this.$refs.fileUpload.value = "";
-        this.surveyData = {};
+        this.surveyData = {
+          fileName: file.name,
+          hasError: true,
+          errorMessage: "loadLocalSurvey.validation.format"
+        };
         this.surveyDataForDisplay = "";
         this.hasError = true;
         this.errorMessage = "loadLocalSurvey.validation.format";

@@ -20,6 +20,14 @@
     >
       {{ $t("loadLocalSurvey.loadSurvey") }}
     </b-button>
+    <b-button
+      type="button"
+      class="btn btn-primary"
+      style="width: inherit"
+      v-on:click="gotoTeamResults()"
+    >
+      {{ $t("navigation.viewTeamResults") }}
+    </b-button>
     <div>
       <HomeSectionsContainer
         :sections="sections"
@@ -181,6 +189,10 @@ export default class Home extends Vue {
   onSurveyDataLoaded($event: SurveyFile) {
     this.loadQeustions($event.surveyJSON, $event.data);
     this.fileLoaded($event);
+  }
+
+  gotoTeamResults() {
+    this.$router.push("/teamResults");
   }
 }
 </script>

@@ -2,11 +2,14 @@ import Vue from "vue";
 import Router from "vue-router";
 import Results from "./views/Results.vue";
 import Questions from "./views/Questions.vue";
+import TeamResults from "@/views/TeamResults.vue";
 import Home from "./views/Home.vue";
-import SectionResults from "./views/SectionResults.vue";
 
 Vue.use(Router);
 
+function lazyLoad(view: string){
+  return () => import(`@/views/${view}.vue`);
+}
 export default new Router({
   base: process.env.BASE_URL,
   scrollBehavior() {
@@ -21,9 +24,14 @@ export default new Router({
     {
       path: "/questions",
       name: "questions",
-      component: Questions
+      component: lazyLoad("Questions")
     },
-    { path: "/sections", name: "sections", component: Results },
+    { path: "/sections", name: "sections", component: lazyLoad("Results") },
+    {
+      path: "/teamResults",
+      name: "teamResults",
+      component: lazyLoad("TeamResults")
+    },
     { path: "*", name: "notFound", component: Home }
   ]
 });

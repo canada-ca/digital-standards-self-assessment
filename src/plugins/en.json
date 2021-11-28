@@ -4,7 +4,9 @@
     "viewSectionResults": "View Section Results",
     "chooseAnotherSection": "Choose Another Section",
     "viewAllResults": "View All Results",
-    "goBack": "Back"
+    "viewTeamResults": "Team Results",
+    "goBack": "Back",
+    "goHome": "Home"
   },
   "notice": {
     "displayWelcome": "Display Welcome Message",
@@ -282,5 +284,8 @@
         ]
       }
     ]
+  },
+  "teamResults": {
+    "title": "Team Results"
   }
 }
