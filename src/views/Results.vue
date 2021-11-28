@@ -204,7 +204,7 @@ export default class Results extends Vue {
   }
 
   created() {
-    this.Survey.onComplete.add(result => {
+        this.Survey.onComplete.add(result => {
       // this.$store.commit("updateSurveyData", result);
       this.$store.dispatch(ActionTypes.UpdateSurveyData, result);
     });

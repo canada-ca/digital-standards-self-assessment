@@ -9,6 +9,7 @@
       </p>
       <p></p>
       <ResultRecommendations
+        v-if="!showRecommendation"
         :section-name="sectionName"
         :section-score-level="sectionScoreLevel"
         :section-recommendations="myRecommendations.sectionRecommendations"
@@ -26,7 +27,7 @@ import ResultRecommendations from "@/components/ResultRecommendations.vue";
 @Component({
   components: { ResultsCard, ResultRecommendations },
   computed: {
-    //TODO:sectionScoreLevel--> returns score based on userScore/maxScore
+    showRecommendation: () => process.env.VUE_APP_SHOW_RECOMMENDATION
   },
   methods: {
     getSectionName(surveyData: SurveyModel, sectionName: string) {
