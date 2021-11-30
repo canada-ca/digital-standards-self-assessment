@@ -1,25 +1,10 @@
 <template>
   <div class="home">
-    <LoadLocalSurvey @surveyDataLoaded="onSurveyDataLoaded" />
     <b-button @click="displayWelcomeMessage()">{{
       $t("notice.displayWelcome")
     }}</b-button>
-    <b-button
-      type="button"
-      class="btn btn-primary ml-auto"
-      style="width: inherit"
-      v-on:click="downloadSurvey()"
-    >
-      {{ $t("loadLocalSurvey.downloadSurvey") }}
-    </b-button>
-    <b-button
-      type="button"
-      class="btn btn-primary"
-      style="width: inherit"
-      v-on:click="showLoadLocalSurveyDialog()"
-    >
-      {{ $t("loadLocalSurvey.loadSurvey") }}
-    </b-button>
+    <download-survey @confirmToDownload="downloadSurvey" />
+    <LoadLocalSurvey @surveyDataLoaded="onSurveyDataLoaded" />
     <b-button
       type="button"
       class="btn btn-primary"
@@ -53,13 +38,15 @@ import resultsData from "@/survey-results.json";
 import { returnAllSectionsByPrefix } from "@/store";
 import { ActionTypes } from "@/store/actions";
 import LoadLocalSurvey from "@/components/LoadLocalSurvey.vue";
+import DownloadSurvey from "@/components/DownloadSurvey.vue";
 
 @Component({
   components: {
     AssessmentTool,
     BaseNavigation,
     HomeSectionsContainer,
-    LoadLocalSurvey
+    LoadLocalSurvey,
+    DownloadSurvey
   },
   methods: {
     displayWelcomeMessage() {
@@ -172,18 +159,14 @@ export default class Home extends Vue {
     });
   }
 
-  downloadSurvey(): void {
+  downloadSurvey(fileName: string): void {
     const dataStr = "data:text/json;charset=utf-8," + this.buildSurveyFile();
     var downloadAnchorNode = document.createElement("a");
     downloadAnchorNode.setAttribute("href", dataStr);
-    downloadAnchorNode.setAttribute("download", "result.json");
+    downloadAnchorNode.setAttribute("download", fileName + ".json");
     document.body.appendChild(downloadAnchorNode); // required for firefox
     downloadAnchorNode.click();
     downloadAnchorNode.remove();
-  }
-
-  showLoadLocalSurveyDialog() {
-    this.$bvModal.show("load-loacal-survey-modal");
   }
 
   onSurveyDataLoaded($event: SurveyFile) {

@@ -2,7 +2,7 @@ export default interface SurveyFile {
   fileName: string;
   hasError?: boolean;
   errorMessage?: string;
-  currentPage?: number;
+  currentPage: number;
   data?: string;
   surveyJSON?: any;
 }

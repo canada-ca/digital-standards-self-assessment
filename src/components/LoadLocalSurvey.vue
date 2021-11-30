@@ -1,5 +1,13 @@
 <template>
-  <div>
+  <div style="display: inline">
+    <b-button
+      type="button"
+      class="btn btn-primary"
+      style="width: inherit"
+      v-on:click="showLoadLocalSurveyDialog()"
+    >
+      {{ $t("loadLocalSurvey.loadSurvey") }}
+    </b-button>
     <b-modal id="load-loacal-survey-modal" size="xl">
       <template #modal-header>
         <div v-html="$t('loadLocalSurvey.title')"></div>
@@ -9,7 +17,7 @@
           <textarea
             readonly
             class="form-control"
-            :class="{ 'text-danger': hasError }"
+            :class="{ 'is-invalid': hasError }"
             id="surveyDataInput"
             rows="5"
             required
@@ -74,10 +82,14 @@ export default class LoadLocalSurvey extends Vue {
     fileUpload: HTMLInputElement;
   };
 
+  showLoadLocalSurveyDialog() {
+    this.$bvModal.show("load-loacal-survey-modal");
+  }
+
   loadLocalSurveyData(): void {
     if (!(!!this.surveyData && !!this.surveyData.name)) {
       this.hasError = true;
-      this.errorMessage = "loadLocalSurvey.validation.required";
+      this.errorMessage = "loadLocalSurvey.validation.file.required";
       return;
     }
     this.$emit("surveyDataLoaded", this.surveyData);
@@ -120,12 +132,12 @@ export default class LoadLocalSurvey extends Vue {
       const result = reader.result as string;
       if (result === "undefined") {
         this.hasError = true;
-        this.errorMessage = "loadLocalSurvey.validation.format";
+        this.errorMessage = "loadLocalSurvey.validation.file.format";
         this.$refs.fileUpload.value = "";
         this.surveyData = {
           fileName: file.name,
           hasError: true,
-          errorMessage: "loadLocalSurvey.validation.format"
+          errorMessage: "loadLocalSurvey.validation.file.format"
         };
         this.surveyDataForDisplay = "";
         return;
@@ -143,11 +155,11 @@ export default class LoadLocalSurvey extends Vue {
         this.surveyData = {
           fileName: file.name,
           hasError: true,
-          errorMessage: "loadLocalSurvey.validation.format"
+          errorMessage: "loadLocalSurvey.validation.file.format"
         };
         this.surveyDataForDisplay = "";
         this.hasError = true;
-        this.errorMessage = "loadLocalSurvey.validation.format";
+        this.errorMessage = "loadLocalSurvey.validation.file.format";
       }
     };
     reader.readAsText(file);

@@ -24,9 +24,16 @@
     "format": "In Pretty Format",
     "loadSurvey": "Load Survey",
     "downloadSurvey": "Download Survey",
+    "inputFileName": "Please enter a file name",
+    "downloadTitle": "Download Survey",
     "validation": {
-      "required": "Please upload an survey data file",
-      "format": "%{fileName} - This file is in wrong format"
+      "file": {
+        "required": "Please upload an survey data file",
+        "format": "%{fileName} - This file is in wrong format"
+        },
+      "fileName": {
+        "required": "Please input a file name"
+      }
     }
   },
   "startAgain": "Start Again",

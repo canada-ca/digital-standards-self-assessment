@@ -77,7 +77,8 @@ export default class LoadTeamResults extends Vue {
         surveyFile = {
           fileName: file.name,
           hasError: true,
-          errorMessage: "loadLocalSurvey.validation.format",
+          errorMessage: "loadLocalSurvey.validation.file.format",
+          currentPage: 0
         };
       }
       try {
@@ -89,7 +90,8 @@ export default class LoadTeamResults extends Vue {
         surveyFile = {
           fileName: file.name,
           hasError: true,
-          errorMessage: "loadLocalSurvey.validation.format"
+          errorMessage: "loadLocalSurvey.validation.file.format",
+          currentPage: 0
         };
       }
       this.surveyDataArray.push(surveyFile);
@@ -97,11 +99,10 @@ export default class LoadTeamResults extends Vue {
     reader.readAsText(file);
   }
 
-  extractReportData(surveyFile: SurveyFile): TeamReportData {
+  extractReportData(surveyFile: SurveyFile) {
     if (surveyFile.surveyJSON) {
       let survey: Model = new Model(surveyFile.surveyJSON);
       survey.data = surveyFile.data;
-      //survey.start();
       survey.pages.forEach(page => {
         page.questions.forEach(q => {
           console.log(

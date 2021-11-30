@@ -24,9 +24,16 @@
     "format": "In Pretty Format(FR)",
     "loadSurvey": "Load Survey(FR)",
     "downloadSurvey": "Download Survey(FR)",
+    "inputFileName": "Please enter a file name(FR)",
+    "downloadTitle": "Download Survey(FR)",
     "validation": {
-      "required": "Please upload an survey data file(FR)",
-      "format": "%{fileName} - This file is in wrong format(FR)"
+      "file": {
+        "required": "Please upload an survey data file(FR)",
+        "format": "%{fileName} - This file is in wrong format(FR)"
+        },
+      "fileName": {
+        "required": "Please input a file name(FR)"
+      }
     }
   },
   "startAgain": "Recommencer",
