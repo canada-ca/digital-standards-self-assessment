@@ -26,7 +26,7 @@
     "downloadSurvey": "Download Survey",
     "validation": {
       "required": "Please upload an survey data file",
-      "format": "Survey data file is in wrong format"
+      "format": "%{fileName} - This file is in wrong format"
     }
   },
   "startAgain": "Start Again",

@@ -17,7 +17,7 @@
             :value="surveyDataForDisplay"
           ></textarea>
           <div class="text-danger mt-3" v-if="hasError">
-            {{ $t(errorMessage) }}
+            {{ $t(errorMessage, { fileName: surveyData.fileName }) }}
           </div>
         </div>
       </template>
