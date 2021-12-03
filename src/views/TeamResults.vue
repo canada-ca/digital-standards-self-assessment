@@ -6,26 +6,11 @@
     <div>
       <load-team-results />
     </div>
-    <div class="page-actions">
-      <div class="row" style="padding: 0 15px">
-        <div class="col-3 col-sm-2 col-md-3">
-          <button
-            type="button"
-            class="btn btn-default"
-            style="width: inherit"
-            v-on:click="goToHomePage()"
-            :key="$route.path"
-          >
-            {{ $t("navigation.goHome") }}
-          </button>
-        </div>
-      </div>
-    </div>
   </div>
 </template>
 
 <script lang="ts">
-import LoadTeamResults from "@/components/LoadTeamResults.vue";
+import LoadTeamResults from "@/components/reports/LoadTeamResults.vue";
 import { Component, Vue, Watch } from "vue-property-decorator";
 
 @Component({
@@ -39,12 +24,6 @@ import { Component, Vue, Watch } from "vue-property-decorator";
   }
 })
 export default class Results extends Vue {
-  goToHomePage() {
-    this.$router.push("/");
-  }
-  goToQuestions() {
-    this.$router.push("/Questions");
-  }
   /**
    * Export survey result.
    */

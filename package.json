@@ -18,12 +18,16 @@
     "deploy": "npm run build; push-dir --dir=dist --branch=gh-pages --cleanup"
   },
   "dependencies": {
+    "@types/echarts": "^4.9.12",
     "@types/lodash.isempty": "^4.4.6",
     "@types/showdown": "^1.9.3",
+    "ansi-regex": ">=5.0.1",
     "bootstrap-vue": "^2.21.2",
     "core-js": "^3.9.1",
+    "echarts": "^5.2.2",
     "lodash.isempty": "^4.4.0",
     "marked": "^2.0.1",
+    "node-notifier": ">=8.0.1",
     "register-service-worker": "^1.7.2",
     "showdown": "^1.9.1",
     "survey-vue": "^1.8.36",
@@ -34,9 +38,7 @@
     "vue-router": "^3.5.1",
     "vue-search-select": "^2.9.3",
     "vuex": "^3.6.2",
-    "vuex-persist": "2.2.0",
-    "ansi-regex": ">=5.0.1",
-    "node-notifier": ">=8.0.1"
+    "vuex-persist": "2.2.0"
   },
   "devDependencies": {
     "@types/jest": "^25.2.3",
