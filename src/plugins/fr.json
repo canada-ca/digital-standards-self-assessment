@@ -21,20 +21,19 @@
     "surveyData": "Please upload a suvery file(FR)",
     "OK": "OK(FR)",
     "cancel": "Cancel(FR)",
-    "browse": "Browse(FR)",
     "format": "In Pretty Format(FR)",
     "loadSurvey": "Load Survey(FR)",
     "downloadSurvey": "Download Survey(FR)",
     "inputFileName": "Please enter a file name(FR)",
-    "downloadTitle": "Download Survey(FR)",
-    "validation": {
-      "file": {
-        "required": "Please upload an survey data file(FR)",
-        "format": "%{fileName} - This file is in wrong format(FR)"
-        },
-      "fileName": {
-        "required": "Please input a file name(FR)"
-      }
+    "downloadTitle": "Download Survey(FR)"
+  },
+  "validation": {
+    "file": {
+      "required": "Please upload an survey data file(FR)",
+      "format": "%{fileName} - This file is in wrong format(FR)"
+      },
+    "fileName": {
+      "required": "Please input a file name(FR)"
     }
   },
   "startAgain": "Recommencer",
@@ -298,6 +297,7 @@
     ]
   },
   "teamResults": {
-    "title": "Team Results(FR)"
+    "title": "Team Results(FR)",
+    "browse": "Browse(FR)"
   }
 }

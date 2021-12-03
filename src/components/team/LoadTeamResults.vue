@@ -6,7 +6,7 @@
           :lang="locale"
           ref="fileUpload"
           :placeholder="$t('loadFile')"
-          :browse-text="$t('loadLocalSurvey.browse')"
+          :browse-text="$t('teamResults.browse')"
           multiple="multiple"
           @change="onFileChanged($event)"
         />
@@ -105,7 +105,7 @@ export default class LoadTeamResults extends Vue {
         surveyFile = {
           fileName: file.name,
           hasError: true,
-          errorMessage: "loadLocalSurvey.validation.file.format",
+          errorMessage: "validation.file.format",
           currentPage: 0
         };
       }
@@ -125,7 +125,7 @@ export default class LoadTeamResults extends Vue {
         surveyFile = {
           fileName: file.name,
           hasError: true,
-          errorMessage: "loadLocalSurvey.validation.file.format",
+          errorMessage: "validation.file.format",
           currentPage: 0
         };
       }

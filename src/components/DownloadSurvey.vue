@@ -81,7 +81,7 @@ export default class DownloadSurvey extends Vue {
     event.preventDefault();
     if (this.fileName.length == 0) {
       this.hasError = true;
-      this.errorMessage = "loadLocalSurvey.validation.fileName.required";
+      this.errorMessage = "validation.fileName.required";
       return;
     }
     this.$emit("confirmToDownload", this.fileName);

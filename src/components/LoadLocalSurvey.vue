@@ -89,7 +89,7 @@ export default class LoadLocalSurvey extends Vue {
   loadLocalSurveyData(): void {
     if (!(!!this.surveyData && !!this.surveyData.name)) {
       this.hasError = true;
-      this.errorMessage = "loadLocalSurvey.validation.file.required";
+      this.errorMessage = "validation.file.required";
       return;
     }
     this.$emit("surveyDataLoaded", this.surveyData);
@@ -132,12 +132,12 @@ export default class LoadLocalSurvey extends Vue {
       const result = reader.result as string;
       if (result === "undefined") {
         this.hasError = true;
-        this.errorMessage = "loadLocalSurvey.validation.file.format";
+        this.errorMessage = "validation.file.format";
         this.$refs.fileUpload.value = "";
         this.surveyData = {
           fileName: file.name,
           hasError: true,
-          errorMessage: "loadLocalSurvey.validation.file.format"
+          errorMessage: "validation.file.format"
         };
         this.surveyDataForDisplay = "";
         return;
@@ -155,11 +155,11 @@ export default class LoadLocalSurvey extends Vue {
         this.surveyData = {
           fileName: file.name,
           hasError: true,
-          errorMessage: "loadLocalSurvey.validation.file.format"
+          errorMessage: "validation.file.format"
         };
         this.surveyDataForDisplay = "";
         this.hasError = true;
-        this.errorMessage = "loadLocalSurvey.validation.file.format";
+        this.errorMessage = "validation.file.format";
       }
     };
     reader.readAsText(file);
