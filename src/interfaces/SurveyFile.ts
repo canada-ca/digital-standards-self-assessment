@@ -3,6 +3,6 @@ export default interface SurveyFile {
   hasError?: boolean;
   errorMessage?: string;
   currentPage: number;
-  data?: string;
+  data?: any;
   surveyJSON?: any;
 }

@@ -30,8 +30,9 @@
   "validation": {
     "file": {
       "required": "Please upload an survey data file",
-      "format": "%{fileName} - This file is in wrong format"
-      },
+      "format": "%{fileName} - This file is in wrong format",
+      "differentFormat": "The format of uploaded files are different"
+    },
     "fileName": {
       "required": "Please input a file name"
     }

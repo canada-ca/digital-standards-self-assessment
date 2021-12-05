@@ -15,10 +15,8 @@
     <div class="row text-danger mt-3" v-if="hasError()">
       <div class="col">
         <ul>
-          <li v-for="(errorSurvey, index) in errorMessages()" :key="index">
-            {{
-              $t(errorSurvey.errorMessage, { fileName: errorSurvey.fileName })
-            }}
+          <li v-for="(error, index) in errorMessages" :key="index">
+            {{ $t(error.message, { fileName: error.param }) }}
           </li>
         </ul>
       </div>
@@ -38,13 +36,15 @@
 </template>
 
 <script lang="ts">
-import SurveyFile from "@/interfaces/SurveyFile";
-import { Component, Vue, Watch } from "vue-property-decorator";
-import TeamScoreReport from "./TeamScoreReport.vue";
-import TeamScoreBarChart from "./TeamScoreBarChart.vue";
-import TeamReportData from "@/interfaces/report/TeamReportData";
+import ErrorMessage from "@/interfaces/ErrorMessage";
 import SectionReportData from "@/interfaces/report/SectionReportData";
+import TeamReportData from "@/interfaces/report/TeamReportData";
+import SurveyFile from "@/interfaces/SurveyFile";
+import { isEqual } from "lodash";
 import { Model } from "survey-vue";
+import { Component, Vue, Watch } from "vue-property-decorator";
+import TeamScoreBarChart from "../report/TeamScoreBarChart.vue";
+import TeamScoreReport from "../report/TeamScoreReport.vue";
 
 @Component({
   components: {
@@ -55,22 +55,20 @@ import { Model } from "survey-vue";
 export default class LoadTeamResults extends Vue {
   surveyDataArray: Array<SurveyFile> = [];
   teamReportDataArray: Array<TeamReportData> = [];
-  locale!: string;
+  teamAverageReportData!: TeamReportData;
+  errorMessages: Array<ErrorMessage> = [];
+  locale = "en";
 
   $refs!: {
     fileUpload: HTMLInputElement;
   };
 
   hasError() {
-    return this.surveyDataArray.filter(d => d.hasError).length > 0;
+    return this.errorMessages.length > 0;
   }
 
   hasReportData() {
     return !!this.surveyDataArray && this.surveyDataArray.length > 0;
-  }
-
-  errorMessages() {
-    return this.surveyDataArray.filter(d => d.hasError);
   }
 
   @Watch("$i18n.locale")
@@ -91,12 +89,13 @@ export default class LoadTeamResults extends Vue {
     const files = target.files || $event.dataTransfer.files;
     this.surveyDataArray = new Array();
     this.teamReportDataArray = new Array();
+    const fileCount = files.length;
     files.forEach((file: any) => {
-      this.loadSurveyFromFile(file);
+      this.loadSurveyFromFile(fileCount, file);
     });
   }
 
-  loadSurveyFromFile(file: any) {
+  loadSurveyFromFile(fileCount: number, file: any) {
     const reader = new FileReader();
     let surveyFile: SurveyFile;
     reader.onload = (e: ProgressEvent) => {
@@ -108,30 +107,92 @@ export default class LoadTeamResults extends Vue {
           errorMessage: "validation.file.format",
           currentPage: 0
         };
-      }
-      try {
-        surveyFile = JSON.parse(result);
-        surveyFile.hasError = false;
-        surveyFile.fileName = file.name;
-        this.teamReportDataArray.push({
-          name: surveyFile.fileName.substr(0, surveyFile.fileName.length - 5),
-          sections: this.extractReportData(surveyFile)
+        this.errorMessages.push({
+          message: "validation.file.format",
+          param: file.name
         });
+      } else {
+        try {
+          surveyFile = JSON.parse(result);
+          surveyFile.hasError = false;
+          surveyFile.fileName = file.name;
+          this.teamReportDataArray.push({
+            name: surveyFile.fileName.substr(0, surveyFile.fileName.length - 5),
+            sections: this.extractReportData(surveyFile)
+          });
+        } catch (e) {
+          this.$refs.fileUpload.value = "";
+          surveyFile = {
+            fileName: file.name,
+            hasError: true,
+            errorMessage: "validation.file.format",
+            currentPage: 0
+          };
+          this.errorMessages.push({
+            message: "validation.file.format",
+            param: file.name
+          });
+        }
+      }
+      this.surveyDataArray.push(surveyFile);
+
+      if (this.surveyDataArray.length === fileCount) {
+        // sort report data
         this.teamReportDataArray.sort((a, b) =>
           a.name < b.name ? -1 : a.name == b.name ? 0 : 1
         );
-      } catch (e) {
-        this.$refs.fileUpload.value = "";
-        surveyFile = {
-          fileName: file.name,
-          hasError: true,
-          errorMessage: "validation.file.format",
-          currentPage: 0
-        };
+        this.teamAverageReportData = { ...this.teamReportDataArray[0] };
+        this.averageTeamScore();
       }
-      this.surveyDataArray.push(surveyFile);
     };
     reader.readAsText(file);
+  }
+
+  private averageTeamScore() {
+    if (this.teamAverageReportData === undefined) {
+      return;
+    }
+    // Extract score into a map
+    // section_name: question_name: [score1, score2, score3]
+    const scoresMap: Map<String, Map<string, any[]>> = new Map();
+    if (this.surveyDataArray.length > 0) {
+      const firstSurvey = this.surveyDataArray[0].surveyJSON;
+      for (const surveyFile of this.surveyDataArray) {
+        // validate if all files have same format
+        if (!isEqual(firstSurvey, surveyFile.surveyJSON)) {
+          this.errorMessages.push({
+            message: "validation.file.differentFormat"
+          } as ErrorMessage);
+          return;
+        }
+        for (const section of surveyFile.surveyJSON.pages) {
+          if (!scoresMap.has(section.name)) {
+            scoresMap.set(section.name, new Map<string, any[]>());
+          }
+          const sectionScoreMap = scoresMap.get(section.name);
+          for (const question of section.elements) {
+            if (!sectionScoreMap!.has(question.name)) {
+              sectionScoreMap!.set(question.name, []);
+            }
+            sectionScoreMap!
+              .get(question.name)!
+              .push(surveyFile.data[question.name]);
+          }
+        }
+      }
+      for (const section of this.teamAverageReportData.sections) {
+        for (const question of section.questions) {
+          const scoreArray = scoresMap!.get(section.name)!.get(question.name);
+          if (question.type == "rating") {
+            const sum = scoreArray!.reduce((a, b) => a + b, 0);
+            const avg = sum / scoreArray!.length || 0;
+            question.answer = Math.round(avg);
+          } else if (question.type === "boolean") {
+            question.answer = scoreArray!.join(", ");
+          }
+        }
+      }
+    }
   }
 
   private extractReportData(surveyFile: SurveyFile): Array<SectionReportData> {

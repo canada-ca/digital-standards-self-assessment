@@ -11,7 +11,7 @@
 </template>
 
 <script lang="ts">
-import TeamScoreCard from "@/components/reports/TeamScoreCard.vue";
+import TeamScoreCard from "./TeamScoreCard.vue";
 import TeamReportData from "@/interfaces/report/TeamReportData";
 import { Component, Prop, Vue } from "vue-property-decorator";
 
