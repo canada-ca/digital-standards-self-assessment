@@ -43,8 +43,8 @@ import SurveyFile from "@/interfaces/SurveyFile";
 import { isEqual } from "lodash";
 import { Model } from "survey-vue";
 import { Component, Vue, Watch } from "vue-property-decorator";
-import TeamScoreBarChart from "../report/TeamScoreBarChart.vue";
-import TeamScoreReport from "../report/TeamScoreReport.vue";
+import TeamScoreBarChart from "@/components/team/TeamScoreBarChart.vue";
+import TeamScoreReport from "@/components/team/TeamScoreReport.vue";
 
 @Component({
   components: {

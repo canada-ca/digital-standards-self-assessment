@@ -10,7 +10,7 @@
 </template>
 
 <script lang="ts">
-import LoadTeamResults from "@/components/team/LoadTeamResults.vue";
+import LoadTeamResults from "../components/team/LoadTeamResults.vue";
 import { Component, Vue, Watch } from "vue-property-decorator";
 
 @Component({
