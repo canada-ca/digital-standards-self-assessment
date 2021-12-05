@@ -21,16 +21,22 @@
         </ul>
       </div>
     </div>
-    <div
-      class="row"
-      v-if="hasReportData() && !hasError()"
-      style="margin-top: 20px"
-    >
-      <team-score-report :teamReportDataArray="teamReportDataArray" />
-      <team-score-bar-chart
-        :teamReportDataArray="teamReportDataArray"
-        style="margin-top: 40px"
-      />
+    <div class="row" v-if="hasReportData() && !hasError()">
+      <div class="col">
+        <b-tabs style="margin-top: 20px">
+          <b-tab title="Team Score Details" active>
+            <team-score-report :teamReportDataArray="teamReportDataArray" />
+            <team-score-bar-chart :teamReportDataArray="teamReportDataArray" />
+          </b-tab>
+          <b-tab title="Team Average Score" v-if="hasAverageData()">
+            <results-section-container
+              v-for="section of teamAverageReportData.sections"
+              :sectionReportData="section"
+              :key="section.name"
+            />
+          </b-tab>
+        </b-tabs>
+      </div>
     </div>
   </div>
 </template>
@@ -45,11 +51,13 @@ import { Model } from "survey-vue";
 import { Component, Vue, Watch } from "vue-property-decorator";
 import TeamScoreBarChart from "@/components/team/TeamScoreBarChart.vue";
 import TeamScoreReport from "@/components/team/TeamScoreReport.vue";
+import ResultsSectionContainer from "@/components/team/ResultsSectionContainer.vue";
 
 @Component({
   components: {
     TeamScoreReport,
-    TeamScoreBarChart
+    TeamScoreBarChart,
+    ResultsSectionContainer
   }
 })
 export default class LoadTeamResults extends Vue {
@@ -69,6 +77,13 @@ export default class LoadTeamResults extends Vue {
 
   hasReportData() {
     return !!this.surveyDataArray && this.surveyDataArray.length > 0;
+  }
+
+  hasAverageData() {
+    return (
+      !!this.teamAverageReportData &&
+      this.teamAverageReportData.sections.length > 0
+    );
   }
 
   @Watch("$i18n.locale")
