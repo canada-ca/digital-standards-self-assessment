@@ -14,7 +14,10 @@ import showdown from "showdown";
 @Component
 export default class AssessmentTool extends Vue {
   @Prop() public survey!: Model;
-  Mounted() {
+  created() {
+    console.log("created");
+  }
+  mounted() {
     const converter = new showdown.Converter();
     this.survey.onTextMarkdown.add(function(survey, options) {
       //convert the markdown text to html
@@ -25,6 +28,21 @@ export default class AssessmentTool extends Vue {
       //set html
       options.html = str;
     });
+    for (let item of document.getElementsByClassName("sv_q_rating_min_text")) {
+      const fldset = item.closest("fieldset");
+      const lbl = document.createElement("LABEL");
+      lbl.className = "rating-min-label";
+      lbl.appendChild(item);
+      fldset?.prepend(lbl);
+    }
+
+    for(let item of document.getElementsByClassName("sv_q_rating_max_text")) {
+      const fldset = item.closest("fieldset");
+      const lbl = document.createElement("LABEL");
+      lbl.className = "rating-max-label";
+      lbl.appendChild(item);
+      fldset?.append(lbl);
+    }
   }
 }
 </script>

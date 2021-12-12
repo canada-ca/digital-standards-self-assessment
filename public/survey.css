@@ -247,3 +247,16 @@ div .sv-vue-row-additional-div
 } */
 
 
+.rating-min-label {
+    position: static;
+    font-size: 18px;
+    font-weight: 400;
+    margin-right: 10px;
+}
+
+.rating-max-label {
+    position: static;
+    font-size: 18px;
+    font-weight: 400;
+    margin-left: 10px;
+}
