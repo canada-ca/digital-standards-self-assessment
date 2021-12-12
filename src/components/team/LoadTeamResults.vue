@@ -102,6 +102,9 @@ export default class LoadTeamResults extends Vue {
 
     const target = $event.target as HTMLInputElement;
     const files = target.files || $event.dataTransfer.files;
+    if (files.length === 0) {
+      return;
+    }
     this.surveyDataArray = new Array();
     this.teamReportDataArray = new Array();
     const fileCount = files.length;
@@ -197,7 +200,10 @@ export default class LoadTeamResults extends Vue {
       }
       for (const section of this.teamAverageReportData.sections) {
         for (const question of section.questions) {
-          const scoreArray = scoresMap!.get(section.name)!.get(question.name);
+          const scoreArray = scoresMap!
+            .get(section.name)!
+            .get(question.name)!
+            .filter(v => v !== undefined);
           if (question.type == "rating") {
             const sum = scoreArray!.reduce((a, b) => a + b, 0);
             const avg = sum / scoreArray!.length || 0;
