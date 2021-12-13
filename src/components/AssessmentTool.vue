@@ -14,9 +14,6 @@ import showdown from "showdown";
 @Component
 export default class AssessmentTool extends Vue {
   @Prop() public survey!: Model;
-  created() {
-    console.log("created");
-  }
   mounted() {
     const converter = new showdown.Converter();
     this.survey.onTextMarkdown.add(function(survey, options) {
