@@ -4,7 +4,7 @@ import Home from "./views/Home.vue";
 
 Vue.use(Router);
 
-function lazyLoad(view: string){
+function lazyLoad(view: string) {
   return () => import(`@/views/${view}.vue`);
 }
 export default new Router({
