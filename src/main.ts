@@ -49,15 +49,17 @@ function reloadTemplate() {
               : "DevOps Self-Assessment"
         }
       ],
-      search: false,
-
-      breadcrumbs: [
-        {
-          title: switchLanguage === "en" ? "Accueil" : "Home",
-          href: switchLanguage === "en" ? "./" : "./"
-        }
-      ]
+      search: false
     });
+
+    const section = document.createElement("section");
+    section.className = "col-xs-12 text-right";
+    section.innerHTML =
+      "<a href='./'><i class='fas fa-home fa-2x' style='color: #fff'></i></a>";
+    document
+      .getElementsByClassName("app-name")[0]!
+      .closest("div.row")!
+      .append(section);
   }
 
   let defPreFooter = document.getElementById("def-preFooter");
