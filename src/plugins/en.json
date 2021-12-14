@@ -136,6 +136,10 @@
   "fairnessImplementation17": "A concept case has been prepared for the Government of Canada Enterprise Architecture Review Board.",
   "privacyImplementation1": "",
   "privacyImplementation2": "",
+  "IL": "NI",
+  "CS": "CA",
+  "RS": "CIB",
+  "MS": "CA",
   "requirements": {
     "title": "Requirements Specific to Impact Level:",
     "elements": [
