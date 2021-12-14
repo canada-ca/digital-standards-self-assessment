@@ -10,7 +10,13 @@ import { Component, Prop, Vue } from "vue-property-decorator";
 @Component
 export default class ShowHideLink extends Vue {
   @Prop()
+  hide = true;
+
   collapsed = true;
+
+  created() {
+    this.collapsed = this.hide;
+  }
 
   toggleClass() {
     return this.collapsed ? "fa fa-chevron-down" : "fa fa-chevron-up";

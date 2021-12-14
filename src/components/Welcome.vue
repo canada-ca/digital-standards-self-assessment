@@ -9,7 +9,7 @@
       ></div>
     </transition>
     <div class="text-right">
-      <show-hide-link :collapsed="true" @onToggled="toggleCollapsed()" />
+      <show-hide-link :hide="true" @onToggled="toggleCollapsed()" />
     </div>
   </div>
 </template>
