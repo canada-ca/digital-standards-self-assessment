@@ -1,16 +1,20 @@
 <template>
   <div class="home">
     <welcome />
-    <download-survey @confirmToDownload="downloadSurvey" />
-    <LoadLocalSurvey @surveyDataLoaded="onSurveyDataLoaded" />
-    <b-button
-      type="button"
-      class="btn btn-primary"
-      style="width: inherit"
-      v-on:click="gotoTeamResults()"
-    >
-      {{ $t("navigation.viewTeamResults") }}
-    </b-button>
+    <div class="btn-div">
+      <download-survey @confirmToDownload="downloadSurvey" />
+      <LoadLocalSurvey @surveyDataLoaded="onSurveyDataLoaded" />
+      <div>
+        <b-button
+          type="button"
+          class="btn btn-primary"
+          style="width: 100%"
+          v-on:click="gotoTeamResults()"
+        >
+          {{ $t("navigation.viewTeamResults") }}
+        </b-button>
+      </div>
+    </div>
     <div>
       <HomeSectionsContainer
         :sections="sections"
@@ -177,3 +181,15 @@ export default class Home extends Vue {
   }
 }
 </script>
+
+<style scoped>
+.btn-div {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+.btn-div div {
+  width: 334px;
+}
+</style>

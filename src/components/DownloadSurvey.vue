@@ -1,9 +1,9 @@
 <template>
-  <div style="display: inline">
+  <div>
     <b-button
       type="button"
       class="btn btn-primary ml-auto"
-      style="width: inherit"
+      style="width: 100%"
       @click="showFileNameModal()"
     >
       {{ $t("loadLocalSurvey.downloadSurvey") }}

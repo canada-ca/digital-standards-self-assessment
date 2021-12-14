@@ -1,9 +1,9 @@
 <template>
-  <div style="display: inline">
+  <div>
     <b-button
       type="button"
       class="btn btn-primary"
-      style="width: inherit"
+      style="width: 100%"
       v-on:click="showLoadLocalSurveyDialog()"
     >
       {{ $t("loadLocalSurvey.loadSurvey") }}
