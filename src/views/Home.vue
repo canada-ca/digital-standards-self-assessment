@@ -1,8 +1,6 @@
 <template>
   <div class="home">
-    <b-button @click="displayWelcomeMessage()">{{
-      $t("notice.displayWelcome")
-    }}</b-button>
+    <welcome />
     <download-survey @confirmToDownload="downloadSurvey" />
     <LoadLocalSurvey @surveyDataLoaded="onSurveyDataLoaded" />
     <b-button
@@ -29,7 +27,6 @@ import { Model, Page, PageModel } from "survey-vue";
 import showdown from "showdown";
 import AssessmentTool from "@/components/AssessmentTool.vue"; // @ is an alias to /src
 import HomeSectionsContainer from "@/components/HomeSectionsContainer.vue";
-import BaseNavigation from "@/components/BaseNavigation.vue";
 import SurveyFile from "@/interfaces/SurveyFile";
 import i18n from "@/plugins/i18n";
 import defaultSurveyJSON from "@/survey-enfr.json";
@@ -39,11 +36,12 @@ import { returnAllSectionsByPrefix } from "@/store";
 import { ActionTypes } from "@/store/actions";
 import LoadLocalSurvey from "@/components/LoadLocalSurvey.vue";
 import DownloadSurvey from "@/components/DownloadSurvey.vue";
+import Welcome from "@/components/Welcome.vue";
 
 @Component({
   components: {
     AssessmentTool,
-    BaseNavigation,
+    Welcome,
     HomeSectionsContainer,
     LoadLocalSurvey,
     DownloadSurvey

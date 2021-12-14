@@ -127,6 +127,10 @@ a:active, a:hover {
     outline: 0 !important;
 }
 
+#app {
+    margin-top: 30px;
+}
+
 #app a{
     color: #284162 !important;
     text-decoration: underline;

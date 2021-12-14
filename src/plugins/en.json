@@ -10,10 +10,9 @@
   },
   "notice": {
     "displayWelcome": "Display Welcome Message",
-    "welcomeNoticeTitle": "##### Welcome to the DevOps Self-Assessment Tool!",
-    "welcomeNoticeBody": "The following tool is based on the State of DevOps Report that has been published annually since 2014, as part of the DevOps Research and Assessment (DORA).\n\n\n\nThe tool questions will measure and support continuous improvement of DevOps maturity in IITB and ESDC.\n\n##### Intended audience\n\nTeams are invited to complete the tool every 6 (six) to 12 (twelve) months to measure the success of their activities.\n\nHowever, you may use the tool at your discretion all year around as a team or individually\n\n##### Time required\n\nThere are 11 sections, which take around 4-6 minutes each to complete in any order.\n\nCompleting all sections would thus take approximately 60 minutes.\n\nYou are not required to answer each section in a single visit, but we encourage teams to complete them all at least once to establish a full baseline.\n\nFor more details, please consult our <a href='https://sara-sabr.github.io/ITStrategy/devops-self-assessment.html' target=\"_blank\">dedicated web page</a>.\n\n##### Privacy Notice\n\nResponses to the DevOps Self-Assessment are stored locally on your computer (browser's cache), and the Government of Canada does not save any information.\n\n**Exception**\n\nOnly the responses of ESDC employees connected to the VPN will be saved anonymously for analysis by the DevOps CoE and IT Strategy team.",
-    "hideNotice": "Do not show the welcome message again.",
-    "showNotice": "Show Welcome Message",
+    "welcomeNoticeTitle": "Welcome to the DevOps Self-Assessment Tool!",
+    "welcomeNoticeBody1": "The following tool is based on the State of DevOps Report that has been published annually since 2014, as part of the DevOps Research and Assessment (DORA). The tool questions will measure and support continuous improvement of DevOps maturity in IITB and ESDC.",
+    "welcomeNoticeBody2": "##### Intended audience\n\nTeams are invited to complete the tool every 6 (six) to 12 (twelve) months to measure the success of their activities.\n\nHowever, you may use the tool at your discretion all year around as a team or individually\n\n##### Time required\n\nThere are 11 sections, which take around 4-6 minutes each to complete in any order.\n\nCompleting all sections would thus take approximately 60 minutes.\n\nYou are not required to answer each section in a single visit, but we encourage teams to complete them all at least once to establish a full baseline.\n\nFor more details, please consult our <a href='https://sara-sabr.github.io/ITStrategy/devops-self-assessment.html' target=\"_blank\">dedicated web page</a>.\n\n##### Privacy Notice\n\nResponses to the DevOps Self-Assessment are stored locally on your computer (browser's cache), and the Government of Canada does not save any information.\n\n**Exception**\n\nOnly the responses of ESDC employees connected to the VPN will be saved anonymously for analysis by the DevOps CoE and IT Strategy team.",
     "noProgress": "The DevOps self-assessment has not yet started. Please choose a section to complete."
   },
   "loadLocalSurvey": {
@@ -37,6 +36,8 @@
       "required": "Please input a file name"
     }
   },
+  "show": "Show",
+  "hide": "Hide",
   "startAgain": "Start Again",
   "toPDF": "Print to PDF",
   "frenchContent": "French Content",

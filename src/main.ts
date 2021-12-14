@@ -49,14 +49,7 @@ function reloadTemplate() {
               : "DevOps Self-Assessment"
         }
       ],
-      search: false,
-
-      breadcrumbs: [
-        {
-          title: switchLanguage === "en" ? "Accueil" : "Home",
-          href: switchLanguage === "en" ? "./" : "./"
-        }
-      ]
+      search: false
     });
   }
 
