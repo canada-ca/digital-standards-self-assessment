@@ -6,7 +6,7 @@
       style="width: 100%"
       v-on:click="showLoadLocalSurveyDialog()"
     >
-      {{ $t("loadLocalSurvey.loadSurvey") }}
+      {{ $t("loadLocalSurvey.uploadSurvey") }}
     </b-button>
     <b-modal id="load-loacal-survey-modal" size="xl">
       <template #modal-header>

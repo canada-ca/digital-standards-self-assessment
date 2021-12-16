@@ -1,6 +1,5 @@
 <template>
   <div class="home">
-    <welcome />
     <div class="btn-div">
       <download-survey @confirmToDownload="downloadSurvey" />
       <LoadLocalSurvey @surveyDataLoaded="onSurveyDataLoaded" />
@@ -15,6 +14,7 @@
         </b-button>
       </div>
     </div>
+    <welcome />
     <div>
       <HomeSectionsContainer
         :sections="sections"
