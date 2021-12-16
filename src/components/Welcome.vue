@@ -70,7 +70,7 @@
 import { Component, Vue } from "vue-property-decorator";
 import ShowHideLink from "./ShowHideLink.vue";
 @Component({
-  components: { ShowHideLink },
+  components: { ShowHideLink }
 })
 export default class Welcome extends Vue {
   collapsed = true;
@@ -91,7 +91,7 @@ export default class Welcome extends Vue {
 .collapsed-enter-active,
 .collapsed-leave-active {
   transition: all 0.5s;
-  height: 495px;
+  height: 465px;
 }
 .collapsed-enter,
 .collapsed-leave-to {
