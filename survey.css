@@ -59,7 +59,7 @@ h2, .h2, h3, .h3, h4, .h4 {
 }
 
 h5, .h5 {
-    font-size: 1.2em !important;
+    font-size: 1.7em !important;
     margin-top: 20px !important;
 }
 
@@ -210,10 +210,6 @@ p.card-text{
     line-height: 1.3!important;
     color: #6C6B6B!important;
    
-}
-
-li.card {
-    height: 450px !important;
 }
 
 .btnbtn btn-default btn-secondary active {
