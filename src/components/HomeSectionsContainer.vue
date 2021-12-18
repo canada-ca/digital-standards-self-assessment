@@ -1,14 +1,14 @@
 <template>
   <div>
-    <ul class="card-deck">
-      <HomeSectionCard
-        v-for="section in sections"
-        :key="section.id"
-        :section="section"
-        :survey="survey"
-        :icon="getIcon(section.name, sectionRecommendation)"
-      ></HomeSectionCard>
-    </ul>
+    <h5>Survey Results:</h5>
+    <p>Survey results will be added here upon completion of each survey</p>
+    <HomeSectionCard
+      v-for="section in sections"
+      :key="section.id"
+      :section="section"
+      :survey="survey"
+      :icon="getIcon(section.name, sectionRecommendation)"
+    ></HomeSectionCard>
   </div>
 </template>
 <script lang="ts">

@@ -91,12 +91,12 @@ export default class Welcome extends Vue {
 .collapsed-enter-active,
 .collapsed-leave-active {
   transition: all 0.5s;
-  height: 465px;
+  max-height: 500px;
 }
 .collapsed-enter,
 .collapsed-leave-to {
   opacity: 0;
-  height: 0px;
+  max-height: 0px;
 }
 
 .welcome-col {
@@ -104,9 +104,5 @@ export default class Welcome extends Vue {
   flex-basis: 50%;
   padding-left: 30px;
   padding-right: 30px;
-}
-
-h5 {
-  font-size: 1.7em !important;
 }
 </style>

@@ -1,41 +1,47 @@
 <template>
-  <li
-    class="card"
-    img-top
-    tabindex="0"
-    style="min-width: 30rem; margin-top: 15px; margin-bottom: 5px;"
-    v-on:click="goToSection(section.name)"
-    v-bind:style="cardStyles"
-    @mouseover="hover = true"
-    @mouseleave="hover = false"
-    @keydown.space="goToSection(section.name)"
-  >
-    <i
-      :class="setIconClass(icon)"
-      style="margin-top: 20px; color: #395072; text-align:center;"
-    ></i>
-    <div class="card-body">
-      <h2 style="color: #395072;" class="card-title">{{ section.title }}</h2>
-      <p style="font-size: 16px;" class="card-text">
-        {{ getShortDescription(section.description) }}
-      </p>
+  <div class="survey-card-container" :style="cardStyles">
+    <div
+      class="survey-card"
+      img-top
+      tabindex="0"
+      v-on:click="goToSection(section.name)"
+      @mouseover="hover = true"
+      @mouseleave="hover = false"
+      @keydown.space="goToSection(section.name)"
+    >
+      <div class="icon-container">
+        <i :class="setIconClass(icon)"></i>
+      </div>
+      <div style="flex: auto;">
+        <div class="survey-title">
+          {{ section.title }}
+        </div>
+        <transition name="collapsed" mode="out-in">
+          <div v-if="!collapsed" class="mt-3">
+            <p style="font-size: 16px;">
+              {{ getShortDescription(section.description) }}
+            </p>
+            <span style="color: #395072">
+              {{ $t("currentScore") }}: {{ sectionScoreLevel(section.name) }}%
+            </span>
+          </div>
+        </transition>
+      </div>
     </div>
-    <div class="card-footer">
-      <span style="color: #395072">
-        <i :class="setStatusIcon(section.name)">
-          {{ $t("currentScore") }}: {{ sectionScoreLevel(section.name) }}%</i
-        >
-      </span>
+    <div class="show-hide-container">
+      <show-hide-link :hide="true" @onToggled="toggleCollapsed()" />
     </div>
-  </li>
+  </div>
 </template>
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
 import { PageModel, SurveyModel } from "survey-vue";
 import { Section } from "@/types";
 import { ActionTypes } from "@/store/actions";
+import ShowHideLink from "@/components/ShowHideLink.vue";
 
 @Component({
+  components: { ShowHideLink },
   data: function() {
     return {
       cardStyleHover: {
@@ -64,6 +70,12 @@ export default class HomeSectionCard extends Vue {
   @Prop() public survey!: SurveyModel;
   @Prop() public icon!: string;
 
+  collapsed = true;
+
+  toggleCollapsed() {
+    this.collapsed = !this.collapsed;
+  }
+
   goToSection(sectionName: string) {
     this.survey.currentPage = sectionName;
     // this.$store.commit("updateSurveyData", this.survey);
@@ -74,7 +86,7 @@ export default class HomeSectionCard extends Vue {
   }
 
   setIconClass(icon: string) {
-    let classDef: string = "fas fa-" + icon + " fa-4x";
+    let classDef: string = "fas fa-" + icon + " fa-2x";
     return classDef;
   }
 
@@ -119,11 +131,49 @@ export default class HomeSectionCard extends Vue {
 </script>
 
 <style scoped>
-h2 {
+.survey-title {
   font-size: 1.2em !important;
+  color: #395072;
 }
-li:focus {
+
+.survey-card-container {
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+  background-color: #fff;
+  background-clip: border-box;
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+
+.survey-card-container:focus {
   outline: "1px solid black";
   box-shadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)";
+}
+
+.survey-card {
+  padding: 20px;
+  width: 100%;
+  min-width: 30rem;
+  display: flex;
+}
+
+.icon-container {
+  min-width: 60px; color: #395072; text-align:left; height: 100%;
+}
+
+.show-hide-container {
+  text-align: right;
+  margin: -35px 15px 0px 0px;
+}
+
+.collapsed-enter-active,
+.collapsed-leave-active {
+  transition: all 0.5s;
+  max-height: 200px;
+}
+.collapsed-enter,
+.collapsed-leave-to {
+  opacity: 0;
+  max-height: 0px;
 }
 </style>
