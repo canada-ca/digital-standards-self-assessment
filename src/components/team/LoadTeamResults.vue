@@ -200,13 +200,24 @@ export default class LoadTeamResults extends Vue {
       }
       for (const section of this.teamAverageReportData.sections) {
         for (const question of section.questions) {
-          const scoreArray = scoresMap!.get(section.name)!.get(question.name)!.filter(v => v !== undefined);
+          const scoreArray = scoresMap!
+            .get(section.name)!
+            .get(question.name)!
+            .filter(v => v !== undefined);
           if (question.type == "rating") {
             const sum = scoreArray!.reduce((a, b) => a + b, 0);
             const avg = sum / scoreArray!.length || 0;
             question.answer = Math.round(avg);
           } else if (question.type === "boolean") {
-            question.answer = scoreArray!.join(", ");
+            const booleanResult = scoreArray!.reduce(
+              (prevVal, curVal) => {
+                curVal ? prevVal.true++ : prevVal.false++;
+                return prevVal;
+              },
+              { true: 0, false: 0 }
+            );
+            question.answer =
+              booleanResult.true + " true, " + booleanResult.false + " false";
           }
         }
       }
