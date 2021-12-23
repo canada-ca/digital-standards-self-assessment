@@ -25,8 +25,8 @@
       <div class="col">
         <b-tabs style="margin-top: 20px">
           <b-tab title="Team Score Details" active>
-            <team-score-report :teamReportDataArray="teamReportDataArray" />
             <team-score-bar-chart :teamReportDataArray="teamReportDataArray" />
+            <team-score-report :teamReportDataArray="teamReportDataArray" />
           </b-tab>
           <b-tab title="Team Average Score" v-if="hasAverageData()">
             <results-section-container
@@ -200,10 +200,7 @@ export default class LoadTeamResults extends Vue {
       }
       for (const section of this.teamAverageReportData.sections) {
         for (const question of section.questions) {
-          const scoreArray = scoresMap!
-            .get(section.name)!
-            .get(question.name)!
-            .filter(v => v !== undefined);
+          const scoreArray = scoresMap!.get(section.name)!.get(question.name)!.filter(v => v !== undefined);
           if (question.type == "rating") {
             const sum = scoreArray!.reduce((a, b) => a + b, 0);
             const avg = sum / scoreArray!.length || 0;

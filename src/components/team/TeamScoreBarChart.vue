@@ -2,7 +2,7 @@
   <div
     id="barChart"
     ref="barChart"
-    style="min-width: 100%; height:400px;"
+    style="min-width: 100%; height:400px; margin-top: 30px"
   ></div>
 </template>
 

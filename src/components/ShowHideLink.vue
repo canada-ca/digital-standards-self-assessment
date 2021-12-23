@@ -34,7 +34,6 @@ export default class ShowHideLink extends Vue {
   cursor: pointer;
   user-select: none;
   display: inline-block;
-  font-family: Open Sans;
   font-size: 15px;
   font-style: normal;
   font-weight: 400;

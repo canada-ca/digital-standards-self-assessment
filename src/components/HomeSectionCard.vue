@@ -158,7 +158,10 @@ export default class HomeSectionCard extends Vue {
 }
 
 .icon-container {
-  min-width: 60px; color: #395072; text-align:left; height: 100%;
+  min-width: 60px;
+  color: #395072;
+  text-align: left;
+  height: 100%;
 }
 
 .show-hide-container {
