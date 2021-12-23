@@ -42,6 +42,7 @@ div.sv_qstn_error_top  span.glyphicon-exclamation-sign {
     line-height: 1.1 !important;
     color: inherit !important;
     font-weight: 600 !important;
+    font-family: "Open Sans", sans-serif !important;
 }
 
 h1 {
@@ -95,7 +96,7 @@ div.small {
 }
 
 body {
-    font-family: "Noto Sans",sans-serif !important;
+    font-family: "Open Sans", sans-serif !important;
     font-size: 18px !important;
     line-height: 1.4375 !important;
     color: #333 !important;
@@ -138,7 +139,7 @@ a:active, a:hover {
 }
 
 .btn {
-    font-family: Lato,sans-serif !important;
+    font-family: "Open Sans", sans-serif !important;
 }
 
 .btn {
