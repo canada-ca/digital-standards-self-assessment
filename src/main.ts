@@ -42,7 +42,7 @@ function reloadTemplate() {
     defTop.innerHTML = wet.builder.appTop({
       appName: [
         {
-          href: "#",
+          href: "./",
           text:
             switchLanguage === "en"
               ? "Auto-évaluation DevOps"
