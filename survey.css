@@ -128,10 +128,6 @@ a:active, a:hover {
     outline: 0 !important;
 }
 
-#app {
-    margin-top: 30px;
-}
-
 #app a{
     color: #284162 !important;
     text-decoration: underline;
@@ -260,4 +256,8 @@ div .sv-vue-row-additional-div
     font-size: 18px;
     font-weight: 400;
     margin-left: 10px;
+}
+
+.router-link-exact-active {
+    font-weight: 700 !important;
 }
