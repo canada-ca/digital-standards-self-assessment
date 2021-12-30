@@ -141,7 +141,7 @@ export default class HomeSectionCard extends Vue {
   border-radius: 0.25rem;
   background-color: #fff;
   background-clip: border-box;
-  margin-top: 25px;
+  margin-top: 10px;
   margin-bottom: 10px;
 }
 

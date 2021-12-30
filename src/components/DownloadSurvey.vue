@@ -3,7 +3,7 @@
     <b-button
       type="button"
       class="btn btn-primary ml-auto"
-      style="width: 100%"
+      style="min-width: 400px !important"
       @click="showFileNameModal()"
     >
       {{ $t("loadLocalSurvey.downloadSurvey") }}

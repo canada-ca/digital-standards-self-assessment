@@ -87,7 +87,6 @@ export type Getters = {
   determineAllSections(state: RootState, payload: string): string[];
   resultsDataSections(state: RootState): any[];
   returnSections(state: RootState): Section[];
-  returnDisplayWelcome(state: RootState): boolean;
   returnSectionPrefix(state: RootState): string;
 };
 
@@ -189,10 +188,6 @@ export const getters: GetterTree<RootState, RootState> & Getters = {
   // Should use mapstate instead
   returnSections(state: RootState) {
     return state.sections;
-  },
-  // Should use mapstate instead
-  returnDisplayWelcome(state: RootState) {
-    return state.displayWelcomeNotice;
   },
   returnSectionPrefix(state: RootState) {
     return state.sectionsPrefix;

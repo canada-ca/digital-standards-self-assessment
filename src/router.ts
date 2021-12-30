@@ -19,15 +19,20 @@ export default new Router({
       component: Home
     },
     {
+      path: "/survey",
+      name: "survey",
+      component: lazyLoad("Survey")
+    },
+    {
       path: "/questions",
       name: "questions",
       component: lazyLoad("Questions")
     },
     { path: "/sections", name: "sections", component: lazyLoad("Results") },
     {
-      path: "/teamResults",
-      name: "teamResults",
-      component: lazyLoad("TeamResults")
+      path: "/teamSurveys",
+      name: "teamSurveys",
+      component: lazyLoad("TeamSurveys")
     },
     { path: "*", name: "notFound", component: Home }
   ]

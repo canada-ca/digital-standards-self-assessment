@@ -3,7 +3,7 @@
     <b-button
       type="button"
       class="btn btn-primary"
-      style="width: 100%"
+      style="min-width: 400px !important"
       v-on:click="showLoadLocalSurveyDialog()"
     >
       {{ $t("loadLocalSurvey.uploadSurvey") }}

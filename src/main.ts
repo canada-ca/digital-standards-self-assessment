@@ -52,14 +52,7 @@ function reloadTemplate() {
       search: false
     });
 
-    const section = document.createElement("section");
-    section.className = "col-xs-12 text-right";
-    section.innerHTML =
-      "<a href='./'><i class='fas fa-home fa-2x' style='color: #fff'></i></a>";
-    document
-      .getElementsByClassName("app-name")[0]!
-      .closest("div.row")!
-      .append(section);
+    document.getElementsByClassName("app-name")[0]!.classList.add("wb-inv");
   }
 
   let defPreFooter = document.getElementById("def-preFooter");
@@ -68,8 +61,8 @@ function reloadTemplate() {
     defPreFooter.innerHTML = wet.builder.preFooter({
       // see public index.html
       // get the build time which is injected into the root element at build time
-      dateModified: "2021-04-22",
-      versionIdentifier: "0.9.0",
+      dateModified: "2022-01-07",
+      versionIdentifier: "1.0.0",
       showPostContent: false,
       showFeedback: false,
       showShare: false

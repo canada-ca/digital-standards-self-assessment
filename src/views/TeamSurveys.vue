@@ -1,5 +1,5 @@
 <template>
-  <div class="results">
+  <div class="container">
     <h1>
       {{ $t("teamResults.title") }}
     </h1>

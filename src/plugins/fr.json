@@ -1,5 +1,6 @@
 {
   "navigation": {
+    "appName": "Auto-évaluation DevOps",
     "launchThisSection": "Lancer cette section",
     "viewSectionResults": "Résultats de la section",
     "chooseAnotherSection": "Choisir une autre section",
@@ -22,7 +23,7 @@
     "cancel": "Cancel(FR)",
     "format": "In Pretty Format(FR)",
     "loadSurvey": "Upload Survey(FR)",
-    "downloadSurvey": "Download Survey(FR)",
+    "downloadSurvey": "Download Full Survey(FR)",
     "inputFileName": "Please enter a file name(FR)",
     "downloadTitle": "Download Survey(FR)"
   },

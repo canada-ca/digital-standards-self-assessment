@@ -67,7 +67,6 @@ export enum ActionTypes {
    * @param
    */
   UpdateSurveyData = "UPDATE_SURVEY_DATA",
-  UpdateDisplayNotice = "UPDATE_DISPLAY_NOTICE",
   UpdateCurrentPageName = "UPDATE_CURRENT_PAGE_NAME",
   UseSurveyJSON = "USE_SURVEY_JSON"
 }
@@ -103,10 +102,6 @@ export type Actions = {
   [ActionTypes.UpdateSurveyData](
     context: ActionAugments,
     value: SurveyModel
-  ): void;
-  [ActionTypes.UpdateDisplayNotice](
-    context: ActionAugments,
-    value: boolean
   ): void;
   [ActionTypes.UpdateCurrentPageName](
     context: ActionAugments,
@@ -267,9 +262,6 @@ export const actions: ActionTree<RootState, RootState> & Actions = {
       MutationType.SetAnswerData,
       value.getPlainData({ includeEmpty: false })
     );
-  },
-  async [ActionTypes.UpdateDisplayNotice]({ commit }, value: boolean) {
-    commit(MutationType.SetDisplayNoticeStatus, value);
   },
   async [ActionTypes.UpdateCurrentPageName]({ commit }, value: string) {
     if (value.length > 0) {
