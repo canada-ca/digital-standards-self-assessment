@@ -148,7 +148,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/digital-standards-self-assessment/helper/vfs_fonts.js"
   },
   {
-    "revision": "8d4ec757e68dd78f24537bc640e3bc3a",
+    "revision": "c9685e6b7e3d9e2f19a51e25116ce1a8",
     "url": "/digital-standards-self-assessment/index.html"
   },
   {
