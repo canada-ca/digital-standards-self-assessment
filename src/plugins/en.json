@@ -17,7 +17,7 @@
     "welcomeNoticeBody": "The following tool is based on the State of DevOps Report that has been published annually since 2014, as part of the DevOps Research and Assessment (DORA). \n\nThis tool will **measure and support continuous improvement of DevOps maturity** in IITB and ESDC. \n\nTeams are invited to complete the self-assesment every 6 (six) to 12 (twelve) months **to measure their success**. However, you may use the tool at your discretion all year around as a team or individually.",
     "noProgress": "The DevOps self-assessment has not yet started. Please choose a section to complete."
   },
-  "loadLocalSurvey": {
+  "downloadUploadSurvey": {
     "title": "Upload Survey",
     "surveyData": "Please upload a suvery file",
     "OK": "OK",

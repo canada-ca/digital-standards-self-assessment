@@ -6,11 +6,11 @@
       style="min-width: 400px !important"
       v-on:click="showUploadSurveyDialog()"
     >
-      {{ $t("loadLocalSurvey.uploadSurvey") }}
+      {{ $t("downloadUploadSurvey.uploadSurvey") }}
     </b-button>
     <b-modal id="load-loacal-survey-modal" size="xl">
       <template #modal-header>
-        <div v-html="$t('loadLocalSurvey.title')"></div>
+        <div v-html="$t('downloadUploadSurvey.title')"></div>
       </template>
       <template #default>
         <div class="form-group" :class="{ 'was-validated': hasError }">
@@ -21,7 +21,7 @@
             id="surveyDataInput"
             rows="5"
             required
-            :placeholder="$t('loadLocalSurvey.surveyData')"
+            :placeholder="$t('downloadUploadSurvey.surveyData')"
             :value="surveyDataForDisplay"
           ></textarea>
           <div class="text-danger mt-3" v-if="hasError">
@@ -46,21 +46,21 @@
           size="lg"
           @change="onToggleFormat"
         >
-          {{ $t("loadLocalSurvey.format") }}
+          {{ $t("downloadUploadSurvey.format") }}
         </b-form-checkbox>
         <b-button
           class="btn btn-primary"
           style="width: 120px"
           @click="uploadSurveyData"
         >
-          {{ $t("loadLocalSurvey.OK") }}
+          {{ $t("downloadUploadSurvey.OK") }}
         </b-button>
         <b-button
           class="btn btn-default"
           style="width: 120px"
           @click="cancel()"
         >
-          {{ $t("loadLocalSurvey.cancel") }}
+          {{ $t("downloadUploadSurvey.cancel") }}
         </b-button>
       </template>
     </b-modal>

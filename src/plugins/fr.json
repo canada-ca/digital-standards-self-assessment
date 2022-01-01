@@ -16,7 +16,7 @@
     "welcomeNoticeBody": "L'outil suivant est basé sur le rapport sur l'état du DevOps qui est publié chaque année depuis 2014, dans le cadre de la recherche et de l'évaluation du DevOps (DORA). Les questions de l'outil permettront de mesurer et de soutenir l'amélioration continue de la maturité DevOps à la DGIIT et à EDSC.",
     "noProgress":"L'auto-évaluation DevOps n'a pas encore commencée. Veuillez choisir une section à compléter."
   },
-  "loadLocalSurvey": {
+  "downloadUploadSurvey": {
     "title": "Upload Survey(FR)",
     "surveyData": "Please upload a suvery file(FR)",
     "OK": "OK(FR)",

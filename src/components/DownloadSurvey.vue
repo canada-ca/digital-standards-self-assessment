@@ -6,11 +6,11 @@
       style="min-width: 400px !important"
       @click="showFileNameModal()"
     >
-      {{ $t("loadLocalSurvey.downloadSurvey") }}
+      {{ $t("downloadUploadSurvey.downloadSurvey") }}
     </b-button>
     <b-modal id="file-name-modal" size="l" @shown="focusFileNameInput">
       <template #modal-header>
-        <div>{{ $t("loadLocalSurvey.downloadTitle") }}</div>
+        <div>{{ $t("downloadUploadSurvey.downloadTitle") }}</div>
       </template>
       <template #default>
         <b-form @submit="onSubmit" ref="form">
@@ -19,7 +19,7 @@
             class="form-control"
             :class="{ 'is-invalid': hasError }"
             v-model="fileName"
-            :placeholder="$t('loadLocalSurvey.inputFileName')"
+            :placeholder="$t('downloadUploadSurvey.inputFileName')"
           />
           <div class="text-danger mt-3" v-if="hasError">
             {{ $t(errorMessage) }}
@@ -33,14 +33,14 @@
           style="width: 120px"
           @click="onOkClicked()"
         >
-          {{ $t("loadLocalSurvey.OK") }}
+          {{ $t("downloadUploadSurvey.OK") }}
         </b-button>
         <b-button
           class="btn btn-default"
           style="width: 120px"
           @click="onCancelClicked()"
         >
-          {{ $t("loadLocalSurvey.cancel") }}
+          {{ $t("downloadUploadSurvey.cancel") }}
         </b-button>
       </template>
     </b-modal>
