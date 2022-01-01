@@ -130,6 +130,9 @@ function generateLanguageToggle() {
   // const language = htmlElement.getAttribute("lang");
   let switchLanguage = getLanguage();
 
+  let languageDiv = document.createElement("div");
+  languageDiv.className = "col-xs-7 col-md-8 text-right";
+
   // create language toggle
   let languageButton = document.createElement("button");
   languageButton.innerText = switchLanguage === "en" ? "English" : "Francais";
@@ -165,9 +168,8 @@ function generateLanguageToggle() {
 
     // reload the cdts template
   });
-  let wbBanner = document.getElementById("wb-bnr") as HTMLElement;
-
-  wbBanner.appendChild(languageButton);
+  languageDiv.appendChild(languageButton);
+  document.getElementById("wb-bnr")!.firstChild!.appendChild(languageDiv);
 }
 
 window.onload = function() {
