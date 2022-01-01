@@ -261,3 +261,7 @@ div .sv-vue-row-additional-div
 .router-link-exact-active {
     font-weight: 700 !important;
 }
+
+.modal-backdrop {
+    opacity: 0.75 !important;
+}
