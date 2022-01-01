@@ -1,7 +1,6 @@
 <template>
   <div>
-    <h5>Survey Results:</h5>
-    <p>Survey results will be added here upon completion of each survey</p>
+    <h5>{{ $t("currentSurveyResults") }}</h5>
     <HomeSectionCard
       v-for="section in sections"
       :key="section.id"

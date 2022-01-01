@@ -58,6 +58,7 @@
   "linkDirectiveText": "Lien vers les Exigences par niveau d’incidence de la Directive sur la prise de décision automatisée",
   "riskLevel": "Niveau d'incidence",
   "currentScore": "Cote actuelle",
+  "currentSurveyResults": "Current Survey Results (FR)",
   "rawRiskScore": "Cote d'incidence brute",
   "mitigationScore": "Cote d'atténuation",
   "sectionResultsTitle": "Résultats pour la section",

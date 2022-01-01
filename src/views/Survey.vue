@@ -9,7 +9,7 @@
     </div>
     <div class="btn-div">
       <download-survey @confirmToDownload="downloadSurvey" />
-      <LoadLocalSurvey @surveyDataLoaded="onSurveyDataLoaded" />
+      <upload-survey @surveyDataLoaded="onSurveyDataLoaded" />
     </div>
   </div>
 </template>
@@ -18,7 +18,7 @@
 import AssessmentTool from "@/components/AssessmentTool.vue"; // @ is an alias to /src
 import DownloadSurvey from "@/components/DownloadSurvey.vue";
 import HomeSectionsContainer from "@/components/HomeSectionsContainer.vue";
-import LoadLocalSurvey from "@/components/LoadLocalSurvey.vue";
+import UploadSurvey from "@/components/UploadSurvey.vue";
 import SurveyFile from "@/interfaces/SurveyFile";
 import i18n from "@/plugins/i18n";
 import { returnAllSectionsByPrefix } from "@/store";
@@ -34,7 +34,7 @@ import { Component, Vue, Watch } from "vue-property-decorator";
   components: {
     AssessmentTool,
     HomeSectionsContainer,
-    LoadLocalSurvey,
+    UploadSurvey,
     DownloadSurvey
   }
 })

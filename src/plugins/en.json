@@ -59,6 +59,7 @@
   "linkDirectiveText": "Link to the Directive on Automated Decision-Making Impact Level Requirements",
   "riskLevel": "Impact Level",
   "currentScore": "Current Score",
+  "currentSurveyResults": "Current Survey Results",
   "rawRiskScore": "Raw Impact Score",
   "mitigationScore": "Mitigation Score",
   "sectionResultsTitle": "Section Results",

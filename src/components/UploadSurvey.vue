@@ -4,7 +4,7 @@
       type="button"
       class="btn btn-primary"
       style="min-width: 400px !important"
-      v-on:click="showLoadLocalSurveyDialog()"
+      v-on:click="showUploadSurveyDialog()"
     >
       {{ $t("loadLocalSurvey.uploadSurvey") }}
     </b-button>
@@ -51,7 +51,7 @@
         <b-button
           class="btn btn-primary"
           style="width: 120px"
-          @click="loadLocalSurveyData"
+          @click="uploadSurveyData"
         >
           {{ $t("loadLocalSurvey.OK") }}
         </b-button>
@@ -71,7 +71,7 @@
 import Vue from "vue";
 import Component from "vue-class-component";
 @Component
-export default class LoadLocalSurvey extends Vue {
+export default class UploadSurvey extends Vue {
   surveyData: any = {};
   surveyDataForDisplay: string = "";
   hasError: boolean = false;
@@ -82,11 +82,11 @@ export default class LoadLocalSurvey extends Vue {
     fileUpload: HTMLInputElement;
   };
 
-  showLoadLocalSurveyDialog() {
+  showUploadSurveyDialog() {
     this.$bvModal.show("load-loacal-survey-modal");
   }
 
-  loadLocalSurveyData(): void {
+  uploadSurveyData(): void {
     if (!(!!this.surveyData && !!this.surveyData.name)) {
       this.hasError = true;
       this.errorMessage = "validation.file.required";
