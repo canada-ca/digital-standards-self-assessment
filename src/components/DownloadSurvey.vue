@@ -3,7 +3,7 @@
     <b-button
       type="button"
       class="btn btn-primary ml-auto"
-      style="min-width: 400px !important"
+      style="min-width: 500px !important"
       @click="showFileNameModal()"
     >
       {{ $t("downloadUploadSurvey.downloadSurvey") }}
@@ -13,8 +13,13 @@
         <div>{{ $t("downloadUploadSurvey.downloadTitle") }}</div>
       </template>
       <template #default>
-        <b-form @submit="onSubmit" ref="form">
+        <b-form @submit="onSubmit" ref="form" style="margin: 10px">
+          <div class="file-label">
+            <label>{{ $t("downloadUploadSurvey.fileName") }}</label>
+            <div class="text-right text-danger">* Required</div>
+          </div>
           <b-form-input
+            id="fileNameInput"
             ref="fileNameInput"
             class="form-control"
             :class="{ 'is-invalid': hasError }"
@@ -37,7 +42,7 @@
         </b-button>
         <b-button
           class="btn btn-default"
-          style="width: 120px"
+          style="width: 120px; margin-right: 10px !important"
           @click="onCancelClicked()"
         >
           {{ $t("downloadUploadSurvey.cancel") }}
@@ -93,3 +98,13 @@ export default class DownloadSurvey extends Vue {
   }
 }
 </script>
+
+<style scoped>
+.file-label {
+  display: flex;
+  justify-content: space-between;
+}
+.file-label div {
+  min-width: 100px;
+}
+</style>

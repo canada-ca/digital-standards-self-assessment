@@ -13,13 +13,13 @@
             class="menu-link"
             style="  color: #fff !important;  font-size: 30px !important;"
             to="/survey"
-            >Survey</router-link
+            >{{ $t("navigation.survey") }}</router-link
           >
           <router-link
             class="menu-link"
             style="color: #fff !important;  font-size: 30px !important;"
             to="/teamSurveys"
-            >Teams Survey</router-link
+            >{{ $t("navigation.teamsSurvey") }}</router-link
           >
         </div>
       </div>

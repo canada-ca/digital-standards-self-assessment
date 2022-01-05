@@ -14,11 +14,10 @@
             <i class="fas fa-circle mt-3 mr-3"></i>
             <span>
               <p style="font-size: 1.4em">
-                Measure Personal growth and success
+                {{ $t("notice.section1p1") }}
               </p>
               <p>
-                You can compare previous test results to current test results to
-                see your personal growth over time.
+                {{ $t("notice.section1p2") }}
               </p>
             </span>
           </div>
@@ -26,12 +25,10 @@
             <i class="fas fa-circle mt-3 mr-3"></i>
             <span>
               <p style="font-size: 1.4em">
-                Measure Teams growth and success
+                {{ $t("notice.section1p3") }}
               </p>
               <p>
-                You can calulate teams results and can evaluate the teams
-                overall growth and success or compare to your teams previous
-                test results.
+                {{ $t("notice.section1p4") }}
               </p>
             </span>
           </div>
@@ -44,16 +41,14 @@
           {{ $t("notice.subtitle2") }}
         </h5>
         <div>
-          You are not required to answer each section in a single visit, but we
-          encourage teams to complete them all at least once to establish a full
-          baseline.
+          {{ $t("notice.section2p1") }}
         </div>
         <div class="mt-4" style="display: flex;">
           <div class="welcome-col">
             <i class="fas fa-circle mt-3 mr-3"></i>
             <span>
               <p style="font-size: 1.4em">
-                4-6 minutes per section
+                {{ $t("notice.section2p2") }}
               </p>
             </span>
           </div>
@@ -61,7 +56,7 @@
             <i class="fas fa-circle mt-3 mr-3"></i>
             <span>
               <p style="font-size: 1.4em">
-                Aprox. 60 minutes to complete all 11 sections
+                {{ $t("notice.section2p3") }}
               </p>
             </span>
           </div>
@@ -78,12 +73,10 @@
             <i class="fas fa-circle mt-3 mr-3"></i>
             <span>
               <p style="font-size: 1.4em">
-                Browser Cache
+                {{ $t("notice.section3p1") }}
               </p>
               <p>
-                Responses to the DevOps Self-Assessment are stored locally on
-                your computer (browser's cache), and the Government of Canada
-                does not save any information.
+                {{ $t("notice.section3p2") }}
               </p>
             </span>
           </div>
@@ -91,12 +84,10 @@
             <i class="fas fa-circle mt-3 mr-3"></i>
             <span>
               <p style="font-size: 1.4em">
-                Exception
+                {{ $t("notice.section3p3") }}
               </p>
               <p>
-                Only the responses of ESDC employees connected to the VPN will
-                be saved anonymously for analysis by the DevOps CoE and IT
-                Strategy team.
+                {{ $t("notice.section3p4") }}
               </p>
             </span>
           </div>

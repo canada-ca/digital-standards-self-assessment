@@ -7,22 +7,37 @@
     "viewAllResults": "Tous les résultats",
     "viewTeamResults": "Team Results(FR)",
     "goBack": "Retour",
-    "goHome": "Accueil"
+    "goHome": "Accueil",
+    "survey": "Survey(FR)",
+    "teamsSurvey": "Team Results(FR)"
   },
   "notice": {
     "welcomeNoticeTitle": "Bienvenue à l'outil d'autoévaluation DevOps!",
     "subtitle1": "With this tool you can:(FR)",
+    "section1p1": "Measure Personal growth and success(FR)",
+    "section1p2": "You can compare previous test results to current test results to see your personal growth over time.(FR)",
+    "section1p3": "Measure Teams growth and success(FR)",
+    "section1p4": "You can calulate teams results and can evaluate the teams overall growth and success or compare to your teams previous test results.(FR)",
     "subtitle2": "Time required:(FR)",
-    "welcomeNoticeBody": "L'outil suivant est basé sur le rapport sur l'état du DevOps qui est publié chaque année depuis 2014, dans le cadre de la recherche et de l'évaluation du DevOps (DORA). Les questions de l'outil permettront de mesurer et de soutenir l'amélioration continue de la maturité DevOps à la DGIIT et à EDSC.",
+    "section2p1": "You are not required to answer each section in a single visit, but we encourage teams to complete them all at least once to establish a full baseline.(FR)",
+    "section2p2": "4-6 minutes per section(FR)",
+    "section2p3": "Aprox. 60 minutes to complete all 11 sections(FR)",
+    "subtitle3": "Privacy Notice:(FR)",
+    "section3p1": "Browser Cache(FR)",
+    "section3p2": "Responses to the DevOps Self-Assessment are stored locally on your computer (browser's cache), and the Government of Canada does not save any information.(FR)",
+    "section3p3": "Exception(FR)",
+    "section3p4": "Only the responses of ESDC employees connected to the VPN will be saved anonymously for analysis by the DevOps CoE and IT Strategy team.(FR)",
+    "welcomeNoticeBody": "L'outil suivant est basé sur le rapport sur l'état du DevOps qui est publié chaque année depuis 2014, dans le cadre de la recherche et de l'évaluation du DevOps (DORA). \n\nLes questions de l'outil permettront de mesurer et de soutenir l'amélioration continue de la maturité DevOps à la DGIIT et à EDSC.  \n\nTeams are invited to complete the self-assesment every 6 (six) to 12 (twelve) months **to measure their success**. However, you may use the tool at your discretion all year around as a team or individually.(FR)",
     "noProgress":"L'auto-évaluation DevOps n'a pas encore commencée. Veuillez choisir une section à compléter."
   },
   "downloadUploadSurvey": {
     "title": "Upload Survey(FR)",
+    "fileName": "File Name:(FR)",
     "surveyData": "Please upload a suvery file(FR)",
     "OK": "OK(FR)",
     "cancel": "Cancel(FR)",
     "format": "In Pretty Format(FR)",
-    "loadSurvey": "Upload Survey(FR)",
+    "uploadSurvey": "Upload Survey(FR)",
     "downloadSurvey": "Download Full Survey(FR)",
     "inputFileName": "Please enter a file name(FR)",
     "downloadTitle": "Download Survey(FR)"
@@ -302,6 +317,8 @@
   },
   "teamResults": {
     "title": "Team Results(FR)",
-    "browse": "Browse(FR)"
+    "browse": "Browse(FR)",
+    "teamScoreDetails": "Team Score Details(FR)",
+    "teamAverageScore": "Team Average Score(FR)"
   }
 }

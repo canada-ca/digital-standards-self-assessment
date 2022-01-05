@@ -153,7 +153,10 @@ function generateLanguageToggle() {
 
       // once the template reloads we will need to mount the button back into the banner
       let wbBanner = document.getElementById("wb-bnr") as HTMLElement;
-      wbBanner.appendChild(e.currentTarget as HTMLElement);
+      document
+        .getElementById("wb-bnr")!
+        .firstChild!.appendChild((e.currentTarget as HTMLElement)
+          .parentElement as HTMLElement);
     } else {
       i18n.locale = "fr";
       if (e.target instanceof HTMLElement) {
@@ -163,7 +166,10 @@ function generateLanguageToggle() {
       reloadTemplate();
 
       let wbBanner = document.getElementById("wb-bnr") as HTMLElement;
-      wbBanner.appendChild(e.currentTarget as HTMLElement);
+      document
+        .getElementById("wb-bnr")!
+        .firstChild!.appendChild((e.currentTarget as HTMLElement)
+          .parentElement as HTMLElement);
     }
 
     // reload the cdts template

@@ -3,7 +3,7 @@
     <b-button
       type="button"
       class="btn btn-primary"
-      style="min-width: 400px !important"
+      style="min-width: 500px !important"
       v-on:click="showUploadSurveyDialog()"
     >
       {{ $t("downloadUploadSurvey.uploadSurvey") }}

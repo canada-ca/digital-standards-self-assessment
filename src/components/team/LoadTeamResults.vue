@@ -24,11 +24,14 @@
     <div class="row" v-if="hasReportData() && !hasError()">
       <div class="col">
         <b-tabs style="margin-top: 20px">
-          <b-tab title="Team Score Details" active>
+          <b-tab :title="$t('teamResults.teamScoreDetails')" active>
             <team-score-bar-chart :teamReportDataArray="teamReportDataArray" />
             <team-score-report :teamReportDataArray="teamReportDataArray" />
           </b-tab>
-          <b-tab title="Team Average Score" v-if="hasAverageData()">
+          <b-tab
+            :title="$t('teamResults.teamAverageScore')"
+            v-if="hasAverageData()"
+          >
             <results-section-container
               v-for="section of teamAverageReportData.sections"
               :sectionReportData="section"

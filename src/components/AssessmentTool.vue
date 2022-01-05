@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <div id="surveyContainer" class="wb-frmvld">
       <survey v-bind:survey="survey"></survey>
     </div>
