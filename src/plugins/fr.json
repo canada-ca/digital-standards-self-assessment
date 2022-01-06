@@ -316,9 +316,14 @@
     ]
   },
   "teamResults": {
-    "title": "Team Results(FR)",
-    "browse": "Browse(FR)",
+    "title": "Team Results Overview(FR)",
+    "description": "Results will apear below once you have uploaded 1 or more survey(s)(FR)",
+    "uploadSurveys": "Upload Survey(s)(FR)",
+    "uploadDesc": "Choose file or drag and drop the file here. To compare results upload one group of surveys intoSurvey(s) A and the additional group to Survey(s) B(FR)",
+    "uploadSurveysA": "Upload Survey(s) A(FR)",
+    "uploadSurveysB": "Upload Survey(s) B(FR)",
     "teamScoreDetails": "Team Score Details(FR)",
-    "teamAverageScore": "Team Average Score(FR)"
+    "teamAverageScore": "Team Average Score(FR)",
+    "calcResults": "Calculate Results"
   }
 }

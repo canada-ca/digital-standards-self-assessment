@@ -168,6 +168,10 @@ a:active, a:hover {
     user-select: none !important;
 }
 
+.btn:disabled {
+    cursor: not-allowed !important;
+}
+
 .survey-button {
     color: white !important;
     background-color: #2572b4 !important;

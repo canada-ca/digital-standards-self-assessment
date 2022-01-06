@@ -3,19 +3,26 @@
     <h1>
       {{ $t("teamResults.title") }}
     </h1>
-    <div>
-      <load-team-results />
+    <p>{{ $t("teamResults.description") }}</p>
+    <p>
+      <upload-team-surveys />
+    </p>
+    <div class="row">
+      <div class="col overview-image">
+        <b-img class="overview-image" fluid-grow :src="img" />
+      </div>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import LoadTeamResults from "../components/team/LoadTeamResults.vue";
 import { Component, Vue, Watch } from "vue-property-decorator";
+import UploadTeamSurveys from "@/components/team/UploadTeamSurveys.vue";
+const teamSurveyOverviewImg = require("@/assets/teamSurveyOverview.png");
 
 @Component({
   components: {
-    LoadTeamResults
+    UploadTeamSurveys
   },
   computed: {
     locale() {
@@ -24,40 +31,7 @@ import { Component, Vue, Watch } from "vue-property-decorator";
   }
 })
 export default class Results extends Vue {
-  /**
-   * Export survey result.
-   */
-  exportResults() {
-    const source = window.document.getElementById(
-      this.$i18n.locale + "-content"
-    ) as HTMLElement;
-
-    let pageActions = window.document.getElementsByClassName("page-actions");
-
-    function beforePrint() {
-      for (let i in pageActions) {
-        if (pageActions[parseInt(i)].classList) {
-          pageActions[parseInt(i)].classList.add("hidden");
-        }
-      }
-    }
-
-    function afterPrint() {
-      for (let i in pageActions) {
-        if (pageActions[parseInt(i)].classList) {
-          pageActions[parseInt(i)].classList.remove("hidden");
-        }
-      }
-    }
-
-    window.addEventListener("beforeprint", beforePrint, false);
-    window.addEventListener("afterprint", afterPrint, false);
-
-    window.print();
-
-    window.removeEventListener("beforeprint", beforePrint);
-    window.removeEventListener("afterprint", afterPrint);
-  }
+  img = teamSurveyOverviewImg;
 
   @Watch("$i18n.locale")
   changeLanguage(value: string, oldValue: string) {
@@ -68,3 +42,9 @@ export default class Results extends Vue {
   created() {}
 }
 </script>
+
+<style scoped>
+.overview-image {
+  padding: 40px 150px;
+}
+</style>

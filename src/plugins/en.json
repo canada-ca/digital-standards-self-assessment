@@ -316,9 +316,14 @@
     ]
   },
   "teamResults": {
-    "title": "Team Results",
-    "browse": "Browse",
+    "title": "Team Results Overview",
+    "description": "Results will apear below once you have uploaded 1 or more survey(s)",
+    "uploadSurveys": "Upload Survey(s)",
+    "uploadDesc": "Choose file or drag and drop the file here. To compare results upload one group of surveys intoSurvey(s) A and the additional group to Survey(s) B",
+    "uploadSurveysA": "Upload Survey(s) A",
+    "uploadSurveysB": "Upload Survey(s) B",
     "teamScoreDetails": "Team Score Details",
-    "teamAverageScore": "Team Average Score"
+    "teamAverageScore": "Team Average Score",
+    "calcResults": "Calculate Results"
   }
 }
