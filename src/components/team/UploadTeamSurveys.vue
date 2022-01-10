@@ -3,7 +3,7 @@
     <b-link @click="showUploadDialog($event)">{{
       $t("teamResults.uploadSurveys")
     }}</b-link>
-    <b-modal id="upload-team-survey-modal" size="lg">
+    <b-modal id="upload-team-survey-modal" size="lg" @shown="focus">
       <template #modal-header>
         <div>{{ $t("teamResults.uploadSurveys") }}</div>
       </template>
@@ -12,42 +12,46 @@
           <p style="margin-bottom: 30px !important">
             {{ $t("teamResults.uploadDesc") }}
           </p>
+          <b-form-group
+            :label="$t('teamResults.teamName')"
+            label-for="teamName"
+            :invalid-feedback="$t(invalidFeedback())"
+            :state="state()"
+          >
+            <b-form-input
+              id="teamName"
+              ref="teamNameInput"
+              :placeholder="$t('teamResults.teamNamePlaceholder')"
+              v-model="teamName"
+              :state="state()"
+              trim
+            ></b-form-input>
+          </b-form-group>
           <div class="row">
-            <div class="col-md-6 text-center">
+            <div class="col text-center">
               <b-form-file
-                id="fileA"
+                id="fileInput"
                 @change="onFileChanged($event)"
                 multiple="multiple"
                 style="opacity:0; height:0px;width:0px;"
               />
               <b-button
-                id="buttonA"
                 @click="selectFile($event)"
                 class="btn btn-primary upload-button"
-                >{{ $t("teamResults.uploadSurveysA") }}</b-button
+                >{{ $t("teamResults.uploadSurveys") }}</b-button
               >
-              <div style="margin-top: 20px">
-                <div v-for="(file, index) in filesA" :key="index">
-                  <file-item :file="file" @delete="deleteFilesA(index)" />
+              <div class="row text-danger mt-3" v-if="hasError()">
+                <div class="col">
+                  <ul>
+                    <li v-for="(error, index) in errorMessages" :key="index">
+                      {{ $t(error.message, { fileName: error.param }) }}
+                    </li>
+                  </ul>
                 </div>
               </div>
-            </div>
-            <div class="col-md-6 text-center">
-              <b-form-file
-                id="fileB"
-                @change="onFileChanged($event)"
-                multiple="multiple"
-                style="opacity:0; height:0px;width:0px;"
-              />
-              <b-button
-                id="buttonB"
-                @click="selectFile($event)"
-                class="btn btn-primary upload-button"
-                >{{ $t("teamResults.uploadSurveysB") }}</b-button
-              >
-              <div style="margin-top: 20px">
-                <div v-for="(file, index) in filesB" :key="index">
-                  <file-item :file="file" @delete="deleteFilesB(index)" />
+              <div class="file-list-div">
+                <div v-for="(file, index) in files" :key="index">
+                  <file-item :file="file" @delete="deleteFile(index)" />
                 </div>
               </div>
             </div>
@@ -65,7 +69,7 @@
         <b-button
           class="btn btn-default"
           style="width: 120px; margin-right: 10px !important"
-          @click="onCancelClicked()"
+          @click="closeModal()"
         >
           {{ $t("downloadUploadSurvey.cancel") }}
         </b-button>
@@ -77,20 +81,33 @@
 <script lang="ts">
 import FileItem from "@/components/team/FileItem.vue";
 import ErrorMessage from "@/interfaces/ErrorMessage";
+import SectionReportData from "@/interfaces/report/SectionReportData";
+import TeamReportData from "@/interfaces/report/TeamReportData";
+import SurveyFile from "@/interfaces/SurveyFile";
+import { Model } from "survey-vue";
+import { isEqual } from "lodash";
 import { Component, Vue, Watch } from "vue-property-decorator";
 
 @Component({
   components: {FileItem}
 })
 export default class UploadTeamSurveys extends Vue {
-  filesA: any[] = [];
-  filesB: any[] = [];
+  files: any[] = [];
   errorMessages: Array<ErrorMessage> = [];
   locale = "en";
+  teamName = "";
 
   $refs!: {
-    fileUpload: HTMLInputElement;
-  };
+    teamNameInput: HTMLInputElement;
+  }
+
+  focus() {
+    this.$refs.teamNameInput.focus();
+  }
+
+  surveyDataArray: Array<SurveyFile> = [];
+  teamReportDataArray: Array<TeamReportData> = [];
+  teamAverageReportData!: TeamReportData;
 
   showUploadDialog(event: MouseEvent) {
     event.preventDefault();
@@ -98,30 +115,190 @@ export default class UploadTeamSurveys extends Vue {
     this.$bvModal.show("upload-team-survey-modal");
   }
 
+  state() {
+    return this.teamName.length > 0
+  }
+  invalidFeedback() {
+    if (this.teamName.length == 0) {
+      return "teamResults.teamNameRequired";
+    }
+  }
+
   selectFile(event: MouseEvent) {
-    const targetButton: HTMLButtonElement = event.target as HTMLButtonElement;
-    const fileElementID = "file" + targetButton.id.substring(6);
-    console.log(fileElementID);
-    document.getElementById(fileElementID)?.click()
+    document.getElementById("fileInput")?.click();
   }
 
-  deleteFilesA(index: number) {
-    this.filesA.splice(index, 1);
-  }
-
-  deleteFilesB(index: number) {
-    this.filesB.splice(index, 1);
+  deleteFile(index: number) {
+    this.files.splice(index, 1);
   }
 
   readyToCalc(): boolean {
-    return (this.filesA && this.filesA.length > 0) || (this.filesB && this.filesB.length > 0)
+    return this.files && this.files.length > 0 && this.teamName.length > 0;
   }
 
   calculateResults() {
-    
+    this.surveyDataArray = [];
+    this.teamReportDataArray = [];
+    const fileCount = this.files.length;
+    this.files.forEach((file: any) => {
+      this.loadSurveyFromFile(fileCount, file);
+    });
   }
 
-  onCancelClicked() {
+  loadSurveyFromFile(fileCount: number, file: any) {
+    const reader = new FileReader();
+    let surveyFile: SurveyFile;
+    reader.onload = (e: ProgressEvent) => {
+      const result = reader.result as string;
+      if (result === "undefined") {
+        surveyFile = {
+          fileName: file.name,
+          hasError: true,
+          errorMessage: "validation.file.format",
+          currentPage: 0
+        };
+        this.errorMessages.push({
+          message: "validation.file.format",
+          param: file.name
+        });
+      } else {
+        try {
+          surveyFile = JSON.parse(result);
+          surveyFile.hasError = false;
+          surveyFile.fileName = file.name;
+          this.teamReportDataArray.push({
+            name: surveyFile.fileName.substr(0, surveyFile.fileName.length - 5),
+            sections: this.extractReportData(surveyFile)
+          });
+        } catch (e) {
+          surveyFile = {
+            fileName: file.name,
+            hasError: true,
+            errorMessage: "validation.file.format",
+            currentPage: 0
+          };
+          this.errorMessages.push({
+            message: "validation.file.format",
+            param: file.name
+          });
+        }
+      }
+      this.surveyDataArray.push(surveyFile);
+
+      if (this.surveyDataArray.length === fileCount) {
+        // sort report data
+        this.teamReportDataArray.sort((a, b) =>
+          a.name < b.name ? -1 : a.name == b.name ? 0 : 1
+        );
+        this.teamAverageReportData = { ...this.teamReportDataArray[0] };
+        this.averageTeamScore();
+        this.$emit("loadTeamReportData", this.teamAverageReportData)
+        this.closeModal();
+      }
+    };
+    reader.readAsText(file);
+  }
+
+  private averageTeamScore() {
+    if (this.teamAverageReportData === undefined) {
+      return;
+    }
+    this.teamAverageReportData.name = this.teamName;
+    // Extract score into a map
+    // section_name: question_name: [score1, score2, score3]
+    const scoresMap: Map<String, Map<string, any[]>> = new Map();
+    if (this.surveyDataArray.length > 0) {
+      const firstSurvey = this.surveyDataArray[0].surveyJSON;
+      for (const surveyFile of this.surveyDataArray) {
+        // validate if all files have same format
+        if (!isEqual(firstSurvey, surveyFile.surveyJSON)) {
+          this.errorMessages.push({
+            message: "validation.file.differentFormat"
+          } as ErrorMessage);
+          return;
+        }
+        for (const section of surveyFile.surveyJSON.pages) {
+          if (!scoresMap.has(section.name)) {
+            scoresMap.set(section.name, new Map<string, any[]>());
+          }
+          const sectionScoreMap = scoresMap.get(section.name);
+          for (const question of section.elements) {
+            if (!sectionScoreMap!.has(question.name)) {
+              sectionScoreMap!.set(question.name, []);
+            }
+            sectionScoreMap!
+              .get(question.name)!
+              .push(surveyFile.data[question.name]);
+          }
+        }
+      }
+      for (const section of this.teamAverageReportData.sections) {
+        for (const question of section.questions) {
+          const scoreArray = scoresMap!
+            .get(section.name)!
+            .get(question.name)!
+            .filter(v => v !== undefined);
+          if (question.type == "rating") {
+            const sum = scoreArray!.reduce((a, b) => a + b, 0);
+            const avg = sum / scoreArray!.length || 0;
+            question.answer = Math.round(avg);
+          } else if (question.type === "boolean") {
+            const booleanResult = scoreArray!.reduce(
+              (prevVal, curVal) => {
+                curVal ? prevVal.true++ : prevVal.false++;
+                return prevVal;
+              },
+              { true: 0, false: 0 }
+            );
+            question.answer =
+              booleanResult.true + " true, " + booleanResult.false + " false";
+          }
+        }
+      }
+    }
+  }
+
+  private extractReportData(surveyFile: SurveyFile): Array<SectionReportData> {
+    const sectionReportDataArray: Array<SectionReportData> = [];
+    if (surveyFile.surveyJSON) {
+      let survey: Model = new Model(surveyFile.surveyJSON);
+      survey.data = surveyFile.data;
+      survey.pages.forEach(page => {
+        const sectionReportData: SectionReportData = {
+          name: page.name,
+          score: 0,
+          maxScore: page.questions.length * 5,
+          questions: [],
+          title: page.title
+        };
+        page.questions.forEach(question => {
+          sectionReportData.questions.push({
+            name: question.name,
+            type: question.getType(),
+            title: question.title,
+            answer: question.value
+          });
+          if (question.value !== undefined) {
+            let score = 0;
+            if (question.getType() === "rating") {
+              score = +question.value;
+            } else if (question.getType() === "boolean") {
+              if (question.value) {
+                score = 5;
+              } else {
+                score = 1;
+              }
+            }
+            sectionReportData.score += score;
+          }
+        });
+        sectionReportDataArray.push(sectionReportData);
+      });
+    }
+    return sectionReportDataArray;
+  }
+
+  closeModal() {
     this.$bvModal.hide("upload-team-survey-modal");
   }
 
@@ -148,11 +325,7 @@ export default class UploadTeamSurveys extends Vue {
     if (files.length === 0) {
       return;
     }
-    if (target.id === "fileA") {
-      this.filesA = [...files];
-    } else {
-      this.filesB = [...files];
-    }
+    this.files = [...files];
   }
 }
 </script>
@@ -160,5 +333,14 @@ export default class UploadTeamSurveys extends Vue {
 <style>
 .upload-button {
   min-width: 270px !important;
+}
+.file-list-div {
+  margin-top: 20px;
+  max-height: 400px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.team-name-div {
+  display: flex;
 }
 </style>

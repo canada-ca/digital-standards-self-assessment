@@ -2,7 +2,7 @@
   <div
     id="barChart"
     ref="barChart"
-    style="min-width: 100%; height:400px; margin-top: 30px"
+    style="min-width: 100%; height:500px; margin-top: 30px"
   ></div>
 </template>
 
@@ -13,7 +13,7 @@ import { ECharts, EChartsOption } from "echarts";
 import { Component, Prop, Vue, Watch } from "vue-property-decorator";
 
 @Component
-export default class TeamScoreCard extends Vue {
+export default class TeamScoreBarCard extends Vue {
   @Prop()
   teamReportDataArray!: Array<TeamReportData>;
   allSectionNames: string[] = [];
