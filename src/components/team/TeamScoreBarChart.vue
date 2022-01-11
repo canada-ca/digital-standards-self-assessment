@@ -16,7 +16,7 @@ import { Component, Prop, Vue, Watch } from "vue-property-decorator";
 export default class TeamScoreBarCard extends Vue {
   @Prop()
   teamReportDataArray!: Array<TeamReportData>;
-  allSectionNames: string[] = [];
+  allTeamNames: string[] = [];
   teamScores: any[][] = [];
   chartSeries: Object[] = [];
 
@@ -40,6 +40,18 @@ export default class TeamScoreBarCard extends Vue {
     }
   }
 
+  private extractAllSectionNames_BACKUP() {
+    const sectionNameSet: Set<string> = new Set();
+    this.teamReportDataArray.forEach(t => {
+      t.sections.forEach(s => {
+        sectionNameSet.add(s.name);
+      });
+    });
+    this.allTeamNames = [...sectionNameSet];
+    this.chartSeries = this.allTeamNames.map(name => ({ type: "bar" }));
+    this.teamScores = this.getTeamScores();
+  }
+
   private extractAllSectionNames() {
     const sectionNameSet: Set<string> = new Set();
     this.teamReportDataArray.forEach(t => {
@@ -47,18 +59,26 @@ export default class TeamScoreBarCard extends Vue {
         sectionNameSet.add(s.name);
       });
     });
-    this.allSectionNames = [...sectionNameSet];
-    this.chartSeries = this.allSectionNames.map(name => ({ type: "bar" }));
+    return [...sectionNameSet];
+  }
+
+  private extractAllTeamNames() {
+    this.allTeamNames = [];
+    this.teamReportDataArray.forEach(t => {
+      this.allTeamNames.push(t.name);
+    });
+    this.chartSeries = this.allTeamNames.map(name => ({ type: "bar" }));
     this.teamScores = this.getTeamScores();
   }
 
   private getTeamScores(): any[][] {
     const teamScoreArray: any[][] = [];
-    this.teamReportDataArray.forEach(t => {
+    const allSectionNames = this.extractAllSectionNames();
+    allSectionNames.forEach(sn => {
       const rec: any[] = [];
-      rec.push(t.name);
-      this.allSectionNames.forEach(sn => {
-        rec.push(this.getSectionScore(t.name, sn));
+      rec.push(sn);
+      this.teamReportDataArray.forEach(data => {
+        rec.push(this.getSectionScore(data.name, sn));
       });
       teamScoreArray.push(rec);
     });
@@ -91,14 +111,14 @@ export default class TeamScoreBarCard extends Vue {
 
   @Watch("teamReportDataArray")
   creatEcharts() {
-    this.extractAllSectionNames();
+    this.extractAllTeamNames();
     const option: EChartsOption = {
       legend: {
-        data: ["section_one", "section_two", "section_three"]
+        data: this.allTeamNames
       },
       tooltip: {},
       dataset: {
-        source: [["team", ...this.allSectionNames], ...this.teamScores]
+        source: [["section", ...this.allTeamNames], ...this.teamScores]
       },
       xAxis: { type: "category" },
       yAxis: {

@@ -55,7 +55,14 @@ export default class Results extends Vue {
   }
 
   addTeamReportData(teamReportData: TeamReportData) {
-    this.teamReportDataArray.push(teamReportData);
+    const index = this.teamReportDataArray.findIndex(
+      d => d.name === teamReportData.name
+    );
+    if (index === -1) {
+      this.teamReportDataArray.push(teamReportData);
+    } else {
+      this.teamReportDataArray.splice(index, 1, teamReportData);
+    }
   }
 }
 </script>

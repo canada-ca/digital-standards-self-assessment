@@ -112,7 +112,15 @@ export default class UploadTeamSurveys extends Vue {
   showUploadDialog(event: MouseEvent) {
     event.preventDefault();
     this.errorMessages = [];
+    this.cleanData();
     this.$bvModal.show("upload-team-survey-modal");
+  }
+
+  private cleanData() {
+    this.teamName = "";
+    this.surveyDataArray = [];
+    this.teamReportDataArray = [];
+    this.files = [];
   }
 
   state() {
