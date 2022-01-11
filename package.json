@@ -40,7 +40,9 @@
     "vue-router": "^3.5.1",
     "vue-search-select": "^2.9.3",
     "vuex": "^3.6.2",
-    "vuex-persist": "2.2.0"
+    "vuex-persist": "2.2.0",
+    "node-forge": ">=1.0.0",
+    "postcss": ">=8.2.13"
   },
   "devDependencies": {
     "@types/jest": "^25.2.3",
