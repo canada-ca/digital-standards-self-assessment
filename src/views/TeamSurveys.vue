@@ -16,6 +16,10 @@
           v-if="!hasReportData()"
         />
         <team-score-bar-chart :teamReportDataArray="teamReportDataArray" />
+        <team-score-data-table
+          :teamReportDataArray="teamReportDataArray"
+          v-if="hasReportData()"
+        />
       </div>
     </div>
   </div>
@@ -26,12 +30,14 @@ import { Component, Vue, Watch } from "vue-property-decorator";
 import UploadTeamSurveys from "@/components/team/UploadTeamSurveys.vue";
 import TeamReportData from "@/interfaces/report/TeamReportData";
 import TeamScoreBarChart from "@/components/team/TeamScoreBarChart.vue";
+import TeamScoreDataTable from "@/components/team/TeamScoreDataTable.vue";
 const teamSurveyOverviewImg = require("@/assets/teamSurveyOverview.png");
 
 @Component({
   components: {
     UploadTeamSurveys,
-    TeamScoreBarChart
+    TeamScoreBarChart,
+    TeamScoreDataTable
   },
   computed: {
     locale() {

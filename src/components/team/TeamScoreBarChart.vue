@@ -40,18 +40,6 @@ export default class TeamScoreBarCard extends Vue {
     }
   }
 
-  private extractAllSectionNames_BACKUP() {
-    const sectionNameSet: Set<string> = new Set();
-    this.teamReportDataArray.forEach(t => {
-      t.sections.forEach(s => {
-        sectionNameSet.add(s.name);
-      });
-    });
-    this.allTeamNames = [...sectionNameSet];
-    this.chartSeries = this.allTeamNames.map(name => ({ type: "bar" }));
-    this.teamScores = this.getTeamScores();
-  }
-
   private extractAllSectionNames() {
     const sectionNameSet: Set<string> = new Set();
     this.teamReportDataArray.forEach(t => {
