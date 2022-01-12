@@ -81,8 +81,8 @@
 <script lang="ts">
 import FileItem from "@/components/team/FileItem.vue";
 import ErrorMessage from "@/interfaces/ErrorMessage";
-import SectionReportData from "@/interfaces/report/SectionReportData";
-import TeamReportData from "@/interfaces/report/TeamReportData";
+import { SectionReportData } from "@/store/state";
+import { TeamReportData } from "@/store/state";
 import SurveyFile from "@/interfaces/SurveyFile";
 import { Model } from "survey-vue";
 import { isEqual } from "lodash";

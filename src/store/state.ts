@@ -15,6 +15,7 @@ export interface RootState {
   loading: boolean;
   initialized: boolean;
   surveyJSON: any;
+  teamReportDataArray: TeamReportData[];
 }
 
 export interface Section {
@@ -25,6 +26,26 @@ export interface Section {
   userScore: number;
   maxScore: number;
   questions: Question[];
+}
+
+export interface TeamReportData {
+  name: string;
+  sections: Array<SectionReportData>;
+}
+
+export interface SectionReportData {
+  name: string;
+  score: number;
+  maxScore: number;
+  questions: Array<QuestionReportData>;
+  title: string;
+}
+
+export interface QuestionReportData {
+  name: string;
+  type: string;
+  answer: boolean | number | string;
+  title: string;
 }
 
 export type LanguageString = {
@@ -88,5 +109,6 @@ export const state: RootState = {
   error: false,
   loading: false,
   initialized: false,
-  surveyJSON: undefined
+  surveyJSON: undefined,
+  teamReportDataArray: []
 };

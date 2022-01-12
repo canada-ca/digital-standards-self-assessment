@@ -1,6 +1,6 @@
 import { ActionTree, ActionContext } from "vuex";
 import { Mutations, MutationType } from "@/store/mutations";
-import { RootState, Section, state } from "@/store/state";
+import { RootState, Section, state, TeamReportData } from "@/store/state";
 import appConfig from "@/survey-results.json";
 import appData from "@/survey-enfr.json";
 import { PageModel, Model, SurveyModel } from "survey-vue";
@@ -68,7 +68,12 @@ export enum ActionTypes {
    */
   UpdateSurveyData = "UPDATE_SURVEY_DATA",
   UpdateCurrentPageName = "UPDATE_CURRENT_PAGE_NAME",
-  UseSurveyJSON = "USE_SURVEY_JSON"
+  UseSurveyJSON = "USE_SURVEY_JSON",
+
+  // Actions for team survey
+  AddTeamSurvey = "ADD_TEAM_SURVEY",
+  DeleteTeamSurvey = "DELETE_TEAM_SURVEY",
+  ClearTeamSurvey = "CLEAR_TEAM_SURVEY"
 }
 
 type ActionAugments = Omit<ActionContext<RootState, RootState>, "commit"> & {
@@ -111,6 +116,13 @@ export type Actions = {
     context: ActionAugments,
     value: { surveyJSON: any; surveyModel: SurveyModel }
   ): void;
+  // Team Survey actions
+  [ActionTypes.AddTeamSurvey](
+    context: ActionAugments,
+    value: { teamReportData: TeamReportData }
+  ): void;
+  [ActionTypes.DeleteTeamSurvey](context: ActionAugments, value: string): void;
+  [ActionTypes.ClearTeamSurvey](context: ActionAugments): void;
 };
 
 export const actions: ActionTree<RootState, RootState> & Actions = {
@@ -280,5 +292,14 @@ export const actions: ActionTree<RootState, RootState> & Actions = {
       dispatch(ActionTypes.UpdateSectionScore, page);
     });
     dispatch(ActionTypes.SetSections, surveyModel);
+  },
+  async [ActionTypes.AddTeamSurvey]({ commit }, { teamReportData }) {
+    commit(MutationType.AddTeamSurvey, teamReportData);
+  },
+  async [ActionTypes.DeleteTeamSurvey]({ commit }, teamName) {
+    commit(MutationType.DeleteTeamSurvey, teamName);
+  },
+  async [ActionTypes.ClearTeamSurvey]({ commit }) {
+    commit(MutationType.ClearTeamSurvey, undefined);
   }
 };

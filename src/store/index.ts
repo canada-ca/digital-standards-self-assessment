@@ -21,7 +21,8 @@ const vuexLocal = new VuexPersistence({
     toolData: state.toolData,
     currentPageNo: state.currentPageNo,
     currentPageName: state.currentPageName,
-    surveyJSON: state.surveyJSON
+    surveyJSON: state.surveyJSON,
+    teamReportDataArray: state.teamReportDataArray
   })
 });
 

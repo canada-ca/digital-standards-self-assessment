@@ -1,5 +1,10 @@
 import { MutationTree } from "vuex";
-import { Recommendations, RootState, Section } from "@/store/state";
+import {
+  Recommendations,
+  RootState,
+  Section,
+  TeamReportData
+} from "@/store/state";
 import { SurveyModel } from "survey-vue";
 
 export enum MutationType {
@@ -71,7 +76,11 @@ export enum MutationType {
    * @param payload Contains ```undefined```
    */
   Initialized = "INITIALIZED",
-  SetSurveyJSON = "SET_SURVEY_JSON"
+  SetSurveyJSON = "SET_SURVEY_JSON",
+  // Team Survey Mutations
+  AddTeamSurvey = "ADD_TEAM_SURVEY",
+  DeleteTeamSurvey = "DELETE_TEAM_SURVEY",
+  ClearTeamSurvey = "CLEAR_TEAM_SURVEY"
 }
 
 export type Mutations = {
@@ -96,6 +105,9 @@ export type Mutations = {
   [MutationType.StopLoading](state: RootState): void;
   [MutationType.Initialized](state: RootState): void;
   [MutationType.SetSurveyJSON](state: RootState, payload: any): void;
+  [MutationType.AddTeamSurvey](state: RootState, payload: TeamReportData): void;
+  [MutationType.DeleteTeamSurvey](state: RootState, payload: string): void;
+  [MutationType.ClearTeamSurvey](state: RootState): void;
 };
 
 export const mutations: MutationTree<RootState> & Mutations = {
@@ -157,5 +169,24 @@ export const mutations: MutationTree<RootState> & Mutations = {
   },
   [MutationType.SetSurveyJSON](state: RootState, payload: any) {
     state.surveyJSON = payload;
+  },
+  [MutationType.AddTeamSurvey](state: RootState, payload: TeamReportData) {
+    const index = state.teamReportDataArray.findIndex(
+      d => d.name === payload.name
+    );
+    if (index === -1) {
+      state.teamReportDataArray.push(payload);
+    } else {
+      state.teamReportDataArray.splice(index, 1, payload);
+    }
+  },
+  [MutationType.DeleteTeamSurvey](state: RootState, payload: string) {
+    const index = state.teamReportDataArray.findIndex(d => d.name === payload);
+    if (index > -1) {
+      state.teamReportDataArray.splice(index, 1);
+    }
+  },
+  [MutationType.ClearTeamSurvey](state: RootState) {
+    state.teamReportDataArray = [];
   }
 };

@@ -1,9 +1,9 @@
 <template>
   <div>
     <b-table
-      striped="true"
-      bordered="true"
-      hover="true"
+      :striped="true"
+      :bordered="true"
+      :hover="true"
       head-variant="dark"
       :items="items"
       :fields="fields"
@@ -15,7 +15,7 @@
 </template>
 
 <script lang="ts">
-import TeamReportData from "@/interfaces/report/TeamReportData";
+import { TeamReportData } from "@/store/state";
 import { Component, Prop, Vue, Watch } from "vue-property-decorator";
 
 @Component

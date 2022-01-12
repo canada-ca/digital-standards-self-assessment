@@ -1,5 +1,5 @@
 import { GetterTree } from "vuex";
-import { Section, Recommendations, RootState } from "@/store/state";
+import { Section, Recommendations, RootState, TeamReportData } from "@/store/state";
 import isEmpty from "lodash.isempty";
 import { PageModel, SurveyModel } from "survey-vue";
 
@@ -88,6 +88,8 @@ export type Getters = {
   resultsDataSections(state: RootState): any[];
   returnSections(state: RootState): Section[];
   returnSectionPrefix(state: RootState): string;
+  // Team Survey Data
+  returnTeamReportDataArray(state: RootState): TeamReportData[];
 };
 
 export const getters: GetterTree<RootState, RootState> & Getters = {
@@ -191,5 +193,8 @@ export const getters: GetterTree<RootState, RootState> & Getters = {
   },
   returnSectionPrefix(state: RootState) {
     return state.sectionsPrefix;
+  },
+  returnTeamReportDataArray(state: RootState) {
+    return state.teamReportDataArray;
   }
 };

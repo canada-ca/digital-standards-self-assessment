@@ -7,7 +7,7 @@
 </template>
 
 <script lang="ts">
-import TeamReportData from "@/interfaces/report/TeamReportData";
+import { TeamReportData } from "@/store/state";
 import * as echarts from "echarts";
 import { ECharts, EChartsOption } from "echarts";
 import { Component, Prop, Vue, Watch } from "vue-property-decorator";
@@ -28,6 +28,10 @@ export default class TeamScoreBarCard extends Vue {
 
   created() {
     window.addEventListener("resize", this.onResize);
+  }
+
+  mounted() {
+    this.creatEcharts();
   }
 
   destroyed() {

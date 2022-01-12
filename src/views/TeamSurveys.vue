@@ -28,9 +28,10 @@
 <script lang="ts">
 import { Component, Vue, Watch } from "vue-property-decorator";
 import UploadTeamSurveys from "@/components/team/UploadTeamSurveys.vue";
-import TeamReportData from "@/interfaces/report/TeamReportData";
+import { TeamReportData } from "@/store/state";
 import TeamScoreBarChart from "@/components/team/TeamScoreBarChart.vue";
 import TeamScoreDataTable from "@/components/team/TeamScoreDataTable.vue";
+import { ActionTypes } from "@/store/actions";
 const teamSurveyOverviewImg = require("@/assets/teamSurveyOverview.png");
 
 @Component({
@@ -48,7 +49,8 @@ const teamSurveyOverviewImg = require("@/assets/teamSurveyOverview.png");
 export default class Results extends Vue {
   img = teamSurveyOverviewImg;
 
-  teamReportDataArray: TeamReportData[] = [];
+  teamReportDataArray: TeamReportData[] = this.$store.getters
+    .returnTeamReportDataArray;
 
   @Watch("$i18n.locale")
   changeLanguage(value: string, oldValue: string) {
@@ -61,14 +63,7 @@ export default class Results extends Vue {
   }
 
   addTeamReportData(teamReportData: TeamReportData) {
-    const index = this.teamReportDataArray.findIndex(
-      d => d.name === teamReportData.name
-    );
-    if (index === -1) {
-      this.teamReportDataArray.push(teamReportData);
-    } else {
-      this.teamReportDataArray.splice(index, 1, teamReportData);
-    }
+    this.$store.commit(ActionTypes.AddTeamSurvey, teamReportData);
   }
 }
 </script>
