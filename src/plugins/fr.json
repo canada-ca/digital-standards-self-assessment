@@ -325,6 +325,8 @@
     "calcResults": "Calculate Results(FR)",
     "teamName": "Team Name(FR):",
     "teamNamePlaceholder": "Please enter a team name(FR)",
-    "teamNameRequired": "Team name is mandatory(FR)"
+    "teamNameRequired": "Team name is mandatory(FR)",
+    "deleteTeam": "Delete this team(FR)",
+    "showIndividualBreakdown": "Show individual breakdown(FR)"
   }
 }

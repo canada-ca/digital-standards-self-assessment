@@ -3,7 +3,8 @@ import {
   Recommendations,
   RootState,
   Section,
-  TeamReportData
+  TeamReportData,
+  TeamReportDataBundle
 } from "@/store/state";
 import { SurveyModel } from "survey-vue";
 
@@ -80,7 +81,8 @@ export enum MutationType {
   // Team Survey Mutations
   AddTeamSurvey = "ADD_TEAM_SURVEY",
   DeleteTeamSurvey = "DELETE_TEAM_SURVEY",
-  ClearTeamSurvey = "CLEAR_TEAM_SURVEY"
+  ClearTeamSurvey = "CLEAR_TEAM_SURVEY",
+  ShowIndividualBreakdown = "SHOW_INDIVIDUAL_BREAKDOWN"
 }
 
 export type Mutations = {
@@ -105,9 +107,16 @@ export type Mutations = {
   [MutationType.StopLoading](state: RootState): void;
   [MutationType.Initialized](state: RootState): void;
   [MutationType.SetSurveyJSON](state: RootState, payload: any): void;
-  [MutationType.AddTeamSurvey](state: RootState, payload: TeamReportData): void;
+  [MutationType.AddTeamSurvey](
+    state: RootState,
+    payload: TeamReportDataBundle
+  ): void;
   [MutationType.DeleteTeamSurvey](state: RootState, payload: string): void;
   [MutationType.ClearTeamSurvey](state: RootState): void;
+  [MutationType.ShowIndividualBreakdown](
+    state: RootState,
+    payload: string
+  ): void;
 };
 
 export const mutations: MutationTree<RootState> & Mutations = {
@@ -170,23 +179,49 @@ export const mutations: MutationTree<RootState> & Mutations = {
   [MutationType.SetSurveyJSON](state: RootState, payload: any) {
     state.surveyJSON = payload;
   },
-  [MutationType.AddTeamSurvey](state: RootState, payload: TeamReportData) {
-    const index = state.teamReportDataArray.findIndex(
-      d => d.name === payload.name
+  [MutationType.AddTeamSurvey](
+    state: RootState,
+    payload: TeamReportDataBundle
+  ) {
+    const index = state.teamReportDataBundleArray.findIndex(
+      d => d.teamName === payload.teamName
     );
     if (index === -1) {
-      state.teamReportDataArray.push(payload);
+      state.teamReportDataBundleArray.push(payload);
     } else {
-      state.teamReportDataArray.splice(index, 1, payload);
+      state.teamReportDataBundleArray.splice(index, 1, payload);
+    }
+    const avgIndex = state.teamAverageReportDataArray.findIndex(
+      d => d.name === payload.teamName
+    );
+    if (avgIndex === -1) {
+      state.teamAverageReportDataArray.push(payload.teamAverageReportData);
+    } else {
+      state.teamAverageReportDataArray.splice(
+        avgIndex,
+        1,
+        payload.teamAverageReportData
+      );
     }
   },
   [MutationType.DeleteTeamSurvey](state: RootState, payload: string) {
-    const index = state.teamReportDataArray.findIndex(d => d.name === payload);
+    const index = state.teamReportDataBundleArray.findIndex(
+      d => d.teamName === payload
+    );
     if (index > -1) {
-      state.teamReportDataArray.splice(index, 1);
+      state.teamReportDataBundleArray.splice(index, 1);
     }
   },
   [MutationType.ClearTeamSurvey](state: RootState) {
-    state.teamReportDataArray = [];
+    state.teamReportDataBundleArray = [];
+  },
+  [MutationType.ShowIndividualBreakdown](state: RootState, payload: string) {
+    const reportDataBundle = state.teamReportDataBundleArray.find(
+      d => d.teamName === payload
+    );
+    if (reportDataBundle) {
+      state.individualTeamReportDataArray =
+        reportDataBundle.teamReportDataArray;
+    }
   }
 };

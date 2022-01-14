@@ -325,6 +325,8 @@
     "calcResults": "Calculate Results",
     "teamName": "Team Name:",
     "teamNamePlaceholder": "Please enter a team name",
-    "teamNameRequired": "Team name is mandatory"
+    "teamNameRequired": "Team name is mandatory",
+    "deleteTeam": "Delete this team",
+    "showIndividualBreakdown": "Show individual breakdown"
   }
 }

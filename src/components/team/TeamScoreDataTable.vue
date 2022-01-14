@@ -12,7 +12,17 @@
       responsive="sm"
     >
       <template #cell(actions)="row">
-        <b-icon-trash class="delete-icon" @click="deleteTeam(row)" />
+        <b-icon-trash
+          style="margin-right: 10px"
+          class="action-icon"
+          @click="deleteTeam(row)"
+          :title="$t('teamResults.deleteTeam')"
+        />
+        <b-icon-diagram-3
+          class="action-icon"
+          @click="showIndividualBreakdown(row)"
+          :title="$t('teamResults.showIndividualBreakdown')"
+        />
       </template>
     </b-table>
   </div>
@@ -21,12 +31,13 @@
 <script lang="ts">
 import { TeamReportData } from "@/store/state";
 import { Component, Prop, Vue, Watch } from "vue-property-decorator";
-import { BIconTrash } from "bootstrap-vue";
+import { BIconTrash, BIconDiagram3 } from "bootstrap-vue";
 import { ActionTypes } from "@/store/actions";
 
 @Component({
   components: {
-    BIconTrash
+    BIconTrash,
+    BIconDiagram3
   }
 })
 export default class TeamScoreDataTable extends Vue {
@@ -109,11 +120,16 @@ export default class TeamScoreDataTable extends Vue {
   deleteTeam(row: any) {
     this.$store.commit(ActionTypes.DeleteTeamSurvey, row.item.team_name);
   }
+
+  showIndividualBreakdown(row: any) {
+    this.$store.commit(ActionTypes.ShowIndividualBreakdown, row.item.team_name);
+    this.$router.push("/indivudualBreakdown");
+  }
 }
 </script>
 
 <style scoped>
-.delete-icon {
+.action-icon {
   cursor: pointer;
   user-select: none;
 }

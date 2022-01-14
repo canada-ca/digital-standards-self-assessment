@@ -81,7 +81,7 @@
 <script lang="ts">
 import FileItem from "@/components/team/FileItem.vue";
 import ErrorMessage from "@/interfaces/ErrorMessage";
-import { SectionReportData } from "@/store/state";
+import { SectionReportData, TeamReportDataBundle } from "@/store/state";
 import { TeamReportData } from "@/store/state";
 import SurveyFile from "@/interfaces/SurveyFile";
 import { Model } from "survey-vue";
@@ -200,7 +200,12 @@ export default class UploadTeamSurveys extends Vue {
         );
         this.teamAverageReportData = { ...this.teamReportDataArray[0] };
         this.averageTeamScore();
-        this.$emit("loadTeamReportData", this.teamAverageReportData)
+        const reportDataBundle: TeamReportDataBundle = {
+          teamName: this.teamName,
+          teamAverageReportData: this.teamAverageReportData,
+          teamReportDataArray: this.teamReportDataArray
+        }
+        this.$emit("loadTeamReportData", reportDataBundle);
         this.closeModal();
       }
     };

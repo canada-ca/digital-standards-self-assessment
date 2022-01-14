@@ -97,7 +97,7 @@ export default class Results extends Vue {
 
   Survey: Model = new Model(surveyJSON);
   goToHomePage() {
-    this.$router.push("/");
+    this.$router.push("/survey");
   }
   goToAllResults() {
     this.$router.push("/Results");

@@ -1,6 +1,6 @@
 import { ActionTree, ActionContext } from "vuex";
 import { Mutations, MutationType } from "@/store/mutations";
-import { RootState, Section, state, TeamReportData } from "@/store/state";
+import { RootState, Section, state, TeamReportData, TeamReportDataBundle } from "@/store/state";
 import appConfig from "@/survey-results.json";
 import appData from "@/survey-enfr.json";
 import { PageModel, Model, SurveyModel } from "survey-vue";
@@ -73,7 +73,8 @@ export enum ActionTypes {
   // Actions for team survey
   AddTeamSurvey = "ADD_TEAM_SURVEY",
   DeleteTeamSurvey = "DELETE_TEAM_SURVEY",
-  ClearTeamSurvey = "CLEAR_TEAM_SURVEY"
+  ClearTeamSurvey = "CLEAR_TEAM_SURVEY",
+  ShowIndividualBreakdown = "SHOW_INDIVIDUAL_BREAKDOWN"
 }
 
 type ActionAugments = Omit<ActionContext<RootState, RootState>, "commit"> & {
@@ -119,10 +120,14 @@ export type Actions = {
   // Team Survey actions
   [ActionTypes.AddTeamSurvey](
     context: ActionAugments,
-    value: { teamReportData: TeamReportData }
+    value: { teamReportDataBundle: TeamReportDataBundle }
   ): void;
   [ActionTypes.DeleteTeamSurvey](context: ActionAugments, value: string): void;
   [ActionTypes.ClearTeamSurvey](context: ActionAugments): void;
+  [ActionTypes.ShowIndividualBreakdown](
+    context: ActionAugments,
+    value: string
+  ): void;
 };
 
 export const actions: ActionTree<RootState, RootState> & Actions = {
@@ -293,13 +298,16 @@ export const actions: ActionTree<RootState, RootState> & Actions = {
     });
     dispatch(ActionTypes.SetSections, surveyModel);
   },
-  async [ActionTypes.AddTeamSurvey]({ commit }, { teamReportData }) {
-    commit(MutationType.AddTeamSurvey, teamReportData);
+  async [ActionTypes.AddTeamSurvey]({ commit }, { teamReportDataBundle }) {
+    commit(MutationType.AddTeamSurvey, teamReportDataBundle);
   },
   async [ActionTypes.DeleteTeamSurvey]({ commit }, teamName) {
     commit(MutationType.DeleteTeamSurvey, teamName);
   },
   async [ActionTypes.ClearTeamSurvey]({ commit }) {
     commit(MutationType.ClearTeamSurvey, undefined);
+  },
+  async [ActionTypes.ShowIndividualBreakdown]({ commit }, teamName) {
+    commit(MutationType.ShowIndividualBreakdown, teamName);
   }
 };

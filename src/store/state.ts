@@ -15,7 +15,9 @@ export interface RootState {
   loading: boolean;
   initialized: boolean;
   surveyJSON: any;
-  teamReportDataArray: TeamReportData[];
+  teamReportDataBundleArray: TeamReportDataBundle[];
+  teamAverageReportDataArray: TeamReportData[];
+  individualTeamReportDataArray: TeamReportData[];
 }
 
 export interface Section {
@@ -26,6 +28,12 @@ export interface Section {
   userScore: number;
   maxScore: number;
   questions: Question[];
+}
+
+export interface TeamReportDataBundle {
+  teamName: string;
+  teamAverageReportData: TeamReportData;
+  teamReportDataArray: TeamReportData[];
 }
 
 export interface TeamReportData {
@@ -110,5 +118,7 @@ export const state: RootState = {
   loading: false,
   initialized: false,
   surveyJSON: undefined,
-  teamReportDataArray: []
+  teamReportDataBundleArray: [],
+  teamAverageReportDataArray: [],
+  individualTeamReportDataArray: []
 };
