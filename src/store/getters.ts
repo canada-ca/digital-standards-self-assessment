@@ -1,5 +1,10 @@
 import { GetterTree } from "vuex";
-import { Section, Recommendations, RootState, TeamReportData } from "@/store/state";
+import {
+  Section,
+  Recommendations,
+  RootState,
+  TeamReportData
+} from "@/store/state";
 import isEmpty from "lodash.isempty";
 import { PageModel, SurveyModel } from "survey-vue";
 

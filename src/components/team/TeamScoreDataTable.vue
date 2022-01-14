@@ -10,22 +10,32 @@
       :sort-by.sync="sortBy"
       :sort-desc.sync="sortDesc"
       responsive="sm"
-    ></b-table>
+    >
+      <template #cell(actions)="row">
+        <b-icon-trash class="delete-icon" @click="deleteTeam(row)" />
+      </template>
+    </b-table>
   </div>
 </template>
 
 <script lang="ts">
 import { TeamReportData } from "@/store/state";
 import { Component, Prop, Vue, Watch } from "vue-property-decorator";
+import { BIconTrash } from "bootstrap-vue";
+import { ActionTypes } from "@/store/actions";
 
-@Component
+@Component({
+  components: {
+    BIconTrash
+  }
+})
 export default class TeamScoreDataTable extends Vue {
   @Prop()
   teamReportDataArray!: Array<TeamReportData>;
 
   sortBy = "team_name";
   sortDesc = false;
-  fields = [{ key: "team_name", sortable: true }];
+  fields = [{ key: "team_name", sortable: true }] as any[];
 
   items: any[] = [];
 
@@ -40,6 +50,11 @@ export default class TeamScoreDataTable extends Vue {
     this.fields = [{ key: "team_name", sortable: true }];
     sectionNames.map(sn => {
       this.fields.push({ key: sn, sortable: true });
+    });
+    this.fields.push({
+      key: "actions",
+      sortable: false,
+      tdClass: "text-center"
     });
     return sectionNames;
   }
@@ -90,5 +105,16 @@ export default class TeamScoreDataTable extends Vue {
     const sectionNames = this.extractAllSectionNames();
     this.getTeamScores(sectionNames);
   }
+
+  deleteTeam(row: any) {
+    this.$store.commit(ActionTypes.DeleteTeamSurvey, row.item.team_name);
+  }
 }
 </script>
+
+<style scoped>
+.delete-icon {
+  cursor: pointer;
+  user-select: none;
+}
+</style>
