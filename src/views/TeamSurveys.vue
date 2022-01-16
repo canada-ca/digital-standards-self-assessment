@@ -13,12 +13,15 @@
           class="overview-image"
           fluid-grow
           :src="img"
-          v-if="!hasReportData()"
+          v-if="!hasReportData"
         />
         <team-score-bar-chart :teamReportDataArray="teamReportDataArray" />
         <team-score-data-table
           :teamReportDataArray="teamReportDataArray"
-          v-if="hasReportData()"
+          v-if="hasReportData"
+        />
+        <individual-breakdown
+          :teamReportDataArray="individualReportDataArray"
         />
       </div>
     </div>
@@ -28,9 +31,10 @@
 <script lang="ts">
 import { Component, Vue, Watch } from "vue-property-decorator";
 import UploadTeamSurveys from "@/components/team/UploadTeamSurveys.vue";
-import { TeamReportData } from "@/store/state";
+import { TeamReportData, TeamReportDataBundle } from "@/store/state";
 import TeamScoreBarChart from "@/components/team/TeamScoreBarChart.vue";
 import TeamScoreDataTable from "@/components/team/TeamScoreDataTable.vue";
+import IndividualBreakdown from "@/components/team/IndividualBreakdown.vue";
 import { ActionTypes } from "@/store/actions";
 const teamSurveyOverviewImg = require("@/assets/teamSurveyOverview.png");
 
@@ -38,7 +42,8 @@ const teamSurveyOverviewImg = require("@/assets/teamSurveyOverview.png");
   components: {
     UploadTeamSurveys,
     TeamScoreBarChart,
-    TeamScoreDataTable
+    TeamScoreDataTable,
+    IndividualBreakdown
   },
   computed: {
     locale() {
@@ -49,8 +54,12 @@ const teamSurveyOverviewImg = require("@/assets/teamSurveyOverview.png");
 export default class Results extends Vue {
   img = teamSurveyOverviewImg;
 
-  teamReportDataArray: TeamReportData[] = this.$store.getters
-    .returnTeamReportDataArray;
+  get teamReportDataArray(): TeamReportData[] {
+    return this.$store.getters.returnTeamReportDataArray;
+  }
+  get individualReportDataArray(): TeamReportDataBundle[] {
+    return this.$store.getters.returnIndividualTeamReportDataArray;
+  }
 
   @Watch("$i18n.locale")
   changeLanguage(value: string, oldValue: string) {
@@ -58,8 +67,12 @@ export default class Results extends Vue {
     //    this.Survey.render();
   }
 
-  hasReportData(): boolean {
+  get hasReportData(): boolean {
     return this.teamReportDataArray.length > 0;
+  }
+
+  get showBreakdown() {
+    return this.$store.getters.returnShowBreakdown;
   }
 
   addTeamReportData(teamReportData: TeamReportData) {

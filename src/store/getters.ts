@@ -96,6 +96,7 @@ export type Getters = {
   // Team Survey Data
   returnTeamReportDataArray(state: RootState): TeamReportData[];
   returnIndividualTeamReportDataArray(state: RootState): TeamReportData[];
+  returnShowBreakdown(state: RootState): boolean;
 };
 
 export const getters: GetterTree<RootState, RootState> & Getters = {
@@ -205,5 +206,8 @@ export const getters: GetterTree<RootState, RootState> & Getters = {
   },
   returnIndividualTeamReportDataArray(state: RootState) {
     return state.individualTeamReportDataArray;
+  },
+  returnShowBreakdown(state: RootState) {
+    return state.showBreakdown;
   }
 };

@@ -1,6 +1,6 @@
 import { ActionTree, ActionContext } from "vuex";
 import { Mutations, MutationType } from "@/store/mutations";
-import { RootState, Section, state, TeamReportData, TeamReportDataBundle } from "@/store/state";
+import { RootState, Section, TeamReportDataBundle } from "@/store/state";
 import appConfig from "@/survey-results.json";
 import appData from "@/survey-enfr.json";
 import { PageModel, Model, SurveyModel } from "survey-vue";
@@ -74,7 +74,8 @@ export enum ActionTypes {
   AddTeamSurvey = "ADD_TEAM_SURVEY",
   DeleteTeamSurvey = "DELETE_TEAM_SURVEY",
   ClearTeamSurvey = "CLEAR_TEAM_SURVEY",
-  ShowIndividualBreakdown = "SHOW_INDIVIDUAL_BREAKDOWN"
+  ShowIndividualBreakdown = "SHOW_INDIVIDUAL_BREAKDOWN",
+  HideIndividualBreakdown = "HIDE_INDIVIDUAL_BREAKDOWN"
 }
 
 type ActionAugments = Omit<ActionContext<RootState, RootState>, "commit"> & {
@@ -128,6 +129,7 @@ export type Actions = {
     context: ActionAugments,
     value: string
   ): void;
+  [ActionTypes.HideIndividualBreakdown](context: ActionAugments): void;
 };
 
 export const actions: ActionTree<RootState, RootState> & Actions = {
@@ -309,5 +311,8 @@ export const actions: ActionTree<RootState, RootState> & Actions = {
   },
   async [ActionTypes.ShowIndividualBreakdown]({ commit }, teamName) {
     commit(MutationType.ShowIndividualBreakdown, teamName);
+  },
+  async [ActionTypes.HideIndividualBreakdown]({ commit }) {
+    commit(MutationType.HideIndividualBreakdown, undefined);
   }
 };

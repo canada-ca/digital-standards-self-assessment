@@ -11,18 +11,25 @@
       :sort-desc.sync="sortDesc"
       responsive="sm"
     >
-      <template #cell(actions)="row">
-        <b-icon-trash
-          style="margin-right: 10px"
-          class="action-icon"
-          @click="deleteTeam(row)"
-          :title="$t('teamResults.deleteTeam')"
-        />
-        <b-icon-diagram-3
-          class="action-icon"
-          @click="showIndividualBreakdown(row)"
+      <template #cell(team_name)="row">
+        <b-link
+          class="team-name"
+          v-b-tooltip.hover
           :title="$t('teamResults.showIndividualBreakdown')"
-        />
+          @click.prevent="showIndividualBreakdown(row)"
+        >
+          {{ row.item.team_name }}
+        </b-link>
+      </template>
+      <template #cell(actions)="row">
+        <b-link
+          class="delete-team"
+          @click.prevent="deleteTeam(row)"
+          v-b-tooltip.hover
+          :title="$t('teamResults.deleteTeam')"
+        >
+          <b-icon-trash style="margin-right: 10px" class="action-icon" />
+        </b-link>
       </template>
     </b-table>
   </div>
@@ -31,13 +38,12 @@
 <script lang="ts">
 import { TeamReportData } from "@/store/state";
 import { Component, Prop, Vue, Watch } from "vue-property-decorator";
-import { BIconTrash, BIconDiagram3 } from "bootstrap-vue";
+import { BIconTrash } from "bootstrap-vue";
 import { ActionTypes } from "@/store/actions";
 
 @Component({
   components: {
-    BIconTrash,
-    BIconDiagram3
+    BIconTrash
   }
 })
 export default class TeamScoreDataTable extends Vue {
@@ -77,7 +83,7 @@ export default class TeamScoreDataTable extends Vue {
       rec["team_name"] = data.name;
       sectionNames.forEach(sn => {
         // eslint-disable-next-line security/detect-object-injection
-        rec[sn] = this.getSectionScore(data.name, sn);
+        rec[sn] = this.getSectionScore(data.name, sn) + "%";
       });
       this.items.push(rec);
     });
@@ -123,7 +129,6 @@ export default class TeamScoreDataTable extends Vue {
 
   showIndividualBreakdown(row: any) {
     this.$store.commit(ActionTypes.ShowIndividualBreakdown, row.item.team_name);
-    this.$router.push("/indivudualBreakdown");
   }
 }
 </script>
@@ -132,5 +137,11 @@ export default class TeamScoreDataTable extends Vue {
 .action-icon {
   cursor: pointer;
   user-select: none;
+}
+.team-name {
+  cursor: pointer;
+}
+.delete-team {
+  text-decoration: none !important;
 }
 </style>

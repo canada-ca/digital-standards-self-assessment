@@ -326,7 +326,8 @@
     "teamName": "Team Name(FR):",
     "teamNamePlaceholder": "Please enter a team name(FR)",
     "teamNameRequired": "Team name is mandatory(FR)",
-    "deleteTeam": "Delete this team(FR)",
-    "showIndividualBreakdown": "Show individual breakdown(FR)"
+    "deleteTeam": "Click to delete this team(FR)",
+    "showIndividualBreakdown": "Click to show individual breakdown(FR)",
+    "hideIndividualBreakdown": "Hide individual breakdown(FR)"
   }
 }

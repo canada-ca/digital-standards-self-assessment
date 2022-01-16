@@ -82,7 +82,8 @@ export enum MutationType {
   AddTeamSurvey = "ADD_TEAM_SURVEY",
   DeleteTeamSurvey = "DELETE_TEAM_SURVEY",
   ClearTeamSurvey = "CLEAR_TEAM_SURVEY",
-  ShowIndividualBreakdown = "SHOW_INDIVIDUAL_BREAKDOWN"
+  ShowIndividualBreakdown = "SHOW_INDIVIDUAL_BREAKDOWN",
+  HideIndividualBreakdown = "HIDE_INDIVIDUAL_BREAKDOWN"
 }
 
 export type Mutations = {
@@ -117,6 +118,7 @@ export type Mutations = {
     state: RootState,
     payload: string
   ): void;
+  [MutationType.HideIndividualBreakdown](state: RootState): void;
 };
 
 export const mutations: MutationTree<RootState> & Mutations = {
@@ -222,6 +224,10 @@ export const mutations: MutationTree<RootState> & Mutations = {
     if (reportDataBundle) {
       state.individualTeamReportDataArray =
         reportDataBundle.teamReportDataArray;
+      state.showBreakdown = true;
     }
+  },
+  [MutationType.HideIndividualBreakdown](state: RootState) {
+    state.showBreakdown = false;
   }
 };
