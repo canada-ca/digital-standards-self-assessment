@@ -32,6 +32,12 @@
         </b-link>
       </template>
     </b-table>
+    <div
+      style="font-size: 12px;"
+      v-html="
+        markdownToHtml($t('teamResults.showIndividualBreakdownInstruction'))
+      "
+    />
   </div>
 </template>
 
@@ -129,6 +135,11 @@ export default class TeamScoreDataTable extends Vue {
 
   showIndividualBreakdown(row: any) {
     this.$store.commit(ActionTypes.ShowIndividualBreakdown, row.item.team_name);
+  }
+
+  markdownToHtml(item: string) {
+    const marked = require("marked");
+    return marked(item);
   }
 }
 </script>

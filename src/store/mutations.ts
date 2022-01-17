@@ -207,11 +207,20 @@ export const mutations: MutationTree<RootState> & Mutations = {
     }
   },
   [MutationType.DeleteTeamSurvey](state: RootState, payload: string) {
-    const index = state.teamReportDataBundleArray.findIndex(
+    let index = state.teamReportDataBundleArray.findIndex(
       d => d.teamName === payload
     );
     if (index > -1) {
       state.teamReportDataBundleArray.splice(index, 1);
+    }
+    index = state.teamAverageReportDataArray.findIndex(d => d.name === payload);
+    if (index > -1) {
+      state.teamAverageReportDataArray.splice(index, 1);
+    }
+    if (payload === state.individualTeamName) {
+      state.individualTeamName = "";
+      state.showBreakdown = false;
+      state.individualTeamReportDataArray = [];
     }
   },
   [MutationType.ClearTeamSurvey](state: RootState) {
@@ -222,6 +231,7 @@ export const mutations: MutationTree<RootState> & Mutations = {
       d => d.teamName === payload
     );
     if (reportDataBundle) {
+      state.individualTeamName = payload;
       state.individualTeamReportDataArray =
         reportDataBundle.teamReportDataArray;
       state.showBreakdown = true;

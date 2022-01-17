@@ -95,6 +95,7 @@ export type Getters = {
   returnSectionPrefix(state: RootState): string;
   // Team Survey Data
   returnTeamReportDataArray(state: RootState): TeamReportData[];
+  returnIndividualTeamName(state: RootState): string;
   returnIndividualTeamReportDataArray(state: RootState): TeamReportData[];
   returnShowBreakdown(state: RootState): boolean;
 };
@@ -203,6 +204,9 @@ export const getters: GetterTree<RootState, RootState> & Getters = {
   },
   returnTeamReportDataArray(state: RootState) {
     return state.teamAverageReportDataArray;
+  },
+  returnIndividualTeamName(state: RootState) {
+    return state.individualTeamName;
   },
   returnIndividualTeamReportDataArray(state: RootState) {
     return state.individualTeamReportDataArray;

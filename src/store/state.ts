@@ -18,6 +18,7 @@ export interface RootState {
   teamReportDataBundleArray: TeamReportDataBundle[];
   teamAverageReportDataArray: TeamReportData[];
   individualTeamReportDataArray: TeamReportData[];
+  individualTeamName: string;
   showBreakdown: boolean;
 }
 
@@ -121,6 +122,7 @@ export const state: RootState = {
   surveyJSON: undefined,
   teamReportDataBundleArray: [],
   teamAverageReportDataArray: [],
+  individualTeamName: "",
   individualTeamReportDataArray: [],
   showBreakdown: false
 };

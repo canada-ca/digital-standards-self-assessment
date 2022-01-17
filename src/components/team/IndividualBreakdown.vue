@@ -5,6 +5,7 @@
         {{ $t("teamResults.hideIndividualBreakdown") }}
       </b-link>
     </div>
+    <h5 class="text-center">{{ teamName }}</h5>
     <div class="individual-breakdown">
       <IndividualBreakdownItem
         :teamReportData="teamReportData"
@@ -27,6 +28,10 @@ import { ActionTypes } from "@/store/actions";
 export default class IndividualBreakdown extends Vue {
   @Prop()
   teamReportDataArray!: TeamReportData[];
+
+  get teamName() {
+    return this.$store.getters.returnIndividualTeamName;
+  }
 
   get showBreakdown() {
     return this.$store.getters.returnShowBreakdown;
