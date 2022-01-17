@@ -24,7 +24,7 @@ const vuexLocal = new VuexPersistence({
     surveyJSON: state.surveyJSON,
     teamReportDataBundleArray: state.teamReportDataBundleArray,
     teamAverageReportDataArray: state.teamAverageReportDataArray,
-    individualTeamReportDataArray: state.individualTeamReportDataArray,
+    individualTeamReportDataArray: state.individualTeamReportDataArray
   })
 });
 
