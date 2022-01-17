@@ -15,6 +15,7 @@
 </template>
 <script lang="ts">
 import { SectionRecommendation } from "@/types";
+import { marked } from "marked";
 import { Vue, Component, Prop } from "vue-property-decorator";
 @Component({
   components: {
@@ -35,7 +36,6 @@ import { Vue, Component, Prop } from "vue-property-decorator";
       return sectionRec?.recommendations[parseInt(scoreLevel)];
     },
     markdownToHtml(item: string) {
-      const marked = require("marked");
       return marked(item)
     }
   }

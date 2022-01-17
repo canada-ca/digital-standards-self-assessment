@@ -98,6 +98,7 @@
 </template>
 
 <script lang="ts">
+import { marked } from "marked";
 import { Component, Vue } from "vue-property-decorator";
 import ShowHideLink from "./ShowHideLink.vue";
 @Component({
@@ -105,9 +106,7 @@ import ShowHideLink from "./ShowHideLink.vue";
 })
 export default class Welcome extends Vue {
   markdownToHtml(item: string) {
-    const marked = require("marked");
     return marked(item);
-    // return marked(messages.en.displayNoticeStatus)
   }
 }
 </script>

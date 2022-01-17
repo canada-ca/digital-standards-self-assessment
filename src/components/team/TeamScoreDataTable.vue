@@ -46,7 +46,7 @@ import { TeamReportData } from "@/store/state";
 import { Component, Prop, Vue, Watch } from "vue-property-decorator";
 import { BIconTrash } from "bootstrap-vue";
 import { ActionTypes } from "@/store/actions";
-
+import { marked } from "marked";
 @Component({
   components: {
     BIconTrash
@@ -138,7 +138,6 @@ export default class TeamScoreDataTable extends Vue {
   }
 
   markdownToHtml(item: string) {
-    const marked = require("marked");
     return marked(item);
   }
 }
