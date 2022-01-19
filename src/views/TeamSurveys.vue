@@ -51,7 +51,6 @@ import { ActionTypes } from "@/store/actions";
   }
 })
 export default class Results extends Vue {
-
   get teamReportDataArray(): TeamReportData[] {
     return this.$store.getters.returnTeamReportDataArray;
   }
