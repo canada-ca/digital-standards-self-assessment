@@ -10,7 +10,7 @@
       @keydown.space="goToSection(section.name)"
     >
       <div class="icon-container">
-        <i :class="setIconClass(icon)"></i>
+        <i :class="setStatusIcon(section.name)"></i>
       </div>
       <div style="flex: auto;">
         <div class="survey-title">
@@ -21,8 +21,8 @@
             <p style="font-size: 16px;">
               {{ getShortDescription(section.description) }}
             </p>
-            <span style="color: #395072">
-              {{ $t("currentScore") }}: {{ sectionScoreLevel(section.name) }}%
+            <span style="color: #395072; font-weight: 700">
+              {{ $t("currentScore") }}: {{ sectionScoreLevel(section.name) }}
             </span>
           </div>
         </transition>
@@ -41,39 +41,34 @@ import { ActionTypes } from "@/store/actions";
 import ShowHideLink from "@/components/ShowHideLink.vue";
 
 @Component({
-  components: { ShowHideLink },
-  data: function() {
-    return {
-      cardStyleHover: {
-        "box-shadow": "0 0 0 2px black",
-        cursor: "pointer"
-      },
-      cardStyle: {
-        "box-shadow":
-          "0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19)"
-      },
-      hover: false
-    };
-  },
-  computed: {
-    cardStyles() {
-      if (this.$data.hover == true) {
-        return this.$data.cardStyleHover;
-      } else {
-        return this.$data.cardStyle;
-      }
-    }
-  }
+  components: { ShowHideLink }
 })
 export default class SurveySectionCard extends Vue {
   @Prop() public section!: PageModel;
   @Prop() public survey!: SurveyModel;
-  @Prop() public icon!: string;
+
+  cardStyleHover = {
+    "box-shadow": "0 0 0 2px black",
+    cursor: "pointer"
+  };
+  cardStyle = {
+    "box-shadow":
+      "0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19)"
+  };
+  hover = false;
 
   collapsed = true;
 
   toggleCollapsed() {
     this.collapsed = !this.collapsed;
+  }
+
+  get cardStyles() {
+    if (this.hover == true) {
+      return this.cardStyleHover;
+    } else {
+      return this.cardStyle;
+    }
   }
 
   goToSection(sectionName: string) {
@@ -83,11 +78,6 @@ export default class SurveySectionCard extends Vue {
     // this.$store.commit("updateCurrentPageName", sectionName);
     this.$store.dispatch(ActionTypes.UpdateCurrentPageName, sectionName);
     this.$router.push("/questions");
-  }
-
-  setIconClass(icon: string) {
-    let classDef: string = "fas fa-" + icon + " fa-2x";
-    return classDef;
   }
 
   getShortDescription(description: string) {
@@ -101,16 +91,17 @@ export default class SurveySectionCard extends Vue {
       sectionName
     );
     if (thisSection === undefined) {
-      return "0";
+      return "N/A";
     }
     let scorePercentage: string = new Intl.NumberFormat("en-CA", {
       style: "decimal",
       maximumFractionDigits: 0
     }).format((thisSection.userScore / thisSection.maxScore) * 100);
-    if (scorePercentage === "NaN") {
-      return "0";
+    if (scorePercentage === "NaN" || scorePercentage === "0") {
+      return "N/A";
+    } else {
+      return scorePercentage + "%";
     }
-    return scorePercentage;
   }
 
   setStatusIcon(sectionName: string) {
@@ -118,13 +109,13 @@ export default class SurveySectionCard extends Vue {
       sectionName
     );
     if (thisSection === undefined) {
-      return "far fa-circle";
+      return "zero fa fa-2x fa-circle";
     } else if (thisSection.userScore === 0) {
-      return "far fa-circle";
+      return "zero fa fa-2x fa-circle";
     } else if (thisSection.userScore > 0) {
-      return "fas fa-circle";
+      return "fa fa-2x fa-circle";
     } else {
-      return "fas fa-circle";
+      return "zero fa fa-2x fa-circle";
     }
   }
 }
@@ -159,9 +150,13 @@ export default class SurveySectionCard extends Vue {
 
 .icon-container {
   min-width: 60px;
-  color: #395072;
+  color: #26374b;
   text-align: left;
   height: 100%;
+}
+
+.zero {
+  color: #e5e5e5;
 }
 
 .show-hide-container {

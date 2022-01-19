@@ -6,7 +6,6 @@
       :key="section.id"
       :section="section"
       :survey="survey"
-      :icon="getIcon(section.name, sectionRecommendation)"
     ></SurveySectionCard>
   </div>
 </template>
@@ -23,16 +22,5 @@ export default class SurveySectionsContainer extends Vue {
   @Prop() public sections!: PageModel[];
   @Prop() public survey!: SurveyModel;
   @Prop() public sectionRecommendation!: SectionRecommendation[];
-
-  getIcon(sectionName: string, sectionRecommendation: SectionRecommendation[]) {
-    let section = sectionRecommendation.find(section => {
-      return section.name === sectionName;
-    });
-    if (section !== undefined) {
-      return section.icon;
-    } else {
-      return "smile";
-    }
-  }
 }
 </script>
