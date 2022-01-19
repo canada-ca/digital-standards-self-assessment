@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "41aef6afd978b6bea4bd",
+    "revision": "dbb122abecc8a9258e33",
     "url": "/digital-standards-self-assessment/css/app.3d9d82df.css"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/digital-standards-self-assessment/css/chunk-1922eebb.11ec54fb.css"
   },
   {
-    "revision": "375fd8fdcfb3502f9265",
-    "url": "/digital-standards-self-assessment/css/chunk-77678faf.7ecaf3e6.css"
+    "revision": "a2c14ead52979628a77e",
+    "url": "/digital-standards-self-assessment/css/chunk-68e87b94.73e4be14.css"
   },
   {
     "revision": "e61410efa4a3d44a53f3",
@@ -156,12 +156,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/digital-standards-self-assessment/img/time2.e93a8f40.png"
   },
   {
-    "revision": "626f0efddf9c4ee38b6409cec289f233",
+    "revision": "29d08d1abc2ba39ea56373f82743f15e",
     "url": "/digital-standards-self-assessment/index.html"
   },
   {
-    "revision": "41aef6afd978b6bea4bd",
-    "url": "/digital-standards-self-assessment/js/app.249c7e8f.js"
+    "revision": "dbb122abecc8a9258e33",
+    "url": "/digital-standards-self-assessment/js/app.45a44e74.js"
   },
   {
     "revision": "e77b080752cd6c0f30ff",
@@ -176,12 +176,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/digital-standards-self-assessment/js/chunk-2d20f8f7.0990cb61.js"
   },
   {
-    "revision": "d367d1fa0cabaffa8218",
-    "url": "/digital-standards-self-assessment/js/chunk-714f85b6.cba83c62.js"
+    "revision": "a2c14ead52979628a77e",
+    "url": "/digital-standards-self-assessment/js/chunk-68e87b94.3ce8b281.js"
   },
   {
-    "revision": "375fd8fdcfb3502f9265",
-    "url": "/digital-standards-self-assessment/js/chunk-77678faf.22c87a01.js"
+    "revision": "d367d1fa0cabaffa8218",
+    "url": "/digital-standards-self-assessment/js/chunk-714f85b6.cba83c62.js"
   },
   {
     "revision": "e61410efa4a3d44a53f3",
