@@ -65,7 +65,7 @@ import ShowHideLink from "@/components/ShowHideLink.vue";
     }
   }
 })
-export default class HomeSectionCard extends Vue {
+export default class SurveySectionCard extends Vue {
   @Prop() public section!: PageModel;
   @Prop() public survey!: SurveyModel;
   @Prop() public icon!: string;

@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div>
-      <HomeSectionsContainer
+      <SurveySectionsContainer
         :sections="sections"
         :survey="Survey"
         :section-recommendation="sectionRecommendation"
@@ -17,7 +17,7 @@
 <script lang="ts">
 import AssessmentTool from "@/components/AssessmentTool.vue"; // @ is an alias to /src
 import DownloadSurvey from "@/components/DownloadSurvey.vue";
-import HomeSectionsContainer from "@/components/HomeSectionsContainer.vue";
+import SurveySectionsContainer from "@/components/SurveySectionsContainer.vue";
 import UploadSurvey from "@/components/UploadSurvey.vue";
 import SurveyFile from "@/interfaces/SurveyFile";
 import i18n from "@/plugins/i18n";
@@ -33,7 +33,7 @@ import { Component, Vue, Watch } from "vue-property-decorator";
 @Component({
   components: {
     AssessmentTool,
-    HomeSectionsContainer,
+    SurveySectionsContainer,
     UploadSurvey,
     DownloadSurvey
   }
