@@ -1,5 +1,5 @@
 <template>
-  <div class="header mb-4">
+  <div class="header">
     <div class="container">
       <div class="app-name-sec">
         <router-link

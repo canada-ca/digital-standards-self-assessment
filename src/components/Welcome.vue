@@ -1,5 +1,5 @@
 <template>
-  <div class="mb-3 mt-5">
+  <div class="mb-3">
     <section style="background: #E0EDFF;">
       <div class="container">
         <h5>{{ $t("notice.startUsingTitle") }}</h5>
