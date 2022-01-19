@@ -12,6 +12,12 @@
     "teamsSurvey": "Team Results(FR)"
   },
   "notice": {
+    "startUsingTitle": "Start using the Devops Tool now(FR)",
+    "startUsingDesc": "Not sure what the DevOps Tool is? Continue [reading below](#welcomeNoticeTitle).(FR)",
+    "takeTheSurvey": "Take the Survey(FR)",
+    "takeTheSurveyDesc": "Click [here](#/survey), or click “Survey” in the top menu bar to start the survey.(FR)",
+    "calculateTeamResults": "Calculate Team Results(FR)",
+    "calculateTeamResultsDesc": "Click [here](#/teamSurveys), or click “Team results” in the top menu bar to start calulating team results.(FR)",
     "welcomeNoticeTitle": "Bienvenue à l'outil d'autoévaluation DevOps!",
     "subtitle1": "With this tool you can:(FR)",
     "section1p1": "Measure Personal growth and success(FR)",

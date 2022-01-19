@@ -1,18 +1,20 @@
 <template>
   <div class="file-item">
     <span>{{ file.name }}</span>
-    <b-img :src="deleteIcon" class="delete-icon" @click="onDeleteClicked()" />
+    <b-img
+      :src="require('@/assets/images/delete.png')"
+      class="delete-icon"
+      @click="onDeleteClicked()"
+    />
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
-const icon = require("@/assets/delete.png");
 @Component({})
 export default class FileItem extends Vue {
   @Prop()
   file: any;
-  deleteIcon = icon;
 
   onDeleteClicked() {
     this.$emit("delete");

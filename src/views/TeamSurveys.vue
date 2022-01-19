@@ -12,7 +12,7 @@
         <b-img
           class="overview-image"
           fluid-grow
-          :src="img"
+          :src="require('@/assets/images/teamSurveyOverview.png')"
           v-if="!hasReportData"
         />
         <team-score-bar-chart :teamReportDataArray="teamReportDataArray" />
@@ -36,7 +36,6 @@ import TeamScoreBarChart from "@/components/team/TeamScoreBarChart.vue";
 import TeamScoreDataTable from "@/components/team/TeamScoreDataTable.vue";
 import IndividualBreakdown from "@/components/team/IndividualBreakdown.vue";
 import { ActionTypes } from "@/store/actions";
-const teamSurveyOverviewImg = require("@/assets/teamSurveyOverview.png");
 
 @Component({
   components: {
@@ -52,7 +51,6 @@ const teamSurveyOverviewImg = require("@/assets/teamSurveyOverview.png");
   }
 })
 export default class Results extends Vue {
-  img = teamSurveyOverviewImg;
 
   get teamReportDataArray(): TeamReportData[] {
     return this.$store.getters.returnTeamReportDataArray;

@@ -1,35 +1,74 @@
 <template>
   <div class="mb-3 mt-5">
+    <section style="background: #E0EDFF;">
+      <div class="container">
+        <h5>{{ $t("notice.startUsingTitle") }}</h5>
+        <div v-html="markdownToHtml($t('notice.startUsingDesc'))" />
+        <div class="col-container">
+          <div class="welcome-col left-col">
+            <b-img
+              :src="require('@/assets/images/items.png')"
+              style="height:35px; margin: 8px 20px 0px 0px;"
+            />
+            <span>
+              <p style="font-size: 1.4em">
+                {{ $t("notice.takeTheSurvey") }}
+              </p>
+              <p v-html="markdownToHtml($t('notice.takeTheSurveyDesc'))"></p>
+            </span>
+          </div>
+          <div class="welcome-col right-col">
+            <b-img
+              :src="require('@/assets/images/bars.png')"
+              style="height:42px; margin: 8px 20px 0px 0px;"
+            />
+            <span>
+              <p style="font-size: 1.4em">
+                {{ $t("notice.calculateTeamResults") }}
+              </p>
+              <p
+                v-html="markdownToHtml($t('notice.calculateTeamResultsDesc'))"
+              />
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
     <section class="container">
-      <h3>{{ $t("notice.welcomeNoticeTitle") }}</h3>
-      <div v-html="markdownToHtml($t('notice.welcomeNoticeBody'))"></div>
+      <h5 id="welcomeNoticeTitle">{{ $t("notice.welcomeNoticeTitle") }}</h5>
+      <div
+        style="margin: 50px 0px"
+        v-html="markdownToHtml($t('notice.welcomeNoticeBody'))"
+      ></div>
     </section>
     <section style="background: #E0EDFF;">
       <div class="container">
         <h5>
           {{ $t("notice.subtitle1") }}
         </h5>
-        <div class="mt-4" style="display: flex;">
-          <div class="welcome-col">
-            <i class="fas fa-circle mt-3 mr-3"></i>
+        <div class="col-container">
+          <div class="welcome-col left-col">
+            <b-img
+              :src="require('@/assets/images/steps.png')"
+              style="height:60px; margin: 8px 20px 0px 0px;"
+            />
             <span>
               <p style="font-size: 1.4em">
                 {{ $t("notice.section1p1") }}
               </p>
-              <p>
-                {{ $t("notice.section1p2") }}
-              </p>
+              <p v-html="markdownToHtml($t('notice.section1p2'))"></p>
             </span>
           </div>
-          <div class="welcome-col">
-            <i class="fas fa-circle mt-3 mr-3"></i>
+          <div class="welcome-col right-col">
+            <b-img
+              :src="require('@/assets/images/step.png')"
+              style="height:60px; margin: 8px 20px 0px 0px;"
+            />
             <span>
               <p style="font-size: 1.4em">
                 {{ $t("notice.section1p3") }}
               </p>
-              <p>
-                {{ $t("notice.section1p4") }}
-              </p>
+              <p v-html="markdownToHtml($t('notice.section1p4'))" />
             </span>
           </div>
         </div>
@@ -40,20 +79,24 @@
         <h5>
           {{ $t("notice.subtitle2") }}
         </h5>
-        <div>
-          {{ $t("notice.section2p1") }}
-        </div>
-        <div class="mt-4" style="display: flex;">
-          <div class="welcome-col">
-            <i class="fas fa-circle mt-3 mr-3"></i>
+        <div v-html="markdownToHtml($t('notice.section2p1'))" />
+        <div class="col-container">
+          <div class="welcome-col left-col">
+            <b-img
+              :src="require('@/assets/images/time2.png')"
+              style="height:60px; margin: 8px 20px 0px 0px;"
+            />
             <span>
               <p style="font-size: 1.4em">
                 {{ $t("notice.section2p2") }}
               </p>
             </span>
           </div>
-          <div class="welcome-col">
-            <i class="fas fa-circle mt-3 mr-3"></i>
+          <div class="welcome-col right-col">
+            <b-img
+              :src="require('@/assets/images/time1.png')"
+              style="height:60px; margin: 8px 20px 0px 0px;"
+            />
             <span>
               <p style="font-size: 1.4em">
                 {{ $t("notice.section2p3") }}
@@ -68,27 +111,29 @@
         <h5>
           {{ $t("notice.subtitle3") }}
         </h5>
-        <div class="mt-4" style="display: flex;">
-          <div class="welcome-col">
-            <i class="fas fa-circle mt-3 mr-3"></i>
+        <div class="col-container">
+          <div class="welcome-col left-col">
+            <b-img
+              :src="require('@/assets/images/brush.png')"
+              style="height:60px; margin: 8px 20px 0px 0px;"
+            />
             <span>
               <p style="font-size: 1.4em">
                 {{ $t("notice.section3p1") }}
               </p>
-              <p>
-                {{ $t("notice.section3p2") }}
-              </p>
+              <p v-html="markdownToHtml($t('notice.section3p2'))"></p>
             </span>
           </div>
-          <div class="welcome-col">
-            <i class="fas fa-circle mt-3 mr-3"></i>
+          <div class="welcome-col right-col">
+            <b-img
+              :src="require('@/assets/images/exclamation.png')"
+              style="height:60px; margin: 8px 20px 0px 0px;"
+            />
             <span>
               <p style="font-size: 1.4em">
                 {{ $t("notice.section3p3") }}
               </p>
-              <p>
-                {{ $t("notice.section3p4") }}
-              </p>
+              <p v-html="markdownToHtml($t('notice.section3p4'))" />
             </span>
           </div>
         </div>
@@ -115,7 +160,19 @@ export default class Welcome extends Vue {
 .welcome-col {
   display: flex;
   flex-basis: 50%;
-  padding-left: 30px;
+}
+.col-container {
+  display: flex;
+  margin: 50px 0px;
+}
+.left-col {
   padding-right: 30px;
+}
+.right-col {
+  padding-left: 30px;
+}
+h5 {
+  font-size: 55px !important;
+  font-weight: 300 !important;
 }
 </style>
