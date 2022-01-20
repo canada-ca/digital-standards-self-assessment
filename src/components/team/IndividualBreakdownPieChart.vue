@@ -1,6 +1,5 @@
 <template>
   <div>
-    <div class="text-center">{{ individualName }}</div>
     <div
       v-if="hasReportData"
       ref="barChart"
@@ -16,7 +15,7 @@ import * as echarts from "echarts";
 import { Component, Prop, Vue, Watch } from "vue-property-decorator";
 
 @Component({})
-export default class IndividualBreakdownItem extends Vue {
+export default class IndividualBreakdownPieChart extends Vue {
   @Prop()
   teamReportData!: TeamReportData;
 
@@ -39,35 +38,42 @@ export default class IndividualBreakdownItem extends Vue {
 
   @Watch("teamReportData")
   creatEcharts() {
+    if (!this.hasReportData) {
+      if (this.chart) {
+        this.chart.dispose();
+      }
+      return;
+    }
     const allSectionNames = this.extractAllSectionNames();
     const scores = this.getScores();
     const option: EChartsOption = {
+      title: {
+        text: this.teamReportData.name,
+        left: "center"
+      },
+      tooltip: {
+        trigger: "item"
+      },
+      series: [
+        {
+          type: "pie",
+          radius: "50%",
+          data: scores,
+          emphasis: {
+            itemStyle: {
+              shadowBlur: 10,
+              shadowOffsetX: 0,
+              shadowColor: "rgba(0, 0, 0, 0.5)"
+            }
+          }
+        }
+      ],
       grid: {
         left: "10%",
         right: "0%",
         top: "0%",
-        show: true
-      },
-      tooltip: {},
-      xAxis: {
-        type: "category",
-        data: allSectionNames,
-        axisLabel: { interval: 0, rotate: 30 }
-      },
-      yAxis: {
-        type: "value",
-        axisLabel: {
-          show: true,
-          interval: "auto",
-          formatter: "{value}%"
-        }
-      },
-      series: [
-        {
-          data: scores,
-          type: "bar"
-        }
-      ]
+        show: false
+      }
     };
     if (this.chart) {
       this.chart.dispose();
@@ -87,7 +93,7 @@ export default class IndividualBreakdownItem extends Vue {
   private getScores(): any[] {
     const teamScoreArray: any[] = [];
     this.teamReportData.sections.forEach(s => {
-      teamScoreArray.push(this.getScore(s));
+      teamScoreArray.push({ name: s.name, value: this.getScore(s) });
     });
     return teamScoreArray;
   }

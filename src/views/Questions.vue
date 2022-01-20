@@ -1,14 +1,14 @@
 <template>
   <div class="results">
     <AssessmentTool :survey="Survey" />
-    <div class="page-actions">
+    <div class="page-actions container">
       <div class="row" style="padding: 0 5px">
         <div class="col-3 col-sm-2 col-md-3">
           <button
             type="button"
             class="btn btn-default"
             style="width: inherit"
-            v-on:click="goToHomePage()"
+            v-on:click="goToSurvey()"
           >
             &#8672;&nbsp;{{ $t("navigation.goBack") }}
           </button>
@@ -44,9 +44,9 @@ export default class Questions extends Vue {
   @Prop() public currentPageNo!: number;
   Survey: Model = new Model(this.$store.getters.returnSurveyJSON);
 
-  goToHomePage() {
+  goToSurvey() {
     this.$store.dispatch(ActionTypes.UpdateSurveyData, this.Survey);
-    this.$router.push("/");
+    this.$router.push("/survey");
   }
   goToSectionResults() {
     this.$store.dispatch(ActionTypes.UpdateSurveyData, this.Survey);

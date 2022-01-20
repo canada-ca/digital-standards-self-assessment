@@ -1,5 +1,6 @@
 <template>
   <div
+    v-if="hasReportData"
     ref="barChart"
     style="min-width: 100%; height:500px; margin-top: 30px"
   ></div>
@@ -12,7 +13,7 @@ import { ECharts, EChartsOption } from "echarts";
 import { Component, Prop, Vue, Watch } from "vue-property-decorator";
 
 @Component
-export default class TeamScoreBarCard extends Vue {
+export default class IndividualBreakdownBarCard extends Vue {
   @Prop()
   teamReportDataArray!: Array<TeamReportData>;
   allTeamNames: string[] = [];

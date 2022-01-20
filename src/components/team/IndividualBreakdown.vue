@@ -1,5 +1,5 @@
 <template>
-  <div style="margin-top: 40px" v-show="showBreakdown">
+  <div style="margin-top: 40px" v-if="showBreakdown">
     <div>
       <b-link @click.prevent="hideBreakdown()">
         {{ $t("teamResults.hideIndividualBreakdown") }}
@@ -7,11 +7,7 @@
     </div>
     <h5 class="text-center">{{ teamName }}</h5>
     <div class="individual-breakdown">
-      <IndividualBreakdownItem
-        :teamReportData="teamReportData"
-        v-for="teamReportData in teamReportDataArray"
-        :key="teamReportData.name"
-      />
+      <IndividualBreakdownChart :teamReportDataArray="teamReportDataArray" />
     </div>
   </div>
 </template>
@@ -19,11 +15,11 @@
 <script lang="ts">
 import { TeamReportData } from "@/store/state";
 import { Component, Prop, Vue } from "vue-property-decorator";
-import IndividualBreakdownItem from "@/components/team/IndividualBreakdownItem.vue";
+import IndividualBreakdownChart from "@/components/team/IndividualBreakdownBarChart.vue";
 import { ActionTypes } from "@/store/actions";
 
 @Component({
-  components: { IndividualBreakdownItem }
+  components: { IndividualBreakdownChart }
 })
 export default class IndividualBreakdown extends Vue {
   @Prop()

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h5>{{ $t("currentSurveyResults") }}</h5>
+    <h1>{{ $t("currentSurveyResults") }}</h1>
     <SurveySectionCard
       v-for="section in sections"
       :key="section.id"

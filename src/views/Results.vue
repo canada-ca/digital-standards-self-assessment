@@ -1,50 +1,53 @@
 <template>
-  <div class="results">
-    <h1>
-      {{ $t("sectionResultsTitle") }}
-    </h1>
-    <div>
-      <ResultsCard
-        v-if="currentSection !== undefined"
-        :section="currentSection"
-        :section-name="currentSection.sectionName"
-        :user-score="currentSection.userScore"
-        :max-score="getMaxScore(currentSection)"
-        :my-recommendations="myRecommendations"
-        :locale="locale"
-      />
-      <div v-else>
-        <p>
-          {{ $t("notice.noProgress") }}
-        </p>
-      </div>
-    </div>
-    <div class="page-actions">
-      <div class="row" style="padding: 0 15px">
-        <div class="col-3 col-sm-2 col-md-3">
-          <button
-            type="button"
-            class="btn btn-primary"
-            style="width: inherit"
-            v-on:click="goToQuestions()"
-          >
-            &#8672;&nbsp;{{ $t("navigation.goBack") }}
-          </button>
-        </div>
-        <div class="col-3 col-sm-2 col-md-3">
-          <button
-            type="button"
-            class="btn btn-default"
-            style="width: inherit"
-            v-on:click="goToHomePage()"
-            :key="$route.path"
-          >
-            {{ $t("navigation.chooseAnotherSection") }}
-          </button>
+  <div class="container">
+    <div class="results">
+      <h1>
+        {{ $t("sectionResultsTitle") }}
+      </h1>
+      <div>
+        <ResultsCard
+          v-if="currentSection !== undefined"
+          :section="currentSection"
+          :section-name="currentSection.sectionName"
+          :user-score="currentSection.userScore"
+          :max-score="getMaxScore(currentSection)"
+          :my-recommendations="myRecommendations"
+          :locale="locale"
+        />
+        <div v-else>
+          <p>
+            {{ $t("notice.noProgress") }}
+          </p>
         </div>
       </div>
+      <p />
+      <div class="page-actions container">
+        <div class="row" style="padding: 0 15px">
+          <div class="col-3 col-sm-2 col-md-3">
+            <button
+              type="button"
+              class="btn btn-primary"
+              style="width: inherit"
+              v-on:click="goToQuestions()"
+            >
+              &#8672;&nbsp;{{ $t("navigation.goBack") }}
+            </button>
+          </div>
+          <div class="col-3 col-sm-2 col-md-3">
+            <button
+              type="button"
+              class="btn btn-default"
+              style="width: inherit"
+              v-on:click="goToHomePage()"
+              :key="$route.path"
+            >
+              {{ $t("navigation.chooseAnotherSection") }}
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
+</div>
 </template>
 
 <script lang="ts">

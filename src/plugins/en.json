@@ -323,7 +323,7 @@
   },
   "teamResults": {
     "title": "Team Results Overview",
-    "description": "Results will apear below once you have uploaded 1 or more survey(s).  You can add more teams by uploading more team data.",
+    "description": "Results will apear below once you have uploaded 1 or more survey(s).",
     "uploadSurveys": "Upload Survey(s)",
     "uploadDesc": "Choose files. To compare results upload one group of surveys into Survey(s) A and the additional group to Survey(s) B",
     "teamScoreDetails": "Team Score Details",

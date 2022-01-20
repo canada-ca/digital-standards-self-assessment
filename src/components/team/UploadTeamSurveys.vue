@@ -104,8 +104,6 @@ export default class UploadTeamSurveys extends Vue {
   focus() {
     this.$refs.teamNameInput.focus();
   }
-
-  surveyDataArray: Array<SurveyFile> = [];
   teamReportDataArray: Array<TeamReportData> = [];
   teamAverageReportData!: TeamReportData;
 
@@ -118,7 +116,6 @@ export default class UploadTeamSurveys extends Vue {
 
   private cleanData() {
     this.teamName = "";
-    this.surveyDataArray = [];
     this.teamReportDataArray = [];
     this.files = [];
   }
@@ -145,7 +142,6 @@ export default class UploadTeamSurveys extends Vue {
   }
 
   calculateResults() {
-    this.surveyDataArray = [];
     this.teamReportDataArray = [];
     const fileCount = this.files.length;
     this.files.forEach((file: any) => {
@@ -191,14 +187,12 @@ export default class UploadTeamSurveys extends Vue {
           });
         }
       }
-      this.surveyDataArray.push(surveyFile);
 
-      if (this.surveyDataArray.length === fileCount) {
+      if (this.teamReportDataArray.length === fileCount) {
         // sort report data
         this.teamReportDataArray.sort((a, b) =>
           a.name < b.name ? -1 : a.name == b.name ? 0 : 1
         );
-        this.teamAverageReportData = { ...this.teamReportDataArray[0] };
         this.averageTeamScore();
         const reportDataBundle: TeamReportDataBundle = {
           teamName: this.teamName,
@@ -213,61 +207,26 @@ export default class UploadTeamSurveys extends Vue {
   }
 
   private averageTeamScore() {
-    if (this.teamAverageReportData === undefined) {
-      return;
-    }
+    this.teamAverageReportData = {name: this.teamName, sections: []} as TeamReportData;
     this.teamAverageReportData.name = this.teamName;
     // Extract score into a map
-    // section_name: question_name: [score1, score2, score3]
-    const scoresMap: Map<String, Map<string, any[]>> = new Map();
-    if (this.surveyDataArray.length > 0) {
-      const firstSurvey = this.surveyDataArray[0].surveyJSON;
-      for (const surveyFile of this.surveyDataArray) {
-        // validate if all files have same format
-        if (!isEqual(firstSurvey, surveyFile.surveyJSON)) {
-          this.errorMessages.push({
-            message: "validation.file.differentFormat"
-          } as ErrorMessage);
-          return;
-        }
-        for (const section of surveyFile.surveyJSON.pages) {
+    // section_name: [{score, maxScore}, {score, maxScore}, {score, maxScore} ...]
+    const scoresMap: Map<String, any[]> = new Map();
+    if (this.teamReportDataArray.length > 0) {
+      for (const reportData of this.teamReportDataArray) {
+        for (const section of reportData.sections) {
           if (!scoresMap.has(section.name)) {
-            scoresMap.set(section.name, new Map<string, any[]>());
+            scoresMap.set(section.name, []);
           }
-          const sectionScoreMap = scoresMap.get(section.name);
-          for (const question of section.elements) {
-            if (!sectionScoreMap!.has(question.name)) {
-              sectionScoreMap!.set(question.name, []);
-            }
-            sectionScoreMap!
-              .get(question.name)!
-              .push(surveyFile.data[question.name]);
-          }
+          scoresMap.get(section.name)?.push({score: section.score, maxScore: section.maxScore});
         }
       }
-      for (const section of this.teamAverageReportData.sections) {
-        for (const question of section.questions) {
-          const scoreArray = scoresMap!
-            .get(section.name)!
-            .get(question.name)!
-            .filter(v => v !== undefined);
-          if (question.type == "rating") {
-            const sum = scoreArray!.reduce((a, b) => a + b, 0);
-            const avg = sum / scoreArray!.length || 0;
-            question.answer = Math.round(avg);
-          } else if (question.type === "boolean") {
-            const booleanResult = scoreArray!.reduce(
-              (prevVal, curVal) => {
-                curVal ? prevVal.true++ : prevVal.false++;
-                return prevVal;
-              },
-              { true: 0, false: 0 }
-            );
-            question.answer =
-              booleanResult.true + " true, " + booleanResult.false + " false";
-          }
-        }
-      }
+      scoresMap.forEach((scores, sn) => {
+        const section = scores.filter(({score, maxScore}) => score && score > 0 )
+          .reduce((prev, cur) => ({score: prev.score + cur.score, maxScore: prev.maxScore + cur.maxScore}), {score: 0, maxScore: 0} as SectionReportData)
+        section.name = sn;
+        this.teamAverageReportData.sections.push(section);
+      })
     }
   }
 

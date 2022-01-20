@@ -40,7 +40,7 @@ export default class ShowHideLink extends Vue {
   line-height: 23px;
   letter-spacing: 0em;
   text-align: left;
-  color: #8e8e8e;
+  color: #4a4a4a;
   margin-top: -20px;
 }
 </style>

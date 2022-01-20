@@ -3,7 +3,7 @@
     <h1>
       {{ $t("teamResults.title") }}
     </h1>
-    <p>{{ $t("teamResults.description") }}</p>
+    <p v-if="!hasReportData">{{ $t("teamResults.description") }}</p>
     <p>
       <upload-team-surveys @loadTeamReportData="addTeamReportData" />
     </p>
@@ -80,7 +80,7 @@ export default class Results extends Vue {
 
 <style scoped>
 .overview-image {
-  padding: 40px 280px;
+  padding: 40px 320px;
   position: absolute;
   top: 0px;
 }
