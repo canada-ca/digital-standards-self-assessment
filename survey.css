@@ -269,3 +269,7 @@ div .sv-vue-row-additional-div
 .modal-backdrop {
     opacity: 0.75 !important;
 }
+
+.sv-boolean__label--disabled {
+    color: rgb(64, 64, 64, 0.8) !important;
+}
