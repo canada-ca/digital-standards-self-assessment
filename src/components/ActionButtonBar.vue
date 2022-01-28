@@ -9,7 +9,7 @@
           <input
             type="file"
             class="btn btn-default"
-            :title="$t('loadFile')"
+            :title="$t('downloadUploadSurvey.loadFile')"
             value="Load"
             style="padding: 0"
             @change="onFileChanged($event)"
@@ -25,7 +25,7 @@
             style="width: inherit"
             v-on:click="saveSurvey"
           >
-            {{ $t("saveButton") }}
+            {{ $t("buttons.saveButton") }}
           </button>
         </b-col>
         <b-col
@@ -37,9 +37,9 @@
             value="Start Over"
             class="btn survey-button"
             style="width: inherit"
-            v-on:click="$emit('startAgain')"
+            v-on:click="$emit('buttons.startAgain')"
           >
-            {{ $t("startAgain") }}
+            {{ $t("buttons.startAgain") }}
           </button>
         </b-col>
       </b-row>
@@ -51,7 +51,7 @@
             type="file"
             class="btn btn-default"
             value="Load"
-            :title="$t('loadFile')"
+            :title="$t('downloadUploadSurvey.loadFile')"
             @change="onFileChanged($event)"
           />
         </b-col>

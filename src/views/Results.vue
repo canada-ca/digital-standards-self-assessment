@@ -2,7 +2,7 @@
   <div class="container">
     <div class="results">
       <h1>
-        {{ $t("sectionResultsTitle") }}
+        {{ $t("survey.sectionResultsTitle") }}
       </h1>
       <div>
         <ResultsCard

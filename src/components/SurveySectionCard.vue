@@ -22,7 +22,8 @@
               {{ getShortDescription(section.description) }}
             </p>
             <span style="color: #395072; font-weight: 700">
-              {{ $t("currentScore") }}: {{ sectionScoreLevel(section.name) }}
+              {{ $t("survey.currentScore") }} :
+              {{ sectionScoreLevel(section.name) }}
             </span>
           </div>
         </transition>

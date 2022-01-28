@@ -34,7 +34,7 @@
           type="file"
           ref="fileUpload"
           class="btn btn-default mr-auto"
-          :title="$t('loadFile')"
+          :title="$t('downloadUploadSurvey.loadFile')"
           value="Load"
           style="padding: 0"
           @change="onFileChanged($event)"

@@ -1,6 +1,6 @@
 <template>
   <span class="collapsed-toggle" @click="onClicked()">
-    {{ $t(collapsed ? "show" : "hide") }}
+    {{ $t(collapsed ? "showHideLink.show" : "showHideLink.hide") }}
     <i :class="toggleClass()" aria-hidden="true"></i>
   </span>
 </template>

@@ -16,10 +16,10 @@ import { Component, Prop, Vue, Watch } from "vue-property-decorator";
 export default class IndividualBreakdownBarCard extends Vue {
   @Prop()
   teamReportDataArray!: Array<TeamReportData>;
+
   allTeamNames: string[] = [];
   teamScores: any[][] = [];
   chartSeries: echarts.SeriesOption[] = [];
-
   chart!: ECharts;
 
   $refs!: {

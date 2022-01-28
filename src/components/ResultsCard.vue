@@ -5,7 +5,8 @@
     </b-card-header>
     <b-card-body>
       <p class="h5">
-        {{ $t("currentScore") }}: {{ sectionScoreLevel(userScore, maxScore) }}%
+        {{ $t("survey.currentScore") }}:
+        {{ sectionScoreLevel(userScore, maxScore) }}%
       </p>
       <p></p>
       <ResultRecommendations

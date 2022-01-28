@@ -32,12 +32,10 @@
 import { Component, Prop, Vue, Watch } from "vue-property-decorator";
 import { Model } from "survey-vue";
 import AssessmentTool from "@/components/AssessmentTool.vue"; // @ is an alias to /src
-import BaseNavigation from "@/components/BaseNavigation.vue";
 import { ActionTypes } from "@/store/actions";
 @Component({
   components: {
-    AssessmentTool,
-    BaseNavigation
+    AssessmentTool
   }
 })
 export default class Questions extends Vue {
