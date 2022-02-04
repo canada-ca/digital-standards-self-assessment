@@ -56,7 +56,7 @@ export default class Questions extends Vue {
     this.Survey.render();
   }
   created() {
-    this.Survey.onComplete.add(result => {
+    this.Survey.onComplete.add((result: any) => {
       this.$store.dispatch(ActionTypes.UpdateSurveyData, result);
       this.$router.push("/results");
     });

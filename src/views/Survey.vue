@@ -83,14 +83,14 @@ export default class Survey extends Vue {
       navigationButton: "btn survey-button"
     };
 
-    this.Survey.onComplete.add(result => {
+    this.Survey.onComplete.add((result: any) => {
       this.$store.dispatch(ActionTypes.UpdateSurveyData, result);
       this.$router.push("/results");
     });
 
     const converter = new showdown.Converter();
 
-    this.Survey.onTextMarkdown.add(function(survey, options) {
+    this.Survey.onTextMarkdown.add(function(survey: any, options: any) {
       //convert the markdown text to html
       var str = converter.makeHtml(options.text);
       //remove root paragraphs <p></p>

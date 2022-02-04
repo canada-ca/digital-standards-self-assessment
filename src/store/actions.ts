@@ -207,7 +207,7 @@ export const actions: ActionTree<RootState, RootState> & Actions = {
           maxScore: value.getPageByName(sectionName).questions.length * 5,
           questions: []
         };
-        value.getPageByName(sectionName).questions.forEach(question => {
+        value.getPageByName(sectionName).questions.forEach((question: any) => {
           newSection.questionsNames.push(question.name);
           newSection.questions.push(question);
         });
@@ -237,7 +237,7 @@ export const actions: ActionTree<RootState, RootState> & Actions = {
     let sectionScore: number = 0;
     let section: Section = getters.returnSectionByName(value.name);
     if (section !== undefined) {
-      value.questions.forEach(question => {
+      value.questions.forEach((question: any) => {
         if (question.value !== undefined) {
           if (question.getType() === "rating") {
             let score: number = +question.value;
@@ -295,7 +295,7 @@ export const actions: ActionTree<RootState, RootState> & Actions = {
     commit(MutationType.SetSurveyModel, surveyModel);
     const sectionsNames = getters.returnSectionsNamesGenerated;
     commit(MutationType.SetSectionsNames, sectionsNames);
-    surveyModel.pages.forEach(page => {
+    surveyModel.pages.forEach((page: any) => {
       dispatch(ActionTypes.UpdateSectionScore, page);
     });
     dispatch(ActionTypes.SetSections, surveyModel);

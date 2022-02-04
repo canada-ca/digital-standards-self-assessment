@@ -36,7 +36,7 @@ const determineAllSections = (state: RootState, surveyData: SurveyModel) => {
   let allSections: string[];
   let pages = surveyData.pages;
   allSections = [];
-  pages.forEach(page => {
+  pages.forEach((page: any) => {
     if (page.name.includes("section_")) {
       allSections.push(page.name);
     }
@@ -60,7 +60,7 @@ const initializeSections = (state: RootState, surveyData: SurveyModel) => {
         (surveyData.getPageByName(sectionName).questions.length - 1) * 7,
       questions: []
     };
-    surveyData.getPageByName(sectionName).questions.forEach(question => {
+    surveyData.getPageByName(sectionName).questions.forEach((question: any) => {
       newSection.questionsNames.push(question.name);
       newSection.questions.push(question);
     });
@@ -150,7 +150,7 @@ const hideOtherSections = (
 ) => {
   let pages = surveyData.pages;
   if (pages !== undefined) {
-    pages.forEach(page => {
+    pages.forEach((page: any) => {
       if (page.name !== sectionName && page.isVisible === true) {
         page.visible = false;
       }
@@ -170,7 +170,7 @@ export function returnAllSectionsByPrefix(
   prefix: string
 ): PageModel[] {
   let sections: PageModel[] = [];
-  surveyData.pages.forEach(page => {
+  surveyData.pages.forEach((page: any) => {
     if (page.name.includes(prefix)) {
       sections.push(page);
     }
@@ -202,7 +202,7 @@ const calculateSectionScore = (
 ) => {
   let sectionScore: number = 0;
   let page = surveyData.getPageByName(sectionName);
-  page.questions.forEach(question => {
+  page.questions.forEach((question: any) => {
     if (question.value !== undefined) {
       let score: number = +question.value;
       sectionScore += score;
@@ -314,7 +314,7 @@ const store: StoreOptions<RootState> = {
     returnSectionsNamesGenerated: state => {
       let sectionsNames: string[] = [];
       if (state.surveyModel === undefined) return {};
-      state.surveyModel.pages.forEach(page => {
+      state.surveyModel.pages.forEach((page: any) => {
         if (page.name.includes("section_")) {
           sectionsNames.push(page.name);
         }

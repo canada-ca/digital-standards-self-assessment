@@ -56,7 +56,6 @@ import { Model } from "survey-vue";
 import showdown from "showdown";
 import SurveyFile from "@/interfaces/SurveyFile";
 import ResultsCard from "@/components/ResultsCard.vue";
-import BaseNavigation from "@/components/BaseNavigation.vue";
 import i18n from "@/plugins/i18n";
 import surveyJSON from "@/survey-enfr.json";
 import { Section } from "@/types";
@@ -207,19 +206,19 @@ export default class Results extends Vue {
   }
 
   created() {
-    this.Survey.onComplete.add(result => {
+    this.Survey.onComplete.add((result: any) => {
       // this.$store.commit("updateSurveyData", result);
       this.$store.dispatch(ActionTypes.UpdateSurveyData, result);
     });
 
-    this.Survey.onValueChanged.add(result => {
+    this.Survey.onValueChanged.add((result: any) => {
       // this.$store.commit("calculateResult", result);
       this.$store.dispatch(ActionTypes.UpdateSurveyData, result);
     });
 
     const converter = new showdown.Converter();
 
-    this.Survey.onTextMarkdown.add(function(survey, options) {
+    this.Survey.onTextMarkdown.add(function(survey: any, options: any) {
       //convert the markdown text to html
       var str = converter.makeHtml(options.text);
       //remove root paragraphs <p></p>
@@ -234,7 +233,7 @@ export default class Results extends Vue {
 
     // accessibility fix... aria-labelledby being needlessly generated for html question
     // TODO: make this dynamic by looping over questions and doing this for all html questions
-    this.Survey.onAfterRenderQuestion.add(function(sender, options) {
+    this.Survey.onAfterRenderQuestion.add(function(sender: any, options: any) {
       let welcomePage = document.getElementsByName("welcome1");
       if (welcomePage && welcomePage.length > 0) {
         let welcomePageElement = welcomePage[0];

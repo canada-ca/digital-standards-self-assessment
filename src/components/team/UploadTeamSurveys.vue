@@ -235,7 +235,7 @@ export default class UploadTeamSurveys extends Vue {
     if (surveyFile.surveyJSON) {
       let survey: Model = new Model(surveyFile.surveyJSON);
       survey.data = surveyFile.data;
-      survey.pages.forEach(page => {
+      survey.pages.forEach((page: any) => {
         const sectionReportData: SectionReportData = {
           name: page.name,
           score: 0,
@@ -243,7 +243,7 @@ export default class UploadTeamSurveys extends Vue {
           questions: [],
           title: page.title
         };
-        page.questions.forEach(question => {
+        page.questions.forEach((question: any) => {
           sectionReportData.questions.push({
             name: question.name,
             type: question.getType(),

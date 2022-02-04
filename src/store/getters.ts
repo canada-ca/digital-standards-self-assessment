@@ -130,7 +130,7 @@ export const getters: GetterTree<RootState, RootState> & Getters = {
   returnSectionsByPrefix(state: RootState) {
     return (surveyData: SurveyModel, prefix: string) => {
       let sections: PageModel[] = [];
-      surveyData.pages.forEach(page => {
+      surveyData.pages.forEach((page: any) => {
         if (page.name.includes(prefix)) {
           sections.push(page);
         }
@@ -156,7 +156,7 @@ export const getters: GetterTree<RootState, RootState> & Getters = {
   returnSectionsNamesGenerated(state: RootState) {
     let sectionsNames: string[] = [];
     if (state.surveyModel === undefined) return sectionsNames;
-    state.surveyModel.pages.forEach(page => {
+    state.surveyModel.pages.forEach((page: any) => {
       if (page.name.includes(state.sectionsPrefix)) {
         sectionsNames.push(page.name);
       }
@@ -166,7 +166,7 @@ export const getters: GetterTree<RootState, RootState> & Getters = {
   determineAllSections(state: RootState, payload: string) {
     let sectionsNames: string[] = [];
     if (state.surveyModel === undefined) return sectionsNames;
-    state.surveyModel.pages.forEach(page => {
+    state.surveyModel.pages.forEach((page: any) => {
       if (page.name.includes(payload)) {
         sectionsNames.push(page.name);
       }
