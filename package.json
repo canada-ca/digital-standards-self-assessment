@@ -43,7 +43,8 @@
     "vue-search-select": "^2.9.3",
     "vuex": "^3.6.2",
     "vuex-persist": "2.2.0",
-    "follow-redirects": ">=1.14.7"
+    "follow-redirects": ">=1.14.7",
+    "node-fetch": ">=2.6.7"
   },
   "devDependencies": {
     "@types/jest": "^25.2.3",
