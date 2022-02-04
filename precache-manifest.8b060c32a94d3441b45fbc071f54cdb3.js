@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "06d12863c0a3d4215bfe",
+    "revision": "465be8f039f3b486c598",
     "url": "/digital-standards-self-assessment/css/app.756cb3d3.css"
   },
   {
@@ -156,12 +156,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/digital-standards-self-assessment/img/time2.e93a8f40.png"
   },
   {
-    "revision": "1eed5e5dc17e0a970fa8672fed2d7dea",
+    "revision": "562a5fffc834d2c50409a83c004ad102",
     "url": "/digital-standards-self-assessment/index.html"
   },
   {
-    "revision": "06d12863c0a3d4215bfe",
-    "url": "/digital-standards-self-assessment/js/app.68bf392b.js"
+    "revision": "465be8f039f3b486c598",
+    "url": "/digital-standards-self-assessment/js/app.479e4094.js"
   },
   {
     "revision": "de1fb6c6a7161fe39e57",
@@ -172,8 +172,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/digital-standards-self-assessment/js/chunk-2d0b96a2.8c0b22f8.js"
   },
   {
-    "revision": "d119488a9978f5d2f1a3",
-    "url": "/digital-standards-self-assessment/js/chunk-2d20f8f7.e95ae600.js"
+    "revision": "d6f3af51b422f4e2b90f",
+    "url": "/digital-standards-self-assessment/js/chunk-2d20f8f7.de1ce133.js"
   },
   {
     "revision": "b42f2e1e7b12af631af5",
