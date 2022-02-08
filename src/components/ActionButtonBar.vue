@@ -9,7 +9,6 @@
           <input
             type="file"
             class="btn btn-default"
-            :title="$t('downloadUploadSurvey.loadFile')"
             value="Load"
             style="padding: 0"
             @change="onFileChanged($event)"
@@ -51,7 +50,6 @@
             type="file"
             class="btn btn-default"
             value="Load"
-            :title="$t('downloadUploadSurvey.loadFile')"
             @change="onFileChanged($event)"
           />
         </b-col>

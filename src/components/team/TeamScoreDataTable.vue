@@ -47,6 +47,8 @@ import { Component, Prop, Vue, Watch } from "vue-property-decorator";
 import { BIconTrash } from "bootstrap-vue";
 import { ActionTypes } from "@/store/actions";
 import { marked } from "marked";
+import i18n from "@/plugins/i18n";
+
 @Component({
   components: {
     BIconTrash
@@ -70,14 +72,21 @@ export default class TeamScoreDataTable extends Vue {
       });
     });
     const sectionNames = [...sectionNameSet];
-    this.fields = [{ key: "team_name", sortable: true }];
+    this.fields = [
+      {
+        key: "team_name",
+        sortable: true,
+        label: i18n.t("teamResults.teamName")
+      }
+    ];
     sectionNames.map(sn => {
       this.fields.push({ key: sn, sortable: true });
     });
     this.fields.push({
       key: "actions",
       sortable: false,
-      tdClass: "text-center"
+      tdClass: "text-center",
+      label: i18n.t("teamResults.actions")
     });
     return sectionNames;
   }
@@ -124,6 +133,7 @@ export default class TeamScoreDataTable extends Vue {
   }
 
   @Watch("teamReportDataArray")
+  @Watch("$i18n.locale")
   createDatatable() {
     const sectionNames = this.extractAllSectionNames();
     this.getTeamScores(sectionNames);

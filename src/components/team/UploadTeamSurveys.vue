@@ -9,9 +9,6 @@
       </template>
       <template #default>
         <div style="padding: 30px">
-          <p style="margin-bottom: 30px !important">
-            {{ $t("teamResults.uploadDesc") }}
-          </p>
           <b-form-group
             :label="$t('teamResults.teamName')"
             label-for="teamName"
@@ -85,7 +82,6 @@ import { SectionReportData, TeamReportDataBundle } from "@/store/state";
 import { TeamReportData } from "@/store/state";
 import SurveyFile from "@/interfaces/SurveyFile";
 import { Model } from "survey-vue";
-import { isEqual } from "lodash";
 import { Component, Vue, Watch } from "vue-property-decorator";
 
 @Component({
