@@ -57,7 +57,7 @@
       "required": "Veuillez saisir un nom de fichier"
     }
   },
-  "showHideLink" : {
+  "showHideLink": {
     "show": "Afficher",
     "hide": "Masquer"
   },

@@ -1,6 +1,6 @@
 <template>
   <div class="mb-3">
-    <section style="background: #E0EDFF;">
+    <section style="background: #e0edff">
       <div class="container">
         <h5>{{ $t("notice.startUsingTitle") }}</h5>
         <div v-html="markdownToHtml($t('notice.startUsingDesc'))" />
@@ -8,7 +8,7 @@
           <div class="welcome-col left-col">
             <b-img
               :src="require('@/assets/images/items.png')"
-              style="height:35px; margin: 8px 20px 0px 0px;"
+              style="height: 35px; margin: 8px 20px 0px 0px"
             />
             <span>
               <p style="font-size: 1.4em">
@@ -20,7 +20,7 @@
           <div class="welcome-col right-col">
             <b-img
               :src="require('@/assets/images/bars.png')"
-              style="height:42px; margin: 8px 20px 0px 0px;"
+              style="height: 42px; margin: 8px 20px 0px 0px"
             />
             <span>
               <p style="font-size: 1.4em">
@@ -41,7 +41,7 @@
         v-html="markdownToHtml($t('notice.welcomeNoticeBody'))"
       ></div>
     </section>
-    <section style="background: #E0EDFF;">
+    <section style="background: #e0edff">
       <div class="container">
         <h5>
           {{ $t("notice.subtitle1") }}
@@ -50,7 +50,7 @@
           <div class="welcome-col left-col">
             <b-img
               :src="require('@/assets/images/steps.png')"
-              style="height:60px; margin: 8px 20px 0px 0px;"
+              style="height: 60px; margin: 8px 20px 0px 0px"
             />
             <span>
               <p style="font-size: 1.4em">
@@ -62,7 +62,7 @@
           <div class="welcome-col right-col">
             <b-img
               :src="require('@/assets/images/step.png')"
-              style="height:60px; margin: 8px 20px 0px 0px;"
+              style="height: 60px; margin: 8px 20px 0px 0px"
             />
             <span>
               <p style="font-size: 1.4em">
@@ -84,7 +84,7 @@
           <div class="welcome-col left-col">
             <b-img
               :src="require('@/assets/images/time2.png')"
-              style="height:60px; margin: 8px 20px 0px 0px;"
+              style="height: 60px; margin: 8px 20px 0px 0px"
             />
             <span>
               <p style="font-size: 1.4em">
@@ -95,7 +95,7 @@
           <div class="welcome-col right-col">
             <b-img
               :src="require('@/assets/images/time1.png')"
-              style="height:60px; margin: 8px 20px 0px 0px;"
+              style="height: 60px; margin: 8px 20px 0px 0px"
             />
             <span>
               <p style="font-size: 1.4em">
@@ -106,7 +106,7 @@
         </div>
       </div>
     </section>
-    <section style="background: #E0EDFF;">
+    <section style="background: #e0edff">
       <div class="container">
         <h5>
           {{ $t("notice.subtitle3") }}
@@ -115,7 +115,7 @@
           <div class="welcome-col left-col">
             <b-img
               :src="require('@/assets/images/brush.png')"
-              style="height:60px; margin: 8px 20px 0px 0px;"
+              style="height: 60px; margin: 8px 20px 0px 0px"
             />
             <span>
               <p style="font-size: 1.4em">
@@ -127,7 +127,7 @@
           <div class="welcome-col right-col">
             <b-img
               :src="require('@/assets/images/exclamation.png')"
-              style="height:60px; margin: 8px 20px 0px 0px;"
+              style="height: 60px; margin: 8px 20px 0px 0px"
             />
             <span>
               <p style="font-size: 1.4em">

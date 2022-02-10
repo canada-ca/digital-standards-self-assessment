@@ -16,7 +16,7 @@ export default class AssessmentTool extends Vue {
   @Prop() public survey!: Model;
   mounted() {
     const converter = new showdown.Converter();
-    this.survey.onTextMarkdown.add(function(survey: any, options: any) {
+    this.survey.onTextMarkdown.add((survey: any, options: any) => {
       //convert the markdown text to html
       var str = converter.makeHtml(options.text);
       //remove root paragraphs <p></p>
@@ -33,7 +33,7 @@ export default class AssessmentTool extends Vue {
       fldset?.prepend(lbl);
     }
 
-    for(let item of document.getElementsByClassName("sv_q_rating_max_text")) {
+    for (let item of document.getElementsByClassName("sv_q_rating_max_text")) {
       const fldset = item.closest("fieldset");
       const lbl = document.createElement("LABEL");
       lbl.className = "rating-max-label";

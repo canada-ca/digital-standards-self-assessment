@@ -33,7 +33,7 @@
       </template>
     </b-table>
     <div
-      style="font-size: 12px;"
+      style="font-size: 12px"
       v-html="
         markdownToHtml($t('teamResults.showIndividualBreakdownInstruction'))
       "
@@ -66,8 +66,8 @@ export default class TeamScoreDataTable extends Vue {
 
   private extractAllSectionNames() {
     const sectionNameSet: Set<string> = new Set();
-    this.teamReportDataArray.forEach(t => {
-      t.sections.forEach(s => {
+    this.teamReportDataArray.forEach((t) => {
+      t.sections.forEach((s) => {
         sectionNameSet.add(s.name);
       });
     });
@@ -79,7 +79,7 @@ export default class TeamScoreDataTable extends Vue {
         label: i18n.t("teamResults.teamName")
       }
     ];
-    sectionNames.map(sn => {
+    sectionNames.map((sn) => {
       this.fields.push({ key: sn, sortable: true });
     });
     this.fields.push({
@@ -93,10 +93,10 @@ export default class TeamScoreDataTable extends Vue {
 
   private getTeamScores(sectionNames: string[]) {
     this.items = [];
-    this.teamReportDataArray.forEach(data => {
+    this.teamReportDataArray.forEach((data) => {
       var rec: { [k: string]: any } = {};
       rec["team_name"] = data.name;
-      sectionNames.forEach(sn => {
+      sectionNames.forEach((sn) => {
         // eslint-disable-next-line security/detect-object-injection
         rec[sn] = this.getSectionScore(data.name, sn) + "%";
       });
@@ -108,11 +108,11 @@ export default class TeamScoreDataTable extends Vue {
     let scorePercentage = "0";
     if (this.teamReportDataArray) {
       const teamReportData = this.teamReportDataArray.find(
-        t => t.name === teamName
+        (t) => t.name === teamName
       );
       if (teamReportData) {
         const section = teamReportData.sections.find(
-          s => s.name === sectionName
+          (s) => s.name === sectionName
         );
         if (section) {
           scorePercentage = new Intl.NumberFormat("en-CA", {

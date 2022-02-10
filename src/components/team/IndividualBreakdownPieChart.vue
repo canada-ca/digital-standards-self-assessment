@@ -84,7 +84,7 @@ export default class IndividualBreakdownPieChart extends Vue {
 
   private extractAllSectionNames() {
     const sectionNameSet: Set<string> = new Set();
-    this.teamReportData.sections.forEach(s => {
+    this.teamReportData.sections.forEach((s) => {
       sectionNameSet.add(s.name);
     });
     return [...sectionNameSet];
@@ -92,7 +92,7 @@ export default class IndividualBreakdownPieChart extends Vue {
 
   private getScores(): any[] {
     const teamScoreArray: any[] = [];
-    this.teamReportData.sections.forEach(s => {
+    this.teamReportData.sections.forEach((s) => {
       teamScoreArray.push({ name: s.name, value: this.getScore(s) });
     });
     return teamScoreArray;

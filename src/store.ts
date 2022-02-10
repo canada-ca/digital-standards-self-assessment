@@ -3,12 +3,7 @@ import Vue from "vue";
 import Vuex, { StoreOptions } from "vuex";
 import VuexPersistence from "vuex-persist";
 import { RootState, Section } from "./types";
-import {
-  IQuestion,
-  SurveyModel,
-  LocalizableString,
-  PageModel
-} from "survey-vue";
+import { IQuestion, SurveyModel, PageModel } from "survey-vue";
 import isEmpty from "lodash.isempty";
 import sectionsRecommendations from "./survey-results.json";
 import { filter } from "vue/types/umd";
@@ -49,7 +44,7 @@ const determineAllSections = (state: RootState, surveyData: SurveyModel) => {
  * @param surveyData An object containing the survey data.
  */
 const initializeSections = (state: RootState, surveyData: SurveyModel) => {
-  state.sectionsNames.forEach(sectionName => {
+  state.sectionsNames.forEach((sectionName) => {
     const newSection: Section = {
       sectionName: sectionName,
       enabled: false,
@@ -128,7 +123,7 @@ const updateSurveyData = (state: RootState, surveyData: SurveyModel) => {
 
 const enableSection = (state: RootState, sectionName: string) => {
   let indexSections = state.sections.findIndex(
-    section => section.sectionName === sectionName
+    (section) => section.sectionName === sectionName
   );
   if (state.surveyModel !== undefined && indexSections !== -1) {
     state.sections[indexSections].enabled = true;
@@ -218,7 +213,7 @@ const calculateSectionScore = (
  * @param sectionName A string containing the section name.
  */
 const updateSectionsScores = (state: RootState, surveyData: SurveyModel) => {
-  state.sections.forEach(section => {
+  state.sections.forEach((section) => {
     section.userScore = calculateSectionScore(surveyData, section.sectionName);
     if (section.userScore != 0 && section.enabled == false) {
       section.enabled = true;
@@ -308,10 +303,10 @@ const store: StoreOptions<RootState> = {
   },
   getters: {
     //Need to update progress status based on completed sections.
-    inProgress: state => {
+    inProgress: (state) => {
       return !isEmpty(state.toolData);
     },
-    returnSectionsNamesGenerated: state => {
+    returnSectionsNamesGenerated: (state) => {
       let sectionsNames: string[] = [];
       if (state.surveyModel === undefined) return {};
       state.surveyModel.pages.forEach((page: any) => {
@@ -323,39 +318,39 @@ const store: StoreOptions<RootState> = {
         return undefined;
       } else return sectionsNames;
     },
-    returnSectionByName: state => (sectionName: string) => {
-      return state.sections.find(section => {
+    returnSectionByName: (state) => (sectionName: string) => {
+      return state.sections.find((section) => {
         return section.sectionName === sectionName;
       });
     },
-    returnCurrentSection: state => {
-      return state.sections.find(section => {
+    returnCurrentSection: (state) => {
+      return state.sections.find((section) => {
         return section.sectionName === state.currentPageName;
       });
     },
-    resultsDataSections: state => {
+    resultsDataSections: (state) => {
       let allResults = [];
       if (state.toolData === undefined) return {};
       allResults = state.toolData;
       return allResults;
     },
-    returnAllQuestions: state => {
+    returnAllQuestions: (state) => {
       return state.sectionsNames;
     },
-    returnSections: state => {
+    returnSections: (state) => {
       return state.sections;
     },
-    returnSurveyModel: state => {
+    returnSurveyModel: (state) => {
       if (state.surveyModel == undefined) {
         return undefined;
       } else {
         return state.surveyModel;
       }
     },
-    returnCurrentPageNumber: state => {
+    returnCurrentPageNumber: (state) => {
       return state.currentPageNo;
     },
-    returnDisplayWelcome: state => {
+    returnDisplayWelcome: (state) => {
       return state.displayWelcomeNotice;
     }
   }

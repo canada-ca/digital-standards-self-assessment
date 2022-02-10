@@ -30,7 +30,7 @@
                 id="fileInput"
                 @change="onFileChanged($event)"
                 multiple="multiple"
-                style="opacity:0; height:0px;width:0px;"
+                style="opacity: 0; height: 0px; width: 0px"
               />
               <b-button
                 @click="selectFile($event)"
@@ -85,7 +85,7 @@ import { Model } from "survey-vue";
 import { Component, Vue, Watch } from "vue-property-decorator";
 
 @Component({
-  components: {FileItem}
+  components: { FileItem }
 })
 export default class UploadTeamSurveys extends Vue {
   files: any[] = [];
@@ -95,11 +95,12 @@ export default class UploadTeamSurveys extends Vue {
 
   $refs!: {
     teamNameInput: HTMLInputElement;
-  }
+  };
 
   focus() {
     this.$refs.teamNameInput.focus();
   }
+
   teamReportDataArray: Array<TeamReportData> = [];
   teamAverageReportData!: TeamReportData;
 
@@ -117,7 +118,7 @@ export default class UploadTeamSurveys extends Vue {
   }
 
   state() {
-    return this.teamName.length > 0
+    return this.teamName.length > 0;
   }
   invalidFeedback() {
     if (this.teamName.length == 0) {
@@ -194,7 +195,7 @@ export default class UploadTeamSurveys extends Vue {
           teamName: this.teamName,
           teamAverageReportData: this.teamAverageReportData,
           teamReportDataArray: this.teamReportDataArray
-        }
+        };
         this.$emit("loadTeamReportData", reportDataBundle);
         this.closeModal();
       }
@@ -203,7 +204,10 @@ export default class UploadTeamSurveys extends Vue {
   }
 
   private averageTeamScore() {
-    this.teamAverageReportData = {name: this.teamName, sections: []} as TeamReportData;
+    this.teamAverageReportData = {
+      name: this.teamName,
+      sections: []
+    } as TeamReportData;
     this.teamAverageReportData.name = this.teamName;
     // Extract score into a map
     // section_name: [{score, maxScore}, {score, maxScore}, {score, maxScore} ...]
@@ -214,15 +218,24 @@ export default class UploadTeamSurveys extends Vue {
           if (!scoresMap.has(section.name)) {
             scoresMap.set(section.name, []);
           }
-          scoresMap.get(section.name)?.push({score: section.score, maxScore: section.maxScore});
+          scoresMap
+            .get(section.name)
+            ?.push({ score: section.score, maxScore: section.maxScore });
         }
       }
       scoresMap.forEach((scores, sn) => {
-        const section = scores.filter(({score, maxScore}) => score && score > 0 )
-          .reduce((prev, cur) => ({score: prev.score + cur.score, maxScore: prev.maxScore + cur.maxScore}), {score: 0, maxScore: 0} as SectionReportData)
+        const section = scores
+          .filter(({ score, maxScore }) => score && score > 0)
+          .reduce(
+            (prev, cur) => ({
+              score: prev.score + cur.score,
+              maxScore: prev.maxScore + cur.maxScore
+            }),
+            { score: 0, maxScore: 0 } as SectionReportData
+          );
         section.name = sn;
         this.teamAverageReportData.sections.push(section);
-      })
+      });
     }
   }
 

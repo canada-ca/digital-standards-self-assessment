@@ -41,11 +41,11 @@
           "labelTrue": {
             "default": "Yes",
             "fr": "Oui"
-           },
-           "labelFalse": {
+          },
+          "labelFalse": {
             "default": "No",
             "fr": "Non"
-           }
+          }
         },
         {
           "type": "rating",
@@ -486,11 +486,11 @@
           "labelTrue": {
             "default": "Yes",
             "fr": "Oui"
-           },
-           "labelFalse": {
+          },
+          "labelFalse": {
             "default": "No",
             "fr": "Non"
-           }
+          }
         },
         {
           "type": "boolean",
@@ -504,11 +504,11 @@
           "labelTrue": {
             "default": "Yes",
             "fr": "Oui"
-           },
-           "labelFalse": {
+          },
+          "labelFalse": {
             "default": "No",
             "fr": "Non"
-           }
+          }
         },
         {
           "type": "boolean",
@@ -522,11 +522,11 @@
           "labelTrue": {
             "default": "Yes",
             "fr": "Oui"
-           },
-           "labelFalse": {
+          },
+          "labelFalse": {
             "default": "No",
             "fr": "Non"
-           }
+          }
         },
         {
           "type": "rating",
@@ -576,11 +576,11 @@
           "labelTrue": {
             "default": "Yes",
             "fr": "Oui"
-           },
-           "labelFalse": {
+          },
+          "labelFalse": {
             "default": "No",
             "fr": "Non"
-           }
+          }
         },
         {
           "type": "boolean",
@@ -594,11 +594,11 @@
           "labelTrue": {
             "default": "Yes",
             "fr": "Oui"
-           },
-           "labelFalse": {
+          },
+          "labelFalse": {
             "default": "No",
             "fr": "Non"
-           }
+          }
         },
         {
           "type": "boolean",
@@ -612,11 +612,11 @@
           "labelTrue": {
             "default": "Yes",
             "fr": "Oui"
-           },
-           "labelFalse": {
+          },
+          "labelFalse": {
             "default": "No",
             "fr": "Non"
-           }
+          }
         },
         {
           "type": "rating",
@@ -774,11 +774,11 @@
           "labelTrue": {
             "default": "Yes",
             "fr": "Oui"
-           },
-           "labelFalse": {
+          },
+          "labelFalse": {
             "default": "No",
             "fr": "Non"
-           }
+          }
         }
       ]
     },

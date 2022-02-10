@@ -30,13 +30,13 @@ import { Vue, Component, Prop } from "vue-property-decorator";
       sectionName: string,
       scoreLevel: string
     ) {
-      let sectionRec = sectionRecommendations.find(section => {
+      let sectionRec = sectionRecommendations.find((section) => {
         return section.name == sectionName;
       });
       return sectionRec?.recommendations[parseInt(scoreLevel)];
     },
     markdownToHtml(item: string) {
-      return marked(item)
+      return marked(item);
     }
   }
 })

@@ -139,7 +139,7 @@ function generateLanguageToggle() {
   languageButton.className =
     "btn btn-default fixed-top language-button position-absolute page-actions";
   languageButton.style["left"] = "unset";
-  languageButton.addEventListener("click", e => {
+  languageButton.addEventListener("click", (e) => {
     let currentLanguage = i18n.locale;
 
     if (currentLanguage === "fr") {
@@ -155,8 +155,9 @@ function generateLanguageToggle() {
       let wbBanner = document.getElementById("wb-bnr") as HTMLElement;
       document
         .getElementById("wb-bnr")!
-        .firstChild!.appendChild((e.currentTarget as HTMLElement)
-          .parentElement as HTMLElement);
+        .firstChild!.appendChild(
+          (e.currentTarget as HTMLElement).parentElement as HTMLElement
+        );
     } else {
       i18n.locale = "fr";
       if (e.target instanceof HTMLElement) {
@@ -168,8 +169,9 @@ function generateLanguageToggle() {
       let wbBanner = document.getElementById("wb-bnr") as HTMLElement;
       document
         .getElementById("wb-bnr")!
-        .firstChild!.appendChild((e.currentTarget as HTMLElement)
-          .parentElement as HTMLElement);
+        .firstChild!.appendChild(
+          (e.currentTarget as HTMLElement).parentElement as HTMLElement
+        );
     }
 
     // reload the cdts template
@@ -178,7 +180,7 @@ function generateLanguageToggle() {
   document.getElementById("wb-bnr")!.firstChild!.appendChild(languageDiv);
 }
 
-window.onload = function() {
+window.onload = () => {
   reloadTemplate();
   generateLanguageToggle();
   window.history.replaceState(
@@ -201,5 +203,5 @@ new Vue({
   router,
   store,
   i18n,
-  render: h => h(App)
+  render: (h) => h(App)
 }).$mount("#app");

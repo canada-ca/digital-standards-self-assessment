@@ -67,7 +67,7 @@ import { ActionTypes } from "@/store/actions";
   },
   computed: {
     // TODO: This computed property is never used
-    sectionNames: function() {
+    sectionNames() {
       return this.$store.getters.returnSectionsNamesGenerated;
     },
     results() {
@@ -218,7 +218,7 @@ export default class Results extends Vue {
 
     const converter = new showdown.Converter();
 
-    this.Survey.onTextMarkdown.add(function(survey: any, options: any) {
+    this.Survey.onTextMarkdown.add((survey: any, options: any) => {
       //convert the markdown text to html
       var str = converter.makeHtml(options.text);
       //remove root paragraphs <p></p>
@@ -233,7 +233,7 @@ export default class Results extends Vue {
 
     // accessibility fix... aria-labelledby being needlessly generated for html question
     // TODO: make this dynamic by looping over questions and doing this for all html questions
-    this.Survey.onAfterRenderQuestion.add(function(sender: any, options: any) {
+    this.Survey.onAfterRenderQuestion.add((sender: any, options: any) => {
       let welcomePage = document.getElementsByName("welcome1");
       if (welcomePage && welcomePage.length > 0) {
         let welcomePageElement = welcomePage[0];

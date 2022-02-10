@@ -2,7 +2,7 @@
   <div
     v-if="hasReportData"
     ref="barChart"
-    style="min-width: 100%; height:500px; margin-top: 30px"
+    style="min-width: 100%; height: 500px; margin-top: 30px"
   ></div>
 </template>
 
@@ -50,8 +50,8 @@ export default class IndividualBreakdownBarCard extends Vue {
 
   private extractAllSectionNames() {
     const sectionNameSet: Set<string> = new Set();
-    this.teamReportDataArray.forEach(t => {
-      t.sections.forEach(s => {
+    this.teamReportDataArray.forEach((t) => {
+      t.sections.forEach((s) => {
         sectionNameSet.add(s.name);
       });
     });
@@ -60,10 +60,10 @@ export default class IndividualBreakdownBarCard extends Vue {
 
   private extractAllTeamNames() {
     this.allTeamNames = [];
-    this.teamReportDataArray.forEach(t => {
+    this.teamReportDataArray.forEach((t) => {
       this.allTeamNames.push(t.name);
     });
-    this.chartSeries = this.allTeamNames.map(name => ({
+    this.chartSeries = this.allTeamNames.map((name) => ({
       type: "bar",
       label: { show: true, position: "top" }
     }));
@@ -73,10 +73,10 @@ export default class IndividualBreakdownBarCard extends Vue {
   private getTeamScores(): any[][] {
     const teamScoreArray: any[][] = [];
     const allSectionNames = this.extractAllSectionNames();
-    allSectionNames.forEach(sn => {
+    allSectionNames.forEach((sn) => {
       const rec: any[] = [];
       rec.push(sn);
-      this.teamReportDataArray.forEach(data => {
+      this.teamReportDataArray.forEach((data) => {
         rec.push(this.getSectionScore(data.name, sn));
       });
       teamScoreArray.push(rec);
@@ -88,11 +88,11 @@ export default class IndividualBreakdownBarCard extends Vue {
     let scorePercentage = "0";
     if (this.teamReportDataArray) {
       const teamReportData = this.teamReportDataArray.find(
-        t => t.name === teamName
+        (t) => t.name === teamName
       );
       if (teamReportData) {
         const section = teamReportData.sections.find(
-          s => s.name === sectionName
+          (s) => s.name === sectionName
         );
         if (section) {
           scorePercentage = new Intl.NumberFormat("en-CA", {

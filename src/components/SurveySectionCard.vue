@@ -12,13 +12,13 @@
       <div class="icon-container">
         <i :class="setStatusIcon(section.name)"></i>
       </div>
-      <div style="flex: auto;">
+      <div style="flex: auto">
         <div class="survey-title">
           {{ section.title }}
         </div>
         <transition name="collapsed" mode="out-in">
           <div v-if="!collapsed" class="mt-3">
-            <p style="font-size: 16px;">
+            <p style="font-size: 16px">
               {{ getShortDescription(section.description) }}
             </p>
             <span style="color: #395072; font-weight: 700">
@@ -88,9 +88,8 @@ export default class SurveySectionCard extends Vue {
   }
 
   sectionScoreLevel(sectionName: string) {
-    const thisSection: Section = this.$store.getters.returnSectionByName(
-      sectionName
-    );
+    const thisSection: Section =
+      this.$store.getters.returnSectionByName(sectionName);
     if (thisSection === undefined) {
       return "N/A";
     }
@@ -106,9 +105,8 @@ export default class SurveySectionCard extends Vue {
   }
 
   setStatusIcon(sectionName: string) {
-    const thisSection: Section = this.$store.getters.returnSectionByName(
-      sectionName
-    );
+    const thisSection: Section =
+      this.$store.getters.returnSectionByName(sectionName);
     if (thisSection === undefined) {
       return "zero fa fa-2x fa-circle";
     } else if (thisSection.userScore === 0) {

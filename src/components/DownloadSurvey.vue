@@ -29,7 +29,7 @@
           <div class="text-danger mt-3" v-if="hasError">
             {{ $t(errorMessage) }}
           </div>
-          <input ref="submitButton" type="submit" style="display: none;" />
+          <input ref="submitButton" type="submit" style="display: none" />
         </b-form>
       </template>
       <template #modal-footer>

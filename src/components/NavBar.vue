@@ -4,20 +4,20 @@
       <div class="app-name-sec">
         <router-link
           class="app-name"
-          style="color: #fff !important;  font-size: 36px !important;"
+          style="color: #fff !important; font-size: 36px !important"
           to="/"
           >{{ $t("navigation.appName") }}</router-link
         >
         <div class="menu-sec">
           <router-link
             class="menu-link"
-            style="  color: #fff !important;  font-size: 30px !important;"
+            style="color: #fff !important; font-size: 30px !important"
             to="/survey"
             >{{ $t("navigation.survey") }}</router-link
           >
           <router-link
             class="menu-link"
-            style="color: #fff !important;  font-size: 30px !important;"
+            style="color: #fff !important; font-size: 30px !important"
             to="/teamSurveys"
             >{{ $t("navigation.teamsSurvey") }}</router-link
           >

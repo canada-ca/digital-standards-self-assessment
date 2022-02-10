@@ -7,7 +7,6 @@ module.exports = {
   extends: [
     "plugin:security/recommended",
     "plugin:vue/essential",
-    "@vue/prettier",
     "@vue/typescript"
   ],
   rules: {

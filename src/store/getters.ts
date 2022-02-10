@@ -116,7 +116,7 @@ export const getters: GetterTree<RootState, RootState> & Getters = {
   returnSectionByName(state: RootState) {
     return (sectionName: string) => {
       return state.sections.find(
-        section => section.sectionName === sectionName
+        (section) => section.sectionName === sectionName
       );
     };
   },
@@ -139,7 +139,7 @@ export const getters: GetterTree<RootState, RootState> & Getters = {
     };
   },
   returnCurrentSection(state: RootState) {
-    return state.sections.find(section => {
+    return state.sections.find((section) => {
       return section.sectionName === state.currentPageName;
     });
   },

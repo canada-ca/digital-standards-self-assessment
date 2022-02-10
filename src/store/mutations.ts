@@ -150,7 +150,7 @@ export const mutations: MutationTree<RootState> & Mutations = {
     state.currentPageName = payload;
   },
   [MutationType.UpdateSection](state: RootState, payload: Section) {
-    state.sections = state.sections.map(section => {
+    state.sections = state.sections.map((section) => {
       if (section.sectionName === payload.sectionName) {
         return { ...section, ...payload };
       }
@@ -186,7 +186,7 @@ export const mutations: MutationTree<RootState> & Mutations = {
     payload: TeamReportDataBundle
   ) {
     const index = state.teamReportDataBundleArray.findIndex(
-      d => d.teamName === payload.teamName
+      (d) => d.teamName === payload.teamName
     );
     if (index === -1) {
       state.teamReportDataBundleArray.push(payload);
@@ -194,7 +194,7 @@ export const mutations: MutationTree<RootState> & Mutations = {
       state.teamReportDataBundleArray.splice(index, 1, payload);
     }
     const avgIndex = state.teamAverageReportDataArray.findIndex(
-      d => d.name === payload.teamName
+      (d) => d.name === payload.teamName
     );
     if (avgIndex === -1) {
       state.teamAverageReportDataArray.push(payload.teamAverageReportData);
@@ -208,12 +208,14 @@ export const mutations: MutationTree<RootState> & Mutations = {
   },
   [MutationType.DeleteTeamSurvey](state: RootState, payload: string) {
     let index = state.teamReportDataBundleArray.findIndex(
-      d => d.teamName === payload
+      (d) => d.teamName === payload
     );
     if (index > -1) {
       state.teamReportDataBundleArray.splice(index, 1);
     }
-    index = state.teamAverageReportDataArray.findIndex(d => d.name === payload);
+    index = state.teamAverageReportDataArray.findIndex(
+      (d) => d.name === payload
+    );
     if (index > -1) {
       state.teamAverageReportDataArray.splice(index, 1);
     }
@@ -228,7 +230,7 @@ export const mutations: MutationTree<RootState> & Mutations = {
   },
   [MutationType.ShowIndividualBreakdown](state: RootState, payload: string) {
     const reportDataBundle = state.teamReportDataBundleArray.find(
-      d => d.teamName === payload
+      (d) => d.teamName === payload
     );
     if (reportDataBundle) {
       state.individualTeamName = payload;

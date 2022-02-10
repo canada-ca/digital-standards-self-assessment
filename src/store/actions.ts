@@ -137,8 +137,8 @@ export const actions: ActionTree<RootState, RootState> & Actions = {
     // commit(MutationType.StartLoading, undefined);
     let remoteAppData: Model;
     fetch(value)
-      .then(response => response.json()) // one extra step
-      .then(data => {
+      .then((response) => response.json()) // one extra step
+      .then((data) => {
         remoteAppData = new Model(data);
         if (remoteAppData) {
           commit(MutationType.SetSurveyModel, remoteAppData);
@@ -197,7 +197,7 @@ export const actions: ActionTree<RootState, RootState> & Actions = {
     let sections: Section[] = [];
     if (getters.returnSectionsNames.length > 0) {
       const sectionNames: string[] = getters.returnSectionsNames;
-      sectionNames.forEach(sectionName => {
+      sectionNames.forEach((sectionName) => {
         let newSection: Section = {
           sectionName: sectionName,
           enabled: false,
@@ -273,7 +273,7 @@ export const actions: ActionTree<RootState, RootState> & Actions = {
 
     //Updating all sections instead as per current behavior
     let allPages: PageModel[] = value.pages;
-    allPages.forEach(page => {
+    allPages.forEach((page) => {
       dispatch(ActionTypes.UpdateSectionScore, page);
     });
     commit(MutationType.SetToolData, value.data);

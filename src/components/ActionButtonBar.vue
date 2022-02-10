@@ -4,7 +4,7 @@
       <b-row class="no-gutters" align-h="center" style="padding: 0 15px">
         <b-col
           class="col-lg-2 col-sm-5 col-md-10 col-xs-6"
-          style="margin: 0 165px 0 2px;"
+          style="margin: 0 165px 0 2px"
         >
           <input
             type="file"
@@ -16,7 +16,7 @@
         </b-col>
         <b-col
           class="col-lg-2 col-sm-5 col-md-3 col-xs-6"
-          style="margin: 2px 2px;"
+          style="margin: 2px 2px"
         >
           <button
             type="button"
@@ -29,7 +29,7 @@
         </b-col>
         <b-col
           class="col-lg-2 col-sm-5 col-md-3 col-xs-6"
-          style="margin: 2px 2px;"
+          style="margin: 2px 2px"
         >
           <button
             type="button"
@@ -45,7 +45,7 @@
     </div>
     <div v-else>
       <b-row align-h="center">
-        <b-col class="col-sm-3" style="margin: 2px 2px;">
+        <b-col class="col-sm-3" style="margin: 2px 2px">
           <input
             type="file"
             class="btn btn-default"
@@ -53,8 +53,8 @@
             @change="onFileChanged($event)"
           />
         </b-col>
-        <b-col class="col-sm-2 col-xs-6" style="margin: 2px 2px;"></b-col>
-        <b-col class="col-sm-2 col-xs-6" style="margin: 2px 2px;"></b-col>
+        <b-col class="col-sm-2 col-xs-6" style="margin: 2px 2px"></b-col>
+        <b-col class="col-sm-2 col-xs-6" style="margin: 2px 2px"></b-col>
       </b-row>
     </div>
   </div>
