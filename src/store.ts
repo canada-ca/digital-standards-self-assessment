@@ -4,7 +4,7 @@ import Vuex, { StoreOptions } from "vuex";
 import VuexPersistence from "vuex-persist";
 import { RootState, Section } from "./types";
 import { IQuestion, SurveyModel, PageModel } from "survey-vue";
-import isEmpty from "lodash.isempty";
+import { isEmpty } from "lodash";
 import sectionsRecommendations from "./survey-results.json";
 import { filter } from "vue/types/umd";
 import { stat } from "fs";

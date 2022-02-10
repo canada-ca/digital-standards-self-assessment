@@ -5,7 +5,7 @@ import {
   RootState,
   TeamReportData
 } from "@/store/state";
-import isEmpty from "lodash.isempty";
+import { isEmpty } from "lodash";
 import { PageModel, SurveyModel } from "survey-vue";
 
 export type Getters = {
