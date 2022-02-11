@@ -1,20 +1,17 @@
 <template>
-  <div class="survey-card-container" :style="cardStyles">
-    <div
-      class="survey-card"
-      img-top
-      tabindex="0"
-      v-on:click="goToSection(section.name)"
-      @mouseover="hover = true"
-      @mouseleave="hover = false"
-      @keydown.space="goToSection(section.name)"
-    >
+  <div class="survey-card-container">
+    <div class="survey-card" img-top>
       <div class="icon-container">
         <i :class="setStatusIcon(section.name)"></i>
       </div>
       <div style="flex: auto">
         <div class="survey-title">
-          {{ section.title }}
+          <a
+            href="#"
+            @click.prevent="goToSection(section.name)"
+            @keypress.space="goToSection(section.name)"
+            >{{ section.title }}</a
+          >
         </div>
         <transition name="collapsed" mode="out-in">
           <div v-if="!collapsed" class="mt-3">
@@ -48,28 +45,10 @@ export default class SurveySectionCard extends Vue {
   @Prop() public section!: PageModel;
   @Prop() public survey!: SurveyModel;
 
-  cardStyleHover = {
-    "box-shadow": "0 0 0 2px black",
-    cursor: "pointer"
-  };
-  cardStyle = {
-    "box-shadow":
-      "0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19)"
-  };
-  hover = false;
-
   collapsed = true;
 
   toggleCollapsed() {
     this.collapsed = !this.collapsed;
-  }
-
-  get cardStyles() {
-    if (this.hover == true) {
-      return this.cardStyleHover;
-    } else {
-      return this.cardStyle;
-    }
   }
 
   goToSection(sectionName: string) {
@@ -107,11 +86,7 @@ export default class SurveySectionCard extends Vue {
   setStatusIcon(sectionName: string) {
     const thisSection: Section =
       this.$store.getters.returnSectionByName(sectionName);
-    if (thisSection === undefined) {
-      return "zero fa fa-2x fa-circle";
-    } else if (thisSection.userScore === 0) {
-      return "zero fa fa-2x fa-circle";
-    } else if (thisSection.userScore > 0) {
+    if (thisSection !== undefined && thisSection.userScore > 0) {
       return "fa fa-2x fa-circle";
     } else {
       return "zero fa fa-2x fa-circle";
@@ -126,6 +101,10 @@ export default class SurveySectionCard extends Vue {
   color: #395072;
 }
 
+.survey-title > a {
+  cursor: pointer;
+}
+
 .survey-card-container {
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
@@ -133,6 +112,7 @@ export default class SurveySectionCard extends Vue {
   background-clip: border-box;
   margin-top: 10px;
   margin-bottom: 10px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
 }
 
 .survey-card-container:focus {

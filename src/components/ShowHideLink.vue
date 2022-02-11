@@ -1,8 +1,13 @@
 <template>
-  <span class="collapsed-toggle" @click="onClicked()">
+  <a
+    href="#"
+    class="collapsed-toggle"
+    @click.prevent="onClicked()"
+    @keypress.space="onClicked()"
+  >
     {{ $t(collapsed ? "showHideLink.show" : "showHideLink.hide") }}
     <i :class="toggleClass()" aria-hidden="true"></i>
-  </span>
+  </a>
 </template>
 
 <script lang="ts">
@@ -32,6 +37,7 @@ export default class ShowHideLink extends Vue {
 <style scoped>
 .collapsed-toggle {
   cursor: pointer;
+  text-decoration: none !important;
   user-select: none;
   display: inline-block;
   font-size: 15px;
