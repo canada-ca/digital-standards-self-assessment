@@ -2,13 +2,14 @@
   <div class="mb-3">
     <section style="background: #e0edff">
       <div class="container">
-        <h5>{{ $t("notice.startUsingTitle") }}</h5>
+        <h1>{{ $t("notice.startUsingTitle") }}</h1>
         <div v-html="markdownToHtml($t('notice.startUsingDesc'))" />
         <div class="col-container">
           <div class="welcome-col left-col">
             <b-img
               :src="require('@/assets/images/items.png')"
               style="height: 35px; margin: 8px 20px 0px 0px"
+              alt=""
             />
             <span>
               <p style="font-size: 1.4em">
@@ -21,6 +22,7 @@
             <b-img
               :src="require('@/assets/images/bars.png')"
               style="height: 42px; margin: 8px 20px 0px 0px"
+              alt=""
             />
             <span>
               <p style="font-size: 1.4em">
@@ -51,6 +53,7 @@
             <b-img
               :src="require('@/assets/images/steps.png')"
               style="height: 60px; margin: 8px 20px 0px 0px"
+              alt=""
             />
             <span>
               <p style="font-size: 1.4em">
@@ -63,6 +66,7 @@
             <b-img
               :src="require('@/assets/images/step.png')"
               style="height: 60px; margin: 8px 20px 0px 0px"
+              alt=""
             />
             <span>
               <p style="font-size: 1.4em">
@@ -85,6 +89,7 @@
             <b-img
               :src="require('@/assets/images/time2.png')"
               style="height: 60px; margin: 8px 20px 0px 0px"
+              alt=""
             />
             <span>
               <p style="font-size: 1.4em">
@@ -96,6 +101,7 @@
             <b-img
               :src="require('@/assets/images/time1.png')"
               style="height: 60px; margin: 8px 20px 0px 0px"
+              alt=""
             />
             <span>
               <p style="font-size: 1.4em">
@@ -116,6 +122,7 @@
             <b-img
               :src="require('@/assets/images/brush.png')"
               style="height: 60px; margin: 8px 20px 0px 0px"
+              alt=""
             />
             <span>
               <p style="font-size: 1.4em">
@@ -128,6 +135,7 @@
             <b-img
               :src="require('@/assets/images/exclamation.png')"
               style="height: 60px; margin: 8px 20px 0px 0px"
+              alt=""
             />
             <span>
               <p style="font-size: 1.4em">

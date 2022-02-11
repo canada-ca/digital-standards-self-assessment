@@ -4,6 +4,7 @@
     <b-img
       :src="require('@/assets/images/delete.png')"
       class="delete-icon"
+      alt="delete"
       @click="onDeleteClicked()"
     />
   </div>

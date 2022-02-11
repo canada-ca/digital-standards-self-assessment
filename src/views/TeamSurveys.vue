@@ -13,6 +13,7 @@
           class="overview-image"
           fluid-grow
           :src="require('@/assets/images/teamSurveyOverview.png')"
+          alt="overview"
           v-if="!hasReportData"
         />
         <team-score-bar-chart :teamReportDataArray="teamReportDataArray" />
