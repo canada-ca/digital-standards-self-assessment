@@ -28,6 +28,7 @@
             <div class="col text-center">
               <b-form-file
                 id="fileInput"
+                tabindex="-1"
                 @change="onFileChanged($event)"
                 multiple="multiple"
                 style="opacity: 0; height: 0px; width: 0px"

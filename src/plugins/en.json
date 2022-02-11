@@ -42,6 +42,7 @@
     "OK": "OK",
     "cancel": "Cancel",
     "format": "In Pretty Format",
+    "browse": "Browse",
     "uploadSurvey": "Upload Survey",
     "downloadSurvey": "Download Full Survey",
     "inputFileName": "Please enter a file name",

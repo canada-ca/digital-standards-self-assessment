@@ -30,14 +30,23 @@
         </div>
       </template>
       <template #modal-footer>
-        <input
-          type="file"
-          ref="fileUpload"
-          class="btn btn-default mr-auto"
-          value="Load"
-          style="padding: 0"
-          @change="onFileChanged($event)"
-        />
+        <div>
+          <input
+            id="fileInput"
+            type="file"
+            ref="fileUpload"
+            class="btn btn-default mr-auto"
+            value="Load"
+            style="opacity: 0; height: 0px; width: 0px"
+            tabindex="-1"
+            @change="onFileChanged($event)"
+          />
+          <b-button
+            @click="selectFile($event)"
+            class="btn btn-primary upload-button"
+            >{{ $t("downloadUploadSurvey.browse") }}</b-button
+          >
+        </div>
         <b-form-checkbox
           class="m-auto"
           v-model="format"
@@ -97,6 +106,10 @@ export default class UploadSurvey extends Vue {
 
   cancel() {
     this.$bvModal.hide("load-loacal-survey-modal");
+  }
+
+  selectFile(event: MouseEvent) {
+    document.getElementById("fileInput")?.click();
   }
 
   onFileChanged($event: any) {
@@ -165,3 +178,9 @@ export default class UploadSurvey extends Vue {
   }
 }
 </script>
+
+<style scoped>
+.upload-button {
+  min-width: 270px !important;
+}
+</style>
