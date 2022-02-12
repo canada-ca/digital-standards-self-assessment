@@ -1,7 +1,7 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "059165f80222c2edf42c",
-    "url": "/digital-standards-self-assessment/css/app.67ba597a.css"
+    "revision": "2c44f5b2eca85c3efda0",
+    "url": "/digital-standards-self-assessment/css/app.a4d75ff7.css"
   },
   {
     "revision": "5bc6c515e399e17c66f2",
@@ -156,12 +156,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/digital-standards-self-assessment/img/time2.e93a8f40.png"
   },
   {
-    "revision": "c094ed19ae195b38ada700ff8c5d5a5c",
+    "revision": "798d0909ed3d6bb8daa850e223369a78",
     "url": "/digital-standards-self-assessment/index.html"
   },
   {
-    "revision": "059165f80222c2edf42c",
-    "url": "/digital-standards-self-assessment/js/app.cbc18a01.js"
+    "revision": "2c44f5b2eca85c3efda0",
+    "url": "/digital-standards-self-assessment/js/app.dafd3a86.js"
   },
   {
     "revision": "5bc6c515e399e17c66f2",
