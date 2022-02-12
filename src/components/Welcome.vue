@@ -37,7 +37,7 @@
       </div>
     </section>
     <section class="container">
-      <h5 id="welcomeNoticeTitle">{{ $t("notice.welcomeNoticeTitle") }}</h5>
+      <h2 id="welcomeNoticeTitle">{{ $t("notice.welcomeNoticeTitle") }}</h2>
       <div
         style="margin: 50px 0px"
         v-html="markdownToHtml($t('notice.welcomeNoticeBody'))"
@@ -45,9 +45,9 @@
     </section>
     <section style="background: #e0edff">
       <div class="container">
-        <h5>
+        <h2>
           {{ $t("notice.subtitle1") }}
-        </h5>
+        </h2>
         <div class="col-container">
           <div class="welcome-col left-col">
             <b-img
@@ -80,9 +80,9 @@
     </section>
     <section>
       <div class="container">
-        <h5>
+        <h2>
           {{ $t("notice.subtitle2") }}
-        </h5>
+        </h2>
         <div v-html="markdownToHtml($t('notice.section2p1'))" />
         <div class="col-container">
           <div class="welcome-col left-col">
@@ -114,9 +114,9 @@
     </section>
     <section style="background: #e0edff">
       <div class="container">
-        <h5>
+        <h2>
           {{ $t("notice.subtitle3") }}
-        </h5>
+        </h2>
         <div class="col-container">
           <div class="welcome-col left-col">
             <b-img
@@ -179,8 +179,8 @@ export default class Welcome extends Vue {
 .right-col {
   padding-left: 30px;
 }
-h5 {
-  font-size: 55px !important;
+h2 {
+  font-size: 48px !important;
   font-weight: 300 !important;
 }
 </style>
