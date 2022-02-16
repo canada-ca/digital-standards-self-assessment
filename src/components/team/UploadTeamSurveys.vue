@@ -1,20 +1,13 @@
 <template>
   <div>
-    <b-link @click="showUploadDialog($event)">{{
-      $t("teamResults.uploadSurveys")
-    }}</b-link>
+    <b-link @click="showUploadDialog($event)">{{ $t('teamResults.uploadSurveys') }}</b-link>
     <b-modal id="upload-team-survey-modal" size="lg" @shown="focus">
       <template #modal-header>
-        <div>{{ $t("teamResults.uploadSurveys") }}</div>
+        <div>{{ $t('teamResults.uploadSurveys') }}</div>
       </template>
       <template #default>
         <div style="padding: 30px">
-          <b-form-group
-            :label="$t('teamResults.teamName')"
-            label-for="teamName"
-            :invalid-feedback="$t(invalidFeedback())"
-            :state="state()"
-          >
+          <b-form-group :label="$t('teamResults.teamName')" label-for="teamName" :invalid-feedback="$t(invalidFeedback())" :state="state()">
             <b-form-input
               id="teamName"
               ref="teamNameInput"
@@ -33,11 +26,7 @@
                 multiple="multiple"
                 style="opacity: 0; height: 0px; width: 0px"
               />
-              <b-button
-                @click="selectFile($event)"
-                class="btn btn-primary upload-button"
-                >{{ $t("teamResults.uploadSurveys") }}</b-button
-              >
+              <b-button @click="selectFile($event)" class="btn btn-primary upload-button">{{ $t('teamResults.uploadSurveys') }}</b-button>
               <div class="row text-danger mt-3" v-if="hasError()">
                 <div class="col">
                   <ul>
@@ -57,19 +46,11 @@
         </div>
       </template>
       <template #modal-footer>
-        <b-button
-          class="btn btn-primary"
-          @click="calculateResults()"
-          :disabled="!readyToCalc()"
-        >
-          {{ $t("teamResults.calcResults") }}
+        <b-button class="btn btn-primary" @click="calculateResults()" :disabled="!readyToCalc()">
+          {{ $t('teamResults.calcResults') }}
         </b-button>
-        <b-button
-          class="btn btn-default"
-          style="width: 120px; margin-right: 10px !important"
-          @click="closeModal()"
-        >
-          {{ $t("downloadUploadSurvey.cancel") }}
+        <b-button class="btn btn-default" style="width: 120px; margin-right: 10px !important" @click="closeModal()">
+          {{ $t('downloadUploadSurvey.cancel') }}
         </b-button>
       </template>
     </b-modal>
@@ -77,22 +58,23 @@
 </template>
 
 <script lang="ts">
-import FileItem from "@/components/team/FileItem.vue";
-import ErrorMessage from "@/interfaces/ErrorMessage";
-import { SectionReportData, TeamReportDataBundle } from "@/store/state";
-import { TeamReportData } from "@/store/state";
-import SurveyFile from "@/interfaces/SurveyFile";
-import { Model } from "survey-vue";
-import { Component, Vue, Watch } from "vue-property-decorator";
+import FileItem from '@/components/team/FileItem.vue';
+import ErrorMessage from '@/interfaces/ErrorMessage';
+import { SectionReportData, TeamReportDataBundle } from '@/store/state';
+import { TeamReportData } from '@/store/state';
+import SurveyFile from '@/interfaces/SurveyFile';
+import { Model } from 'survey-vue';
+import { Component, Vue, Watch } from 'vue-property-decorator';
+import { calcSectionMaxScore, getWeightBySectionAndQuestion } from '@/utils/utils';
 
 @Component({
-  components: { FileItem }
+  components: { FileItem },
 })
 export default class UploadTeamSurveys extends Vue {
   files: any[] = [];
   errorMessages: Array<ErrorMessage> = [];
-  locale = "en";
-  teamName = "";
+  locale = 'en';
+  teamName = '';
 
   $refs!: {
     teamNameInput: HTMLInputElement;
@@ -109,11 +91,11 @@ export default class UploadTeamSurveys extends Vue {
     event.preventDefault();
     this.errorMessages = [];
     this.cleanData();
-    this.$bvModal.show("upload-team-survey-modal");
+    this.$bvModal.show('upload-team-survey-modal');
   }
 
   private cleanData() {
-    this.teamName = "";
+    this.teamName = '';
     this.teamReportDataArray = [];
     this.files = [];
   }
@@ -123,12 +105,12 @@ export default class UploadTeamSurveys extends Vue {
   }
   invalidFeedback() {
     if (this.teamName.length == 0) {
-      return "teamResults.teamNameRequired";
+      return 'teamResults.teamNameRequired';
     }
   }
 
   selectFile(event: MouseEvent) {
-    document.getElementById("fileInput")?.click();
+    document.getElementById('fileInput')?.click();
   }
 
   deleteFile(index: number) {
@@ -152,16 +134,16 @@ export default class UploadTeamSurveys extends Vue {
     let surveyFile: SurveyFile;
     reader.onload = (e: ProgressEvent) => {
       const result = reader.result as string;
-      if (result === "undefined") {
+      if (result === 'undefined') {
         surveyFile = {
           fileName: file.name,
           hasError: true,
-          errorMessage: "validation.file.format",
-          currentPage: 0
+          errorMessage: 'validation.file.format',
+          currentPage: 0,
         };
         this.errorMessages.push({
-          message: "validation.file.format",
-          param: file.name
+          message: 'validation.file.format',
+          param: file.name,
         });
       } else {
         try {
@@ -170,34 +152,32 @@ export default class UploadTeamSurveys extends Vue {
           surveyFile.fileName = file.name;
           this.teamReportDataArray.push({
             name: surveyFile.fileName.substr(0, surveyFile.fileName.length - 5),
-            sections: this.extractReportData(surveyFile)
+            sections: this.extractReportData(surveyFile),
           });
         } catch (e) {
           surveyFile = {
             fileName: file.name,
             hasError: true,
-            errorMessage: "validation.file.format",
-            currentPage: 0
+            errorMessage: 'validation.file.format',
+            currentPage: 0,
           };
           this.errorMessages.push({
-            message: "validation.file.format",
-            param: file.name
+            message: 'validation.file.format',
+            param: file.name,
           });
         }
       }
 
       if (this.teamReportDataArray.length === fileCount) {
         // sort report data
-        this.teamReportDataArray.sort((a, b) =>
-          a.name < b.name ? -1 : a.name == b.name ? 0 : 1
-        );
+        this.teamReportDataArray.sort((a, b) => (a.name < b.name ? -1 : a.name == b.name ? 0 : 1));
         this.averageTeamScore();
         const reportDataBundle: TeamReportDataBundle = {
           teamName: this.teamName,
           teamAverageReportData: this.teamAverageReportData,
-          teamReportDataArray: this.teamReportDataArray
+          teamReportDataArray: this.teamReportDataArray,
         };
-        this.$emit("loadTeamReportData", reportDataBundle);
+        this.$emit('loadTeamReportData', reportDataBundle);
         this.closeModal();
       }
     };
@@ -207,7 +187,7 @@ export default class UploadTeamSurveys extends Vue {
   private averageTeamScore() {
     this.teamAverageReportData = {
       name: this.teamName,
-      sections: []
+      sections: [],
     } as TeamReportData;
     this.teamAverageReportData.name = this.teamName;
     // Extract score into a map
@@ -219,9 +199,7 @@ export default class UploadTeamSurveys extends Vue {
           if (!scoresMap.has(section.name)) {
             scoresMap.set(section.name, []);
           }
-          scoresMap
-            .get(section.name)
-            ?.push({ score: section.score, maxScore: section.maxScore });
+          scoresMap.get(section.name)?.push({ score: section.score, maxScore: section.maxScore });
         }
       }
       scoresMap.forEach((scores, sn) => {
@@ -230,7 +208,7 @@ export default class UploadTeamSurveys extends Vue {
           .reduce(
             (prev, cur) => ({
               score: prev.score + cur.score,
-              maxScore: prev.maxScore + cur.maxScore
+              maxScore: prev.maxScore + cur.maxScore,
             }),
             { score: 0, maxScore: 0 } as SectionReportData
           );
@@ -249,29 +227,30 @@ export default class UploadTeamSurveys extends Vue {
         const sectionReportData: SectionReportData = {
           name: page.name,
           score: 0,
-          maxScore: page.questions.length * 5,
+          maxScore: calcSectionMaxScore(page.name, surveyFile.surveyJSON),
           questions: [],
-          title: page.title
+          title: page.title,
         };
         page.questions.forEach((question: any) => {
           sectionReportData.questions.push({
             name: question.name,
             type: question.getType(),
             title: question.title,
-            answer: question.value
+            answer: question.value,
           });
           if (question.value !== undefined) {
             let score = 0;
-            if (question.getType() === "rating") {
+            const weight = getWeightBySectionAndQuestion(page.name, question.name, surveyFile.surveyJSON);
+            if (question.getType() === 'rating') {
               score = +question.value;
-            } else if (question.getType() === "boolean") {
+            } else if (question.getType() === 'boolean') {
               if (question.value) {
                 score = 5;
               } else {
                 score = 1;
               }
             }
-            sectionReportData.score += score;
+            sectionReportData.score += score * (weight || 1);
           }
         });
         sectionReportDataArray.push(sectionReportData);
@@ -281,24 +260,20 @@ export default class UploadTeamSurveys extends Vue {
   }
 
   closeModal() {
-    this.$bvModal.hide("upload-team-survey-modal");
+    this.$bvModal.hide('upload-team-survey-modal');
   }
 
   hasError() {
     return this.errorMessages.length > 0;
   }
 
-  @Watch("$i18n.locale")
+  @Watch('$i18n.locale')
   changeLanguage(value: string, oldValue: string) {
     this.locale = value;
   }
 
   onFileChanged($event: any) {
-    if (
-      $event === null ||
-      $event.target === null ||
-      $event.dataTransfer === null
-    ) {
+    if ($event === null || $event.target === null || $event.dataTransfer === null) {
       return;
     }
 

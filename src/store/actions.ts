@@ -1,9 +1,9 @@
-import { ActionTree, ActionContext } from "vuex";
-import { Mutations, MutationType } from "@/store/mutations";
-import { RootState, Section, TeamReportDataBundle } from "@/store/state";
-import appConfig from "@/survey-results.json";
-import appData from "@/survey-enfr.json";
-import { PageModel, Model, SurveyModel } from "survey-vue";
+import { ActionTree, ActionContext } from 'vuex';
+import { Mutations, MutationType } from '@/store/mutations';
+import { RootState, Section, TeamReportDataBundle } from '@/store/state';
+import appConfig from '@/survey-results.json';
+import appData from '@/survey-enfr.json';
+import { PageModel, Model, SurveyModel } from 'survey-vue';
 
 //TODO: use config file to trigger local vs remote data fetch
 // at build time
@@ -17,48 +17,48 @@ export enum ActionTypes {
    * If not successfull, sets ```state.error``` to ```true```.
    * @param value ```string``` containing API URL
    */
-  FetchAppData = "FETCH_APP_DATA",
+  FetchAppData = 'FETCH_APP_DATA',
   /**
    * Fetches app data from local file and sets ```state.surveyModel``` with content.
    * If successfull, sets ```state.error``` to ```false```.
    * If not successfull, sets ```state.error``` to ```true```.
    * @param value ```undefined```
    */
-  GetLocalAppData = "GET_LOCAL_APP_DATA",
+  GetLocalAppData = 'GET_LOCAL_APP_DATA',
   /**
    * Sets app data with ```state.surveyModel```.
    * If successfull, sets ```state.initialized``` to ```true```.
    * If not successfull, sets ```state.initialized``` to ```false```.
    * @param value ```undefined```
    */
-  SetAppData = "SET_APP_DATA",
+  SetAppData = 'SET_APP_DATA',
   /**
    * Saves current session app data with content of value.
    * Updates both ```state.answerData``` and ```state.toolData```
    * @param value an ```SurveyModel``` object
    */
-  SaveAppData = "SAVE_APP_DATA",
+  SaveAppData = 'SAVE_APP_DATA',
   /**
    * Sets sections with content of value.
    * @param value an ```SurveyModel``` object
    */
-  SetSections = "SET_SECTIONS",
+  SetSections = 'SET_SECTIONS',
   /**
    * Sets ```state.currentPageName``` and ```state.currentPageNo``` with content of value.
    * @param value an ```SurveyModel``` object
    */
-  SetCurrentSection = "SET_CURRENT_SECTION",
+  SetCurrentSection = 'SET_CURRENT_SECTION',
   /**
    * Updates a matching section in ```state.sections```with content of value.
    * @param value.answerData ```any[]```
    * @param value.toolData ```any```
    */
-  UpdateSectionAnswers = "UPDATE_SECTION_ANSWERS",
+  UpdateSectionAnswers = 'UPDATE_SECTION_ANSWERS',
   /**
    * Updates a matching section score in ```state.sections```with content of value.
    * @param value an ```PageModel``` object
    */
-  UpdateSectionScore = "UPDATE_SECTIONS_SCORES",
+  UpdateSectionScore = 'UPDATE_SECTIONS_SCORES',
   // ---------------
   //Actions below are to help transition to new store structure
   // ---------------
@@ -66,23 +66,20 @@ export enum ActionTypes {
    * Action to update the Survey Data
    * @param
    */
-  UpdateSurveyData = "UPDATE_SURVEY_DATA",
-  UpdateCurrentPageName = "UPDATE_CURRENT_PAGE_NAME",
-  UseSurveyJSON = "USE_SURVEY_JSON",
+  UpdateSurveyData = 'UPDATE_SURVEY_DATA',
+  UpdateCurrentPageName = 'UPDATE_CURRENT_PAGE_NAME',
+  UseSurveyJSON = 'USE_SURVEY_JSON',
 
   // Actions for team survey
-  AddTeamSurvey = "ADD_TEAM_SURVEY",
-  DeleteTeamSurvey = "DELETE_TEAM_SURVEY",
-  ClearTeamSurvey = "CLEAR_TEAM_SURVEY",
-  ShowIndividualBreakdown = "SHOW_INDIVIDUAL_BREAKDOWN",
-  HideIndividualBreakdown = "HIDE_INDIVIDUAL_BREAKDOWN"
+  AddTeamSurvey = 'ADD_TEAM_SURVEY',
+  DeleteTeamSurvey = 'DELETE_TEAM_SURVEY',
+  ClearTeamSurvey = 'CLEAR_TEAM_SURVEY',
+  ShowIndividualBreakdown = 'SHOW_INDIVIDUAL_BREAKDOWN',
+  HideIndividualBreakdown = 'HIDE_INDIVIDUAL_BREAKDOWN',
 }
 
-type ActionAugments = Omit<ActionContext<RootState, RootState>, "commit"> & {
-  commit<K extends keyof Mutations>(
-    key: K,
-    payload: Parameters<Mutations[K]>[1]
-  ): ReturnType<Mutations[K]>;
+type ActionAugments = Omit<ActionContext<RootState, RootState>, 'commit'> & {
+  commit<K extends keyof Mutations>(key: K, payload: Parameters<Mutations[K]>[1]): ReturnType<Mutations[K]>;
 };
 
 export type Actions = {
@@ -91,44 +88,20 @@ export type Actions = {
   [ActionTypes.SetAppData](context: ActionAugments): void;
   [ActionTypes.SaveAppData](context: ActionAugments, value: SurveyModel): void;
   [ActionTypes.SetSections](context: ActionAugments, value: SurveyModel): void;
-  [ActionTypes.SetCurrentSection](
-    context: ActionAugments,
-    value: { sectionNo: number; sectionPageName: string }
-  ): void;
-  [ActionTypes.UpdateSectionAnswers](
-    context: ActionAugments,
-    value: { answerData: any[]; toolData: any }
-  ): void;
-  [ActionTypes.UpdateSectionScore](
-    context: ActionAugments,
-    value: PageModel
-  ): void;
+  [ActionTypes.SetCurrentSection](context: ActionAugments, value: { sectionNo: number; sectionPageName: string }): void;
+  [ActionTypes.UpdateSectionAnswers](context: ActionAugments, value: { answerData: any[]; toolData: any }): void;
+  [ActionTypes.UpdateSectionScore](context: ActionAugments, value: PageModel): void;
   // ---------------
   //Actions below are to help transition to new store structure
   // ---------------
-  [ActionTypes.UpdateSurveyData](
-    context: ActionAugments,
-    value: SurveyModel
-  ): void;
-  [ActionTypes.UpdateCurrentPageName](
-    context: ActionAugments,
-    value: string
-  ): void;
-  [ActionTypes.UseSurveyJSON](
-    context: ActionAugments,
-    value: { surveyJSON: any; surveyModel: SurveyModel }
-  ): void;
+  [ActionTypes.UpdateSurveyData](context: ActionAugments, value: SurveyModel): void;
+  [ActionTypes.UpdateCurrentPageName](context: ActionAugments, value: string): void;
+  [ActionTypes.UseSurveyJSON](context: ActionAugments, value: { surveyJSON: any; surveyModel: SurveyModel }): void;
   // Team Survey actions
-  [ActionTypes.AddTeamSurvey](
-    context: ActionAugments,
-    value: { teamReportDataBundle: TeamReportDataBundle }
-  ): void;
+  [ActionTypes.AddTeamSurvey](context: ActionAugments, value: { teamReportDataBundle: TeamReportDataBundle }): void;
   [ActionTypes.DeleteTeamSurvey](context: ActionAugments, value: string): void;
   [ActionTypes.ClearTeamSurvey](context: ActionAugments): void;
-  [ActionTypes.ShowIndividualBreakdown](
-    context: ActionAugments,
-    value: string
-  ): void;
+  [ActionTypes.ShowIndividualBreakdown](context: ActionAugments, value: string): void;
   [ActionTypes.HideIndividualBreakdown](context: ActionAugments): void;
 };
 
@@ -169,7 +142,7 @@ export const actions: ActionTree<RootState, RootState> & Actions = {
       commit(MutationType.SetSurveyModel, thisSurveyModel);
       commit(MutationType.SetSectionsPrefix, appConfigSettings.sectionsPrefix);
       commit(MutationType.SetCurrentPageNo, thisSurveyModel.currentPageNo);
-      commit(MutationType.SetCurrentPageName, "");
+      commit(MutationType.SetCurrentPageName, '');
       commit(MutationType.SetRecommendations, recommendations);
       let sectionsNames: string[] = getters.returnSectionsNames as string[];
       if (sectionsNames.length === 0) {
@@ -204,8 +177,8 @@ export const actions: ActionTree<RootState, RootState> & Actions = {
           completed: false,
           questionsNames: [],
           userScore: 0,
-          maxScore: value.getPageByName(sectionName).questions.length * 5,
-          questions: []
+          maxScore: getters.returnSectionMaxScore(sectionName),
+          questions: [],
         };
         value.getPageByName(sectionName).questions.forEach((question: any) => {
           newSection.questionsNames.push(question.name);
@@ -216,41 +189,32 @@ export const actions: ActionTree<RootState, RootState> & Actions = {
       commit(MutationType.SetSections, sections);
     }
   },
-  async [ActionTypes.SetCurrentSection](
-    { commit },
-    value: { sectionNo: number; sectionPageName: string }
-  ) {
+  async [ActionTypes.SetCurrentSection]({ commit }, value: { sectionNo: number; sectionPageName: string }) {
     commit(MutationType.SetCurrentPageNo, value.sectionNo);
     commit(MutationType.SetCurrentPageName, value.sectionPageName);
   },
-  async [ActionTypes.UpdateSectionAnswers](
-    { commit },
-    value: { answerData: any[]; toolData: any }
-  ) {
+  async [ActionTypes.UpdateSectionAnswers]({ commit }, value: { answerData: any[]; toolData: any }) {
     commit(MutationType.SetAnswerData, value.answerData);
     commit(MutationType.SetToolData, value.toolData);
   },
-  async [ActionTypes.UpdateSectionScore](
-    { commit, getters },
-    value: PageModel
-  ) {
+  async [ActionTypes.UpdateSectionScore]({ commit, getters }, value: PageModel) {
     let sectionScore: number = 0;
     let section: Section = getters.returnSectionByName(value.name);
     if (section !== undefined) {
       value.questions.forEach((question: any) => {
         if (question.value !== undefined) {
-          if (question.getType() === "rating") {
-            let score: number = +question.value;
-            sectionScore += score;
-          } else if (question.getType() === "boolean") {
-            let score = 0;
+          const weight = getters.returnWeightBySectionAndQuestion(section.sectionName, question.name);
+          let score = 0;
+          if (question.getType() === 'rating') {
+            score = +question.value;
+          } else if (question.getType() === 'boolean') {
             if (question.value) {
               score = 5;
             } else {
               score = 1;
             }
-            sectionScore += score;
           }
+          sectionScore += score * (weight || 1);
         }
       });
       section.userScore = sectionScore;
@@ -260,10 +224,7 @@ export const actions: ActionTree<RootState, RootState> & Actions = {
   // ---------------
   //Actions below are to help transition to new store structure
   // ---------------
-  async [ActionTypes.UpdateSurveyData](
-    { commit, dispatch, getters },
-    value: SurveyModel
-  ) {
+  async [ActionTypes.UpdateSurveyData]({ commit, dispatch, getters }, value: SurveyModel) {
     commit(MutationType.SetCurrentPageNo, value.currentPageNo);
     if (getters.returnRecommendations === undefined) {
       commit(MutationType.SetRecommendations, appConfig);
@@ -277,20 +238,14 @@ export const actions: ActionTree<RootState, RootState> & Actions = {
       dispatch(ActionTypes.UpdateSectionScore, page);
     });
     commit(MutationType.SetToolData, value.data);
-    commit(
-      MutationType.SetAnswerData,
-      value.getPlainData({ includeEmpty: false })
-    );
+    commit(MutationType.SetAnswerData, value.getPlainData({ includeEmpty: false }));
   },
   async [ActionTypes.UpdateCurrentPageName]({ commit }, value: string) {
     if (value.length > 0) {
       commit(MutationType.SetCurrentPageName, value);
     }
   },
-  async [ActionTypes.UseSurveyJSON](
-    { commit, dispatch, getters },
-    { surveyJSON, surveyModel }
-  ) {
+  async [ActionTypes.UseSurveyJSON]({ commit, dispatch, getters }, { surveyJSON, surveyModel }) {
     commit(MutationType.SetSurveyJSON, surveyJSON);
     commit(MutationType.SetSurveyModel, surveyModel);
     const sectionsNames = getters.returnSectionsNamesGenerated;
@@ -314,5 +269,5 @@ export const actions: ActionTree<RootState, RootState> & Actions = {
   },
   async [ActionTypes.HideIndividualBreakdown]({ commit }) {
     commit(MutationType.HideIndividualBreakdown, undefined);
-  }
+  },
 };

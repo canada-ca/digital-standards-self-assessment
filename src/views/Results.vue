@@ -2,7 +2,7 @@
   <div class="container">
     <div class="results">
       <h1>
-        {{ $t("survey.sectionResultsTitle") }}
+        {{ $t('survey.sectionResultsTitle') }}
       </h1>
       <div>
         <ResultsCard
@@ -16,7 +16,7 @@
         />
         <div v-else>
           <p>
-            {{ $t("notice.noProgress") }}
+            {{ $t('notice.noProgress') }}
           </p>
         </div>
       </div>
@@ -24,24 +24,13 @@
       <div class="page-actions container">
         <div class="row" style="padding: 0 15px">
           <div class="col-3 col-sm-2 col-md-3">
-            <button
-              type="button"
-              class="btn btn-primary"
-              style="width: inherit"
-              v-on:click="goToQuestions()"
-            >
-              &#8672;&nbsp;{{ $t("navigation.goBack") }}
+            <button type="button" class="btn btn-primary" style="width: inherit" v-on:click="goToQuestions()">
+              &#8672;&nbsp;{{ $t('navigation.goBack') }}
             </button>
           </div>
           <div class="col-3 col-sm-2 col-md-3">
-            <button
-              type="button"
-              class="btn btn-default"
-              style="width: inherit"
-              v-on:click="goToHomePage()"
-              :key="$route.path"
-            >
-              {{ $t("navigation.chooseAnotherSection") }}
+            <button type="button" class="btn btn-default" style="width: inherit" v-on:click="goToHomePage()" :key="$route.path">
+              {{ $t('navigation.chooseAnotherSection') }}
             </button>
           </div>
         </div>
@@ -51,19 +40,19 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue, Watch } from "vue-property-decorator";
-import { Model } from "survey-vue";
-import showdown from "showdown";
-import SurveyFile from "@/interfaces/SurveyFile";
-import ResultsCard from "@/components/ResultsCard.vue";
-import i18n from "@/plugins/i18n";
-import surveyJSON from "@/survey-enfr.json";
-import { Section } from "@/types";
-import { ActionTypes } from "@/store/actions";
+import { Component, Prop, Vue, Watch } from 'vue-property-decorator';
+import { Model } from 'survey-vue';
+import showdown from 'showdown';
+import SurveyFile from '@/interfaces/SurveyFile';
+import ResultsCard from '@/components/ResultsCard.vue';
+import i18n from '@/plugins/i18n';
+import surveyJSON from '@/survey-enfr.json';
+import { Section } from '@/types';
+import { ActionTypes } from '@/store/actions';
 
 @Component({
   components: {
-    ResultsCard
+    ResultsCard,
   },
   computed: {
     // TODO: This computed property is never used
@@ -84,13 +73,13 @@ import { ActionTypes } from "@/store/actions";
     },
     locale() {
       return this.$i18n.locale;
-    }
+    },
   },
   methods: {
     getMaxScore(section: Section) {
-      return section.questions.length * 5;
-    }
-  }
+      return this.$store.getters.returnSectionMaxScore(section.sectionName);
+    },
+  },
 })
 export default class Results extends Vue {
   @Prop() data: any;
@@ -99,27 +88,27 @@ export default class Results extends Vue {
 
   Survey: Model = new Model(surveyJSON);
   goToHomePage() {
-    this.$router.push("/survey");
+    this.$router.push('/survey');
   }
   goToAllResults() {
-    this.$router.push("/Results");
+    this.$router.push('/Results');
   }
   goToQuestions() {
-    this.$router.push("/Questions");
+    this.$router.push('/Questions');
   }
   buildSurveyFile(): string {
     return JSON.stringify({
-      name: "surveyResults",
+      name: 'surveyResults',
       version: this.$store.state.toolVersion,
       currentPage: this.$store.state.currentPageNo,
-      data: this.$store.state.toolData
+      data: this.$store.state.toolData,
     });
   }
   downloadSurveyAnswer(): void {
-    const dataStr = "data:text/json;charset=utf-8," + this.buildSurveyFile();
-    var downloadAnchorNode = document.createElement("a");
-    downloadAnchorNode.setAttribute("href", dataStr);
-    downloadAnchorNode.setAttribute("download", "result.json");
+    const dataStr = 'data:text/json;charset=utf-8,' + this.buildSurveyFile();
+    var downloadAnchorNode = document.createElement('a');
+    downloadAnchorNode.setAttribute('href', dataStr);
+    downloadAnchorNode.setAttribute('download', 'result.json');
     document.body.appendChild(downloadAnchorNode); // required for firefox
     downloadAnchorNode.click();
     downloadAnchorNode.remove();
@@ -152,16 +141,14 @@ export default class Results extends Vue {
    * Export survey result.
    */
   exportResults() {
-    const source = window.document.getElementById(
-      this.$i18n.locale + "-content"
-    ) as HTMLElement;
+    const source = window.document.getElementById(this.$i18n.locale + '-content') as HTMLElement;
 
-    let pageActions = window.document.getElementsByClassName("page-actions");
+    let pageActions = window.document.getElementsByClassName('page-actions');
 
     function beforePrint() {
       for (let i in pageActions) {
         if (pageActions[parseInt(i)].classList) {
-          pageActions[parseInt(i)].classList.add("hidden");
+          pageActions[parseInt(i)].classList.add('hidden');
         }
       }
     }
@@ -169,18 +156,18 @@ export default class Results extends Vue {
     function afterPrint() {
       for (let i in pageActions) {
         if (pageActions[parseInt(i)].classList) {
-          pageActions[parseInt(i)].classList.remove("hidden");
+          pageActions[parseInt(i)].classList.remove('hidden');
         }
       }
     }
 
-    window.addEventListener("beforeprint", beforePrint, false);
-    window.addEventListener("afterprint", afterPrint, false);
+    window.addEventListener('beforeprint', beforePrint, false);
+    window.addEventListener('afterprint', afterPrint, false);
 
     window.print();
 
-    window.removeEventListener("beforeprint", beforePrint);
-    window.removeEventListener("afterprint", afterPrint);
+    window.removeEventListener('beforeprint', beforePrint);
+    window.removeEventListener('afterprint', afterPrint);
   }
   // Feature disabled, will be removed from store actions
   // startAgain() {
@@ -199,7 +186,7 @@ export default class Results extends Vue {
     this.myResults = this.$store.getters.resultDataSections;
   }
 
-  @Watch("$i18n.locale")
+  @Watch('$i18n.locale')
   changeLanguage(value: string, oldValue: string) {
     this.Survey.locale = value;
     this.Survey.render();
@@ -234,10 +221,10 @@ export default class Results extends Vue {
     // accessibility fix... aria-labelledby being needlessly generated for html question
     // TODO: make this dynamic by looping over questions and doing this for all html questions
     this.Survey.onAfterRenderQuestion.add((sender: any, options: any) => {
-      let welcomePage = document.getElementsByName("welcome1");
+      let welcomePage = document.getElementsByName('welcome1');
       if (welcomePage && welcomePage.length > 0) {
         let welcomePageElement = welcomePage[0];
-        welcomePageElement.removeAttribute("aria-labelledby");
+        welcomePageElement.removeAttribute('aria-labelledby');
       }
     });
 
@@ -245,7 +232,7 @@ export default class Results extends Vue {
     if (this.$store.getters.inProgress) {
       this.fileLoaded({
         currentPage: this.$store.state.currentPageNo,
-        data: this.$store.state.toolData
+        data: this.$store.state.toolData,
       } as SurveyFile);
     }
   }

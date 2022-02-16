@@ -27,7 +27,8 @@
           "maxRateDescription": {
             "default": "Strongly Agree",
             "fr": "Strongly Agree(FR)"
-          }
+          },
+          "weight": 2
         },
         {
           "type": "boolean",

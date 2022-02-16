@@ -1,12 +1,9 @@
-import { GetterTree } from "vuex";
-import {
-  Section,
-  Recommendations,
-  RootState,
-  TeamReportData
-} from "@/store/state";
-import { isEmpty } from "lodash";
-import { PageModel, SurveyModel } from "survey-vue";
+import { GetterTree } from 'vuex';
+import { Section, Recommendations, RootState, TeamReportData } from '@/store/state';
+import { isEmpty } from 'lodash';
+import { PageModel, SurveyModel } from 'survey-vue';
+
+import { calcSectionMaxScore, getWeightBySectionAndQuestion } from '@/utils/utils';
 
 export type Getters = {
   /**Checks whether the state status is errored or not
@@ -38,9 +35,7 @@ export type Getters = {
    * @param sectionName A string containining the section name to evaluate
    * @returns A Section object if the sectionName is found, undefined if not found.
    */
-  returnSectionByName(
-    state: RootState
-  ): (sectionName: string) => Section | undefined;
+  returnSectionByName(state: RootState): (sectionName: string) => Section | undefined;
   /**
    * Returns ```state.recommendations```.
    * @param state The application state.
@@ -51,9 +46,7 @@ export type Getters = {
    * TODO: Move to helpers mixins
    * @param state The application state.
    */
-  returnSectionsByPrefix(
-    state: RootState
-  ): (surveyData: SurveyModel, prefix: string) => PageModel[];
+  returnSectionsByPrefix(state: RootState): (surveyData: SurveyModel, prefix: string) => PageModel[];
   /**
    * Returns the current section from the store.
    * @param state The application state.
@@ -98,6 +91,8 @@ export type Getters = {
   returnIndividualTeamName(state: RootState): string;
   returnIndividualTeamReportDataArray(state: RootState): TeamReportData[];
   returnShowBreakdown(state: RootState): boolean;
+  returnWeightBySectionAndQuestion(state: RootState): (section: string, question: string) => number;
+  returnSectionMaxScore(state: RootState): (section: string) => number;
 };
 
 export const getters: GetterTree<RootState, RootState> & Getters = {
@@ -115,9 +110,7 @@ export const getters: GetterTree<RootState, RootState> & Getters = {
   },
   returnSectionByName(state: RootState) {
     return (sectionName: string) => {
-      return state.sections.find(
-        (section) => section.sectionName === sectionName
-      );
+      return state.sections.find((section) => section.sectionName === sectionName);
     };
   },
   returnRecommendations(state: RootState) {
@@ -213,5 +206,11 @@ export const getters: GetterTree<RootState, RootState> & Getters = {
   },
   returnShowBreakdown(state: RootState) {
     return state.showBreakdown;
-  }
+  },
+  returnWeightBySectionAndQuestion(state: RootState) {
+    return (sectionName: string, questionName: string) => getWeightBySectionAndQuestion(sectionName, questionName, state.surveyJSON);
+  },
+  returnSectionMaxScore(state: RootState) {
+    return (sectionName: string) => calcSectionMaxScore(sectionName, state.surveyJSON);
+  },
 };
