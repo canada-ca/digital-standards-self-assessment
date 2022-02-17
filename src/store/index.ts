@@ -1,17 +1,10 @@
-import Vue from "vue";
-import Vuex, {
-  Store as VuexStore,
-  CommitOptions,
-  createLogger,
-  DispatchOptions,
-  StoreOptions
-} from "vuex";
-import VuexPersistence from "vuex-persist";
-
-import { Mutations, mutations } from "@/store/mutations";
-import { Actions, actions } from "@/store/actions";
-import { Getters, getters } from "@/store/getters";
-import { RootState, state } from "@/store/state";
+import { Actions, actions } from '@/store/actions';
+import { Getters, getters } from '@/store/getters';
+import { Mutations, mutations } from '@/store/mutations';
+import { RootState, state } from '@/store/state';
+import Vue from 'vue';
+import Vuex, { CommitOptions, DispatchOptions, Store as VuexStore, StoreOptions } from 'vuex';
+import VuexPersistence from 'vuex-persist';
 
 Vue.use(Vuex);
 
@@ -24,32 +17,21 @@ const vuexLocal = new VuexPersistence({
     surveyJSON: state.surveyJSON,
     teamReportDataBundleArray: state.teamReportDataBundleArray,
     teamAverageReportDataArray: state.teamAverageReportDataArray,
-    individualTeamReportDataArray: state.individualTeamReportDataArray
-  })
+    individualTeamReportDataArray: state.individualTeamReportDataArray,
+  }),
 });
 
 export const store: StoreOptions<RootState> = {
-  plugins:
-    process.env.NODE_ENV === "development"
-      ? [
-          // createLogger({
-          //   collapsed: false
-          // }),
-          vuexLocal.plugin
-        ]
-      : [vuexLocal.plugin],
+  plugins: [vuexLocal.plugin],
   state,
   mutations,
   actions,
-  getters
+  getters,
 };
 
 export default new Vuex.Store<RootState>(store);
 
-export type Store = Omit<
-  VuexStore<RootState>,
-  "getters" | "commit" | "dispatch"
-> & {
+export type Store = Omit<VuexStore<RootState>, 'getters' | 'commit' | 'dispatch'> & {
   commit<K extends keyof Mutations, P extends Parameters<Mutations[K]>[1]>(
     key: K,
     payload: P,
