@@ -1,89 +1,82 @@
-import { MutationTree } from "vuex";
-import {
-  Recommendations,
-  RootState,
-  Section,
-  TeamReportData,
-  TeamReportDataBundle
-} from "@/store/state";
-import { SurveyModel } from "survey-vue";
+import { MutationTree } from 'vuex';
+import { Recommendations, RootState, Section, TeamReportData, TeamReportDataBundle } from '@/store/state';
+import { SurveyModel } from 'survey-vue';
 
 export enum MutationType {
   /**
    * Sets app loading error status as ```false``` if successfully loaded app data
    * @param undefined
    */
-  AppLoadingSuccess = "APP_LOADING_SUCCESS",
+  AppLoadingSuccess = 'APP_LOADING_SUCCESS',
   /**
    * Sets app loading error status as ```true``` if successfully loaded app data
    * @param undefined
    */
-  AppLoadingError = "APP_LOADING_ERROR",
+  AppLoadingError = 'APP_LOADING_ERROR',
   /**
    * Sets ```state.surveyModel``` with payload
    * @param payload Contains a ```SurveyModel``` object
    */
-  SetSurveyModel = "SET_SURVEY_MODEL",
+  SetSurveyModel = 'SET_SURVEY_MODEL',
   /**Sets ```state.answerData``` with payload
    * @param payload Contains ```any``` array
    */
-  SetAnswerData = "SET_ANSWER_DATA",
+  SetAnswerData = 'SET_ANSWER_DATA',
   /**Sets ```state.toolData``` with payload
    * @param payload Contains ```any```
    */
-  SetToolData = "SET_TOOL_DATA",
+  SetToolData = 'SET_TOOL_DATA',
   /**Sets ```state.sections``` with payload
    * @param payload Contains ```Section``` array
    */
-  SetSections = "SET_SECTIONS",
+  SetSections = 'SET_SECTIONS',
   /**Sets ```state.sectionsNames``` with payload
    * @param payload Contains ```string``` array
    */
-  SetSectionsNames = "SET_SECTIONS_NAMES",
+  SetSectionsNames = 'SET_SECTIONS_NAMES',
   /**Sets ```state.currentPageNo``` with payload
    * @param payload Contains ```number```
    */
-  SetCurrentPageNo = "SET_CURRENT_PAGE_NO",
+  SetCurrentPageNo = 'SET_CURRENT_PAGE_NO',
   /**Sets ```state.currentPageName``` with payload
    * @param payload Contains ```string```
    */
-  SetCurrentPageName = "SET_CURRENT_PAGE_NAME",
+  SetCurrentPageName = 'SET_CURRENT_PAGE_NAME',
   /**
    * Updates a section with payload
    * @param payload Contains a ```Section``` object
    */
-  UpdateSection = "UPDATE_SECTION",
+  UpdateSection = 'UPDATE_SECTION',
   /**Sets ```state.recommendations``` with payload
    * @param payload Contains ```string```
    */
-  SetRecommendations = "SET_RECOMMENDATIONS",
+  SetRecommendations = 'SET_RECOMMENDATIONS',
   /**Sets ```state.toolVersion``` with payload
    * @param payload Contains ```Recommendations``` object
    */
-  SetToolVersion = "SET_TOOL_VERSION",
+  SetToolVersion = 'SET_TOOL_VERSION',
   /**Sets ```state.sectionsPrefix``` with payload
    * @param payload Contains ```string```
    */
-  SetSectionsPrefix = "SET_SECTIONS_PREFIX",
+  SetSectionsPrefix = 'SET_SECTIONS_PREFIX',
   /**Sets ```state.loading``` to ```true```
    * @param payload Contains ```undefined```
    */
-  StartLoading = "START_LOADING",
+  StartLoading = 'START_LOADING',
   /**Sets ```state.loading``` to ```false```
    * @param payload Contains ```undefined```
    */
-  StopLoading = "STOP_LOADING",
+  StopLoading = 'STOP_LOADING',
   /**Sets ```state.initialized``` to ```true```
    * @param payload Contains ```undefined```
    */
-  Initialized = "INITIALIZED",
-  SetSurveyJSON = "SET_SURVEY_JSON",
+  Initialized = 'INITIALIZED',
+  SetSurveyJSON = 'SET_SURVEY_JSON',
   // Team Survey Mutations
-  AddTeamSurvey = "ADD_TEAM_SURVEY",
-  DeleteTeamSurvey = "DELETE_TEAM_SURVEY",
-  ClearTeamSurvey = "CLEAR_TEAM_SURVEY",
-  ShowIndividualBreakdown = "SHOW_INDIVIDUAL_BREAKDOWN",
-  HideIndividualBreakdown = "HIDE_INDIVIDUAL_BREAKDOWN"
+  AddTeamSurvey = 'ADD_TEAM_SURVEY',
+  DeleteTeamSurvey = 'DELETE_TEAM_SURVEY',
+  ShowIndividualBreakdown = 'SHOW_INDIVIDUAL_BREAKDOWN',
+  HideIndividualBreakdown = 'HIDE_INDIVIDUAL_BREAKDOWN',
 }
 
 export type Mutations = {
@@ -98,26 +91,16 @@ export type Mutations = {
   [MutationType.SetCurrentPageName](state: RootState, payload: string): void;
   // TODO: Need to fix State structure to simplify Recommendations
   [MutationType.UpdateSection](state: RootState, payload: Section): void;
-  [MutationType.SetRecommendations](
-    state: RootState,
-    payload: Recommendations
-  ): void;
+  [MutationType.SetRecommendations](state: RootState, payload: Recommendations): void;
   [MutationType.SetToolVersion](state: RootState, payload: string): void;
   [MutationType.SetSectionsPrefix](state: RootState, payload: string): void;
   [MutationType.StartLoading](state: RootState): void;
   [MutationType.StopLoading](state: RootState): void;
   [MutationType.Initialized](state: RootState): void;
   [MutationType.SetSurveyJSON](state: RootState, payload: any): void;
-  [MutationType.AddTeamSurvey](
-    state: RootState,
-    payload: TeamReportDataBundle
-  ): void;
+  [MutationType.AddTeamSurvey](state: RootState, payload: TeamReportDataBundle): void;
   [MutationType.DeleteTeamSurvey](state: RootState, payload: string): void;
-  [MutationType.ClearTeamSurvey](state: RootState): void;
-  [MutationType.ShowIndividualBreakdown](
-    state: RootState,
-    payload: string
-  ): void;
+  [MutationType.ShowIndividualBreakdown](state: RootState, payload: string): void;
   [MutationType.HideIndividualBreakdown](state: RootState): void;
 };
 
@@ -157,10 +140,7 @@ export const mutations: MutationTree<RootState> & Mutations = {
       return section;
     });
   },
-  [MutationType.SetRecommendations](
-    state: RootState,
-    payload: Recommendations
-  ) {
+  [MutationType.SetRecommendations](state: RootState, payload: Recommendations) {
     state.recommendations = payload;
   },
   [MutationType.SetToolVersion](state: RootState, payload: string) {
@@ -181,65 +161,46 @@ export const mutations: MutationTree<RootState> & Mutations = {
   [MutationType.SetSurveyJSON](state: RootState, payload: any) {
     state.surveyJSON = payload;
   },
-  [MutationType.AddTeamSurvey](
-    state: RootState,
-    payload: TeamReportDataBundle
-  ) {
-    const index = state.teamReportDataBundleArray.findIndex(
-      (d) => d.teamName === payload.teamName
-    );
+  [MutationType.AddTeamSurvey](state: RootState, payload: TeamReportDataBundle) {
+    const index = state.teamReportDataBundleArray.findIndex((d) => d.teamName === payload.teamName);
     if (index === -1) {
       state.teamReportDataBundleArray.push(payload);
     } else {
       state.teamReportDataBundleArray.splice(index, 1, payload);
     }
-    const avgIndex = state.teamAverageReportDataArray.findIndex(
-      (d) => d.name === payload.teamName
-    );
+    const avgIndex = state.teamAverageReportDataArray.findIndex((d) => d.name === payload.teamName);
     if (avgIndex === -1) {
       state.teamAverageReportDataArray.push(payload.teamAverageReportData);
     } else {
-      state.teamAverageReportDataArray.splice(
-        avgIndex,
-        1,
-        payload.teamAverageReportData
-      );
+      state.teamAverageReportDataArray.splice(avgIndex, 1, payload.teamAverageReportData);
     }
   },
   [MutationType.DeleteTeamSurvey](state: RootState, payload: string) {
-    let index = state.teamReportDataBundleArray.findIndex(
-      (d) => d.teamName === payload
-    );
+    let index = state.teamReportDataBundleArray.findIndex((d) => d.teamName === payload);
     if (index > -1) {
       state.teamReportDataBundleArray.splice(index, 1);
     }
-    index = state.teamAverageReportDataArray.findIndex(
-      (d) => d.name === payload
-    );
+    index = state.teamAverageReportDataArray.findIndex((d) => d.name === payload);
     if (index > -1) {
       state.teamAverageReportDataArray.splice(index, 1);
     }
     if (payload === state.individualTeamName) {
-      state.individualTeamName = "";
+      state.individualTeamName = '';
       state.showBreakdown = false;
       state.individualTeamReportDataArray = [];
     }
   },
-  [MutationType.ClearTeamSurvey](state: RootState) {
-    state.teamReportDataBundleArray = [];
-  },
   [MutationType.ShowIndividualBreakdown](state: RootState, payload: string) {
-    const reportDataBundle = state.teamReportDataBundleArray.find(
-      (d) => d.teamName === payload
-    );
+    const reportDataBundle = state.teamReportDataBundleArray.find((d) => d.teamName === payload);
     if (reportDataBundle) {
       state.individualTeamName = payload;
-      state.individualTeamReportDataArray =
-        reportDataBundle.teamReportDataArray;
+      state.individualTeamReportDataArray = reportDataBundle.teamReportDataArray;
       state.showBreakdown = true;
     }
   },
   [MutationType.HideIndividualBreakdown](state: RootState) {
+    state.individualTeamName = '';
+    state.individualTeamReportDataArray = [];
     state.showBreakdown = false;
-  }
+  },
 };

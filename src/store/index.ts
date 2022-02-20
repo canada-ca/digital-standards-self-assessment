@@ -8,7 +8,7 @@ import VuexPersistence from 'vuex-persist';
 
 Vue.use(Vuex);
 
-const vuexLocal = new VuexPersistence({
+const vuexLocal = new VuexPersistence<RootState>({
   storage: window.localStorage,
   reducer: (state: RootState) => ({
     toolData: state.toolData,

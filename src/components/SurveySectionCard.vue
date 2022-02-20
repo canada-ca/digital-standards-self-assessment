@@ -6,12 +6,9 @@
       </div>
       <div style="flex: auto">
         <div class="survey-title">
-          <a
-            href="#"
-            @click.prevent="goToSection(section.name)"
-            @keypress.space="goToSection(section.name)"
-            >{{ section.title }}</a
-          >
+          <a href="#" @click.prevent="goToSection(section.name)" @keypress.space="goToSection(section.name)">{{
+            section.title
+          }}</a>
         </div>
         <transition name="collapsed" mode="out-in">
           <div v-if="!collapsed" class="mt-3">
@@ -19,7 +16,7 @@
               {{ getShortDescription(section.description) }}
             </p>
             <span style="color: #395072; font-weight: 700">
-              {{ $t("survey.currentScore") }} :
+              {{ $t('survey.currentScore') }} :
               {{ sectionScoreLevel(section.name) }}
             </span>
           </div>
@@ -32,14 +29,14 @@
   </div>
 </template>
 <script lang="ts">
-import { Component, Prop, Vue } from "vue-property-decorator";
-import { PageModel, SurveyModel } from "survey-vue";
-import { Section } from "@/types";
-import { ActionTypes } from "@/store/actions";
-import ShowHideLink from "@/components/ShowHideLink.vue";
+import { Component, Prop, Vue } from 'vue-property-decorator';
+import { PageModel, SurveyModel } from 'survey-vue';
+import { Section } from '@/types';
+import { ActionTypes } from '@/store/actions';
+import ShowHideLink from '@/components/ShowHideLink.vue';
 
 @Component({
-  components: { ShowHideLink }
+  components: { ShowHideLink },
 })
 export default class SurveySectionCard extends Vue {
   @Prop() public section!: PageModel;
@@ -53,43 +50,39 @@ export default class SurveySectionCard extends Vue {
 
   goToSection(sectionName: string) {
     this.survey.currentPage = sectionName;
-    // this.$store.commit("updateSurveyData", this.survey);
     this.$store.dispatch(ActionTypes.UpdateSurveyData, this.survey);
-    // this.$store.commit("updateCurrentPageName", sectionName);
     this.$store.dispatch(ActionTypes.UpdateCurrentPageName, sectionName);
-    this.$router.push("/questions");
+    this.$router.push('/questions');
   }
 
   getShortDescription(description: string) {
     let maxLen = 280;
     if (description.length <= maxLen) return description;
-    return description.substr(0, description.lastIndexOf(" ", maxLen)) + "... ";
+    return description.substr(0, description.lastIndexOf(' ', maxLen)) + '... ';
   }
 
   sectionScoreLevel(sectionName: string) {
-    const thisSection: Section =
-      this.$store.getters.returnSectionByName(sectionName);
+    const thisSection: Section = this.$store.getters.returnSectionByName(sectionName);
     if (thisSection === undefined) {
-      return "N/A";
+      return 'N/A';
     }
-    let scorePercentage: string = new Intl.NumberFormat("en-CA", {
-      style: "decimal",
-      maximumFractionDigits: 0
+    let scorePercentage: string = new Intl.NumberFormat('en-CA', {
+      style: 'decimal',
+      maximumFractionDigits: 0,
     }).format((thisSection.userScore / thisSection.maxScore) * 100);
-    if (scorePercentage === "NaN" || scorePercentage === "0") {
-      return "N/A";
+    if (scorePercentage === 'NaN' || scorePercentage === '0') {
+      return 'N/A';
     } else {
-      return scorePercentage + "%";
+      return scorePercentage + '%';
     }
   }
 
   setStatusIcon(sectionName: string) {
-    const thisSection: Section =
-      this.$store.getters.returnSectionByName(sectionName);
+    const thisSection: Section = this.$store.getters.returnSectionByName(sectionName);
     if (thisSection !== undefined && thisSection.userScore > 0) {
-      return "fa fa-2x fa-circle";
+      return 'fa fa-2x fa-circle';
     } else {
-      return "zero fa fa-2x fa-circle";
+      return 'zero fa fa-2x fa-circle';
     }
   }
 }
@@ -116,8 +109,8 @@ export default class SurveySectionCard extends Vue {
 }
 
 .survey-card-container:focus {
-  outline: "1px solid black";
-  box-shadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)";
+  outline: '1px solid black';
+  box-shadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)';
 }
 
 .survey-card {
