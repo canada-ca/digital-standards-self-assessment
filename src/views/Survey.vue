@@ -18,7 +18,9 @@ import UploadSurvey from '@/components/UploadSurvey.vue';
 import SurveyFile from '@/interfaces/SurveyFile';
 import i18n from '@/plugins/i18n';
 import { ActionTypes } from '@/store/actions';
+import { SectionRecommendation } from '@/store/state';
 import defaultSurveyJSON from '@/survey-enfr.json';
+import resultsData from '@/survey-results.json';
 import showdown from 'showdown';
 import { Model, PageModel, SurveyModel } from 'survey-vue';
 import { Component, Vue, Watch } from 'vue-property-decorator';
@@ -34,6 +36,7 @@ import { Component, Vue, Watch } from 'vue-property-decorator';
 export default class Survey extends Vue {
   Survey: Model = new Model({});
   sections: PageModel[] = this.returnAllSectionsByPrefix(this.Survey, 'section_');
+  sectionRecommendation: SectionRecommendation[] = resultsData.sectionRecommendations;
 
   fileLoaded($event: SurveyFile) {
     this.Survey.data = $event.data;

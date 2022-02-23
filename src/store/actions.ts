@@ -53,8 +53,8 @@ export enum ActionTypes {
   HideIndividualBreakdown = 'HIDE_INDIVIDUAL_BREAKDOWN',
 }
 
-type ActionAugments = Omit<ActionContext<RootState, RootState>, 'commit'> & {
-  commit<K extends keyof Mutations>(key: K, payload: Parameters<Mutations[K]>[1]): ReturnType<Mutations[K]>;
+export type ActionAugments = Omit<ActionContext<RootState, RootState>, 'commit'> & {
+  commit<K extends keyof Mutations>(key: K, payload?: Parameters<Mutations[K]>[1]): ReturnType<Mutations[K]>;
 };
 
 export type Actions = {
@@ -80,13 +80,13 @@ export const actions: ActionTree<RootState, RootState> & Actions = {
     const thisAppData: SurveyModel = new SurveyModel(appData);
     commit(MutationType.SetSurveyModel, thisAppData);
     if (getters.returnSurveyModel !== undefined) {
-      commit(MutationType.AppLoadingSuccess, undefined);
+      commit(MutationType.AppLoadingSuccess);
     } else {
-      commit(MutationType.AppLoadingError, undefined);
+      commit(MutationType.AppLoadingError);
     }
   },
   async [ActionTypes.SetAppData]({ commit, dispatch, getters }) {
-    commit(MutationType.StartLoading, undefined);
+    commit(MutationType.StartLoading);
     // Get local app data and define state.surveyModel
     dispatch(ActionTypes.GetLocalAppData);
     // If successfully loaded surveyModel, set all properties
@@ -109,9 +109,9 @@ export const actions: ActionTree<RootState, RootState> & Actions = {
       let toolData: any = getters.returnToolData;
       commit(MutationType.SetToolData, toolData);
       commit(MutationType.SetToolVersion, appConfigSettings.version);
-      commit(MutationType.Initialized, undefined);
+      commit(MutationType.Initialized);
     }
-    commit(MutationType.StopLoading, undefined);
+    commit(MutationType.StopLoading);
   },
   async [ActionTypes.SetSections]({ commit, getters }, value: SurveyModel) {
     let sections: Section[] = [];
@@ -201,6 +201,6 @@ export const actions: ActionTree<RootState, RootState> & Actions = {
     commit(MutationType.ShowIndividualBreakdown, teamName);
   },
   async [ActionTypes.HideIndividualBreakdown]({ commit }) {
-    commit(MutationType.HideIndividualBreakdown, undefined);
+    commit(MutationType.HideIndividualBreakdown);
   },
 };
