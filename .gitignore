@@ -1,13 +1,16 @@
 .DS_Store
-node_modules
-/dist
 
-/tests/e2e/videos/
-/tests/e2e/screenshots/
+/ui/node_modules
+/api/node_modules
+/ui/dist
+/api/dist
+
+/ui/tests/e2e/videos/
+/api/tests/e2e/screenshots/
 
 # local env files
-.env.local
-.env.*.local
+/ui/.env.local
+/api/.env.*.local
 
 # Log files
 npm-debug.log*
@@ -25,5 +28,7 @@ yarn-error.log*
 
 # Ignore sourcemap files
 *.map
-tests/**/*.spec.js
-src/**/*.js
+/ui/tests/**/*.spec.js
+/ui/src/**/*.js
+/api/tests/**/*.spec.js
+/api/src/**/*.js
