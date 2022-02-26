@@ -1,9 +1,9 @@
 import { Router } from 'express';
-import UserRouter from './user.router';
+import userRouter from './user.router';
+import pingController from '../controllers/ping.controller';
 
 class MasterRouter {
   private _router = Router();
-  private _userRouter = UserRouter;
 
   get router() {
     return this._router;
@@ -17,7 +17,8 @@ class MasterRouter {
    * Connect routes to their matching routers.
    */
   private _configure() {
-    this._router.use('/user', this._userRouter);
+    this._router.get('/ping', pingController.ping);
+    this._router.use('/user', userRouter);
     // Add other routers below
   }
 }
