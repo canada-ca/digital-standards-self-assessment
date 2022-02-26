@@ -1,11 +1,10 @@
 import { User } from '../models/user.model';
 import { Request, Response } from 'express';
-import { Types } from 'mongoose';
 
 class UserController {
   async create(req: Request, res: Response) {
-    const { username, firstName, lastName, email, team } = req.body;
-    const user = new User({ username, firstName, lastName, email, team });
+    const { username, firstName, lastName, email, team, scores } = req.body;
+    const user = new User({ username, firstName, lastName, email, team, scores });
     user
       .save()
       .then((data) => {

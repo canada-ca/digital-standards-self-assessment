@@ -6,6 +6,7 @@ interface IUser {
   lastName: string;
   email: string;
   team: string;
+  scores: Map<string, number>;
 }
 
 interface UserDoc extends mongoose.Document {
@@ -14,6 +15,7 @@ interface UserDoc extends mongoose.Document {
   lastName: string;
   email: string;
   team: string;
+  scores: Map<string, number>;
 }
 
 const userSchema = new mongoose.Schema<IUser>(
@@ -36,6 +38,10 @@ const userSchema = new mongoose.Schema<IUser>(
     },
     team: {
       type: String,
+      required: true,
+    },
+    scores: {
+      type: Map,
       required: true,
     },
   },
