@@ -2,6 +2,7 @@ import userController from '../controllers/user.controller';
 import { User } from '../models/user.model';
 import { Router } from 'express';
 import { body, param } from 'express-validator';
+import * as Auth from '../middleware/auth.middleware';
 
 class UserRouter {
   private _router = Router();
@@ -20,6 +21,7 @@ class UserRouter {
   private _configure() {
     this.router.post(
       '/',
+      Auth.authorize(['addUser']),
       body('username').not().isEmpty().trim().escape(),
       body('username').custom((value) => {
         return User.find()
@@ -46,6 +48,7 @@ class UserRouter {
 
     this.router.put(
       '/:id',
+      Auth.authorize(['updateUser']),
       param('id').not().isEmpty().trim().escape(),
       body('username').not().isEmpty().trim().escape(),
       body('firstName').not().isEmpty().trim().escape(),
@@ -56,11 +59,16 @@ class UserRouter {
       userController.update
     );
 
-    this.router.delete('/:id', param('id').not().isEmpty().trim().escape(), userController.delete);
+    this.router.delete(
+      '/:id',
+      Auth.authorize(['deleteUser']),
+      param('id').not().isEmpty().trim().escape(),
+      userController.delete
+    );
 
-    this.router.get('/:id', userController.findOne);
+    this.router.get('/:id', Auth.authorize(['getUser']), userController.findOne);
 
-    this.router.get('/', userController.findAll);
+    this.router.get('/', Auth.authorize(['getUser']), userController.findAll);
   }
 }
 

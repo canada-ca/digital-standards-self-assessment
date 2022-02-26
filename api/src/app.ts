@@ -7,6 +7,7 @@ import * as config from './config';
 import { errorHandler } from './middleware/error.middleware';
 import { notFoundHandler } from './middleware/not-found.middleware';
 import masterRouter from './routers/master.router';
+import { generateToken } from './utils/jwt.utils';
 
 // Connect to MongoDB
 const connectOption: ConnectOptions = {};
@@ -16,6 +17,18 @@ mongoose.connect(
     console.log(`Connected to database ${config.MONGODB_DBNAME}`);
   }
 );
+
+// Only generate a token for lower level environments
+if (process.env.NODE_ENV !== 'production') {
+  console.log(
+    'bearer',
+    generateToken({
+      name: 'Andrés Reales',
+      userId: 123,
+      accessTypes: ['getUser', 'addUser', 'updateUser', 'deleteUser'],
+    })
+  );
+}
 
 const app = express();
 // configure the app to use json and urlencoded from body-parser
