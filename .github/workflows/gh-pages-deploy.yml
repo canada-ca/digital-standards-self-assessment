@@ -25,11 +25,11 @@ jobs:
             ${{ runner.os }}-node-
 
       - run: npm ci
-        working-directory: ./ui
+        working-directory: ./
       - run: npm run test:unit
-        working-directory: ./ui
+        working-directory: ./
       - run: npm run build
-        working-directory: ./ui
+        working-directory: ./
 
       - name: deploy
         uses: peaceiris/actions-gh-pages@v3
