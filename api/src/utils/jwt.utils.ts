@@ -1,11 +1,10 @@
 import { sign, SignOptions, verify } from 'jsonwebtoken';
 import * as config from '../config';
+import { IUser, RoleEnum } from '../models/user.model';
 
 interface TokenPayload {
+  user: IUser;
   exp?: number;
-  accessTypes: string[];
-  name: string;
-  userId: number;
 }
 
 export function generateToken(payload: TokenPayload) {

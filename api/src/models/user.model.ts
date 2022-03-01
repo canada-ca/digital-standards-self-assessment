@@ -1,26 +1,35 @@
-import mongoose from 'mongoose';
+import * as bcrypt from 'bcrypt';
+import { Document, Schema, Model, model } from 'mongoose';
 
-interface IUser {
-  username: string;
+export type RoleEnum = 'Admin' | 'TeamLead' | 'TeamMember';
+
+export interface IUser {
+  email: string;
+  password?: string;
   firstName: string;
   lastName: string;
-  email: string;
   team: string;
-  scores: Map<string, number>;
+  roles: RoleEnum[];
+  createdDate?: Date;
 }
 
-interface UserDoc extends mongoose.Document {
-  username: string;
-  firstName: string;
-  lastName: string;
-  email: string;
-  team: string;
-  scores: Map<string, number>;
+interface UserDocument extends IUser, Document {
+  fullName: string;
+  comparePassword(password: string): string;
 }
 
-const userSchema = new mongoose.Schema<IUser>(
+export interface UserModel extends Model<UserDocument> {}
+
+const userSchema = new Schema<UserDocument, UserModel>(
   {
-    username: {
+    email: {
+      type: String,
+      unique: true,
+      lowercase: true,
+      trim: true,
+      required: true,
+    },
+    password: {
       type: String,
       required: true,
     },
@@ -32,20 +41,23 @@ const userSchema = new mongoose.Schema<IUser>(
       type: String,
       required: true,
     },
-    email: {
-      type: String,
-      required: true,
-    },
     team: {
       type: String,
       required: true,
     },
-    scores: {
-      type: Map,
-      required: true,
+    roles: [{ type: String, required: true }],
+    createdDate: {
+      type: Date,
+      default: Date.now(),
     },
   },
   { collection: 'users' }
 );
-const User = mongoose.model<IUser>('User', userSchema);
-export { User, IUser };
+
+userSchema.virtual('fullName').get((thiz: UserDocument) => thiz.firstName + ' ' + thiz.lastName);
+
+userSchema.methods.comparePassword = function (password: string) {
+  return bcrypt.compareSync(password, this.password);
+};
+
+export default model<UserDocument>('User', userSchema);

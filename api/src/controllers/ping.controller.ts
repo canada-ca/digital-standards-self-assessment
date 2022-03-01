@@ -2,7 +2,7 @@ import { Request, Response } from 'express';
 
 class PingController {
   ping(req: Request, resp: Response) {
-    resp.status(200).send({
+    resp.status(200).json({
       message: 'pong',
     });
   }
