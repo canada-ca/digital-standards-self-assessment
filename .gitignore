@@ -1,7 +1,9 @@
 .DS_Store
 
 /ui/node_modules
+/ui/dist
 /api/node_modules
+/api/dist
 
 /ui/tests/e2e/videos/
 /api/tests/e2e/videos/

@@ -28,11 +28,11 @@ jobs:
         working-directory: ./ui
       - run: npm run test:unit
         working-directory: ./ui
-      - run: npm run deploy
+      - run: npm run build
         working-directory: ./ui
 
-      # - name: deploy
-      #   uses: peaceiris/actions-gh-pages@v3
-      #   with:
-      #     github_token: ${{ secrets.GITHUB_TOKEN }}
-      #     publish_dir: ./dist
+      - name: deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
