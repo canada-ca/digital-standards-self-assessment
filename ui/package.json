@@ -15,7 +15,7 @@
     "spellcheck:markdown": "cspell **/*.md --color",
     "spellcheck:code": "cspell src/**/*.ts src/**/*.vue --color",
     "spellcheck:questions": "cspell src/plugins/*.json src/survey-enfr.json --color",
-    "deploy": "npm run build; push-dir --dir=../dist --branch=gh-pages --cleanup"
+    "deploy": "npm run build; push-dir --dir=ui/dist --branch=gh-pages --cleanup"
   },
   "dependencies": {
     "bootstrap-vue": "^2.21.2",
