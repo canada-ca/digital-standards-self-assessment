@@ -28,7 +28,7 @@ jobs:
         working-directory: ./ui
       - run: npm run test:unit
         working-directory: ./ui
-      - run: npm run build
+      - run: npm run deploy
         working-directory: ./ui
 
       - name: deploy
