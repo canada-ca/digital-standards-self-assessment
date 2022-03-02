@@ -1,8 +1,8 @@
+import { Request, Response, Router } from 'express';
+import { body, param, validationResult } from 'express-validator';
 import userController from '../controllers/user.controller';
-import UserModel, { RoleEnum } from '../models/user.model';
-import { Router } from 'express';
-import { body, param } from 'express-validator';
 import * as Auth from '../middleware/auth.middleware';
+import UserModel from '../models/user.model';
 
 const ANY_ROLES = ['Admin', 'TeamLead', 'TeamMember'];
 class UserRouter {
@@ -22,7 +22,7 @@ class UserRouter {
   private _configure() {
     this.router.post(
       '/register',
-      body('email').not().isEmpty().trim().escape(),
+      body('email').not().isEmpty().trim().isEmail(),
       body('email').custom((value) => {
         return UserModel.find()
           .where('email')
@@ -40,10 +40,14 @@ class UserRouter {
         }
       }),
       body('lastName').not().isEmpty().trim().escape(),
-      body('email').not().isEmpty().trim().escape(),
-      body('email').isEmail().normalizeEmail(),
       body('team').not().isEmpty().trim().escape(),
-      userController.register
+      (req: Request, res: Response) => {
+        const errors = validationResult(req);
+        if (!errors.isEmpty()) {
+          return res.status(400).json({ errors: errors.array() });
+        }
+        userController.register(req, res);
+      }
     );
 
     this.router.post(

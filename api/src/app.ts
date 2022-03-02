@@ -17,10 +17,6 @@ class Server {
     this.app = express();
     this.config();
     this.connectDB();
-    // Only generate a token for lower level environments
-    if (process.env.NODE_ENV !== 'production') {
-      this.generateTokenForTesting();
-    }
   }
 
   private config() {
