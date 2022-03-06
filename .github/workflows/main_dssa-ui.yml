@@ -14,24 +14,24 @@ jobs:
     runs-on: 'ubuntu-latest'
 
     steps:
-    - uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
-    - name: Set up Docker Buildx
-      uses: docker/setup-buildx-action@v1
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
 
-    - name: Log in to registry
-      uses: docker/login-action@v1
-      with:
-        registry: https://index.docker.io/v1/
-        username: ${{ secrets.AzureAppService_ContainerUsername_5f6fca7a502a4642ae9df75309b448e0 }}
-        password: ${{ secrets.AzureAppService_ContainerPassword_aeb0bc4525464f048f1cbeeaf16ba7f2 }}
+      - name: Log in to registry
+        uses: docker/login-action@v1
+        with:
+          registry: https://index.docker.io/v1/
+          username: ${{ secrets.AzureAppService_ContainerUsername_5f6fca7a502a4642ae9df75309b448e0 }}
+          password: ${{ secrets.AzureAppService_ContainerPassword_aeb0bc4525464f048f1cbeeaf16ba7f2 }}
 
-    - name: Build and push container image to registry
-      uses: docker/build-push-action@v2
-      with:
-        push: true
-        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_5f6fca7a502a4642ae9df75309b448e0 }}/dssa-ui:${{ github.sha }}
-        file: ./Dockerfile
+      - name: Build and push container image to registry
+        uses: docker/build-push-action@v2
+        with:
+          push: true
+          tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_5f6fca7a502a4642ae9df75309b448e0 }}/dssa-ui:${{ github.sha }}
+          file: ./ui/Dockerfile
 
   deploy:
     runs-on: ubuntu-latest
@@ -41,11 +41,11 @@ jobs:
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
 
     steps:
-    - name: Deploy to Azure Web App
-      id: deploy-to-webapp
-      uses: azure/webapps-deploy@v2
-      with:
-        app-name: 'dssa-ui'
-        slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_2e26ca482c3b43f393952bec8765a524 }}
-        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_5f6fca7a502a4642ae9df75309b448e0 }}/dssa-ui:${{ github.sha }}'
+      - name: Deploy to Azure Web App
+        id: deploy-to-webapp
+        uses: azure/webapps-deploy@v2
+        with:
+          app-name: 'dssa-ui'
+          slot-name: 'production'
+          publish-profile: ${{ secrets.AzureAppService_PublishProfile_2e26ca482c3b43f393952bec8765a524 }}
+          images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_5f6fca7a502a4642ae9df75309b448e0 }}/dssa-ui:${{ github.sha }}'
