@@ -1,37 +1,24 @@
 {
-  "name": "digital-standard-self-assessment-api",
+  "name": "api",
   "version": "1.0.0",
-  "description": "API for Digital Standar Self Assessment Tool",
-  "main": "index.js",
+  "description": "",
   "scripts": {
     "build": "tsc",
     "watch": "tsc -w",
     "prestart": "npm run build",
-    "start:serverless": "func start",
-    "start:server": "nodemon src/app.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "func start",
+    "test": "echo \"No tests yet...\""
   },
   "dependencies": {
     "bcrypt": "^5.0.1",
-    "body-parser": "^1.19.1",
-    "cors": "^2.8.5",
     "dotenv": "^16.0.0",
-    "express": "^4.17.2",
-    "express-validator": "^6.14.0",
-    "helmet": "^5.0.2",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^6.2.1"
+    "mongoose": "^6.2.4"
   },
   "devDependencies": {
     "@azure/functions": "^1.2.3",
     "@types/bcrypt": "^5.0.0",
-    "@types/body-parser": "^1.19.2",
-    "@types/cors": "^2.8.12",
-    "@types/express": "^4.17.13",
-    "@types/jsonwebtoken": "^8.5.8",
-    "@types/node": "^17.0.17",
-    "nodemon": "^2.0.15",
-    "ts-node": "^10.5.0",
-    "typescript": "^4.5.5"
+    "@types/node": "^17.0.21",
+    "typescript": "^4.0.0"
   }
 }
