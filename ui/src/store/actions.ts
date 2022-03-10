@@ -2,6 +2,7 @@ import { Mutations, MutationType } from '@/store/mutations';
 import { RootState, Section, TeamReportDataBundle } from '@/store/state';
 import appData from '@/survey-enfr.json';
 import appConfig from '@/survey-results.json';
+import { calcScore } from '@/utils/utils';
 import { PageModel, SurveyModel } from 'survey-vue';
 import { ActionContext, ActionTree } from 'vuex';
 
@@ -143,16 +144,7 @@ export const actions: ActionTree<RootState, RootState> & Actions = {
       value.questions.forEach((question: any) => {
         if (question.value !== undefined) {
           const weight = getters.returnWeightBySectionAndQuestion(section.sectionName, question.name);
-          let score = 0;
-          if (question.getType() === 'rating') {
-            score = +question.value;
-          } else if (question.getType() === 'boolean') {
-            if (question.value) {
-              score = 5;
-            } else {
-              score = 1;
-            }
-          }
+          const score = calcScore(question.getType(), question.value, weight);
           sectionScore += score * (weight || 1);
         }
       });

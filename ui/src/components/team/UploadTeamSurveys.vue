@@ -7,7 +7,12 @@
       </template>
       <template #default>
         <div style="padding: 30px">
-          <b-form-group :label="$t('teamResults.teamName')" label-for="teamName" :invalid-feedback="$t(invalidFeedback())" :state="state()">
+          <b-form-group
+            :label="$t('teamResults.teamName')"
+            label-for="teamName"
+            :invalid-feedback="$t(invalidFeedback())"
+            :state="state()"
+          >
             <b-form-input
               id="teamName"
               ref="teamNameInput"
@@ -26,7 +31,9 @@
                 multiple="multiple"
                 style="opacity: 0; height: 0px; width: 0px"
               />
-              <b-button @click="selectFile($event)" class="btn btn-primary upload-button">{{ $t('teamResults.uploadSurveys') }}</b-button>
+              <b-button @click="selectFile($event)" class="btn btn-primary upload-button">{{
+                $t('teamResults.uploadSurveys')
+              }}</b-button>
               <div class="row text-danger mt-3" v-if="hasError()">
                 <div class="col">
                   <ul>
@@ -65,7 +72,7 @@ import { TeamReportData } from '@/store/state';
 import SurveyFile from '@/interfaces/SurveyFile';
 import { Model } from 'survey-vue';
 import { Component, Vue, Watch } from 'vue-property-decorator';
-import { calcSectionMaxScore, getWeightBySectionAndQuestion } from '@/utils/utils';
+import { calcScore, calcSectionMaxScore, getWeightBySectionAndQuestion } from '@/utils/utils';
 
 @Component({
   components: { FileItem },
@@ -239,18 +246,9 @@ export default class UploadTeamSurveys extends Vue {
             answer: question.value,
           });
           if (question.value !== undefined) {
-            let score = 0;
             const weight = getWeightBySectionAndQuestion(page.name, question.name, surveyFile.surveyJSON);
-            if (question.getType() === 'rating') {
-              score = +question.value;
-            } else if (question.getType() === 'boolean') {
-              if (question.value) {
-                score = 5;
-              } else {
-                score = 1;
-              }
-            }
-            sectionReportData.score += score * (weight || 1);
+            const score = calcScore(question.getType(), question.value, weight);
+            sectionReportData.score += score;
           }
         });
         sectionReportDataArray.push(sectionReportData);
