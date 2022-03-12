@@ -1,8 +1,7 @@
-import { Question, SurveyModel } from "survey-vue";
+import { Question, SurveyModel } from 'survey-vue';
 
 export interface RootState {
   surveyModel?: SurveyModel;
-  answerData: any[];
   toolData: any;
   sections: Section[];
   sectionsNames: string[];
@@ -107,22 +106,21 @@ export interface Title {
 
 export const state: RootState = {
   surveyModel: undefined,
-  answerData: [],
   toolData: undefined,
   sections: [],
   sectionsNames: [],
   currentPageNo: 0,
   currentPageName: undefined,
   recommendations: undefined,
-  toolVersion: "",
-  sectionsPrefix: "",
+  toolVersion: '',
+  sectionsPrefix: '',
   error: false,
   loading: false,
   initialized: false,
   surveyJSON: undefined,
   teamReportDataBundleArray: [],
   teamAverageReportDataArray: [],
-  individualTeamName: "",
+  individualTeamName: '',
   individualTeamReportDataArray: [],
-  showBreakdown: false
+  showBreakdown: false,
 };
