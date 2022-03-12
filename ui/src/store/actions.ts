@@ -166,7 +166,6 @@ export const actions: ActionTree<RootState, RootState> & Actions = {
       dispatch(ActionTypes.UpdateSectionScore, page);
     });
     commit(MutationType.SetToolData, value.data);
-    commit(MutationType.SetAnswerData, value.getPlainData({ includeEmpty: false }));
   },
   async [ActionTypes.UpdateCurrentPageName]({ commit }, value: string) {
     if (value.length > 0) {
