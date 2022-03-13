@@ -72,7 +72,7 @@ import { TeamReportData } from '@/store/state';
 import SurveyFile from '@/interfaces/SurveyFile';
 import { Model } from 'survey-vue';
 import { Component, Vue, Watch } from 'vue-property-decorator';
-import { calcScore, calcSectionMaxScore, getWeightBySectionAndQuestion } from '@/utils/utils';
+import { calcScore, calcSectionMaxScore } from '@/utils/utils';
 
 @Component({
   components: { FileItem },
@@ -246,8 +246,7 @@ export default class UploadTeamSurveys extends Vue {
             answer: question.value,
           });
           if (question.value !== undefined) {
-            const weight = getWeightBySectionAndQuestion(page.name, question.name, surveyFile.surveyJSON);
-            const score = calcScore(question.getType(), question.value, weight);
+            const score = calcScore(question.getType(), question.value);
             sectionReportData.score += score;
           }
         });
