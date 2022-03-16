@@ -556,12 +556,12 @@
     {
       "name": "section_two",
       "title": {
-        "default": "Use open standards and solutions",
-        "fr": "Use open standards and solutions(FR)"
+        "default": "Build in accessibility from the start",
+        "fr": "Build in accessibility from the start(FR)"
       },
       "description": {
-        "default": "Leverage open standards and embrace leading practices, including the use of open source software where appropriate. Design for services and platforms that are seamless for Canadians to use no matter what device or channel they are using.",
-        "fr": "Leverage open standards and embrace leading practices, including the use of open source software where appropriate. Design for services and platforms that are seamless for Canadians to use no matter what device or channel they are using.(FR)"
+        "default": "Services should meet or exceed accessibility standards. Users with distinct needs should be engaged from the outset to ensure what is delivered will work for everyone.",
+        "fr": "Services should meet or exceed accessibility standards. Users with distinct needs should be engaged from the outset to ensure what is delivered will work for everyone.(FR)"
       },
       "elements": [
         {
@@ -843,14 +843,14 @@
           },
           "rateValues": [
             {
-              "value": "0",
+              "value": "4",
               "text": {
                 "default": "Never",
                 "fr": "Never(FR)"
               }
             },
             {
-              "value": "1",
+              "value": "3",
               "text": {
                 "default": "Rarely",
                 "fr": "Rarely(FR)"
@@ -864,14 +864,14 @@
               }
             },
             {
-              "value": "3",
+              "value": "1",
               "text": {
                 "default": "Sometimes",
                 "fr": "Sometimes(FR)"
               }
             },
             {
-              "value": "4",
+              "value": "0",
               "text": {
                 "default": "Always",
                 "fr": "Always(FR)"
