@@ -1829,120 +1829,330 @@
       ]
     },
     {
-      "name": "section_test",
+      "name": "section_five",
       "title": {
-        "default": "Test section",
-        "fr": "Test section(FR)"
+        "default": "Collaborate widely",
+        "fr": "Collaborate widely(FR)"
+      },
+      "description": {
+        "default": "Create multidisciplinary teams with the range of skills needed to deliver a common goal. Share and collaborate in the open. Identify and create partnerships which help deliver value to users.",
+        "fr": "Create multidisciplinary teams with the range of skills needed to deliver a common goal. Share and collaborate in the open. Identify and create partnerships which help deliver value to users.(FR)"
       },
       "elements": [
         {
-          "type": "radiogroup",
-          "name": "question1",
+          "type": "rating",
+          "name": "s05q001",
           "title": {
-            "default": "Question",
-            "fr": "Question(FR)"
+            "default": "Our team is multidisciplinary, with the skills and capabilities required to fully deliver our service to users.",
+            "fr": "Our team is multidisciplinary, with the skills and capabilities required to fully deliver our service to users.(FR)"
           },
-          "choices": [
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
             {
               "value": "1",
               "text": {
-                "default": "Item 1",
-                "fr": "Item 1 (FR)"
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
               }
             },
             {
               "value": "2",
               "text": {
-                "default": "Item 2",
-                "fr": "Item 2 (FR)"
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
               }
             },
             {
               "value": "3",
               "text": {
-                "default": "Item 3",
-                "fr": "Item 3 (FR)"
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
               }
             }
           ]
         },
         {
-          "type": "checkbox",
-          "name": "question2",
+          "type": "rating",
+          "name": "s05q002",
           "title": {
-            "fr": "question2(FR)"
+            "default": "Our team is active in communities of practice, events or groups that pertain to the areas of expertise of team members.",
+            "fr": "Our team is active in communities of practice, events or groups that pertain to the areas of expertise of team members.(FR)"
           },
-          "choices": [
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
             {
               "value": "1",
               "text": {
-                "default": "Item 1",
-                "fr": "Item 1 (FR)"
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
               }
             },
             {
               "value": "2",
               "text": {
-                "default": "Item 2",
-                "fr": "Item 2 (FR)"
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
               }
             },
             {
               "value": "3",
               "text": {
-                "default": "Item 3",
-                "fr": "Item 3 (FR)"
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
               }
             }
           ]
         },
         {
-          "type": "dropdown",
-          "name": "question3",
+          "type": "rating",
+          "name": "s05q003",
           "title": {
-            "fr": "question3(FR)"
+            "default": "We identify and collaborate with other teams inside or outside of our organization, including other levels of government, other governments, the public, or private sector organizations, who have done or are doing similar work.",
+            "fr": "We identify and collaborate with other teams inside or outside of our organization, including other levels of government, other governments, the public, or private sector organizations, who have done or are doing similar work.(FR)"
           },
-          "choices": [
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
             {
               "value": "1",
               "text": {
-                "default": "item1",
-                "fr": "Item1 (FR)"
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
               }
             },
             {
               "value": "2",
               "text": {
-                "default": "item2",
-                "fr": "Item2 (FR)"
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
               }
             },
             {
               "value": "3",
               "text": {
-                "default": "item3",
-                "fr": "Item3 (FR)"
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
               }
             }
           ]
         },
         {
-          "type": "boolean",
-          "name": "test",
+          "type": "rating",
+          "name": "s05q004",
           "title": {
-            "default": "test boolean question",
-            "fr": "test boolean question(FR)"
+            "default": "Our team documents any APIs for our service using modern and common protocols and standards and provides examples of their use.",
+            "fr": "Our team documents any APIs for our service using modern and common protocols and standards and provides examples of their use.(FR)"
           },
-          "labelTrue": {
-            "default": "Yes",
-            "fr": "Oui"
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s05q005",
+          "title": {
+            "default": "Data from performance monitoring tools is used to inform business decisions.",
+            "fr": "Data from performance monitoring tools is used to inform business decisions.(FR)"
           },
-          "labelFalse": {
-            "default": "No",
-            "fr": "Non"
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s05q006",
+          "title": {
+            "default": "Our team relies on tickets or handoffs to manage collaboration between internal stakeholders or teams.",
+            "fr": "Our team relies on tickets or handoffs to manage collaboration between internal stakeholders or teams.(FR)"
           },
-          "valueTrue": "4",
-          "valueFalse": "0"
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s05q007",
+          "title": {
+            "default": "Our team connects regularly with other related teams to understand how decisions about our service impact other teams, and how decisions made by other teams impact our own service.",
+            "fr": "Our team connects regularly with other related teams to understand how decisions about our service impact other teams, and how decisions made by other teams impact our own service.(FR)"
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
         }
       ]
     }
