@@ -15,457 +15,919 @@
           "type": "rating",
           "name": "s01q001",
           "title": {
-            "default": "What is your team's process for making changes to a service?",
-            "fr": "What is your team's process for making changes to a service? (FR)"
+            "default": "On our team, members self-organize and self-manage work through self-assigning tasks.",
+            "fr": "On our team, members self-organize and self-manage work through self-assigning tasks.(FR)"
           },
-          "isRequired": false,
-          "rateMax": 5,
-          "minRateDescription": {
-            "default": "Strongly Disagree",
-            "fr": "Strongly Disgree(FR)"
-          },
-          "maxRateDescription": {
-            "default": "Strongly Agree",
-            "fr": "Strongly Agree(FR)"
-          },
-          "weight": 2
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
         },
         {
-          "type": "boolean",
+          "type": "rating",
           "name": "s01q002",
           "title": {
-            "default": "Is senior management's approval required to make a routine change to your service?",
-            "fr": "Is senior management's approval required to make a routine change to your service? (FR)"
+            "default": "Within our team we can openly discuss challenges and new ideas without fear of blame or reproach.",
+            "fr": "Within our team we can openly discuss challenges and new ideas without fear of blame or reproach.(FR)"
           },
-          "isRequired": false,
-          "defaultValue": false,
-          "labelTrue": {
-            "default": "Yes",
-            "fr": "Oui"
-          },
-          "labelFalse": {
-            "default": "No",
-            "fr": "Non"
-          }
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
         },
         {
           "type": "rating",
           "name": "s01q003",
           "title": {
-            "default": "Can you give an example of a process or sub-process that has been largely, or entirely, contracted out to a vendor or third party?",
-            "fr": "Can you give an example of a process or sub-process that has been largely, or entirely, contracted out to a vendor or third party?(FR)"
+            "default": "Team members feel safe to challenge the status quo and propose new ideas.",
+            "fr": "Team members feel safe to challenge the status quo and propose new ideas.(FR)"
           },
-          "isRequired": false,
-          "rateMax": 5,
-          "minRateDescription": {
-            "default": "Strongly Disagree",
-            "fr": "Strongly Disgree(FR)"
-          },
-          "maxRateDescription": {
-            "default": "Strongly Agree",
-            "fr": "Strongly Agree(FR)"
-          }
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
         },
         {
           "type": "rating",
           "name": "s01q004",
           "title": {
-            "default": "Is your team reliant on contractors to deliver the service?",
-            "fr": "Is your team reliant on contractors to deliver the service?(FR)"
+            "default": "We value and incorporate learning as part of our daily work.",
+            "fr": "We value and incorporate learning as part of our daily work.(FR)"
           },
-          "isRequired": false,
-          "rateMax": 5,
-          "minRateDescription": {
-            "default": "Strongly Disagree",
-            "fr": "Strongly Disgree(FR)"
-          },
-          "maxRateDescription": {
-            "default": "Strongly Agree",
-            "fr": "Strongly Agree(FR)"
-          }
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
         },
         {
           "type": "rating",
           "name": "s01q005",
           "title": {
-            "default": "If a team member working on the service is looking to leverage a new productivity tool, what is the process for gaining access or approval for using said tool?",
-            "fr": "If a team member working on the service is looking to leverage a new productivity tool, what is the process for gaining access or approval for using said tool?(FR)"
+            "default": "Team members understand how their work contributes to business outcomes.",
+            "fr": "Team members understand how their work contributes to business outcomes.(FR)"
           },
-          "isRequired": false,
-          "rateMax": 5,
-          "minRateDescription": {
-            "default": "Strongly Disagree",
-            "fr": "Strongly Disgree(FR)"
-          },
-          "maxRateDescription": {
-            "default": "Strongly Agree",
-            "fr": "Strongly Agree(FR)"
-          }
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
         },
         {
           "type": "rating",
           "name": "s01q006",
           "title": {
-            "default": "Provide an example of a time when the team incorporated a new framework, programming language, or technology, into the service. How long did it take, and what was the process?",
-            "fr": "Provide an example of a time when the team incorporated a new framework, programming language, or technology, into the service. How long did it take, and what was the process?(FR)"
+            "default": "We can choose the tools we use to deliver our product, service or other outcome.",
+            "fr": "We can choose the tools we use to deliver our product, service or other outcome.(FR)"
           },
-          "isRequired": false,
-          "rateMax": 5,
-          "minRateDescription": {
-            "default": "Strongly Disagree",
-            "fr": "Strongly Disgree(FR)"
-          },
-          "maxRateDescription": {
-            "default": "Strongly Agree",
-            "fr": "Strongly Agree(FR)"
-          }
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
         },
         {
           "type": "rating",
           "name": "s01q007",
           "title": {
-            "default": "How well does management remove impediments from the teams?",
-            "fr": "How well does management remove impediments from the teams?(FR)"
+            "default": "Our management actively removes impediments and blockers that prevent us from delivering value.",
+            "fr": "Our management actively removes impediments and blockers that prevent us from delivering value.(FR)"
           },
-          "isRequired": false,
-          "rateMax": 5,
-          "minRateDescription": {
-            "default": "Strongly Disagree",
-            "fr": "Strongly Disgree(FR)"
-          },
-          "maxRateDescription": {
-            "default": "Strongly Agree",
-            "fr": "Strongly Agree(FR)"
-          }
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
         },
         {
           "type": "rating",
-          "name": "s01q08",
+          "name": "s01q008",
           "title": {
-            "default": "Is your management able or willing to remove impediments from the team?",
-            "fr": "Is your management able or willing to remove impediments from the team?(FR)"
+            "default": "Progress in making useful improvements to our work is slowed down by approvals.",
+            "fr": "Progress in making useful improvements to our work is slowed down by approvals.(FR)"
           },
-          "isRequired": false,
-          "rateMax": 5,
-          "minRateDescription": {
-            "default": "Strongly Disagree",
-            "fr": "Strongly Disgree(FR)"
-          },
-          "maxRateDescription": {
-            "default": "Strongly Agree",
-            "fr": "Strongly Agree(FR)"
-          }
+          "rateValues": [
+            {
+              "value": "4",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "0",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
         },
         {
           "type": "rating",
-          "name": "s01q09",
+          "name": "s01q009",
           "title": {
-            "default": "Does management make it a priority to remove impediments from the team?",
-            "fr": "Does management make it a priority to remove impediments from the team?(FR)"
+            "default": "We have access to environments to experiment with new approaches, tools, or solutions.",
+            "fr": "We have access to environments to experiment with new approaches, tools, or solutions.(FR)"
           },
-          "isRequired": false,
-          "rateMax": 5,
-          "minRateDescription": {
-            "default": "Strongly Disagree",
-            "fr": "Strongly Disgree(FR)"
-          },
-          "maxRateDescription": {
-            "default": "Strongly Agree",
-            "fr": "Strongly Agree(FR)"
-          }
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
         },
         {
           "type": "rating",
           "name": "s01q010",
           "title": {
-            "default": "Does your team discuss challenges openly?",
-            "fr": "Does your team discuss challenges openly?(FR)"
+            "default": "Team members can openly provide feedback and feel it is valued.",
+            "fr": "Team members can openly provide feedback and feel it is valued.(FR)"
           },
-          "isRequired": false,
-          "rateMax": 5,
-          "minRateDescription": {
-            "default": "Strongly Disagree",
-            "fr": "Strongly Disgree(FR)"
-          },
-          "maxRateDescription": {
-            "default": "Strongly Agree",
-            "fr": "Strongly Agree(FR)"
-          }
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
         },
         {
           "type": "rating",
           "name": "s01q011",
           "title": {
-            "default": "Is there a fear of blame or reproach when bringing up challenges?",
-            "fr": "Is there a fear of blame or reproach when bringing up challenges?(FR)"
+            "default": "Our team treats failures as opportunities to improve and learn.",
+            "fr": "Our team treats failures as opportunities to improve and learn.(FR)"
           },
-          "isRequired": false,
-          "rateMax": 5,
-          "minRateDescription": {
-            "default": "Strongly Disagree",
-            "fr": "Strongly Disgree(FR)"
-          },
-          "maxRateDescription": {
-            "default": "Strongly Agree",
-            "fr": "Strongly Agree(FR)"
-          }
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
         },
         {
           "type": "rating",
           "name": "s01q012",
           "title": {
-            "default": "Is there a culture of silence in your team around challenges?",
-            "fr": "Is there a culture of silence in your team around challenges?(FR)"
+            "default": "Our management team directly assigns work to members of the team.",
+            "fr": "Our management team directly assigns work to members of the team.(FR)"
           },
-          "isRequired": false,
-          "rateMax": 5,
-          "minRateDescription": {
-            "default": "Strongly Disagree",
-            "fr": "Strongly Disgree(FR)"
-          },
-          "maxRateDescription": {
-            "default": "Strongly Agree",
-            "fr": "Strongly Agree(FR)"
-          }
-        },
-        {
-          "type": "rating",
-          "name": "s01q013",
-          "title": {
-            "default": "Are you able to articulate how your work contributes to outcomes?",
-            "fr": "Are you able to articulate how your work contributes to outcomes?(FR)"
-          },
-          "isRequired": false,
-          "rateMax": 5,
-          "minRateDescription": {
-            "default": "Strongly Disagree",
-            "fr": "Strongly Disgree(FR)"
-          },
-          "maxRateDescription": {
-            "default": "Strongly Agree",
-            "fr": "Strongly Agree(FR)"
-          }
-        },
-        {
-          "type": "rating",
-          "name": "s01q014",
-          "title": {
-            "default": "Do you feel like your feedback is valued?",
-            "fr": "Do you feel like your feedback is valued?(FR)"
-          },
-          "isRequired": false,
-          "rateMax": 5,
-          "minRateDescription": {
-            "default": "Strongly Disagree",
-            "fr": "Strongly Disgree(FR)"
-          },
-          "maxRateDescription": {
-            "default": "Strongly Agree",
-            "fr": "Strongly Agree(FR)"
-          }
-        },
-        {
-          "type": "rating",
-          "name": "s01q015",
-          "title": {
-            "default": "Does your team conduct regular retrospectives to regularly reflect on what went well, and what could be improved?",
-            "fr": "Does your team conduct regular retrospectives to regularly reflect on what went well, and what could be improved?(FR)"
-          },
-          "isRequired": false,
-          "rateMax": 5,
-          "minRateDescription": {
-            "default": "Strongly Disagree",
-            "fr": "Strongly Disgree(FR)"
-          },
-          "maxRateDescription": {
-            "default": "Strongly Agree",
-            "fr": "Strongly Agree(FR)"
-          }
-        },
-        {
-          "type": "rating",
-          "name": "s01q017",
-          "title": {
-            "default": "Please provide an example of when your team’s work resulted in failure. What did you do afterwards, and what lessons did you learn?",
-            "fr": "Please provide an example of when your team’s work resulted in failure. What did you do afterwards, and what lessons did you learn?(FR)"
-          },
-          "isRequired": false,
-          "rateMax": 5,
-          "minRateDescription": {
-            "default": "Strongly Disagree",
-            "fr": "Strongly Disgree(FR)"
-          },
-          "maxRateDescription": {
-            "default": "Strongly Agree",
-            "fr": "Strongly Agree(FR)"
-          }
-        },
-        {
-          "type": "rating",
-          "name": "s01q018",
-          "title": {
-            "default": "Does management view learning as a part of daily work?",
-            "fr": "Does management view learning as a part of daily work?(FR)"
-          },
-          "isRequired": false,
-          "rateMax": 5,
-          "minRateDescription": {
-            "default": "Strongly Disagree",
-            "fr": "Strongly Disgree(FR)"
-          },
-          "maxRateDescription": {
-            "default": "Strongly Agree",
-            "fr": "Strongly Agree(FR)"
-          }
-        },
-        {
-          "type": "rating",
-          "name": "s01q019",
-          "title": {
-            "default": "How is day to day work prioritized?",
-            "fr": "How is day to day work prioritized?(FR)"
-          },
-          "isRequired": false,
-          "rateMax": 5,
-          "minRateDescription": {
-            "default": "Strongly Disagree",
-            "fr": "Strongly Disgree(FR)"
-          },
-          "maxRateDescription": {
-            "default": "Strongly Agree",
-            "fr": "Strongly Agree(FR)"
-          }
-        },
-        {
-          "type": "rating",
-          "name": "s01q020",
-          "title": {
-            "default": "Is the team responsible for the service able to self-organize themselves to deliver the service?",
-            "fr": "Is the team responsible for the service able to self-organize themselves to deliver the service?(FR)"
-          },
-          "isRequired": false,
-          "rateMax": 5,
-          "minRateDescription": {
-            "default": "Strongly Disagree",
-            "fr": "Strongly Disgree(FR)"
-          },
-          "maxRateDescription": {
-            "default": "Strongly Agree",
-            "fr": "Strongly Agree(FR)"
-          }
-        },
-        {
-          "type": "rating",
-          "name": "s01q021",
-          "title": {
-            "default": "Is management highly involved in the prioritization of day to day tasks?",
-            "fr": "Is management highly involved in the prioritization of day to day tasks?(FR)"
-          },
-          "isRequired": false,
-          "rateMax": 5,
-          "minRateDescription": {
-            "default": "Strongly Disagree",
-            "fr": "Strongly Disgree(FR)"
-          },
-          "maxRateDescription": {
-            "default": "Strongly Agree",
-            "fr": "Strongly Agree(FR)"
-          }
-        },
-        {
-          "type": "rating",
-          "name": "s01q022",
-          "title": {
-            "default": "Provide an example of a time the team was able to pivot the focus of their tasks without approval of senior management.",
-            "fr": "Provide an example of a time the team was able to pivot the focus of their tasks without approval of senior management.(FR)"
-          },
-          "isRequired": false,
-          "rateMax": 5,
-          "minRateDescription": {
-            "default": "Strongly Disagree",
-            "fr": "Strongly Disgree(FR)"
-          },
-          "maxRateDescription": {
-            "default": "Strongly Agree",
-            "fr": "Strongly Agree(FR)"
-          }
-        },
-        {
-          "type": "rating",
-          "name": "s01q023",
-          "title": {
-            "default": "How quickly is the team able to make routine or low risk changes to production services used by end users?",
-            "fr": "How quickly is the team able to make routine or low risk changes to production services used by end users?(FR)"
-          },
-          "isRequired": false,
-          "rateMax": 5,
-          "minRateDescription": {
-            "default": "Strongly Disagree",
-            "fr": "Strongly Disgree(FR)"
-          },
-          "maxRateDescription": {
-            "default": "Strongly Agree",
-            "fr": "Strongly Agree(FR)"
-          }
-        },
-        {
-          "type": "rating",
-          "name": "s01q024",
-          "title": {
-            "default": "What steps are required for the team to make a routine update to the service they are responsible for?",
-            "fr": "What steps are required for the team to make a routine update to the service they are responsible for?(FR)"
-          },
-          "isRequired": false,
-          "rateMax": 5,
-          "minRateDescription": {
-            "default": "Strongly Disagree",
-            "fr": "Strongly Disgree(FR)"
-          },
-          "maxRateDescription": {
-            "default": "Strongly Agree",
-            "fr": "Strongly Agree(FR)"
-          }
-        },
-        {
-          "type": "rating",
-          "name": "s01q025",
-          "title": {
-            "default": "When the team is seeking access to new productivity tools, what is the process for acquiring these tools? How long does the process take?",
-            "fr": "When the team is seeking access to new productivity tools, what is the process for acquiring these tools? How long does the process take?(FR)"
-          },
-          "isRequired": false,
-          "rateMax": 5,
-          "minRateDescription": {
-            "default": "Strongly Disagree",
-            "fr": "Strongly Disgree(FR)"
-          },
-          "maxRateDescription": {
-            "default": "Strongly Agree",
-            "fr": "Strongly Agree(FR)"
-          }
-        },
-        {
-          "type": "rating",
-          "name": "s01q026",
-          "title": {
-            "default": "Do members of the team often avoid submitting requests for new software due to the difficulty or length of receiving an approval or response on the request?",
-            "fr": "Do members of the team often avoid submitting requests for new software due to the difficulty or length of receiving an approval or response on the request?(FR)"
-          },
-          "isRequired": false,
-          "rateMax": 5,
-          "minRateDescription": {
-            "default": "Strongly Disagree",
-            "fr": "Strongly Disgree(FR)"
-          },
-          "maxRateDescription": {
-            "default": "Strongly Agree",
-            "fr": "Strongly Agree(FR)"
-          }
+          "rateValues": [
+            {
+              "value": "4",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "0",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
         }
       ]
     },
     {
       "name": "section_two",
+      "title": {
+        "default": "Build in accessibility from the start",
+        "fr": "Build in accessibility from the start(FR)"
+      },
+      "description": {
+        "default": "Services should meet or exceed accessibility standards. Users with distinct needs should be engaged from the outset to ensure what is delivered will work for everyone.",
+        "fr": "Services should meet or exceed accessibility standards. Users with distinct needs should be engaged from the outset to ensure what is delivered will work for everyone.(FR)"
+      },
+      "elements": [
+        {
+          "type": "rating",
+          "name": "s02q001",
+          "title": {
+            "default": "Our team continuously considers the lowest levels of digital skill, confidence and access as part of our service and platform design.",
+            "fr": "Our team continuously considers the lowest levels of digital skill, confidence and access as part of our service and platform design.(FR)"
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s02q002",
+          "title": {
+            "default": "Our team understands how to make our services or products accessible.",
+            "fr": "Our team understands how to make our services or products accessible.(FR)"
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s02q003",
+          "title": {
+            "default": "Our team considers accessibility throughout the service design process.",
+            "fr": "Our team considers accessibility throughout the service design process.(FR)"
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s02q004",
+          "title": {
+            "default": "Research and testing are conducted to ensure that our service is accessible to people of all abilities no matter how, where or when they access the service.",
+            "fr": "Research and testing are conducted to ensure that our service is accessible to people of all abilities no matter how, where or when they access the service.(FR)"
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s02q005",
+          "title": {
+            "default": "Our team conducts ongoing research with users with low-level digital literacy, people with disabilities, and people from different cultural and linguistic backgrounds or regions.",
+            "fr": "Our team conducts ongoing research with users with low-level digital literacy, people with disabilities, and people from different cultural and linguistic backgrounds or regions.(FR)"
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s02q006",
+          "title": {
+            "default": "Our team implements automated accessibility checks for our services.",
+            "fr": "Our team implements automated accessibility checks for our services.(FR)"
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s02q007",
+          "title": {
+            "default": "Accessibility compliance is only added at the end of the development cycle in order to pass compliance checks or audits.",
+            "fr": "Accessibility compliance is only added at the end of the development cycle in order to pass compliance checks or audits.(FR)"
+          },
+          "rateValues": [
+            {
+              "value": "4",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "0",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s02q008",
+          "title": {
+            "default": "Our team has specific standards we test against to ensure service accessibility.",
+            "fr": "Our team has specific standards we test against to ensure service accessibility.(FR)"
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "section_three",
       "title": {
         "default": "Use open standards and solutions",
         "fr": "Use open standards and solutions(FR)"
@@ -476,315 +938,435 @@
       },
       "elements": [
         {
-          "type": "boolean",
-          "name": "s02q01",
+          "type": "rating",
+          "name": "s03q001",
           "title": {
-            "default": "Name examples of international, regional, or open standards or solutions, that your service has investigated during the development or design of your service?",
-            "fr": "Name examples of international, regional, or open standards or solutions, that your service has investigated during the development or design of your service?(FR)"
+            "default": "When searching for a new product, service or solution, our team considers open source solutions.",
+            "fr": "When searching for a new product, service or solution, our team considers open source solutions.(FR)"
           },
-          "isRequired": false,
-          "defaultValue": "false",
-          "labelTrue": {
-            "default": "Yes",
-            "fr": "Oui"
-          },
-          "labelFalse": {
-            "default": "No",
-            "fr": "Non"
-          }
-        },
-        {
-          "type": "boolean",
-          "name": "s02q02",
-          "title": {
-            "default": "Please give an example of an international, regional, or open standard or solution that was leveraged for the purposes of this service.",
-            "fr": "Please give an example of an international, regional, or open standard or solution that was leveraged for the purposes of this service.(FR)"
-          },
-          "isRequired": false,
-          "defaultValue": "false",
-          "labelTrue": {
-            "default": "Yes",
-            "fr": "Oui"
-          },
-          "labelFalse": {
-            "default": "No",
-            "fr": "Non"
-          }
-        },
-        {
-          "type": "boolean",
-          "name": "s02q03",
-          "title": {
-            "default": "Are you able to provide this assessment board with links to examples of contributions to open source communities made by the team?",
-            "fr": "Are you able to provide this assessment board with links to examples of contributions to open source communities made by the team?(FR)"
-          },
-          "isRequired": false,
-          "defaultValue": false,
-          "labelTrue": {
-            "default": "Yes",
-            "fr": "Oui"
-          },
-          "labelFalse": {
-            "default": "No",
-            "fr": "Non"
-          }
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
         },
         {
           "type": "rating",
-          "name": "s02q04",
+          "name": "s03q002",
           "title": {
-            "default": "What channels have you tested your service on?",
-            "fr": "What channels have you tested your service on?(FR)"
+            "default": "Our team prioritizes solutions that use open standards or open source solutions over other options.",
+            "fr": "Our team prioritizes solutions that use open standards or open source solutions over other options.(FR)"
           },
-          "isRequired": false,
-          "rateMax": 5,
-          "minRateDescription": {
-            "default": "Strongly Disagree",
-            "fr": "Strongly Disgree(FR)"
-          },
-          "maxRateDescription": {
-            "default": "Strongly Agree",
-            "fr": "Strongly Agree(FR)"
-          }
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
         },
         {
           "type": "rating",
-          "name": "s02q05",
+          "name": "s03q003",
           "title": {
-            "default": "Have you tested your service with users using different mediums, such as tablets, desktop computers, and mobile phones?",
-            "fr": "Have you tested your service with users using different mediums, such as tablets, desktop computers, and mobile phones?(FR)"
+            "default": "Team members contribute back to the open source communities whose work we use.",
+            "fr": "Team members contribute back to the open source communities whose work we use.(FR)"
           },
-          "isRequired": false,
-          "rateMax": 5,
-          "minRateDescription": {
-            "default": "Strongly Disagree",
-            "fr": "Strongly Disgree(FR)"
-          },
-          "maxRateDescription": {
-            "default": "Strongly Agree",
-            "fr": "Strongly Agree(FR)"
-          }
-        },
-        {
-          "type": "boolean",
-          "name": "s02q06",
-          "title": {
-            "default": "Am I able to access your service from my mobile phone, on both Android and iIPhone systems and complete the full service workflow?",
-            "fr": "Am I able to access your service from my mobile phone, on both Android and iIPhone systems and complete the full service workflow?(FR)"
-          },
-          "isRequired": false,
-          "defaultValue": false,
-          "labelTrue": {
-            "default": "Yes",
-            "fr": "Oui"
-          },
-          "labelFalse": {
-            "default": "No",
-            "fr": "Non"
-          }
-        },
-        {
-          "type": "boolean",
-          "name": "s02q07",
-          "title": {
-            "default": "Am I able to access your service using the browser of my choosing, for example, Edge, Chrome, or Firefox, and complete the full service workflow?",
-            "fr": "Am I able to access your service using the browser of my choosing, for example, Edge, Chrome, or Firefox, and complete the full service workflow?(FR)"
-          },
-          "isRequired": false,
-          "defaultValue": false,
-          "labelTrue": {
-            "default": "Yes",
-            "fr": "Oui"
-          },
-          "labelFalse": {
-            "default": "No",
-            "fr": "Non"
-          }
-        },
-        {
-          "type": "boolean",
-          "name": "s02q08",
-          "title": {
-            "default": "Am I able to access your service from my tablet and complete the full service workflow?",
-            "fr": "Am I able to access your service from my tablet and complete the full service workflow?(FR)"
-          },
-          "isRequired": false,
-          "defaultValue": false,
-          "labelTrue": {
-            "default": "Yes",
-            "fr": "Oui"
-          },
-          "labelFalse": {
-            "default": "No",
-            "fr": "Non"
-          }
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "N/A",
+                "fr": "N/A(FR)"
+              }
+            },
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
         },
         {
           "type": "rating",
-          "name": "s02q09",
+          "name": "s03q004",
           "title": {
-            "default": "If another service wanted to leverage data or functionality from your service, are they able to do so?",
-            "fr": "If another service wanted to leverage data or functionality from your service, are they able to do so?(FR)"
+            "default": "Our services are designed to be interoperable with other services.",
+            "fr": "Our services are designed to be interoperable with other services.(FR)"
           },
-          "isRequired": false,
-          "rateMax": 5,
-          "minRateDescription": {
-            "default": "Strongly Disagree",
-            "fr": "Strongly Disgree(FR)"
-          },
-          "maxRateDescription": {
-            "default": "Strongly Agree",
-            "fr": "Strongly Agree(FR)"
-          }
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "N/A",
+                "fr": "N/A(FR)"
+              }
+            },
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
         },
         {
           "type": "rating",
-          "name": "s02q10",
+          "name": "s03q005",
           "title": {
-            "default": "Is the process for interacting with your service through APIs well documented?",
-            "fr": "Is the process for interacting with your service through APIs well documented?(FR)"
+            "default": "Our work is highly dependent upon vendors, consultants, or closed-source proprietary software.",
+            "fr": "Our work is highly dependent upon vendors, consultants, or closed-source proprietary software.(FR)"
           },
-          "isRequired": false,
-          "rateMax": 5,
-          "minRateDescription": {
-            "default": "Strongly Disagree",
-            "fr": "Strongly Disgree(FR)"
-          },
-          "maxRateDescription": {
-            "default": "Strongly Agree",
-            "fr": "Strongly Agree(FR)"
-          }
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
         },
         {
           "type": "rating",
-          "name": "s02q11",
+          "name": "s03q006",
           "title": {
-            "default": "Please provide a link to the documentation regarding how to interact with your service.",
-            "fr": "Please provide a link to the documentation regarding how to interact with your service.(FR)"
+            "default": "Our service supports users on any device, from anywhere and at any time.",
+            "fr": "Our service supports users on any device, from anywhere and at any time.(FR)"
           },
-          "isRequired": false,
-          "rateMax": 5,
-          "minRateDescription": {
-            "default": "Strongly Disagree",
-            "fr": "Strongly Disgree(FR)"
-          },
-          "maxRateDescription": {
-            "default": "Strongly Agree",
-            "fr": "Strongly Agree(FR)"
-          }
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
         },
         {
           "type": "rating",
-          "name": "s02q12",
+          "name": "s03q007",
           "title": {
-            "default": "Do the full time members of your team have the competencies required to deliver your service?",
-            "fr": "Do the full time members of your team have the competencies required to deliver your service?(FR)"
+            "default": "Our team makes our work openly accessible to the community through open source licenses.",
+            "fr": "Our team makes our work openly accessible to the community through open source licenses.(FR)"
           },
-          "isRequired": false,
-          "rateMax": 5,
-          "minRateDescription": {
-            "default": "Strongly Disagree",
-            "fr": "Strongly Disgree(FR)"
-          },
-          "maxRateDescription": {
-            "default": "Strongly Agree",
-            "fr": "Strongly Agree(FR)"
-          }
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "N/A",
+                "fr": "N/A(FR)"
+              }
+            },
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
         },
         {
           "type": "rating",
-          "name": "s02q13",
+          "name": "s03q008",
           "title": {
-            "default": "Is there a contractor who, if they departed from the organization, has knowledge that would be lost to the organization?",
-            "fr": "Is there a contractor who, if they departed from the organization, has knowledge that would be lost to the organization?(FR)"
+            "default": "Our chosen solution does not limit our ability to share it with others (e.g. other governments, other jurisdictions, community groups, etc.)",
+            "fr": "Our chosen solution does not limit our ability to share it with others (e.g. other governments, other jurisdictions, community groups, etc.)(FR)"
           },
-          "isRequired": false,
-          "rateMax": 5,
-          "minRateDescription": {
-            "default": "Strongly Disagree",
-            "fr": "Strongly Disgree(FR)"
-          },
-          "maxRateDescription": {
-            "default": "Strongly Agree",
-            "fr": "Strongly Agree(FR)"
-          }
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
         },
         {
           "type": "rating",
-          "name": "s02q14",
+          "name": "s03q009",
           "title": {
-            "default": "Are there features or capabilities your team would be unable to develop if a vendor or contractor were no longer available as of tomorrow?",
-            "fr": "Are there features or capabilities your team would be unable to develop if a vendor or contractor were no longer available as of tomorrow?(FR)"
+            "default": "Our team is allowed to use open source solutions.",
+            "fr": "Our team is allowed to use open source solutions.(FR)"
           },
-          "isRequired": false,
-          "rateMax": 5,
-          "minRateDescription": {
-            "default": "Strongly Disagree",
-            "fr": "Strongly Disgree(FR)"
-          },
-          "maxRateDescription": {
-            "default": "Strongly Agree",
-            "fr": "Strongly Agree(FR)"
-          }
-        },
-        {
-          "type": "rating",
-          "name": "s02q15",
-          "title": {
-            "default": "What open source solutions does your team use for their service?",
-            "fr": "What open source solutions does your team use for their service?(FR)"
-          },
-          "isRequired": false,
-          "rateMax": 5,
-          "minRateDescription": {
-            "default": "Strongly Disagree",
-            "fr": "Strongly Disgree(FR)"
-          },
-          "maxRateDescription": {
-            "default": "Strongly Agree",
-            "fr": "Strongly Agree(FR)"
-          }
-        },
-        {
-          "type": "rating",
-          "name": "s02q16",
-          "title": {
-            "default": "Provide links to contributions that the team has made back to any open source communities they have leveraged.",
-            "fr": "Provide links to contributions that the team has made back to any open source communities they have leveraged.(FR)"
-          },
-          "isRequired": false,
-          "rateMax": 5,
-          "minRateDescription": {
-            "default": "Strongly Disagree",
-            "fr": "Strongly Disgree(FR)"
-          },
-          "maxRateDescription": {
-            "default": "Strongly Agree",
-            "fr": "Strongly Agree(FR)"
-          }
-        },
-        {
-          "type": "boolean",
-          "name": "s02q17",
-          "title": {
-            "default": "When the team is looking to leverage technology, do they first investigate open source solutions? Please provide examples.",
-            "fr": "When the team is looking to leverage technology, do they first investigate open source solutions? Please provide examples.(FR)"
-          },
-          "isRequired": false,
-          "defaultValue": false,
-          "labelTrue": {
-            "default": "Yes",
-            "fr": "Oui"
-          },
-          "labelFalse": {
-            "default": "No",
-            "fr": "Non"
-          }
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
         }
       ]
     },
     {
-      "name": "section_three",
+      "name": "section_four",
       "title": {
         "default": "Design with users",
         "fr": "Design with users(FR)"
@@ -796,291 +1378,1707 @@
       "elements": [
         {
           "type": "rating",
-          "name": "s03q01",
+          "name": "s04q001",
           "title": {
-            "default": "Provide an example of how user feedback was used to define the requirements of the service before the official launch or release?",
-            "fr": "Provide an example of how user feedback was used to define the requirements of the service before the official launch or release?(FR)"
+            "default": "Our team includes, or has direct access to, the expertise required to conduct ongoing user research and usability testing.",
+            "fr": "Our team includes, or has direct access to, the expertise required to conduct ongoing user research and usability testing.(FR)"
           },
-          "isRequired": false,
-          "rateMax": 5,
-          "minRateDescription": {
-            "default": "Strongly Disagree",
-            "fr": "Strongly Disgree(FR)"
-          },
-          "maxRateDescription": {
-            "default": "Strongly Agree",
-            "fr": "Strongly Agree(FR)"
-          }
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
         },
         {
           "type": "rating",
-          "name": "s03q02",
+          "name": "s04q002",
           "title": {
-            "default": "When the team responsible for implementation is working, how are the system requirements communicated to them?",
-            "fr": "When the team responsible for implementation is working, how are the system requirements communicated to them?(FR)"
+            "default": "We have processes or tools in place to gather feedback, including anonymously.",
+            "fr": "We have processes or tools in place to gather feedback, including anonymously.(FR)"
           },
-          "isRequired": false,
-          "rateMax": 5,
-          "minRateDescription": {
-            "default": "Strongly Disagree",
-            "fr": "Strongly Disgree(FR)"
-          },
-          "maxRateDescription": {
-            "default": "Strongly Agree",
-            "fr": "Strongly Agree(FR)"
-          }
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
         },
         {
           "type": "rating",
-          "name": "s03q03",
+          "name": "s04q003",
           "title": {
-            "default": "Are those responsible for implementation responsible for reviewing comprehensive documentation which they are then expected to build against? ",
-            "fr": "Are those responsible for implementation responsible for reviewing comprehensive documentation which they are then expected to build against? (FR)"
+            "default": "Our team uses regular feedback from users to help design or redesign our service(s).",
+            "fr": "Our team uses regular feedback from users to help design or redesign our service(s).(FR)"
           },
-          "isRequired": false,
-          "rateMax": 5,
-          "minRateDescription": {
-            "default": "Strongly Disagree",
-            "fr": "Strongly Disgree(FR)"
-          },
-          "maxRateDescription": {
-            "default": "Strongly Agree",
-            "fr": "Strongly Agree(FR)"
-          }
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
         },
         {
           "type": "rating",
-          "name": "s03q04",
+          "name": "s04q004",
           "title": {
-            "default": "What processes does the team have in place to incorporate user feedback into the service?",
-            "fr": "What processes does the team have in place to incorporate user feedback into the service?(FR)"
+            "default": "Our team builds our service based on detailed requirements outlined in documentation.",
+            "fr": "Our team builds our service based on detailed requirements outlined in documentation.(FR)"
           },
-          "isRequired": false,
-          "rateMax": 5,
-          "minRateDescription": {
-            "default": "Strongly Disagree",
-            "fr": "Strongly Disgree(FR)"
-          },
-          "maxRateDescription": {
-            "default": "Strongly Agree",
-            "fr": "Strongly Agree(FR)"
-          }
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
         },
         {
           "type": "rating",
-          "name": "s03q05",
+          "name": "s04q005",
           "title": {
-            "default": "What efforts were made to identify a range of users with which to test the service your team works on?",
-            "fr": "What efforts were made to identify a range of users with which to test the service your team works on?(FR)"
+            "default": "Our team conducts user research before deciding how to implement the service.",
+            "fr": "Our team conducts user research before deciding how to implement the service.(FR)"
           },
-          "isRequired": false,
-          "rateMax": 5,
-          "minRateDescription": {
-            "default": "Strongly Disagree",
-            "fr": "Strongly Disgree(FR)"
-          },
-          "maxRateDescription": {
-            "default": "Strongly Agree",
-            "fr": "Strongly Agree(FR)"
-          }
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
         },
         {
           "type": "rating",
-          "name": "s03q06",
+          "name": "s04q006",
           "title": {
-            "default": "Provide an example of an insight that your team gained when working with users.",
-            "fr": "Provide an example of an insight that your team gained when working with users.(FR)"
+            "default": "We test our systems with a range of users, with varying needs, from varying locations, and from diverse backgrounds.",
+            "fr": "We test our systems with a range of users, with varying needs, from varying locations, and from diverse backgrounds.(FR)"
           },
-          "isRequired": false,
-          "rateMax": 5,
-          "minRateDescription": {
-            "default": "Strongly Disagree",
-            "fr": "Strongly Disgree(FR)"
-          },
-          "maxRateDescription": {
-            "default": "Strongly Agree",
-            "fr": "Strongly Agree(FR)"
-          }
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
         },
         {
           "type": "rating",
-          "name": "s03q07",
+          "name": "s04q007",
           "title": {
-            "default": "What key service metrics does your service use?",
-            "fr": "What key service metrics does your service use?(FR)"
+            "default": "User needs and feedback are considered when defining and measuring our key service metrics.",
+            "fr": "User needs and feedback are considered when defining and measuring our key service metrics.(FR)"
           },
-          "isRequired": false,
-          "rateMax": 5,
-          "minRateDescription": {
-            "default": "Strongly Disagree",
-            "fr": "Strongly Disgree(FR)"
-          },
-          "maxRateDescription": {
-            "default": "Strongly Agree",
-            "fr": "Strongly Agree(FR)"
-          }
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
         },
         {
           "type": "rating",
-          "name": "s03q08",
+          "name": "s04q008",
           "title": {
-            "default": "How were the key service metrics defined?",
-            "fr": "How were the key service metrics defined?(FR)"
+            "default": "Our team prioritizes features or tasks based on what will provide the most value to our users.",
+            "fr": "Our team prioritizes features or tasks based on what will provide the most value to our users.(FR)"
           },
-          "isRequired": false,
-          "rateMax": 5,
-          "minRateDescription": {
-            "default": "Strongly Disagree",
-            "fr": "Strongly Disgree(FR)"
-          },
-          "maxRateDescription": {
-            "default": "Strongly Agree",
-            "fr": "Strongly Agree(FR)"
-          }
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
         },
         {
           "type": "rating",
-          "name": "s03q09",
+          "name": "s04q009",
           "title": {
-            "default": "How was user feedback used to define key service metrics?",
-            "fr": "How was user feedback used to define key service metrics?(FR)"
+            "default": "Our team uses automation to anticipate and detect operational or quality issues before our users tell us.",
+            "fr": "Our team uses automation to anticipate and detect operational or quality issues before our users tell us.(FR)"
           },
-          "isRequired": false,
-          "rateMax": 5,
-          "minRateDescription": {
-            "default": "Strongly Disagree",
-            "fr": "Strongly Disgree(FR)"
-          },
-          "maxRateDescription": {
-            "default": "Strongly Agree",
-            "fr": "Strongly Agree(FR)"
-          }
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
         },
         {
           "type": "rating",
-          "name": "s03q10",
+          "name": "s04q010",
           "title": {
-            "default": "How is your team notified when the service experiences an outage?",
-            "fr": "How is your team notified when the service experiences an outage?(FR)"
+            "default": "Do you look at other government services to try and ensure consistency from a user perspective?",
+            "fr": "Do you look at other government services to try and ensure consistency from a user perspective?(FR)"
           },
-          "isRequired": false,
-          "rateMax": 5,
-          "minRateDescription": {
-            "default": "Strongly Disagree",
-            "fr": "Strongly Disgree(FR)"
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "section_five",
+      "title": {
+        "default": "Collaborate widely",
+        "fr": "Collaborate widely(FR)"
+      },
+      "description": {
+        "default": "Create multidisciplinary teams with the range of skills needed to deliver a common goal. Share and collaborate in the open. Identify and create partnerships which help deliver value to users.",
+        "fr": "Create multidisciplinary teams with the range of skills needed to deliver a common goal. Share and collaborate in the open. Identify and create partnerships which help deliver value to users.(FR)"
+      },
+      "elements": [
+        {
+          "type": "rating",
+          "name": "s05q001",
+          "title": {
+            "default": "Our team is multidisciplinary, with the skills and capabilities required to fully deliver our service to users.",
+            "fr": "Our team is multidisciplinary, with the skills and capabilities required to fully deliver our service to users.(FR)"
           },
-          "maxRateDescription": {
-            "default": "Strongly Agree",
-            "fr": "Strongly Agree(FR)"
-          }
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
         },
         {
           "type": "rating",
-          "name": "s03q11",
+          "name": "s05q002",
           "title": {
-            "default": "What automation is in place to notify the team of operational issues prior to being informed about issues from users?",
-            "fr": "What automation is in place to notify the team of operational issues prior to being informed about issues from users?(FR)"
+            "default": "Our team is active in communities of practice, events or groups that pertain to the areas of expertise of team members.",
+            "fr": "Our team is active in communities of practice, events or groups that pertain to the areas of expertise of team members.(FR)"
           },
-          "isRequired": false,
-          "rateMax": 5,
-          "minRateDescription": {
-            "default": "Strongly Disagree",
-            "fr": "Strongly Disgree(FR)"
-          },
-          "maxRateDescription": {
-            "default": "Strongly Agree",
-            "fr": "Strongly Agree(FR)"
-          }
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
         },
         {
           "type": "rating",
-          "name": "s03q12",
+          "name": "s05q003",
           "title": {
-            "default": "Does your team track how long it takes to restore a service after outages? If so, what is the average recovery time from outages?",
-            "fr": "Does your team track how long it takes to restore a service after outages? If so, what is the average recovery time from outages?(FR)"
+            "default": "We identify and collaborate with other teams inside or outside of our organization, including other levels of government, other governments, the public, or private sector organizations, who have done or are doing similar work.",
+            "fr": "We identify and collaborate with other teams inside or outside of our organization, including other levels of government, other governments, the public, or private sector organizations, who have done or are doing similar work.(FR)"
           },
-          "isRequired": false,
-          "rateMax": 5,
-          "minRateDescription": {
-            "default": "Strongly Disagree",
-            "fr": "Strongly Disgree(FR)"
-          },
-          "maxRateDescription": {
-            "default": "Strongly Agree",
-            "fr": "Strongly Agree(FR)"
-          }
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
         },
         {
           "type": "rating",
-          "name": "s03q13",
+          "name": "s05q004",
           "title": {
-            "default": "How does your team gather requirements from end users?",
-            "fr": "How does your team gather requirements from end users?(FR)"
+            "default": "Our team documents any APIs for our service using modern and common protocols and standards and provides examples of their use.",
+            "fr": "Our team documents any APIs for our service using modern and common protocols and standards and provides examples of their use.(FR)"
           },
-          "isRequired": false,
-          "rateMax": 5,
-          "minRateDescription": {
-            "default": "Strongly Disagree",
-            "fr": "Strongly Disgree(FR)"
-          },
-          "maxRateDescription": {
-            "default": "Strongly Agree",
-            "fr": "Strongly Agree(FR)"
-          }
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
         },
         {
           "type": "rating",
-          "name": "s03q14",
+          "name": "s05q005",
           "title": {
-            "default": "What are the competencies within the team?",
-            "fr": "What are the competencies within the team?(FR)"
+            "default": "Data from performance monitoring tools is used to inform business decisions.",
+            "fr": "Data from performance monitoring tools is used to inform business decisions.(FR)"
           },
-          "isRequired": false,
-          "rateMax": 5,
-          "minRateDescription": {
-            "default": "Strongly Disagree",
-            "fr": "Strongly Disgree(FR)"
-          },
-          "maxRateDescription": {
-            "default": "Strongly Agree",
-            "fr": "Strongly Agree(FR)"
-          }
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
         },
         {
           "type": "rating",
-          "name": "s03q15",
+          "name": "s05q006",
           "title": {
-            "default": "Does the core team have the expertise within the team to engage directly with end users to derive requirements?",
-            "fr": "Does the core team have the expertise within the team to engage directly with end users to derive requirements?(FR)"
+            "default": "Our team relies on tickets or handoffs to manage collaboration between internal stakeholders or teams.",
+            "fr": "Our team relies on tickets or handoffs to manage collaboration between internal stakeholders or teams.(FR)"
           },
-          "isRequired": false,
-          "rateMax": 5,
-          "minRateDescription": {
-            "default": "Strongly Disagree",
-            "fr": "Strongly Disgree(FR)"
-          },
-          "maxRateDescription": {
-            "default": "Strongly Agree",
-            "fr": "Strongly Agree(FR)"
-          }
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
         },
         {
           "type": "rating",
-          "name": "s03q16",
+          "name": "s05q007",
           "title": {
-            "default": "How are tasks prioritized? Please provide examples of a feature, or features, that was elevated in priority due to feedback received from end users.",
-            "fr": "How are tasks prioritized? Please provide examples of a feature, or features, that was elevated in priority due to feedback received from end users.(FR)"
+            "default": "Our team connects regularly with other related teams to understand how decisions about our service impact other teams, and how decisions made by other teams impact our own service.",
+            "fr": "Our team connects regularly with other related teams to understand how decisions about our service impact other teams, and how decisions made by other teams impact our own service.(FR)"
           },
-          "isRequired": false,
-          "rateMax": 5,
-          "minRateDescription": {
-            "default": "Strongly Disagree",
-            "fr": "Strongly Disgree(FR)"
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "section_six",
+      "title": {
+        "default": "Iterate and improve frequently",
+        "fr": "Iterate and improve frequently(FR)"
+      },
+      "description": {
+        "default": "Develop services using agile, iterative and user-centred methods. Continuously improve in response to user needs. Try new things, start small and scale up.",
+        "fr": "Develop services using agile, iterative and user-centred methods. Continuously improve in response to user needs. Try new things, start small and scale up.(FR)"
+      },
+      "elements": [
+        {
+          "type": "rating",
+          "name": "s06q001",
+          "title": {
+            "default": "We have processes in place to prioritize and implement feedback from peers, stakeholders and end users.",
+            "fr": "We have processes in place to prioritize and implement feedback from peers, stakeholders and end users.(FR)"
           },
-          "maxRateDescription": {
-            "default": "Strongly Agree",
-            "fr": "Strongly Agree(FR)"
-          }
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s06q002",
+          "title": {
+            "default": "When a new or updated service or feature is being created, our team understands the minimum requirements for the system to be of value to users.",
+            "fr": "When a new or updated service or feature is being created, our team understands the minimum requirements for the system to be of value to users.(FR)"
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s06q003",
+          "title": {
+            "default": "Our team experiments with new approaches based on team reflections, lessons learned and user feedback.",
+            "fr": "Our team experiments with new approaches based on team reflections, lessons learned and user feedback.(FR)"
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s06q004",
+          "title": {
+            "default": "Our team collects metrics throughout the development and life cycle of the service in order to improve it.",
+            "fr": "Our team collects metrics throughout the development and life cycle of the service in order to improve it.(FR)"
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s06q005",
+          "title": {
+            "default": "When resolving problems, our team dedicates time to identify the root cause of the issue and address it.",
+            "fr": "When resolving problems, our team dedicates time to identify the root cause of the issue and address it.(FR)"
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s06q006",
+          "title": {
+            "default": "Our team inspects, adapts and automates our processes to deliver value to users faster.",
+            "fr": "Our team inspects, adapts and automates our processes to deliver value to users faster.(FR)"
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s06q007",
+          "title": {
+            "default": "Our team has access to environments and resources to allow for rapid prototyping while initial requirements are being identified.",
+            "fr": "Our team has access to environments and resources to allow for rapid prototyping while initial requirements are being identified.(FR)"
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s06q008",
+          "title": {
+            "default": "Our team embraces learning about and using new digital skills, approaches and tools to incorporate into our daily work.",
+            "fr": "Our team embraces learning about and using new digital skills, approaches and tools to incorporate into our daily work.(FR)"
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s06q009",
+          "title": {
+            "default": "Our team shares our work only once it has been finalized and approved.",
+            "fr": "Our team shares our work only once it has been finalized and approved.(FR)"
+          },
+          "rateValues": [
+            {
+              "value": "4",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "0",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s06q010",
+          "title": {
+            "default": "Our team openly reviews processes and procedures to identify efficiencies.",
+            "fr": "Our team openly reviews processes and procedures to identify efficiencies.(FR)"
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s06q011",
+          "title": {
+            "default": "Our team must wait for the project to be approved and funded before we can get access to environments to begin experimenting with solutions.",
+            "fr": "Our team must wait for the project to be approved and funded before we can get access to environments to begin experimenting with solutions.(FR)"
+          },
+          "rateValues": [
+            {
+              "value": "4",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "0",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s06q012",
+          "title": {
+            "default": "Our team fully architects the service delivery solution before starting to build.",
+            "fr": "Our team fully architects the service delivery solution before starting to build.(FR)"
+          },
+          "rateValues": [
+            {
+              "value": "4",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "0",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "section_seven",
+      "title": {
+        "default": "Address security and privacy risks",
+        "fr": "Address security and privacy risks(FR)"
+      },
+      "description": {
+        "default": "Take a balanced approach to managing risk by implementing appropriate privacy and security measures. Make security measures frictionless so that they do not place a burden on users.",
+        "fr": "Take a balanced approach to managing risk by implementing appropriate privacy and security measures. Make security measures frictionless so that they do not place a burden on users.(FR)"
+      },
+      "elements": [
+        {
+          "type": "rating",
+          "name": "s07q001",
+          "title": {
+            "default": "Our team considers security and privacy from the beginning of the service design process and as part of continuous iteration and improvement.",
+            "fr": "Our team considers security and privacy from the beginning of the service design process and as part of continuous iteration and improvement.(FR)"
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s07q002",
+          "title": {
+            "default": "Our team ensures that security and privacy legal and policy requirements are respected while prioritizing service delivery and user experience.",
+            "fr": "Our team ensures that security and privacy legal and policy requirements are respected while prioritizing service delivery and user experience.(FR)"
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s07q003",
+          "title": {
+            "default": "Security measures are frictionless so that they do not place a burden on users.",
+            "fr": "Security measures are frictionless so that they do not place a burden on users.(FR)"
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s07q004",
+          "title": {
+            "default": "Our team has privacy and security knowledge and understanding as a competency within the team.",
+            "fr": "Our team has privacy and security knowledge and understanding as a competency within the team.(FR)"
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s07q005",
+          "title": {
+            "default": "The service has automated security checks and privacy protections, including role-based access and audit functions along with the associated processes.",
+            "fr": "The service has automated security checks and privacy protections, including role-based access and audit functions along with the associated processes.(FR)"
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s07q006",
+          "title": {
+            "default": "There are procedures and processes in place to quickly respond to security or privacy breaches or incidents.",
+            "fr": "There are procedures and processes in place to quickly respond to security or privacy breaches or incidents.(FR)"
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s07q007",
+          "title": {
+            "default": "Our team relies on security through obscurity, hiding services or information rather than improving the security posture of the service.",
+            "fr": "Our team relies on security through obscurity, hiding services or information rather than improving the security posture of the service.(FR)"
+          },
+          "rateValues": [
+            {
+              "value": "4",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "0",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s07q008",
+          "title": {
+            "default": "Our team engages an ATIP officer to ensure on-going compliance with applicable legislation and policy requirements.",
+            "fr": "Our team engages an ATIP officer to ensure on-going compliance with applicable legislation and policy requirements.(FR)"
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
         }
       ]
     }

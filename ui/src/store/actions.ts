@@ -143,9 +143,8 @@ export const actions: ActionTree<RootState, RootState> & Actions = {
     if (section !== undefined) {
       value.questions.forEach((question: any) => {
         if (question.value !== undefined) {
-          const weight = getters.returnWeightBySectionAndQuestion(section.sectionName, question.name);
-          const score = calcScore(question.getType(), question.value, weight);
-          sectionScore += score * (weight || 1);
+          const score = calcScore(question.getType(), question.value);
+          sectionScore += score;
         }
       });
       section.userScore = sectionScore;
@@ -166,7 +165,6 @@ export const actions: ActionTree<RootState, RootState> & Actions = {
       dispatch(ActionTypes.UpdateSectionScore, page);
     });
     commit(MutationType.SetToolData, value.data);
-    commit(MutationType.SetAnswerData, value.getPlainData({ includeEmpty: false }));
   },
   async [ActionTypes.UpdateCurrentPageName]({ commit }, value: string) {
     if (value.length > 0) {

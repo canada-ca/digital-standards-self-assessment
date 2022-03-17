@@ -18,10 +18,6 @@ export enum MutationType {
    * @param payload Contains a ```SurveyModel``` object
    */
   SetSurveyModel = 'SET_SURVEY_MODEL',
-  /**Sets ```state.answerData``` with payload
-   * @param payload Contains ```any``` array
-   */
-  SetAnswerData = 'SET_ANSWER_DATA',
   /**Sets ```state.toolData``` with payload
    * @param payload Contains ```any```
    */
@@ -83,7 +79,6 @@ export type Mutations = {
   [MutationType.AppLoadingSuccess](state: RootState): void;
   [MutationType.AppLoadingError](state: RootState): void;
   [MutationType.SetSurveyModel](state: RootState, payload: SurveyModel): void;
-  [MutationType.SetAnswerData](state: RootState, payload: any[]): void;
   [MutationType.SetToolData](state: RootState, payload: any): void;
   [MutationType.SetSections](state: RootState, payload: Section[]): void;
   [MutationType.SetSectionsNames](state: RootState, payload: string[]): void;
@@ -113,9 +108,6 @@ export const mutations: MutationTree<RootState> & Mutations = {
   },
   [MutationType.SetSurveyModel](state: RootState, payload: SurveyModel) {
     state.surveyModel = payload;
-  },
-  [MutationType.SetAnswerData](state: RootState, payload: any[]) {
-    state.answerData = payload;
   },
   [MutationType.SetToolData](state: RootState, payload: any) {
     state.toolData = Object.freeze(payload);
