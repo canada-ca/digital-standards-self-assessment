@@ -2155,6 +2155,559 @@
           ]
         }
       ]
+    },
+    {
+      "name": "section_six",
+      "title": {
+        "default": "Iterate and improve frequently",
+        "fr": "Iterate and improve frequently(FR)"
+      },
+      "description": {
+        "default": "Develop services using agile, iterative and user-centred methods. Continuously improve in response to user needs. Try new things, start small and scale up.",
+        "fr": "Develop services using agile, iterative and user-centred methods. Continuously improve in response to user needs. Try new things, start small and scale up.(FR)"
+      },
+      "elements": [
+        {
+          "type": "rating",
+          "name": "s06q001",
+          "title": {
+            "default": "We have processes in place to prioritize and implement feedback from peers, stakeholders and end users.",
+            "fr": "We have processes in place to prioritize and implement feedback from peers, stakeholders and end users.(FR)"
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s06q002",
+          "title": {
+            "default": "When a new or updated service or feature is being created, our team understands the minimum requirements for the system to be of value to users.",
+            "fr": "When a new or updated service or feature is being created, our team understands the minimum requirements for the system to be of value to users.(FR)"
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s06q003",
+          "title": {
+            "default": "Our team experiments with new approaches based on team reflections, lessons learned and user feedback.",
+            "fr": "Our team experiments with new approaches based on team reflections, lessons learned and user feedback.(FR)"
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s06q004",
+          "title": {
+            "default": "Our team collects metrics throughout the development and life cycle of the service in order to improve it.",
+            "fr": "Our team collects metrics throughout the development and life cycle of the service in order to improve it.(FR)"
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s06q005",
+          "title": {
+            "default": "When resolving problems, our team dedicates time to identify the root cause of the issue and address it.",
+            "fr": "When resolving problems, our team dedicates time to identify the root cause of the issue and address it.(FR)"
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s06q006",
+          "title": {
+            "default": "Our team inspects, adapts and automates our processes to deliver value to users faster.",
+            "fr": "Our team inspects, adapts and automates our processes to deliver value to users faster.(FR)"
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s06q007",
+          "title": {
+            "default": "Our team has access to environments and resources to allow for rapid prototyping while initial requirements are being identified.",
+            "fr": "Our team has access to environments and resources to allow for rapid prototyping while initial requirements are being identified.(FR)"
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s06q008",
+          "title": {
+            "default": "Our team embraces learning about and using new digital skills, approaches and tools to incorporate into our daily work.",
+            "fr": "Our team embraces learning about and using new digital skills, approaches and tools to incorporate into our daily work.(FR)"
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s06q009",
+          "title": {
+            "default": "Our team shares our work only once it has been finalized and approved.",
+            "fr": "Our team shares our work only once it has been finalized and approved.(FR)"
+          },
+          "rateValues": [
+            {
+              "value": "4",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "0",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s06q010",
+          "title": {
+            "default": "Our team openly reviews processes and procedures to identify efficiencies.",
+            "fr": "Our team openly reviews processes and procedures to identify efficiencies.(FR)"
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s06q011",
+          "title": {
+            "default": "Our team must wait for the project to be approved and funded before we can get access to environments to begin experimenting with solutions.",
+            "fr": "Our team must wait for the project to be approved and funded before we can get access to environments to begin experimenting with solutions.(FR)"
+          },
+          "rateValues": [
+            {
+              "value": "4",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "0",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s06q012",
+          "title": {
+            "default": "Our team fully architects the service delivery solution before starting to build.",
+            "fr": "Our team fully architects the service delivery solution before starting to build.(FR)"
+          },
+          "rateValues": [
+            {
+              "value": "4",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "0",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
+        }
+      ]
     }
   ],
   "showQuestionNumbers": "off",
