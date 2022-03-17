@@ -1366,6 +1366,469 @@
       ]
     },
     {
+      "name": "section_four",
+      "title": {
+        "default": "Design with users",
+        "fr": "Design with users(FR)"
+      },
+      "description": {
+        "default": "Research with users to understand their needs and the problems we want to solve. Conduct ongoing testing with users to guide design and development.",
+        "fr": "Research with users to understand their needs and the problems we want to solve. Conduct ongoing testing with users to guide design and development.(FR)"
+      },
+      "elements": [
+        {
+          "type": "rating",
+          "name": "s04q001",
+          "title": {
+            "default": "Our team includes, or has direct access to, the expertise required to conduct ongoing user research and usability testing.",
+            "fr": "Our team includes, or has direct access to, the expertise required to conduct ongoing user research and usability testing.(FR)"
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s04q002",
+          "title": {
+            "default": "We have processes or tools in place to gather feedback, including anonymously.",
+            "fr": "We have processes or tools in place to gather feedback, including anonymously.(FR)"
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s04q003",
+          "title": {
+            "default": "Our team uses regular feedback from users to help design or redesign our service(s).",
+            "fr": "Our team uses regular feedback from users to help design or redesign our service(s).(FR)"
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s04q004",
+          "title": {
+            "default": "Our team builds our service based on detailed requirements outlined in documentation.",
+            "fr": "Our team builds our service based on detailed requirements outlined in documentation.(FR)"
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s04q005",
+          "title": {
+            "default": "Our team conducts user research before deciding how to implement the service.",
+            "fr": "Our team conducts user research before deciding how to implement the service.(FR)"
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s04q006",
+          "title": {
+            "default": "We test our systems with a range of users, with varying needs, from varying locations, and from diverse backgrounds.",
+            "fr": "We test our systems with a range of users, with varying needs, from varying locations, and from diverse backgrounds.(FR)"
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s04q007",
+          "title": {
+            "default": "User needs and feedback are considered when defining and measuring our key service metrics.",
+            "fr": "User needs and feedback are considered when defining and measuring our key service metrics.(FR)"
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s04q008",
+          "title": {
+            "default": "Our team prioritizes features or tasks based on what will provide the most value to our users.",
+            "fr": "Our team prioritizes features or tasks based on what will provide the most value to our users.(FR)"
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s04q009",
+          "title": {
+            "default": "Our team uses automation to anticipate and detect operational or quality issues before our users tell us.",
+            "fr": "Our team uses automation to anticipate and detect operational or quality issues before our users tell us.(FR)"
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s04q010",
+          "title": {
+            "default": "Do you look at other government services to try and ensure consistency from a user perspective?",
+            "fr": "Do you look at other government services to try and ensure consistency from a user perspective?(FR)"
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
       "name": "section_test",
       "title": {
         "default": "Test section",
