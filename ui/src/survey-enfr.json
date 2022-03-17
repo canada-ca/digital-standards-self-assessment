@@ -335,14 +335,14 @@
           },
           "rateValues": [
             {
-              "value": "0",
+              "value": "4",
               "text": {
                 "default": "Never",
                 "fr": "Never(FR)"
               }
             },
             {
-              "value": "1",
+              "value": "3",
               "text": {
                 "default": "Rarely",
                 "fr": "Rarely(FR)"
@@ -356,14 +356,14 @@
               }
             },
             {
-              "value": "3",
+              "value": "1",
               "text": {
                 "default": "Sometimes",
                 "fr": "Sometimes(FR)"
               }
             },
             {
-              "value": "4",
+              "value": "0",
               "text": {
                 "default": "Always",
                 "fr": "Always(FR)"
@@ -515,14 +515,14 @@
           },
           "rateValues": [
             {
-              "value": "0",
+              "value": "4",
               "text": {
                 "default": "Never",
                 "fr": "Never(FR)"
               }
             },
             {
-              "value": "1",
+              "value": "3",
               "text": {
                 "default": "Rarely",
                 "fr": "Rarely(FR)"
@@ -536,14 +536,14 @@
               }
             },
             {
-              "value": "3",
+              "value": "1",
               "text": {
                 "default": "Sometimes",
                 "fr": "Sometimes(FR)"
               }
             },
             {
-              "value": "4",
+              "value": "0",
               "text": {
                 "default": "Always",
                 "fr": "Always(FR)"
