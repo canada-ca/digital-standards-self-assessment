@@ -1,0 +1,48 @@
+{
+  "pages": [
+    {
+      "name": {
+        "type": "String"
+      },
+      "title": {
+        "default": {
+          "type": "String"
+        },
+        "fr": {
+          "type": "String"
+        }
+      },
+      "description": {
+        "default": {
+          "type": "String"
+        },
+        "fr": {
+          "type": "String"
+        }
+      },
+      "elements": {
+        "type": [
+          {
+            "type": {
+              "type": "String"
+            },
+            "name": {
+              "type": "String"
+            },
+            "title": {
+              "default": {
+                "type": "String"
+              },
+              "fr": {
+                "type": "String"
+              }
+            },
+            "rateValues": {
+              "type": ["Mixed"]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
