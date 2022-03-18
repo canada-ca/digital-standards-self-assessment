@@ -2,13 +2,11 @@ import { json, urlencoded } from 'body-parser';
 import cors from 'cors';
 import express from 'express';
 import helmet from 'helmet';
-import mongoose, { ConnectOptions } from 'mongoose';
 import * as config from './config';
+import DbConnection from './db/db.connection';
 import { errorHandler } from './middleware/error.middleware';
 import { notFoundHandler } from './middleware/not-found.middleware';
-import { RoleEnum } from './models/user.model';
 import masterRouter from './routers/master.router';
-import { generateToken } from './utils/jwt.utils';
 
 class Server {
   public app: express.Application;
@@ -37,34 +35,12 @@ class Server {
   }
 
   private connectDB() {
-    // Connect to MongoDB
-    const connectOption: ConnectOptions = {};
-    mongoose.connect(
-      `mongodb+srv://${config.MONGODB_USER}:${config.MONGODB_PASS}@${config.MONGODB_URL}/${config.MONGODB_DBNAME}?retryWrites=true&w=majority`,
-      () => {
-        console.log(`Connected to database ${config.MONGODB_DBNAME}`);
-      }
-    );
+    const db = new DbConnection();
   }
 
   public start(): void {
     // make server listen on some port
     this.app.listen(config.PORT, () => console.log(`> Listening on port ${config.PORT}`));
-  }
-
-  private generateTokenForTesting() {
-    console.log(
-      'bearer',
-      generateToken({
-        user: {
-          email: 'test@gmail.com',
-          firstName: 'test1',
-          lastName: 'test1LastName',
-          team: 'Team1',
-          roles: ['Admin', 'TeamLead', 'TeamMember'],
-        },
-      })
-    );
   }
 }
 

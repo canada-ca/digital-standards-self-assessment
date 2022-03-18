@@ -48,7 +48,7 @@ const userSchema = new Schema<UserDocument, UserModel>(
     roles: [{ type: String, required: true }],
     createdDate: {
       type: Date,
-      default: Date.now(),
+      default: new Date(),
     },
   },
   { collection: 'users' }
