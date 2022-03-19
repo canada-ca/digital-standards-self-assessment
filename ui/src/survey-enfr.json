@@ -3081,6 +3081,400 @@
           ]
         }
       ]
+    },
+    {
+      "name": "section_eight",
+      "title": {
+        "default": "Work in the open by default",
+        "fr": "Work in the open by default(FR)"
+      },
+      "description": {
+        "default": "Share evidence, research and decision making openly. Make all non-sensitive data, information, and new code developed in delivery of services open to the outside world for sharing and reuse under an open licence.",
+        "fr": "Share evidence, research and decision making openly. Make all non-sensitive data, information, and new code developed in delivery of services open to the outside world for sharing and reuse under an open licence.(FR)"
+      },
+      "elements": [
+        {
+          "type": "rating",
+          "name": "s08q001",
+          "title": {
+            "default": "We regularly make all non-sensitive and non-personal data and information publicly available or, at a minimum, accessible across the Government of Canada for sharing and reuse.",
+            "fr": "We regularly make all non-sensitive and non-personal data and information publicly available or, at a minimum, accessible across the Government of Canada for sharing and reuse.(FR)"
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s08q002",
+          "title": {
+            "default": "Our team makes new code publicly available, or at a minimum, accessible across the Government of Canada for sharing and reuse.",
+            "fr": "Our team makes new code publicly available, or at a minimum, accessible across the Government of Canada for sharing and reuse.(FR)"
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "N/A",
+                "fr": "N/A(FR)"
+              }
+            },
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s08q003",
+          "title": {
+            "default": "Our team contributes back to the public projects we borrow from.",
+            "fr": "Our team contributes back to the public projects we borrow from.(FR)"
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "N/A",
+                "fr": "N/A(FR)"
+              }
+            },
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s08q004",
+          "title": {
+            "default": "Our team tracks and makes public the metrics we use to measure our success.",
+            "fr": "Our team tracks and makes public the metrics we use to measure our success.(FR)"
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s08q005",
+          "title": {
+            "default": "Our team tracks and makes publicly available or, at a minimum, accessible across the Government of Canada, information about how often a change to our services fails (for example, the deployment or rollout of a service or feature experiences issues or complications).",
+            "fr": "Our team tracks and makes publicly available or, at a minimum, accessible across the Government of Canada, information about how often a change to our services fails (for example, the deployment or rollout of a service or feature experiences issues or complications).(FR)"
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "N/A",
+                "fr": "N/A(FR)"
+              }
+            },
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s08q006",
+          "title": {
+            "default": "Our team makes visual displays that show what we're working on and the status of our work; these displays are available publicly or at least throughout the Government of Canada.",
+            "fr": "Our team makes visual displays that show what we're working on and the status of our work; these displays are available publicly or at least throughout the Government of Canada.(FR)"
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s08q007",
+          "title": {
+            "default": "Our team publicly documents, including examples of reuse, how others can use our service's application programming interfaces (APIs), open data or information.",
+            "fr": "Our team publicly documents, including examples of reuse, how others can use our service's application programming interfaces (APIs), open data or information.(FR)"
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s08q008",
+          "title": {
+            "default": "Our team releases results from user testing, including the rationale on when suggestions are not used (What we heard reports, for example)",
+            "fr": "Our team releases results from user testing, including the rationale on when suggestions are not used (What we heard reports, for example)(FR)"
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
+        }
+      ]
     }
   ],
   "showQuestionNumbers": "off",
