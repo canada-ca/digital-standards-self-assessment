@@ -3475,6 +3475,334 @@
           ]
         }
       ]
+    },
+    {
+      "name": "section_nine",
+      "title": {
+        "default": "Design ethical services",
+        "fr": "Design ethical services(FR)"
+      },
+      "description": {
+        "default": "Make sure that everyone receives fair treatment. Comply with ethical guidelines in the design and use of systems which automate decision making (such as the use of artificial intelligence).",
+        "fr": "Make sure that everyone receives fair treatment. Comply with ethical guidelines in the design and use of systems which automate decision making (such as the use of artificial intelligence).(FR)"
+      },
+      "elements": [
+        {
+          "type": "rating",
+          "name": "s09q001",
+          "title": {
+            "default": "Our team continually seeks out indicators of bias and ensures that our services are not reinforcing unintended biases.",
+            "fr": "Our team continually seeks out indicators of bias and ensures that our services are not reinforcing unintended biases.(FR)"
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s09q002",
+          "title": {
+            "default": "We continually seek out evidence of unintended consequences to the user in service design and delivery and work to mitigate these consequences for the user.",
+            "fr": "We continually seek out evidence of unintended consequences to the user in service design and delivery and work to mitigate these consequences for the user.(FR)"
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s09q003",
+          "title": {
+            "default": "When our team uses automated decision-making, we acknowledge, account for and mitigate possible biases in the data and algorithms.",
+            "fr": "When our team uses automated decision-making, we acknowledge, account for and mitigate possible biases in the data and algorithms.(FR)"
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s09q004",
+          "title": {
+            "default": "Our team designs services that address cultural, linguistic, geographical, accessibility, technological, socioeconomic, or other access barriers to uptake.",
+            "fr": "Our team designs services that address cultural, linguistic, geographical, accessibility, technological, socioeconomic, or other access barriers to uptake.(FR)"
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s09q005",
+          "title": {
+            "default": "Our team has considered the impacts of decisions on the users and reduces negative outcomes.",
+            "fr": "Our team has considered the impacts of decisions on the users and reduces negative outcomes.(FR)"
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s09q006",
+          "title": {
+            "default": "Our team uses data in a manner consistent with the purpose of its collection.",
+            "fr": "Our team uses data in a manner consistent with the purpose of its collection.(FR)"
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s09q007",
+          "title": {
+            "default": "Our team delegates ethical assessment to a vendor or external service, without direct accountability.",
+            "fr": "Our team delegates ethical assessment to a vendor or external service, without direct accountability.(FR)"
+          },
+          "rateValues": [
+            {
+              "value": "4",
+              "text": {
+                "default": "Never",
+                "fr": "Never(FR)"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarely(FR)"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Not sure(FR)"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Sometimes(FR)"
+              }
+            },
+            {
+              "value": "0",
+              "text": {
+                "default": "Always",
+                "fr": "Always(FR)"
+              }
+            }
+          ]
+        }
+      ]
     }
   ],
   "showQuestionNumbers": "off",
