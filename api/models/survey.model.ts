@@ -52,6 +52,9 @@ export interface Section {
 
 export interface Survey {
   pages: Section[];
+  showQuestionNumbers: 'on' | 'off';
+  showProgressBar: 'true' | 'false';
+  showNavigationButtons: 'true' | 'false';
 }
 
 export interface SurveyDocument extends Survey, Document {}
@@ -106,6 +109,18 @@ const surveySchema = new Schema<SurveyDocument, SurveyModel>(
         },
       },
     ],
+    showQuestionNumbers: {
+      type: 'String',
+      default: 'off',
+    },
+    showProgressBar: {
+      type: 'String',
+      default: 'false',
+    },
+    showNavigationButtons: {
+      type: 'String',
+      default: 'false',
+    },
   },
   { collection: 'survey' }
 );
