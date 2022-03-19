@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "precache-manifest.432c63493dedd044c87ff2d7a2e4466f.js"
+  "precache-manifest.186c4ca74c1daefc59b3b701aa920ae3.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "digital-standards-self-assessment"});
