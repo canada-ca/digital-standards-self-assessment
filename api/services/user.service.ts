@@ -1,6 +1,6 @@
 import * as bcrypt from 'bcrypt';
 import { connectDB } from '../db/db.connection';
-import UserModel, { IUser, UserDocument } from '../models/user.model';
+import UserModel, { User, UserDocument } from '../models/user.model';
 import { MongoServerError } from 'mongodb';
 
 class UserService {
@@ -31,7 +31,7 @@ class UserService {
     }
   }
 
-  async update(userId: string, user: Partial<IUser>): Promise<UserDocument> {
+  async update(userId: string, user: Partial<User>): Promise<UserDocument> {
     if (userId) {
       try {
         await connectDB();

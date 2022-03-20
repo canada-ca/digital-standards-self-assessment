@@ -1,9 +1,9 @@
 import { sign, SignOptions, verify } from 'jsonwebtoken';
 import * as config from '../config';
-import { IUser, RoleEnum } from '../models/user.model';
+import { User, RoleEnum } from '../models/user.model';
 
 interface TokenPayload {
-  user: IUser;
+  user: User;
   exp?: number;
 }
 

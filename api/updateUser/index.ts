@@ -1,11 +1,11 @@
 import { AzureFunction, Context, HttpRequest } from '@azure/functions';
-import { IUser } from '../models/user.model';
+import { User } from '../models/user.model';
 import userService from '../services/user.service';
 
 const httpTrigger: AzureFunction = async function (context: Context, req: HttpRequest): Promise<void> {
   try {
     const userId = context.req.params.id;
-    const user: Partial<IUser> = context.req.body;
+    const user: Partial<User> = context.req.body;
     if (!userId) {
       context.res = {
         status: 400,

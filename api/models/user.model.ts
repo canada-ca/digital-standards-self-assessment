@@ -3,7 +3,7 @@ import { Document, Schema, Model, model } from 'mongoose';
 
 export type RoleEnum = 'Admin' | 'TeamLead' | 'TeamMember';
 
-export interface IUser {
+export interface User {
   email: string;
   password?: string;
   firstName: string;
@@ -13,7 +13,7 @@ export interface IUser {
   createdDate?: Date;
 }
 
-export interface UserDocument extends IUser, Document {
+export interface UserDocument extends User, Document {
   fullName: string;
   comparePassword(password: string): string;
 }
@@ -51,7 +51,7 @@ const userSchema = new Schema<UserDocument, UserModel>(
       default: new Date(),
     },
   },
-  { collection: 'users' }
+  { collection: 'user' }
 );
 
 userSchema.virtual('fullName').get((thiz: UserDocument) => thiz.firstName + ' ' + thiz.lastName);

@@ -55,6 +55,7 @@ export interface Survey {
   showQuestionNumbers: 'on' | 'off';
   showProgressBar: 'true' | 'false';
   showNavigationButtons: 'true' | 'false';
+  createdAt: Date;
 }
 
 export interface SurveyDocument extends Survey, Document {}
@@ -120,6 +121,10 @@ const surveySchema = new Schema<SurveyDocument, SurveyModel>(
     showNavigationButtons: {
       type: 'String',
       default: 'false',
+    },
+    createdAt: {
+      type: Date,
+      default: new Date(),
     },
   },
   { collection: 'survey' }
