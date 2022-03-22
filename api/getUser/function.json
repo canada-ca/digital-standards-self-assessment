@@ -6,7 +6,7 @@
       "direction": "in",
       "name": "req",
       "methods": ["get"],
-      "route": "users/{*id}"
+      "route": "user/{*id}"
     },
     {
       "type": "http",
@@ -14,5 +14,5 @@
       "name": "res"
     }
   ],
-  "scriptFile": "../dist/getUsers/index.js"
+  "scriptFile": "../dist/getUser/index.js"
 }

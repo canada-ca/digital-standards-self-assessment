@@ -28,6 +28,7 @@ const userSchema = new Schema<UserDocument, UserModel>(
       lowercase: true,
       trim: true,
       required: true,
+      index: true,
     },
     password: {
       type: String,
