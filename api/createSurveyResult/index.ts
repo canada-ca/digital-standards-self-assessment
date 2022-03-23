@@ -21,7 +21,7 @@ const httpTrigger: AzureFunction = async function (context: Context, req: HttpRe
     context.log.error(err);
     context.res = {
       status: 500,
-      body: err,
+      body: { message: err.message },
     };
   }
 };
