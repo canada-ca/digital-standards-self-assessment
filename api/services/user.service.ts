@@ -1,4 +1,3 @@
-import * as bcrypt from 'bcrypt';
 import { connectDB } from '../db/db.connection';
 import UserModel, { User, UserDocument } from '../models/user.model';
 import { MongoServerError } from 'mongodb';
@@ -15,13 +14,10 @@ class UserService {
     lastName: string,
     team: string
   ): Promise<UserDocument> {
-    const userModel = new UserModel({ email, firstName, lastName, team, roles: ['TeamMember'] });
-    userModel.password = bcrypt.hashSync(password, 10);
+    const userModel = new UserModel({ email, firstName, lastName, team, password, roles: ['TeamMember'] });
     try {
       await connectDB();
-      const userDoc = await userModel.save();
-      userDoc.password = undefined;
-      return userDoc;
+      return await userModel.save();
     } catch (err: any) {
       if (err instanceof MongoServerError) {
         throw { ...err, message: err.message };
@@ -35,11 +31,7 @@ class UserService {
     if (userId) {
       try {
         await connectDB();
-        const updatedUser = await UserModel.findByIdAndUpdate(userId, user, { useFindAndModify: false });
-        if (updatedUser) {
-          updatedUser.password = undefined;
-        }
-        return updatedUser;
+        return await UserModel.findByIdAndUpdate(userId, user, { useFindAndModify: false });
       } catch (err: any) {
         if (err instanceof MongoServerError) {
           throw { ...err, message: err.message };
@@ -66,7 +58,7 @@ class UserService {
   async findAll(): Promise<UserDocument[]> {
     try {
       await connectDB();
-      return await UserModel.find({}).exec();
+      return await UserModel.find({});
     } catch (err) {
       if (err instanceof MongoServerError) {
         throw { ...err, message: err.message };
@@ -79,11 +71,7 @@ class UserService {
   async delete(userId: string): Promise<UserDocument> {
     try {
       await connectDB();
-      const deletedUser = await UserModel.findByIdAndDelete(userId, { useFindAndModify: false }).exec();
-      if (deletedUser) {
-        deletedUser.password = undefined;
-      }
-      return deletedUser;
+      return await UserModel.findByIdAndDelete(userId, { useFindAndModify: false }).exec();
     } catch (err: any) {
       if (err instanceof MongoServerError) {
         throw { ...err, message: err.message };

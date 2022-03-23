@@ -61,4 +61,20 @@ userSchema.methods.comparePassword = function (password: string) {
   return bcrypt.compareSync(password, this.password);
 };
 
+userSchema.pre('save', function (next) {
+  // only hash the password if it has been modified (or is new)
+  if (!this.isModified('password')) return next();
+
+  this.password = bcrypt.hashSync(this.password, 10);
+  next();
+});
+
+userSchema.post('init', function (doc) {
+  doc.password = undefined;
+});
+
+userSchema.post('save', function (doc) {
+  doc.password = undefined;
+});
+
 export default model<UserDocument>('User', userSchema);
