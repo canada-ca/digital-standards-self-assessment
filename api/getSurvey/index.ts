@@ -5,7 +5,7 @@ const httpTrigger: AzureFunction = async function (context: Context, req: HttpRe
   try {
     const surveyId = context.req.params.id;
     if (surveyId) {
-      const survey = await surveyService.findSurveyById(surveyId);
+      const survey = await surveyService.findById(surveyId);
       if (survey) {
         context.res = {
           // status: 200, /* Defaults to 200 */

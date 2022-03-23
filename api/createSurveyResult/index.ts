@@ -5,7 +5,7 @@ import surveyResultService from '../services/survey-result.service';
 const httpTrigger: AzureFunction = async function (context: Context, req: HttpRequest): Promise<void> {
   const surveyResult: SurveyResult = req.body;
   try {
-    const newSurveyResult = await surveyResultService.createSurveyResult(surveyResult);
+    const newSurveyResult = await surveyResultService.create(surveyResult);
     if (newSurveyResult) {
       context.res = {
         statu: '201',

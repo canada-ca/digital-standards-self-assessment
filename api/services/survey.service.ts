@@ -7,7 +7,7 @@ class SurveyService {
     console.log('Construct SurveyService');
   }
 
-  async createSurvey(survey: Survey): Promise<SurveyDocument> {
+  async create(survey: Survey): Promise<SurveyDocument> {
     const surveyModel = new SurveyModel(survey);
     try {
       await connectDB();
@@ -21,7 +21,7 @@ class SurveyService {
     }
   }
 
-  async updateSurvey(surveyId: string, survey: Partial<Survey>): Promise<SurveyDocument> {
+  async update(surveyId: string, survey: Partial<Survey>): Promise<SurveyDocument> {
     if (surveyId) {
       try {
         await connectDB();
@@ -36,7 +36,7 @@ class SurveyService {
     }
   }
 
-  async deleteSurvey(surveyId: string): Promise<SurveyDocument> {
+  async delete(surveyId: string): Promise<SurveyDocument> {
     try {
       await connectDB();
       return await SurveyModel.findByIdAndDelete(surveyId, { useFindAndModify: false }).exec();
@@ -49,7 +49,7 @@ class SurveyService {
     }
   }
 
-  async findSurveyById(surveyId: string): Promise<SurveyDocument> {
+  async findById(surveyId: string): Promise<SurveyDocument> {
     try {
       await connectDB();
       return await SurveyModel.findById(surveyId).exec();

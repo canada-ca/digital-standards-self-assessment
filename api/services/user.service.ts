@@ -7,7 +7,7 @@ class UserService {
     console.log('Construct UserService');
   }
 
-  async register(
+  async create(
     email: string,
     password: string,
     firstName: string,

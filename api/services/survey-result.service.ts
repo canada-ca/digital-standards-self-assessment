@@ -8,7 +8,7 @@ class SurveyResultService {
     console.log('Construct SurveyResultService');
   }
 
-  async createSurveyResult(surveyResult: SurveyResult) {
+  async create(surveyResult: SurveyResult) {
     const surveyResultModel = new SurveyResultModel(surveyResult);
     try {
       await connectDB();
@@ -40,6 +40,19 @@ class SurveyResultService {
       await connectDB();
       return await SurveyResultModel.find({}).exec();
     } catch (err) {
+      if (err instanceof MongoServerError) {
+        throw { ...err, message: err.message };
+      } else {
+        throw err;
+      }
+    }
+  }
+
+  async delete(surveyId: string): Promise<SurveyResultDocument> {
+    try {
+      await connectDB();
+      return await SurveyResultModel.findByIdAndDelete(surveyId, { useFindAndModify: false }).exec();
+    } catch (err: any) {
       if (err instanceof MongoServerError) {
         throw { ...err, message: err.message };
       } else {

@@ -4,7 +4,7 @@ import userService from '../services/user.service';
 const httpTrigger: AzureFunction = async function (context: Context, req: HttpRequest): Promise<void> {
   const { email, password, firstName, lastName, team } = req.body;
   try {
-    const newUser = await userService.register(email, password, firstName, lastName, team);
+    const newUser = await userService.create(email, password, firstName, lastName, team);
     if (newUser) {
       context.res = {
         statu: '201',

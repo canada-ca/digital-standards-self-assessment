@@ -1,29 +1,31 @@
 import { AzureFunction, Context, HttpRequest } from '@azure/functions';
-import surveyService from '../services/survey.service';
+import surveyResultService from '../services/survey-result.service';
 
 const httpTrigger: AzureFunction = async function (context: Context, req: HttpRequest): Promise<void> {
   try {
-    const surveyId = context.req.params.id;
-    if (surveyId) {
-      const survey = await surveyService.delete(surveyId);
-      if (survey) {
+    const resultId = context.req.params.id;
+    if (resultId) {
+      const result = await surveyResultService.delete(resultId);
+      if (result) {
         context.res = {
           // status: 200, /* Defaults to 200 */
+          body: { message: 'The survey result was deleted' },
         };
       } else {
         context.res = {
           status: 404,
           body: {
-            message: `Survey not found with ID = ${surveyId}`,
+            message: `The survey result was not found with ID = ${resultId}`,
           },
         };
       }
     } else {
       context.res = {
         status: 400,
-        body: 'Survey ID is required',
+        body: {
+          message: `Survey result ID is required`,
+        },
       };
-      return;
     }
   } catch (err) {
     context.log.error(err);
