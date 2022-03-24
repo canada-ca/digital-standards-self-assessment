@@ -20,19 +20,41 @@ const httpTrigger: AzureFunction = async function (context: Context, req: HttpRe
         };
       }
     } else {
-      const results = await surveyResultService.findAll();
-      if (results && results.length > 0) {
-        context.res = {
-          // status: 200, /* Defaults to 200 */
-          body: results,
-        };
+      if (Object.keys(req.query).length === 0) {
+        const results = await surveyResultService.findAll();
+        if (results && results.length > 0) {
+          context.res = {
+            // status: 200, /* Defaults to 200 */
+            body: results,
+          };
+        } else {
+          context.res = {
+            status: 404,
+            body: {
+              message: 'Survey Result not found',
+            },
+          };
+        }
       } else {
-        context.res = {
-          status: 404,
-          body: {
-            message: 'Survey Result not found',
-          },
-        };
+        const startDate = req.query['startDate'];
+        const endDate = req.query['endDate'];
+        const results = await surveyResultService.findByDateRange(
+          startDate ? new Date(startDate) : undefined,
+          endDate ? new Date(endDate) : undefined
+        );
+        if (results && results.length > 0) {
+          context.res = {
+            // status: 200, /* Defaults to 200 */
+            body: results,
+          };
+        } else {
+          context.res = {
+            status: 404,
+            body: {
+              message: 'Survey Result not found',
+            },
+          };
+        }
       }
     }
   } catch (err) {

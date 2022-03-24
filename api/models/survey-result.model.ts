@@ -7,6 +7,7 @@ export interface SurveyResult {
   answers: Map<string, any>;
   user: string | Types.ObjectId | User;
   survey: string | Types.ObjectId | Survey;
+  createdAt: Date;
 }
 
 export interface SurveyResultDocument extends SurveyResult, Document {}
@@ -26,6 +27,10 @@ const surveyResultSchema = new Schema<SurveyResultDocument, SurveyResultModel>(
     survey: {
       type: Types.ObjectId,
       ref: 'Survey',
+    },
+    createdAt: {
+      type: Date,
+      default: new Date(),
     },
   },
   { collection: 'survey-result' }
