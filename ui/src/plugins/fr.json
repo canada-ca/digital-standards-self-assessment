@@ -11,9 +11,9 @@
     "teamsSurvey": "Résultats de l'équipe"
   },
   "notice": {
-    "startUsingTitle": "Commencez à utiliser l'outil d'autoévaluation des normes relatives au numérique dès maintenant",
-    "startUsingDesc": "Vous ne savez pas ce qu'est l'outil d'autoévaluation des normes relatives au numérique? Continuez [lire ci-dessous] (#Titre message de bienvenue). ",
-    "takeTheSurvey": "Répondre au sondage",
+    "startUsingTitle": "Commencez votre auto-évaluation des normes numériques",
+    "startUsingDesc": "Vous ne savez pas ce qu'est l'outil d'évaluation des normes numériques? Continuez [lire ci-dessous] (#Titre message de bienvenue). ",
+    "takeTheSurvey": "Faire l'évaluation",
     "takeTheSurveyDesc": "Cliquez [ici](#/survey), ou sur « Sondage » dans la barre de menus supérieure pour commencer le sondage.",
     "calculateTeamResults": "Calculer les résultats de l'équipe",
     "calculateTeamResultsDesc": "Cliquez [ici](#/teamSurveys) ou sur « Résultats de l'équipe » dans la barre de menus supérieure pour commencer à calculer les résultats de l'équipe.",
@@ -25,13 +25,11 @@
     "section1p4": "Vous pouvez calculer les résultats des équipes et évaluer leur croissance et leur réussite globales ou les comparer aux résultats des tests précédents de vos équipes.",
     "subtitle2": "Temps requis :",
     "section2p1": "Vous n'êtes pas tenu de répondre à chaque section en une seule visite, mais nous encourageons les équipes à y répondre au complet au moins une fois de manière à créer une base de référence complète.",
-    "section2p2": "De 4 à 6 minutes par section",
-    "section2p3": "Environ 60 minutes pour répondre aux 11 sections",
+    "section2p2": "Environ 5 minutes par section",
+    "section2p3": "Environ 50 minutes pour répondre aux 10 sections",
     "subtitle3": "Avis de confidentialité :",
     "section3p1": "Cache du navigateur",
     "section3p2": "Les réponses à l'auto-évaluation sur DevOps sont stockées localement sur votre ordinateur (mémoire cache du navigateur), et le gouvernement du Canada ne sauvegarde aucune information.",
-    "section3p3": "Exceptions",
-    "section3p4": "** DELETE ** Seules les réponses des employés d'EDSC connectés au réseau privé virtuel seront sauvegardées de façon anonyme aux fins d'analyse par le centre d'excellence de DevOps et l'équipe de Stratégie de la TI.",
     "welcomeNoticeBody": "L'outil suivant est basé sur le directive des normes relatives au numérique qui a été publié en 2021. \n\nCet outil **soutiendra les équipes dans l'intégration des normes numériques dans leurs méthodes de travail**. \n\nLes équipes sont invitées à remplir l'auto-évaluation tous les 6 (six) à 12 (douze) mois **pour mesurer leurs progrès**. Toutefois, vous êtes libre d'utiliser l'outil tout au long de l'année, que ce soit en équipe ou individuellement.",
     "noProgress": "L'auto-évaluation DevOps n'a pas encore commencée. Veuillez choisir une section à compléter."
   },
