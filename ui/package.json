@@ -23,7 +23,7 @@
     "echarts": "^5.3.0",
     "lodash": ">=4.17.21",
     "marked": ">=4.0.10",
-    "minimist": "^1.2.5",
+    "minimist": "^1.2.6",
     "register-service-worker": "^1.7.2",
     "showdown": "^1.9.1",
     "survey-vue": "^1.8.36",
