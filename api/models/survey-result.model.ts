@@ -1,11 +1,10 @@
-import { Document, Schema, Model, model, Types } from 'mongoose';
-import { Survey } from './survey.model';
-import { User } from './user.model';
-import userModel from './user.model';
-import surveyModel from './survey.model';
+import { Document, Model, model, Schema, Types } from 'mongoose';
+import surveyModel, { Survey } from './survey.model';
+import teamModel, { Team } from './team.model';
 export interface SurveyResult {
   answers: Map<string, any>;
-  user: string | Types.ObjectId | User;
+  userEmail: string;
+  team: string | Types.ObjectId | Team;
   survey: string | Types.ObjectId | Survey;
   createdAt: Date;
 }
@@ -20,9 +19,12 @@ const surveyResultSchema = new Schema<SurveyResultDocument, SurveyResultModel>(
       type: Map,
       of: String,
     },
-    user: {
+    userEmail: {
+      type: String,
+    },
+    team: {
       type: Types.ObjectId,
-      ref: 'User',
+      ref: 'Team',
     },
     survey: {
       type: Types.ObjectId,
@@ -37,10 +39,10 @@ const surveyResultSchema = new Schema<SurveyResultDocument, SurveyResultModel>(
 );
 
 surveyResultSchema.pre('save', async function (next) {
-  const userId = this.user;
-  const userCount = await userModel.countDocuments({ _id: userId }).exec();
-  if (userCount === 0) {
-    throw new Error(`The user with id=${userId} does not exist`);
+  const teamId = this.team;
+  const teamCount = await teamModel.countDocuments({ _id: teamId }).exec();
+  if (teamCount === 0) {
+    throw new Error(`Can not find team with id=${teamId}`);
   }
   const surveyId = this.survey;
   const surveyCount = await surveyModel.countDocuments({ _id: surveyId }).exec();

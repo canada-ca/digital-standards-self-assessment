@@ -1,23 +1,17 @@
 import { connectDB } from '../db/db.connection';
-import UserModel, { User, UserDocument } from '../models/user.model';
+import TeamModel, { Team, TeamDocument } from '../models/team.model';
 import { MongoServerError } from 'mongodb';
 
-class UserService {
+class TeamService {
   constructor() {
-    console.log('Construct UserService');
+    console.log('Construct TeamService');
   }
 
-  async create(
-    email: string,
-    password: string,
-    firstName: string,
-    lastName: string,
-    team: string
-  ): Promise<UserDocument> {
-    const userModel = new UserModel({ email, firstName, lastName, team, password, roles: ['TeamMember'] });
+  async create(team: Team): Promise<TeamDocument> {
+    const teamModel = new TeamModel(team);
     try {
       await connectDB();
-      return await userModel.save();
+      return await teamModel.save();
     } catch (err: any) {
       if (err instanceof MongoServerError) {
         throw { ...err, message: err.message };
@@ -27,11 +21,11 @@ class UserService {
     }
   }
 
-  async update(userId: string, user: Partial<User>): Promise<UserDocument> {
-    if (userId) {
+  async update(teamId: string, team: Partial<Team>): Promise<TeamDocument> {
+    if (teamId) {
       try {
         await connectDB();
-        return await UserModel.findByIdAndUpdate(userId, user, { useFindAndModify: false });
+        return await TeamModel.findByIdAndUpdate(teamId, team, { useFindAndModify: false });
       } catch (err: any) {
         if (err instanceof MongoServerError) {
           throw { ...err, message: err.message };
@@ -42,10 +36,10 @@ class UserService {
     }
   }
 
-  async findOneById(userId: string): Promise<UserDocument> {
+  async delete(teamId: string): Promise<TeamDocument> {
     try {
       await connectDB();
-      return await UserModel.findById(userId).exec();
+      return await TeamModel.findByIdAndDelete(teamId, { useFindAndModify: false }).exec();
     } catch (err: any) {
       if (err instanceof MongoServerError) {
         throw { ...err, message: err.message };
@@ -55,24 +49,24 @@ class UserService {
     }
   }
 
-  async findAll(): Promise<UserDocument[]> {
+  async findById(teamId: string): Promise<TeamDocument> {
     try {
       await connectDB();
-      return await UserModel.find({});
+      return await TeamModel.findById(teamId).exec();
+    } catch (err: any) {
+      if (err instanceof MongoServerError) {
+        throw { ...err, message: err.message };
+      } else {
+        throw err;
+      }
+    }
+  }
+
+  async findAll(): Promise<TeamDocument[]> {
+    try {
+      await connectDB();
+      return await TeamModel.find({}).exec();
     } catch (err) {
-      if (err instanceof MongoServerError) {
-        throw { ...err, message: err.message };
-      } else {
-        throw err;
-      }
-    }
-  }
-
-  async delete(userId: string): Promise<UserDocument> {
-    try {
-      await connectDB();
-      return await UserModel.findByIdAndDelete(userId, { useFindAndModify: false }).exec();
-    } catch (err: any) {
       if (err instanceof MongoServerError) {
         throw { ...err, message: err.message };
       } else {
@@ -82,4 +76,4 @@ class UserService {
   }
 }
 
-export default new UserService();
+export default new TeamService();
