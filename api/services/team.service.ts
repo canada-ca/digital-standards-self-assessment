@@ -49,6 +49,20 @@ class TeamService {
     }
   }
 
+  async deleteAll(): Promise<number> {
+    try {
+      await connectDB();
+      const result = await TeamModel.deleteMany({});
+      return result.deletedCount;
+    } catch (err: any) {
+      if (err instanceof MongoServerError) {
+        throw { ...err, message: err.message };
+      } else {
+        throw err;
+      }
+    }
+  }
+
   async findById(teamId: string): Promise<TeamDocument> {
     try {
       await connectDB();

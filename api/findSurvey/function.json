@@ -14,5 +14,5 @@
       "name": "res"
     }
   ],
-  "scriptFile": "../dist/getSurvey/index.js"
+  "scriptFile": "../dist/findSurvey/index.js"
 }

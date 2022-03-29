@@ -20,4 +20,4 @@ const teamSchema = new Schema<TeamDocument, TeamModel>(
   { collection: 'team' }
 );
 
-export default model<TeamDocument>('SurveyResult', teamSchema);
+export default model<TeamDocument>('Team', teamSchema);

@@ -1,36 +1,36 @@
 import { AzureFunction, Context, HttpRequest } from '@azure/functions';
-import surveyService from '../services/survey.service';
+import teamService from '../services/team.service';
 
 const httpTrigger: AzureFunction = async function (context: Context, req: HttpRequest): Promise<void> {
   try {
-    const surveyId = context.req.params.id;
-    if (surveyId) {
-      const survey = await surveyService.findById(surveyId);
-      if (survey) {
+    const teamId = context.req.params.id;
+    if (teamId) {
+      const team = await teamService.findById(teamId);
+      if (team) {
         context.res = {
           // status: 200, /* Defaults to 200 */
-          body: survey,
+          body: team,
         };
       } else {
         context.res = {
           status: 404,
           body: {
-            message: `Survey not found with ID = ${surveyId}`,
+            message: `Team not found with ID = ${teamId}`,
           },
         };
       }
     } else {
-      const surveys = await surveyService.findAll();
-      if (surveys && surveys.length > 0) {
+      const teams = await teamService.findAll();
+      if (teams && teams.length > 0) {
         context.res = {
           // status: 200, /* Defaults to 200 */
-          body: surveys,
+          body: teams,
         };
       } else {
         context.res = {
           status: 404,
           body: {
-            message: 'Survey not found',
+            message: 'Team not found',
           },
         };
       }

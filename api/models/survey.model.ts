@@ -124,6 +124,7 @@ const surveySchema = new Schema<SurveyDocument, SurveyModel>(
     },
     createdAt: {
       type: Date,
+      index: true,
       default: new Date(),
     },
   },
