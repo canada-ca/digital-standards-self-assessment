@@ -1,6 +1,6 @@
+import apiService from '@/services/api.service';
 import { Mutations, MutationType } from '@/store/mutations';
 import { RootState, Section, TeamReportDataBundle } from '@/store/state';
-import appData from '@/survey-enfr.json';
 import appConfig from '@/survey-results.json';
 import { calcScore } from '@/utils/utils';
 import { PageModel, SurveyModel } from 'survey-vue';
@@ -78,7 +78,8 @@ export type Actions = {
 
 export const actions: ActionTree<RootState, RootState> & Actions = {
   async [ActionTypes.GetLocalAppData]({ commit, getters }) {
-    const thisAppData: SurveyModel = new SurveyModel(appData);
+    const surveyJson = await apiService.findLatestSurvey();
+    const thisAppData: SurveyModel = new SurveyModel(surveyJson);
     commit(MutationType.SetSurveyModel, thisAppData);
     if (getters.returnSurveyModel !== undefined) {
       commit(MutationType.AppLoadingSuccess);
@@ -95,7 +96,6 @@ export const actions: ActionTree<RootState, RootState> & Actions = {
       let thisSurveyModel: SurveyModel = getters.returnSurveyModel;
       commit(MutationType.SetSurveyModel, thisSurveyModel);
       commit(MutationType.SetSectionsPrefix, appConfigSettings.sectionsPrefix);
-      commit(MutationType.SetCurrentPageNo, thisSurveyModel.currentPageNo);
       commit(MutationType.SetCurrentPageName, '');
       commit(MutationType.SetRecommendations, recommendations);
       let sectionsNames: string[] = getters.returnSectionsNames as string[];
@@ -155,7 +155,6 @@ export const actions: ActionTree<RootState, RootState> & Actions = {
   //Actions below are to help transition to new store structure
   // ---------------
   async [ActionTypes.UpdateSurveyData]({ commit, dispatch, getters }, value: SurveyModel) {
-    commit(MutationType.SetCurrentPageNo, value.currentPageNo);
     if (getters.returnRecommendations === undefined) {
       commit(MutationType.SetRecommendations, appConfig);
     }

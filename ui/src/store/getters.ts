@@ -71,12 +71,6 @@ export type Getters = {
    * @returns a JSON object of survey defination
    */
   returnSurveyJSON(state: RootState): any;
-  /**
-   * Returns ```state.currentPageNumber``` from the store
-   * @param state The application state.
-   * @returns A number
-   */
-  returnCurrentPageNumber(state: RootState): number;
   // ---------------
   // Getters below are to help transition to new store structure
   // ---------------
@@ -182,10 +176,6 @@ export const getters: GetterTree<RootState, RootState> & Getters = {
   },
   returnSurveyJSON(state: RootState) {
     return state.surveyJSON;
-  },
-  // Should use mapstate instead
-  returnCurrentPageNumber(state: RootState) {
-    return state.currentPageNo;
   },
   // Should use mapstate instead
   returnSections(state: RootState) {

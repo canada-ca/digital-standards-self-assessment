@@ -29,7 +29,13 @@
             </button>
           </div>
           <div class="col-3 col-sm-2 col-md-3">
-            <button type="button" class="btn btn-default" style="width: inherit" v-on:click="goToHomePage()" :key="$route.path">
+            <button
+              type="button"
+              class="btn btn-default"
+              style="width: inherit"
+              v-on:click="goToHomePage()"
+              :key="$route.path"
+            >
               {{ $t('navigation.chooseAnotherSection') }}
             </button>
           </div>
@@ -98,9 +104,6 @@ export default class Results extends Vue {
   }
   buildSurveyFile(): string {
     return JSON.stringify({
-      name: 'surveyResults',
-      version: this.$store.state.toolVersion,
-      currentPage: this.$store.state.currentPageNo,
       data: this.$store.state.toolData,
     });
   }
@@ -178,7 +181,6 @@ export default class Results extends Vue {
   // }
   fileLoaded($event: SurveyFile) {
     this.Survey.data = $event.data;
-    this.Survey.currentPageNo = $event.currentPage;
     this.Survey.start();
     // this.$store.commit("calculateResult", this.Survey);
     this.$store.dispatch(ActionTypes.UpdateSurveyData, this.Survey);
@@ -231,7 +233,6 @@ export default class Results extends Vue {
     //if survey is in progress reload from store
     if (this.$store.getters.inProgress) {
       this.fileLoaded({
-        currentPage: this.$store.state.currentPageNo,
         data: this.$store.state.toolData,
       } as SurveyFile);
     }
