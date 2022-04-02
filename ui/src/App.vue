@@ -2,16 +2,18 @@
   <div id="app">
     <i18n path=""></i18n>
     <nav-bar />
+    <profile />
     <router-view />
   </div>
 </template>
 <script lang="ts">
-import Vue from "vue";
-import { ActionTypes } from "./store/actions";
-import NavBar from "@/components/NavBar.vue";
+import Vue from 'vue';
+import { ActionTypes } from './store/actions';
+import NavBar from '@/components/NavBar.vue';
+import Profile from '@/components/Profile.vue';
 export default Vue.extend({
-  name: "App",
-  components: { NavBar },
+  name: 'App',
+  components: { NavBar, Profile },
   created() {
     if (this.$store.getters.isInitialized === false) {
       this.$store.dispatch(ActionTypes.SetAppData);
@@ -19,8 +21,8 @@ export default Vue.extend({
   },
   mounted() {
     if (this.$store.getters.returnDisplayWelcome === true) {
-      this.$bvModal.show("welcome-modal");
+      this.$bvModal.show('welcome-modal');
     }
-  }
+  },
 });
 </script>
