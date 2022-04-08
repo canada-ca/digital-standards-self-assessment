@@ -8,7 +8,12 @@
     "goBack": "Back",
     "goHome": "Home",
     "survey": "Survey",
-    "teamsSurvey": "Team Results"
+    "teamsSurvey": "Team Results",
+    "yourEmail": "Your Email: ",
+    "yourTeam": "Your Team: ",
+    "profile": {
+      "notSet": "Please set your email and team"
+    }
   },
   "notice": {
     "startUsingTitle": "Start your Digital Standards Self Assessment",
@@ -54,6 +59,9 @@
     },
     "fileName": {
       "required": "Please input a file name"
+    },
+    "email": {
+      "invalid": "Invalid email address"
     }
   },
   "showHideLink": {
@@ -63,7 +71,8 @@
   "buttons": {
     "startAgain": "Start Again",
     "saveButton": "Save",
-    "submitButton": "Submit your results"
+    "submitButton": "Submit your results",
+    "OK": "OK"
   },
   "htmlCode": "en-CA",
   "survey": {

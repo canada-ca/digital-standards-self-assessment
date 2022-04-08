@@ -1,3 +1,4 @@
+import { Profile } from '@/interfaces/Profile';
 import apiService from '@/services/api.service';
 import { Mutations, MutationType } from '@/store/mutations';
 import { RootState, Section, TeamReportDataBundle } from '@/store/state';
@@ -52,6 +53,7 @@ export enum ActionTypes {
   DeleteTeamSurvey = 'DELETE_TEAM_SURVEY',
   ShowIndividualBreakdown = 'SHOW_INDIVIDUAL_BREAKDOWN',
   HideIndividualBreakdown = 'HIDE_INDIVIDUAL_BREAKDOWN',
+  SaveProfile = 'SAVE_PROFILE',
 }
 
 export type ActionAugments = Omit<ActionContext<RootState, RootState>, 'commit'> & {
@@ -74,6 +76,7 @@ export type Actions = {
   [ActionTypes.DeleteTeamSurvey](context: ActionAugments, value: string): void;
   [ActionTypes.ShowIndividualBreakdown](context: ActionAugments, value: string): void;
   [ActionTypes.HideIndividualBreakdown](context: ActionAugments): void;
+  [ActionTypes.SaveProfile](content: ActionAugments, profile: Profile): void;
 };
 
 export const actions: ActionTree<RootState, RootState> & Actions = {
@@ -191,5 +194,8 @@ export const actions: ActionTree<RootState, RootState> & Actions = {
   },
   async [ActionTypes.HideIndividualBreakdown]({ commit }) {
     commit(MutationType.HideIndividualBreakdown);
+  },
+  async [ActionTypes.SaveProfile]({ commit }, profile: Profile) {
+    commit(MutationType.SaveProfile, profile);
   },
 };

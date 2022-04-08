@@ -17,6 +17,7 @@ const vuexLocal = new VuexPersistence<RootState>({
     teamReportDataBundleArray: state.teamReportDataBundleArray,
     teamAverageReportDataArray: state.teamAverageReportDataArray,
     individualTeamReportDataArray: state.individualTeamReportDataArray,
+    profile: state.profile,
   }),
 });
 

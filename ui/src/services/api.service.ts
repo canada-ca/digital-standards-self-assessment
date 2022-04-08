@@ -22,9 +22,9 @@ class ApiService {
     }
   }
 
-  async findAllTeams(): Promise<Team> {
+  async findAllTeams(): Promise<Team[]> {
     try {
-      const res: AxiosResponse<Team> = await axios.get<Team>(`${this.apiBaseUrl}/team`, option);
+      const res: AxiosResponse<Team[]> = await axios.get<Team[]>(`${this.apiBaseUrl}/team`, option);
       return res.data;
     } catch (err) {
       throw err;

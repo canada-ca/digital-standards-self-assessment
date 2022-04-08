@@ -1,3 +1,4 @@
+import { Profile } from '@/interfaces/Profile';
 import { Question, SurveyModel } from 'survey-vue';
 
 export interface RootState {
@@ -19,6 +20,7 @@ export interface RootState {
   individualTeamReportDataArray: TeamReportData[];
   individualTeamName: string;
   showBreakdown: boolean;
+  profile?: Profile;
 }
 
 export interface Section {

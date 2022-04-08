@@ -4,6 +4,7 @@ import { isEmpty } from 'lodash';
 import { PageModel, SurveyModel } from 'survey-vue';
 
 import { calcSectionMaxScore } from '@/utils/utils';
+import { Profile } from '@/interfaces/Profile';
 
 export type Getters = {
   /**Checks whether the state status is errored or not
@@ -86,6 +87,7 @@ export type Getters = {
   returnIndividualTeamReportDataArray(state: RootState): TeamReportData[];
   returnShowBreakdown(state: RootState): boolean;
   returnSectionMaxScore(state: RootState): (section: string) => number;
+  returnProfile(state: RootState): Profile | undefined;
 };
 
 export const getters: GetterTree<RootState, RootState> & Getters = {
@@ -198,5 +200,8 @@ export const getters: GetterTree<RootState, RootState> & Getters = {
   },
   returnSectionMaxScore(state: RootState) {
     return (sectionName: string) => calcSectionMaxScore(sectionName, state.surveyJSON);
+  },
+  returnProfile(state: RootState) {
+    return state.profile;
   },
 };

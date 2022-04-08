@@ -1,6 +1,7 @@
 import { MutationTree } from 'vuex';
 import { Recommendations, RootState, Section, TeamReportData, TeamReportDataBundle } from '@/store/state';
 import { SurveyModel } from 'survey-vue';
+import { Profile } from '@/interfaces/Profile';
 
 export enum MutationType {
   /**
@@ -69,6 +70,7 @@ export enum MutationType {
   DeleteTeamSurvey = 'DELETE_TEAM_SURVEY',
   ShowIndividualBreakdown = 'SHOW_INDIVIDUAL_BREAKDOWN',
   HideIndividualBreakdown = 'HIDE_INDIVIDUAL_BREAKDOWN',
+  SaveProfile = 'SAVE_PROFILE',
 }
 
 export type Mutations = {
@@ -92,6 +94,7 @@ export type Mutations = {
   [MutationType.DeleteTeamSurvey](state: RootState, payload: string): void;
   [MutationType.ShowIndividualBreakdown](state: RootState, payload: string): void;
   [MutationType.HideIndividualBreakdown](state: RootState): void;
+  [MutationType.SaveProfile](state: RootState, profile: Profile): void;
 };
 
 export const mutations: MutationTree<RootState> & Mutations = {
@@ -186,5 +189,8 @@ export const mutations: MutationTree<RootState> & Mutations = {
     state.individualTeamName = '';
     state.individualTeamReportDataArray = [];
     state.showBreakdown = false;
+  },
+  [MutationType.SaveProfile](state: RootState, profile: Profile) {
+    state.profile = profile;
   },
 };

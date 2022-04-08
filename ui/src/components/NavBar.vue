@@ -2,48 +2,129 @@
   <div class="header">
     <div class="container">
       <div class="app-name-sec">
-        <router-link
-          class="app-name"
-          style="color: #fff !important; font-size: 36px !important"
-          to="/"
-          >{{ $t("navigation.appName") }}</router-link
-        >
+        <router-link class="app-name" style="color: #fff !important; font-size: 36px !important" to="/">{{
+          $t('navigation.appName')
+        }}</router-link>
         <div class="menu-sec">
-          <router-link
-            class="menu-link"
-            style="color: #fff !important; font-size: 30px !important"
-            to="/survey"
-            >{{ $t("navigation.survey") }}</router-link
-          >
-          <router-link
-            class="menu-link"
-            style="color: #fff !important; font-size: 30px !important"
-            to="/teamSurveys"
-            >{{ $t("navigation.teamsSurvey") }}</router-link
-          >
+          <router-link class="menu-link" to="/survey">{{ $t('navigation.survey') }}</router-link>
+          <router-link class="menu-link" to="/teamSurveys">{{ $t('navigation.teamsSurvey') }}</router-link>
+          <b-link class="menu-link" v-b-toggle.collapse-1>
+            <i class="fa fa-user" :title="profileTitle" />
+            <sup v-if="isProfileSet">
+              <span class="badge badge-warning"><i class="fa fa-check fa-xs" /></span>
+            </sup>
+          </b-link>
         </div>
       </div>
     </div>
+    <b-collapse id="collapse-1">
+      <div class="profile-card">
+        <span />
+        <label>{{ $t('navigation.yourEmail') }}</label>
+        <b-form-input type="email" @change="setEmail" :class="{ 'is-invalid': hasError }" :value="email" />
+        <div class="text-danger mt-3 email-error" v-if="hasError">
+          {{ $t('validation.email.invalid') }}
+        </div>
+        <label>{{ $t('navigation.yourTeam') }}</label>
+        <auto-complete :items="strTeams" @inputChanged="setTeam" :value="team" />
+        <span />
+      </div>
+    </b-collapse>
   </div>
 </template>
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
+import { Component, Vue, Watch } from 'vue-property-decorator';
+import AutoComplete from '@/components/AutoComplete.vue';
+import { Profile } from '@/interfaces/Profile';
+import { ActionTypes } from '@/store/actions';
+import { validateEmail } from '@/utils/utils';
+import i18n from '@/plugins/i18n';
+import apiService from '@/services/api.service';
+import { Team } from '@/interfaces/api-models';
 
-@Component
-export default class NavBar extends Vue {}
+@Component({
+  components: {
+    AutoComplete,
+  },
+})
+export default class NavBar extends Vue {
+  profile?: Profile;
+  isProfileSet = false;
+  hasError = false;
+  teams: Team[] = [];
+  strTeams: string[] = [];
+
+  async created() {
+    this.profile = this.storedProfile;
+    this.watchProfile();
+    if (this.email) {
+      this.hasError = !validateEmail(this.email);
+    }
+    this.teams = await apiService.findAllTeams();
+    this.changeLanguage(i18n.locale);
+  }
+
+  @Watch('$i18n.locale')
+  changeLanguage(value: string) {
+    const lang = !!value && value === 'fr' ? 'fr' : 'en';
+    this.strTeams = this.teams.map((team) => (lang === 'fr' ? team.teamNameFr : team.teamNameEn));
+  }
+
+  get profileTitle() {
+    if (this.isProfileSet) {
+      return '';
+    } else {
+      return i18n.t('navigation.profile.notSet');
+    }
+  }
+  get storedProfile() {
+    return this.$store.getters.returnProfile;
+  }
+
+  get team() {
+    return this.profile?.team;
+  }
+
+  get email() {
+    return this.profile?.email;
+  }
+
+  setTeam(team: string) {
+    if (!this.profile) {
+      this.profile = {} as Profile;
+    }
+    this.profile = { ...this.profile, team };
+    this.$store.dispatch(ActionTypes.SaveProfile, this.profile);
+  }
+  setEmail(email: string) {
+    this.hasError = false;
+    if (!!email && !validateEmail(email)) {
+      this.hasError = true;
+      return;
+    }
+    if (!this.profile) {
+      this.profile = {} as Profile;
+    }
+    this.profile = { ...this.profile, email };
+    this.$store.dispatch(ActionTypes.SaveProfile, this.profile);
+  }
+
+  @Watch('storedProfile')
+  watchProfile() {
+    this.isProfileSet = !!this.profile && !!this.profile.email && !!this.profile.team;
+  }
+}
 </script>
 
 <style scoped>
 .header {
   background: #38414d;
   margin-top: 5px;
-  padding: 0 10px;
 }
 
 .header .app-name,
 .header .menu-link {
   margin-bottom: 6px;
-  margin-top: 8px;
   padding: 5px;
   line-height: 1.1;
 }
@@ -60,6 +141,7 @@ export default class NavBar extends Vue {}
 
 .menu-link {
   color: #fff !important;
+  font-size: 30px !important;
 }
 .app-name-sec {
   display: flex !important;
@@ -72,6 +154,24 @@ export default class NavBar extends Vue {}
 }
 
 .menu-sec a {
-  margin-top: 10px !important;
+  margin-top: 20px;
+}
+
+.profile-card {
+  display: inline-grid;
+  grid-template-columns: auto 120px 300px 120px 300px auto;
+  grid-column-gap: 10px;
+  background-color: #ffffff;
+  width: 100%;
+  padding: 6px 10px;
+}
+
+.input-with-error {
+  display: grid;
+}
+
+.email-error {
+  grid-row: 2;
+  grid-column: 3;
 }
 </style>

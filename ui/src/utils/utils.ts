@@ -42,3 +42,7 @@ export const calcSectionMaxScore = (sectionName: string, surveyJSON: any) => {
   }
   return 0;
 };
+
+export const validateEmail = (email: string) => {
+  return email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/);
+};

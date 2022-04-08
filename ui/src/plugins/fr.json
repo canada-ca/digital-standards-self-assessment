@@ -8,7 +8,12 @@
     "goBack": "Retour",
     "goHome": "Accueil",
     "survey": "Sondage",
-    "teamsSurvey": "Résultats de l'équipe"
+    "teamsSurvey": "Résultats de l'équipe",
+    "yourEmail": "Your Email: (FR)",
+    "yourTeam": "Your Team: (FR)",
+    "profile": {
+      "notSet": "Please set your email and team(FR)"
+    }
   },
   "notice": {
     "startUsingTitle": "Commencez votre auto-évaluation des normes numériques",
@@ -54,6 +59,9 @@
     },
     "fileName": {
       "required": "Veuillez saisir un nom de fichier"
+    },
+    "email": {
+      "invalid": "Invalid email address(FR)"
     }
   },
   "showHideLink": {
@@ -63,7 +71,8 @@
   "buttons": {
     "startAgain": "Recommencer",
     "saveButton": "Sauvegarder",
-    "submitButton": "Soumettre vos résultats"
+    "submitButton": "Soumettre vos résultats",
+    "OK": "OK"
   },
   "htmlCode": "fr-CA",
   "survey": {

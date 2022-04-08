@@ -162,7 +162,7 @@ a:hover {
 }
 
 #app a {
-  color: #284162 !important;
+  color: #284162;
   text-decoration: underline;
   font-size: 1.1em !important;
 }

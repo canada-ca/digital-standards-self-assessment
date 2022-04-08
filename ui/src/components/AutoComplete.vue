@@ -11,6 +11,7 @@
       @keydown.tab="enter"
       @keydown.up="up"
       @keydown.down="down"
+      :placeholder="placeholder"
     />
     <div class="filtered-items" v-if="canShowFilteredItems">
       <div
@@ -28,7 +29,6 @@
 </template>
 
 <script lang="ts">
-import { Template } from '@/interfaces/SurveyFile';
 import { Component, Vue, Prop, Watch } from 'vue-property-decorator';
 
 @Component({})
@@ -41,16 +41,29 @@ export default class AutoComplete extends Vue {
   tempObjectItems = new Array<unknown>();
 
   // props
-  @Prop() items!: Array<any>;
+  @Prop() items!: Array<string>;
   @Prop() objectMatchkey?: string;
-  @Prop() template?: Template;
+  @Prop() placeholder?: string;
+  @Prop() value?: string;
 
   get canShowFilteredItems(): boolean {
     return this.showItems && !!this.filteredItems.length;
   }
 
   mounted() {
-    this.setFilteredItems();
+    this.init();
+  }
+
+  @Watch('items')
+  init() {
+    if (!!this.value) {
+      this.setFilteredItems(this.value);
+      if (this.cursor > -1) {
+        this.searchInput = this.value;
+      }
+    } else {
+      this.setFilteredItems();
+    }
   }
 
   @Watch('searchInput')
@@ -76,12 +89,7 @@ export default class AutoComplete extends Vue {
   }
 
   setFilteredItems(newInput = '') {
-    const areItemsOfStringType: boolean = this.items.every((item) => item && typeof item === 'string');
-    if (areItemsOfStringType) {
-      this.setFilteredItemsForStringType(newInput);
-    } else if (this.items.every((item) => item && typeof item === 'object')) {
-      this.setFilteredItemsForObjectType(newInput);
-    }
+    this.setFilteredItemsForStringType(newInput);
     if (this.filteredItems.length > 0) {
       this.cursor = 0;
     } else {
@@ -95,43 +103,6 @@ export default class AutoComplete extends Vue {
       return this.isMatchFoundInStringItem(stringItem, newInput);
     });
     this.filteredItems = matchedItems.map((item) => String(item));
-  }
-
-  setFilteredItemsForObjectType(newInput: string) {
-    const matchedItems: unknown[] = this.items.filter((item) => {
-      const objectItem: unknown = item as unknown;
-      return this.isMatchFoundInObjectItem(objectItem, newInput);
-    });
-    this.tempObjectItems.splice(0, this.tempObjectItems.length);
-    this.filteredItems =
-      matchedItems.length > 0
-        ? matchedItems.map((item) => this.constructFileteredItemFromObject(item))
-        : this.items.map((item) => this.constructFileteredItemFromObject(item));
-  }
-
-  constructFileteredItemFromObject(item: unknown) {
-    let stringItem = '';
-    if (item && typeof item === 'object') {
-      if (this.template) {
-        stringItem = this.getStringItemBasedOnTemplate(item);
-      } else {
-        stringItem = String(item[this.objectMatchkey as keyof typeof item] ?? '');
-      }
-    }
-    return stringItem;
-  }
-
-  getStringItemBasedOnTemplate(item: unknown) {
-    if (item && typeof item === 'object') {
-      if (this.template && this.template.keys) {
-        const templateKeys: string[] = this.template.keys as string[];
-        const itemValues = templateKeys.map((key) => item[key as keyof typeof item] as string);
-        this.tempObjectItems.push(item);
-        return itemValues.join(this.template.separator);
-      }
-      return String(item[this.objectMatchkey as keyof typeof item]);
-    }
-    return '';
   }
 
   isMatchFoundInStringItem(item: string, newInput: string) {
@@ -202,8 +173,11 @@ export default class AutoComplete extends Vue {
 .ac-container {
   position: relative;
   display: grid;
-  grid-template-columns: auto;
+  grid-template-columns: 100%;
   justify-content: start;
+}
+.ac-container input {
+  width: 100%;
 }
 .filtered-items {
   position: absolute;
@@ -217,7 +191,6 @@ export default class AutoComplete extends Vue {
   min-width: 10rem;
   padding: 0.5rem 0;
   margin: 0.125rem 0 0;
-  font-size: 20px;
   color: #212529;
   text-align: left;
   list-style: none;
@@ -226,7 +199,7 @@ export default class AutoComplete extends Vue {
   border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 0.25rem;
 }
-.container .filtered-items .filtered-item {
+.ac-container .filtered-items .filtered-item {
   cursor: pointer;
   display: block;
   width: 100%;
@@ -239,8 +212,8 @@ export default class AutoComplete extends Vue {
   background-color: transparent;
   border: 0;
 }
-.container .filtered-items .filtered-item:hover,
-.container .filtered-items .filtered-item__hovered {
+.ac-container .filtered-items .filtered-item:hover,
+.ac-container .filtered-items .filtered-item__hovered {
   background-color: #eee;
   color: #101010;
 }

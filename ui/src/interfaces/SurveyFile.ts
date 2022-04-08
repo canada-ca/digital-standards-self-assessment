@@ -6,8 +6,3 @@ export default interface SurveyFile {
   data?: any;
   surveyJSON?: any;
 }
-
-export interface Template {
-  keys: string[];
-  separator: string;
-}
