@@ -81,7 +81,7 @@ export default class NavBar extends Vue {
     return this.profile?.email;
   }
 
-  setTeam(team: string) {
+  setTeam(team: Team) {
     if (!this.profile) {
       this.profile = {} as Profile;
     }
