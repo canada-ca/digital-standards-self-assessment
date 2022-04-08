@@ -29,6 +29,7 @@
 </template>
 
 <script lang="ts">
+import { Team } from '@/interfaces/api-models';
 import { Component, Vue, Prop, Watch } from 'vue-property-decorator';
 
 @Component({})
@@ -41,10 +42,14 @@ export default class AutoComplete extends Vue {
   tempObjectItems = new Array<unknown>();
 
   // props
-  @Prop() items!: Array<string>;
+  @Prop() items!: Array<Team>;
   @Prop() objectMatchkey?: string;
   @Prop() placeholder?: string;
-  @Prop() value?: string;
+  @Prop() value?: Team;
+
+  get lang() {
+    return this.$i18n.locale;
+  }
 
   get canShowFilteredItems(): boolean {
     return this.showItems && !!this.filteredItems.length;
@@ -57,9 +62,10 @@ export default class AutoComplete extends Vue {
   @Watch('items')
   init() {
     if (!!this.value) {
-      this.setFilteredItems(this.value);
+      const strValue = this.lang === 'fr' ? this.value.teamNameFr : this.value.teamNameEn;
+      this.setFilteredItems(strValue);
       if (this.cursor > -1) {
-        this.searchInput = this.value;
+        this.searchInput = strValue;
       }
     } else {
       this.setFilteredItems();
@@ -98,11 +104,13 @@ export default class AutoComplete extends Vue {
   }
 
   setFilteredItemsForStringType(newInput: string) {
-    const matchedItems: unknown[] = this.items.filter((item) => {
-      const stringItem: string = item as string;
-      return this.isMatchFoundInStringItem(stringItem, newInput);
-    });
-    this.filteredItems = matchedItems.map((item) => String(item));
+    if (this.items && this.items.length > 0) {
+      const matchedItems: Team[] = this.items.filter((item) => {
+        const stringItem: string = this.lang === 'fr' ? item.teamNameFr : item.teamNameEn;
+        return this.isMatchFoundInStringItem(stringItem, newInput);
+      });
+      this.filteredItems = matchedItems.map((item) => (this.lang === 'fr' ? item.teamNameFr : item.teamNameEn));
+    }
   }
 
   isMatchFoundInStringItem(item: string, newInput: string) {
@@ -118,10 +126,13 @@ export default class AutoComplete extends Vue {
     return false;
   }
 
-  selectItem(item: string) {
-    if (item) {
-      this.searchInput = this.getSelectedItem(item);
-      this.$emit('inputChanged', this.searchInput);
+  selectItem(value: string) {
+    if (value) {
+      this.searchInput = this.getSelectedItem(value);
+      const selectedItem = this.items.find((item) =>
+        this.lang === 'fr' ? item.teamNameFr === value : item.teamNameEn === value
+      );
+      this.$emit('inputChanged', selectedItem);
       this.showItems = false;
     }
   }

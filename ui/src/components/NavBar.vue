@@ -26,7 +26,7 @@
           {{ $t('validation.email.invalid') }}
         </div>
         <label>{{ $t('navigation.yourTeam') }}</label>
-        <auto-complete :items="strTeams" @inputChanged="setTeam" :value="team" />
+        <auto-complete :items="teams" @inputChanged="setTeam" :value="team" />
         <span />
       </div>
     </b-collapse>
@@ -52,7 +52,6 @@ export default class NavBar extends Vue {
   isProfileSet = false;
   hasError = false;
   teams: Team[] = [];
-  strTeams: string[] = [];
 
   async created() {
     this.profile = this.storedProfile;
@@ -61,13 +60,6 @@ export default class NavBar extends Vue {
       this.hasError = !validateEmail(this.email);
     }
     this.teams = await apiService.findAllTeams();
-    this.changeLanguage(i18n.locale);
-  }
-
-  @Watch('$i18n.locale')
-  changeLanguage(value: string) {
-    const lang = !!value && value === 'fr' ? 'fr' : 'en';
-    this.strTeams = this.teams.map((team) => (lang === 'fr' ? team.teamNameFr : team.teamNameEn));
   }
 
   get profileTitle() {
