@@ -93,13 +93,13 @@ export const actions: ActionTree<RootState, RootState> & Actions = {
   async [ActionTypes.SetAppData]({ commit, dispatch, getters }) {
     commit(MutationType.StartLoading);
     // Get local app data and define state.surveyModel
-    dispatch(ActionTypes.GetLocalAppData);
+    await dispatch(ActionTypes.GetLocalAppData);
     // If successfully loaded surveyModel, set all properties
     if (getters.isStateError === false) {
       let thisSurveyModel: SurveyModel = getters.returnSurveyModel;
       commit(MutationType.SetSurveyModel, thisSurveyModel);
       commit(MutationType.SetSectionsPrefix, appConfigSettings.sectionsPrefix);
-      commit(MutationType.SetCurrentPageNo, thisSurveyModel.currentPageNo);
+      commit(MutationType.SetCurrentPageNo, thisSurveyModel?.currentPageNo);
       commit(MutationType.SetCurrentPageName, '');
       commit(MutationType.SetRecommendations, recommendations);
       let sectionsNames: string[] = getters.returnSectionsNames as string[];

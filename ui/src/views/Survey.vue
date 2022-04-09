@@ -5,7 +5,7 @@
     </div>
     <div class="btn-div">
       <download-survey @confirmToDownload="downloadSurvey" />
-      <upload-survey @surveyDataLoaded="onSurveyDataLoaded" />
+      <b-button class="btn btn-primary" @click="submitAnswers">{{ $t('buttons.submitButton') }}</b-button>
     </div>
   </div>
 </template>
@@ -37,14 +37,6 @@ export default class Survey extends Vue {
   Survey: Model = new Model({});
   sections: PageModel[] = this.returnAllSectionsByPrefix(this.Survey, 'section_');
   sectionRecommendation: SectionRecommendation[] = resultsData.sectionRecommendations;
-
-  fileLoaded($event: SurveyFile) {
-    this.Survey.data = $event.data;
-    this.Survey.currentPageNo = $event.currentPage;
-    this.Survey.start();
-    this.$store.dispatch(ActionTypes.UpdateSurveyData, this.Survey);
-    this.Survey.render();
-  }
 
   private loadQeustions(surveyJSON: any, surveyData: any) {
     this.Survey.clear(true, true);
@@ -106,14 +98,6 @@ export default class Survey extends Vue {
 
     // Set locale
     this.Survey.locale = i18n.locale;
-
-    //if survey is in progress reload from store
-    if (this.$store.getters.inProgress) {
-      this.fileLoaded({
-        currentPage: this.$store.state.currentPageNo,
-        data: this.$store.state.toolData,
-      } as SurveyFile);
-    }
   }
 
   buildSurveyFile(): string {
@@ -135,11 +119,6 @@ export default class Survey extends Vue {
     downloadAnchorNode.click();
     downloadAnchorNode.remove();
   }
-
-  onSurveyDataLoaded($event: SurveyFile) {
-    this.loadQeustions($event.surveyJSON, $event.data);
-    this.fileLoaded($event);
-  }
 }
 </script>
 
@@ -150,5 +129,8 @@ export default class Survey extends Vue {
   flex-wrap: nowrap;
   justify-content: space-between;
   margin-top: 30px;
+}
+.btn-div > button {
+  min-width: 500px !important;
 }
 </style>
