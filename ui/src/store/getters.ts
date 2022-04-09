@@ -180,6 +180,10 @@ export const getters: GetterTree<RootState, RootState> & Getters = {
     return state.surveyJSON;
   },
   // Should use mapstate instead
+  returnCurrentPageNumber(state: RootState) {
+    return state.currentPageNo;
+  },
+  // Should use mapstate instead
   returnSections(state: RootState) {
     return state.sections;
   },
