@@ -40,6 +40,7 @@ export default class Survey extends Vue {
 
   fileLoaded($event: SurveyFile) {
     this.Survey.data = $event.data;
+    this.Survey.currentPageNo = $event.currentPage;
     this.Survey.start();
     this.$store.dispatch(ActionTypes.UpdateSurveyData, this.Survey);
     this.Survey.render();
