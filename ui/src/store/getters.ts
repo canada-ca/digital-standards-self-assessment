@@ -72,6 +72,12 @@ export type Getters = {
    * @returns a JSON object of survey defination
    */
   returnSurveyJSON(state: RootState): any;
+  /**
+   * Returns ```state.currentPageNumber``` from the store
+   * @param state The application state.
+   * @returns A number
+   */
+  returnCurrentPageNumber(state: RootState): number;
   // ---------------
   // Getters below are to help transition to new store structure
   // ---------------
