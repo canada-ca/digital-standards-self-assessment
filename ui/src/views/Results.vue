@@ -104,6 +104,7 @@ export default class Results extends Vue {
   }
   buildSurveyFile(): string {
     return JSON.stringify({
+      currentPage: this.$store.state.currentPageNo,
       data: this.$store.state.toolData,
     });
   }
@@ -181,6 +182,7 @@ export default class Results extends Vue {
   // }
   fileLoaded($event: SurveyFile) {
     this.Survey.data = $event.data;
+    this.Survey.currentPageNo = $event.currentPage;
     this.Survey.start();
     // this.$store.commit("calculateResult", this.Survey);
     this.$store.dispatch(ActionTypes.UpdateSurveyData, this.Survey);
@@ -233,6 +235,7 @@ export default class Results extends Vue {
     //if survey is in progress reload from store
     if (this.$store.getters.inProgress) {
       this.fileLoaded({
+        currentPage: this.$store.state.currentPageNo,
         data: this.$store.state.toolData,
       } as SurveyFile);
     }

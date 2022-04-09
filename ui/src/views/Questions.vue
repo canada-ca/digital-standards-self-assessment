@@ -29,6 +29,7 @@ import { ActionTypes } from '@/store/actions';
   },
 })
 export default class Questions extends Vue {
+  @Prop() public currentPageNo!: number;
   survey: Model = new Model(this.$store.getters.returnSurveyJSON);
 
   goToSurvey() {
@@ -49,6 +50,7 @@ export default class Questions extends Vue {
       this.$store.dispatch(ActionTypes.UpdateSurveyData, result);
       this.$router.push('/results');
     });
+    this.survey.currentPageNo = this.$store.getters.returnCurrentPageNumber;
     this.survey.data = this.$store.getters.resultsDataSections;
     this.survey.locale = this.$i18n.locale;
   }

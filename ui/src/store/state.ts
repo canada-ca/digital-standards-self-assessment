@@ -7,6 +7,7 @@ export interface RootState {
   toolData: any;
   sections: Section[];
   sectionsNames: string[];
+  currentPageNo: number;
   currentPageName?: string;
   recommendations?: Recommendations;
   toolVersion: string;
@@ -112,6 +113,7 @@ export const state: RootState = {
   toolData: undefined,
   sections: [],
   sectionsNames: [],
+  currentPageNo: 0,
   currentPageName: undefined,
   recommendations: undefined,
   toolVersion: '',

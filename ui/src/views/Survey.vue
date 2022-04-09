@@ -109,6 +109,7 @@ export default class Survey extends Vue {
     //if survey is in progress reload from store
     if (this.$store.getters.inProgress) {
       this.fileLoaded({
+        currentPage: this.$store.state.currentPageNo,
         data: this.$store.state.toolData,
       } as SurveyFile);
     }
@@ -118,6 +119,7 @@ export default class Survey extends Vue {
     return JSON.stringify({
       name: 'surveyResults',
       version: this.$store.state.toolVersion,
+      currentPage: this.$store.state.currentPageNo,
       data: this.$store.state.toolData,
       surveyJSON: this.$store.state.surveyJSON,
     });

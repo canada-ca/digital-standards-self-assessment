@@ -99,6 +99,7 @@ export const actions: ActionTree<RootState, RootState> & Actions = {
       let thisSurveyModel: SurveyModel = getters.returnSurveyModel;
       commit(MutationType.SetSurveyModel, thisSurveyModel);
       commit(MutationType.SetSectionsPrefix, appConfigSettings.sectionsPrefix);
+      commit(MutationType.SetCurrentPageNo, thisSurveyModel.currentPageNo);
       commit(MutationType.SetCurrentPageName, '');
       commit(MutationType.SetRecommendations, recommendations);
       let sectionsNames: string[] = getters.returnSectionsNames as string[];
@@ -158,6 +159,7 @@ export const actions: ActionTree<RootState, RootState> & Actions = {
   //Actions below are to help transition to new store structure
   // ---------------
   async [ActionTypes.UpdateSurveyData]({ commit, dispatch, getters }, value: SurveyModel) {
+    commit(MutationType.SetCurrentPageNo, value.currentPageNo);
     if (getters.returnRecommendations === undefined) {
       commit(MutationType.SetRecommendations, appConfig);
     }

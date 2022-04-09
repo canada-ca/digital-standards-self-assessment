@@ -12,6 +12,7 @@ const vuexLocal = new VuexPersistence<RootState>({
   storage: window.localStorage,
   reducer: (state: RootState) => ({
     toolData: state.toolData,
+    currentPageNo: state.currentPageNo,
     currentPageName: state.currentPageName,
     surveyJSON: state.surveyJSON,
     teamReportDataBundleArray: state.teamReportDataBundleArray,
