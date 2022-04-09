@@ -99,7 +99,7 @@ export const actions: ActionTree<RootState, RootState> & Actions = {
       let thisSurveyModel: SurveyModel = getters.returnSurveyModel;
       commit(MutationType.SetSurveyModel, thisSurveyModel);
       commit(MutationType.SetSectionsPrefix, appConfigSettings.sectionsPrefix);
-      commit(MutationType.SetCurrentPageNo, thisSurveyModel?.currentPageNo);
+      commit(MutationType.SetCurrentPageNo, thisSurveyModel.currentPageNo);
       commit(MutationType.SetCurrentPageName, '');
       commit(MutationType.SetRecommendations, recommendations);
       let sectionsNames: string[] = getters.returnSectionsNames as string[];
