@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div>
-      <SurveySectionsContainer :sections="sections" :survey="Survey" :section-recommendation="sectionRecommendation" />
+      <SurveySectionsContainer :sections="sections" :survey="Survey" />
     </div>
     <div class="btn-div">
       <download-survey @confirmToDownload="downloadSurvey" />
@@ -15,12 +15,8 @@ import AssessmentTool from '@/components/AssessmentTool.vue'; // @ is an alias t
 import DownloadSurvey from '@/components/DownloadSurvey.vue';
 import SurveySectionsContainer from '@/components/SurveySectionsContainer.vue';
 import UploadSurvey from '@/components/UploadSurvey.vue';
-import SurveyFile from '@/interfaces/SurveyFile';
 import i18n from '@/plugins/i18n';
 import { ActionTypes } from '@/store/actions';
-import { SectionRecommendation } from '@/store/state';
-import defaultSurveyJSON from '@/survey-enfr.json';
-import resultsData from '@/survey-results.json';
 import showdown from 'showdown';
 import { Model, PageModel, SurveyModel } from 'survey-vue';
 import { Component, Vue, Watch } from 'vue-property-decorator';
@@ -35,10 +31,9 @@ import { Component, Vue, Watch } from 'vue-property-decorator';
 })
 export default class Survey extends Vue {
   Survey: Model = new Model({});
-  sections: PageModel[] = this.returnAllSectionsByPrefix(this.Survey, 'section_');
-  sectionRecommendation: SectionRecommendation[] = resultsData.sectionRecommendations;
+  sections: PageModel[] = [];
 
-  private loadQeustions(surveyJSON: any, surveyData: any) {
+  private async loadQeustions(surveyJSON: any, surveyData: any) {
     this.Survey.clear(true, true);
     const pageCount = this.Survey.PageCount;
     for (let i = 0; i < pageCount; i++) {
@@ -47,7 +42,7 @@ export default class Survey extends Vue {
     this.Survey.fromJSON(surveyJSON);
     this.Survey.data = surveyData;
     this.sections = this.returnAllSectionsByPrefix(this.Survey, 'section_');
-    this.$store.dispatch(ActionTypes.UseSurveyJSON, {
+    await this.$store.dispatch(ActionTypes.UseSurveyJSON, {
       surveyJSON,
       surveyModel: this.Survey,
     });
@@ -69,12 +64,9 @@ export default class Survey extends Vue {
     this.Survey.render();
   }
 
-  created() {
+  async beforeMount() {
     let surveyJSON = this.$store.getters.returnSurveyJSON;
-    if (!surveyJSON) {
-      surveyJSON = defaultSurveyJSON;
-    }
-    this.loadQeustions(surveyJSON, this.$store.getters.returnToolData);
+    await this.loadQeustions(surveyJSON, this.$store.getters.returnToolData);
     this.Survey.css = {
       navigationButton: 'btn survey-button',
     };
@@ -119,6 +111,8 @@ export default class Survey extends Vue {
     downloadAnchorNode.click();
     downloadAnchorNode.remove();
   }
+
+  submitAnswers() {}
 }
 </script>
 
