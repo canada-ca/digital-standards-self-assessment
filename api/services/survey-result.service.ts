@@ -65,7 +65,7 @@ class SurveyResultService {
       return await SurveyResultModel.find({
         createdAt: query,
       })
-        .populate('user', 'firstName lastName team')
+        .populate('team')
         .exec();
     } catch (err: any) {
       if (err instanceof MongoServerError) {

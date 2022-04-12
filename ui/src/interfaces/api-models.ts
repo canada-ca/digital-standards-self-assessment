@@ -68,7 +68,7 @@ export interface Survey extends BaseInterface {
 export interface SurveyResult extends BaseInterface {
   answers: Map<string, any>;
   userEmail: string;
-  team: Team;
-  survey: Survey;
+  team: string | Team;
+  survey: string;
   createdAt: Date;
 }
