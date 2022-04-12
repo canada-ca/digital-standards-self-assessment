@@ -13,15 +13,5 @@ import NavBar from '@/components/NavBar.vue';
 export default Vue.extend({
   name: 'App',
   components: { NavBar },
-  created() {
-    if (this.$store.getters.isInitialized === false) {
-      this.$store.dispatch(ActionTypes.SetAppData);
-    }
-  },
-  mounted() {
-    if (this.$store.getters.returnDisplayWelcome === true) {
-      this.$bvModal.show('welcome-modal');
-    }
-  },
 });
 </script>

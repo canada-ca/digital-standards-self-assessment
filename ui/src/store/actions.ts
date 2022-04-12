@@ -21,13 +21,6 @@ export enum ActionTypes {
    */
   GetLocalAppData = 'GET_LOCAL_APP_DATA',
   /**
-   * Sets app data with ```state.surveyModel```.
-   * If successfull, sets ```state.initialized``` to ```true```.
-   * If not successfull, sets ```state.initialized``` to ```false```.
-   * @param value ```undefined```
-   */
-  SetAppData = 'SET_APP_DATA',
-  /**
    * Sets sections with content of value.
    * @param value an ```SurveyModel``` object
    */
@@ -62,7 +55,6 @@ export type ActionAugments = Omit<ActionContext<RootState, RootState>, 'commit'>
 
 export type Actions = {
   [ActionTypes.GetLocalAppData](context: ActionAugments): void;
-  [ActionTypes.SetAppData](context: ActionAugments): void;
   [ActionTypes.SetSections](context: ActionAugments, value: SurveyModel): void;
   [ActionTypes.UpdateSectionScore](context: ActionAugments, value: PageModel): void;
   // ---------------
@@ -89,34 +81,6 @@ export const actions: ActionTree<RootState, RootState> & Actions = {
     } else {
       commit(MutationType.AppLoadingError);
     }
-  },
-  async [ActionTypes.SetAppData]({ commit, dispatch, getters }) {
-    commit(MutationType.StartLoading);
-    // Get local app data and define state.surveyModel
-    await dispatch(ActionTypes.GetLocalAppData);
-    // If successfully loaded surveyModel, set all properties
-    if (getters.isStateError === false) {
-      let thisSurveyModel: SurveyModel = getters.returnSurveyModel;
-      commit(MutationType.SetSurveyModel, thisSurveyModel);
-      commit(MutationType.SetSectionsPrefix, appConfigSettings.sectionsPrefix);
-      commit(MutationType.SetCurrentPageNo, thisSurveyModel.currentPageNo);
-      commit(MutationType.SetCurrentPageName, '');
-      commit(MutationType.SetRecommendations, recommendations);
-      let sectionsNames: string[] = getters.returnSectionsNames as string[];
-      if (sectionsNames.length === 0) {
-        sectionsNames = getters.returnSectionsNamesGenerated;
-        commit(MutationType.SetSectionsNames, sectionsNames);
-      }
-      let sections: Section[] = getters.returnSections as Section[];
-      if (sections.length === 0) {
-        dispatch(ActionTypes.SetSections, thisSurveyModel);
-      }
-      let toolData: any = getters.returnToolData;
-      commit(MutationType.SetToolData, toolData);
-      commit(MutationType.SetToolVersion, appConfigSettings.version);
-      commit(MutationType.Initialized);
-    }
-    commit(MutationType.StopLoading);
   },
   async [ActionTypes.SetSections]({ commit, getters }, value: SurveyModel) {
     let sections: Section[] = [];
@@ -180,10 +144,10 @@ export const actions: ActionTree<RootState, RootState> & Actions = {
     commit(MutationType.SetSurveyModel, surveyModel);
     const sectionsNames = getters.returnSectionsNamesGenerated;
     commit(MutationType.SetSectionsNames, sectionsNames);
-    surveyModel.pages.forEach((page: any) => {
-      dispatch(ActionTypes.UpdateSectionScore, page);
+    await dispatch(ActionTypes.SetSections, surveyModel);
+    surveyModel.pages.forEach(async (page: any) => {
+      await dispatch(ActionTypes.UpdateSectionScore, page);
     });
-    dispatch(ActionTypes.SetSections, surveyModel);
   },
   async [ActionTypes.AddTeamSurvey]({ commit }, { teamReportDataBundle }) {
     commit(MutationType.AddTeamSurvey, teamReportDataBundle);
