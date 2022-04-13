@@ -1,5 +1,5 @@
 interface BaseInterface {
-  _id: string;
+  _id?: string;
 }
 
 export interface Team extends BaseInterface {
@@ -62,7 +62,7 @@ export interface Survey extends BaseInterface {
   showQuestionNumbers: 'on' | 'off';
   showProgressBar: 'true' | 'false';
   showNavigationButtons: 'true' | 'false';
-  createdAt: Date;
+  createdAt?: Date;
 }
 
 export interface SurveyResult extends BaseInterface {
@@ -70,5 +70,5 @@ export interface SurveyResult extends BaseInterface {
   userEmail: string;
   team: string | Team;
   survey: string;
-  createdAt: Date;
+  createdAt?: Date;
 }

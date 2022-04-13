@@ -15,7 +15,9 @@ import AssessmentTool from '@/components/AssessmentTool.vue'; // @ is an alias t
 import DownloadSurvey from '@/components/DownloadSurvey.vue';
 import SurveySectionsContainer from '@/components/SurveySectionsContainer.vue';
 import UploadSurvey from '@/components/UploadSurvey.vue';
+import { SurveyResult } from '@/interfaces/api-models';
 import i18n from '@/plugins/i18n';
+import apiService from '@/services/api.service';
 import { ActionTypes } from '@/store/actions';
 import showdown from 'showdown';
 import { Model, PageModel, SurveyModel } from 'survey-vue';
@@ -64,7 +66,16 @@ export default class Survey extends Vue {
     this.Survey.render();
   }
 
+  private delay(ms: number) {
+    return new Promise((resolve) => setTimeout(resolve, ms));
+  }
+
   async beforeMount() {
+    console.log('Survey beforeMount');
+    while (!this.$store.getters.isInitialized) {
+      console.log('delay 100 ms');
+      await this.delay(100);
+    }
     let surveyJSON = this.$store.getters.returnSurveyJSON;
     await this.loadQeustions(surveyJSON, this.$store.getters.returnToolData);
     this.Survey.css = {
@@ -112,7 +123,22 @@ export default class Survey extends Vue {
     downloadAnchorNode.remove();
   }
 
-  submitAnswers() {}
+  async submitAnswers() {
+    const profile = this.$store.getters.returnProfile;
+    const isProfileSet = !!profile && !!profile.email && !!profile.team;
+
+    if (isProfileSet) {
+      const result: SurveyResult = {
+        answers: this.$store.getters.returnToolData,
+        team: profile.team,
+        userEmail: profile.email,
+        survey: this.$store.getters.returnSurveyJSON._id,
+      };
+      await apiService.saveSurveyResult(result);
+    } else {
+      alert('Please input your email and team');
+    }
+  }
 }
 </script>
 

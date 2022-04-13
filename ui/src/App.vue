@@ -13,5 +13,19 @@ import NavBar from '@/components/NavBar.vue';
 export default Vue.extend({
   name: 'App',
   components: { NavBar },
+
+  async created() {
+    if (this.$store.getters.isInitialized === false) {
+      await this.$store.dispatch(ActionTypes.SetAppData);
+    }
+    while (!this.$store.getters.isInitialized) {
+      await this.delay(100);
+    }
+  },
+  methods: {
+    delay(ms: number) {
+      return new Promise((resolve) => setTimeout(resolve, ms));
+    },
+  },
 });
 </script>
