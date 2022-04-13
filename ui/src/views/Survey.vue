@@ -73,7 +73,6 @@ export default class Survey extends Vue {
   async beforeMount() {
     console.log('Survey beforeMount');
     while (!this.$store.getters.isInitialized) {
-      console.log('delay 100 ms');
       await this.delay(100);
     }
     let surveyJSON = this.$store.getters.returnSurveyJSON;

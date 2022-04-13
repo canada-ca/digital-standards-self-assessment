@@ -54,7 +54,7 @@ export default class NavBar extends Vue {
   teams: Team[] = [];
 
   async created() {
-    this.profile = this.storedProfile;
+    this.profile = this.$store.getters.returnProfile;
     this.watchProfile();
     if (this.email) {
       this.hasError = !validateEmail(this.email);
@@ -68,9 +68,6 @@ export default class NavBar extends Vue {
     } else {
       return i18n.t('navigation.profile.notSet');
     }
-  }
-  get storedProfile() {
-    return this.$store.getters.returnProfile;
   }
 
   get team() {
@@ -101,7 +98,7 @@ export default class NavBar extends Vue {
     this.$store.dispatch(ActionTypes.SaveProfile, this.profile);
   }
 
-  @Watch('storedProfile')
+  @Watch('$store.getters.returnProfile')
   watchProfile() {
     this.isProfileSet = !!this.profile && !!this.profile.email && !!this.profile.team;
   }

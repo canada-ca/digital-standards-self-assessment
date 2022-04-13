@@ -8,7 +8,6 @@
       @focus="focus"
       @keyup.esc="escape"
       @keyup.enter="enter"
-      @keydown.tab="enter"
       @keydown.up="up"
       @keydown.down="down"
       :placeholder="placeholder"
@@ -79,6 +78,9 @@ export default class AutoComplete extends Vue {
 
   blur() {
     setTimeout(() => {
+      if (this.searchInput === '') {
+        this.$emit('inputChanged', undefined);
+      }
       if (this.showItems && !this.filteredItems[this.cursor]) {
         this.searchInput = '';
       }
