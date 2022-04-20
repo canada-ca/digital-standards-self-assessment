@@ -133,7 +133,7 @@ export default class Survey extends Vue {
         userEmail: profile.email,
         survey: this.$store.getters.returnSurveyJSON._id,
       };
-      await apiService.saveSurveyResult(result);
+      const newResult = await apiService.saveSurveyResult(result);
     } else {
       alert('Please input your email and team');
     }

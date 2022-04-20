@@ -7,9 +7,9 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from "vue-property-decorator";
-import { Model } from "survey-vue";
-import showdown from "showdown";
+import { Component, Prop, Vue } from 'vue-property-decorator';
+import { Model } from 'survey-vue';
+import showdown from 'showdown';
 
 @Component
 export default class AssessmentTool extends Vue {
@@ -25,21 +25,28 @@ export default class AssessmentTool extends Vue {
       //set html
       options.html = str;
     });
-    for (let item of document.getElementsByClassName("sv_q_rating_min_text")) {
-      const fldset = item.closest("fieldset");
-      const lbl = document.createElement("LABEL");
-      lbl.className = "rating-min-label";
+    for (let item of document.getElementsByClassName('sv_q_rating_min_text')) {
+      const fldset = item.closest('fieldset');
+      const lbl = document.createElement('LABEL');
+      lbl.className = 'rating-min-label';
       lbl.appendChild(item);
       fldset?.prepend(lbl);
     }
 
-    for (let item of document.getElementsByClassName("sv_q_rating_max_text")) {
-      const fldset = item.closest("fieldset");
-      const lbl = document.createElement("LABEL");
-      lbl.className = "rating-max-label";
+    for (let item of document.getElementsByClassName('sv_q_rating_max_text')) {
+      const fldset = item.closest('fieldset');
+      const lbl = document.createElement('LABEL');
+      lbl.className = 'rating-max-label';
       lbl.appendChild(item);
       fldset?.append(lbl);
     }
   }
 }
 </script>
+
+<style scoped>
+#surveyContainer /deep/ div.small {
+  font-size: 20px !important;
+  color: black !important;
+}
+</style>

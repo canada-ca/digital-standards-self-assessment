@@ -82,6 +82,8 @@
   },
   "teamResults": {
     "title": "Aperçu des résultats de l'équipe",
+    "startDate": "Start Date:(FR)",
+    "endDate": "End Date:(FR)",
     "description": "Les résultats s'afficheront ci-dessous une fois que vous aurez téléversé un ou plusieurs sondages.",
     "uploadSurveys": "Téléverser le ou les sondages",
     "calcResults": "Calculer les résultats",

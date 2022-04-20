@@ -4,7 +4,7 @@
       type="search"
       v-model="searchInput"
       @blur="blur"
-      @input="inputChanged"
+      @input="onInputChanged"
       @focus="focus"
       @keyup.esc="escape"
       @keyup.enter="enter"
@@ -36,8 +36,8 @@ export default class AutoComplete extends Vue {
   // data
   searchInput = '';
   showItems = false;
-  filteredItems = new Array<string>();
   cursor = -1;
+  filteredItems = new Array<string>();
   tempObjectItems = new Array<unknown>();
 
   // props
@@ -45,6 +45,8 @@ export default class AutoComplete extends Vue {
   @Prop() objectMatchkey?: string;
   @Prop() placeholder?: string;
   @Prop() value?: Team;
+
+  selectedTeam?: Team;
 
   get lang() {
     return this.$i18n.locale;
@@ -55,13 +57,17 @@ export default class AutoComplete extends Vue {
   }
 
   mounted() {
-    this.init();
+    this.onItemChanged();
   }
 
+  @Watch('$i18n.locale')
   @Watch('items')
-  init() {
+  onItemChanged() {
     if (!!this.value) {
-      const strValue = this.lang === 'fr' ? this.value.teamNameFr : this.value.teamNameEn;
+      this.selectedTeam = this.value;
+    }
+    if (!!this.selectedTeam) {
+      const strValue = this.lang === 'fr' ? this.selectedTeam.teamNameFr : this.selectedTeam.teamNameEn;
       this.setFilteredItems(strValue);
       if (this.cursor > -1) {
         this.searchInput = strValue;
@@ -79,7 +85,8 @@ export default class AutoComplete extends Vue {
   blur() {
     setTimeout(() => {
       if (this.searchInput === '') {
-        this.$emit('inputChanged', undefined);
+        this.$emit('valueChanged', undefined);
+        this.selectedTeam = undefined;
       }
       if (this.showItems && !this.filteredItems[this.cursor]) {
         this.searchInput = '';
@@ -92,7 +99,7 @@ export default class AutoComplete extends Vue {
     this.showItems = true;
   }
 
-  inputChanged() {
+  onInputChanged() {
     this.showItems = true;
   }
 
@@ -128,13 +135,14 @@ export default class AutoComplete extends Vue {
     return false;
   }
 
-  selectItem(value: string) {
-    if (value) {
-      this.searchInput = this.getSelectedItem(value);
+  selectItem(fieldValue: string) {
+    if (fieldValue) {
+      this.searchInput = this.getSelectedItem(fieldValue);
       const selectedItem = this.items.find((item) =>
-        this.lang === 'fr' ? item.teamNameFr === value : item.teamNameEn === value
+        this.lang === 'fr' ? item.teamNameFr === fieldValue : item.teamNameEn === fieldValue
       );
-      this.$emit('inputChanged', selectedItem);
+      this.$emit('valueChanged', selectedItem);
+      this.selectedTeam = selectedItem;
       this.showItems = false;
     }
   }

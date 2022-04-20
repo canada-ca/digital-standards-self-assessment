@@ -9,7 +9,7 @@
           <router-link class="menu-link" to="/survey">{{ $t('navigation.survey') }}</router-link>
           <router-link class="menu-link" to="/teamSurveys">{{ $t('navigation.teamsSurvey') }}</router-link>
           <b-link class="menu-link" v-b-toggle.collapse-1>
-            <i class="fa fa-user" :title="profileTitle" />
+            <i class="fa fa-user" v-b-tooltip.hover="{ customClass: 'tooltip-class' }" :title="profileTitle" />
             <sup v-if="isProfileSet">
               <span class="badge badge-warning"><i class="fa fa-check fa-xs" /></span>
             </sup>
@@ -26,7 +26,7 @@
           {{ $t('validation.email.invalid') }}
         </div>
         <label>{{ $t('navigation.yourTeam') }}</label>
-        <auto-complete :items="teams" @inputChanged="setTeam" :value="team" />
+        <auto-complete :items="teams" @valueChanged="setTeam" :value="team" />
         <span />
       </div>
     </b-collapse>
@@ -162,5 +162,9 @@ export default class NavBar extends Vue {
 .email-error {
   grid-row: 2;
   grid-column: 3;
+}
+
+.tooltip-class {
+  font-size: 16px;
 }
 </style>
