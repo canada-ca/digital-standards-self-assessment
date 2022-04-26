@@ -51,6 +51,7 @@ export enum ActionTypes {
   // Actions for team survey
   AddTeamSurvey = 'ADD_TEAM_SURVEY',
   DeleteTeamSurvey = 'DELETE_TEAM_SURVEY',
+  SetTeamSurveys = 'SET_TEAM_SURVEYS',
   ShowIndividualBreakdown = 'SHOW_INDIVIDUAL_BREAKDOWN',
   HideIndividualBreakdown = 'HIDE_INDIVIDUAL_BREAKDOWN',
   SaveProfile = 'SAVE_PROFILE',
@@ -74,6 +75,7 @@ export type Actions = {
   // Team Survey actions
   [ActionTypes.AddTeamSurvey](context: ActionAugments, value: { teamReportDataBundle: TeamReportDataBundle }): void;
   [ActionTypes.DeleteTeamSurvey](context: ActionAugments, value: string): void;
+  [ActionTypes.SetTeamSurveys](contest: ActionAugments, value: TeamReportDataBundle[]): void;
   [ActionTypes.ShowIndividualBreakdown](context: ActionAugments, value: string): void;
   [ActionTypes.HideIndividualBreakdown](context: ActionAugments): void;
   [ActionTypes.SaveProfile](content: ActionAugments, profile: Profile): void;
@@ -191,6 +193,9 @@ export const actions: ActionTree<RootState, RootState> & Actions = {
   },
   async [ActionTypes.DeleteTeamSurvey]({ commit }, teamName) {
     commit(MutationType.DeleteTeamSurvey, teamName);
+  },
+  async [ActionTypes.SetTeamSurveys]({ commit }, teamReportDataBundleArray) {
+    commit(MutationType.SetTeamSurveys, teamReportDataBundleArray);
   },
   async [ActionTypes.ShowIndividualBreakdown]({ commit }, teamName) {
     commit(MutationType.ShowIndividualBreakdown, teamName);

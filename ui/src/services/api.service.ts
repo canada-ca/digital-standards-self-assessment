@@ -31,9 +31,9 @@ class ApiService {
     }
   }
 
-  async findSurveyResults(startDate: Date, endDate: Date): Promise<SurveyResult> {
+  async findSurveyResults(startDate: Date, endDate: Date): Promise<SurveyResult[]> {
     try {
-      const res: AxiosResponse<SurveyResult> = await axios.get<SurveyResult>(
+      const res: AxiosResponse<SurveyResult[]> = await axios.get<SurveyResult[]>(
         `${this.apiBaseUrl}/survey-result?startDate=${startDate}&endDate=${endDate}`,
         option
       );

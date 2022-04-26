@@ -82,6 +82,8 @@
   },
   "teamResults": {
     "title": "Team Results Overview",
+    "startDate": "Start Date:",
+    "endDate": "End Date:",
     "description": "Results will apear below once you have uploaded 1 or more survey(s).",
     "uploadSurveys": "Upload Survey(s)",
     "calcResults": "Calculate Results",

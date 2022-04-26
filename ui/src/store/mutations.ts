@@ -72,6 +72,7 @@ export enum MutationType {
   // Team Survey Mutations
   AddTeamSurvey = 'ADD_TEAM_SURVEY',
   DeleteTeamSurvey = 'DELETE_TEAM_SURVEY',
+  SetTeamSurveys = 'SET_TEAM_SURVEYS',
   ShowIndividualBreakdown = 'SHOW_INDIVIDUAL_BREAKDOWN',
   HideIndividualBreakdown = 'HIDE_INDIVIDUAL_BREAKDOWN',
   SaveProfile = 'SAVE_PROFILE',
@@ -97,6 +98,7 @@ export type Mutations = {
   [MutationType.SetSurveyJSON](state: RootState, payload: any): void;
   [MutationType.AddTeamSurvey](state: RootState, payload: TeamReportDataBundle): void;
   [MutationType.DeleteTeamSurvey](state: RootState, payload: string): void;
+  [MutationType.SetTeamSurveys](state: RootState, payload: TeamReportDataBundle[]): void;
   [MutationType.ShowIndividualBreakdown](state: RootState, payload: string): void;
   [MutationType.HideIndividualBreakdown](state: RootState): void;
   [MutationType.SaveProfile](state: RootState, profile: Profile): void;
@@ -184,6 +186,14 @@ export const mutations: MutationTree<RootState> & Mutations = {
       state.showBreakdown = false;
       state.individualTeamReportDataArray = [];
     }
+  },
+  [MutationType.SetTeamSurveys](state: RootState, payload: TeamReportDataBundle[]) {
+    state.teamReportDataBundleArray = [...payload];
+    const teamAverageReportDataArray: TeamReportData[] = [];
+    state.teamReportDataBundleArray.forEach((bundle) => {
+      teamAverageReportDataArray.push(bundle.teamAverageReportData);
+    });
+    state.teamAverageReportDataArray = teamAverageReportDataArray;
   },
   [MutationType.ShowIndividualBreakdown](state: RootState, payload: string) {
     const reportDataBundle = state.teamReportDataBundleArray.find((d) => d.teamName === payload);

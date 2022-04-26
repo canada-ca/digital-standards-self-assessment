@@ -87,39 +87,6 @@ p,
   margin: 0 0 11.5px !important;
 }
 
-div.small {
-  font-size: 20px !important;
-  color: black !important;
-}
-
-.col-md-2 {
-  width: 16.6666666667% !important;
-}
-
-.col-md-10 {
-  width: 83.3333333333% !important;
-}
-.col-md-1,
-.col-md-10,
-.col-md-11,
-.col-md-12,
-.col-md-2,
-.col-md-3,
-.col-md-4,
-.col-md-5,
-.col-md-6,
-.col-md-7,
-.col-md-8,
-.col-md-9 {
-  float: left !important;
-}
-
-.row {
-  display: block !important;
-  margin-right: -15px !important;
-  margin-left: -15px !important;
-}
-
 .list-item {
   display: list-item !important;
   list-style-position: inside !important;
@@ -169,17 +136,8 @@ a:hover {
 
 .btn {
   font-family: 'Open Sans', sans-serif !important;
-}
-
-.btn {
   border-style: outset !important;
-  height: auto !important;
-  min-height: 40px !important;
-  min-width: 50px !important;
   white-space: normal !important;
-}
-
-.btn {
   display: inline-block !important;
   margin-bottom: 0 !important;
   margin-right: 3px !important;
@@ -191,9 +149,7 @@ a:hover {
   cursor: pointer !important;
   background-image: none !important;
   border: 1px solid transparent !important;
-  padding: 6px 10px !important;
   font-size: 18px !important;
-  line-height: 1.4375 !important;
   border-radius: 4px !important;
   -webkit-user-select: none !important;
   -moz-user-select: none !important;

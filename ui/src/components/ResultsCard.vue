@@ -1,13 +1,10 @@
 <template>
   <b-card class="mt-2">
-    <b-card-header class="h3">
+    <b-card-header>
       {{ getSectionName(thisSurveyData, sectionName) }}
     </b-card-header>
     <b-card-body>
-      <p class="h5">
-        {{ $t("survey.currentScore") }}:
-        {{ sectionScoreLevel(userScore, maxScore) }}%
-      </p>
+      <p class="h5">{{ $t('survey.currentScore') }}: {{ sectionScoreLevel(userScore, maxScore) }}%</p>
       <p></p>
       <ResultRecommendations
         v-if="!showRecommendation"
@@ -21,14 +18,14 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue, Prop } from "vue-property-decorator";
-import { SurveyModel } from "survey-vue";
-import { Recommendations } from "@/types";
-import ResultRecommendations from "@/components/ResultRecommendations.vue";
+import { Component, Vue, Prop } from 'vue-property-decorator';
+import { SurveyModel } from 'survey-vue';
+import { Recommendations } from '@/types';
+import ResultRecommendations from '@/components/ResultRecommendations.vue';
 @Component({
   components: { ResultsCard, ResultRecommendations },
   computed: {
-    showRecommendation: () => process.env.VUE_APP_SHOW_RECOMMENDATION
+    showRecommendation: () => process.env.VUE_APP_SHOW_RECOMMENDATION,
   },
   methods: {
     getSectionName(surveyData: SurveyModel, sectionName: string) {
@@ -37,12 +34,12 @@ import ResultRecommendations from "@/components/ResultRecommendations.vue";
       return page.title;
     },
     sectionScoreLevel(userScore: number, maxScore: number) {
-      return new Intl.NumberFormat("en-CA", {
-        style: "decimal",
-        maximumFractionDigits: 0
+      return new Intl.NumberFormat('en-CA', {
+        style: 'decimal',
+        maximumFractionDigits: 0,
       }).format((userScore / maxScore) * 100);
-    }
-  }
+    },
+  },
 })
 export default class ResultsCard extends Vue {
   @Prop() public sectionName!: string;
