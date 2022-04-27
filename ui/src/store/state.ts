@@ -51,6 +51,7 @@ export interface SectionReportData {
   maxScore: number;
   questions: Array<QuestionReportData>;
   title: string;
+  createdAt?: Date;
 }
 
 export interface QuestionReportData {

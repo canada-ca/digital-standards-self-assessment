@@ -188,6 +188,10 @@ export const mutations: MutationTree<RootState> & Mutations = {
     }
   },
   [MutationType.SetTeamSurveys](state: RootState, payload: TeamReportDataBundle[]) {
+    payload.forEach((item) => {
+      item.teamReportDataArray.sort((a, b) => (a.name < b.name ? -1 : a.name == b.name ? 0 : 1));
+    });
+    payload.sort((a, b) => (a.teamName < b.teamName ? -1 : a.teamName == b.teamName ? 0 : 1));
     state.teamReportDataBundleArray = [...payload];
     const teamAverageReportDataArray: TeamReportData[] = [];
     state.teamReportDataBundleArray.forEach((bundle) => {

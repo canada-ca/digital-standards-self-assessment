@@ -4,11 +4,23 @@
       <div class="col date-range">
         <div class="form-group">
           <label for="startDate">{{ $t('teamResults.startDate') }}</label>
-          <b-form-datepicker id="startDate" v-model="startDate" :locale="locale" v-bind="labels[locale] || {}" />
+          <b-form-datepicker
+            id="startDate"
+            v-model="startDate"
+            :locale="locale"
+            v-bind="labels[locale] || {}"
+            :date-format-options="{ year: 'numeric', month: 'short', day: '2-digit' }"
+          />
         </div>
         <div class="form-group">
           <label for="endDate">{{ $t('teamResults.endDate') }}</label>
-          <b-form-datepicker id="endDate" v-model="endDate" :locale="locale" v-bind="labels[locale] || {}" />
+          <b-form-datepicker
+            id="endDate"
+            v-model="endDate"
+            :locale="locale"
+            v-bind="labels[locale] || {}"
+            :date-format-options="{ year: 'numeric', month: 'short', day: '2-digit' }"
+          />
         </div>
         <div class="form-group">
           <b-button class="btn btn-primary minwidth-100" @click="retrieveTeamResults()">{{
@@ -99,7 +111,10 @@ export default class RetrieveTeamSurveys extends Vue {
     const userEmail = result.userEmail;
     const answers = result.answers;
 
-    const reportData: TeamReportData = { name: userEmail, sections: this.extractSectionReportData(answers) };
+    const reportData: TeamReportData = {
+      name: userEmail,
+      sections: this.extractSectionReportData(answers, result.createdAt),
+    };
 
     let bundle = this.teamReportDataBundles.get(teamName);
     if (!bundle) {
@@ -114,7 +129,7 @@ export default class RetrieveTeamSurveys extends Vue {
     }
   }
 
-  private extractSectionReportData(answers: Map<string, any>): Array<SectionReportData> {
+  private extractSectionReportData(answers: Map<string, any>, createdAt?: Date): Array<SectionReportData> {
     const sectionReportDataArray: Array<SectionReportData> = [];
     if (this.surveyJson) {
       let survey: Model = new Model(this.surveyJson);
@@ -126,6 +141,7 @@ export default class RetrieveTeamSurveys extends Vue {
           maxScore: calcSectionMaxScore(page.name, this.surveyJson),
           questions: [],
           title: page.title,
+          createdAt,
         };
         page.questions.forEach((question: any) => {
           sectionReportData.questions.push({
