@@ -172,7 +172,7 @@ export default class RetrieveTeamSurveys extends Vue {
       const scoresMap: Map<String, any[]> = new Map();
       const bundle = this.teamReportDataBundles.get(teamName);
       const teamReportDataArray = bundle?.teamReportDataArray;
-      if (teamReportDataArray && teamReportDataArray.length > 0) {
+      if (!!bundle && teamReportDataArray && teamReportDataArray.length > 0) {
         for (const reportData of teamReportDataArray) {
           for (const section of reportData.sections) {
             if (!scoresMap.has(section.name)) {

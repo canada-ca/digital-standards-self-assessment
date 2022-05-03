@@ -256,3 +256,6 @@ div .sv-vue-row-additional-div {
 .sv-boolean__label--disabled {
   color: rgb(64, 64, 64, 0.8) !important;
 }
+.alert-dismissible .close {
+  font-size: 24px !important;
+}

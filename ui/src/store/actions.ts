@@ -55,6 +55,7 @@ export enum ActionTypes {
   ShowIndividualBreakdown = 'SHOW_INDIVIDUAL_BREAKDOWN',
   HideIndividualBreakdown = 'HIDE_INDIVIDUAL_BREAKDOWN',
   SaveProfile = 'SAVE_PROFILE',
+  ShowHideProfile = 'SHOW_HIDE_PROFILE',
 }
 
 export type ActionAugments = Omit<ActionContext<RootState, RootState>, 'commit'> & {
@@ -79,6 +80,7 @@ export type Actions = {
   [ActionTypes.ShowIndividualBreakdown](context: ActionAugments, value: string): void;
   [ActionTypes.HideIndividualBreakdown](context: ActionAugments): void;
   [ActionTypes.SaveProfile](content: ActionAugments, profile: Profile): void;
+  [ActionTypes.ShowHideProfile](content: ActionAugments, show: boolean): void;
 };
 
 export const actions: ActionTree<RootState, RootState> & Actions = {
@@ -205,5 +207,8 @@ export const actions: ActionTree<RootState, RootState> & Actions = {
   },
   async [ActionTypes.SaveProfile]({ commit }, profile: Profile) {
     commit(MutationType.SaveProfile, profile);
+  },
+  [ActionTypes.ShowHideProfile]({ commit }, show: boolean) {
+    commit(MutationType.ShowHideProfile, show);
   },
 };

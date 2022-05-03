@@ -8,7 +8,7 @@
         <div class="menu-sec">
           <router-link class="menu-link" to="/survey">{{ $t('navigation.survey') }}</router-link>
           <router-link class="menu-link" to="/teamSurveys">{{ $t('navigation.teamsSurvey') }}</router-link>
-          <b-link class="menu-link" v-b-toggle.collapse-1>
+          <b-link class="menu-link" @click.prevent="toggleProfile()">
             <i class="fa fa-user" v-b-tooltip.hover="{ customClass: 'tooltip-class' }" :title="profileTitle" />
             <sup v-if="isProfileSet">
               <span class="badge badge-warning"><i class="fa fa-check fa-xs" /></span>
@@ -17,7 +17,7 @@
         </div>
       </div>
     </div>
-    <b-collapse id="collapse-1">
+    <b-collapse v-model="showProfile">
       <div class="profile-card">
         <span />
         <label>{{ $t('navigation.yourEmail') }}</label>
@@ -41,6 +41,7 @@ import { validateEmail } from '@/utils/utils';
 import i18n from '@/plugins/i18n';
 import apiService from '@/services/api.service';
 import { Team } from '@/interfaces/api-models';
+import { Action } from 'survey-vue';
 
 @Component({
   components: {
@@ -49,17 +50,35 @@ import { Team } from '@/interfaces/api-models';
 })
 export default class NavBar extends Vue {
   profile?: Profile;
+  showProfile = false;
   isProfileSet = false;
   hasError = false;
   teams: Team[] = [];
 
   async created() {
     this.profile = this.$store.getters.returnProfile;
+    this.showProfile = this.$store.getters.showProfile;
     this.watchProfile();
     if (this.email) {
       this.hasError = !validateEmail(this.email);
     }
     this.teams = await apiService.findAllTeams();
+  }
+
+  @Watch('$store.getters.returnShowProfile')
+  watchShowProfile() {
+    this.showProfile = this.$store.getters.returnShowProfile;
+    if (this.showProfile) {
+    }
+  }
+
+  @Watch('$store.getters.returnProfile')
+  watchProfile() {
+    this.isProfileSet = !!this.profile && !!this.profile.email && !!this.profile.team;
+  }
+
+  toggleProfile() {
+    this.$store.dispatch(ActionTypes.ShowHideProfile, !this.showProfile);
   }
 
   get profileTitle() {
@@ -96,11 +115,6 @@ export default class NavBar extends Vue {
     }
     this.profile = { ...this.profile, email };
     this.$store.dispatch(ActionTypes.SaveProfile, this.profile);
-  }
-
-  @Watch('$store.getters.returnProfile')
-  watchProfile() {
-    this.isProfileSet = !!this.profile && !!this.profile.email && !!this.profile.team;
   }
 }
 </script>

@@ -76,6 +76,7 @@ export enum MutationType {
   ShowIndividualBreakdown = 'SHOW_INDIVIDUAL_BREAKDOWN',
   HideIndividualBreakdown = 'HIDE_INDIVIDUAL_BREAKDOWN',
   SaveProfile = 'SAVE_PROFILE',
+  ShowHideProfile = 'TOGGLE_PROFILE',
 }
 
 export type Mutations = {
@@ -102,6 +103,7 @@ export type Mutations = {
   [MutationType.ShowIndividualBreakdown](state: RootState, payload: string): void;
   [MutationType.HideIndividualBreakdown](state: RootState): void;
   [MutationType.SaveProfile](state: RootState, profile: Profile): void;
+  [MutationType.ShowHideProfile](state: RootState, show: boolean): void;
 };
 
 export const mutations: MutationTree<RootState> & Mutations = {
@@ -214,5 +216,8 @@ export const mutations: MutationTree<RootState> & Mutations = {
   },
   [MutationType.SaveProfile](state: RootState, profile: Profile) {
     state.profile = profile;
+  },
+  [MutationType.ShowHideProfile](state: RootState, show: boolean) {
+    state.showProfile = show;
   },
 };

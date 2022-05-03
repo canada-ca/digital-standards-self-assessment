@@ -22,6 +22,7 @@ export interface RootState {
   individualTeamName: string;
   showBreakdown: boolean;
   profile?: Profile;
+  showProfile: boolean;
 }
 
 export interface Section {
@@ -128,4 +129,5 @@ export const state: RootState = {
   individualTeamName: '',
   individualTeamReportDataArray: [],
   showBreakdown: false,
+  showProfile: false,
 };

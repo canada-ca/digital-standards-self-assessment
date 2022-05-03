@@ -94,6 +94,7 @@ export type Getters = {
   returnShowBreakdown(state: RootState): boolean;
   returnSectionMaxScore(state: RootState): (section: string) => number;
   returnProfile(state: RootState): Profile | undefined;
+  returnShowProfile(state: RootState): boolean;
 };
 
 export const getters: GetterTree<RootState, RootState> & Getters = {
@@ -213,5 +214,8 @@ export const getters: GetterTree<RootState, RootState> & Getters = {
   },
   returnProfile(state: RootState) {
     return state.profile;
+  },
+  returnShowProfile(state: RootState) {
+    return state.showProfile;
   },
 };

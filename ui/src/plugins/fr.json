@@ -85,15 +85,13 @@
     "startDate": "Start Date:(FR)",
     "endDate": "End Date:(FR)",
     "description": "Les résultats s'afficheront ci-dessous une fois que vous aurez téléversé un ou plusieurs sondages.",
-    "uploadSurveys": "Téléverser le ou les sondages",
     "calcResults": "Calculer les résultats",
-    "teamName": "Nom de l'équipe",
-    "teamNamePlaceholder": "Veuillez entrer un nom d'équipe",
-    "teamNameRequired": "Le nom de l'équipe est obligatoire",
-    "deleteTeam": "Cliquez pour supprimer cette équipe",
     "showIndividualBreakdownInstruction": "**REMARQUE** : Cliquez sur le nom de l'équipe pour afficher la répartition individuelle.",
     "showIndividualBreakdown": "Cliquez pour afficher la répartition individuelle.",
     "hideIndividualBreakdown": "Masquer la répartition individuelle.",
-    "actions": "Actions"
+    "actions": "Actions",
+    "submitSuccess": "Submit successfully!(FR)",
+    "submitFailed": "Submit failed, please try again later.(FR)",
+    "profileIsRequired": "Please enter your email and team name(FR)"
   }
 }

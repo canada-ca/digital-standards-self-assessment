@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+    <message ref="message" />
     <div>
       <SurveySectionsContainer :sections="sections" :survey="Survey" />
     </div>
@@ -15,6 +16,7 @@ import AssessmentTool from '@/components/AssessmentTool.vue'; // @ is an alias t
 import DownloadSurvey from '@/components/DownloadSurvey.vue';
 import SurveySectionsContainer from '@/components/SurveySectionsContainer.vue';
 import UploadSurvey from '@/components/UploadSurvey.vue';
+import Message, { MessageVariantType } from '@/components/Message.vue';
 import { SurveyResult } from '@/interfaces/api-models';
 import i18n from '@/plugins/i18n';
 import apiService from '@/services/api.service';
@@ -29,11 +31,16 @@ import { Component, Vue, Watch } from 'vue-property-decorator';
     SurveySectionsContainer,
     UploadSurvey,
     DownloadSurvey,
+    Message,
   },
 })
 export default class Survey extends Vue {
   Survey: Model = new Model({});
   sections: PageModel[] = [];
+
+  $refs!: {
+    message: Message;
+  };
 
   private async loadQeustions(surveyJSON: any, surveyData: any) {
     this.Survey.clear(true, true);
@@ -122,6 +129,12 @@ export default class Survey extends Vue {
     downloadAnchorNode.remove();
   }
 
+  showMessage(messageKey: string, variant: MessageVariantType = 'primary') {
+    this.$refs.message.showMessage(messageKey, variant);
+    const top = document.getElementById('def-top')?.offsetTop;
+    window.scrollTo(0, top || 0);
+  }
+
   async submitAnswers() {
     const profile = this.$store.getters.returnProfile;
     const isProfileSet = !!profile && !!profile.email && !!profile.team;
@@ -133,9 +146,15 @@ export default class Survey extends Vue {
         userEmail: profile.email,
         survey: this.$store.getters.returnSurveyJSON._id,
       };
-      const newResult = await apiService.saveSurveyResult(result);
+      try {
+        const newResult = await apiService.saveSurveyResult(result);
+        this.showMessage('teamResults.submitSuccess', 'success');
+      } catch (err) {
+        this.showMessage('teamResults.submitFailed', 'danger');
+      }
     } else {
-      alert('Please input your email and team');
+      await this.$store.dispatch(ActionTypes.ShowHideProfile, true);
+      this.showMessage('teamResults.profileIsRequired', 'warning');
     }
   }
 }

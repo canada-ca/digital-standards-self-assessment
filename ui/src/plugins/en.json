@@ -85,15 +85,14 @@
     "startDate": "Start Date:",
     "endDate": "End Date:",
     "description": "Results will apear below once you have uploaded 1 or more survey(s).",
-    "uploadSurveys": "Upload Survey(s)",
     "calcResults": "Calculate Results",
     "teamName": "Team Name",
-    "teamNamePlaceholder": "Please enter a team name",
-    "teamNameRequired": "Team name is mandatory",
-    "deleteTeam": "Click to delete this team",
     "showIndividualBreakdownInstruction": "**NOTE**: Click on team name to show individual breakdown",
     "showIndividualBreakdown": "Click to show individual breakdown",
     "hideIndividualBreakdown": "Hide individual breakdown",
-    "actions": "Actions"
+    "actions": "Actions",
+    "submitSuccess": "Submit successfully!",
+    "submitFailed": "Submit failed, please try again later.",
+    "profileIsRequired": "Please enter your email and team name"
   }
 }
