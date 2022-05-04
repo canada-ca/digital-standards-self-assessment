@@ -32,35 +32,30 @@
         </b-link>
       </template>
     </b-table>
-    <div
-      style="font-size: 12px"
-      v-html="
-        markdownToHtml($t('teamResults.showIndividualBreakdownInstruction'))
-      "
-    />
+    <div style="font-size: 12px" v-html="markdownToHtml($t('teamResults.showIndividualBreakdownInstruction'))" />
   </div>
 </template>
 
 <script lang="ts">
-import { TeamReportData } from "@/store/state";
-import { Component, Prop, Vue, Watch } from "vue-property-decorator";
-import { BIconTrash } from "bootstrap-vue";
-import { ActionTypes } from "@/store/actions";
-import { marked } from "marked";
-import i18n from "@/plugins/i18n";
+import { TeamReportData } from '@/store/state';
+import { Component, Prop, Vue, Watch } from 'vue-property-decorator';
+import { BIconTrash } from 'bootstrap-vue';
+import { ActionTypes } from '@/store/actions';
+import { marked } from 'marked';
+import i18n from '@/plugins/i18n';
 
 @Component({
   components: {
-    BIconTrash
-  }
+    BIconTrash,
+  },
 })
 export default class TeamScoreDataTable extends Vue {
   @Prop()
   teamReportDataArray!: Array<TeamReportData>;
 
-  sortBy = "team_name";
+  sortBy = 'team_name';
   sortDesc = false;
-  fields = [{ key: "team_name", sortable: true }] as any[];
+  fields = [{ key: 'team_name', sortable: true }] as any[];
 
   items: any[] = [];
 
@@ -72,21 +67,22 @@ export default class TeamScoreDataTable extends Vue {
       });
     });
     const sectionNames = [...sectionNameSet];
+    console.log(i18n.t('teamResults.actions'));
     this.fields = [
       {
-        key: "team_name",
+        key: 'team_name',
         sortable: true,
-        label: i18n.t("teamResults.teamName")
-      }
+        label: i18n.t('teamResults.teamName'),
+      },
     ];
     sectionNames.map((sn) => {
       this.fields.push({ key: sn, sortable: true });
     });
     this.fields.push({
-      key: "actions",
+      key: 'actions',
       sortable: false,
-      tdClass: "text-center",
-      label: i18n.t("teamResults.actions")
+      tdClass: 'text-center',
+      label: i18n.t('teamResults.actions'),
     });
     return sectionNames;
   }
@@ -95,32 +91,28 @@ export default class TeamScoreDataTable extends Vue {
     this.items = [];
     this.teamReportDataArray.forEach((data) => {
       var rec: { [k: string]: any } = {};
-      rec["team_name"] = data.name;
+      rec['team_name'] = data.name;
       sectionNames.forEach((sn) => {
         // eslint-disable-next-line security/detect-object-injection
-        rec[sn] = this.getSectionScore(data.name, sn) + "%";
+        rec[sn] = this.getSectionScore(data.name, sn) + '%';
       });
       this.items.push(rec);
     });
   }
 
   private getSectionScore(teamName: string, sectionName: string): string {
-    let scorePercentage = "0";
+    let scorePercentage = '0';
     if (this.teamReportDataArray) {
-      const teamReportData = this.teamReportDataArray.find(
-        (t) => t.name === teamName
-      );
+      const teamReportData = this.teamReportDataArray.find((t) => t.name === teamName);
       if (teamReportData) {
-        const section = teamReportData.sections.find(
-          (s) => s.name === sectionName
-        );
+        const section = teamReportData.sections.find((s) => s.name === sectionName);
         if (section) {
-          scorePercentage = new Intl.NumberFormat("en-CA", {
-            style: "decimal",
-            maximumFractionDigits: 0
+          scorePercentage = new Intl.NumberFormat('en-CA', {
+            style: 'decimal',
+            maximumFractionDigits: 0,
           }).format((section.score / section.maxScore) * 100);
-          if (scorePercentage === "NaN") {
-            return "0";
+          if (scorePercentage === 'NaN') {
+            return '0';
           }
         }
       }
@@ -132,8 +124,8 @@ export default class TeamScoreDataTable extends Vue {
     this.createDatatable();
   }
 
-  @Watch("teamReportDataArray")
-  @Watch("$i18n.locale")
+  @Watch('teamReportDataArray')
+  @Watch('$i18n.locale')
   createDatatable() {
     const sectionNames = this.extractAllSectionNames();
     this.getTeamScores(sectionNames);

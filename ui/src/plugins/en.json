@@ -84,7 +84,7 @@
     "title": "Team Results Overview",
     "startDate": "Start Date:",
     "endDate": "End Date:",
-    "description": "Results will apear below once you have uploaded 1 or more survey(s).",
+    "description": "Results will apear below once you find 1 or more survey(s).",
     "calcResults": "Calculate Results",
     "teamName": "Team Name",
     "showIndividualBreakdownInstruction": "**NOTE**: Click on team name to show individual breakdown",
@@ -93,6 +93,7 @@
     "actions": "Actions",
     "submitSuccess": "Submit successfully!",
     "submitFailed": "Submit failed, please try again later.",
-    "profileIsRequired": "Please enter your email and team name"
+    "profileIsRequired": "Please enter your email and team name",
+    "deleteTeam": "Click to delete this team"
   }
 }

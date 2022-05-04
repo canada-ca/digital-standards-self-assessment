@@ -58,12 +58,6 @@ export default class Results extends Vue {
     return this.$store.getters.returnIndividualTeamReportDataArray;
   }
 
-  @Watch('$i18n.locale')
-  changeLanguage(value: string, oldValue: string) {
-    //    this.Survey.locale = value;
-    //    this.Survey.render();
-  }
-
   get hasReportData(): boolean {
     return this.teamReportDataArray.length > 0;
   }
@@ -73,6 +67,7 @@ export default class Results extends Vue {
   }
 
   addTeamReportData(teamReportDataBundles: TeamReportDataBundle[]) {
+    this.$store.commit(ActionTypes.HideIndividualBreakdown);
     this.$store.commit(ActionTypes.SetTeamSurveys, teamReportDataBundles);
   }
 }
