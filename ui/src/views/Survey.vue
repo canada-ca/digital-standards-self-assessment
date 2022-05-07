@@ -15,7 +15,6 @@
 import AssessmentTool from '@/components/AssessmentTool.vue'; // @ is an alias to /src
 import DownloadSurvey from '@/components/DownloadSurvey.vue';
 import SurveySectionsContainer from '@/components/SurveySectionsContainer.vue';
-import UploadSurvey from '@/components/UploadSurvey.vue';
 import Message, { MessageVariantType } from '@/components/Message.vue';
 import { SurveyResult } from '@/interfaces/api-models';
 import i18n from '@/plugins/i18n';
@@ -29,7 +28,6 @@ import { Component, Vue, Watch } from 'vue-property-decorator';
   components: {
     AssessmentTool,
     SurveySectionsContainer,
-    UploadSurvey,
     DownloadSurvey,
     Message,
   },

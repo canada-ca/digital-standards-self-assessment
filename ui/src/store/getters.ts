@@ -1,10 +1,11 @@
 import { GetterTree } from 'vuex';
-import { Section, Recommendations, RootState, TeamReportData } from '@/store/state';
+import { Section, Recommendations, RootState, TeamReportData, UserReportData } from '@/store/state';
 import { isEmpty } from 'lodash';
 import { PageModel, SurveyModel } from 'survey-vue';
 
 import { calcSectionMaxScore } from '@/utils/utils';
 import { Profile } from '@/interfaces/Profile';
+import { Team } from '@/interfaces/api-models';
 
 export type Getters = {
   /**Checks whether the state status is errored or not
@@ -89,8 +90,8 @@ export type Getters = {
   returnSectionPrefix(state: RootState): string;
   // Team Survey Data
   returnTeamReportDataArray(state: RootState): TeamReportData[];
-  returnIndividualTeamName(state: RootState): string;
-  returnIndividualTeamReportDataArray(state: RootState): TeamReportData[];
+  returnIndividualTeam(state: RootState): Team | undefined;
+  returnIndividualTeamReportDataArray(state: RootState): UserReportData[];
   returnShowBreakdown(state: RootState): boolean;
   returnSectionMaxScore(state: RootState): (section: string) => number;
   returnProfile(state: RootState): Profile | undefined;
@@ -200,8 +201,8 @@ export const getters: GetterTree<RootState, RootState> & Getters = {
   returnTeamReportDataArray(state: RootState) {
     return state.teamAverageReportDataArray;
   },
-  returnIndividualTeamName(state: RootState) {
-    return state.individualTeamName;
+  returnIndividualTeam(state: RootState) {
+    return state.individualTeam;
   },
   returnIndividualTeamReportDataArray(state: RootState) {
     return state.individualTeamReportDataArray;

@@ -1,24 +1,17 @@
 <template>
-  <div
-    v-if="hasReportData"
-    ref="barChart"
-    style="min-width: 100%; height: 500px; margin-top: 30px"
-  ></div>
+  <div v-if="hasReportData" ref="barChart" style="min-width: 100%; height: 500px; margin-top: 30px"></div>
 </template>
 
 <script lang="ts">
-import { TeamReportData } from "@/store/state";
-import * as echarts from "echarts";
-import { ECharts, EChartsOption } from "echarts";
-import { Component, Prop, Vue, Watch } from "vue-property-decorator";
+import { UserReportData } from '@/store/state';
+import * as echarts from 'echarts';
+import { ECharts, EChartsOption } from 'echarts';
+import { Component, Prop, Vue, Watch } from 'vue-property-decorator';
 
 @Component
 export default class IndividualBreakdownBarCard extends Vue {
-  @Prop()
-  teamReportDataArray!: Array<TeamReportData>;
-
-  allTeamNames: string[] = [];
-  teamScores: any[][] = [];
+  allEmails: string[] = [];
+  userScores: any[][] = [];
   chartSeries: echarts.SeriesOption[] = [];
   chart!: ECharts;
 
@@ -26,12 +19,16 @@ export default class IndividualBreakdownBarCard extends Vue {
     barChart: HTMLElement;
   };
 
+  get userReportDataArray(): Array<UserReportData> {
+    return this.$store.getters.returnIndividualTeamReportDataArray;
+  }
+
   get hasReportData() {
-    return this.teamReportDataArray && this.teamReportDataArray.length > 0;
+    return this.userReportDataArray && this.userReportDataArray.length > 0;
   }
 
   created() {
-    window.addEventListener("resize", this.onResize);
+    window.addEventListener('resize', this.onResize);
   }
 
   mounted() {
@@ -39,7 +36,7 @@ export default class IndividualBreakdownBarCard extends Vue {
   }
 
   destroyed() {
-    window.removeEventListener("resize", this.onResize);
+    window.removeEventListener('resize', this.onResize);
   }
 
   onResize() {
@@ -50,7 +47,7 @@ export default class IndividualBreakdownBarCard extends Vue {
 
   private extractAllSectionNames() {
     const sectionNameSet: Set<string> = new Set();
-    this.teamReportDataArray.forEach((t) => {
+    this.userReportDataArray.forEach((t) => {
       t.sections.forEach((s) => {
         sectionNameSet.add(s.name);
       });
@@ -58,49 +55,45 @@ export default class IndividualBreakdownBarCard extends Vue {
     return [...sectionNameSet];
   }
 
-  private extractAllTeamNames() {
-    this.allTeamNames = [];
-    this.teamReportDataArray.forEach((t) => {
-      this.allTeamNames.push(t.name);
+  private extractAllUserEmails() {
+    this.allEmails = [];
+    this.userReportDataArray.forEach((t) => {
+      this.allEmails.push(t.email);
     });
-    this.chartSeries = this.allTeamNames.map((name) => ({
-      type: "bar",
-      label: { show: true, position: "top" }
+    this.chartSeries = this.allEmails.map((email) => ({
+      type: 'bar',
+      label: { show: true, position: 'top' },
     }));
-    this.teamScores = this.getTeamScores();
+    this.userScores = this.getUserScores();
   }
 
-  private getTeamScores(): any[][] {
-    const teamScoreArray: any[][] = [];
+  private getUserScores(): any[][] {
+    const userScoreArray: any[][] = [];
     const allSectionNames = this.extractAllSectionNames();
     allSectionNames.forEach((sn) => {
       const rec: any[] = [];
       rec.push(sn);
-      this.teamReportDataArray.forEach((data) => {
-        rec.push(this.getSectionScore(data.name, sn));
+      this.userReportDataArray.forEach((data) => {
+        rec.push(this.getSectionScore(data.email, sn));
       });
-      teamScoreArray.push(rec);
+      userScoreArray.push(rec);
     });
-    return teamScoreArray;
+    return userScoreArray;
   }
 
-  private getSectionScore(teamName: string, sectionName: string): string {
-    let scorePercentage = "0";
-    if (this.teamReportDataArray) {
-      const teamReportData = this.teamReportDataArray.find(
-        (t) => t.name === teamName
-      );
-      if (teamReportData) {
-        const section = teamReportData.sections.find(
-          (s) => s.name === sectionName
-        );
+  private getSectionScore(email: string, sectionName: string): string {
+    let scorePercentage = '0';
+    if (this.userReportDataArray) {
+      const userReportData = this.userReportDataArray.find((t) => t.email === email);
+      if (userReportData) {
+        const section = userReportData.sections.find((s) => s.name === sectionName);
         if (section) {
-          scorePercentage = new Intl.NumberFormat("en-CA", {
-            style: "decimal",
-            maximumFractionDigits: 0
+          scorePercentage = new Intl.NumberFormat('en-CA', {
+            style: 'decimal',
+            maximumFractionDigits: 0,
           }).format((section.score / section.maxScore) * 100);
-          if (scorePercentage === "NaN") {
-            return "0";
+          if (scorePercentage === 'NaN') {
+            return '0';
           }
         }
       }
@@ -108,7 +101,7 @@ export default class IndividualBreakdownBarCard extends Vue {
     return scorePercentage;
   }
 
-  @Watch("teamReportDataArray")
+  @Watch('$store.getters.returnIndividualTeamReportDataArray')
   creatEcharts() {
     if (!this.hasReportData) {
       if (this.chart) {
@@ -116,25 +109,25 @@ export default class IndividualBreakdownBarCard extends Vue {
       }
       return;
     }
-    this.extractAllTeamNames();
+    this.extractAllUserEmails();
     const option: EChartsOption = {
       legend: {
-        data: this.allTeamNames
+        data: this.allEmails,
       },
       tooltip: {},
       dataset: {
-        source: [["section", ...this.allTeamNames], ...this.teamScores]
+        source: [['section', ...this.allEmails], ...this.userScores],
       },
-      xAxis: { type: "category" },
+      xAxis: { type: 'category' },
       yAxis: {
-        type: "value",
+        type: 'value',
         axisLabel: {
           show: true,
-          interval: "auto",
-          formatter: "{value}%"
-        }
+          interval: 'auto',
+          formatter: '{value}%',
+        },
       },
-      series: this.chartSeries
+      series: this.chartSeries,
     };
     if (this.chart) {
       this.chart.dispose();

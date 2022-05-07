@@ -1,3 +1,4 @@
+import { Team } from '@/interfaces/api-models';
 import { Profile } from '@/interfaces/Profile';
 import { Question, SurveyModel } from 'survey-vue';
 
@@ -18,8 +19,8 @@ export interface RootState {
   surveyJSON: any;
   teamReportDataBundleArray: TeamReportDataBundle[];
   teamAverageReportDataArray: TeamReportData[];
-  individualTeamReportDataArray: TeamReportData[];
-  individualTeamName: string;
+  individualTeamReportDataArray: UserReportData[];
+  individualTeam?: Team;
   showBreakdown: boolean;
   profile?: Profile;
   showProfile: boolean;
@@ -36,13 +37,20 @@ export interface Section {
 }
 
 export interface TeamReportDataBundle {
-  teamName: string;
+  teamId: string;
+  team: Team;
   teamAverageReportData: TeamReportData;
-  teamReportDataArray: TeamReportData[];
+  userReportDataArray: UserReportData[];
 }
 
 export interface TeamReportData {
-  name: string;
+  teamId: string;
+  team: Team;
+  sections: Array<SectionReportData>;
+}
+
+export interface UserReportData {
+  email: string;
   sections: Array<SectionReportData>;
 }
 
@@ -126,7 +134,7 @@ export const state: RootState = {
   surveyJSON: undefined,
   teamReportDataBundleArray: [],
   teamAverageReportDataArray: [],
-  individualTeamName: '',
+  individualTeam: undefined,
   individualTeamReportDataArray: [],
   showBreakdown: false,
   showProfile: false,

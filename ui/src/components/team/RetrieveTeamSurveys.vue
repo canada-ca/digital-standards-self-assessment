@@ -36,7 +36,7 @@
 import { SurveyResult, Team } from '@/interfaces/api-models';
 import ErrorMessage from '@/interfaces/ErrorMessage';
 import apiService from '@/services/api.service';
-import { SectionReportData, TeamReportData, TeamReportDataBundle } from '@/store/state';
+import { SectionReportData, TeamReportData, TeamReportDataBundle, UserReportData } from '@/store/state';
 import { calcScore, calcSectionMaxScore } from '@/utils/utils';
 import moment from 'moment';
 import { Model } from 'survey-vue';
@@ -73,7 +73,7 @@ export default class RetrieveTeamSurveys extends Vue {
   get surveyJson() {
     return this.$store.getters.returnSurveyJSON;
   }
-
+  // The key is teamId
   teamReportDataBundles: Map<string, TeamReportDataBundle> = new Map();
 
   async retrieveTeamResults() {
@@ -108,25 +108,26 @@ export default class RetrieveTeamSurveys extends Vue {
 
   loadSurveyResults(result: SurveyResult) {
     const team: Team = result.team as Team;
-    const teamName = this.locale === 'fr' ? team.teamNameFr : team.teamNameEn;
+    const teamId = team._id || '';
     const userEmail = result.userEmail;
     const answers = result.answers;
 
-    const reportData: TeamReportData = {
-      name: userEmail,
+    const userReportData: UserReportData = {
+      email: userEmail,
       sections: this.extractSectionReportData(answers, result.createdAt),
     };
 
-    let bundle = this.teamReportDataBundles.get(teamName);
+    let bundle = this.teamReportDataBundles.get(teamId);
     if (!bundle) {
       bundle = {
-        teamName,
+        teamId,
+        team,
         teamAverageReportData: {} as TeamReportData,
-        teamReportDataArray: [reportData],
+        userReportDataArray: [userReportData],
       };
-      this.teamReportDataBundles.set(teamName, bundle);
+      this.teamReportDataBundles.set(teamId, bundle);
     } else {
-      bundle.teamReportDataArray.push(reportData);
+      bundle.userReportDataArray.push(userReportData);
     }
   }
 
@@ -163,18 +164,19 @@ export default class RetrieveTeamSurveys extends Vue {
   }
 
   private averageTeamScore() {
-    for (const teamName of this.teamReportDataBundles.keys()) {
+    for (const teamId of this.teamReportDataBundles.keys()) {
       const teamAverageReportData: TeamReportData = {
-        name: teamName,
+        teamId,
+        team: this.teamReportDataBundles.get(teamId)?.team || ({} as Team),
         sections: [],
       };
       // Extract score into a map
       // section_name: [{score, maxScore}, {score, maxScore}, {score, maxScore} ...]
       const scoresMap: Map<String, any[]> = new Map();
-      const bundle = this.teamReportDataBundles.get(teamName);
-      const teamReportDataArray = bundle?.teamReportDataArray;
-      if (!!bundle && teamReportDataArray && teamReportDataArray.length > 0) {
-        for (const reportData of teamReportDataArray) {
+      const bundle = this.teamReportDataBundles.get(teamId);
+      const userReportDataArray = bundle?.userReportDataArray;
+      if (!!bundle && userReportDataArray && userReportDataArray.length > 0) {
+        for (const reportData of userReportDataArray) {
           for (const section of reportData.sections) {
             if (!scoresMap.has(section.name)) {
               scoresMap.set(section.name, []);

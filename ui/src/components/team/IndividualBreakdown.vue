@@ -2,31 +2,30 @@
   <div style="margin-top: 40px" v-if="showBreakdown">
     <div>
       <b-link @click.prevent="hideBreakdown()">
-        {{ $t("teamResults.hideIndividualBreakdown") }}
+        {{ $t('teamResults.hideIndividualBreakdown') }}
       </b-link>
     </div>
     <h5 class="text-center">{{ teamName }}</h5>
     <div class="individual-breakdown">
-      <IndividualBreakdownChart :teamReportDataArray="teamReportDataArray" />
+      <IndividualBreakdownBarChart />
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import { TeamReportData } from "@/store/state";
-import { Component, Prop, Vue } from "vue-property-decorator";
-import IndividualBreakdownChart from "@/components/team/IndividualBreakdownBarChart.vue";
-import { ActionTypes } from "@/store/actions";
+import IndividualBreakdownBarChart from '@/components/team/IndividualBreakdownBarChart.vue';
+import { Team } from '@/interfaces/api-models';
+import { ActionTypes } from '@/store/actions';
+import { UserReportData } from '@/store/state';
+import { Component, Prop, Vue } from 'vue-property-decorator';
 
 @Component({
-  components: { IndividualBreakdownChart }
+  components: { IndividualBreakdownBarChart },
 })
 export default class IndividualBreakdown extends Vue {
-  @Prop()
-  teamReportDataArray!: TeamReportData[];
-
   get teamName() {
-    return this.$store.getters.returnIndividualTeamName;
+    const individualTeam: Team | undefined = this.$store.getters.returnIndividualTeam;
+    return this.$i18n.locale === 'fr' ? individualTeam?.teamNameFr : individualTeam?.teamNameEn;
   }
 
   get showBreakdown() {

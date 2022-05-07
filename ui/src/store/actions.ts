@@ -49,7 +49,6 @@ export enum ActionTypes {
   UseSurveyJSON = 'USE_SURVEY_JSON',
 
   // Actions for team survey
-  AddTeamSurvey = 'ADD_TEAM_SURVEY',
   DeleteTeamSurvey = 'DELETE_TEAM_SURVEY',
   SetTeamSurveys = 'SET_TEAM_SURVEYS',
   ShowIndividualBreakdown = 'SHOW_INDIVIDUAL_BREAKDOWN',
@@ -74,7 +73,6 @@ export type Actions = {
   [ActionTypes.UpdateCurrentPageName](context: ActionAugments, value: string): void;
   [ActionTypes.UseSurveyJSON](context: ActionAugments, value: { surveyJSON: any; surveyModel: SurveyModel }): void;
   // Team Survey actions
-  [ActionTypes.AddTeamSurvey](context: ActionAugments, value: { teamReportDataBundle: TeamReportDataBundle }): void;
   [ActionTypes.DeleteTeamSurvey](context: ActionAugments, value: string): void;
   [ActionTypes.SetTeamSurveys](contest: ActionAugments, value: TeamReportDataBundle[]): void;
   [ActionTypes.ShowIndividualBreakdown](context: ActionAugments, value: string): void;
@@ -189,9 +187,6 @@ export const actions: ActionTree<RootState, RootState> & Actions = {
     surveyModel.pages.forEach(async (page: any) => {
       await dispatch(ActionTypes.UpdateSectionScore, page);
     });
-  },
-  async [ActionTypes.AddTeamSurvey]({ commit }, { teamReportDataBundle }) {
-    commit(MutationType.AddTeamSurvey, teamReportDataBundle);
   },
   async [ActionTypes.DeleteTeamSurvey]({ commit }, teamName) {
     commit(MutationType.DeleteTeamSurvey, teamName);

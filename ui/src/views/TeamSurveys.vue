@@ -18,7 +18,7 @@
         />
         <team-score-bar-chart :teamReportDataArray="teamReportDataArray" />
         <team-score-data-table :teamReportDataArray="teamReportDataArray" v-if="hasReportData" />
-        <individual-breakdown :teamReportDataArray="individualReportDataArray" />
+        <individual-breakdown />
       </div>
     </div>
   </div>

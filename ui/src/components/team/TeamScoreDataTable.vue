@@ -67,7 +67,7 @@ export default class TeamScoreDataTable extends Vue {
       });
     });
     const sectionNames = [...sectionNameSet];
-    console.log(i18n.t('teamResults.actions'));
+    sectionNames.sort((a, b) => (a > b ? 1 : a < b ? -1 : 0));
     this.fields = [
       {
         key: 'team_name',
@@ -75,8 +75,8 @@ export default class TeamScoreDataTable extends Vue {
         label: i18n.t('teamResults.teamName'),
       },
     ];
-    sectionNames.map((sn) => {
-      this.fields.push({ key: sn, sortable: true });
+    sectionNames.map((sectionName) => {
+      this.fields.push({ key: sectionName, sortable: true });
     });
     this.fields.push({
       key: 'actions',
@@ -91,19 +91,21 @@ export default class TeamScoreDataTable extends Vue {
     this.items = [];
     this.teamReportDataArray.forEach((data) => {
       var rec: { [k: string]: any } = {};
-      rec['team_name'] = data.name;
+      rec['teamId'] = data.teamId;
+      rec['team_name'] = this.$i18n.locale === 'fr' ? data.team.teamNameFr : data.team.teamNameEn;
       sectionNames.forEach((sn) => {
         // eslint-disable-next-line security/detect-object-injection
-        rec[sn] = this.getSectionScore(data.name, sn) + '%';
+        rec[sn] = this.getSectionScore(data.teamId, sn) + '%';
       });
       this.items.push(rec);
+      this.items.sort((a, b) => (a['team_name'] > b['team_name'] ? 1 : a['team_name'] < b['team_name'] ? -1 : 0));
     });
   }
 
-  private getSectionScore(teamName: string, sectionName: string): string {
+  private getSectionScore(teamId: string, sectionName: string): string {
     let scorePercentage = '0';
     if (this.teamReportDataArray) {
-      const teamReportData = this.teamReportDataArray.find((t) => t.name === teamName);
+      const teamReportData = this.teamReportDataArray.find((t) => t.teamId === teamId);
       if (teamReportData) {
         const section = teamReportData.sections.find((s) => s.name === sectionName);
         if (section) {
@@ -132,11 +134,11 @@ export default class TeamScoreDataTable extends Vue {
   }
 
   deleteTeam(row: any) {
-    this.$store.commit(ActionTypes.DeleteTeamSurvey, row.item.team_name);
+    this.$store.commit(ActionTypes.DeleteTeamSurvey, row.item.teamId);
   }
 
   showIndividualBreakdown(row: any) {
-    this.$store.commit(ActionTypes.ShowIndividualBreakdown, row.item.team_name);
+    this.$store.commit(ActionTypes.ShowIndividualBreakdown, row.item.teamId);
   }
 
   markdownToHtml(item: string) {

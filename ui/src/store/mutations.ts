@@ -70,7 +70,6 @@ export enum MutationType {
   Initialized = 'INITIALIZED',
   SetSurveyJSON = 'SET_SURVEY_JSON',
   // Team Survey Mutations
-  AddTeamSurvey = 'ADD_TEAM_SURVEY',
   DeleteTeamSurvey = 'DELETE_TEAM_SURVEY',
   SetTeamSurveys = 'SET_TEAM_SURVEYS',
   ShowIndividualBreakdown = 'SHOW_INDIVIDUAL_BREAKDOWN',
@@ -97,7 +96,6 @@ export type Mutations = {
   [MutationType.StopLoading](state: RootState): void;
   [MutationType.Initialized](state: RootState): void;
   [MutationType.SetSurveyJSON](state: RootState, payload: any): void;
-  [MutationType.AddTeamSurvey](state: RootState, payload: TeamReportDataBundle): void;
   [MutationType.DeleteTeamSurvey](state: RootState, payload: string): void;
   [MutationType.SetTeamSurveys](state: RootState, payload: TeamReportDataBundle[]): void;
   [MutationType.ShowIndividualBreakdown](state: RootState, payload: string): void;
@@ -160,40 +158,22 @@ export const mutations: MutationTree<RootState> & Mutations = {
   [MutationType.SetSurveyJSON](state: RootState, payload: any) {
     state.surveyJSON = payload;
   },
-  [MutationType.AddTeamSurvey](state: RootState, payload: TeamReportDataBundle) {
-    const index = state.teamReportDataBundleArray.findIndex((d) => d.teamName === payload.teamName);
-    if (index === -1) {
-      state.teamReportDataBundleArray.push(payload);
-    } else {
-      state.teamReportDataBundleArray.splice(index, 1, payload);
-    }
-    const avgIndex = state.teamAverageReportDataArray.findIndex((d) => d.name === payload.teamName);
-    if (avgIndex === -1) {
-      state.teamAverageReportDataArray.push(payload.teamAverageReportData);
-    } else {
-      state.teamAverageReportDataArray.splice(avgIndex, 1, payload.teamAverageReportData);
-    }
-  },
   [MutationType.DeleteTeamSurvey](state: RootState, payload: string) {
-    let index = state.teamReportDataBundleArray.findIndex((d) => d.teamName === payload);
+    let index = state.teamReportDataBundleArray.findIndex((d) => d.teamId === payload);
     if (index > -1) {
       state.teamReportDataBundleArray.splice(index, 1);
     }
-    index = state.teamAverageReportDataArray.findIndex((d) => d.name === payload);
+    index = state.teamAverageReportDataArray.findIndex((d) => d.teamId === payload);
     if (index > -1) {
       state.teamAverageReportDataArray.splice(index, 1);
     }
-    if (payload === state.individualTeamName) {
-      state.individualTeamName = '';
+    if (payload === state.individualTeam?._id) {
+      state.individualTeam = undefined;
       state.showBreakdown = false;
       state.individualTeamReportDataArray = [];
     }
   },
   [MutationType.SetTeamSurveys](state: RootState, payload: TeamReportDataBundle[]) {
-    payload.forEach((item) => {
-      item.teamReportDataArray.sort((a, b) => (a.name < b.name ? -1 : a.name == b.name ? 0 : 1));
-    });
-    payload.sort((a, b) => (a.teamName < b.teamName ? -1 : a.teamName == b.teamName ? 0 : 1));
     state.teamReportDataBundleArray = [...payload];
     const teamAverageReportDataArray: TeamReportData[] = [];
     state.teamReportDataBundleArray.forEach((bundle) => {
@@ -202,15 +182,15 @@ export const mutations: MutationTree<RootState> & Mutations = {
     state.teamAverageReportDataArray = teamAverageReportDataArray;
   },
   [MutationType.ShowIndividualBreakdown](state: RootState, payload: string) {
-    const reportDataBundle = state.teamReportDataBundleArray.find((d) => d.teamName === payload);
+    const reportDataBundle = state.teamReportDataBundleArray.find((d) => d.teamId === payload);
     if (reportDataBundle) {
-      state.individualTeamName = payload;
-      state.individualTeamReportDataArray = reportDataBundle.teamReportDataArray;
+      state.individualTeam = reportDataBundle.team;
+      state.individualTeamReportDataArray = reportDataBundle.userReportDataArray;
       state.showBreakdown = true;
     }
   },
   [MutationType.HideIndividualBreakdown](state: RootState) {
-    state.individualTeamName = '';
+    state.individualTeam = undefined;
     state.individualTeamReportDataArray = [];
     state.showBreakdown = false;
   },

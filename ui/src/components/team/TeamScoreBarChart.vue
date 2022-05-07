@@ -1,15 +1,12 @@
 <template>
-  <div
-    ref="barChart"
-    style="min-width: 100%; height: 500px; margin-top: 30px"
-  ></div>
+  <div ref="barChart" style="min-width: 100%; height: 500px; margin-top: 30px"></div>
 </template>
 
 <script lang="ts">
-import { TeamReportData } from "@/store/state";
-import * as echarts from "echarts";
-import { ECharts, EChartsOption } from "echarts";
-import { Component, Prop, Vue, Watch } from "vue-property-decorator";
+import { TeamReportData } from '@/store/state';
+import * as echarts from 'echarts';
+import { ECharts, EChartsOption } from 'echarts';
+import { Component, Prop, Vue, Watch } from 'vue-property-decorator';
 
 @Component
 export default class TeamScoreBarCard extends Vue {
@@ -30,7 +27,7 @@ export default class TeamScoreBarCard extends Vue {
   }
 
   created() {
-    window.addEventListener("resize", this.onResize);
+    window.addEventListener('resize', this.onResize);
   }
 
   mounted() {
@@ -38,7 +35,7 @@ export default class TeamScoreBarCard extends Vue {
   }
 
   destroyed() {
-    window.removeEventListener("resize", this.onResize);
+    window.removeEventListener('resize', this.onResize);
   }
 
   onResize() {
@@ -60,11 +57,11 @@ export default class TeamScoreBarCard extends Vue {
   private extractAllTeamNames() {
     this.allTeamNames = [];
     this.teamReportDataArray.forEach((t) => {
-      this.allTeamNames.push(t.name);
+      this.allTeamNames.push(this.$i18n.locale === 'fr' ? t.team.teamNameFr : t.team.teamNameEn);
     });
     this.chartSeries = this.allTeamNames.map((name) => ({
-      type: "bar",
-      label: { show: true, position: "top" }
+      type: 'bar',
+      label: { show: true, position: 'top' },
     }));
     this.teamScores = this.getTeamScores();
   }
@@ -76,30 +73,26 @@ export default class TeamScoreBarCard extends Vue {
       const rec: any[] = [];
       rec.push(sn);
       this.teamReportDataArray.forEach((data) => {
-        rec.push(this.getSectionScore(data.name, sn));
+        rec.push(this.getSectionScore(data.teamId, sn));
       });
       teamScoreArray.push(rec);
     });
     return teamScoreArray;
   }
 
-  private getSectionScore(teamName: string, sectionName: string): string {
-    let scorePercentage = "0";
+  private getSectionScore(teamId: string, sectionName: string): string {
+    let scorePercentage = '0';
     if (this.teamReportDataArray) {
-      const teamReportData = this.teamReportDataArray.find(
-        (t) => t.name === teamName
-      );
+      const teamReportData = this.teamReportDataArray.find((t) => t.teamId === teamId);
       if (teamReportData) {
-        const section = teamReportData.sections.find(
-          (s) => s.name === sectionName
-        );
+        const section = teamReportData.sections.find((s) => s.name === sectionName);
         if (section) {
-          scorePercentage = new Intl.NumberFormat("en-CA", {
-            style: "decimal",
-            maximumFractionDigits: 0
+          scorePercentage = new Intl.NumberFormat('en-CA', {
+            style: 'decimal',
+            maximumFractionDigits: 0,
           }).format((section.score / section.maxScore) * 100);
-          if (scorePercentage === "NaN") {
-            return "0";
+          if (scorePercentage === 'NaN') {
+            return '0';
           }
         }
       }
@@ -107,7 +100,8 @@ export default class TeamScoreBarCard extends Vue {
     return scorePercentage;
   }
 
-  @Watch("teamReportDataArray")
+  @Watch('teamReportDataArray')
+  @Watch('$i18n.locale')
   creatEcharts() {
     if (!this.hasReportData) {
       if (this.chart) {
@@ -118,22 +112,22 @@ export default class TeamScoreBarCard extends Vue {
     this.extractAllTeamNames();
     const option: EChartsOption = {
       legend: {
-        data: this.allTeamNames
+        data: this.allTeamNames,
       },
       tooltip: {},
       dataset: {
-        source: [["section", ...this.allTeamNames], ...this.teamScores]
+        source: [['section', ...this.allTeamNames], ...this.teamScores],
       },
-      xAxis: { type: "category" },
+      xAxis: { type: 'category' },
       yAxis: {
-        type: "value",
+        type: 'value',
         axisLabel: {
           show: true,
-          interval: "auto",
-          formatter: "{value}%"
-        }
+          interval: 'auto',
+          formatter: '{value}%',
+        },
       },
-      series: this.chartSeries
+      series: this.chartSeries,
     };
     if (this.chart) {
       this.chart.dispose();
