@@ -72,7 +72,8 @@
     "startAgain": "Recommencer",
     "saveButton": "Sauvegarder",
     "submitButton": "Soumettre vos résultats",
-    "OK": "OK"
+    "OK": "OK",
+    "reset": "reposer"
   },
   "htmlCode": "fr-CA",
   "survey": {

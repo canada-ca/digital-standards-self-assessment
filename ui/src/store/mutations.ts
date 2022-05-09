@@ -1,7 +1,8 @@
 import { MutationTree } from 'vuex';
-import { Recommendations, RootState, Section, TeamReportData, TeamReportDataBundle } from '@/store/state';
+import { Recommendations, RootState, Section, state, TeamReportData, TeamReportDataBundle } from '@/store/state';
 import { SurveyModel } from 'survey-vue';
 import { Profile } from '@/interfaces/Profile';
+import store from '.';
 
 export enum MutationType {
   /**
@@ -76,6 +77,7 @@ export enum MutationType {
   HideIndividualBreakdown = 'HIDE_INDIVIDUAL_BREAKDOWN',
   SaveProfile = 'SAVE_PROFILE',
   ShowHideProfile = 'TOGGLE_PROFILE',
+  ResetSectionScores = 'RESET_SECTION_SCORES',
 }
 
 export type Mutations = {
@@ -102,6 +104,7 @@ export type Mutations = {
   [MutationType.HideIndividualBreakdown](state: RootState): void;
   [MutationType.SaveProfile](state: RootState, profile: Profile): void;
   [MutationType.ShowHideProfile](state: RootState, show: boolean): void;
+  [MutationType.ResetSectionScores](state: RootState): void;
 };
 
 export const mutations: MutationTree<RootState> & Mutations = {
@@ -199,5 +202,11 @@ export const mutations: MutationTree<RootState> & Mutations = {
   },
   [MutationType.ShowHideProfile](state: RootState, show: boolean) {
     state.showProfile = show;
+  },
+  [MutationType.ResetSectionScores](state: RootState) {
+    state.toolData = {};
+    const sections = [...state.sections];
+    sections.forEach((section) => (section.userScore = 0));
+    state.sections = sections;
   },
 };

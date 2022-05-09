@@ -5,6 +5,7 @@
       <SurveySectionsContainer :sections="sections" :survey="Survey" />
     </div>
     <div class="btn-div">
+      <b-button class="btn btn-secondary" @click="reset">{{ $t('buttons.reset') }}</b-button>
       <download-survey @confirmToDownload="downloadSurvey" />
       <b-button class="btn btn-primary" @click="submitAnswers">{{ $t('buttons.submitButton') }}</b-button>
     </div>
@@ -19,7 +20,7 @@ import Message, { MessageVariantType } from '@/components/Message.vue';
 import { SurveyResult } from '@/interfaces/api-models';
 import i18n from '@/plugins/i18n';
 import apiService from '@/services/api.service';
-import { ActionTypes } from '@/store/actions';
+import { actions, ActionTypes } from '@/store/actions';
 import showdown from 'showdown';
 import { Model, PageModel, SurveyModel } from 'survey-vue';
 import { Component, Vue, Watch } from 'vue-property-decorator';
@@ -76,7 +77,6 @@ export default class Survey extends Vue {
   }
 
   async beforeMount() {
-    console.log('Survey beforeMount');
     while (!this.$store.getters.isInitialized) {
       await this.delay(100);
     }
@@ -133,6 +133,14 @@ export default class Survey extends Vue {
     window.scrollTo(0, top || 0);
   }
 
+  async reset() {
+    if (this.Survey) {
+      this.Survey.clear(true, true);
+    }
+    await this.$store.dispatch(ActionTypes.SetAppData);
+    await this.$store.dispatch(ActionTypes.Reset);
+  }
+
   async submitAnswers() {
     const profile = this.$store.getters.returnProfile;
     const isProfileSet = !!profile && !!profile.email && !!profile.team;
@@ -166,7 +174,7 @@ export default class Survey extends Vue {
   justify-content: space-between;
   margin-top: 30px;
 }
-.btn-div > button {
-  min-width: 500px !important;
+.btn-div /deep/ button {
+  min-width: 250px !important;
 }
 </style>

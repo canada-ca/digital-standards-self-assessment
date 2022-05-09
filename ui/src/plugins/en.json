@@ -72,7 +72,8 @@
     "startAgain": "Start Again",
     "saveButton": "Save",
     "submitButton": "Submit your results",
-    "OK": "OK"
+    "OK": "OK",
+    "reset": "Reset"
   },
   "htmlCode": "en-CA",
   "survey": {

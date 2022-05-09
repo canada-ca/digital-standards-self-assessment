@@ -55,6 +55,7 @@ export enum ActionTypes {
   HideIndividualBreakdown = 'HIDE_INDIVIDUAL_BREAKDOWN',
   SaveProfile = 'SAVE_PROFILE',
   ShowHideProfile = 'SHOW_HIDE_PROFILE',
+  Reset = 'RESET',
 }
 
 export type ActionAugments = Omit<ActionContext<RootState, RootState>, 'commit'> & {
@@ -79,6 +80,7 @@ export type Actions = {
   [ActionTypes.HideIndividualBreakdown](context: ActionAugments): void;
   [ActionTypes.SaveProfile](content: ActionAugments, profile: Profile): void;
   [ActionTypes.ShowHideProfile](content: ActionAugments, show: boolean): void;
+  [ActionTypes.Reset](content: ActionAugments): void;
 };
 
 export const actions: ActionTree<RootState, RootState> & Actions = {
@@ -206,4 +208,15 @@ export const actions: ActionTree<RootState, RootState> & Actions = {
   [ActionTypes.ShowHideProfile]({ commit }, show: boolean) {
     commit(MutationType.ShowHideProfile, show);
   },
+  async [ActionTypes.Reset]({ commit, dispatch, getters }) {
+    await dispatch(ActionTypes.SetAppData);
+    while (!getters.isInitialized) {
+      await delay(100);
+    }
+    commit(MutationType.ResetSectionScores);
+  },
 };
+
+function delay(ms: number) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}

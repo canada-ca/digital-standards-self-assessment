@@ -1,21 +1,16 @@
 <template>
   <div>
-    <b-button
-      type="button"
-      class="btn btn-primary ml-auto"
-      style="min-width: 500px !important"
-      @click="showFileNameModal()"
-    >
-      {{ $t("downloadUploadSurvey.downloadSurvey") }}
+    <b-button type="button" class="btn btn-primary ml-auto" @click="showFileNameModal()">
+      {{ $t('downloadUploadSurvey.downloadSurvey') }}
     </b-button>
     <b-modal id="file-name-modal" size="l" @shown="focusFileNameInput">
       <template #modal-header>
-        <div>{{ $t("downloadUploadSurvey.downloadTitle") }}</div>
+        <div>{{ $t('downloadUploadSurvey.downloadTitle') }}</div>
       </template>
       <template #default>
         <b-form @submit="onSubmit" ref="form" style="margin: 10px">
           <div class="file-label">
-            <label>{{ $t("downloadUploadSurvey.fileName") }}</label>
+            <label>{{ $t('downloadUploadSurvey.fileName') }}</label>
             <div class="text-right text-danger">* Required</div>
           </div>
           <b-form-input
@@ -33,33 +28,29 @@
         </b-form>
       </template>
       <template #modal-footer>
-        <b-button
-          class="btn btn-primary"
-          style="width: 120px"
-          @click="onOkClicked()"
-        >
-          {{ $t("downloadUploadSurvey.OK") }}
+        <b-button class="btn btn-primary" style="width: 120px" @click="onOkClicked()">
+          {{ $t('downloadUploadSurvey.OK') }}
         </b-button>
         <b-button
           class="btn btn-default"
           style="width: 120px; margin-right: 10px !important"
           @click="onCancelClicked()"
         >
-          {{ $t("downloadUploadSurvey.cancel") }}
+          {{ $t('downloadUploadSurvey.cancel') }}
         </b-button>
       </template>
     </b-modal>
   </div>
 </template>
 <script lang="ts">
-import Vue from "vue";
-import Component from "vue-class-component";
+import Vue from 'vue';
+import Component from 'vue-class-component';
 
 @Component({})
 export default class DownloadSurvey extends Vue {
-  fileName: string = "";
+  fileName: string = '';
   hasError: boolean = false;
-  errorMessage = "";
+  errorMessage = '';
 
   $refs!: {
     fileNameInput: HTMLInputElement;
@@ -68,10 +59,10 @@ export default class DownloadSurvey extends Vue {
   };
 
   showFileNameModal() {
-    this.fileName = "";
+    this.fileName = '';
     this.hasError = false;
-    this.errorMessage = "";
-    this.$bvModal.show("file-name-modal");
+    this.errorMessage = '';
+    this.$bvModal.show('file-name-modal');
   }
 
   focusFileNameInput() {
@@ -86,15 +77,15 @@ export default class DownloadSurvey extends Vue {
     event.preventDefault();
     if (this.fileName.length == 0) {
       this.hasError = true;
-      this.errorMessage = "validation.fileName.required";
+      this.errorMessage = 'validation.fileName.required';
       return;
     }
-    this.$emit("confirmToDownload", this.fileName);
-    this.$bvModal.hide("file-name-modal");
+    this.$emit('confirmToDownload', this.fileName);
+    this.$bvModal.hide('file-name-modal');
   }
 
   onCancelClicked() {
-    this.$bvModal.hide("file-name-modal");
+    this.$bvModal.hide('file-name-modal');
   }
 }
 </script>
