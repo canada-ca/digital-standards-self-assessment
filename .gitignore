@@ -4,6 +4,7 @@
 
 **/dist
 **/node_modules
+**/.coverage
 
 /ui/tests/e2e/videos/
 /api/tests/e2e/videos/
