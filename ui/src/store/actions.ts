@@ -152,7 +152,7 @@ export const actions: ActionTree<RootState, RootState> & Actions = {
     if (section !== undefined) {
       value.questions.forEach((question: any) => {
         if (question.value !== undefined) {
-          const score = calcScore(question.getType(), question.value);
+          const score = calcScore(question.value);
           sectionScore += score;
         }
       });

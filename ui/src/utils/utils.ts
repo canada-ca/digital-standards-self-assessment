@@ -1,4 +1,4 @@
-export const calcScore = (questionType: string, value: any): number => {
+export const calcScore = (value: any): number => {
   let score = 0;
   if (value !== undefined) {
     if (value instanceof Array) {
