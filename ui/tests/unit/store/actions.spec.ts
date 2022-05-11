@@ -2,6 +2,11 @@ import { ActionAugments, actions, ActionTypes } from '@/store/actions';
 import { Mutations, MutationType } from '@/store/mutations';
 
 describe('actions', () => {
+  beforeEach(() => {
+    jest.clearAllMocks();
+    jest.resetAllMocks();
+  });
+
   describe('HideIndividualBreakdown', () => {
     it('should commit MutationType.HideIndividualBreakdown', () => {
       const mockContext: ActionAugments = {
@@ -10,6 +15,17 @@ describe('actions', () => {
         },
       } as ActionAugments;
       actions[ActionTypes.HideIndividualBreakdown](mockContext);
+    });
+  });
+
+  describe('HideIndividualBreakdown', () => {
+    const commit = jest.fn();
+    it('should commit MutationType.HideIndividualBreakdown', () => {
+      const mockContext = {
+        commit,
+      } as unknown as ActionAugments;
+      actions[ActionTypes.HideIndividualBreakdown](mockContext);
+      expect(commit).toHaveBeenLastCalledWith(MutationType.HideIndividualBreakdown);
     });
   });
 });
