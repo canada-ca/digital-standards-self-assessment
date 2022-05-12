@@ -7,25 +7,39 @@ describe('actions', () => {
     jest.resetAllMocks();
   });
 
-  describe('HideIndividualBreakdown', () => {
-    it('should commit MutationType.HideIndividualBreakdown', () => {
-      const mockContext: ActionAugments = {
-        commit: <K extends MutationType>(key: K, payload?: Parameters<Mutations[K]>[1]): void => {
-          expect(key).toEqual(MutationType.HideIndividualBreakdown);
+  describe('SetAppData', () => {
+    it('should ', async () => {
+      const commit = jest.fn();
+      const dispatch = jest.fn();
+      const getters = {
+        isStateError: false,
+      };
+      const mockContext = {
+        commit,
+        dispatch,
+        getters: {
+          isStateError: false,
         },
-      } as ActionAugments;
-      actions[ActionTypes.HideIndividualBreakdown](mockContext);
+      } as unknown as ActionAugments;
+      actions[ActionTypes.SetAppData](mockContext);
     });
   });
 
-  describe('HideIndividualBreakdown', () => {
+  it('HideIndividualBreakdown', () => {
+    const mockContext: ActionAugments = {
+      commit: <K extends MutationType>(key: K, payload?: Parameters<Mutations[K]>[1]): void => {
+        expect(key).toEqual(MutationType.HideIndividualBreakdown);
+      },
+    } as ActionAugments;
+    actions[ActionTypes.HideIndividualBreakdown](mockContext);
+  });
+
+  it('ShowIndividualBreakdown', () => {
     const commit = jest.fn();
-    it('should commit MutationType.HideIndividualBreakdown', () => {
-      const mockContext = {
-        commit,
-      } as unknown as ActionAugments;
-      actions[ActionTypes.HideIndividualBreakdown](mockContext);
-      expect(commit).toHaveBeenLastCalledWith(MutationType.HideIndividualBreakdown);
-    });
+    const mockContext = {
+      commit,
+    } as unknown as ActionAugments;
+    actions[ActionTypes.ShowIndividualBreakdown](mockContext, 'team1');
+    expect(commit).toHaveBeenLastCalledWith(MutationType.ShowIndividualBreakdown, 'team1');
   });
 });
