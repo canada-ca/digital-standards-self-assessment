@@ -51,7 +51,7 @@ export default class Questions extends Vue {
       this.$router.push('/results');
     });
     this.survey.currentPageNo = this.$store.getters.returnCurrentPageNumber;
-    this.survey.data = this.$store.getters.resultsDataSections;
+    this.survey.data = this.$store.getters.returnto;
     this.survey.locale = this.$i18n.locale;
   }
 }

@@ -27,6 +27,7 @@ module.exports = {
     '**/src/services/**/*.ts',
     '**/src/store/**/actions.ts',
     '**/src/store/**/mutations.ts',
+    '**/src/store/**/getters.ts',
     '**/src/utils/**/*.ts',
     '!**/node_modules/**',
     '!**/src/plugins/**',

@@ -85,7 +85,6 @@ export type Getters = {
   // This getter shouldn't be used anymore (see returnSectionsNames instead)
   returnSectionsNamesGenerated(state: RootState): string[];
   determineAllSections(state: RootState, payload: string): string[];
-  resultsDataSections(state: RootState): any[];
   returnSections(state: RootState): Section[];
   returnSectionPrefix(state: RootState): string;
   // Team Survey Data
@@ -117,11 +116,7 @@ export const getters: GetterTree<RootState, RootState> & Getters = {
     };
   },
   returnRecommendations(state: RootState) {
-    if (state.recommendations === undefined) {
-      return undefined;
-    } else {
-      return state.recommendations;
-    }
+    return state.recommendations;
   },
   returnSectionsByPrefix(state: RootState) {
     return (surveyData: SurveyModel, prefix: string) => {
@@ -139,84 +134,79 @@ export const getters: GetterTree<RootState, RootState> & Getters = {
       return section.sectionName === state.currentPageName;
     });
   },
-  // ---------------
-  // Getters below are to help transition to new store structure
-  // ---------------
-  resultsDataSections(state: RootState) {
-    let allResults: any[] = [];
-    if (state.toolData !== undefined) {
-      allResults = state.toolData;
-    }
-    return allResults;
-  },
   returnSectionsNamesGenerated(state: RootState) {
     let sectionsNames: string[] = [];
-    if (state.surveyModel === undefined) return sectionsNames;
-    state.surveyModel.pages.forEach((page: any) => {
-      if (page.name.includes(state.sectionsPrefix)) {
-        sectionsNames.push(page.name);
-      }
-    });
+    if (!!state.surveyModel) {
+      state.surveyModel.pages.forEach((page: any) => {
+        if (page.name.includes(state.sectionsPrefix)) {
+          sectionsNames.push(page.name);
+        }
+      });
+    }
     return sectionsNames;
   },
   determineAllSections(state: RootState, payload: string) {
     let sectionsNames: string[] = [];
-    if (state.surveyModel === undefined) return sectionsNames;
-    state.surveyModel.pages.forEach((page: any) => {
-      if (page.name.includes(payload)) {
-        sectionsNames.push(page.name);
-      }
-    });
+    if (!!state.surveyModel) {
+      state.surveyModel.pages.forEach((page: any) => {
+        if (page.name.includes(payload)) {
+          sectionsNames.push(page.name);
+        }
+      });
+    }
     return sectionsNames;
   },
   // Should use mapstate instead
   returnToolData(state: RootState) {
-    let allResults = [];
-    if (state.toolData === undefined) return {};
-    allResults = state.toolData;
-    return allResults;
+    return state.toolData || {};
   },
-  //Logic is useless, it's either defined or not at state level, should use mapstate instead
+  /* istanbul ignore next */
   returnSurveyModel(state: RootState) {
-    if (state.surveyModel === undefined) {
-      return undefined;
-    } else {
-      return state.surveyModel;
-    }
+    return state.surveyModel;
   },
+  /* istanbul ignore next */
   returnSurveyJSON(state: RootState) {
     return state.surveyJSON;
   },
-  // Should use mapstate instead
+  /* istanbul ignore next */
   returnCurrentPageNumber(state: RootState) {
     return state.currentPageNo;
   },
-  // Should use mapstate instead
+  /* istanbul ignore next */
   returnSections(state: RootState) {
     return state.sections;
   },
+  /* istanbul ignore next */
   returnSectionPrefix(state: RootState) {
     return state.sectionsPrefix;
   },
+  /* istanbul ignore next */
   returnTeamReportDataArray(state: RootState) {
     return state.teamAverageReportDataArray;
   },
+  /* istanbul ignore next */
   returnIndividualTeam(state: RootState) {
     return state.individualTeam;
   },
+  /* istanbul ignore next */
   returnIndividualTeamReportDataArray(state: RootState) {
     return state.individualTeamReportDataArray;
   },
+  /* istanbul ignore next */
   returnShowBreakdown(state: RootState) {
     return state.showBreakdown;
   },
+  /* istanbul ignore next */
   returnSectionMaxScore(state: RootState) {
     return (sectionName: string) => calcSectionMaxScore(sectionName, state.surveyJSON);
   },
+  /* istanbul ignore next */
   returnProfile(state: RootState) {
     return state.profile;
   },
+  /* istanbul ignore next */
   returnShowProfile(state: RootState) {
     return state.showProfile;
   },
+  /* istanbul ignore next */
 };

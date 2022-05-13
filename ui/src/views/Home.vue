@@ -3,13 +3,13 @@
 </template>
 
 <script lang="ts">
-import Welcome from "@/components/Welcome.vue";
-import { Component, Vue } from "vue-property-decorator";
+import Welcome from '@/components/Welcome.vue';
+import { Component, Vue } from 'vue-property-decorator';
 
 @Component({
   components: {
-    Welcome
-  }
+    Welcome,
+  },
 })
 export default class Home extends Vue {}
 </script>

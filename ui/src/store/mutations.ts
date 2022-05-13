@@ -170,7 +170,7 @@ export const mutations: MutationTree<RootState> & Mutations = {
     if (index > -1) {
       state.teamAverageReportDataArray.splice(index, 1);
     }
-    if (payload === state.individualTeam?._id) {
+    if (state.individualTeam && state.individualTeam._id === payload) {
       state.individualTeam = undefined;
       state.showBreakdown = false;
       state.individualTeamReportDataArray = [];
