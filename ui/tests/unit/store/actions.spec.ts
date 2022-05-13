@@ -1,4 +1,5 @@
 import { RatingQuestion, Survey } from '@/interfaces/api-models';
+import { Profile } from '@/interfaces/Profile';
 import apiService from '@/services/api.service';
 import { ActionAugments, actions, ActionTypes } from '@/store/actions';
 import { Mutations, MutationType } from '@/store/mutations';
@@ -286,17 +287,45 @@ describe('actions', () => {
       actions[ActionTypes.HideIndividualBreakdown](mockContext);
     });
 
-    it('Should ShowIndividualBreakdown', () => {
+    it('Should ShowIndividualBreakdown', async () => {
       const commit = jest.fn();
       const mockContext = {
         commit,
       } as unknown as ActionAugments;
-      actions[ActionTypes.ShowIndividualBreakdown](mockContext, 'team1');
+      await actions[ActionTypes.ShowIndividualBreakdown](mockContext, 'team1');
       expect(commit).toHaveBeenLastCalledWith(MutationType.ShowIndividualBreakdown, 'team1');
     });
   });
 
-  describe('SaveProfile', () => {});
-  describe('ShowHideProfile', () => {});
-  describe('Reset', () => {});
+  it('SaveProfile', async () => {
+    const profile: Profile = {} as Profile;
+    const commit = jest.fn();
+    const mockContext = {
+      commit,
+    } as unknown as ActionAugments;
+    await actions[ActionTypes.SaveProfile](mockContext, profile);
+    expect(commit).toHaveBeenLastCalledWith(MutationType.SaveProfile, profile);
+  });
+  it('ShowHideProfile', async () => {
+    const commit = jest.fn();
+    const mockContext = {
+      commit,
+    } as unknown as ActionAugments;
+    await actions[ActionTypes.ShowHideProfile](mockContext, true);
+    expect(commit).toHaveBeenLastCalledWith(MutationType.ShowHideProfile, true);
+  });
+  it('Reset', async () => {
+    const commit = jest.fn();
+    const dispatch = jest.fn();
+    const mockContext = {
+      getters: {
+        isInitialized: true,
+      },
+      commit,
+      dispatch,
+    } as unknown as ActionAugments;
+    await actions[ActionTypes.Reset](mockContext);
+    expect(dispatch).toHaveBeenCalledWith(ActionTypes.SetAppData);
+    expect(commit).toHaveBeenLastCalledWith(MutationType.ResetSectionScores);
+  });
 });
