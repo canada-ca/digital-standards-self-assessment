@@ -165,9 +165,9 @@ export const actions: ActionTree<RootState, RootState> & Actions = {
   // ---------------
   async [ActionTypes.UpdateSurveyData]({ commit, dispatch, getters }, value: SurveyModel) {
     commit(MutationType.SetCurrentPageNo, value.currentPageNo);
-    if (getters.returnRecommendations === undefined) {
-      commit(MutationType.SetRecommendations, appConfig);
-    }
+    // if (getters.returnRecommendations === undefined) {
+    //   commit(MutationType.SetRecommendations, appConfig);
+    // }
     //Updating all sections instead as per current behavior
     let allPages: PageModel[] = value.pages;
     allPages.forEach((page) => {
@@ -176,7 +176,7 @@ export const actions: ActionTree<RootState, RootState> & Actions = {
     commit(MutationType.SetToolData, value.data);
   },
   async [ActionTypes.UpdateCurrentPageName]({ commit }, value: string) {
-    if (value.length > 0) {
+    if (!!value && value.length > 0) {
       commit(MutationType.SetCurrentPageName, value);
     }
   },
