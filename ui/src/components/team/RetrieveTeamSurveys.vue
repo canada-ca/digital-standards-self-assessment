@@ -155,7 +155,7 @@ export default class RetrieveTeamSurveys extends Vue {
             answer: question.value,
           });
           if (question.value !== undefined) {
-            const score = calcScore(question.getType(), question.value);
+            const score = calcScore(question.value);
             sectionReportData.score += score;
           }
         });
