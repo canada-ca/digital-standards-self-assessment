@@ -30,4 +30,3 @@ yarn-error.log*
 *.map
 **/tests/**/*.spec.js
 **/src/**/*.js
-api/.env
