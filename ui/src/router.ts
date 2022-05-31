@@ -1,6 +1,6 @@
-import Vue from "vue";
-import Router from "vue-router";
-import Home from "./views/Home.vue";
+import Vue from 'vue';
+import Router from 'vue-router';
+import Home from '@/views/Home.vue';
 
 Vue.use(Router);
 
@@ -14,26 +14,26 @@ export default new Router({
   },
   routes: [
     {
-      path: "/",
-      name: "home",
-      component: Home
+      path: '/',
+      name: 'home',
+      component: Home,
     },
     {
-      path: "/survey",
-      name: "survey",
-      component: lazyLoad("Survey")
+      path: '/survey',
+      name: 'survey',
+      component: lazyLoad('Survey'),
     },
     {
-      path: "/questions",
-      name: "questions",
-      component: lazyLoad("Questions")
+      path: '/questions',
+      name: 'questions',
+      component: lazyLoad('Questions'),
     },
-    { path: "/sections", name: "sections", component: lazyLoad("Results") },
+    { path: '/sections', name: 'sections', component: lazyLoad('Results') },
     {
-      path: "/teamSurveys",
-      name: "teamSurveys",
-      component: lazyLoad("TeamSurveys")
+      path: '/teamSurveys',
+      name: 'teamSurveys',
+      component: lazyLoad('TeamSurveys'),
     },
-    { path: "*", name: "notFound", component: Home }
-  ]
+    { path: '*', name: 'notFound', component: Home },
+  ],
 });
