@@ -1,0 +1,4589 @@
+{
+  "pages": [
+    {
+      "name": "section_one",
+      "title": {
+        "default": "Empower staff to deliver better services",
+        "fr": "Habiliter les employés afin qu'ils offrent de meilleurs services"
+      },
+      "description": {
+        "default": "Make sure that staff have access to the tools, training and technologies they need. Empower the team to make decisions throughout the design, build and operation of the service.",
+        "fr": "Veiller à ce que les employés aient accès aux outils, à la formation et aux technologies dont ils ont besoin. Permettre aux équipes de prendre des décisions tout au long de la conception, de l'élaboration et de l'exploitation du service."
+      },
+      "elements": [
+        {
+          "type": "rating",
+          "name": "s01q001",
+          "title": {
+            "default": "On our team, members self-organize and self-manage work through self-assigning tasks.",
+            "fr": "Dans notre équipe, les membres s'organisent eux-mêmes et s'autogèrent en se répartissant eux-mêmes les tâches."
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s01q002",
+          "title": {
+            "default": "Within our team we can openly discuss challenges and new ideas without fear of blame or reproach.",
+            "fr": "Dans notre équipe, nous pouvons discuter ouvertement des difficultés et de nouvelles idées sans avoir peur du blâme et des reproches."
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s01q003",
+          "title": {
+            "default": "Team members feel safe to challenge the status quo and propose new ideas.",
+            "fr": "Les membres de l'équipe se sentent à l'aise de remettre le statu quo en question et de proposer de nouvelles idées."
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s01q004",
+          "title": {
+            "default": "We value and incorporate learning as part of our daily work.",
+            "fr": "Nous valorisons et intégrons l'apprentissage dans le cadre de notre travail quotidien."
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s01q005",
+          "title": {
+            "default": "Team members understand how their work contributes to business outcomes.",
+            "fr": "Les membres de l'équipe comprennent comment leur travail contribue aux résultats opérationnels."
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s01q006",
+          "title": {
+            "default": "We can choose the tools we use to deliver our product, service or other outcome.",
+            "fr": "Nous pouvons choisir les outils que nous souhaitons utiliser pour livrer nos produits, services et autres résultats."
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s01q007",
+          "title": {
+            "default": "Our management actively removes impediments and blockers that prevent us from delivering value.",
+            "fr": "Notre direction élimine activement les obstacles qui nous empêchent de livrer de la valeur."
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s01q008",
+          "title": {
+            "default": "Progress in making useful improvements to our work is slowed down by approvals.",
+            "fr": "L'apport d'améliorations à notre travail est ralenti par les approbations requises."
+          },
+          "rateValues": [
+            {
+              "value": "4",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "0",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s01q009",
+          "title": {
+            "default": "We have access to environments to experiment with new approaches, tools, or solutions.",
+            "fr": "Nous avons accès à des environnements qui nous permettent d'expérimenter avec de nouvelles approches, de nouveaux outils ou de nouvelles solutions."
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s01q010",
+          "title": {
+            "default": "Team members can openly provide feedback and feel it is valued.",
+            "fr": "Les membres de l'équipe peuvent ouvertement s'échanger de la rétroaction et sentir que celle-ci est valorisée."
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s01q011",
+          "title": {
+            "default": "Our team treats failures as opportunities to improve and learn.",
+            "fr": "Notre équipe traite les échecs comme des occasions de s'améliorer et d'apprendre."
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s01q012",
+          "title": {
+            "default": "Our management team directly assigns work to members of the team.",
+            "fr": "Notre équipe de direction attribue directement les tâches aux membres de l'équipe."
+          },
+          "rateValues": [
+            {
+              "value": "4",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "0",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "section_two",
+      "title": {
+        "default": "Build in accessibility from the start",
+        "fr": "Intégrer l'accessibilité dès le départ"
+      },
+      "description": {
+        "default": "Services should meet or exceed accessibility standards. Users with distinct needs should be engaged from the outset to ensure what is delivered will work for everyone.",
+        "fr": "Permettre aux services de respecter ou dépasser les normes d'accessibilité. Communiquer dès le départ avec les utilisateurs ayant des besoins particuliers, pour s'assurer que le résultat conviendra à tout le monde."
+      },
+      "elements": [
+        {
+          "type": "rating",
+          "name": "s02q001",
+          "title": {
+            "default": "Our team continuously considers the lowest levels of digital skill, confidence and access as part of our service and platform design.",
+            "fr": "Notre équipe examine continuellement les niveaux les plus faibles de compétences, de confiance et d'accès en matière numérique dans le cadre de notre conception de services et de plateformes."
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s02q002",
+          "title": {
+            "default": "Our team understands how to make our services or products accessible.",
+            "fr": "Notre équipe sait comment rendre nos services ou produits accessibles."
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s02q003",
+          "title": {
+            "default": "Our team considers accessibility throughout the service design process.",
+            "fr": "Notre équipe tient compte de l'accessibilité tout au long du processus de conception du service."
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s02q004",
+          "title": {
+            "default": "Research and testing are conducted to ensure that our service is accessible to people of all abilities no matter how, where or when they access the service.",
+            "fr": "Des recherches et des essais sont menés afin de veiller à ce que notre service soit accessible à tous les utilisateurs, quelles que soient leurs capacités et sans égard à l'endroit à partir duquel ils y accèdent, au moment de l'accès ou à la méthode utilisée."
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s02q005",
+          "title": {
+            "default": "Our team conducts ongoing research with users with low-level digital literacy, people with disabilities, and people from different cultural and linguistic backgrounds or regions.",
+            "fr": "Notre équipe effectue une recherche continue sur les utilisateurs ayant un faible niveau de littératie numérique, sur les personnes handicapées et sur les personnes issues de différents milieux ou de différentes régions culturels et linguistiques."
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s02q006",
+          "title": {
+            "default": "Our team implements automated accessibility checks for our services.",
+            "fr": "Notre équipe met en place des mesures de contrôle automatisées en matière d'accessibilité par rapport à nos services."
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s02q007",
+          "title": {
+            "default": "Accessibility compliance is only added at the end of the development cycle in order to pass compliance checks or audits.",
+            "fr": "On ajoute seulement la conformité à l'accessibilité à la fin du cycle de développement afin de satisfaire aux mesures de contrôle ou aux audits de conformité."
+          },
+          "rateValues": [
+            {
+              "value": "4",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "0",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s02q008",
+          "title": {
+            "default": "Our team has specific standards we test against to ensure service accessibility.",
+            "fr": "Notre équipe s'appuie sur des normes précises servant à veiller à l'accessibilité du service dans le cadre de ses essais. "
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "section_three",
+      "title": {
+        "default": "Use open standards and solutions",
+        "fr": "Utiliser des normes et des solutions ouvertes"
+      },
+      "description": {
+        "default": "Leverage open standards and embrace leading practices, including the use of open source software where appropriate. Design for services and platforms that are seamless for Canadians to use no matter what device or channel they are using.",
+        "fr": "Profiter des normes ouvertes et adopter des pratiques exemplaires, y compris l'utilisation de logiciels libres, s'il y a lieu. Concevoir des services et des plateformes que les Canadiens peuvent utiliser de façon intégrée au moyen de n'importe quel appareil ou réseau."
+      },
+      "elements": [
+        {
+          "type": "rating",
+          "name": "s03q001",
+          "title": {
+            "default": "When searching for a new product, service or solution, our team considers open source solutions.",
+            "fr": "Lors de la recherche pour un nouveau produit ou service, ou une nouvelle solution, notre équipe examine les solutions à sources ouvertes."
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s03q002",
+          "title": {
+            "default": "Our team prioritizes solutions that use open standards or open source solutions over other options.",
+            "fr": "Notre équipe privilégie les solutions qui s'appuient sur des normes ouvertes ou des solutions de source ouverte par rapport aux autres options."
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s03q003",
+          "title": {
+            "default": "Team members contribute back to the open source communities whose work we use.",
+            "fr": "Les membres de l'équipe contribuent aux collectivités de source ouverte qui produisent les solutions que nous utilisons."
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "N/A",
+                "fr": "N/A"
+              }
+            },
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s03q004",
+          "title": {
+            "default": "Our services are designed to be interoperable with other services.",
+            "fr": "Nos services sont conçus de façon à permettre l'interopérabilité avec d'autres services."
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "N/A",
+                "fr": "N/A"
+              }
+            },
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s03q005",
+          "title": {
+            "default": "Our work is highly dependent upon vendors, consultants, or closed-source proprietary software.",
+            "fr": "Notre travail dépend fortement des vendeurs, des consultants ou de logiciels propriétaires fermés."
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s03q006",
+          "title": {
+            "default": "Our service supports users on any device, from anywhere and at any time.",
+            "fr": "Notre service assiste les clients, peu importe leur appareil, leur location ou le moment."
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s03q007",
+          "title": {
+            "default": "Our team makes our work openly accessible to the community through open source licenses.",
+            "fr": "Notre équipe permet à la collectivité d'accéder ouvertement à nos travaux par l'intermédiaire d'une licence de source ouverte."
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "N/A",
+                "fr": "N/A"
+              }
+            },
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s03q008",
+          "title": {
+            "default": "Our chosen solution does not limit our ability to share it with others (e.g. other governments, other jurisdictions, community groups, etc.)",
+            "fr": "La solution que nous choisissons ne limite pas notre capacité de l'échanger avec d'autres entités (par exemple, d'autres gouvernements, d'autres administrations, groupes de la collectivité, etc.). "
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s03q009",
+          "title": {
+            "default": "Our team is allowed to use open source solutions.",
+            "fr": "Notre équipe peut utiliser des solutions de source ouverte."
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "section_four",
+      "title": {
+        "default": "Design with users",
+        "fr": "Concevoir avec les utilisateurs"
+      },
+      "description": {
+        "default": "Research with users to understand their needs and the problems we want to solve. Conduct ongoing testing with users to guide design and development.",
+        "fr": "Faire des recherches en collaboration avec les utilisateurs pour bien comprendre leurs besoins ainsi que les problèmes que nous voulons régler."
+      },
+      "elements": [
+        {
+          "type": "rating",
+          "name": "s04q001",
+          "title": {
+            "default": "Our team includes, or has direct access to, the expertise required to conduct ongoing user research and usability testing.",
+            "fr": "Notre équipe possède l'expertise nécessaire pour effectuer, de façon continue, des recherches sur les utilisateurs et des essais d'utilisabilité, ou elle a un accès direct à celle-ci."
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s04q002",
+          "title": {
+            "default": "We have processes or tools in place to gather feedback, including anonymously.",
+            "fr": "Nous avons des processus ou des outils en place pour recueillir de la rétroaction, y compris de la rétroaction anonyme."
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s04q003",
+          "title": {
+            "default": "Our team uses regular feedback from users to help design or redesign our service(s).",
+            "fr": "Notre équipe s'appuie sur la rétroaction régulière des utilisateurs pour l'aider à concevoir et remanier nos services. "
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s04q004",
+          "title": {
+            "default": "Our team builds our service based on detailed requirements outlined in documentation.",
+            "fr": "Notre équipe construit nos services en se fondant sur les exigences précises qui sont détaillées dans la documentation."
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s04q005",
+          "title": {
+            "default": "Our team conducts user research before deciding how to implement the service.",
+            "fr": "Notre équipe mène des recherches sur les utilisateurs avant de se décider sur la façon de mettre en œuvre le service."
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s04q006",
+          "title": {
+            "default": "We test our systems with a range of users, with varying needs, from varying locations, and from diverse backgrounds.",
+            "fr": "Nous mettons à l'essai nos systèmes à l'aide d'un éventail d'utilisateurs ayant des besoins variés et dont l'emplacement et les antécédents varient également. "
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s04q007",
+          "title": {
+            "default": "User needs and feedback are considered when defining and measuring our key service metrics.",
+            "fr": "Les besoins et les commentaires des utilisateurs sont pris en considération dans la définition et la mesure des principaux paramètres de service."
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s04q008",
+          "title": {
+            "default": "Our team prioritizes features or tasks based on what will provide the most value to our users.",
+            "fr": "Notre équipe hiérarchise les fonctionnalités et les tâches selon la valeur qu'elles apportent à nos utilisateurs. "
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s04q009",
+          "title": {
+            "default": "Our team uses automation to anticipate and detect operational or quality issues before our users tell us.",
+            "fr": "Notre équipe utilise l'automatisation pour prévoir et déceler les problèmes opérationnels ou en lien avec la qualité, avant que nos utilisateurs ne nous en avisent."
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s04q010",
+          "title": {
+            "default": "Do you look at other government services to try and ensure consistency from a user perspective?",
+            "fr": "Tenez-vous compte des autres services du gouvernement afin d'essayer d'assurer une cohérence du point de vue de l'utilisateur?"
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "section_five",
+      "title": {
+        "default": "Collaborate widely",
+        "fr": "Collaborer largement"
+      },
+      "description": {
+        "default": "Create multidisciplinary teams with the range of skills needed to deliver a common goal. Share and collaborate in the open. Identify and create partnerships which help deliver value to users.",
+        "fr": "Créer des équipes multidisciplinaires ayant des compétences variées qui sont nécessaires à l'atteinte d'un objectif commun. Échanger et collaborer ouvertement. Déterminer et créer des partenariats qui aident à offrir de la valeur aux utilisateurs."
+      },
+      "elements": [
+        {
+          "type": "rating",
+          "name": "s05q001",
+          "title": {
+            "default": "Our team is multidisciplinary, with the skills and capabilities required to fully deliver our service to users.",
+            "fr": "Notre équipe est multidisciplinaire et dispose de toutes les compétences et capacités requises pour fournir un service complet aux utilisateurs."
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s05q002",
+          "title": {
+            "default": "Our team is active in communities of practice, events or groups that pertain to the areas of expertise of team members.",
+            "fr": "Notre équipe est active au sein des communautés de pratique ou dans des groupes ou des activités en rapport avec les domaines de spécialisation des membres de l'équipe."
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s05q003",
+          "title": {
+            "default": "We identify and collaborate with other teams inside or outside of our organization, including other levels of government, other governments, the public, or private sector organizations, who have done or are doing similar work.",
+            "fr": "Nous cernons d'autres équipes avec lesquelles collaborer au sein de notre organisation ou à l'extérieure de celle-ci, ce qui peut comprendre d'autres ordres de gouvernement, d'autres gouvernements ou des organisations du secteur privé qui ont fait ou qui font un travail semblable."
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s05q004",
+          "title": {
+            "default": "Our team documents any APIs for our service using modern and common protocols and standards and provides examples of their use.",
+            "fr": "Notre équipe documente toutes les API de notre service en utilisant des normes et des protocoles modernes et communs, et elle fournit des exemples de leur utilisation."
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s05q005",
+          "title": {
+            "default": "Data from performance monitoring tools is used to inform business decisions.",
+            "fr": "Les données des outils de suivi du rendement sont utilisées pour éclairer les décisions opérationnelles."
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s05q006",
+          "title": {
+            "default": "Our team relies on tickets or handoffs to manage collaboration between internal stakeholders or teams.",
+            "fr": "Notre équipe s'appuie sur des billets ou des transferts pour gérer la collaboration entre les intervenants ou les équipes internes."
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s05q007",
+          "title": {
+            "default": "Our team connects regularly with other related teams to understand how decisions about our service impact other teams, and how decisions made by other teams impact our own service.",
+            "fr": "Notre équipe communique régulièrement avec d'autres équipes connexes afin de comprendre comment les décisions que nous prenons en lien avec notre service peuvent affecter les autres équipes et vice versa."
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "section_six",
+      "title": {
+        "default": "Iterate and improve frequently",
+        "fr": "Répéter les essais et apporter constamment des améliorations"
+      },
+      "description": {
+        "default": "Develop services using agile, iterative and user-centred methods. Continuously improve in response to user needs. Try new things, start small and scale up.",
+        "fr": "Élaborer des services au moyen de méthodes souples et itératives, axées sur l'utilisateur. Effectuer constamment des améliorations en réponse aux besoins des utilisateurs. Essayer de nouvelles approches, commencer petit et passer à l'échelon supérieur."
+      },
+      "elements": [
+        {
+          "type": "rating",
+          "name": "s06q001",
+          "title": {
+            "default": "We have processes in place to prioritize and implement feedback from peers, stakeholders and end users.",
+            "fr": "Nous avons des processus en place qui permettent d'accorder la priorité à la rétroaction des pairs, des intervenants et des utilisateurs finaux et de la mettre en œuvre."
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s06q002",
+          "title": {
+            "default": "When a new or updated service or feature is being created, our team understands the minimum requirements for the system to be of value to users.",
+            "fr": "Lorsqu'on procède à la création d'une nouvelle fonction ou d'un nouveau service, notre équipe comprend les exigences minimales que doit posséder le système afin qu'il puisse s'avérer utile pour les utilisateurs."
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s06q003",
+          "title": {
+            "default": "Our team experiments with new approaches based on team reflections, lessons learned and user feedback.",
+            "fr": "Notre équipe expérimente avec de nouvelles approches fondées sur les réflexions de l'équipe, les leçons tirées et la rétroaction reçue des utilisateurs."
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s06q004",
+          "title": {
+            "default": "Our team collects metrics throughout the development and life cycle of the service in order to improve it.",
+            "fr": "Notre équipe recueille des mesures tout au long du développement et du cycle de vie du service afin de l'améliorer."
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s06q005",
+          "title": {
+            "default": "When resolving problems, our team dedicates time to identify the root cause of the issue and address it.",
+            "fr": "Lorsqu'elle résout des problèmes, notre équipe consacre du temps à rechercher la cause profonde du problème et à le résoudre."
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s06q006",
+          "title": {
+            "default": "Our team inspects, adapts and automates our processes to deliver value to users faster.",
+            "fr": "Notre équipe inspecte, adapte et automatise nos processus en vue d'offrir plus rapidement de la valeur aux utilisateurs."
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s06q007",
+          "title": {
+            "default": "Our team has access to environments and resources to allow for rapid prototyping while initial requirements are being identified.",
+            "fr": "Notre équipe a accès à des environnements et à des ressources qui permettent de réaliser rapidement des prototypes pendant que l'on cherche toujours à cerner les exigences initiales."
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s06q008",
+          "title": {
+            "default": "Our team embraces learning about and using new digital skills, approaches and tools to incorporate into our daily work.",
+            "fr": "Notre équipe s'engage à apprendre et à utiliser de nouvelles compétences numériques, des approches et des outils pour les intégrer à notre travail quotidien."
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s06q009",
+          "title": {
+            "default": "Our team shares our work only once it has been finalized and approved.",
+            "fr": "Notre équipe ne présente notre travail que lorsqu'il a été achevé et approuvé."
+          },
+          "rateValues": [
+            {
+              "value": "4",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "0",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s06q010",
+          "title": {
+            "default": "Our team openly reviews processes and procedures to identify efficiencies.",
+            "fr": "Notre équipe examine ouvertement les processus et les procédures en vue de cerner des gains en efficience."
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s06q011",
+          "title": {
+            "default": "Our team must wait for the project to be approved and funded before we can get access to environments to begin experimenting with solutions.",
+            "fr": "Notre équipe doit attendre l'approbation et le financement du projet avant que nous puissions accéder aux environnements qui nous permettront de commencer à expérimenter avec des solutions."
+          },
+          "rateValues": [
+            {
+              "value": "4",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "0",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s06q012",
+          "title": {
+            "default": "Our team fully architects the service delivery solution before starting to build.",
+            "fr": "Notre équipe conçoit entièrement l'architecture de la solution de prestation de services avant d'entreprendre la mise en œuvre."
+          },
+          "rateValues": [
+            {
+              "value": "4",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "0",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "section_seven",
+      "title": {
+        "default": "Address security and privacy risks",
+        "fr": "Gérer les risques en matière de sécurité et de protection des renseignements personnels"
+      },
+      "description": {
+        "default": "Take a balanced approach to managing risk by implementing appropriate privacy and security measures. Make security measures frictionless so that they do not place a burden on users.",
+        "fr": "Adopter une approche équilibrée de la gestion des risques en appliquant les mesures appropriées en matière de protection des renseignements personnels et de sécurité. Veiller à ce que les mesures de sécurité ne causent pas de friction, afin qu'elles ne deviennent pas un fardeau pour les utilisateurs."
+      },
+      "elements": [
+        {
+          "type": "rating",
+          "name": "s07q001",
+          "title": {
+            "default": "Our team considers security and privacy from the beginning of the service design process and as part of continuous iteration and improvement.",
+            "fr": "Notre équipe tient compte de la sécurité et de la protection des renseignements personnels, du début du processus de conception de service, et continue d'en tenir compte dans le cadre des itérations et des améliorations."
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s07q002",
+          "title": {
+            "default": "Our team ensures that security and privacy legal and policy requirements are respected while prioritizing service delivery and user experience.",
+            "fr": "Notre équipe veille à ce que les exigences légales et stratégiques en matière de sécurité et de protection des renseignements personnels soient respectées, tout en accordant la priorité à la prestation de services et à l'expérience utilisateur."
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s07q003",
+          "title": {
+            "default": "Security measures are frictionless so that they do not place a burden on users.",
+            "fr": "Les mesures de sécurité ne causent aucune friction et ne représentent aucun fardeau pour les utilisateurs."
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s07q004",
+          "title": {
+            "default": "Our team has privacy and security knowledge and understanding as a competency within the team.",
+            "fr": "La connaissance et la compréhension des questions liées à la protection des renseignements personnels et à la sécurité sont une compétence interne de notre équipe."
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s07q005",
+          "title": {
+            "default": "The service has automated security checks and privacy protections, including role-based access and audit functions along with the associated processes.",
+            "fr": "Le service a des mesures de sécurité automatisées, parmi lesquelles on compte notamment des fonctions d'accès et d'audit fondées sur les rôles et les processus connexes"
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s07q006",
+          "title": {
+            "default": "There are procedures and processes in place to quickly respond to security or privacy breaches or incidents.",
+            "fr": "Des procédures et des processus permettent de réagir rapidement en cas de violations ou d'incidents liés à la sécurité ou à la protection des renseignements personnels."
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s07q007",
+          "title": {
+            "default": "Our team relies on security through obscurity, hiding services or information rather than improving the security posture of the service.",
+            "fr": "Notre équipe mise sur la sécurité par le secret, en dissimulant des services ou des renseignements, plutôt qu'en améliorant le positionnement global du service en matière de sécurité."
+          },
+          "rateValues": [
+            {
+              "value": "4",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "0",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s07q008",
+          "title": {
+            "default": "Our team engages an ATIP officer to ensure on-going compliance with applicable legislation and policy requirements.",
+            "fr": "Notre équipe emploie un agent de l'AIPRP afin de veiller à la conformité continue aux exigences législatives et stratégiques applicables."
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "section_eight",
+      "title": {
+        "default": "Work in the open by default",
+        "fr": "Travailler ouvertement par défaut"
+      },
+      "description": {
+        "default": "Share evidence, research and decision making openly. Make all non-sensitive data, information, and new code developed in delivery of services open to the outside world for sharing and reuse under an open licence.",
+        "fr": "Diffuser ouvertement des données probantes, des travaux de recherche et des éléments de la prise de décisions. Rendre accessibles toutes les données de nature non sensible, les renseignements et les nouveaux codes source conçus dans le cadre de la prestation de services, afin que le monde extérieur puisse se les échanger et les réutiliser sous une licence ouverte."
+      },
+      "elements": [
+        {
+          "type": "rating",
+          "name": "s08q001",
+          "title": {
+            "default": "We regularly make all non-sensitive and non-personal data and information publicly available or, at a minimum, accessible across the Government of Canada for sharing and reuse.",
+            "fr": "Nous mettons régulièrement à la disposition du public l'ensemble des données et des renseignements qui ne sont pas personnels ou de nature délicate, ou nous les mettons au minimum à la disposition de l'ensemble du gouvernement du Canada, aux fins de diffusion et d'utilisation."
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s08q002",
+          "title": {
+            "default": "Our team makes new code publicly available, or at a minimum, accessible across the Government of Canada for sharing and reuse.",
+            "fr": "Notre équipe met le nouveau code que nous créons à la disposition du public. Au minimum, nous le mettons à la disposition de l'ensemble du gouvernement du Canada, aux fins de diffusion et d'utilisation. "
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "N/A",
+                "fr": "N/A"
+              }
+            },
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s08q003",
+          "title": {
+            "default": "Our team contributes back to the public projects we borrow from.",
+            "fr": "Notre équipe contribue aux projets publics desquels nous empruntons le contenu."
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "N/A",
+                "fr": "N/A"
+              }
+            },
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s08q004",
+          "title": {
+            "default": "Our team tracks and makes public the metrics we use to measure our success.",
+            "fr": "Notre équipe suit et rend publics les paramètres que nous utilisons pour mesurer notre succès."
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s08q005",
+          "title": {
+            "default": "Our team tracks and makes publicly available or, at a minimum, accessible across the Government of Canada, information about how often a change to our services fails (for example, the deployment or rollout of a service or feature experiences issues or complications).",
+            "fr": "Notre équipe effectue le suivi et met à la disposition du public, ou au minimum à l'ensemble du gouvernement du Canada, les renseignements sur la fréquence d'échec d'une modification de nos services (par exemple, en cas de problèmes ou de complications suivant le déploiement ou la mise en place d'un service ou d'une fonctionnalité)."
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "N/A",
+                "fr": "N/A"
+              }
+            },
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s08q006",
+          "title": {
+            "default": "Our team makes visual displays that show what we're working on and the status of our work; these displays are available publicly or at least throughout the Government of Canada.",
+            "fr": "Notre équipe fait des présentations visuelles qui montrent sur quoi nous travaillons ainsi que l'état de nos travaux. Ces présentations visuelles sont mises à la disposition du public, ou sont au moins mis à la disposition de l'ensemble du gouvernement du Canada."
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s08q007",
+          "title": {
+            "default": "Our team publicly documents, including examples of reuse, how others can use our service's application programming interfaces (APIs), open data or information.",
+            "fr": "Notre équipe documente publiquement comment d'autres entités peuvent réutiliser nos interfaces de programmation d'applications (API), nos données ouvertes et nos renseignements, consignant notamment des exemples de réutilisation."
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s08q008",
+          "title": {
+            "default": "Our team releases results from user testing, including the rationale on when suggestions are not used (What we heard reports, for example)",
+            "fr": "Notre équipe publie les résultats découlant de nos essais par les utilisateurs, y compris les justifications utilisées lorsque des suggestions ne sont pas retenues (rapports Ce que nous avons entendu)."
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "section_nine",
+      "title": {
+        "default": "Design ethical services",
+        "fr": "Concevoir des services éthiques"
+      },
+      "description": {
+        "default": "Make sure that everyone receives fair treatment. Comply with ethical guidelines in the design and use of systems which automate decision making (such as the use of artificial intelligence).",
+        "fr": "S'assurer que tous reçoivent un traitement équitable. Respecter les lignes directrices éthiques relatives à la conception et à l'utilisation des systèmes automatisés sur lesquels repose la prise de décision (tels que l'utilisation de l'intelligence artificielle)."
+      },
+      "elements": [
+        {
+          "type": "rating",
+          "name": "s09q001",
+          "title": {
+            "default": "Our team continually seeks out indicators of bias and ensures that our services are not reinforcing unintended biases.",
+            "fr": "Notre équipe recherche continuellement des indicateurs de biais et veille à ce que nos services ne renforcent pas les préjugés involontaires."
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s09q002",
+          "title": {
+            "default": "We continually seek out evidence of unintended consequences to the user in service design and delivery and work to mitigate these consequences for the user.",
+            "fr": "Nous recherchons continuellement les preuves de conséquences imprévues pour l'utilisateur dans la conception et la prestation de services, et nous nous efforçons en vue d'atténuer ces conséquences pour l'utilisateur."
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s09q003",
+          "title": {
+            "default": "When our team uses automated decision-making, we acknowledge, account for and mitigate possible biases in the data and algorithms.",
+            "fr": "Lorsque notre équipe s'appuie sur la prise de décisions automatisée, nous reconnaissons la possibilité que des biais se glissent dans les données et les algorithmes; nous en tenons compte et nous prenons des mesures en vue de les atténuer."
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s09q004",
+          "title": {
+            "default": "Our team designs services that address cultural, linguistic, geographical, accessibility, technological, socioeconomic, or other access barriers to uptake.",
+            "fr": "Notre équipe conçoit des services qui tiennent compte des obstacles à l'accès de nature culturelle, linguistique et géographique, ainsi que des obstacles liés à l'accessibilité, aux technologies, aux réalités socioéconomiques, etc."
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s09q005",
+          "title": {
+            "default": "Our team has considered the impacts of decisions on the users and reduces negative outcomes.",
+            "fr": "Notre équipe a examiné les répercussions des décisions sur les utilisateurs et en réduit les résultats négatifs."
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s09q006",
+          "title": {
+            "default": "Our team uses data in a manner consistent with the purpose of its collection.",
+            "fr": "Notre équipe utilise les données d'une manière compatible avec le but de sa collecte."
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s09q007",
+          "title": {
+            "default": "Our team delegates ethical assessment to a vendor or external service, without direct accountability.",
+            "fr": "Notre équipe délègue l'évaluation éthique à un fournisseur ou à un service externe, sans en rendre compte directement."
+          },
+          "rateValues": [
+            {
+              "value": "4",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "0",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "section_ten",
+      "title": {
+        "default": "Be good data stewards",
+        "fr": "être de bons utilisateurs de données"
+      },
+      "description": {
+        "default": "Collect data from users only once and reuse wherever possible. Ensure that data is collected and held in a secure way so that it can easily be reused by others to provide services.",
+        "fr": "Recueillir les données des utilisateurs une seule fois et les réutiliser autant que possible. Veiller à ce que les données soient recueillies et gardées de manière sécuritaire afin que les autres puissent facilement les réutiliser pour offrir des services."
+      },
+      "elements": [
+        {
+          "type": "rating",
+          "name": "s10q001",
+          "title": {
+            "default": "Our team strives to leverage data to continually improve decision-making, operations or service delivery.",
+            "fr": "Notre équipe s'efforce d'exploiter les données pour améliorer en permanence la prise de décisions, les opérations ou la prestation de services."
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s10q002",
+          "title": {
+            "default": "Our team identifies what data is needed to support decision-making, operations or service delivery, and reuses existing data wherever possible  before acquiring new data, in accordance with relevant legislative and policy requirements.",
+            "fr": "Notre équipe cerne les données nécessaires pour appuyer la prise de décisions, les opérations ou la prestation de services, et elle réutilise les données existantes autant que possible avant de procéder à la saisie de nouvelles données, conformément aux exigences législatives et stratégiques pertinentes."
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s10q003",
+          "title": {
+            "default": "Our team strives to identify and remove barriers to data sharing and release, where possible.",
+            "fr": "Notre équipe s'efforce de cerner et d'éliminer les obstacles à la mise en commun et la diffusion des données, dans la mesure du possible."
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s10q004",
+          "title": {
+            "default": "Our team ensures that users of our services can make corrections to their personal information.",
+            "fr": "Notre équipe veille à ce que les utilisateurs de nos services puissent apporter des corrections à leurs renseignements personnels."
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s10q005",
+          "title": {
+            "default": "Our team publishes data and information, when appropriate, on the open government portal.",
+            "fr": "Notre équipe diffuse des données et des renseignements à partir du Portail du gouvernement ouvert, lorsqu'il y a lieu."
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s10q006",
+          "title": {
+            "default": "Our team publishes data in plain language and machine-readable formats.",
+            "fr": "Notre équipe diffuse les données dans un langage simple et dans des formats lisibles par machine."
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s10q007",
+          "title": {
+            "default": "Our team has clearly defined roles, responsibilities and accountabilities for the ongoing management and governance of data and information.",
+            "fr": "Notre équipe a clairement défini les rôles, les responsabilités et les obligations pour la gestion et la gouvernance continues des données et des renseignements."
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s10q008",
+          "title": {
+            "default": "Our team has frameworks and processes in place to regularly assess, maintain and improve data quality.",
+            "fr": "Notre équipe a procédé à la mise en place de cadres et de processus servant à évaluer, maintenir et améliorer régulièrement la qualité des données."
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s10q009",
+          "title": {
+            "default": "Our service has processes in place to ensure proper management and governance of information and data before they are collected, used, shared, disclosed, retained, disposed of, archived, or declassified.",
+            "fr": "Notre service prévoit des processus permettant de veiller à la gestion et la gouvernance appropriée des données et des renseignements avant que ceux-ci soient collectés, communiqués, divulgués, conservés, éliminés, archivés ou déclassifiés."
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s10q010",
+          "title": {
+            "default": "Our team ensures that information and data of business value are stored in systems where they can be properly managed.",
+            "fr": "Notre équipe veille à ce que les renseignements et les données de valeur opérationnelle soient stockés dans des systèmes où ils peuvent être gérés correctement."
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s10q011",
+          "title": {
+            "default": "Our team captures appropriate metadata to provide context for the information and data we create and capture, which enables their discovery and reuse by others.",
+            "fr": "Notre équipe saisit les métadonnées appropriées pour fournir le contexte de l'information et des données que nous créons et saisissons, permettant ainsi à d'autres de les découvrir et de les réutiliser."
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s10q012",
+          "title": {
+            "default": "Our team has processes in place for determining the classification of data and information.",
+            "fr": "Notre équipe a des processus en place pour déterminer la classification des données et des renseignements."
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s10q013",
+          "title": {
+            "default": "Our team is aware of which information and data have business value and prioritizes their management and governance.",
+            "fr": "Notre équipe sait quels renseignements et quelles données ont une valeur opérationnelle, et elle en assure la gestion et la gouvernance prioritaires."
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s10q014",
+          "title": {
+            "default": "Our team adopts  federal and/or international data standards",
+            "fr": "Notre équipe adopte des normes fédérales ou internationales relatives aux données."
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s10q015",
+          "title": {
+            "default": "Our team embeds data considerations in the design, planning, and delivery of initiatives.",
+            "fr": "Notre équipe intègre des considérations relatives aux données dans la conception, la planification et l'exécution des initiatives."
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s10q016",
+          "title": {
+            "default": "Our team has frameworks and processes supporting the ethical collection, management, sharing, and use of data.",
+            "fr": "Notre équipe a des cadres et des processus servant à soutenir la collecte, la gestion, la communication et l'usage éthiques des données."
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "s10q017",
+          "title": {
+            "default": "Our team safeguards the privacy and security of data throughout the lifecycle.",
+            "fr": "Notre équipe protège la sécurité et la confidentialité des données tout au long du cycle de vie."
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "showQuestionNumbers": "off",
+  "showProgressBar": "false",
+  "showNavigationButtons": "false"
+}
