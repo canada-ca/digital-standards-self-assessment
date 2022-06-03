@@ -1,4 +1,4 @@
-const survey1 = require('./20220528015116-survey-enfr-survey-enfr.json');
+const survey1 = require('./20220528015116-survey-enfr.json');
 const teams = require('./20220531011139-teams.json');
 
 module.exports = {
