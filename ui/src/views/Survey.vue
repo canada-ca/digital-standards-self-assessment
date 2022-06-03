@@ -5,22 +5,22 @@
       <SurveySectionsContainer :sections="sections" :survey="Survey" />
     </div>
     <div class="btn-div">
-      <b-button class="btn btn-secondary" @click="reset">{{ $t('buttons.reset') }}</b-button>
+      <b-button class="btn btn-secondary reset" @click="reset">{{ $t('buttons.reset') }}</b-button>
       <download-survey @confirmToDownload="downloadSurvey" />
-      <b-button class="btn btn-primary" @click="submitAnswers">{{ $t('buttons.submitButton') }}</b-button>
+      <b-button class="btn btn-primary submitAnswers" @click="submitAnswers">{{ $t('buttons.submitButton') }}</b-button>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import AssessmentTool from '@/components/AssessmentTool.vue'; // @ is an alias to /src
+import AssessmentTool from '@/components/AssessmentTool.vue';
 import DownloadSurvey from '@/components/DownloadSurvey.vue';
-import SurveySectionsContainer from '@/components/SurveySectionsContainer.vue';
 import Message, { MessageVariantType } from '@/components/Message.vue';
+import SurveySectionsContainer from '@/components/SurveySectionsContainer.vue';
 import { SurveyResult } from '@/interfaces/api-models';
 import i18n from '@/plugins/i18n';
 import apiService from '@/services/api.service';
-import { actions, ActionTypes } from '@/store/actions';
+import { ActionTypes } from '@/store/actions';
 import showdown from 'showdown';
 import { Model, PageModel, SurveyModel } from 'survey-vue';
 import { Component, Vue, Watch } from 'vue-property-decorator';
