@@ -5,7 +5,7 @@ export async function connectDB() {
   try {
     if (mongoose.connection.readyState !== 1) {
       await mongoose.connect(
-        `${config.MONGODB_PROTOCAL}://${config.MONGODB_USER}:${config.MONGODB_PASS}@${config.MONGODB_URL}/${config.MONGODB_DBNAME}`,
+        `${config.MONGODB_PROTOCAL}://${config.MONGODB_USER}:${config.MONGODB_PASS}@${config.MONGODB_URL}/${config.MONGODB_DBNAME}?${config.MONGODB_OPTIONS}`,
         {
           autoIndex: true, //make this also true
         }
