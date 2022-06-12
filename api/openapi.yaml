@@ -1,0 +1,543 @@
+openapi: 3.0.0
+info:
+  title: Digital Standard Self-Assessment Tool API
+  version: 1.0.0
+servers:
+  - url: http://localhost:7071/api
+paths:
+  /survey:
+    get:
+      tags:
+        - Survey
+      operationId: findSurvey
+      summary: Find surveys or find latest survey.
+      parameters:
+        - in: query
+          name: latest
+          description: Show the latest survey if the parameter represent.
+          required: false
+          schema:
+            type: boolean
+      responses:
+        '200':
+          description: 200 response
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: '#/components/schemas/Survey'
+                  - $ref: '#/components/schemas/SurveyArray'
+        '404':
+          description: 404 response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+    post:
+      tags:
+        - Survey
+      operationId: createSurvey
+      summary: Create a survey
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Survey'
+      responses:
+        '201':
+          description: 201 response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Survey'
+  /survey/{id}:
+    get:
+      tags:
+        - Survey
+      operationId: findSurveyById
+      summary: Find survey by ID.
+      parameters:
+        - in: path
+          name: id
+          description: Survey ID
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: 200 response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Survey'
+        '404':
+          description: 404 response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+    put:
+      tags:
+        - Survey
+      operationId: updateSurvey
+      summary: Update survey
+      parameters:
+        - in: path
+          name: id
+          description: Survey ID
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Survey'
+      responses:
+        '200':
+          description: 200 response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+        '404':
+          description: 404 response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+    delete:
+      tags:
+        - Survey
+      operationId: deleteSurvey
+      summary: Delete Survey
+      parameters:
+        - in: path
+          name: id
+          description: Survey ID
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: 200 response
+        '404':
+          description: 404 response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+  /team:
+    get:
+      tags:
+        - Team
+      operationId: findTeam
+      summary: Find all teams.
+      responses:
+        '200':
+          description: 200 response
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Team'
+        '404':
+          description: 404 response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+    post:
+      tags:
+        - Team
+      operationId: createTeam
+      summary: Create one team or multiple teams
+      requestBody:
+        content:
+          application/json:
+            schema:
+              oneOf:
+                - $ref: '#/components/schemas/Team'
+                - $ref: '#/components/schemas/TeamArray'
+      responses:
+        '201':
+          description: 201 response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+  /team/{id}:
+    put:
+      tags:
+        - Team
+      operationId: updateTeam
+      summary: Update team
+      parameters:
+        - in: path
+          name: id
+          description: Team ID
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Team'
+      responses:
+        '200':
+          description: 200 response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+        '404':
+          description: 404 response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+    delete:
+      tags:
+        - Team
+      operationId: deleteTeam
+      summary: Delete Team
+      parameters:
+        - in: path
+          name: id
+          description: Team ID
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: 200 response
+        '404':
+          description: 404 response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+  /survey-result:
+    get:
+      tags:
+        - Survey Result
+      operationId: findSurveyResult
+      summary: Find survey result by a date range.
+      parameters:
+        - in: query
+          name: startDate
+          description: The start date of the date range
+          schema:
+            type: string
+            format: date(yyyy-mm-dd)
+        - in: query
+          name: endDate
+          description: The start date of the date range
+          schema:
+            type: string
+            format: date(yyyy-mm-dd)
+      responses:
+        '200':
+          description: 200 response
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SurveyResult'
+        '404':
+          description: 404 response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+    post:
+      tags:
+        - Survey Result
+      operationId: createSurveyResult
+      summary: Create one a Survey Result
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SurveyResult'
+      responses:
+        '201':
+          description: 201 response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+  /survey-result/{id}:
+    get:
+      tags:
+        - Survey Result
+      operationId: findSurveyResultById
+      summary: Find survey result by survey result ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          description: The survey result ID
+          schema:
+            type: string
+      responses:
+        '200':
+          description: 200 response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SurveyResult'
+        '404':
+          description: 404 response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+    delete:
+      tags:
+        - Survey Result
+      operationId: deleteSurveyResultById
+      summary: Delete survey result by survey result ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          description: The survey result ID
+          schema:
+            type: string
+      responses:
+        '200':
+          description: 200 response
+        '404':
+          description: 404 response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+components:
+  schemas:
+    SurveyArray:
+      type: array
+      items:
+        $ref: '#/components/schemas/Survey'
+    Survey:
+      type: object
+      properties:
+        _id:
+          type: string
+        pages:
+          type: array
+          items:
+            $ref: '#/components/schemas/Section'
+        showQuestionNumbers:
+          type: string
+          default: 'on'
+          enum:
+            - 'on'
+            - 'off'
+        showProgressBar:
+          type: string
+          default: 'true'
+          enum:
+            - 'true'
+            - 'false'
+        showNavigationButtons:
+          type: string
+          default: 'false'
+          enum:
+            - 'true'
+            - 'false'
+        createdAt:
+          type: string
+          format: date-time
+      required:
+        - pages
+    Section:
+      type: object
+      properties:
+        name:
+          type: string
+        title:
+          $ref: '#/components/schemas/BilingualText'
+        description:
+          $ref: '#/components/schemas/BilingualText'
+        elements:
+          type: array
+          items:
+            oneOf:
+              - $ref: '#/components/schemas/RatingQuestion'
+              - $ref: '#/components/schemas/SingleSelectQuestion'
+              - $ref: '#/components/schemas/MultipleSelectQuestion'
+      required:
+        - name
+        - title
+        - description
+        - elements
+    BilingualText:
+      type: object
+      properties:
+        default:
+          type: string
+        fr:
+          type: string
+      required:
+        - default
+        - fr
+    RatingQuestion:
+      type: object
+      properties:
+        type:
+          type: string
+          default: rating
+        name:
+          type: string
+        title:
+          $ref: '#/components/schemas/BilingualText'
+        value:
+          type: string
+        rateValues:
+          type: array
+          items:
+            properties:
+              value:
+                type: string
+              text:
+                $ref: '#/components/schemas/BilingualText'
+            required:
+              - value
+              - text
+      required:
+        - type
+        - name
+        - value
+        - rateValues
+    SingleSelectQuestion:
+      type: object
+      properties:
+        type:
+          type: string
+          default: radiogroup
+        name:
+          type: string
+        title:
+          $ref: '#/components/schemas/BilingualText'
+        value:
+          type: string
+        choices:
+          type: array
+          items:
+            properties:
+              value:
+                type: string
+              text:
+                $ref: '#/components/schemas/BilingualText'
+            required:
+              - value
+              - text
+          required:
+            - items
+      required:
+        - type
+        - name
+        - title
+        - value
+        - choices
+    MultipleSelectQuestion:
+      type: object
+      properties:
+        type:
+          type: string
+          default: checkbox
+        name:
+          type: string
+        title:
+          $ref: '#/components/schemas/BilingualText'
+        value:
+          type: string
+        choices:
+          type: array
+          items:
+            properties:
+              value:
+                type: string
+              text:
+                $ref: '#/components/schemas/BilingualText'
+            required:
+              - value
+              - text
+      required:
+        - type
+        - name
+        - title
+        - value
+        - choices
+    Team:
+      type: object
+      properties:
+        teamNameEn:
+          type: string
+        teamNameFr:
+          type: string
+      required:
+        - teamNameEn
+        - teamNameFr
+    TeamArray:
+      type: array
+      items:
+        $ref: '#/components/schemas/Team'
+    SurveyResult:
+      type: object
+      properties:
+        answers:
+          type: object
+          additionalProperties:
+            type: string
+        userEmail:
+          type: string
+        team:
+          type: string

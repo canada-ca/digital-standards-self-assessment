@@ -1,14 +1,14 @@
 import { AzureFunction, Context, HttpRequest } from '@azure/functions';
-import { Survey } from '../models/survey.model';
-import surveyService from '../services/survey.service';
+import { Team } from '../models/team.model';
+import teamService from '../services/team.service';
 
 const httpTrigger: AzureFunction = async function (context: Context, req: HttpRequest): Promise<void> {
-  const survey: Partial<Survey> = req.body;
-  const surveyId = context.req.params.id;
-  if (surveyId) {
+  const team: Partial<Team> = req.body;
+  const teamId = context.req.params.id;
+  if (teamId) {
     try {
-      const surveyUpdated = await surveyService.update(surveyId, survey);
-      if (surveyUpdated) {
+      const teamUpdated = await teamService.update(teamId, team);
+      if (teamUpdated) {
         context.res = {
           status: 200,
           body: {
@@ -19,7 +19,7 @@ const httpTrigger: AzureFunction = async function (context: Context, req: HttpRe
         context.res = {
           status: 404,
           body: {
-            message: 'Survey not found',
+            message: 'Team not found',
           },
         };
       }
