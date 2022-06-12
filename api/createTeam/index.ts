@@ -21,7 +21,7 @@ const httpTrigger: AzureFunction = async function (context: Context, req: HttpRe
     if (cnt > 0) {
       const message = cnt > 1 ? `${cnt} teams were created` : `${cnt} team was created`;
       context.res = {
-        statu: '201',
+        statu: 201,
         body: { message },
       };
     } else {

@@ -20,7 +20,7 @@ const httpTrigger: AzureFunction = async function (context: Context, req: HttpRe
         };
       }
     } else {
-      if (Object.keys(req.query).indexOf('latest') > -1) {
+      if (req.query?.latest === 'true') {
         const survey = await surveyService.findLatest();
         if (survey) {
           context.res = {

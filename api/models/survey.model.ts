@@ -1,6 +1,6 @@
 import { Document, Model, Schema, model } from 'mongoose';
 
-export interface BilingleText {
+export interface BilingualText {
   default: string;
   fr: string;
 }
@@ -8,14 +8,14 @@ export interface BilingleText {
 export interface BaseQuestion {
   type: string;
   name: string;
-  title: BilingleText;
+  title: BilingualText;
 }
 
 export interface RatingQuestion extends BaseQuestion {
   rateValues: [
     {
       value: string;
-      text: BilingleText;
+      text: BilingualText;
     }
   ];
   value?: string;
@@ -25,7 +25,7 @@ export interface SingleSelectQuestion extends BaseQuestion {
   choices: [
     {
       value: string;
-      text: BilingleText;
+      text: BilingualText;
     }
   ];
   value?: string;
@@ -35,7 +35,7 @@ export interface MultipleSelectQuestion extends BaseQuestion {
   choices: [
     {
       value: string;
-      text: BilingleText;
+      text: BilingualText;
     }
   ];
   value?: string[];
@@ -45,8 +45,8 @@ export type QuestionType = RatingQuestion | SingleSelectQuestion | MultipleSelec
 
 export interface Section {
   name: string;
-  title: BilingleText;
-  description: BilingleText;
+  title: BilingualText;
+  description: BilingualText;
   elements: QuestionType[];
 }
 
