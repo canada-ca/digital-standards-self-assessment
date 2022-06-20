@@ -1,4 +1,4 @@
-import { RatingQuestion, Survey } from '@/interfaces/api-models';
+import { SurveyData } from '@/interfaces/api-models';
 import { Profile } from '@/interfaces/Profile';
 import apiService from '@/services/api.service';
 import { ActionAugments, actions, ActionTypes } from '@/store/actions';
@@ -64,7 +64,7 @@ describe('actions', () => {
     beforeEach(() => {
       jest.clearAllMocks();
       jest.resetAllMocks();
-      jest.spyOn(apiService, 'findLatestSurvey').mockReturnValue(Promise.resolve({} as Survey));
+      jest.spyOn(apiService, 'findThisSurvey').mockReturnValue(Promise.resolve({} as SurveyData));
     });
 
     it('should commit AppLoadingError when returnSurveyModel is empty', async () => {
@@ -79,7 +79,7 @@ describe('actions', () => {
         getters,
       } as unknown as ActionAugments;
       await actions[ActionTypes.GetLocalAppData](mockContext);
-      expect(apiService.findLatestSurvey).toHaveBeenCalledTimes(1);
+      expect(apiService.findThisSurvey).toHaveBeenCalledTimes(1);
       expect(commit).toBeCalledTimes(3);
       expect(commit).toHaveBeenNthCalledWith(3, MutationType.AppLoadingError);
     });
@@ -95,7 +95,7 @@ describe('actions', () => {
         getters,
       } as unknown as ActionAugments;
       await actions[ActionTypes.GetLocalAppData](mockContext);
-      expect(apiService.findLatestSurvey).toHaveBeenCalledTimes(1);
+      expect(apiService.findThisSurvey).toHaveBeenCalledTimes(1);
       expect(commit).toBeCalledTimes(3);
       expect(commit).toHaveBeenNthCalledWith(3, MutationType.AppLoadingSuccess);
     });

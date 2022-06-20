@@ -19,7 +19,8 @@ describe('ApiService', () => {
     jest.resetAllMocks();
   });
 
-  it('findLatestSurvey', async () => {
+  it('findThisSurvey', async () => {
+    process.env.VUE_APP_SURVEY_NAME = 'surveyName';
     const mockedResponse: AxiosResponse = {
       data: {},
       status: 200,
@@ -29,8 +30,8 @@ describe('ApiService', () => {
     };
 
     mockedAxios.get.mockResolvedValueOnce(mockedResponse);
-    const survey = await apiService.findLatestSurvey();
-    expect(axios.get).toHaveBeenLastCalledWith('/survey?latest', option);
+    const survey = await apiService.findThisSurvey();
+    expect(axios.get).toHaveBeenLastCalledWith('/survey?surveyName=surveyName', option);
     expect(survey).toEqual({});
   });
 

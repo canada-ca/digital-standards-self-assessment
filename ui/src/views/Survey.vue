@@ -108,13 +108,7 @@ export default class Survey extends Vue {
   }
 
   buildSurveyFile(): string {
-    return JSON.stringify({
-      name: 'surveyResults',
-      version: this.$store.state.toolVersion,
-      currentPage: this.$store.state.currentPageNo,
-      data: this.$store.state.toolData,
-      surveyJSON: this.$store.state.surveyJSON,
-    });
+    return JSON.stringify(this.$store.state.surveyJSON);
   }
 
   downloadSurvey(fileName: string): void {

@@ -62,11 +62,10 @@ class SurveyService {
     }
   }
 
-  async findLatest(): Promise<SurveyDocument> {
+  async findByName(surveyName: string): Promise<SurveyDocument> {
     try {
       await connectDB();
-      const result = await SurveyModel.find();
-      result.sort((a, b) => (a.createdAt > b.createdAt ? -1 : a.createdAt === b.createdAt ? 0 : 1));
+      const result = await SurveyModel.find({ surveyName });
       return !!result && result.length > 0 ? result[0] : null;
     } catch (err: any) {
       if (err instanceof MongoServerError) {
