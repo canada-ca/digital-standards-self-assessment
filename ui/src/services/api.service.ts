@@ -1,4 +1,4 @@
-import { SurveyData, Survey, SurveyResult, Team } from '@/interfaces/api-models';
+import { Survey, SurveyResult, Team } from '@/interfaces/api-models';
 import axios, { AxiosRequestConfig, AxiosResponse } from 'axios';
 
 const option: AxiosRequestConfig = {
@@ -13,16 +13,14 @@ class ApiService {
     return process.env.VUE_APP_API_BASE_URL;
   }
 
-  get surveyName() {
-    return process.env.VUE_APP_SURVEY_NAME;
+  get surveyId() {
+    console.log(process.env);
+    return process.env.VUE_APP_SURVEY_ID;
   }
 
-  async findThisSurvey(): Promise<SurveyData> {
+  async findLatestSurvey(): Promise<Survey> {
     try {
-      const res: AxiosResponse<SurveyData> = await axios.get<SurveyData>(
-        `${this.apiBaseUrl}/survey?surveyName=${this.surveyName}`,
-        option
-      );
+      const res: AxiosResponse<Survey> = await axios.get<Survey>(`${this.apiBaseUrl}/survey/${this.surveyId}`, option);
       return res.data;
     } catch (err) {
       throw err;

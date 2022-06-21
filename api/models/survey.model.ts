@@ -51,13 +51,10 @@ export interface Section {
 }
 
 export interface Survey {
-  surveyName: 'Digital Standard Self-Assessment';
-  surveyJson: {
-    pages: Section[];
-    showQuestionNumbers: 'on' | 'off';
-    showProgressBar: 'true' | 'false';
-    showNavigationButtons: 'true' | 'false';
-  };
+  pages: Section[];
+  showQuestionNumbers: 'on' | 'off';
+  showProgressBar: 'true' | 'false';
+  showNavigationButtons: 'true' | 'false';
   createdAt: Date;
 }
 
@@ -67,71 +64,63 @@ export interface SurveyModel extends Model<SurveyDocument> {}
 
 const surveySchema = new Schema<SurveyDocument, SurveyModel>(
   {
-    surveyName: {
-      type: String,
-      index: true,
-      unique: true,
-      required: true,
-    },
-    surveyJson: {
-      pages: [
-        {
-          name: {
+    pages: [
+      {
+        name: {
+          type: 'String',
+        },
+        title: {
+          default: {
             type: 'String',
           },
-          title: {
-            default: {
-              type: 'String',
-            },
-            fr: {
-              type: 'String',
-            },
-          },
-          description: {
-            default: {
-              type: 'String',
-            },
-            fr: {
-              type: 'String',
-            },
-          },
-          elements: {
-            type: [
-              {
-                type: {
-                  type: 'String',
-                },
-                name: {
-                  type: 'String',
-                },
-                title: {
-                  default: {
-                    type: 'String',
-                  },
-                  fr: {
-                    type: 'String',
-                  },
-                },
-                rateValues: {
-                  type: ['Mixed'],
-                },
-              },
-            ],
+          fr: {
+            type: 'String',
           },
         },
-      ],
-      showQuestionNumbers: {
-        type: 'String',
-        default: 'off',
+        description: {
+          default: {
+            type: 'String',
+          },
+          fr: {
+            type: 'String',
+          },
+        },
+        elements: {
+          type: [
+            {
+              type: {
+                type: 'String',
+              },
+              name: {
+                type: 'String',
+              },
+              title: {
+                default: {
+                  type: 'String',
+                },
+                fr: {
+                  type: 'String',
+                },
+              },
+              rateValues: {
+                type: ['Mixed'],
+              },
+            },
+          ],
+        },
       },
-      showProgressBar: {
-        type: 'String',
-        default: 'false',
-      },
-      showNavigationButtons: {
-        type: 'String',
-        default: 'false',
-      },
+    ],
+    showQuestionNumbers: {
+      type: 'String',
+      default: 'off',
+    },
+    showProgressBar: {
+      type: 'String',
+      default: 'false',
+    },
+    showNavigationButtons: {
+      type: 'String',
+      default: 'false',
     },
     createdAt: {
       type: Date,

@@ -57,16 +57,12 @@ export interface Section {
   elements: QuestionType[];
 }
 
-export interface SurveyData extends BaseInterface {
-  surveyName: string;
-  createdAt?: Date;
-  surveyJson: Survey;
-}
 export interface Survey extends BaseInterface {
   pages: Section[];
   showQuestionNumbers: 'on' | 'off';
   showProgressBar: 'true' | 'false';
   showNavigationButtons: 'true' | 'false';
+  createdAt?: Date;
 }
 
 export interface SurveyResult extends BaseInterface {
