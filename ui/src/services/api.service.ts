@@ -15,7 +15,7 @@ class ApiService {
 
   async findLatestSurvey(): Promise<Survey> {
     try {
-      const res: AxiosResponse<Survey> = await axios.get<Survey>(`${this.apiBaseUrl}/survey?latest=true`, option);
+      const res: AxiosResponse<Survey> = await axios.get<Survey>(`${this.apiBaseUrl}/survey?latest`, option);
       return res.data;
     } catch (err) {
       throw err;
