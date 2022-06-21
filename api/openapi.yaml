@@ -11,14 +11,14 @@ paths:
       tags:
         - Survey
       operationId: findSurvey
-      summary: Find surveys or find latest survey.
+      summary: Find surveys or find a survey by name.
       parameters:
         - in: query
-          name: latest
-          description: Show the latest survey if the parameter represent.
+          name: surveyName
+          description: find a survey by survey name.
           required: false
           schema:
-            type: boolean
+            type: string
       responses:
         '200':
           description: 200 response
@@ -362,42 +362,50 @@ paths:
                     type: string
 components:
   schemas:
-    SurveyArray:
-      type: array
-      items:
-        $ref: '#/components/schemas/Survey'
     Survey:
       type: object
       properties:
         _id:
           type: string
-        pages:
-          type: array
-          items:
-            $ref: '#/components/schemas/Section'
-        showQuestionNumbers:
+        surveyName:
           type: string
-          default: 'on'
-          enum:
-            - 'on'
-            - 'off'
-        showProgressBar:
-          type: string
-          default: 'true'
-          enum:
-            - 'true'
-            - 'false'
-        showNavigationButtons:
-          type: string
-          default: 'false'
-          enum:
-            - 'true'
-            - 'false'
         createdAt:
           type: string
           format: date-time
+        surveyJson: 
+          type: object
+          properties:
+            pages:
+              type: array
+              items:
+                $ref: '#/components/schemas/Section'
+            showQuestionNumbers:
+              type: string
+              default: 'on'
+              enum:
+                - 'on'
+                - 'off'
+            showProgressBar:
+              type: string
+              default: 'true'
+              enum:
+                - 'true'
+                - 'false'
+            showNavigationButtons:
+              type: string
+              default: 'false'
+              enum:
+                - 'true'
+                - 'false'
       required:
-        - pages
+        - surveyJson
+        - surveyName
+
+    SurveyArray:
+      type: array
+      items:
+        $ref: '#/components/schemas/Survey'
+
     Section:
       type: object
       properties:
@@ -419,6 +427,7 @@ components:
         - title
         - description
         - elements
+
     BilingualText:
       type: object
       properties:
@@ -429,6 +438,7 @@ components:
       required:
         - default
         - fr
+
     RatingQuestion:
       type: object
       properties:
@@ -457,6 +467,7 @@ components:
         - name
         - value
         - rateValues
+
     SingleSelectQuestion:
       type: object
       properties:
@@ -488,6 +499,7 @@ components:
         - title
         - value
         - choices
+
     MultipleSelectQuestion:
       type: object
       properties:
@@ -517,6 +529,7 @@ components:
         - title
         - value
         - choices
+
     Team:
       type: object
       properties:
@@ -527,10 +540,12 @@ components:
       required:
         - teamNameEn
         - teamNameFr
+
     TeamArray:
       type: array
       items:
         $ref: '#/components/schemas/Team'
+
     SurveyResult:
       type: object
       properties:
