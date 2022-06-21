@@ -13,14 +13,9 @@ class ApiService {
     return process.env.VUE_APP_API_BASE_URL;
   }
 
-  get surveyId() {
-    console.log(process.env);
-    return process.env.VUE_APP_SURVEY_ID;
-  }
-
   async findLatestSurvey(): Promise<Survey> {
     try {
-      const res: AxiosResponse<Survey> = await axios.get<Survey>(`${this.apiBaseUrl}/survey/${this.surveyId}`, option);
+      const res: AxiosResponse<Survey> = await axios.get<Survey>(`${this.apiBaseUrl}/survey?latest=true`, option);
       return res.data;
     } catch (err) {
       throw err;
