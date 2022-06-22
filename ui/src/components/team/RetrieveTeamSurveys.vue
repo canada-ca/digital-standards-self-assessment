@@ -91,7 +91,6 @@ export default class RetrieveTeamSurveys extends Vue {
       this.calculateResults(surveyResults);
       this.$emit('loadTeamReportData', [...this.teamReportDataBundles.values()]);
     } catch (err) {
-      console.log(err);
       this.$emit('loadTeamReportData', []);
     }
   }

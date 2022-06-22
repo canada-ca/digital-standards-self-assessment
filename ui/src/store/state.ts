@@ -22,7 +22,7 @@ export interface RootState {
   individualTeamReportDataArray: UserReportData[];
   individualTeam?: Team;
   showBreakdown: boolean;
-  profile?: Profile;
+  profile: Profile;
   showProfile: boolean;
 }
 
@@ -137,5 +137,6 @@ export const state: RootState = {
   individualTeam: undefined,
   individualTeamReportDataArray: [],
   showBreakdown: false,
+  profile: {},
   showProfile: false,
 };

@@ -74,6 +74,7 @@ export default class NavBar extends Vue {
 
   @Watch('$store.getters.returnProfile')
   watchProfile() {
+    this.profile = this.$store.getters.returnProfile;
     this.isProfileSet = !!this.profile && !!this.profile.email && !!this.profile.team;
   }
 
