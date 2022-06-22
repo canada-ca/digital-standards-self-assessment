@@ -3,10 +3,10 @@ export const calcScore = (value: any): number => {
   if (value !== undefined) {
     if (value instanceof Array) {
       score = value.reduce((prev: number, cur: any) => {
-        return prev + +cur;
+        return prev + (isNaN(cur) ? 0 : +cur);
       }, 0);
     } else {
-      score = +value;
+      score = isNaN(value) ? 0 : +value;
     }
   }
   return score;
