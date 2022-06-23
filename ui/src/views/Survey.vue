@@ -17,7 +17,8 @@ import AssessmentTool from '@/components/AssessmentTool.vue';
 import DownloadSurvey from '@/components/DownloadSurvey.vue';
 import Message, { MessageVariantType } from '@/components/Message.vue';
 import SurveySectionsContainer from '@/components/SurveySectionsContainer.vue';
-import { SurveyResult } from '@/interfaces/api-models';
+import { SurveyResult, Team } from '@/interfaces/api-models';
+import { Profile } from '@/interfaces/Profile';
 import i18n from '@/plugins/i18n';
 import apiService from '@/services/api.service';
 import { ActionTypes } from '@/store/actions';
@@ -141,15 +142,23 @@ export default class Survey extends Vue {
     await this.$store.dispatch(ActionTypes.Reset);
   }
 
+  get collectEmail(): boolean {
+    return process.env.VUE_APP_COLLECT_USER_EMAIL + '' === 'true';
+  }
+
   async submitAnswers() {
-    const profile = this.$store.getters.returnProfile;
-    const isProfileSet = !!profile && !!profile.email && !!profile.team;
+    const profile: Profile = this.$store.getters.returnProfile;
+    const isProfileSet =
+      !!profile &&
+      !!profile.userId &&
+      !!profile.team &&
+      (this.collectEmail === false || (this.collectEmail && !!profile.email));
 
     if (isProfileSet) {
       const result: SurveyResult = {
         answers: this.$store.getters.returnToolData,
-        team: profile.team,
-        userEmail: profile.email,
+        team: profile.team as Team,
+        userEmail: '' + (this.collectEmail ? profile.email : profile.userId),
         survey: this.$store.getters.returnSurveyJSON._id,
       };
       try {

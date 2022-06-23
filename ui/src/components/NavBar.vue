@@ -20,8 +20,14 @@
     <b-collapse v-model="showProfile">
       <div class="profile-card">
         <span />
-        <label>{{ $t('navigation.yourEmail') }}</label>
-        <b-form-input type="email" @change="setEmail" :class="{ 'is-invalid': hasError }" :value="email" />
+        <label v-if="collectEmail">{{ $t('navigation.yourEmail') }}</label>
+        <b-form-input
+          v-if="collectEmail"
+          type="email"
+          @change="setEmail"
+          :class="{ 'is-invalid': hasError }"
+          :value="email"
+        />
         <div class="text-danger mt-3 email-error" v-if="hasError">
           {{ $t('validation.email.invalid') }}
         </div>
@@ -41,7 +47,7 @@ import { validateEmail } from '@/utils/utils';
 import i18n from '@/plugins/i18n';
 import apiService from '@/services/api.service';
 import { Team } from '@/interfaces/api-models';
-import { Action } from 'survey-vue';
+import { getCookie, setCookie } from 'typescript-cookie';
 
 @Component({
   components: {
@@ -65,6 +71,10 @@ export default class NavBar extends Vue {
     this.teams = await apiService.findAllTeams();
   }
 
+  get collectEmail(): boolean {
+    return process.env.VUE_APP_COLLECT_USER_EMAIL + '' === 'true';
+  }
+
   @Watch('$store.getters.returnShowProfile')
   watchShowProfile() {
     this.showProfile = this.$store.getters.returnShowProfile;
@@ -75,7 +85,11 @@ export default class NavBar extends Vue {
   @Watch('$store.getters.returnProfile')
   watchProfile() {
     this.profile = this.$store.getters.returnProfile;
-    this.isProfileSet = !!this.profile && !!this.profile.email && !!this.profile.team;
+    this.isProfileSet =
+      !!this.profile &&
+      !!this.profile.userId &&
+      !!this.profile.team &&
+      (this.collectEmail === false || (this.collectEmail && !!this.profile.email));
   }
 
   toggleProfile() {
@@ -99,9 +113,7 @@ export default class NavBar extends Vue {
   }
 
   setTeam(team: Team) {
-    if (!this.profile) {
-      this.profile = {} as Profile;
-    }
+    this.setUserId();
     this.profile = { ...this.profile, team };
     this.$store.dispatch(ActionTypes.SaveProfile, this.profile);
   }
@@ -111,11 +123,35 @@ export default class NavBar extends Vue {
       this.hasError = true;
       return;
     }
-    if (!this.profile) {
-      this.profile = {} as Profile;
-    }
+    this.setUserId();
     this.profile = { ...this.profile, email };
     this.$store.dispatch(ActionTypes.SaveProfile, this.profile);
+  }
+
+  setUserId() {
+    let userId = getCookie('userId');
+    if (!userId) {
+      userId = this.random();
+      setCookie('userId', userId, { expires: 365 });
+    }
+    if (!this.profile) {
+      this.profile = { userId };
+    } else {
+      if (!this.profile.userId) {
+        this.profile = { ...this.profile, userId };
+      }
+    }
+  }
+
+  random() {
+    const length = 16;
+    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+
+    let str = '';
+    for (let i = 0; i < length; i++) {
+      str += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+    return str;
   }
 }
 </script>
