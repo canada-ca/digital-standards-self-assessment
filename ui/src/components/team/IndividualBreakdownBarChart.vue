@@ -74,30 +74,28 @@ export default class IndividualBreakdownBarCard extends Vue {
       const rec: any[] = [];
       rec.push(sn);
       this.userReportDataArray.forEach((data) => {
-        rec.push(this.getSectionScore(data.email, sn));
+        rec.push(this.getSectionScore(data, sn));
       });
       userScoreArray.push(rec);
     });
     return userScoreArray;
   }
 
-  private getSectionScore(email: string, sectionName: string): string {
+  private getSectionScore(userReportData: UserReportData, sectionName: string): string {
     let scorePercentage = '0';
-    if (this.userReportDataArray) {
-      const userReportData = this.userReportDataArray.find((t) => t.email === email);
-      if (userReportData) {
-        const section = userReportData.sections.find((s) => s.name === sectionName);
-        if (section) {
-          scorePercentage = new Intl.NumberFormat('en-CA', {
-            style: 'decimal',
-            maximumFractionDigits: 0,
-          }).format((section.score / section.maxScore) * 100);
-          if (scorePercentage === 'NaN') {
-            return '0';
-          }
+    if (userReportData) {
+      const section = userReportData.sections.find((s) => s.name === sectionName);
+      if (section) {
+        scorePercentage = new Intl.NumberFormat('en-CA', {
+          style: 'decimal',
+          maximumFractionDigits: 0,
+        }).format((section.score / section.maxScore) * 100);
+        if (scorePercentage === 'NaN') {
+          return '0';
         }
       }
     }
+
     return scorePercentage;
   }
 

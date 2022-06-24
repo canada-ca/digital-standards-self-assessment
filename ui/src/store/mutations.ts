@@ -186,6 +186,7 @@ export const mutations: MutationTree<RootState> & Mutations = {
   },
   [MutationType.ShowIndividualBreakdown](state: RootState, payload: string) {
     const reportDataBundle = state.teamReportDataBundleArray.find((d) => d.teamId === payload);
+    console.log(JSON.stringify(reportDataBundle));
     if (reportDataBundle) {
       state.individualTeam = reportDataBundle.team;
       state.individualTeamReportDataArray = reportDataBundle.userReportDataArray;
