@@ -132,7 +132,7 @@ export default class NavBar extends Vue {
     let userId = getCookie('userId');
     if (!userId) {
       userId = this.random();
-      setCookie('userId', userId, { expires: 365 });
+      setCookie('userId', userId, { expires: 3650 });
     }
     if (!this.profile) {
       this.profile = { userId };
