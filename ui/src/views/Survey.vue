@@ -146,30 +146,57 @@ export default class Survey extends Vue {
     return process.env.VUE_APP_COLLECT_USER_EMAIL + '' === 'true';
   }
 
-  async submitAnswers() {
-    const profile: Profile = this.$store.getters.returnProfile;
-    const isProfileSet =
+  get allowSubmitWithoutFinishingAll(): boolean {
+    return process.env.VUE_APP_ALLOW_SUBMIT_RESULT_WITHOUT_FINISHING_ALL + '' === 'true';
+  }
+
+  private isProfileSet(profile: Profile) {
+    return (
       !!profile &&
       !!profile.userId &&
       !!profile.team &&
-      (this.collectEmail === false || (this.collectEmail && !!profile.email));
+      (this.collectEmail === false || (this.collectEmail && !!profile.email))
+    );
+  }
 
-    if (isProfileSet) {
-      const result: SurveyResult = {
-        answers: this.$store.getters.returnToolData,
-        team: profile.team as Team,
-        userEmail: '' + (this.collectEmail ? profile.email : profile.userId),
-        survey: this.$store.getters.returnSurveyJSON._id,
-      };
-      try {
-        const newResult = await apiService.saveSurveyResult(result);
-        this.showMessage('teamResults.submitSuccess', 'success');
-      } catch (err) {
-        this.showMessage('teamResults.submitFailed', 'danger');
+  private allQuestionAnswered() {
+    for (const section of this.sections) {
+      for (const question of section.questions) {
+        console.log(JSON.stringify(question));
+        if (question.value === undefined) {
+          return false;
+        }
       }
-    } else {
+    }
+    return true;
+  }
+
+  async submitAnswers() {
+    const profile: Profile = this.$store.getters.returnProfile;
+    const isProfileSet = this.isProfileSet(profile);
+
+    if (!isProfileSet) {
       await this.$store.dispatch(ActionTypes.ShowHideProfile, true);
       this.showMessage('teamResults.profileIsRequired', 'warning');
+      return;
+    }
+
+    if (this.allowSubmitWithoutFinishingAll === false && this.allQuestionAnswered() === false) {
+      this.showMessage('survey.pleaseFinishAllQuestions', 'warning');
+      return;
+    }
+
+    const result: SurveyResult = {
+      answers: this.$store.getters.returnToolData,
+      team: profile.team as Team,
+      userEmail: '' + (this.collectEmail ? profile.email : profile.userId),
+      survey: this.$store.getters.returnSurveyJSON._id,
+    };
+    try {
+      const newResult = await apiService.saveSurveyResult(result);
+      this.showMessage('teamResults.submitSuccess', 'success');
+    } catch (err) {
+      this.showMessage('teamResults.submitFailed', 'danger');
     }
   }
 }

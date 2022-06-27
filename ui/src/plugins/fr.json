@@ -79,7 +79,8 @@
   "survey": {
     "currentScore": "Cote actuelle",
     "currentSurveyResults": "Résultats actuels du sondage",
-    "sectionResultsTitle": "Résultats pour la section"
+    "sectionResultsTitle": "Résultats pour la section",
+    "pleaseFinishAllQuestions": "Veuillez répondre à toutes les questions."
   },
   "teamResults": {
     "title": "Aperçu des résultats de l'équipe",

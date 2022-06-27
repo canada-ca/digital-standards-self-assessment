@@ -79,11 +79,19 @@ export default class SurveySectionCard extends Vue {
 
   setStatusIcon(sectionName: string) {
     const thisSection: Section = this.$store.getters.returnSectionByName(sectionName);
-    if (thisSection !== undefined && thisSection.userScore > 0) {
-      return 'fa fa-2x fa-circle';
+    let css = '';
+    const answered = thisSection.questions.reduce(
+      (previousValue, question) => (question.value !== undefined ? previousValue : previousValue + 1),
+      0
+    );
+    if (answered === thisSection.questions.length) {
+      css = 'zero fa fa-2x fa-circle';
+    } else if (answered === 0) {
+      css = 'fa fa-2x fa-circle';
     } else {
-      return 'zero fa fa-2x fa-circle';
+      css = 'partial fa fa-2x fa-circle';
     }
+    return css;
   }
 }
 </script>
@@ -129,6 +137,10 @@ export default class SurveySectionCard extends Vue {
 
 .zero {
   color: #e5e5e5;
+}
+
+.partial {
+  color: #9b9b9b;
 }
 
 .show-hide-container {

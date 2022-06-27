@@ -79,7 +79,8 @@
   "survey": {
     "currentScore": "Current Score",
     "currentSurveyResults": "Current Survey Results",
-    "sectionResultsTitle": "Section Results"
+    "sectionResultsTitle": "Section Results",
+    "pleaseFinishAllQuestions": "Please answer all questions."
   },
   "teamResults": {
     "title": "Team Results Overview",
