@@ -1,0 +1,30 @@
+parameters:
+  faName: ""
+  apiURL: ""
+  rgName: ""
+  apiGWName: ""
+  AzureSub: ""
+
+steps:
+  - task: CmdLine@2
+    displayName: Build OpenAPI file
+    env:
+      FANAME: ${{ parameters.faName }}
+      APIURL: ${{ parameters.apiURL }}
+    inputs:
+      script: |
+        node fixSwagger.js
+        node fixAPIMPolicy.js
+      workingDirectory: '$(Build.SourcesDirectory)\infrastructure\helperScripts'
+        
+  - task: AzureCLI@2
+    displayName: Import OpenAPI file into APIM
+    inputs:
+      azureSubscription: ${{ parameters.AzureSub }}
+      scriptType: 'ps'
+      scriptLocation: 'inlineScript'
+      inlineScript: |
+        az apim api import -g ${{ parameters.rgName }} --service-name ${{ parameters.apiGWName }} --path api --specification-path ./swagger.json --specification-format OpenApiJson --api-id ${{ parameters.faName }} --subscription-required false
+        $apimContext = New-AzApiManagementContext -ResourceGroupName ${{ parameters.rgName }} -ServiceName ${{ parameters.apiGWName }}
+        Set-AzApiManagementPolicy -Context $apimContext -ApiId ${{ parameters.faName }} -PolicyFilePath "./newPolicy.xml"
+      workingDirectory: '$(Build.SourcesDirectory)\infrastructure'

@@ -90,6 +90,7 @@ export default class NavBar extends Vue {
       !!this.profile.userId &&
       !!this.profile.team &&
       (this.collectEmail === false || (this.collectEmail && !!this.profile.email));
+
   }
 
   toggleProfile() {

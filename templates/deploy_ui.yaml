@@ -1,0 +1,34 @@
+parameters:
+  storageAccount: ""
+  saKey: ""
+  apiURL: ""
+  AzureSub: ""
+
+steps:
+
+  - task: CmdLine@2
+    displayName: "Install and build UI"
+    env:
+      NODE_ENV: $(ENV)
+      VUE_APP_API_BASE_URL: '${{ parameters.apiURL }}/api'
+      VUE_APP_SURVEY_ID: 62abde282f3d866d6f86b77d
+    inputs:
+      script: |
+        echo $env:VUE_APP_API_BASE_URL
+        npm install && npm run build
+      workingDirectory: '$(Build.SourcesDirectory)\ui'
+      
+  - task: AzureCLI@2
+    displayName: Copy to Blob
+    env:
+      AZURE_STORAGE_KEY: ${{ parameters.saKey }}
+      AZURE_STORAGE_ACCOUNT: ${{ parameters.storageAccount }}
+    inputs:
+      azureSubscription: ${{ parameters.AzureSub }}
+      scriptType: 'ps'
+      scriptLocation: 'inlineScript'
+      inlineScript: |
+            az storage blob delete-batch --account-name ${{ parameters.storageAccount }} --source `$web
+            az storage blob upload-batch --destination `$web --account-name ${{ parameters.storageAccount }} --source . --overwrite 
+      addSpnToEnvironment: true
+      workingDirectory: 'ui/dist'
