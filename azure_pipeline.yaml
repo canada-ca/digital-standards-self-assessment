@@ -1,8 +1,13 @@
+# In order to properly run in AzDevops, create a variable group called dev
+# create the following variables in the group:
+# ENV: (note that resources will be named after this variable) 
+# pass (this can be a secret value)
+
 trigger: none
 pool:
  name: SelfPool
 variables:
-  AzureSub: 'Azure subscription 1 (1ff6c602-69fe-454f-a795-de22a178a6c0)'
+  AzureSub: '' #Add the Service Connection here
 stages:
 
   - stage: "Pulumi"
