@@ -47,5 +47,3 @@ $ migrate-mongo down
 VUE_APP_API_BASE_URL=http://localhost:7071/api
 - Run npm run serve
 - Test the application in browser [http://localhost:8080/](http://localhost:8080/)
-
-```test ```
