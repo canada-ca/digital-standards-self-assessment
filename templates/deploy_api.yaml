@@ -1,0 +1,15 @@
+parameters:
+  faName: ""
+  AzureSub: ""
+
+steps:
+
+  - task: AzureCLI@2
+    inputs:
+      azureSubscription: ${{ parameters.AzureSub }}
+      scriptType: 'ps'
+      scriptLocation: 'inlineScript'
+      inlineScript: 'func azure functionapp publish ${{ parameters.faName }}'
+      workingDirectory: '$(Build.SourcesDirectory)\api'
+    displayName: Deploy API to Function APP
+
