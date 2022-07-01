@@ -1,0 +1,826 @@
+[
+  {
+    "teamNameEn": "Accessibility Standards Canada",
+    "teamNameFr": "Normes d'accessibilité Canada"
+  },
+  {
+    "teamNameEn": "Administrative Tribunals Support Service of Canada",
+    "teamNameFr": "Service canadien d'appui aux tribunaux administratifs"
+  },
+  {
+    "teamNameEn": "Agriculture and Agri-Food Canada",
+    "teamNameFr": "Agriculture et Agroalimentaire Canada"
+  },
+  {
+    "teamNameEn": "Atlantic Canada Opportunities Agency",
+    "teamNameFr": "Agence de promotion économique du Canada atlantique"
+  },
+  {
+    "teamNameEn": "Atlantic Pilotage Authority Canada",
+    "teamNameFr": "Administration de pilotage de l'Atlantique Canada"
+  },
+  {
+    "teamNameEn": "Atomic Energy of Canada Limited",
+    "teamNameFr": "Énergie atomique du Canada, Limitée"
+  },
+  {
+    "teamNameEn": "Auditor General of Canada (Office of the)",
+    "teamNameFr": "Bureau du vérificateur général du Canada"
+  },
+  {
+    "teamNameEn": "Bank of Canada",
+    "teamNameFr": "Banque du Canada"
+  },
+  {
+    "teamNameEn": "Bank of Canada Museum",
+    "teamNameFr": "Musée de la Banque du Canada"
+  },
+  {
+    "teamNameEn": "Blue Water Bridge Canada",
+    "teamNameFr": "Pont Blue Water Canada"
+  },
+  {
+    "teamNameEn": "Business Development Bank of Canada",
+    "teamNameFr": "Banque de développement du Canada"
+  },
+  {
+    "teamNameEn": "Canada Agricultural Review Tribunal",
+    "teamNameFr": "Commission de révision agricole du Canada"
+  },
+  {
+    "teamNameEn": "Canada Agriculture and Food Museum",
+    "teamNameFr": "Musée de l'agriculture et de l'alimentation du Canada"
+  },
+  {
+    "teamNameEn": "Canada Aviation and Space Museum",
+    "teamNameFr": "Musée de l'aviation et de l'espace du Canada"
+  },
+  {
+    "teamNameEn": "Canada Border Services Agency",
+    "teamNameFr": "Agence des services frontaliers du Canada"
+  },
+  {
+    "teamNameEn": "Canada Council for the Arts",
+    "teamNameFr": "Conseil des Arts du Canada"
+  },
+  {
+    "teamNameEn": "Canada Deposit Insurance Corporation",
+    "teamNameFr": "Société d'assurance-dépôts du Canada"
+  },
+  {
+    "teamNameEn": "Canada Development Investment Corporation",
+    "teamNameFr": "Corporation de développement des investissements du Canada"
+  },
+  {
+    "teamNameEn": "Canada Economic Development for Quebec Regions",
+    "teamNameFr": "Développement économique Canada pour les régions du Québec"
+  },
+  {
+    "teamNameEn": "Canada Employment Insurance Commission",
+    "teamNameFr": "Commission de l'assurance-emploi du Canada"
+  },
+  {
+    "teamNameEn": "Canada Energy Regulator",
+    "teamNameFr": "Régie de l'énergie du Canada"
+  },
+  {
+    "teamNameEn": "Canada Firearms Centre",
+    "teamNameFr": "Centre des armes à feu Canada"
+  },
+  {
+    "teamNameEn": "Canada Industrial Relations Board",
+    "teamNameFr": "Conseil canadien des relations industrielles"
+  },
+  {
+    "teamNameEn": "Canada Infrastructure Bank",
+    "teamNameFr": "Banque de L’infrastructure du Canada"
+  },
+  {
+    "teamNameEn": "Canada Lands Company Limited",
+    "teamNameFr": "Société immobilière du Canada limitée"
+  },
+  {
+    "teamNameEn": "Canada Mortgage and Housing Corporation",
+    "teamNameFr": "Société canadienne d'hypothèques et de logement"
+  },
+  {
+    "teamNameEn": "Canada Pension Plan Investment Board",
+    "teamNameFr": "Office d'investissement du régime de pensions du Canada"
+  },
+  {
+    "teamNameEn": "Canada Post",
+    "teamNameFr": "Postes Canada"
+  },
+  {
+    "teamNameEn": "Canada Research Chairs",
+    "teamNameFr": "Chaires de recherche du Canada"
+  },
+  {
+    "teamNameEn": "Canada Revenue Agency",
+    "teamNameFr": "Agence du revenu du Canada"
+  },
+  {
+    "teamNameEn": "Canada School of Public Service",
+    "teamNameFr": "École de la fonction publique du Canada"
+  },
+  {
+    "teamNameEn": "Canada Science and Technology Museum",
+    "teamNameFr": "Musée des sciences et de la technologie du Canada"
+  },
+  {
+    "teamNameEn": "Canadian Air Transport Security Authority",
+    "teamNameFr": "Administration canadienne de la sûreté du transport aérien"
+  },
+  {
+    "teamNameEn": "Canadian Army",
+    "teamNameFr": "Armée canadienne"
+  },
+  {
+    "teamNameEn": "Canadian Centre for Occupational Health and Safety",
+    "teamNameFr": "Centre canadien d'hygiène et de sécurité au travail"
+  },
+  {
+    "teamNameEn": "Canadian Coast Guard",
+    "teamNameFr": "Garde côtière canadienne"
+  },
+  {
+    "teamNameEn": "Canadian Commercial Corporation",
+    "teamNameFr": "Corporation commerciale canadienne"
+  },
+  {
+    "teamNameEn": "Canadian Conservation Institute",
+    "teamNameFr": "Institut canadien de conservation"
+  },
+  {
+    "teamNameEn": "Canadian Cultural Property Export Review Board",
+    "teamNameFr": "Commission canadienne d'examen des exportations de biens culturels"
+  },
+  {
+    "teamNameEn": "Canadian Dairy Commission",
+    "teamNameFr": "Commission canadienne du lait"
+  },
+  {
+    "teamNameEn": "Canadian Food Inspection Agency",
+    "teamNameFr": "Agence canadienne d'inspection des aliments"
+  },
+  {
+    "teamNameEn": "Canadian Grain Commission",
+    "teamNameFr": "Commission canadienne des grains"
+  },
+  {
+    "teamNameEn": "Canadian Heritage",
+    "teamNameFr": "Patrimoine canadien"
+  },
+  {
+    "teamNameEn": "Canadian Heritage Information Network",
+    "teamNameFr": "Réseau canadien d'information sur le patrimoine"
+  },
+  {
+    "teamNameEn": "Canadian Human Rights Commission",
+    "teamNameFr": "Commission canadienne des droits de la personne"
+  },
+  {
+    "teamNameEn": "Canadian Institutes of Health Research",
+    "teamNameFr": "Instituts de recherche en santé du Canada"
+  },
+  {
+    "teamNameEn": "Canadian Intellectual Property Office",
+    "teamNameFr": "Office de la propriété intellectuelle du Canada"
+  },
+  {
+    "teamNameEn": "Canadian Intergovernmental Conference Secretariat",
+    "teamNameFr": "Secrétariat des conférences intergouvernementales canadiennes"
+  },
+  {
+    "teamNameEn": "Canadian International Trade Tribunal",
+    "teamNameFr": "Tribunal canadien du commerce extérieur"
+  },
+  {
+    "teamNameEn": "Canadian Judicial Council",
+    "teamNameFr": "Conseil canadien de la magistrature"
+  },
+  {
+    "teamNameEn": "Canadian Museum for Human Rights",
+    "teamNameFr": "Musée canadien pour les droits de la personne"
+  },
+  {
+    "teamNameEn": "Canadian Museum of History",
+    "teamNameFr": "Musée canadien de l'histoire"
+  },
+  {
+    "teamNameEn": "Canadian Museum of Immigration at Pier 21",
+    "teamNameFr": "Musée canadien de l'immigration au Quai 21"
+  },
+  {
+    "teamNameEn": "Canadian Museum of Nature",
+    "teamNameFr": "Musée canadien de la nature"
+  },
+  {
+    "teamNameEn": "Canadian Northern Economic Development Agency",
+    "teamNameFr": "Agence canadienne de développement économique du Nord"
+  },
+  {
+    "teamNameEn": "Canadian Nuclear Safety Commission",
+    "teamNameFr": "Commission canadienne de sûreté nucléaire"
+  },
+  {
+    "teamNameEn": "Canadian Pari-Mutuel Agency",
+    "teamNameFr": "Agence canadienne du pari mutuel"
+  },
+  {
+    "teamNameEn": "Canadian Police College",
+    "teamNameFr": "Collège canadien de police"
+  },
+  {
+    "teamNameEn": "Canadian Race Relations Foundation",
+    "teamNameFr": "Fondation canadienne des relations raciales"
+  },
+  {
+    "teamNameEn": "Canadian Radio-Television and Telecommunications Commission",
+    "teamNameFr": "Conseil de la radiodiffusion et des télécommunications canadiennes"
+  },
+  {
+    "teamNameEn": "Canadian Security Intelligence Service",
+    "teamNameFr": "Service canadien du renseignement de sécurité"
+  },
+  {
+    "teamNameEn": "Canadian Space Agency",
+    "teamNameFr": "Agence spatiale canadienne"
+  },
+  {
+    "teamNameEn": "Canadian Special Operations Forces Command",
+    "teamNameFr": "Commandement des Forces d’opérations spéciales du Canada"
+  },
+  {
+    "teamNameEn": "Canadian Trade Commissioner Service",
+    "teamNameFr": "Service des délégués commerciaux du Canada"
+  },
+  {
+    "teamNameEn": "Canadian Transportation Agency",
+    "teamNameFr": "Office des transports du Canada"
+  },
+  {
+    "teamNameEn": "Canadian War Museum",
+    "teamNameFr": "Musée canadien de la guerre"
+  },
+  {
+    "teamNameEn": "CBC",
+    "teamNameFr": "Radio-Canada"
+  },
+  {
+    "teamNameEn": "Civilian Review and Complaints Commission for the RCMP",
+    "teamNameFr": "Commission civile d'examen et de traitement des plaintes relatives à la GRC"
+  },
+  {
+    "teamNameEn": "Commissioner for Federal Judicial Affairs Canada (Office of the)",
+    "teamNameFr": "Commissariat à la magistrature fédérale Canada"
+  },
+  {
+    "teamNameEn": "Commissioner of Lobbying of Canada (Office of the)",
+    "teamNameFr": "Commissariat au lobbying du Canada"
+  },
+  {
+    "teamNameEn": "Commissioner of Official Languages (Office of the)",
+    "teamNameFr": "Commissariat aux langues officielles"
+  },
+  {
+    "teamNameEn": "Communications Research Centre Canada",
+    "teamNameFr": "Centre de recherches sur les communications Canada"
+  },
+  {
+    "teamNameEn": "Communications Security Establishment Canada",
+    "teamNameFr": "Centre de la sécurité des télécommunications Canada"
+  },
+  {
+    "teamNameEn": "Competition Bureau Canada",
+    "teamNameFr": "Bureau de la concurrence Canada"
+  },
+  {
+    "teamNameEn": "Competition Tribunal",
+    "teamNameFr": "Tribunal de la concurrence"
+  },
+  {
+    "teamNameEn": "Conflict of Interest and Ethics Commissioner (Office of the)",
+    "teamNameFr": "Commissariat aux conflits d'intérêts et à l'éthique"
+  },
+  {
+    "teamNameEn": "Copyright Board Canada",
+    "teamNameFr": "Commission du droit d'auteur Canada"
+  },
+  {
+    "teamNameEn": "CORCAN",
+    "teamNameFr": "CORCAN"
+  },
+  {
+    "teamNameEn": "Correctional Investigator Canada",
+    "teamNameFr": "Enquêteur correctionnel Canada"
+  },
+  {
+    "teamNameEn": "Correctional Service Canada",
+    "teamNameFr": "Service correctionnel Canada"
+  },
+  {
+    "teamNameEn": "Court Martial Appeal Court of Canada",
+    "teamNameFr": "Cour d'appel de la cour martiale du Canada"
+  },
+  {
+    "teamNameEn": "Courts Administration Service",
+    "teamNameFr": "Service administratif des tribunaux"
+  },
+  {
+    "teamNameEn": "Crown-Indigenous Relations and Northern Affairs Canada",
+    "teamNameFr": "Relations Couronne-Autochtones et Affaires du Nord"
+  },
+  {
+    "teamNameEn": "Defence Construction Canada",
+    "teamNameFr": "Canada Construction de Défense Canada"
+  },
+  {
+    "teamNameEn": "Defence Research and Development Canada",
+    "teamNameFr": "Recherche et développement pour la défense Canada"
+  },
+  {
+    "teamNameEn": "Democratic Institutions",
+    "teamNameFr": "Institutions démocratiques"
+  },
+  {
+    "teamNameEn": "Destination Canada",
+    "teamNameFr": "Destination Canada"
+  },
+  {
+    "teamNameEn": "Elections Canada",
+    "teamNameFr": "Élections Canada"
+  },
+  {
+    "teamNameEn": "Employment and Social Development Canada",
+    "teamNameFr": "Emploi et Développement social Canada"
+  },
+  {
+    "teamNameEn": "Environment and Climate Change Canada",
+    "teamNameFr": "Environnement et Changement climatique Canada"
+  },
+  {
+    "teamNameEn": "Environmental Protection Review Canada",
+    "teamNameFr": "Examen de la protection de l'environnement Canada"
+  },
+  {
+    "teamNameEn": "Export Development Canada",
+    "teamNameFr": "Exportation et développement Canada"
+  },
+  {
+    "teamNameEn": "Farm Credit Canada",
+    "teamNameFr": "Financement agricole Canada"
+  },
+  {
+    "teamNameEn": "Farm Products Council of Canada",
+    "teamNameFr": "Conseil des produits agricoles du Canada"
+  },
+  {
+    "teamNameEn": "Federal Bridge Corporation",
+    "teamNameFr": "Société des ponts fédéraux"
+  },
+  {
+    "teamNameEn": "Federal Court of Appeal",
+    "teamNameFr": "Cour d'appel fédérale"
+  },
+  {
+    "teamNameEn": "Federal Court of Canada",
+    "teamNameFr": "Cour fédérale du Canada"
+  },
+  {
+    "teamNameEn": "Federal Economic Development Agency for Southern Ontario",
+    "teamNameFr": "Agence fédérale de développement économique pour le Sud de l'Ontario"
+  },
+  {
+    "teamNameEn": "Federal Ombudsman for Victims Of Crime (Office of the)",
+    "teamNameFr": "Bureau de l'ombudsman fédéral des victimes d'actes criminels"
+  },
+  {
+    "teamNameEn": "FedNor",
+    "teamNameFr": "FedNor"
+  },
+  {
+    "teamNameEn": "Finance Canada (Department of)",
+    "teamNameFr": "Finances Canada (Ministère des)"
+  },
+  {
+    "teamNameEn": "Financial Consumer Agency of Canada",
+    "teamNameFr": "Agence de la consommation en matière financière du Canada"
+  },
+  {
+    "teamNameEn": "Financial Transactions and Reports Analysis Centre of Canada",
+    "teamNameFr": "Centre d'analyse des opérations et déclarations financières du Canada"
+  },
+  {
+    "teamNameEn": "Fisheries and Oceans Canada",
+    "teamNameFr": "Pêches et Océans Canada"
+  },
+  {
+    "teamNameEn": "Freshwater Fish Marketing Corporation",
+    "teamNameFr": "Société de commercialisation du poisson d'eau douce"
+  },
+  {
+    "teamNameEn": "Global Affairs Canada",
+    "teamNameFr": "Affaires mondiales Canada"
+  },
+  {
+    "teamNameEn": "Governor General of Canada",
+    "teamNameFr": "Gouverneur général du Canada"
+  },
+  {
+    "teamNameEn": "Great Lakes Pilotage Authority Canada",
+    "teamNameFr": "Administration de pilotage des Grands Lacs Canada"
+  },
+  {
+    "teamNameEn": "Health Canada",
+    "teamNameFr": "Santé Canada"
+  },
+  {
+    "teamNameEn": "Historic Sites and Monuments Board of Canada",
+    "teamNameFr": "Commission des lieux et monuments historiques du Canada"
+  },
+  {
+    "teamNameEn": "Human Rights Tribunal of Canada",
+    "teamNameFr": "Tribunal des droits de la personne du Canada"
+  },
+  {
+    "teamNameEn": "Immigration and Refugee Board of Canada",
+    "teamNameFr": "Commission de l'immigration et du statut de réfugié du Canada"
+  },
+  {
+    "teamNameEn": "Immigration, Refugees and Citizenship Canada",
+    "teamNameFr": "Immigration, Réfugiés et Citoyenneté Canada"
+  },
+  {
+    "teamNameEn": "Impact Assessment Agency of Canada",
+    "teamNameFr": "Agence d'évaluation d'impact du Canada"
+  },
+  {
+    "teamNameEn": "Independent Review Panel for Defence Acquisition",
+    "teamNameFr": "Comité d'examen indépendant pour l'acquisition de la défense"
+  },
+  {
+    "teamNameEn": "Indian Oil and Gas Canada",
+    "teamNameFr": "Pétrole et gaz indiens Canada"
+  },
+  {
+    "teamNameEn": "Indigenous and Northern Affairs Canada",
+    "teamNameFr": "Affaires autochtones et du Nord Canada"
+  },
+  {
+    "teamNameEn": "Indigenous Services Canada",
+    "teamNameFr": "Services aux Autochtones Canada"
+  },
+  {
+    "teamNameEn": "Industrial Technologies Office",
+    "teamNameFr": "Bureau des technologies industrielles"
+  },
+  {
+    "teamNameEn": "Information Commissioner (Office of the)",
+    "teamNameFr": "Commissariat à l'information au Canada"
+  },
+  {
+    "teamNameEn": "Infrastructure Canada",
+    "teamNameFr": "Infrastructure Canada"
+  },
+  {
+    "teamNameEn": "Innovation, Science and Economic Development Canada",
+    "teamNameFr": "Innovation, Sciences et Développement économique Canada"
+  },
+  {
+    "teamNameEn": "Intelligence Commissoner (Office of the)",
+    "teamNameFr": "Bureau du commissaire au renseignement"
+  },
+  {
+    "teamNameEn": "Intergovernmental Affairs",
+    "teamNameFr": "Affaires intergouvernementales"
+  },
+  {
+    "teamNameEn": "International Development Research Centre",
+    "teamNameFr": "Centre de recherches pour le développement international"
+  },
+  {
+    "teamNameEn": "Jacques Cartier and Champlain Bridges",
+    "teamNameFr": "Ponts Jacques-Cartier et Champlain"
+  },
+  {
+    "teamNameEn": "Judicial Compensation and Benefits Commission",
+    "teamNameFr": "Commission d'examen de la rémunération des juges"
+  },
+  {
+    "teamNameEn": "Justice Canada (Department of)",
+    "teamNameFr": "Justice Canada (ministère de)"
+  },
+  {
+    "teamNameEn": "Labour Program",
+    "teamNameFr": "Programme du travail"
+  },
+  {
+    "teamNameEn": "Laurentian Pilotage Authority Canada",
+    "teamNameFr": "Administration de pilotage des Laurentides Canada"
+  },
+  {
+    "teamNameEn": "Leader of the Government in the House of Commons",
+    "teamNameFr": "Leader du gouvernement à la Chambre des communes"
+  },
+  {
+    "teamNameEn": "Library and Archives Canada",
+    "teamNameFr": "Bibliothèque et Archives Canada"
+  },
+  {
+    "teamNameEn": "Marine Atlantic",
+    "teamNameFr": "Marine Atlantique"
+  },
+  {
+    "teamNameEn": "Measurement Canada",
+    "teamNameFr": "Mesures Canada"
+  },
+  {
+    "teamNameEn": "Military Grievances External Review Committee",
+    "teamNameFr": "Comité externe d'examen des griefs militaires"
+  },
+  {
+    "teamNameEn": "Military Police Complaints Commission of Canada",
+    "teamNameFr": "Commission d'examen des plaintes concernant la police militaire du Canada"
+  },
+  {
+    "teamNameEn": "National Arts Centre",
+    "teamNameFr": "Centre national des arts"
+  },
+  {
+    "teamNameEn": "National Battlefields Commission",
+    "teamNameFr": "Commission des champs de bataille nationaux"
+  },
+  {
+    "teamNameEn": "National Capital Commission",
+    "teamNameFr": "Commission de la capitale nationale"
+  },
+  {
+    "teamNameEn": "National Defence",
+    "teamNameFr": "Défense nationale"
+  },
+  {
+    "teamNameEn": "National Film Board",
+    "teamNameFr": "Office national du film"
+  },
+  {
+    "teamNameEn": "National Gallery of Canada",
+    "teamNameFr": "Musée des beaux-arts du Canada"
+  },
+  {
+    "teamNameEn": "National Research Council Canada",
+    "teamNameFr": "Conseil national de recherches Canada"
+  },
+  {
+    "teamNameEn": "National Security and Intelligence Review Agency",
+    "teamNameFr": "Agence de surveillance de la sécurité nationale et du renseignement"
+  },
+  {
+    "teamNameEn": "National Seniors Council",
+    "teamNameFr": "Conseil national des aînés"
+  },
+  {
+    "teamNameEn": "Natural Resources Canada",
+    "teamNameFr": "Ressources naturelles Canada"
+  },
+  {
+    "teamNameEn": "Natural Sciences and Engineering Research Canada",
+    "teamNameFr": "Recherche en sciences naturelles et en génie Canada"
+  },
+  {
+    "teamNameEn": "Northern Pipeline Agency Canada",
+    "teamNameFr": "Administration du pipe-line du Nord Canada"
+  },
+  {
+    "teamNameEn": "Occupational Health and Safety Tribunal Canada",
+    "teamNameFr": "Tribunal de santé et sécurité au travail Canada"
+  },
+  {
+    "teamNameEn": "Office of the Chief Military Judge",
+    "teamNameFr": "Cabinet du juge militaire en chef"
+  },
+  {
+    "teamNameEn": "Ombudsman for the Department of National Defence and the Canadian Armed Forces (Office of the)",
+    "teamNameFr": "Bureau de l'ombudsman de la Défense nationale et des Forces armées canadiennes"
+  },
+  {
+    "teamNameEn": "Pacific Economic Development Canada",
+    "teamNameFr": "Développement économique pacifique Canada"
+  },
+  {
+    "teamNameEn": "Pacific Pilotage Authority Canada",
+    "teamNameFr": "Administration de pilotage du Pacifique Canada"
+  },
+  {
+    "teamNameEn": "Parks Canada",
+    "teamNameFr": "Parcs Canada"
+  },
+  {
+    "teamNameEn": "Parliament of Canada",
+    "teamNameFr": "Parlement du Canada"
+  },
+  {
+    "teamNameEn": "Parole Board of Canada",
+    "teamNameFr": "Commission des libérations conditionnelles du Canada"
+  },
+  {
+    "teamNameEn": "Patented Medicine Prices Review Board Canada",
+    "teamNameFr": "Conseil d'examen du prix des médicaments brevetés Canada"
+  },
+  {
+    "teamNameEn": "Polar Knowledge Canada",
+    "teamNameFr": "Savoir polaire Canada"
+  },
+  {
+    "teamNameEn": "Prairies Economic Development Canada",
+    "teamNameFr": "Développement économique des Prairies Canada"
+  },
+  {
+    "teamNameEn": "Prime Minister of Canada",
+    "teamNameFr": "Premier ministre du Canada"
+  },
+  {
+    "teamNameEn": "Privacy Commissioner of Canada (Office of the)",
+    "teamNameFr": "Commissariat à la protection de la vie privée du Canada"
+  },
+  {
+    "teamNameEn": "Privy Council Office",
+    "teamNameFr": "Bureau du Conseil privé"
+  },
+  {
+    "teamNameEn": "Procurement Ombudsman (Office of the)",
+    "teamNameFr": "Bureau de l'ombudsman de l'approvisionnement"
+  },
+  {
+    "teamNameEn": "Public Health Agency of Canada",
+    "teamNameFr": "Agence de la santé publique du Canada"
+  },
+  {
+    "teamNameEn": "Public Prosecution Service of Canada",
+    "teamNameFr": "Service des poursuites pénales du Canada"
+  },
+  {
+    "teamNameEn": "Public Safety Canada",
+    "teamNameFr": "Sécurité publique Canada"
+  },
+  {
+    "teamNameEn": "Public Sector Integrity Commissioner of Canada (Office of the)",
+    "teamNameFr": "Commissariat à l'intégrité du secteur public du Canada"
+  },
+  {
+    "teamNameEn": "Public Sector Pension Investment Board",
+    "teamNameFr": "Office d'investissement des régimes de pensions du secteur public"
+  },
+  {
+    "teamNameEn": "Public Servants Disclosure Protection Tribunal Canada",
+    "teamNameFr": "Tribunal de la protection des fonctionnaires divulgateurs Canada"
+  },
+  {
+    "teamNameEn": "Public Service Commission of Canada",
+    "teamNameFr": "Commission de la fonction publique du Canada"
+  },
+  {
+    "teamNameEn": "Public Service Labour Relations and Employment Board",
+    "teamNameFr": "Commission des relations de travail et de l'emploi dans la fonction publique"
+  },
+  {
+    "teamNameEn": "Public Services and Procurement Canada",
+    "teamNameFr": "Services publics et Approvisionnement Canada"
+  },
+  {
+    "teamNameEn": "Registry of the Specific Claims Tribunal of Canada",
+    "teamNameFr": "Greffe du Tribunal des revendications particulières du Canada"
+  },
+  {
+    "teamNameEn": "Ridley Terminals Inc.",
+    "teamNameFr": "Terminaux Ridley Inc."
+  },
+  {
+    "teamNameEn": "Royal Canadian Air Force",
+    "teamNameFr": "Aviation royale canadienne"
+  },
+  {
+    "teamNameEn": "Royal Canadian Mint",
+    "teamNameFr": "Monnaie royale canadienne"
+  },
+  {
+    "teamNameEn": "Royal Canadian Mounted Police",
+    "teamNameFr": "Gendarmerie royale du Canada"
+  },
+  {
+    "teamNameEn": "Royal Canadian Mounted Police External Review Committee",
+    "teamNameFr": "Comité externe d'examen de la Gendarmerie royale du Canada"
+  },
+  {
+    "teamNameEn": "Royal Canadian Navy",
+    "teamNameFr": "Marine royale canadienne"
+  },
+  {
+    "teamNameEn": "Royal Military College of Canada",
+    "teamNameFr": "Collège militaire royal du Canada"
+  },
+  {
+    "teamNameEn": "Secretariat of the National Security and Intelligence Committee of Parliamentarians",
+    "teamNameFr": "Secrétariat du Comité des parlementaires sur la sécurité nationale et le renseignement"
+  },
+  {
+    "teamNameEn": "Service Canada",
+    "teamNameFr": "Services Canada"
+  },
+  {
+    "teamNameEn": "Shared Services Canada",
+    "teamNameFr": "Services partagés Canada"
+  },
+  {
+    "teamNameEn": "Social Sciences and Humanities Research Council of Canada",
+    "teamNameFr": "Conseil de recherches en sciences humaines du Canada"
+  },
+  {
+    "teamNameEn": "Social Security Tribunal of Canada",
+    "teamNameFr": "Tribunal de la sécurité sociale du Canada"
+  },
+  {
+    "teamNameEn": "Standards Council of Canada",
+    "teamNameFr": "Conseil canadien des normes"
+  },
+  {
+    "teamNameEn": "Statistics Canada",
+    "teamNameFr": "Statistique Canada"
+  },
+  {
+    "teamNameEn": "Superintendent of Bankruptcy Canada (Office of the)",
+    "teamNameFr": "Bureau du surintendant des faillites Canada"
+  },
+  {
+    "teamNameEn": "Superintendent of Financial Institutions Canada (Office of the)",
+    "teamNameFr": "Bureau du surintendant des institutions financières Canada"
+  },
+  {
+    "teamNameEn": "Supreme Court of Canada",
+    "teamNameFr": "Cour suprême du Canada"
+  },
+  {
+    "teamNameEn": "Tax Court of Canada",
+    "teamNameFr": "Cour canadienne de l'impôt"
+  },
+  {
+    "teamNameEn": "Taxpayers' Ombudsperson (Office of the)",
+    "teamNameFr": "Bureau de l'ombudsman des contribuables"
+  },
+  {
+    "teamNameEn": "Telefilm Canada",
+    "teamNameFr": "Téléfilm Canada"
+  },
+  {
+    "teamNameEn": "Translation Bureau",
+    "teamNameFr": "Bureau de la traduction"
+  },
+  {
+    "teamNameEn": "Transport Canada",
+    "teamNameFr": "Transports Canada"
+  },
+  {
+    "teamNameEn": "Transportation Appeal Tribunal of Canada",
+    "teamNameFr": "Tribunal d'appel des transports du Canada"
+  },
+  {
+    "teamNameEn": "Transportation Safety Board of Canada",
+    "teamNameFr": "Bureau de la sécurité des transports du Canada"
+  },
+  {
+    "teamNameEn": "Treasury Board of Canada Secretariat",
+    "teamNameFr": "Secrétariat du Conseil du Trésor du Canada"
+  },
+  {
+    "teamNameEn": "Veterans Affairs Canada",
+    "teamNameFr": "Anciens Combattants Canada"
+  },
+  {
+    "teamNameEn": "Veterans Review and Appeal Board",
+    "teamNameFr": "Tribunal des anciens combattants (révision et appel)"
+  },
+  {
+    "teamNameEn": "Veterans' Ombudsman (Office of the)",
+    "teamNameFr": "Ombudsman des vétérans (Bureau de l')"
+  },
+  {
+    "teamNameEn": "VIA Rail Canada",
+    "teamNameFr": "VIA Rail Canada"
+  },
+  {
+    "teamNameEn": "Virtual Museum of Canada",
+    "teamNameFr": "Musée virtuel du Canada"
+  },
+  {
+    "teamNameEn": "Windsor-Detroit Bridge Authority",
+    "teamNameFr": "Autorité du pont Windsor-Détroit"
+  },
+  {
+    "teamNameEn": "Women and Gender Equality Canada",
+    "teamNameFr": "Femmes et Égalité des genres Canada"
+  },
+  {
+    "teamNameEn": "Youth",
+    "teamNameFr": "Jeunesse"
+  }
+]
