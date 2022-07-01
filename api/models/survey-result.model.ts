@@ -35,7 +35,7 @@ const surveyResultSchema = new Schema<SurveyResultDocument, SurveyResultModel>(
       default: new Date(),
     },
   },
-  { collection: 'survey-result' }
+  { collection: 'surveyResult' }
 );
 
 surveyResultSchema.pre('save', async function (next) {
