@@ -203,13 +203,14 @@ export default class AutoComplete extends Vue {
 .filtered-items {
   position: absolute;
   top: 0;
-  left: 0;
   right: 0;
-  width: auto;
+  width: fit-content;
   grid-row: 2;
   z-index: 9999;
   float: left;
   min-width: 10rem;
+  max-height: 350px;
+  overflow-y: auto;
   padding: 0.5rem 0;
   margin: 0.125rem 0 0;
   color: #212529;
