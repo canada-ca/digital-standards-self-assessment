@@ -1,0 +1,418 @@
+[
+  {
+    "gcitCode": "GCIT010001",
+    "itLevel": "IT-01",
+    "titleEn": "IT Technician, IT Infrastructure Operations -",
+    "titleFr": "Technicien(ne) de la TI, Opérations d’Infrastructure de la TI",
+    "shortTitleEn": "IT Technician, IO",
+    "shortTitleFr": "Technicien(ne) de TI, OI"
+  },
+  {
+    "gcitCode": "GCIT010002",
+    "itLevel": "IT-01",
+    "titleEn": "IT Technician, IT Software Solutions",
+    "titleFr": "Technicien(ne) de la TI, Solutions logicielles de la TI",
+    "shortTitleEn": "IT Technician, SS",
+    "shortTitleFr": "Technicien(ne) de TI, SL"
+  },
+  {
+    "gcitCode": "GCIT010003",
+    "itLevel": "IT-01",
+    "titleEn": "IT Technician, IT Security",
+    "titleFr": "Technicien(ne) de la TI, Sécurité de la TI",
+    "shortTitleEn": "IT Technician, ITS",
+    "shortTitleFr": "Technicien(ne) de TI, STI"
+  },
+  {
+    "gcitCode": "GCIT020001",
+    "itLevel": "IT-02",
+    "titleEn": "IT Analyst, IT Security",
+    "titleFr": "Analyste de la TI, Sécurité de la TI",
+    "shortTitleEn": "IT Analyst, ITS",
+    "shortTitleFr": "Analyste de TI, STI"
+  },
+  {
+    "gcitCode": "GCIT020002",
+    "itLevel": "IT-02",
+    "titleEn": "IT Analyst, IT Infrastructure Operations",
+    "titleFr": "Analyste de la TI, Opérations d’Infrastructure de la TI",
+    "shortTitleEn": "IT Analyst, IO",
+    "shortTitleFr": "Analyste de TI, OI"
+  },
+  {
+    "gcitCode": "GCIT020003",
+    "itLevel": "IT-02",
+    "titleEn": "IT Analyst, IT Database Management",
+    "titleFr": "Analyste de la TI, Gestion de bases de données de la TI",
+    "shortTitleEn": "IT Analyst, DBM",
+    "shortTitleFr": "Analyste de TI, GBD"
+  },
+  {
+    "gcitCode": "GCIT020004",
+    "itLevel": "IT-02",
+    "titleEn": "IT Analyst, IT Software Solutions",
+    "titleFr": "Analyste de la TI, Solutions logicielles de la TI",
+    "shortTitleEn": "IT Analyst, SS",
+    "shortTitleFr": "Analyste de TI, SL"
+  },
+  {
+    "gcitCode": "GCIT020005",
+    "itLevel": "IT-02",
+    "titleEn": "IT Analyst, IT Business Line Advisory Services",
+    "titleFr": "Analyste, Services consultatifs auprès des secteurs d’activité de la TI",
+    "shortTitleEn": "IT Analyst, BLA",
+    "shortTitleFr": "Analyste de TI, SCSA"
+  },
+  {
+    "gcitCode": "GCIT020006",
+    "itLevel": "IT-02",
+    "titleEn": "IT Analyst, IT Planning and Reporting",
+    "titleFr": "Analyste de la TI, Planification et établissement de rapports en matière de TI",
+    "shortTitleEn": "IT Analyst, IPR",
+    "shortTitleFr": "Analyste de TI, PER"
+  },
+  {
+    "gcitCode": "GCIT020007",
+    "itLevel": "IT-02",
+    "titleEn": "IT Analyst, IT Enterprise Architecture",
+    "titleFr": "Analyste de la TI, Architecture intégrée de la TI",
+    "shortTitleEn": "IT Analyst, EA",
+    "shortTitleFr": "Analyste de TI, AI"
+  },
+  {
+    "gcitCode": "GCIT020008",
+    "itLevel": "IT-02",
+    "titleEn": "IT Analyst, IT Project Portfolio Management",
+    "titleFr": "Analyste de la TI, Gestion de portefeuilles de projets de la TI",
+    "shortTitleEn": "IT Analyst, PPM",
+    "shortTitleFr": "Analyste de TI, GPP"
+  },
+  {
+    "gcitCode": "GCIT030002",
+    "itLevel": "IT-03",
+    "titleEn": "IT Technical Advisor, IT Planning and Reporting",
+    "titleFr": "Conseiller(-ère) technique de la TI, Planification et établissement de rapports en matière de TI",
+    "shortTitleEn": "IT Technical Advisor, IPR",
+    "shortTitleFr": "Conseiller tech de TI, PER"
+  },
+  {
+    "gcitCode": "GCIT030003",
+    "itLevel": "IT-03",
+    "titleEn": "IT Technical Advisor, IT Enterprise Architecture",
+    "titleFr": "Conseiller(-ère) technique de la TI, Architecture intégrée de la TI",
+    "shortTitleEn": "IT Technical Advisor, EA",
+    "shortTitleFr": "Conseiller tech de TI, AI"
+  },
+  {
+    "gcitCode": "GCIT030005",
+    "itLevel": "IT-03",
+    "titleEn": "IT Team Leader, IT Security",
+    "titleFr": "Chef d'équipe de la TI, Sécurité de la TI",
+    "shortTitleEn": "IT Team Leader, ITS",
+    "shortTitleFr": "Chef d'équipe de TI, STI"
+  },
+  {
+    "gcitCode": "GCIT030006",
+    "itLevel": "IT-03",
+    "titleEn": "IT Team Leader, IT Infrastructure Operations",
+    "titleFr": "Chef d'équipe de la TI, Opérations d’Infrastructure de la TI",
+    "shortTitleEn": "IT Team Leader, IO",
+    "shortTitleFr": "Chef d'équipe de TI, OI"
+  },
+  {
+    "gcitCode": "GCIT030007",
+    "itLevel": "IT-03",
+    "titleEn": "IT Technical Advisor, IT Infrastructure Operations",
+    "titleFr": "Conseiller(-ère) technique de la TI, Opérations d’Infrastructure de la TI",
+    "shortTitleEn": "IT Technical Advisor, IO",
+    "shortTitleFr": "Conseiller tech de TI, OI"
+  },
+  {
+    "gcitCode": "GCIT030008",
+    "itLevel": "IT-03",
+    "titleEn": "IT Team Leader, IT Database Management",
+    "titleFr": "Chef d'équipe de la TI, Gestion de bases de données de la TI",
+    "shortTitleEn": "IT Team Leader, DBM",
+    "shortTitleFr": "Chef d'équipe de TI, GBD"
+  },
+  {
+    "gcitCode": "GCIT030009",
+    "itLevel": "IT-03",
+    "titleEn": "IT Technical Advisor, IT Database Management",
+    "titleFr": "Conseiller(-ère) technique de la TI, Gestion de bases de données de la TI",
+    "shortTitleEn": "IT Technical Advisor, DBM",
+    "shortTitleFr": "Conseiller tech de TI, GBD"
+  },
+  {
+    "gcitCode": "GCIT030010",
+    "itLevel": "IT-03",
+    "titleEn": "IT Team Leader, IT Software Solutions",
+    "titleFr": "Chef d'équipe de la TI, Solutions logicielles de la TI",
+    "shortTitleEn": "IT Team Leader, SS",
+    "shortTitleFr": "Chef d'équipe de TI, SL"
+  },
+  {
+    "gcitCode": "GCIT030011",
+    "itLevel": "IT-03",
+    "titleEn": "IT Technical Advisor, IT Software Solutions",
+    "titleFr": "Conseiller(-ère) technique de la TI, Solutions logicielles de la TI",
+    "shortTitleEn": "IT Technical Advisor, SS",
+    "shortTitleFr": "Conseiller tech de TI, SL"
+  },
+  {
+    "gcitCode": "GCIT030012",
+    "itLevel": "IT-03",
+    "titleEn": "IT Team Leader, IT Software Solutions and Database Management",
+    "titleFr": "Chef d'équipe de la TI, Solutions logicielles et gestion de bases de données de la TI",
+    "shortTitleEn": "IT Team Leader, SS+DBM",
+    "shortTitleFr": "Chef d'équipe de TI, SL+GBD"
+  },
+  {
+    "gcitCode": "GCIT030013",
+    "itLevel": "IT-03",
+    "titleEn": "IT Technical Advisor, IT Project Portfolio Management",
+    "titleFr": "Conseiller(-ère) technique de la TI, Gestion de portefeuilles de projets de la TI",
+    "shortTitleEn": "IT Technical Advisor, PPM",
+    "shortTitleFr": "Conseiller tech de TI, GPP"
+  },
+  {
+    "gcitCode": "GCIT030015",
+    "itLevel": "IT-03",
+    "titleEn": "IT Technical Advisor, IT Security",
+    "titleFr": "Conseiller(-ère) technique de la TI, Sécurité de la TI",
+    "shortTitleEn": "IT Technical Advisor, ITS",
+    "shortTitleFr": "Conseiller tech de TI, STI"
+  },
+  {
+    "gcitCode": "GCIT030016",
+    "itLevel": "IT-03",
+    "titleEn": "IT Technical Advisor, IT Software Solutions and Database Management",
+    "titleFr": "Conseiller(-ère) technique de la TI, Solutions logicielles et gestion de bases de données de la TI",
+    "shortTitleEn": "IT Technical Advisor, SS+DBM",
+    "shortTitleFr": "Conseiller tech de TI, SL+GBD"
+  },
+  {
+    "gcitCode": "GCIT030017",
+    "itLevel": "IT-03",
+    "titleEn": "IT Team Leader, IT Business Line Advisory Services",
+    "titleFr": "Chef d'équipe, Services consultatifs auprès des secteurs d’activité de la TI",
+    "shortTitleEn": "IT Team Leader, BLA",
+    "shortTitleFr": "Chef d'équipe de la TI, SCSA"
+  },
+  {
+    "gcitCode": "GCIT030018",
+    "itLevel": "IT-03",
+    "titleEn": "IT Technical Advisor, IT Business Line Advisory Services",
+    "titleFr": "Conseiller technique, Services consultatifs auprès des secteurs d’activité de la TI",
+    "shortTitleEn": "IT Technical Advisor, BLA",
+    "shortTitleFr": "Conseiller(-ère) technique de la TI, SCSA"
+  },
+  {
+    "gcitCode": "GCIT030019",
+    "itLevel": "IT-03",
+    "titleEn": "IT Team Leader, IT Planning and Reporting",
+    "titleFr": "Chef d'équipe de la TI, Planification et établissement de rapports en matière de TI",
+    "shortTitleEn": "IT Team Leader, IPR",
+    "shortTitleFr": "Chef d'équipe de TI, PER"
+  },
+  {
+    "gcitCode": "GCIT030020",
+    "itLevel": "IT-03",
+    "titleEn": "IT Team Leader, IT Enterprise Architecture",
+    "titleFr": "Chef d'équipe de la TI, Architecture intégrée de la TI",
+    "shortTitleEn": "IT Team Leader, EA",
+    "shortTitleFr": "Chef d'équipe de TI, AI"
+  },
+  {
+    "gcitCode": "GCIT030021",
+    "itLevel": "IT-03",
+    "titleEn": "IT Team Leader, IT Project Portfolio Management",
+    "titleFr": "Chef d'équipe de la TI, Gestion de portefeuilles de projets de la TI",
+    "shortTitleEn": "IT Team Leader, PPM",
+    "shortTitleFr": "Chef d'équipe de TI, GPP"
+  },
+  {
+    "gcitCode": "GCIT040002",
+    "itLevel": "IT-04",
+    "titleEn": "IT Manager, IT Planning and Reporting",
+    "titleFr": "Gestionnaire de la TI, Planification et établissement de rapports en matière de TI",
+    "shortTitleEn": "IT Manager, IPR",
+    "shortTitleFr": "Gestionnaire de TI, PER"
+  },
+  {
+    "gcitCode": "GCIT040003",
+    "itLevel": "IT-04",
+    "titleEn": "IT Senior Advisor, IT Enterprise Architecture",
+    "titleFr": "Conseiller(-ère) principal(e) de la TI, Architecture intégrée de la TI",
+    "shortTitleEn": "IT Senior Advisor, EA",
+    "shortTitleFr": "Conseiller principal TI, AI"
+  },
+  {
+    "gcitCode": "GCIT040004",
+    "itLevel": "IT-04",
+    "titleEn": "IT Manager, IT Enterprise Architecture",
+    "titleFr": "Gestionnaire de la TI, Architecture intégrée de la TI",
+    "shortTitleEn": "IT Manager, EA",
+    "shortTitleFr": "Gestionnaire de TI, AI"
+  },
+  {
+    "gcitCode": "GCIT040005",
+    "itLevel": "IT-04",
+    "titleEn": "IT Manager, IT Security",
+    "titleFr": "Gestionnaire de la TI, Sécurité de la TI",
+    "shortTitleEn": "IT Manager, ITS",
+    "shortTitleFr": "Gestionnaire de TI, STI"
+  },
+  {
+    "gcitCode": "GCIT040006",
+    "itLevel": "IT-04",
+    "titleEn": "IT Manager, IT Infrastructure Operations",
+    "titleFr": "Gestionnaire de la TI, Opérations d’Infrastructure de la TI",
+    "shortTitleEn": "IT Manager, IO",
+    "shortTitleFr": "Gestionnaire de TI, OI"
+  },
+  {
+    "gcitCode": "GCIT040007",
+    "itLevel": "IT-04",
+    "titleEn": "IT Senior Advisor, IT Infrastructure Operations",
+    "titleFr": "Conseiller(-ère) principal(e) de la TI, Opérations d’Infrastructure de la TI",
+    "shortTitleEn": "IT Senior Advisor, IO",
+    "shortTitleFr": "Conseiller principal TI, OI"
+  },
+  {
+    "gcitCode": "GCIT040008",
+    "itLevel": "IT-04",
+    "titleEn": "IT Manager, IT Database Management",
+    "titleFr": "Gestionnaire de la TI, Gestion de bases de données de la TI",
+    "shortTitleEn": "IT Manager, DBM",
+    "shortTitleFr": "Gestionnaire de TI, GBD"
+  },
+  {
+    "gcitCode": "GCIT040009",
+    "itLevel": "IT-04",
+    "titleEn": "IT Senior Advisor, IT Database Management",
+    "titleFr": "Conseiller(-ère) principal(e) de la TI, Gestion de bases de données de la TI",
+    "shortTitleEn": "IT Senior Advisor, DBM",
+    "shortTitleFr": "Conseiller principal TI, GBD"
+  },
+  {
+    "gcitCode": "GCIT040010",
+    "itLevel": "IT-04",
+    "titleEn": "IT Manager, IT Software Solutions",
+    "titleFr": "Gestionnaire de la TI, Solutions logicielles de la TI",
+    "shortTitleEn": "IT Manager, SS",
+    "shortTitleFr": "Gestionnaire de TI, SL"
+  },
+  {
+    "gcitCode": "GCIT040011",
+    "itLevel": "IT-04",
+    "titleEn": "IT Senior Advisor, IT Software Solutions",
+    "titleFr": "Conseiller(-ère) principal(e) de la TI, Solutions logicielles de la TI",
+    "shortTitleEn": "IT Senior Advisor, SS",
+    "shortTitleFr": "Conseiller principal TI, SL"
+  },
+  {
+    "gcitCode": "GCIT040014",
+    "itLevel": "IT-04",
+    "titleEn": "IT Manager, IT Software Solutions and Database Management",
+    "titleFr": "Gestionnaire de la TI, Solutions logicielles et gestion de bases de données de la TI",
+    "shortTitleEn": "IT Manager, SS+DBM",
+    "shortTitleFr": "Gestionnaire de TI, SL+GBD"
+  },
+  {
+    "gcitCode": "GCIT040015",
+    "itLevel": "IT-04",
+    "titleEn": "IT Manager, IT Project Portfolio Management",
+    "titleFr": "Gestionnaire de la TI, Gestion de portefeuilles de projets de la TI",
+    "shortTitleEn": "IT Manager, PPM",
+    "shortTitleFr": "Gestionnaire de TI, GPP"
+  },
+  {
+    "gcitCode": "GCIT040017",
+    "itLevel": "IT-04",
+    "titleEn": "IT Manager, IT Business Line Advisory Services",
+    "titleFr": "Gestionnaire, Services consultatifs auprès des secteurs d’activité de la TI",
+    "shortTitleEn": "IT Manager, BLA",
+    "shortTitleFr": "Gestionnaire de la TI, SCSA"
+  },
+  {
+    "gcitCode": "GCIT040018",
+    "itLevel": "IT-04",
+    "titleEn": "IT Senior Advisor, IT Security",
+    "titleFr": "Conseiller(-ère) principal(e) de la TI, Sécurité de la TI",
+    "shortTitleEn": "IT Senior Advisor, ITS",
+    "shortTitleFr": "Conseiller principal TI, STI"
+  },
+  {
+    "gcitCode": "GCIT040019",
+    "itLevel": "IT-04",
+    "titleEn": "IT Senior Advisor, IT Project Portfolio Management",
+    "titleFr": "Conseiller(-ère) principal(e) de la TI, Gestion de portefeuilles de projets de la TI",
+    "shortTitleEn": "IT Senior Advisor, PPM",
+    "shortTitleFr": "Conseiller principal TI, GPP"
+  },
+  {
+    "gcitCode": "GCIT050001",
+    "itLevel": "IT-05",
+    "titleEn": "IT Director, IT Enterprise Architecture",
+    "titleFr": "Directeur(-trice) de la TI, Architecture intégrée de la TI",
+    "shortTitleEn": "IT Director, EA",
+    "shortTitleFr": "Directeur(-trice) de TI, AI"
+  },
+  {
+    "gcitCode": "GCIT050002",
+    "itLevel": "IT-05",
+    "titleEn": "IT Director, IT Security",
+    "titleFr": "Directeur(-trice) de la TI, Sécurité de la TI",
+    "shortTitleEn": "IT Director, ITS",
+    "shortTitleFr": "Directeur(-trice) de TI, STI"
+  },
+  {
+    "gcitCode": "GCIT050003",
+    "itLevel": "IT-05",
+    "titleEn": "IT Director, IT Infrastructure Operations",
+    "titleFr": "Directeur(-trice) de la TI, Opérations d’Infrastructure de la TI",
+    "shortTitleEn": "IT Director, IO",
+    "shortTitleFr": "Directeur(-trice) de TI, OI"
+  },
+  {
+    "gcitCode": "GCIT050004",
+    "itLevel": "IT-05",
+    "titleEn": "IT Director, IT Infrastructure Operations and Security",
+    "titleFr": "Directeur(-trice) de la TI, Opérations d’infrastructure et Sécurité de la TI",
+    "shortTitleEn": "IT Director, IO+ITS",
+    "shortTitleFr": "Directeur(-trice) TI, OI+STI"
+  },
+  {
+    "gcitCode": "GCIT050005",
+    "itLevel": "IT-05",
+    "titleEn": "IT Director, IT Software Solutions and Database Management",
+    "titleFr": "Directeur(-trice) de la TI, Solutions logicielles et gestion de bases de données de la TI",
+    "shortTitleEn": "IT Director, SS+DBM",
+    "shortTitleFr": "Directeur(-trice) TI, SL+GBD"
+  },
+  {
+    "gcitCode": "GCIT050006",
+    "itLevel": "IT-05",
+    "titleEn": "IT Director, IT Project Portfolio Management",
+    "titleFr": "Directeur(-trice) de la TI, Gestion de portefeuilles de projets de la TI",
+    "shortTitleEn": "IT Director, PPM",
+    "shortTitleFr": "Directeur(-trice) de TI, GPP"
+  },
+  {
+    "gcitCode": "GCIT050007",
+    "itLevel": "IT-05",
+    "titleEn": "IT Director, IT Software Solutions",
+    "titleFr": "Directeur(-trice) de la TI, Solutions logicielles de la TI",
+    "shortTitleEn": "IT Director, SS",
+    "shortTitleFr": "Directeur(-trice) de TI, SL"
+  },
+  {
+    "gcitCode": "GCIT050008",
+    "itLevel": "IT-05",
+    "titleEn": "IT Director, IT Database Management",
+    "titleFr": "Directeur(-trice) de la TI, Gestion de bases de données de la TI",
+    "shortTitleEn": "IT Director, DBM",
+    "shortTitleFr": "Directeur(-trice) de TI, GBD"
+  }
+]
