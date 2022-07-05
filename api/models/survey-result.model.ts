@@ -1,9 +1,11 @@
 import { Document, Model, model, Schema, Types } from 'mongoose';
+import jobTitleModel, { JobTitle } from './job-title.model';
 import surveyModel, { Survey } from './survey.model';
 import teamModel, { Team } from './team.model';
 export interface SurveyResult {
   answers: Map<string, any>;
-  userEmail: string;
+  userId: string; // either email or a random string
+  jobTitle: string | Types.ObjectId | JobTitle;
   team: string | Types.ObjectId | Team;
   survey: string | Types.ObjectId | Survey;
   createdAt: Date;
@@ -19,8 +21,12 @@ const surveyResultSchema = new Schema<SurveyResultDocument, SurveyResultModel>(
       type: Map,
       of: String,
     },
-    userEmail: {
+    userId: {
       type: String,
+    },
+    jobTitle: {
+      type: Types.ObjectId,
+      ref: 'JobTitle',
     },
     team: {
       type: Types.ObjectId,
@@ -43,6 +49,11 @@ surveyResultSchema.pre('save', async function (next) {
   const teamCount = await teamModel.countDocuments({ _id: teamId }).exec();
   if (teamCount === 0) {
     throw new Error(`Can not find team with id=${teamId}`);
+  }
+  const jobTitleId = this.jobTitle;
+  const jobTitleCount = await jobTitleModel.countDocuments({ _id: jobTitleId }).exec();
+  if (jobTitleCount === 0) {
+    throw new Error(`Can not find jobTitle with id=${jobTitleId}`);
   }
   const surveyId = this.survey;
   const surveyCount = await surveyModel.countDocuments({ _id: surveyId }).exec();

@@ -66,6 +66,7 @@ class SurveyResultService {
         createdAt: query,
       })
         .populate('team')
+        .populate('jobTitle')
         .exec();
     } catch (err: any) {
       if (err instanceof MongoServerError) {
