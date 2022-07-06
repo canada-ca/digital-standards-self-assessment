@@ -1,4 +1,4 @@
-import { Survey, SurveyResult, Team } from '@/interfaces/api-models';
+import { JobTitle, Survey, SurveyResult, Team } from '@/interfaces/api-models';
 import axios, { AxiosRequestConfig, AxiosResponse } from 'axios';
 
 const option: AxiosRequestConfig = {
@@ -31,6 +31,15 @@ class ApiService {
     }
   }
 
+  async findAllJobTitles(): Promise<JobTitle[]> {
+    try {
+      const res: AxiosResponse<JobTitle[]> = await axios.get<JobTitle[]>(`${this.apiBaseUrl}/job-title`, option);
+      return res.data;
+    } catch (err) {
+      throw err;
+    }
+  }
+
   async findSurveyResults(startDate: string, endDate: string): Promise<SurveyResult[]> {
     try {
       const res: AxiosResponse<SurveyResult[]> = await axios.get<SurveyResult[]>(
@@ -47,7 +56,7 @@ class ApiService {
     try {
       const res: AxiosResponse<SurveyResult> = await axios.post<SurveyResult>(
         `${this.apiBaseUrl}/survey-result`,
-        surveyResult,
+        { ...surveyResult, createdAt: new Date() },
         option
       );
       return res.data;

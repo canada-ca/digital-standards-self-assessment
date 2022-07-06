@@ -155,7 +155,7 @@ export default class Survey extends Vue {
       !!profile &&
       !!profile.userId &&
       !!profile.team &&
-      (this.collectEmail === false || (this.collectEmail && !!profile.email))
+      (this.collectEmail === false || (this.collectEmail && !!profile.userId))
     );
   }
 
@@ -189,7 +189,8 @@ export default class Survey extends Vue {
     const result: SurveyResult = {
       answers: this.$store.getters.returnToolData,
       team: profile.team as Team,
-      userEmail: '' + (this.collectEmail ? profile.email : profile.userId),
+      userId: '' + (this.collectEmail ? profile.userId : profile.userId),
+      jobTitle: profile.jobTitle,
       survey: this.$store.getters.returnSurveyJSON._id,
     };
     try {

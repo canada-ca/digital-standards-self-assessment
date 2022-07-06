@@ -9,11 +9,15 @@
     "goHome": "Home",
     "survey": "Survey",
     "teamsSurvey": "Team Results",
-    "yourEmail": "Your Email: ",
-    "yourTeam": "Your Team: ",
+    "yourEmail": "Email: ",
+    "yourTeam": "Department: ",
     "profile": {
-      "notSet": "Please set your email and team"
-    }
+      "notSet": "Please fill your profile"
+    },
+    "itLevel": "IT Level: ",
+    "jobTitle": "Job Title: ",
+    "pleaseSelectItLevel": "Please select an IT Level",
+    "pleaseSelectJobTitle": "Please select a Job Title"
   },
   "notice": {
     "startUsingTitle": "Start your Digital Standards Self Assessment",

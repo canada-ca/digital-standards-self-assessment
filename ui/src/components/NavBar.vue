@@ -19,7 +19,6 @@
     </div>
     <b-collapse v-model="showProfile">
       <div class="profile-card">
-        <span />
         <label v-if="collectEmail">{{ $t('navigation.yourEmail') }}</label>
         <b-form-input
           v-if="collectEmail"
@@ -28,12 +27,30 @@
           :class="{ 'is-invalid': hasError }"
           :value="email"
         />
-        <div class="text-danger mt-3 email-error" v-if="hasError">
+        <div class="text-danger mt-3 email-error" v-if="collectEmail && hasError">
           {{ $t('validation.email.invalid') }}
         </div>
         <label>{{ $t('navigation.yourTeam') }}</label>
         <auto-complete :items="teams" @valueChanged="setTeam" :value="team" />
-        <span />
+        <label v-if="collectJobTitle">{{ $t('navigation.itLevel') }}</label>
+        <b-form-select
+          class="form-control"
+          v-if="collectJobTitle"
+          @change="setItLevel"
+          :value="itLevel"
+          :options="allItLevels"
+        >
+        </b-form-select>
+
+        <label v-if="collectJobTitle">{{ $t('navigation.jobTitle') }}</label>
+        <b-form-select
+          class="form-control"
+          v-if="collectJobTitle"
+          :options="jobTitleOptions"
+          @change="setJobTitle"
+          :value="jobTitle"
+        >
+        </b-form-select>
       </div>
     </b-collapse>
   </div>
@@ -46,7 +63,8 @@ import { ActionTypes } from '@/store/actions';
 import { validateEmail } from '@/utils/utils';
 import i18n from '@/plugins/i18n';
 import apiService from '@/services/api.service';
-import { Team } from '@/interfaces/api-models';
+import { JobTitle, Team } from '@/interfaces/api-models';
+import { ItLevels } from '@/interfaces/ITLevels';
 import { getCookie, setCookie } from 'typescript-cookie';
 
 @Component({
@@ -60,6 +78,10 @@ export default class NavBar extends Vue {
   isProfileSet = false;
   hasError = false;
   teams: Team[] = [];
+  itLevel? = '';
+  allItLevels = ItLevels.map((v) => ({ value: v, text: v }));
+  jobTitles: JobTitle[] = [];
+  jobTitleOptions: Array<{ value: string; text: string }> = [];
 
   async created() {
     this.profile = this.$store.getters.returnProfile;
@@ -69,10 +91,26 @@ export default class NavBar extends Vue {
       this.hasError = !validateEmail(this.email);
     }
     this.teams = await apiService.findAllTeams();
+    this.jobTitles = await apiService.findAllJobTitles();
+    this.itLevel = this.profile?.jobTitle?.itLevel;
+    this.getJobTitleOptions();
   }
 
   get collectEmail(): boolean {
     return process.env.VUE_APP_COLLECT_USER_EMAIL + '' === 'true';
+  }
+
+  get collectJobTitle(): boolean {
+    return process.env.VUE_APP_COLLECT_JOB_TITLE + '' === 'true';
+  }
+
+  @Watch('$i18n.locale')
+  getJobTitleOptions() {
+    this.jobTitleOptions = this.jobTitles
+      .filter((v) => v.itLevel === this.itLevel)
+      .map((v) => ({ value: v.gcitCode, text: this.$i18n.locale === 'en' ? v.shortTitleEn : v.shortTitleFr }));
+    const result = this.jobTitleOptions.find((v) => v.value === this.profile?.jobTitle?.gcitCode);
+    this.profile?.jobTitle == result;
   }
 
   @Watch('$store.getters.returnShowProfile')
@@ -89,8 +127,7 @@ export default class NavBar extends Vue {
       !!this.profile &&
       !!this.profile.userId &&
       !!this.profile.team &&
-      (this.collectEmail === false || (this.collectEmail && !!this.profile.email));
-
+      (this.collectJobTitle === false || (this.collectJobTitle && !!this.profile.jobTitle));
   }
 
   toggleProfile() {
@@ -110,7 +147,11 @@ export default class NavBar extends Vue {
   }
 
   get email() {
-    return this.profile?.email;
+    return this.profile?.userId;
+  }
+
+  get jobTitle() {
+    return this.profile?.jobTitle?.gcitCode;
   }
 
   setTeam(team: Team) {
@@ -125,7 +166,20 @@ export default class NavBar extends Vue {
       return;
     }
     this.setUserId();
-    this.profile = { ...this.profile, email };
+    this.profile = { ...this.profile, userId: email };
+    this.$store.dispatch(ActionTypes.SaveProfile, this.profile);
+  }
+
+  setItLevel(itLevel: string) {
+    this.itLevel = itLevel;
+    this.getJobTitleOptions();
+    this.profile = { ...this.profile };
+    this.$store.dispatch(ActionTypes.SaveProfile, this.profile);
+  }
+
+  setJobTitle(title: string) {
+    const jobTitle = this.jobTitles.find((v) => v.gcitCode === title);
+    this.profile = { ...this.profile, jobTitle };
     this.$store.dispatch(ActionTypes.SaveProfile, this.profile);
   }
 
@@ -199,12 +253,16 @@ export default class NavBar extends Vue {
 }
 
 .profile-card {
-  display: inline-grid;
-  grid-template-columns: auto 120px 300px 120px 300px auto;
-  grid-column-gap: 10px;
+  display: inline-flex;
+  justify-content: center;
+  gap: 10px 25px;
   background-color: #ffffff;
   width: 100%;
   padding: 6px 10px;
+}
+
+.profile-card > * {
+  flex-basis: content;
 }
 
 .input-with-error {

@@ -5,7 +5,7 @@ export interface JobTitle {
   titleEn: string;
   titleFr: string;
   shortTitleEn: string;
-  shortTItleFr: string;
+  shortTitleFr: string;
 }
 
 export interface JobTitleDocument extends JobTitle, Document {}
@@ -29,7 +29,7 @@ const jobTitleSchema = new Schema<JobTitleDocument, JobTitleDocument>(
     shortTitleEn: {
       type: String,
     },
-    shortTItleFr: {
+    shortTitleFr: {
       type: String,
     },
   },

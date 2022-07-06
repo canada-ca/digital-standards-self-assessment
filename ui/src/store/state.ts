@@ -50,7 +50,7 @@ export interface TeamReportData {
 }
 
 export interface UserReportData {
-  email: string;
+  userId: string;
   sections: Array<SectionReportData>;
 }
 

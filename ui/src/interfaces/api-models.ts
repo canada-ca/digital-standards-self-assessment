@@ -3,6 +3,7 @@ interface BaseInterface {
 }
 
 export interface Team extends BaseInterface {
+  teamId: number;
   teamNameEn: string;
   teamNameFr: string;
 }
@@ -67,8 +68,18 @@ export interface Survey extends BaseInterface {
 
 export interface SurveyResult extends BaseInterface {
   answers: Map<string, any>;
-  userEmail: string;
+  userId: string; // either email or a random string
   team: string | Team;
+  jobTitle?: string | JobTitle;
   survey: string;
   createdAt?: Date;
+}
+
+export interface JobTitle extends BaseInterface {
+  gcitCode: string;
+  itLevel: string;
+  titleEn: string;
+  titleFr: string;
+  shortTitleEn: string;
+  shortTitleFr: string;
 }

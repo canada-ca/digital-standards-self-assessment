@@ -110,11 +110,11 @@ export default class RetrieveTeamSurveys extends Vue {
   loadSurveyResults(result: SurveyResult) {
     const team: Team = result.team as Team;
     const teamId = team._id || '';
-    const userEmail = result.userEmail;
+    const userId = result.userId;
     const answers = result.answers;
 
     const userReportData: UserReportData = {
-      email: userEmail,
+      userId,
       sections: this.extractSectionReportData(answers, result.createdAt),
     };
 
