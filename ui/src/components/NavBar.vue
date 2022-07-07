@@ -173,7 +173,7 @@ export default class NavBar extends Vue {
   setItLevel(itLevel: string) {
     this.itLevel = itLevel;
     this.getJobTitleOptions();
-    this.profile = { ...this.profile };
+    this.profile = { ...this.profile, jobTitle: undefined };
     this.$store.dispatch(ActionTypes.SaveProfile, this.profile);
   }
 
