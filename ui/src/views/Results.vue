@@ -16,7 +16,7 @@
         />
         <div v-else>
           <p>
-            {{ $t('notice.noProgress') }}
+            {{ $t('survey.noProgress') }}
           </p>
         </div>
       </div>

@@ -1,6 +1,5 @@
 {
   "navigation": {
-    "appName": "Évaluation des normes relatives au numérique",
     "viewSectionResults": "Voir les résultats",
     "chooseAnotherSection": "Choisir une autre section",
     "viewAllResults": "Tous les résultats",
@@ -19,7 +18,7 @@
     "pleaseSelectItLevel": "Please select an IT Level(FR)",
     "pleaseSelectJobTitle": "Please select a Job Title(FR)"
   },
-  "notice": {
+  "welcome": {
     "startUsingTitle": "Commencez votre auto-évaluation des normes numériques",
     "startUsingDesc": "Vous ne savez pas ce qu'est l'outil d'évaluation des normes numériques? Continuez [lire ci-dessous] (#Titre message de bienvenue). ",
     "takeTheSurvey": "Faire l'évaluation",
@@ -39,8 +38,21 @@
     "subtitle3": "Avis de confidentialité :",
     "section3p1": "Cache du navigateur",
     "section3p2": "Les réponses à l'auto-évaluation sur DevOps sont stockées localement sur votre ordinateur (mémoire cache du navigateur), et le gouvernement du Canada ne sauvegarde aucune information.",
-    "welcomeNoticeBody": "L'outil suivant est basé sur le directive des normes relatives au numérique qui a été publié en 2021. \n\nCet outil **soutiendra les équipes dans l'intégration des normes numériques dans leurs méthodes de travail**. \n\nLes équipes sont invitées à remplir l'auto-évaluation tous les 6 (six) à 12 (douze) mois **pour mesurer leurs progrès**. Toutefois, vous êtes libre d'utiliser l'outil tout au long de l'année, que ce soit en équipe ou individuellement.",
-    "noProgress": "L'auto-évaluation DevOps n'a pas encore commencée. Veuillez choisir une section à compléter."
+    "welcomeNoticeBody": "L'outil suivant est basé sur le directive des normes relatives au numérique qui a été publié en 2021. \n\nCet outil **soutiendra les équipes dans l'intégration des normes numériques dans leurs méthodes de travail**. \n\nLes équipes sont invitées à remplir l'auto-évaluation tous les 6 (six) à 12 (douze) mois **pour mesurer leurs progrès**. Toutefois, vous êtes libre d'utiliser l'outil tout au long de l'année, que ce soit en équipe ou individuellement."
+  },
+  "welcome2": {
+    "A1": "Guidelines(FR)",
+    "B1": "Goal(FR)",
+    "P1": "The purpose of this questionnaire is to better understand what knowledge, skills, abilities and other attributes are required to be successful in the IT job. It is meant as a systematic assessment of the job requirements rather than an assessment of your own competencies. For the pupose of this program, you are invited as a job expert and your input will contribute to the modernization of the job profile applying to your position. This review will provide a detailed snap shot of the job requirements by levels and domains of skills which will be used to staff positions, identify learning priorities or manage talent. The main intent of the program is to enhance the career of all IT employees. You may note that some task elements do not relate to the job you currently hold. This is perfectly normal as we need to ensure a full examination of all possible competencies applying to your domain of employment.(FR)",
+    "B2": "Participation(FR)",
+    "P2": "Participation is completely volontary. All sections included in this questionnaire must be completed fully and honestly. This questionnaire has been designed with features facilitating the answering of question such as drop down menus. It should require two hours approximatively to complete in full. This tool represents the latest HR innovation with respect to assessment of job competency requirements.(FR)",
+    "B3": "Honesty(FR)",
+    "P3": "The effectiveness of this questionnaire depends on the quality of the answers provided by the participants. Overstating the true abilities required by the job will lead to unreliable competency profiles. It is therefore important to answer honestly and avoid overthinking each item/question. It is suggested that you answer all questions confidently based on the most obvious evidence that initially comes to mind. Keep in mind that your answers will be aggregated with the answers of other employees to identify key aspects of IT jobs.(FR)",
+    "P4": "Overall, it can be said that honest answering is the best way to minimize errors in reflecting on your position's competency requirements. However, the best way to ensure reliability of results is to focus on the job and not what you can do. We are aware that many if not most IT/IM employees possess a wider variety/higher level of competencies than the one required by the job. This is fully expected and it is for this reason that you must ensure that your answers reflect the job requirements for effective performance in the position. Clearly it may underestimate what you know and what you can do.  You should be aware that the data provided in this questionnaire will be used for research purposes, with a view to improve the current competency framework being used for HR IT management.(FR)",
+    "A2": "Instructions(FR)",
+    "P5": "The following section provides a list of statements used to describe IT jobs requirements. It is intended to identify which tasks define the position you currently hold. Some items may reflect your job requirements while some others may not. The intent is to confirm what your current job requirements are. The questionnaire is divided into three sections: Technical Competencies, Organizational Competencies and Personnality Requirtements. For each item, using the list boxes provided for task importance, please select the descriptor which best describe the job requirements. Please note that if you don't provide an answer to one item, the program will automatically insert not important for this item.(FR)",
+    "P6": "With respect to the Technical Competency Requirements section, there are eleven set of IT competencies being assessed. If you find that some sections (i.e. Application Development, Architecture, etc...) do not matter to your job, you may want to skip the whole section and go directly to the following set of competency. Please make sure that you don't leave unfilled any valid set of technical requirements. Requirements dealing with Organizational Competencies and Personality apply to all job profiles, so make sur to complete these two sets of requirements as well.(FR)",
+    "P7": "Thank you for your participation!(FR)"
   },
   "downloadUploadSurvey": {
     "title": "Téléverser le sondage",
@@ -84,7 +96,8 @@
     "currentScore": "Cote actuelle",
     "currentSurveyResults": "Résultats actuels du sondage",
     "sectionResultsTitle": "Résultats pour la section",
-    "pleaseFinishAllQuestions": "Veuillez répondre à toutes les questions."
+    "pleaseFinishAllQuestions": "Veuillez répondre à toutes les questions.",
+    "noProgress": "L'auto-évaluation DevOps n'a pas encore commencée. Veuillez choisir une section à compléter."
   },
   "teamResults": {
     "title": "Aperçu des résultats de l'équipe",

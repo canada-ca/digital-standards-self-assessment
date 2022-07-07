@@ -2,56 +2,56 @@
   <div class="mb-3">
     <section style="background: #e0edff">
       <div class="container">
-        <h1>{{ $t('notice.startUsingTitle') }}</h1>
-        <div v-html="markdownToHtml($t('notice.startUsingDesc'))" />
+        <h1>{{ $t('welcome.startUsingTitle') }}</h1>
+        <div v-html="markdownToHtml($t('welcome.startUsingDesc'))" />
         <div class="col-container">
           <div class="welcome-col left-col">
             <b-img :src="require('@/assets/images/items.png')" style="height: 35px; margin: 8px 20px 0px 0px" alt="" />
             <span>
               <p style="font-size: 1.4em">
-                {{ $t('notice.takeTheSurvey') }}
+                {{ $t('welcome.takeTheSurvey') }}
               </p>
-              <p v-html="markdownToHtml($t('notice.takeTheSurveyDesc'))"></p>
+              <p v-html="markdownToHtml($t('welcome.takeTheSurveyDesc'))"></p>
             </span>
           </div>
           <div class="welcome-col right-col">
             <b-img :src="require('@/assets/images/bars.png')" style="height: 42px; margin: 8px 20px 0px 0px" alt="" />
             <span>
               <p style="font-size: 1.4em">
-                {{ $t('notice.calculateTeamResults') }}
+                {{ $t('welcome.calculateTeamResults') }}
               </p>
-              <p v-html="markdownToHtml($t('notice.calculateTeamResultsDesc'))" />
+              <p v-html="markdownToHtml($t('welcome.calculateTeamResultsDesc'))" />
             </span>
           </div>
         </div>
       </div>
     </section>
     <section class="container">
-      <h2 style="margin-top: 30px" id="welcomeNoticeTitle">{{ $t('notice.welcomeNoticeTitle') }}</h2>
-      <div style="margin: 30px 0px" v-html="markdownToHtml($t('notice.welcomeNoticeBody'))"></div>
+      <h2 style="margin-top: 30px" id="welcomeNoticeTitle">{{ $t('welcome.welcomeNoticeTitle') }}</h2>
+      <div style="margin: 30px 0px" v-html="markdownToHtml($t('welcome.welcomeNoticeBody'))"></div>
     </section>
     <section style="background: #e0edff">
       <div class="container">
         <h2 style="margin-top: 30px">
-          {{ $t('notice.subtitle1') }}
+          {{ $t('welcome.subtitle1') }}
         </h2>
         <div class="col-container">
           <div class="welcome-col left-col">
             <b-img :src="require('@/assets/images/steps.png')" style="height: 60px; margin: 8px 20px 0px 0px" alt="" />
             <span>
               <p style="font-size: 1.4em">
-                {{ $t('notice.section1p1') }}
+                {{ $t('welcome.section1p1') }}
               </p>
-              <p v-html="markdownToHtml($t('notice.section1p2'))"></p>
+              <p v-html="markdownToHtml($t('welcome.section1p2'))"></p>
             </span>
           </div>
           <div class="welcome-col right-col">
             <b-img :src="require('@/assets/images/step.png')" style="height: 50px; margin: 8px 20px 0px 0px" alt="" />
             <span>
               <p style="font-size: 1.4em">
-                {{ $t('notice.section1p3') }}
+                {{ $t('welcome.section1p3') }}
               </p>
-              <p v-html="markdownToHtml($t('notice.section1p4'))" />
+              <p v-html="markdownToHtml($t('welcome.section1p4'))" />
             </span>
           </div>
         </div>
@@ -60,15 +60,15 @@
     <section>
       <div class="container">
         <h2 style="margin-top: 30px">
-          {{ $t('notice.subtitle2') }}
+          {{ $t('welcome.subtitle2') }}
         </h2>
-        <div v-html="markdownToHtml($t('notice.section2p1'))" />
+        <div v-html="markdownToHtml($t('welcome.section2p1'))" />
         <div class="col-container">
           <div class="welcome-col left-col">
             <b-img :src="require('@/assets/images/time2.png')" style="height: 60px; margin: 8px 20px 0px 0px" alt="" />
             <span>
               <p style="font-size: 1.4em">
-                {{ $t('notice.section2p2') }}
+                {{ $t('welcome.section2p2') }}
               </p>
             </span>
           </div>
@@ -76,7 +76,7 @@
             <b-img :src="require('@/assets/images/time1.png')" style="height: 60px; margin: 8px 20px 0px 0px" alt="" />
             <span>
               <p style="font-size: 1.4em">
-                {{ $t('notice.section2p3') }}
+                {{ $t('welcome.section2p3') }}
               </p>
             </span>
           </div>
@@ -86,16 +86,16 @@
     <section style="background: #e0edff">
       <div class="container">
         <h2 style="margin-top: 30px">
-          {{ $t('notice.subtitle3') }}
+          {{ $t('welcome.subtitle3') }}
         </h2>
         <div class="col-container">
           <div class="welcome-col" style="flex-basis: 100%">
             <b-img :src="require('@/assets/images/brush.png')" style="height: 45px; margin: 8px 20px 0px 0px" alt="" />
             <span>
               <p style="font-size: 1.4em">
-                {{ $t('notice.section3p1') }}
+                {{ $t('welcome.section3p1') }}
               </p>
-              <p v-html="markdownToHtml($t('notice.section3p2'))"></p>
+              <p v-html="markdownToHtml($t('welcome.section3p2'))"></p>
             </span>
           </div>
         </div>

@@ -3,11 +3,13 @@
     <div class="container">
       <div class="app-name-sec">
         <router-link class="app-name" style="color: #fff !important; font-size: 36px !important" to="/">{{
-          $t('navigation.appName')
+          appName
         }}</router-link>
         <div class="menu-sec">
           <router-link class="menu-link" to="/survey">{{ $t('navigation.survey') }}</router-link>
-          <router-link class="menu-link" to="/teamSurveys">{{ $t('navigation.teamsSurvey') }}</router-link>
+          <router-link v-if="showTeamResult" class="menu-link" to="/teamSurveys">{{
+            $t('navigation.teamsSurvey')
+          }}</router-link>
           <b-link class="menu-link" @click.prevent="toggleProfile()">
             <i class="fa fa-user" v-b-tooltip.hover="{ customClass: 'tooltip-class' }" :title="profileTitle" />
             <sup v-if="isProfileSet">
@@ -102,6 +104,16 @@ export default class NavBar extends Vue {
 
   get collectJobTitle(): boolean {
     return process.env.VUE_APP_COLLECT_JOB_TITLE + '' === 'true';
+  }
+
+  get showTeamResult(): boolean {
+    return process.env.VUE_APP_WELCOME_SHOW_TEAM_RESULT + '' === 'true';
+  }
+
+  get appName(): string {
+    return this.$i18n.locale === 'fr'
+      ? process.env.VUE_APP_APP_TITLE_FR || 'Évaluation des normes relatives au numérique'
+      : process.env.VUE_APP_APP_TITLE_EN || 'Digital Standards Self-Assessment';
   }
 
   @Watch('$i18n.locale')
