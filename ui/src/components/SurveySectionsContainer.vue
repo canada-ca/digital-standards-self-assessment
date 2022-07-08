@@ -4,7 +4,9 @@
     <SurveySectionCard
       v-for="section in sections"
       :key="section.id"
-      :section="section"
+      :sectionTitle="section.title"
+      :sectionName="section.name"
+      :sectionDescription="section.description"
       :survey="survey"
     ></SurveySectionCard>
   </div>
