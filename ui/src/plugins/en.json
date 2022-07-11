@@ -114,5 +114,8 @@
     "submitFailed": "Submit failed, please try again later.",
     "profileIsRequired": "Please enter your email and team name",
     "deleteTeam": "Click to delete this team"
+  },
+  "exportExcel": {
+    "title": "Export Result to Excel"
   }
 }
