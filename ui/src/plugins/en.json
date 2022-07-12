@@ -78,6 +78,13 @@
     },
     "email": {
       "invalid": "Invalid email address"
+    },
+    "startDate": {
+      "required": "Please input the start date"
+    },
+    "endDate": {
+      "required": "Please input the end date",
+      "beforeStartDate": "The end date has to be after the start date"
     }
   },
   "showHideLink": {

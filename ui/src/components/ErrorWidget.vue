@@ -8,7 +8,7 @@
 import { Errors } from '@/interfaces/ErrorMessage';
 import { Component, Prop, Vue } from 'vue-property-decorator';
 @Component
-export default class ErrorMessage extends Vue {
+export default class ErrorWidget extends Vue {
   @Prop() filedName!: string;
   @Prop() errors!: Errors;
 
@@ -21,11 +21,18 @@ export default class ErrorMessage extends Vue {
   }
 
   get hasError() {
-    return (
-      !!this.errors &&
-      ((!!this.errors.globalErrors && this.errors.globalErrors.length > 0) ||
-        (!!this.errors.globalErrors && this.errors.globalErrors.length > 0))
-    );
+    if (this.filedName) {
+      const errors = this.errors.fieldErrors?.filter((fe) => fe.fieldName === this.filedName).map((fe) => fe.message);
+      return errors && errors.length > 0;
+    } else {
+      const errors = this.errors.globalErrors?.map((ge) => ge.message);
+      return errors && errors.length > 0;
+    }
   }
 }
 </script>
+<style scoped>
+.error-message {
+  color: red;
+}
+</style>

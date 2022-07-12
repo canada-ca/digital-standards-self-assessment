@@ -34,7 +34,7 @@
 
 <script lang="ts">
 import { SurveyResult, Team } from '@/interfaces/api-models';
-import ErrorMessage from '@/interfaces/ErrorMessage';
+import { ErrorMessage } from '@/interfaces/ErrorMessage';
 import apiService from '@/services/api.service';
 import { SectionReportData, TeamReportData, TeamReportDataBundle, UserReportData } from '@/store/state';
 import { calcScore, calcSectionMaxScore } from '@/utils/utils';
