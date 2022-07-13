@@ -8,7 +8,7 @@ export interface Team extends BaseInterface {
   teamNameFr: string;
 }
 
-export interface BilingleText {
+export interface BilingualText {
   default: string;
   fr: string;
 }
@@ -16,14 +16,14 @@ export interface BilingleText {
 export interface BaseQuestion {
   type: string;
   name: string;
-  title: BilingleText;
+  title: BilingualText;
 }
 
 export interface RatingQuestion extends BaseQuestion {
   rateValues: [
     {
       value: string;
-      text: BilingleText;
+      text: BilingualText;
     }
   ];
   value?: string;
@@ -33,7 +33,7 @@ export interface SingleSelectQuestion extends BaseQuestion {
   choices: [
     {
       value: string;
-      text: BilingleText;
+      text: BilingualText;
     }
   ];
   value?: string;
@@ -43,7 +43,7 @@ export interface MultipleSelectQuestion extends BaseQuestion {
   choices: [
     {
       value: string;
-      text: BilingleText;
+      text: BilingualText;
     }
   ];
   value?: string[];
@@ -53,8 +53,8 @@ export type QuestionType = RatingQuestion | SingleSelectQuestion | MultipleSelec
 
 export interface Section {
   name: string;
-  title: BilingleText;
-  description: BilingleText;
+  title: BilingualText;
+  description: BilingualText;
   elements: QuestionType[];
 }
 
@@ -82,4 +82,10 @@ export interface JobTitle extends BaseInterface {
   titleFr: string;
   shortTitleEn: string;
   shortTitleFr: string;
+}
+
+export interface SectionGroup {
+  sectionName: string;
+  titleEn: string;
+  titleFr: string;
 }

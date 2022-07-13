@@ -49,6 +49,8 @@ import { Errors } from '@/interfaces/ErrorMessage';
 import ErrorWidget from '@/components/ErrorWidget.vue';
 import apiService from '@/services/api.service';
 import Message, { MessageVariantType } from '@/components/Message.vue';
+import * as XSLS from 'xlsx';
+import { Survey, SurveyResult } from '@/interfaces/api-models';
 @Component({
   components: { ErrorWidget, Message },
 })
@@ -156,6 +158,14 @@ export default class ExportExcel extends Vue {
     } catch (error) {
       this.showMessage('teamResults.submitFailed', 'danger');
     }
+  }
+
+  generateExcelCols(surveyJson: Survey): Array<Array<any>> {
+    return [];
+  }
+
+  convertToDataArray(surveyResults: SurveyResult): Array<Array<any>> {
+    return [];
   }
 }
 </script>
