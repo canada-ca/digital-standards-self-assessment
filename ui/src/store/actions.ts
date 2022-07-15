@@ -113,6 +113,8 @@ export const actions: ActionTree<RootState, RootState> & Actions = {
     commit(MutationType.StopLoading);
   },
   async [ActionTypes.GetLocalAppData]({ commit, getters }) {
+    const sectionGroups = await apiService.findSectionGroups();
+    commit(MutationType.SetSectionGroups, sectionGroups);
     const surveyJson = await apiService.findLatestSurvey();
     commit(MutationType.SetSurveyJSON, surveyJson);
     const thisAppData: SurveyModel = new SurveyModel(surveyJson);

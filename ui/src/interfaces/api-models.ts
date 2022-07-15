@@ -85,7 +85,7 @@ export interface JobTitle extends BaseInterface {
 }
 
 export interface SectionGroup {
-  sectionName: string;
+  sectionNames: string[];
   titleEn: string;
   titleFr: string;
 }

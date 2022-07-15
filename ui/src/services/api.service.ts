@@ -1,4 +1,4 @@
-import { JobTitle, Survey, SurveyResult, Team } from '@/interfaces/api-models';
+import { JobTitle, SectionGroup, Survey, SurveyResult, Team } from '@/interfaces/api-models';
 import axios, { AxiosRequestConfig, AxiosResponse } from 'axios';
 
 const option: AxiosRequestConfig = {
@@ -34,6 +34,18 @@ class ApiService {
   async findAllJobTitles(): Promise<JobTitle[]> {
     try {
       const res: AxiosResponse<JobTitle[]> = await axios.get<JobTitle[]>(`${this.apiBaseUrl}/job-title`, option);
+      return res.data;
+    } catch (err) {
+      throw err;
+    }
+  }
+
+  async findSectionGroups(): Promise<SectionGroup[]> {
+    try {
+      const res: AxiosResponse<SectionGroup[]> = await axios.get<SectionGroup[]>(
+        `${this.apiBaseUrl}/section-group`,
+        option
+      );
       return res.data;
     } catch (err) {
       throw err;

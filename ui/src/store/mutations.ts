@@ -3,6 +3,7 @@ import { Recommendations, RootState, Section, state, TeamReportData, TeamReportD
 import { SurveyModel } from 'survey-vue';
 import { Profile } from '@/interfaces/Profile';
 import store from '.';
+import { SectionGroup } from '@/interfaces/api-models';
 
 export enum MutationType {
   /**
@@ -78,6 +79,7 @@ export enum MutationType {
   SaveProfile = 'SAVE_PROFILE',
   ShowHideProfile = 'TOGGLE_PROFILE',
   ResetSectionScores = 'RESET_SECTION_SCORES',
+  SetSectionGroups = 'SET_SECTION_GROUPS',
 }
 
 export type Mutations = {
@@ -105,6 +107,7 @@ export type Mutations = {
   [MutationType.SaveProfile](state: RootState, profile: Profile): void;
   [MutationType.ShowHideProfile](state: RootState, show: boolean): void;
   [MutationType.ResetSectionScores](state: RootState): void;
+  [MutationType.SetSectionGroups](state: RootState, sectionGroups: SectionGroup[]): void;
 };
 
 export const mutations: MutationTree<RootState> & Mutations = {
@@ -208,5 +211,8 @@ export const mutations: MutationTree<RootState> & Mutations = {
     const sections = [...state.sections];
     sections.forEach((section) => (section.userScore = 0));
     state.sections = sections;
+  },
+  [MutationType.SetSectionGroups](state: RootState, sectionGroups: SectionGroup[]) {
+    state.sectionGroups = sectionGroups;
   },
 };

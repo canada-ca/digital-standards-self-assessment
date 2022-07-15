@@ -44,11 +44,7 @@ export type Getters = {
    * @returns A ```Recommendations``` object if it was initialized, undefined otherwise.
    */
   returnRecommendations(state: RootState): Recommendations | undefined;
-  /**
-   * TODO: Move to helpers mixins
-   * @param state The application state.
-   */
-  returnSectionsByPrefix(state: RootState): (surveyData: SurveyModel, prefix: string) => PageModel[];
+
   /**
    * Returns the current section from the store.
    * @param state The application state.
@@ -117,17 +113,6 @@ export const getters: GetterTree<RootState, RootState> & Getters = {
   },
   returnRecommendations(state: RootState) {
     return state.recommendations;
-  },
-  returnSectionsByPrefix(state: RootState) {
-    return (surveyData: SurveyModel, prefix: string) => {
-      let sections: PageModel[] = [];
-      surveyData.pages.forEach((page: any) => {
-        if (page.name.includes(prefix)) {
-          sections.push(page);
-        }
-      });
-      return sections;
-    };
   },
   returnCurrentSection(state: RootState) {
     return state.sections.find((section) => {
