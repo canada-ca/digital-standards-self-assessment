@@ -88,4 +88,5 @@ export interface SectionGroup {
   sectionNames: string[];
   titleEn: string;
   titleFr: string;
+  displayOrder: number;
 }

@@ -4,6 +4,7 @@ export interface SectionGroup {
   sectionNames: string[];
   titleEn: string;
   titleFr: string;
+  displayOrder: number;
 }
 
 export interface SectionGroupDocument extends SectionGroup, Document {}
@@ -20,6 +21,9 @@ const sectionGroupSchema = new Schema<SectionGroupDocument, SectionGroupModel>(
     },
     titleFr: {
       type: String,
+    },
+    displayOrder: {
+      type: Number,
     },
   },
   { collection: 'sectionGroup' }

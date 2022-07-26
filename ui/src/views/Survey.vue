@@ -2,7 +2,7 @@
   <div class="container">
     <message ref="message" />
     <div>
-      <SurveySectionsContainer :sections="sections" :survey="Survey" />
+      <SurveySectionsContainer :sectionGroups="sectionGroups" :sections="sections" :survey="Survey" />
     </div>
     <div class="btn-div">
       <b-button class="btn btn-secondary reset" @click="reset">{{ $t('buttons.reset') }}</b-button>
@@ -17,7 +17,7 @@ import AssessmentTool from '@/components/AssessmentTool.vue';
 import DownloadSurvey from '@/components/DownloadSurvey.vue';
 import Message, { MessageVariantType } from '@/components/Message.vue';
 import SurveySectionsContainer from '@/components/SurveySectionsContainer.vue';
-import { SurveyResult, Team } from '@/interfaces/api-models';
+import { SectionGroup, SurveyResult, Team } from '@/interfaces/api-models';
 import { Profile } from '@/interfaces/Profile';
 import i18n from '@/plugins/i18n';
 import apiService from '@/services/api.service';
@@ -37,6 +37,7 @@ import { Component, Vue, Watch } from 'vue-property-decorator';
 export default class Survey extends Vue {
   Survey: Model = new Model({});
   sections: PageModel[] = [];
+  sectionGroups: SectionGroup[] = [];
 
   $refs!: {
     message: Message;
@@ -50,19 +51,18 @@ export default class Survey extends Vue {
     }
     this.Survey.fromJSON(surveyJSON);
     this.Survey.data = surveyData;
-    this.sections = this.returnAllSectionsByPrefix(this.Survey, 'section_');
+    this.sections = this.returnAllSections(this.Survey);
+    this.sectionGroups = this.$store.state.sectionGroups;
     await this.$store.dispatch(ActionTypes.UseSurveyJSON, {
       surveyJSON,
       surveyModel: this.Survey,
     });
   }
 
-  private returnAllSectionsByPrefix(survey: SurveyModel, prefix: string): PageModel[] {
+  private returnAllSections(survey: SurveyModel): PageModel[] {
     let sections: PageModel[] = [];
     survey.pages.forEach((page: any) => {
-      if (page.name.includes(prefix)) {
-        sections.push(page);
-      }
+      sections.push(page);
     });
     return sections;
   }

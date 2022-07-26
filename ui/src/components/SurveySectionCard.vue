@@ -1,5 +1,5 @@
 <template>
-  <div class="survey-card-container">
+  <div v-if="section" class="survey-card-container">
     <div class="survey-card" img-top>
       <div class="icon-container">
         <i :class="setStatusIcon(sectionName)"></i>
@@ -39,10 +39,18 @@ import ShowHideLink from '@/components/ShowHideLink.vue';
   components: { ShowHideLink },
 })
 export default class SurveySectionCard extends Vue {
-  @Prop() sectionTitle!: string;
-  @Prop() sectionName!: string;
-  @Prop() sectionDescription!: string;
-  @Prop() public survey!: SurveyModel;
+  @Prop() section!: PageModel;
+  @Prop() survey!: SurveyModel;
+
+  get sectionTitle(): string {
+    return this.section!.title;
+  }
+  get sectionName(): string {
+    return this.section!.name;
+  }
+  get sectionDescription(): string {
+    return this.section.description;
+  }
 
   collapsed = true;
 

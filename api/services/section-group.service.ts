@@ -50,7 +50,7 @@ class SectionGroupService {
   async findAll(): Promise<SectionGroupDocument[]> {
     try {
       await connectDB();
-      return await SectionGroupModel.find({}).exec();
+      return await SectionGroupModel.find({}).sort('displayOrder').exec();
     } catch (err) {
       if (err instanceof MongoServerError) {
         throw { ...err, message: err.message };
