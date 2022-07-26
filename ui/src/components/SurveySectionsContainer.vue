@@ -33,8 +33,8 @@ import { SectionGroup } from '@/interfaces/api-models';
 })
 export default class SurveySectionsContainer extends Vue {
   @Prop() sectionGroups!: SectionGroup[];
-  @Prop() public sections!: PageModel[];
-  @Prop() public survey!: SurveyModel;
+  @Prop() sections!: PageModel[];
+  @Prop() survey!: SurveyModel;
 
   getSectionGroupName(sg: SectionGroup) {
     return this.$i18n.locale === 'fr' ? sg.titleFr : sg.titleEn;

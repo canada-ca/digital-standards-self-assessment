@@ -53,10 +53,32 @@ export default class Survey extends Vue {
     this.Survey.data = surveyData;
     this.sections = this.returnAllSections(this.Survey);
     this.sectionGroups = this.$store.state.sectionGroups;
+    this.findUngroupedSections();
     await this.$store.dispatch(ActionTypes.UseSurveyJSON, {
       surveyJSON,
       surveyModel: this.Survey,
     });
+  }
+
+  private findUngroupedSections() {
+    const groupedSectionNames: string[] = [];
+    for (const sg of this.sectionGroups) {
+      groupedSectionNames.push(...sg.sectionNames);
+    }
+    const ungroupedSections: string[] = [];
+    for (const pm of this.sections) {
+      if (groupedSectionNames.indexOf(pm.name) === -1) {
+        ungroupedSections.push(pm.name);
+      }
+    }
+    if (ungroupedSections.length > 0) {
+      this.sectionGroups.push({
+        titleEn: 'OTHERS',
+        titleFr: 'D’AUTRES',
+        sectionNames: ungroupedSections,
+        displayOrder: 100,
+      });
+    }
   }
 
   private returnAllSections(survey: SurveyModel): PageModel[] {
