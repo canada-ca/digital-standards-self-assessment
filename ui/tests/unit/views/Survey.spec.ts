@@ -35,11 +35,11 @@ describe('Survey View', () => {
     expect(wrapper.html()).toBe(`<div class=\"container\">
   <message-stub></message-stub>
   <div>
-    <surveysectionscontainer-stub sections=\"\" survey=\"[object Object]\"></surveysectionscontainer-stub>
+    <surveysectionscontainer-stub sectiongroups="" sections=\"\" survey=\"[object Object]\"></surveysectionscontainer-stub>
   </div>
   <div class=\"btn-div\">
     <b-button-stub tag="button" target="_self" type="button" variant="secondary" class=\"btn btn-secondary reset\"></b-button-stub>
-    <download-survey-stub></download-survey-stub>
+    <!---->
     <b-button-stub tag="button" target="_self" type="button" variant="secondary" class=\"btn btn-primary submitAnswers\"></b-button-stub>
   </div>
 </div>`);

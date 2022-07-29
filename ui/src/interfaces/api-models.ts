@@ -20,32 +20,26 @@ export interface BaseQuestion {
 }
 
 export interface RatingQuestion extends BaseQuestion {
-  rateValues: [
-    {
-      value: string;
-      text: BilingualText;
-    }
-  ];
+  rateValues: {
+    value: string;
+    text: BilingualText;
+  }[];
   value?: string;
 }
 
 export interface SingleSelectQuestion extends BaseQuestion {
-  choices: [
-    {
-      value: string;
-      text: BilingualText;
-    }
-  ];
+  choices: {
+    value: string;
+    text: BilingualText;
+  }[];
   value?: string;
 }
 
 export interface MultipleSelectQuestion extends BaseQuestion {
-  choices: [
-    {
-      value: string;
-      text: BilingualText;
-    }
-  ];
+  choices: {
+    value: string;
+    text: BilingualText;
+  }[];
   value?: string[];
 }
 
@@ -73,6 +67,7 @@ export interface SurveyResult extends BaseInterface {
   jobTitle?: string | JobTitle;
   survey: string;
   createdAt?: Date;
+  timeInThePosition: string;
 }
 
 export interface JobTitle extends BaseInterface {

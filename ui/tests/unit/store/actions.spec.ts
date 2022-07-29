@@ -1,4 +1,4 @@
-import { RatingQuestion, Survey } from '@/interfaces/api-models';
+import { RatingQuestion, SectionGroup, Survey } from '@/interfaces/api-models';
 import { Profile } from '@/interfaces/Profile';
 import apiService from '@/services/api.service';
 import { ActionAugments, actions, ActionTypes } from '@/store/actions';
@@ -65,6 +65,7 @@ describe('actions', () => {
       jest.clearAllMocks();
       jest.resetAllMocks();
       jest.spyOn(apiService, 'findLatestSurvey').mockReturnValue(Promise.resolve({} as Survey));
+      jest.spyOn(apiService, 'findSectionGroups').mockReturnValue(Promise.resolve([] as SectionGroup[]));
     });
 
     it('should commit AppLoadingError when returnSurveyModel is empty', async () => {
@@ -80,8 +81,9 @@ describe('actions', () => {
       } as unknown as ActionAugments;
       await actions[ActionTypes.GetLocalAppData](mockContext);
       expect(apiService.findLatestSurvey).toHaveBeenCalledTimes(1);
-      expect(commit).toBeCalledTimes(3);
-      expect(commit).toHaveBeenNthCalledWith(3, MutationType.AppLoadingError);
+      expect(apiService.findSectionGroups).toHaveBeenCalled();
+      expect(commit).toBeCalledTimes(4);
+      expect(commit).toHaveBeenNthCalledWith(4, MutationType.AppLoadingError);
     });
     it('should commit AppLoadingSuceess when returnSurveyModel is not empty', async () => {
       const commit = jest.fn();
@@ -96,8 +98,9 @@ describe('actions', () => {
       } as unknown as ActionAugments;
       await actions[ActionTypes.GetLocalAppData](mockContext);
       expect(apiService.findLatestSurvey).toHaveBeenCalledTimes(1);
-      expect(commit).toBeCalledTimes(3);
-      expect(commit).toHaveBeenNthCalledWith(3, MutationType.AppLoadingSuccess);
+      expect(apiService.findSectionGroups).toHaveBeenCalled();
+      expect(commit).toBeCalledTimes(4);
+      expect(commit).toHaveBeenNthCalledWith(4, MutationType.AppLoadingSuccess);
     });
   });
 

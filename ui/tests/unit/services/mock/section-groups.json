@@ -1,0 +1,14 @@
+[
+  {
+    "titleEn": "Group 1",
+    "titleFr": "",
+    "displayOrder": 1,
+    "sectionNames": ["section_A_1", "section_A_2", "section_A_3"]
+  },
+  {
+    "titleEn": "Group 2",
+    "titleFr": "",
+    "displayOrder": 2,
+    "sectionNames": ["section_B_1", "section_B_2", "section_B_3"]
+  }
+]
