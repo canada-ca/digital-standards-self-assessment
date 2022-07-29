@@ -16,7 +16,10 @@
     "itLevel": "IT Level(FR): ",
     "jobTitle": "Job Title(FR): ",
     "pleaseSelectItLevel": "Please select an IT Level(FR)",
-    "pleaseSelectJobTitle": "Please select a Job Title(FR)"
+    "pleaseSelectJobTitle": "Please select a Job Title(FR)",
+    "timeInThePosition": "Time in The Position(FR)",
+    "lessThanAYear": "Less than a year(FR)",
+    "oneYearOrMore": "One year or more(FR)"
   },
   "welcome": {
     "startUsingTitle": "Commencez votre auto-évaluation des normes numériques",

@@ -53,6 +53,16 @@
           :value="jobTitle"
         >
         </b-form-select>
+        <label v-if="collectJobTitle">{{ $t('navigation.timeInThePosition') }}</label>
+        <b-form-select
+          class="form-control"
+          v-if="collectJobTitle"
+          @change="setTimeInThePosition"
+          :value="timeInThePosition"
+        >
+          <option value="$t('navigation.lessThanAYear')">{{ $t('navigation.lessThanAYear') }}</option>
+          <option value="$t('navigation.oneYearOrMore')">{{ $t('navigation.oneYearOrMore') }}</option>
+        </b-form-select>
       </div>
     </b-collapse>
   </div>
@@ -139,7 +149,8 @@ export default class NavBar extends Vue {
       !!this.profile &&
       !!this.profile.userId &&
       !!this.profile.team &&
-      (this.collectJobTitle === false || (this.collectJobTitle && !!this.profile.jobTitle));
+      (this.collectJobTitle === false ||
+        (this.collectJobTitle && !!this.profile.jobTitle && !!this.profile?.timeInPosition));
   }
 
   toggleProfile() {
@@ -164,6 +175,10 @@ export default class NavBar extends Vue {
 
   get jobTitle() {
     return this.profile?.jobTitle?.gcitCode;
+  }
+
+  get timeInThePosition() {
+    return this.profile?.timeInPosition;
   }
 
   setTeam(team: Team) {
@@ -192,6 +207,11 @@ export default class NavBar extends Vue {
   setJobTitle(title: string) {
     const jobTitle = this.jobTitles.find((v) => v.gcitCode === title);
     this.profile = { ...this.profile, jobTitle };
+    this.$store.dispatch(ActionTypes.SaveProfile, this.profile);
+  }
+
+  setTimeInThePosition(timeInPosition: string) {
+    this.profile = { ...this.profile, timeInPosition };
     this.$store.dispatch(ActionTypes.SaveProfile, this.profile);
   }
 

@@ -16,7 +16,10 @@
     "itLevel": "IT Level: ",
     "jobTitle": "Job Title: ",
     "pleaseSelectItLevel": "Please select an IT Level",
-    "pleaseSelectJobTitle": "Please select a Job Title"
+    "pleaseSelectJobTitle": "Please select a Job Title",
+    "timeInThePosition": "Time in The Position",
+    "lessThanAYear": "Less than a year",
+    "oneYearOrMore": "One year or more"
   },
   "welcome": {
     "startUsingTitle": "Start your Digital Standards Self Assessment",
