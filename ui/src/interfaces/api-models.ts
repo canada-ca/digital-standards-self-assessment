@@ -61,13 +61,13 @@ export interface Survey extends BaseInterface {
 }
 
 export interface SurveyResult extends BaseInterface {
-  answers: Map<string, any>;
+  answers: { [key: string]: any };
   userId: string; // either email or a random string
   team: string | Team;
   jobTitle?: string | JobTitle;
   survey: string;
   createdAt?: Date;
-  timeInThePosition: string;
+  timeInThePosition?: string;
 }
 
 export interface JobTitle extends BaseInterface {

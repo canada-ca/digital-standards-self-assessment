@@ -3,7 +3,7 @@ import jobTitleModel, { JobTitle } from './job-title.model';
 import surveyModel, { Survey } from './survey.model';
 import teamModel, { Team } from './team.model';
 export interface SurveyResult {
-  answers: Map<string, any>;
+  answers: { [key: string]: any };
   userId: string; // either email or a random string
   jobTitle: string | Types.ObjectId | JobTitle;
   team: string | Types.ObjectId | Team;

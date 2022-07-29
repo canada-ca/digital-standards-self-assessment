@@ -132,7 +132,7 @@ export default class RetrieveTeamSurveys extends Vue {
     }
   }
 
-  private extractSectionReportData(answers: Map<string, any>, createdAt?: Date): Array<SectionReportData> {
+  private extractSectionReportData(answers: { [key: string]: any }, createdAt?: Date): Array<SectionReportData> {
     const sectionReportDataArray: Array<SectionReportData> = [];
     if (this.surveyJson) {
       let survey: Model = new Model(this.surveyJson);

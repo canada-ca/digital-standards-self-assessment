@@ -62,7 +62,7 @@ describe('ExportService', () => {
     };
 
     const result: SurveyResult = {
-      answers: new Map([['q1', '2']]),
+      answers: { q1: '2' },
       userId: '',
       team: '',
       survey: '',
@@ -108,7 +108,7 @@ describe('ExportService', () => {
     };
 
     const result: SurveyResult = {
-      answers: new Map([['q1', '2']]),
+      answers: { q1: '2' },
       userId: '',
       team: '',
       survey: '',
@@ -154,7 +154,7 @@ describe('ExportService', () => {
     };
 
     const result: SurveyResult = {
-      answers: new Map([['q1', ['1', '2']]]),
+      answers: { q1: ['1', '2'] },
       userId: '',
       team: '',
       survey: '',
@@ -231,10 +231,7 @@ describe('ExportService', () => {
     };
     const data: { [key: string]: any } = {};
     const result: SurveyResult = {
-      answers: new Map([
-        ['q1', '2'],
-        ['q2', '2'],
-      ]),
+      answers: { q1: '2', q2: '2' },
       userId: '',
       team: '',
       survey: '',
@@ -256,14 +253,14 @@ describe('ExportService', () => {
     };
     const results: SurveyResult[] = [
       {
-        answers: new Map([
-          ['s01q001', '4'],
-          ['s02q001', '4'],
-          ['s03q001', '4'],
-          ['s04q001', '4'],
-          ['s05q001', '4'],
-          ['s06q001', '4'],
-        ]),
+        answers: {
+          s01q001: '4',
+          s02q001: '4',
+          s03q001: '4',
+          s04q001: '4',
+          s05q001: '4',
+          s06q001: '4',
+        },
         userId: 'userId',
         team,
         survey: '',

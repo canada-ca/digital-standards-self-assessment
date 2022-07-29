@@ -42,15 +42,17 @@
   </div>
 </template>
 <script lang="ts">
+import ErrorWidget from '@/components/ErrorWidget.vue';
+import Message, { MessageVariantType } from '@/components/Message.vue';
+import { SectionGroup, SurveyResult } from '@/interfaces/api-models';
+import { Errors } from '@/interfaces/ErrorMessage';
+import apiService from '@/services/api.service';
+import moment from 'moment';
 import Vue from 'vue';
 import Component from 'vue-class-component';
-import moment from 'moment';
-import { Errors } from '@/interfaces/ErrorMessage';
-import ErrorWidget from '@/components/ErrorWidget.vue';
-import apiService from '@/services/api.service';
-import Message, { MessageVariantType } from '@/components/Message.vue';
-import * as XSLS from 'xlsx';
-import { Survey, SurveyResult } from '@/interfaces/api-models';
+import * as XLSX from 'xlsx';
+import exportService from '@/services/export.service';
+
 @Component({
   components: { ErrorWidget, Message },
 })
@@ -85,10 +87,6 @@ export default class ExportExcel extends Vue {
 
   get locale() {
     return this.$i18n.locale;
-  }
-
-  get surveyJson() {
-    return this.$store.getters.returnSurveyJSON;
   }
 
   hasError(fieldName: string): boolean {
@@ -154,18 +152,24 @@ export default class ExportExcel extends Vue {
     const strStartDate = moment(this.startDate).format('YYYY-MM-DD');
     const strEndDate = moment(this.endDate).format('YYYY-MM-DD');
     try {
-      const surveyResults = await apiService.findSurveyResults(strStartDate, strEndDate);
+      const surveyJSON: any = this.$store.state.surveyJSON;
+      const surveyResults: SurveyResult[] = await apiService.findSurveyResults(strStartDate, strEndDate);
+      const sectionGroups: SectionGroup[] = this.$store.state.sectionGroups;
+      const data = exportService.convertToDataArray(this.locale, sectionGroups, surveyJSON, surveyResults);
+      this.exportToExcel(this.fileName, data);
     } catch (error) {
+      console.log(error);
       this.showMessage('teamResults.submitFailed', 'danger');
     }
   }
 
-  generateExcelCols(surveyJson: Survey): Array<Array<any>> {
-    return [];
-  }
+  exportToExcel(fileName: string, data: Array<{ [key: string]: any }>) {
+    var ws = XLSX.utils.json_to_sheet(data);
+    var wb = XLSX.utils.book_new();
 
-  convertToDataArray(surveyResults: SurveyResult): Array<Array<any>> {
-    return [];
+    XLSX.utils.book_append_sheet(wb, ws, 'Answers');
+
+    XLSX.writeFile(wb, fileName + '.xlsx'); // name of the file is 'book.xlsx'
   }
 }
 </script>

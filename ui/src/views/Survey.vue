@@ -6,7 +6,7 @@
     </div>
     <div class="btn-div">
       <b-button class="btn btn-secondary reset" @click="reset">{{ $t('buttons.reset') }}</b-button>
-      <download-survey @confirmToDownload="downloadSurvey" />
+      <download-survey v-if="showDownloadSurvey" @confirmToDownload="downloadSurvey" />
       <b-button class="btn btn-primary submitAnswers" @click="submitAnswers">{{ $t('buttons.submitButton') }}</b-button>
     </div>
   </div>
@@ -131,13 +131,7 @@ export default class Survey extends Vue {
   }
 
   buildSurveyFile(): string {
-    return JSON.stringify({
-      name: 'surveyResults',
-      version: this.$store.state.toolVersion,
-      currentPage: this.$store.state.currentPageNo,
-      data: this.$store.state.toolData,
-      surveyJSON: this.$store.state.surveyJSON,
-    });
+    return JSON.stringify(this.$store.state.surveyJSON);
   }
 
   downloadSurvey(fileName: string): void {
@@ -166,6 +160,14 @@ export default class Survey extends Vue {
 
   get collectEmail(): boolean {
     return process.env.VUE_APP_COLLECT_USER_EMAIL + '' === 'true';
+  }
+
+  get showDownloadSurvey(): boolean {
+    return process.env.VUE_APP_SHOW_DOWNLOAD_SURVEY + '' === 'true';
+  }
+
+  get showExportToExcel(): boolean {
+    return process.env.VUE_APP_SHOW_EXPORT_EXCEL + '' === 'true';
   }
 
   get allowSubmitWithoutFinishingAll(): boolean {
@@ -214,6 +216,7 @@ export default class Survey extends Vue {
       userId: '' + (this.collectEmail ? profile.userId : profile.userId),
       jobTitle: profile.jobTitle,
       survey: this.$store.getters.returnSurveyJSON._id,
+      timeInThePosition: profile.timeInPosition,
     };
     try {
       const newResult = await apiService.saveSurveyResult(result);

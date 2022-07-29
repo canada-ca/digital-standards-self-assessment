@@ -4,5 +4,5 @@ export interface Profile {
   userId?: string;
   jobTitle?: JobTitle;
   team?: Team;
-  timeInPosition?: number;
+  timeInPosition?: string;
 }

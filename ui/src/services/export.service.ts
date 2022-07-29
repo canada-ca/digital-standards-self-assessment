@@ -26,8 +26,8 @@ class ExportService {
       const rowData: { [key: string]: any } = {
         'Your Department': locale === 'fr' ? team?.teamNameFr : team?.teamNameEn,
         'Your Position Level': jobTitle?.itLevel,
-        'Time in the Position': result.timeInThePosition,
         'Position Title': locale === 'fr' ? jobTitle?.titleFr : jobTitle?.titleEn,
+        'Time in the Position': result.timeInThePosition,
       };
 
       for (const sectionGroup of sectionGroups) {
@@ -55,7 +55,7 @@ class ExportService {
   }
 
   getAnswer(locale: string, question: QuestionType, result: SurveyResult) {
-    const value = result.answers.get(question.name);
+    const value = result.answers[question.name];
     if (!!value) {
       if (question.type === 'rating') {
         const answer = (question as RatingQuestion).rateValues.find((item) => item.value === value);
