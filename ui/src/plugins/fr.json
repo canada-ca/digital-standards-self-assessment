@@ -8,18 +8,18 @@
     "goHome": "Accueil",
     "survey": "Sondage",
     "teamsSurvey": "Résultats de l'équipe",
-    "yourEmail": "Your Email: (FR)",
-    "yourTeam": "Your Team: (FR)",
+    "yourEmail": "Votre e-mail:",
+    "yourTeam": "Département:",
     "profile": {
-      "notSet": "Please set your email and team(FR)"
+      "notSet": "Please enter your profile(FR)"
     },
     "itLevel": "IT Level(FR): ",
     "jobTitle": "Job Title(FR): ",
     "pleaseSelectItLevel": "Please select an IT Level(FR)",
     "pleaseSelectJobTitle": "Please select a Job Title(FR)",
     "timeInThePosition": "Time in The Position(FR)",
-    "lessThanAYear": "Less than a year(FR)",
-    "oneYearOrMore": "One year or more(FR)"
+    "lessThanAYear": "Moins d'un an",
+    "oneYearOrMore": "Un an et plus"
   },
   "welcome": {
     "startUsingTitle": "Commencez votre auto-évaluation des normes numériques",

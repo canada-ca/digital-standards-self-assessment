@@ -1,4 +1,4 @@
-const sectionGroups = require('./20220715012246-init-section-groups.json');
+const sectionGroups = require('./20220809003639-init-section-groups.json');
 
 module.exports = {
   async up(db, client) {

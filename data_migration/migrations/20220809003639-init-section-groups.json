@@ -1,0 +1,32 @@
+[
+  {
+    "titleEn": "TECHNICAL COMPETENCY REQUIREMENTS",
+    "titleFr": "EXIGENCES EN MATIÈRE DE COMPÉTENCES TECHNIQUES",
+    "displayOrder": 1,
+    "sectionNames": [
+      "Section_A_1",
+      "Section_A_2",
+      "Section_A_3",
+      "Section_A_4",
+      "Section_A_5",
+      "Section_A_6",
+      "Section_A_7",
+      "Section_A_8",
+      "Section_A_9",
+      "Section_A_10",
+      "Section_A_11"
+    ]
+  },
+  {
+    "titleEn": "ORGANIZATIONAL COMPETENCY REQUIREMENTS",
+    "titleFr": "EXIGENCES EN MATIÈRE DE COMPÉTENCES ORGANISATIONNELLES",
+    "displayOrder": 2,
+    "sectionNames": ["Section_B_1", "Section_B_2", "Section_B_3"]
+  },
+  {
+    "titleEn": "PERSONALITY REQUIREMENTS",
+    "titleFr": "EXIGENCES AU NIVEAU DE LA PERSONALITÉ",
+    "displayOrder": 3,
+    "sectionNames": ["Section_C_1"]
+  }
+]
