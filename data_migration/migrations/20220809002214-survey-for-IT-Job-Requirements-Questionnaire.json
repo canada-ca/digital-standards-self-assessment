@@ -4,7 +4,7 @@
   "showNavigationButtons": "false",
   "pages": [
     {
-      "name": "Section_A_1",
+      "name": "section_A_1",
       "title": {
         "default": "Application Development/ Support and Maintenance",
         "fr": "Développement, support et maintenance des applications"
@@ -4333,7 +4333,7 @@
       ]
     },
     {
-      "name": "Section_A_2",
+      "name": "section_A_2",
       "title": {
         "default": "Architecture",
         "fr": "Développement, support et maintenance des applications"
@@ -6166,7 +6166,7 @@
       ]
     },
     {
-      "name": "Section_A_3",
+      "name": "section_A_3",
       "title": {
         "default": "Business Analysis",
         "fr": "Développement, support et maintenance des applications"
@@ -8311,7 +8311,7 @@
       ]
     },
     {
-      "name": "Section_A_4",
+      "name": "section_A_4",
       "title": {
         "default": "Database Design and Management",
         "fr": "Développement, support et maintenance des applications"
@@ -12016,7 +12016,7 @@
       ]
     },
     {
-      "name": "Section_A_5",
+      "name": "section_A_5",
       "title": {
         "default": "Infrastructure/Platforms",
         "fr": "Développement, support et maintenance des applications"
@@ -15409,7 +15409,7 @@
       ]
     },
     {
-      "name": "Section_A_6",
+      "name": "section_A_6",
       "title": {
         "default": "IT Procurement and Asset Management",
         "fr": "Développement, support et maintenance des applications"
@@ -17970,7 +17970,7 @@
       ]
     },
     {
-      "name": "Section_A_7",
+      "name": "section_A_7",
       "title": {
         "default": "IT Project Management",
         "fr": "Développement, support et maintenance des applications"
@@ -19907,7 +19907,7 @@
       ]
     },
     {
-      "name": "Section_A_8",
+      "name": "section_A_8",
       "title": {
         "default": "Telecommunications (Data and Voice) Network",
         "fr": "Développement, support et maintenance des applications"
@@ -22832,7 +22832,7 @@
       ]
     },
     {
-      "name": "Section_A_9",
+      "name": "section_A_9",
       "title": {
         "default": "Security/Information and Application Protection",
         "fr": "Développement, support et maintenance des applications"
@@ -24509,7 +24509,7 @@
       ]
     },
     {
-      "name": "Section_A_10",
+      "name": "section_A_10",
       "title": {
         "default": "Testing",
         "fr": "Développement, support et maintenance des applications"
@@ -27070,7 +27070,7 @@
       ]
     },
     {
-      "name": "Section_A_11",
+      "name": "section_A_11",
       "title": {
         "default": "Service Management Processes",
         "fr": "Développement, support et maintenance des applications"
@@ -29683,7 +29683,7 @@
       ]
     },
     {
-      "name": "Section_B_1",
+      "name": "section_B_1",
       "title": {
         "default": "Financial Management",
         "fr": "Gestion financière"
@@ -31152,7 +31152,7 @@
       ]
     },
     {
-      "name": "Section_B_2",
+      "name": "section_B_2",
       "title": {
         "default": "Human Resources Management (HRM)",
         "fr": "Gestion financière"
@@ -33453,7 +33453,7 @@
       ]
     },
     {
-      "name": "Section_B_3",
+      "name": "section_B_3",
       "title": {
         "default": "People Management",
         "fr": "Gestion financière"
@@ -35390,7 +35390,7 @@
       ]
     },
     {
-      "name": "Section_C_1",
+      "name": "section_C_1",
       "title": {
         "default": "Personality Requirements",
         "fr": "Exigences au niveau de la personalité"
