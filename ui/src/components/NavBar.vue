@@ -138,8 +138,6 @@ export default class NavBar extends Vue {
   @Watch('$store.getters.returnShowProfile')
   watchShowProfile() {
     this.showProfile = this.$store.getters.returnShowProfile;
-    if (this.showProfile) {
-    }
   }
 
   @Watch('$store.getters.returnProfile')

@@ -201,7 +201,7 @@ export default class Survey extends Vue {
 
     if (!isProfileSet) {
       await this.$store.dispatch(ActionTypes.ShowHideProfile, true);
-      this.showMessage('teamResults.profileIsRequired', 'warning');
+      this.showMessage('navigation.profile.notSet', 'warning');
       return;
     }
 
