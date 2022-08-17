@@ -11,13 +11,13 @@
     "yourEmail": "Votre e-mail:",
     "yourTeam": "Département:",
     "profile": {
-      "notSet": "Please enter your profile(FR)"
+      "notSet": "Veuillez saisir votre profil"
     },
-    "itLevel": "IT Level(FR): ",
-    "jobTitle": "Job Title(FR): ",
-    "pleaseSelectItLevel": "Please select an IT Level(FR)",
-    "pleaseSelectJobTitle": "Please select a Job Title(FR)",
-    "timeInThePosition": "Time in The Position(FR)",
+    "itLevel": "Niveau en TI: ",
+    "jobTitle": "Titre du poste: ",
+    "pleaseSelectItLevel": "Veuillez sélectionner un niveau en TI",
+    "pleaseSelectJobTitle": "Veuillez sélectionner un titre de poste",
+    "timeInThePosition": "Durée dans le poste",
     "lessThanAYear": "Moins d'un an",
     "oneYearOrMore": "Un an et plus"
   },
@@ -44,18 +44,18 @@
     "welcomeNoticeBody": "L'outil suivant est basé sur le directive des normes relatives au numérique qui a été publié en 2021. \n\nCet outil **soutiendra les équipes dans l'intégration des normes numériques dans leurs méthodes de travail**. \n\nLes équipes sont invitées à remplir l'auto-évaluation tous les 6 (six) à 12 (douze) mois **pour mesurer leurs progrès**. Toutefois, vous êtes libre d'utiliser l'outil tout au long de l'année, que ce soit en équipe ou individuellement."
   },
   "welcome2": {
-    "A1": "Guidelines(FR)",
-    "B1": "Goal(FR)",
-    "P1": "The purpose of this questionnaire is to better understand what knowledge, skills, abilities and other attributes are required to be successful in the IT job. It is meant as a systematic assessment of the job requirements rather than an assessment of your own competencies. For the pupose of this program, you are invited as a job expert and your input will contribute to the modernization of the job profile applying to your position. This review will provide a detailed snap shot of the job requirements by levels and domains of skills which will be used to staff positions, identify learning priorities or manage talent. The main intent of the program is to enhance the career of all IT employees. You may note that some task elements do not relate to the job you currently hold. This is perfectly normal as we need to ensure a full examination of all possible competencies applying to your domain of employment.(FR)",
-    "B2": "Participation(FR)",
-    "P2": "Participation is completely volontary. All sections included in this questionnaire must be completed fully and honestly. This questionnaire has been designed with features facilitating the answering of question such as drop down menus. It should require two hours approximatively to complete in full. This tool represents the latest HR innovation with respect to assessment of job competency requirements.(FR)",
-    "B3": "Honesty(FR)",
-    "P3": "The effectiveness of this questionnaire depends on the quality of the answers provided by the participants. Overstating the true abilities required by the job will lead to unreliable competency profiles. It is therefore important to answer honestly and avoid overthinking each item/question. It is suggested that you answer all questions confidently based on the most obvious evidence that initially comes to mind. Keep in mind that your answers will be aggregated with the answers of other employees to identify key aspects of IT jobs.(FR)",
-    "P4": "Overall, it can be said that honest answering is the best way to minimize errors in reflecting on your position's competency requirements. However, the best way to ensure reliability of results is to focus on the job and not what you can do. We are aware that many if not most IT/IM employees possess a wider variety/higher level of competencies than the one required by the job. This is fully expected and it is for this reason that you must ensure that your answers reflect the job requirements for effective performance in the position. Clearly it may underestimate what you know and what you can do.  You should be aware that the data provided in this questionnaire will be used for research purposes, with a view to improve the current competency framework being used for HR IT management.(FR)",
-    "A2": "Instructions(FR)",
-    "P5": "The following section provides a list of statements used to describe IT jobs requirements. It is intended to identify which tasks define the position you currently hold. Some items may reflect your job requirements while some others may not. The intent is to confirm what your current job requirements are. The questionnaire is divided into three sections: Technical Competencies, Organizational Competencies and Personnality Requirtements. For each item, using the list boxes provided for task importance, please select the descriptor which best describe the job requirements. Please note that if you don't provide an answer to one item, the program will automatically insert not important for this item.(FR)",
-    "P6": "With respect to the Technical Competency Requirements section, there are eleven set of IT competencies being assessed. If you find that some sections (i.e. Application Development, Architecture, etc...) do not matter to your job, you may want to skip the whole section and go directly to the following set of competency. Please make sure that you don't leave unfilled any valid set of technical requirements. Requirements dealing with Organizational Competencies and Personality apply to all job profiles, so make sur to complete these two sets of requirements as well.(FR)",
-    "P7": "Thank you for your participation!(FR)"
+    "A1": "Lignes directrices",
+    "B1": "But",
+    "P1": "Le présent questionnaire a pour but de mieux comprendre les connaissances, compétences, capacités et autres attributs qui sont nécessaires pour réussir dans le poste en TI. Il s’agit d’une évaluation systématique des exigences du poste plutôt que d’une évaluation de vos propres compétences. Dans le cadre de ce programme, vous êtes invité à participer en tant qu’expert dans le poste, et vos réponses contribueront à la modernisation du profil d’emploi qui s’applique à votre poste. Cet examen donnera un aperçu détaillé des exigences des postes par niveaux et domaines de compétences, ce qui permettra de pourvoir à des postes, de déterminer les priorités d’apprentissage et de gérer les talents. L’objectif principal du programme est d’améliorer la carrière de tous les employés en TI. Vous remarquerez peut-être que certains éléments de la tâche ne sont pas liés au poste que vous occupez actuellement. C’est parfaitement normal, car nous devons assurer un examen complet de toutes les compétences possibles s’appliquant à votre domaine d’emploi.",
+    "B2": "Participation",
+    "P2": "La participation est totalement facultative. Toutes les parties du questionnaire doivent être remplies entièrement et avec honnêteté. Le questionnaire a été doté de fonctionnalités facilitant la réponse aux questions, comme des menus déroulants. Il devrait vous falloir environ deux heures pour le remplir au complet. Cet outil représente la dernière innovation des RH pour l’évaluation des exigences en matière de compétences requises par les postes.",
+    "B3": "Honnêteté",
+    "P3": "L’efficacité du questionnaire dépend de la qualité des réponses fournies par les participants. Surévaluer les véritables capacités requises par le poste conduira à des profils de compétences peu fiables. Il est donc important de répondre honnêtement et d’éviter de trop réfléchir à chaque élément/question. Il est conseillé de répondre à toutes les questions avec confiance en vous basant sur les preuves les plus évidentes qui vous viennent initialement à l’esprit. N’oubliez pas que vos réponses seront compilées avec les réponses des autres employés pour établir les aspects clés des emplois en TI.",
+    "P4": "Dans l’ensemble, on peut dire que répondre honnêtement est le meilleur moyen de réduire au minimum les erreurs de réflexion sur les compétences requises pour votre poste. Cependant, la meilleure façon d’assurer la fiabilité des résultats est de se concentrer sur l’emploi et non sur ce que vous pouvez faire. Nous sommes conscients que bon nombre, sinon la plupart, des employés en GI-TI possèdent une plus grande variété/un plus haut niveau de compétences que ce qu’exige le poste. C’est tout à fait normal, et c’est pour cette raison que vous devez vous assurer que vos réponses reflètent les exigences du poste pour un rendement efficace dans le poste. De toute évidence, ce procédé peut sous-estimer ce que vous savez et ce que vous pouvez faire. Vous devez savoir que les données fournies dans ce questionnaire seront utilisées aux fins de recherche, en vue d’améliorer le cadre de compétences actuel que l’on utilise pour gérer la TI des RH.",
+    "A2": "Instructions",
+    "P5": "La partie suivante fournit une liste d’énoncés utilisés pour décrire les exigences des emplois en TI. Elle vise à déterminer les tâches qui définissent le poste que vous occupez actuellement. Certains éléments peuvent représenter les exigences de votre poste, mais d’autres non. L’intention est de confirmer les exigences de votre poste actuel. Le questionnaire est divisé en trois parties : les compétences techniques, les compétences organisationnelles et la personnalité. Pour chaque élément, à l’aide des zones de liste fournies pour l’importance des tâches, veuillez sélectionner le meilleur descripteur des exigences du poste. Veuillez noter que si vous ne fournissez pas de réponse pour un élément, le programme inscrira automatiquement non important pour cet élément.",
+    "P6": "En ce qui concerne la partie des exigences en matière de compétences techniques, onze ensembles de compétences en TI sont évalués. Si vous trouvez que certaines parties (c’est-à-dire le développement d’applications, l’architecture, etc.) n’ont pas d’importance pour votre travail, vous pouvez sauter toute la partie et passer directement à l’ensemble de compétences suivant. Veuillez vous assurer de n’omettre aucun ensemble pertinent d’exigences techniques. Les exigences relatives aux compétences organisationnelles et à la personnalité s’appliquent à tous les profils d’emploi. Par conséquent, assurez-vous de répondre également aux questions correspondant à ces deux ensembles d’exigences.",
+    "P7": "Merci de votre participation!"
   },
   "downloadUploadSurvey": {
     "title": "Téléverser le sondage",
@@ -100,7 +100,8 @@
     "currentSurveyResults": "Résultats actuels du sondage",
     "sectionResultsTitle": "Résultats pour la section",
     "pleaseFinishAllQuestions": "Veuillez répondre à toutes les questions.",
-    "noProgress": "L'auto-évaluation DevOps n'a pas encore commencée. Veuillez choisir une section à compléter."
+    "noProgress": "L'auto-évaluation DevOps n'a pas encore commencée. Veuillez choisir une section à compléter.",
+    "submittingMultipleTimesIsNotAllowed": "You can't submit multiple times(FR)"
   },
   "teamResults": {
     "title": "Aperçu des résultats de l'équipe",
@@ -115,7 +116,6 @@
     "actions": "Actions",
     "submitSuccess": "Submit successfully!(FR)",
     "submitFailed": "Submit failed, please try again later.(FR)",
-    "profileIsRequired": "Please enter your email and team name(FR)",
     "deleteTeam": "Cliquez pour supprimer cette équipe"
   }
 }

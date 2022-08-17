@@ -15,7 +15,7 @@
             <p style="font-size: 16px">
               {{ getShortDescription(sectionDescription) }}
             </p>
-            <span style="color: #395072; font-weight: 700">
+            <span v-if="showScore" style="color: #395072; font-weight: 700">
               {{ $t('survey.currentScore') }} :
               {{ sectionScoreLevel(sectionName) }}
             </span>
@@ -45,6 +45,10 @@ export default class SurveySectionCard extends Vue {
   @Prop() public survey!: SurveyModel;
 
   collapsed = true;
+
+  get showScore() {
+    return process.env.VUE_APP_SHOW_SCORE;
+  }
 
   toggleCollapsed() {
     this.collapsed = !this.collapsed;

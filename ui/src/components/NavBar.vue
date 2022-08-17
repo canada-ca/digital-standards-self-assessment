@@ -117,7 +117,7 @@ export default class NavBar extends Vue {
   }
 
   get showTeamResult(): boolean {
-    return process.env.VUE_APP_WELCOME_SHOW_TEAM_RESULT + '' === 'true';
+    return process.env.VUE_APP_SHOW_TEAM_RESULT + '' === 'true';
   }
 
   get appName(): string {

@@ -174,6 +174,10 @@ export default class Survey extends Vue {
     return process.env.VUE_APP_ALLOW_SUBMIT_RESULT_WITHOUT_FINISHING_ALL + '' === 'true';
   }
 
+  get allowSubmitMultipleTimes() {
+    return process.env.VUE_APP_ALLOW_SUBMIT_RESULT_MULTIPLE_TIMES + '' === 'true';
+  }
+
   private isProfileSet(profile: Profile) {
     return (
       !!profile &&
@@ -208,6 +212,14 @@ export default class Survey extends Vue {
     if (this.allowSubmitWithoutFinishingAll === false && this.allQuestionAnswered() === false) {
       this.showMessage('survey.pleaseFinishAllQuestions', 'warning');
       return;
+    }
+
+    if (this.allowSubmitMultipleTimes == false && profile.userId) {
+      const myResults = await apiService.findSurveyResultsByUserId(profile.userId);
+      if (myResults && myResults.length > 0) {
+        this.showMessage('survey.submittingMultipleTimesIsNotAllowed', 'warning');
+        return;
+      }
     }
 
     const result: SurveyResult = {

@@ -9,8 +9,17 @@
           </button>
         </div>
         <div class="col-3 col-sm-2 col-md-3">
-          <button type="button" class="btn btn-primary" style="width: inherit" v-on:click="goToSectionResults()">
+          <button
+            v-if="showResult"
+            type="button"
+            class="btn btn-primary"
+            style="width: inherit"
+            v-on:click="goToSectionResults()"
+          >
             {{ $t('navigation.viewSectionResults') }}
+          </button>
+          <button v-else type="button" class="btn btn-primary" style="width: inherit" v-on:click="gotoAnotherSection()">
+            {{ $t('navigation.chooseAnotherSection') }}
           </button>
         </div>
       </div>
@@ -32,19 +41,31 @@ export default class Questions extends Vue {
   @Prop() public currentPageNo!: number;
   survey: Model = new Model(this.$store.getters.returnSurveyJSON);
 
+  get showScore() {
+    return process.env.VUE_APP_SHOW_SCORE;
+  }
+
   goToSurvey() {
     this.$store.dispatch(ActionTypes.UpdateSurveyData, this.survey);
     this.$router.push('/survey');
   }
+
   goToSectionResults() {
     this.$store.dispatch(ActionTypes.UpdateSurveyData, this.survey);
     this.$router.push('/sections');
   }
+
+  gotoAnotherSection() {
+    this.$store.dispatch(ActionTypes.UpdateSurveyData, this.survey);
+    this.$router.push('/survey');
+  }
+
   @Watch('$i18n.locale')
   changeLanguage(value: string, oldValue: string) {
     this.survey.locale = value;
     this.survey.render();
   }
+
   created() {
     this.survey.onComplete.add((result: any) => {
       this.$store.dispatch(ActionTypes.UpdateSurveyData, result);

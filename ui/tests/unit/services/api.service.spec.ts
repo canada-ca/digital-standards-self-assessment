@@ -60,7 +60,7 @@ describe('ApiService', () => {
     mockedAxios.get.mockResolvedValueOnce(mockedResponse);
     const startDate = '2022-04-01';
     const endDate = '2022-04-30';
-    const result = await apiService.findSurveyResults(startDate, endDate);
+    const result = await apiService.findSurveyResultsByDate(startDate, endDate);
     expect(axios.get).toHaveBeenLastCalledWith('/survey-result?startDate=2022-04-01&endDate=2022-04-30', option);
     expect(result).toEqual([{}]);
   });

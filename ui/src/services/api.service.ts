@@ -52,10 +52,21 @@ class ApiService {
     }
   }
 
-  async findSurveyResults(startDate: string, endDate: string): Promise<SurveyResult[]> {
+  async findSurveyResultsByDate(startDate: string, endDate: string): Promise<SurveyResult[]> {
     try {
       const res: AxiosResponse<SurveyResult[]> = await axios.get<SurveyResult[]>(
         `${this.apiBaseUrl}/survey-result?startDate=${startDate}&endDate=${endDate}`,
+        option
+      );
+      return res.data;
+    } catch (err) {
+      throw err;
+    }
+  }
+  async findSurveyResultsByUserId(userId: string): Promise<SurveyResult[]> {
+    try {
+      const res: AxiosResponse<SurveyResult[]> = await axios.get<SurveyResult[]>(
+        `${this.apiBaseUrl}/survey-result?userId=${userId}`,
         option
       );
       return res.data;
