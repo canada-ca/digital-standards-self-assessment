@@ -87,7 +87,7 @@ export default class RetrieveTeamSurveys extends Vue {
       }
       const strStartDate = moment(this.startDate).format('YYYY-MM-DD');
       const strEndDate = moment(this.endDate).format('YYYY-MM-DD');
-      const surveyResults = await apiService.findSurveyResults(strStartDate, strEndDate);
+      const surveyResults = await apiService.findSurveyResultsByDate(strStartDate, strEndDate);
       this.calculateResults(surveyResults);
       this.$emit('loadTeamReportData', [...this.teamReportDataBundles.values()]);
     } catch (err) {

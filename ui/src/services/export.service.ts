@@ -33,6 +33,7 @@ class ExportService {
       for (const sectionGroup of sectionGroups) {
         // section group title column
         const sectionTitle = locale === 'fr' ? sectionGroup.titleFr : sectionGroup.titleEn;
+        // eslint-disable-next-line security/detect-object-injection
         rowData[sectionTitle] = '';
         for (const sn of sectionGroup.sectionNames) {
           const section = surveyJson.pages.find((page) => page.name === sn);

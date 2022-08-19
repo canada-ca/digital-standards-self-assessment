@@ -153,7 +153,7 @@ export default class ExportExcel extends Vue {
     const strEndDate = moment(this.endDate).format('YYYY-MM-DD');
     try {
       const surveyJSON: any = this.$store.state.surveyJSON;
-      const surveyResults: SurveyResult[] = await apiService.findSurveyResults(strStartDate, strEndDate);
+      const surveyResults: SurveyResult[] = await apiService.findSurveyResultsByDate(strStartDate, strEndDate);
       const sectionGroups: SectionGroup[] = this.$store.state.sectionGroups;
       const data = exportService.convertToDataArray(this.locale, sectionGroups, surveyJSON, surveyResults);
       this.exportToExcel(this.fileName, data);
@@ -169,6 +169,7 @@ export default class ExportExcel extends Vue {
 
     XLSX.utils.book_append_sheet(wb, ws, 'Answers');
 
+    // eslint-disable-next-line security/detect-non-literal-fs-filename
     XLSX.writeFile(wb, fileName + '.xlsx'); // name of the file is 'book.xlsx'
   }
 }
