@@ -2,11 +2,11 @@
   <div class="container">
     <message ref="message" />
     <div>
-      <SurveySectionsContainer :sections="sections" :survey="Survey" />
+      <SurveySectionsContainer :sectionGroups="sectionGroups" :sections="sections" :survey="Survey" />
     </div>
     <div class="btn-div">
       <b-button class="btn btn-secondary reset" @click="reset">{{ $t('buttons.reset') }}</b-button>
-      <download-survey @confirmToDownload="downloadSurvey" />
+      <download-survey v-if="showDownloadSurvey" @confirmToDownload="downloadSurvey" />
       <b-button class="btn btn-primary submitAnswers" @click="submitAnswers">{{ $t('buttons.submitButton') }}</b-button>
     </div>
   </div>
@@ -17,7 +17,7 @@ import AssessmentTool from '@/components/AssessmentTool.vue';
 import DownloadSurvey from '@/components/DownloadSurvey.vue';
 import Message, { MessageVariantType } from '@/components/Message.vue';
 import SurveySectionsContainer from '@/components/SurveySectionsContainer.vue';
-import { SurveyResult, Team } from '@/interfaces/api-models';
+import { SectionGroup, SurveyResult, Team } from '@/interfaces/api-models';
 import { Profile } from '@/interfaces/Profile';
 import i18n from '@/plugins/i18n';
 import apiService from '@/services/api.service';
@@ -37,6 +37,7 @@ import { Component, Vue, Watch } from 'vue-property-decorator';
 export default class Survey extends Vue {
   Survey: Model = new Model({});
   sections: PageModel[] = [];
+  sectionGroups: SectionGroup[] = [];
 
   $refs!: {
     message: Message;
@@ -50,19 +51,40 @@ export default class Survey extends Vue {
     }
     this.Survey.fromJSON(surveyJSON);
     this.Survey.data = surveyData;
-    this.sections = this.returnAllSectionsByPrefix(this.Survey, 'section_');
+    this.sections = this.returnAllSections(this.Survey);
+    this.sectionGroups = this.$store.state.sectionGroups;
+    this.findUngroupedSections();
     await this.$store.dispatch(ActionTypes.UseSurveyJSON, {
       surveyJSON,
       surveyModel: this.Survey,
     });
   }
 
-  private returnAllSectionsByPrefix(survey: SurveyModel, prefix: string): PageModel[] {
+  private findUngroupedSections() {
+    const groupedSectionNames: string[] = [];
+    for (const sg of this.sectionGroups) {
+      groupedSectionNames.push(...sg.sectionNames);
+    }
+    const ungroupedSections: string[] = [];
+    for (const pm of this.sections) {
+      if (groupedSectionNames.indexOf(pm.name) === -1) {
+        ungroupedSections.push(pm.name);
+      }
+    }
+    if (ungroupedSections.length > 0) {
+      this.sectionGroups.push({
+        titleEn: 'OTHERS',
+        titleFr: 'D’AUTRES',
+        sectionNames: ungroupedSections,
+        displayOrder: 100,
+      });
+    }
+  }
+
+  private returnAllSections(survey: SurveyModel): PageModel[] {
     let sections: PageModel[] = [];
     survey.pages.forEach((page: any) => {
-      if (page.name.includes(prefix)) {
-        sections.push(page);
-      }
+      sections.push(page);
     });
     return sections;
   }
@@ -109,13 +131,7 @@ export default class Survey extends Vue {
   }
 
   buildSurveyFile(): string {
-    return JSON.stringify({
-      name: 'surveyResults',
-      version: this.$store.state.toolVersion,
-      currentPage: this.$store.state.currentPageNo,
-      data: this.$store.state.toolData,
-      surveyJSON: this.$store.state.surveyJSON,
-    });
+    return JSON.stringify(this.$store.state.surveyJSON);
   }
 
   downloadSurvey(fileName: string): void {
@@ -146,8 +162,20 @@ export default class Survey extends Vue {
     return process.env.VUE_APP_COLLECT_USER_EMAIL + '' === 'true';
   }
 
+  get showDownloadSurvey(): boolean {
+    return process.env.VUE_APP_SHOW_DOWNLOAD_SURVEY + '' === 'true';
+  }
+
+  get showExportToExcel(): boolean {
+    return process.env.VUE_APP_SHOW_EXPORT_EXCEL + '' === 'true';
+  }
+
   get allowSubmitWithoutFinishingAll(): boolean {
     return process.env.VUE_APP_ALLOW_SUBMIT_RESULT_WITHOUT_FINISHING_ALL + '' === 'true';
+  }
+
+  get allowSubmitMultipleTimes() {
+    return process.env.VUE_APP_ALLOW_SUBMIT_RESULT_MULTIPLE_TIMES + '' === 'true';
   }
 
   private isProfileSet(profile: Profile) {
@@ -155,7 +183,7 @@ export default class Survey extends Vue {
       !!profile &&
       !!profile.userId &&
       !!profile.team &&
-      (this.collectEmail === false || (this.collectEmail && !!profile.email))
+      (this.collectEmail === false || (this.collectEmail && !!profile.userId))
     );
   }
 
@@ -177,7 +205,7 @@ export default class Survey extends Vue {
 
     if (!isProfileSet) {
       await this.$store.dispatch(ActionTypes.ShowHideProfile, true);
-      this.showMessage('teamResults.profileIsRequired', 'warning');
+      this.showMessage('navigation.profile.notSet', 'warning');
       return;
     }
 
@@ -186,11 +214,21 @@ export default class Survey extends Vue {
       return;
     }
 
+    if (this.allowSubmitMultipleTimes == false && profile.userId) {
+      const myResults = await apiService.findSurveyResultsByUserId(profile.userId);
+      if (myResults && myResults.length > 0) {
+        this.showMessage('survey.submittingMultipleTimesIsNotAllowed', 'warning');
+        return;
+      }
+    }
+
     const result: SurveyResult = {
       answers: this.$store.getters.returnToolData,
       team: profile.team as Team,
-      userEmail: '' + (this.collectEmail ? profile.email : profile.userId),
+      userId: '' + (this.collectEmail ? profile.userId : profile.userId),
+      jobTitle: profile.jobTitle,
       survey: this.$store.getters.returnSurveyJSON._id,
+      timeInThePosition: profile.timeInPosition,
     };
     try {
       const newResult = await apiService.saveSurveyResult(result);

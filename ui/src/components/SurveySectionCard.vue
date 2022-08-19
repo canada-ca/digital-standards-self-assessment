@@ -2,22 +2,22 @@
   <div class="survey-card-container">
     <div class="survey-card" img-top>
       <div class="icon-container">
-        <i :class="setStatusIcon(section.name)"></i>
+        <i :class="setStatusIcon(sectionName)"></i>
       </div>
       <div style="flex: auto">
         <div class="survey-title">
-          <a href="#" @click.prevent="goToSection(section.name)" @keypress.space="goToSection(section.name)">{{
-            section.title
-          }}</a>
+          <a href="#" @click.prevent="goToSection(sectionName)" @keypress.space="goToSection(sectionName)">
+            {{ sectionTitle }}
+          </a>
         </div>
         <transition name="collapsed" mode="out-in">
           <div v-if="!collapsed" class="mt-3">
             <p style="font-size: 16px">
-              {{ getShortDescription(section.description) }}
+              {{ getShortDescription(sectionDescription) }}
             </p>
-            <span style="color: #395072; font-weight: 700">
+            <span v-if="showScore" style="color: #395072; font-weight: 700">
               {{ $t('survey.currentScore') }} :
-              {{ sectionScoreLevel(section.name) }}
+              {{ sectionScoreLevel(sectionName) }}
             </span>
           </div>
         </transition>
@@ -39,10 +39,16 @@ import ShowHideLink from '@/components/ShowHideLink.vue';
   components: { ShowHideLink },
 })
 export default class SurveySectionCard extends Vue {
-  @Prop() public section!: PageModel;
+  @Prop() sectionTitle!: string;
+  @Prop() sectionName!: string;
+  @Prop() sectionDescription!: string;
   @Prop() public survey!: SurveyModel;
 
   collapsed = true;
+
+  get showScore() {
+    return process.env.VUE_APP_SHOW_SCORE;
+  }
 
   toggleCollapsed() {
     this.collapsed = !this.collapsed;

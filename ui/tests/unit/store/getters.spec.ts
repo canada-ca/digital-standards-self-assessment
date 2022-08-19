@@ -61,34 +61,6 @@ describe('getters', () => {
     } as unknown as RootState;
     expect(getters.returnRecommendations(state)).toEqual([]);
   });
-  it('returnSectionsByPrefix', () => {
-    let survenModel = { pages: [] } as SurveyModel;
-    const state: RootState = {
-      recommendations: [],
-    } as unknown as RootState;
-    expect(getters.returnSectionsByPrefix(state)(survenModel, 'section_')).toEqual([]);
-    survenModel = {
-      pages: [
-        {
-          name: 'section_1',
-        },
-        {
-          name: 'section_2',
-        },
-        {
-          name: 'others',
-        },
-      ],
-    } as SurveyModel;
-    expect(getters.returnSectionsByPrefix(state)(survenModel, 'section_')).toEqual([
-      {
-        name: 'section_1',
-      },
-      {
-        name: 'section_2',
-      },
-    ]);
-  });
 
   it('returnCurrentSection', () => {
     let state: RootState = {

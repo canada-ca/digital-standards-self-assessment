@@ -1,4 +1,4 @@
-import { Team } from '@/interfaces/api-models';
+import { SectionGroup, Team } from '@/interfaces/api-models';
 import { Profile } from '@/interfaces/Profile';
 import { Question, SurveyModel } from 'survey-vue';
 
@@ -24,6 +24,7 @@ export interface RootState {
   showBreakdown: boolean;
   profile: Profile;
   showProfile: boolean;
+  sectionGroups?: SectionGroup[];
 }
 
 export interface Section {
@@ -50,7 +51,7 @@ export interface TeamReportData {
 }
 
 export interface UserReportData {
-  email: string;
+  userId: string;
   sections: Array<SectionReportData>;
 }
 

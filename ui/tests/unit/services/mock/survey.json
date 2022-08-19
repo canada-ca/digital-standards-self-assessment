@@ -1,0 +1,355 @@
+{
+  "pages": [
+    {
+      "name": "section_A_1",
+      "title": {
+        "default": "Section A1",
+        "fr": ""
+      },
+      "description": {
+        "default": "Section A1 description",
+        "fr": ""
+      },
+      "elements": [
+        {
+          "type": "rating",
+          "name": "s01q001",
+          "title": {
+            "default": "Question 1",
+            "fr": ""
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "section_A_2",
+      "title": {
+        "default": "Section A2",
+        "fr": ""
+      },
+      "description": {
+        "default": "Section A2 description",
+        "fr": ""
+      },
+      "elements": [
+        {
+          "type": "rating",
+          "name": "s02q001",
+          "title": {
+            "default": "Question 2",
+            "fr": ""
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "section_A_3",
+      "title": {
+        "default": "Section A3",
+        "fr": ""
+      },
+      "description": {
+        "default": "Section A3 description",
+        "fr": ""
+      },
+      "elements": [
+        {
+          "type": "rating",
+          "name": "s03q001",
+          "title": {
+            "default": "Qeustion 3",
+            "fr": ""
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "section_B_1",
+      "title": {
+        "default": "Section B1",
+        "fr": ""
+      },
+      "description": {
+        "default": "Section B1 description",
+        "fr": ""
+      },
+      "elements": [
+        {
+          "type": "rating",
+          "name": "s04q001",
+          "title": {
+            "default": "Question 4",
+            "fr": ""
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "section_B_2",
+      "title": {
+        "default": "Section B2",
+        "fr": ""
+      },
+      "description": {
+        "default": "Section B2 description",
+        "fr": ""
+      },
+      "elements": [
+        {
+          "type": "rating",
+          "name": "s05q001",
+          "title": {
+            "default": "Question 5",
+            "fr": ""
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "section_B_3",
+      "title": {
+        "default": "Section B3",
+        "fr": ""
+      },
+      "description": {
+        "default": "Section B3 description",
+        "fr": ""
+      },
+      "elements": [
+        {
+          "type": "rating",
+          "name": "s06q001",
+          "title": {
+            "default": "Question 6",
+            "fr": ""
+          },
+          "rateValues": [
+            {
+              "value": "0",
+              "text": {
+                "default": "Never",
+                "fr": "Jamais"
+              }
+            },
+            {
+              "value": "1",
+              "text": {
+                "default": "Rarely",
+                "fr": "Rarement"
+              }
+            },
+            {
+              "value": "2",
+              "text": {
+                "default": "Not sure",
+                "fr": "Ne sais pas"
+              }
+            },
+            {
+              "value": "3",
+              "text": {
+                "default": "Sometimes",
+                "fr": "Parfois"
+              }
+            },
+            {
+              "value": "4",
+              "text": {
+                "default": "Always",
+                "fr": "Toujours"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "showQuestionNumbers": "off",
+  "showProgressBar": "false",
+  "showNavigationButtons": "false"
+}

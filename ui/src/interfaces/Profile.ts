@@ -1,7 +1,8 @@
-import { Team } from './api-models';
+import { JobTitle, Team } from './api-models';
 
 export interface Profile {
   userId?: string;
-  email?: string;
+  jobTitle?: JobTitle;
   team?: Team;
+  timeInPosition?: string;
 }

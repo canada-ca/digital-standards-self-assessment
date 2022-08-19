@@ -30,7 +30,7 @@ describe('ApiService', () => {
 
     mockedAxios.get.mockResolvedValueOnce(mockedResponse);
     const survey = await apiService.findLatestSurvey();
-    expect(axios.get).toHaveBeenLastCalledWith('/survey?latest', option);
+    expect(axios.get).toHaveBeenLastCalledWith('/survey?latest=true', option);
     expect(survey).toEqual({});
   });
 
@@ -60,7 +60,7 @@ describe('ApiService', () => {
     mockedAxios.get.mockResolvedValueOnce(mockedResponse);
     const startDate = '2022-04-01';
     const endDate = '2022-04-30';
-    const result = await apiService.findSurveyResults(startDate, endDate);
+    const result = await apiService.findSurveyResultsByDate(startDate, endDate);
     expect(axios.get).toHaveBeenLastCalledWith('/survey-result?startDate=2022-04-01&endDate=2022-04-30', option);
     expect(result).toEqual([{}]);
   });
@@ -75,7 +75,7 @@ describe('ApiService', () => {
     };
     mockedAxios.post.mockResolvedValueOnce(mockedResponse);
     const result = await apiService.saveSurveyResult({} as SurveyResult);
-    expect(axios.post).toHaveBeenLastCalledWith('/survey-result', {}, option);
+    expect(axios.post).toHaveBeenLastCalledWith('/survey-result', expect.anything(), option);
     expect(result).toEqual({});
   });
 });

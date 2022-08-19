@@ -3,11 +3,12 @@ interface BaseInterface {
 }
 
 export interface Team extends BaseInterface {
+  teamId: number;
   teamNameEn: string;
   teamNameFr: string;
 }
 
-export interface BilingleText {
+export interface BilingualText {
   default: string;
   fr: string;
 }
@@ -15,36 +16,30 @@ export interface BilingleText {
 export interface BaseQuestion {
   type: string;
   name: string;
-  title: BilingleText;
+  title: BilingualText;
 }
 
 export interface RatingQuestion extends BaseQuestion {
-  rateValues: [
-    {
-      value: string;
-      text: BilingleText;
-    }
-  ];
+  rateValues: {
+    value: string;
+    text: BilingualText;
+  }[];
   value?: string;
 }
 
 export interface SingleSelectQuestion extends BaseQuestion {
-  choices: [
-    {
-      value: string;
-      text: BilingleText;
-    }
-  ];
+  choices: {
+    value: string;
+    text: BilingualText;
+  }[];
   value?: string;
 }
 
 export interface MultipleSelectQuestion extends BaseQuestion {
-  choices: [
-    {
-      value: string;
-      text: BilingleText;
-    }
-  ];
+  choices: {
+    value: string;
+    text: BilingualText;
+  }[];
   value?: string[];
 }
 
@@ -52,8 +47,8 @@ export type QuestionType = RatingQuestion | SingleSelectQuestion | MultipleSelec
 
 export interface Section {
   name: string;
-  title: BilingleText;
-  description: BilingleText;
+  title: BilingualText;
+  description: BilingualText;
   elements: QuestionType[];
 }
 
@@ -66,9 +61,27 @@ export interface Survey extends BaseInterface {
 }
 
 export interface SurveyResult extends BaseInterface {
-  answers: Map<string, any>;
-  userEmail: string;
+  answers: { [key: string]: any };
+  userId: string; // either email or a random string
   team: string | Team;
+  jobTitle?: string | JobTitle;
   survey: string;
   createdAt?: Date;
+  timeInThePosition?: string;
+}
+
+export interface JobTitle extends BaseInterface {
+  gcitCode: string;
+  itLevel: string;
+  titleEn: string;
+  titleFr: string;
+  shortTitleEn: string;
+  shortTitleFr: string;
+}
+
+export interface SectionGroup {
+  sectionNames: string[];
+  titleEn: string;
+  titleFr: string;
+  displayOrder: number;
 }

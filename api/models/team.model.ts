@@ -1,5 +1,6 @@
 import { Document, Schema, Model, model, Types } from 'mongoose';
 export interface Team {
+  teamId: number;
   teamNameEn: string;
   teamNameFr: string;
 }
@@ -10,6 +11,9 @@ export interface TeamModel extends Model<TeamDocument> {}
 
 const teamSchema = new Schema<TeamDocument, TeamModel>(
   {
+    teamId: {
+      type: Number,
+    },
     teamNameEn: {
       type: String,
     },

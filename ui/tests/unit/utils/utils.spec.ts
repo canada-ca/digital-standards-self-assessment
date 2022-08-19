@@ -6,7 +6,7 @@ const surveyJSON: any = {
       name: 'section_one',
       title: {
         default: 'Test section',
-        fr: 'Test section(FR)',
+        fr: 'Test section_FR',
       },
       elements: [
         {
@@ -60,42 +60,42 @@ const surveyJSON: any = {
           name: 'question1',
           title: {
             default: 'Question',
-            fr: 'Question(FR)',
+            fr: 'Question_FR',
           },
           choices: [
             {
               value: '1',
               text: {
                 default: 'Item 1',
-                fr: 'Item 1 (FR)',
+                fr: 'Item 1 _FR',
               },
             },
             {
               value: '2',
               text: {
                 default: 'Item 2',
-                fr: 'Item 2 (FR)',
+                fr: 'Item 2 _FR',
               },
             },
             {
               value: '3',
               text: {
                 default: 'Item 3',
-                fr: 'Item 3 (FR)',
+                fr: 'Item 3 _FR',
               },
             },
             {
               value: '2',
               text: {
                 default: 'Item 4',
-                fr: 'Item 4 (FR)',
+                fr: 'Item 4 _FR',
               },
             },
             {
               value: '1',
               text: {
                 default: 'Item 5',
-                fr: 'Item 5 (FR)',
+                fr: 'Item 5 _FR',
               },
             },
           ],
@@ -104,28 +104,28 @@ const surveyJSON: any = {
           type: 'checkbox',
           name: 'question2',
           title: {
-            fr: 'question2(FR)',
+            fr: 'question2_FR',
           },
           choices: [
             {
               value: '1',
               text: {
                 default: 'Item 1',
-                fr: 'Item 1 (FR)',
+                fr: 'Item 1 _FR',
               },
             },
             {
               value: '2',
               text: {
                 default: 'Item 2',
-                fr: 'Item 2 (FR)',
+                fr: 'Item 2 _FR',
               },
             },
             {
               value: '3',
               text: {
                 default: 'Item 3',
-                fr: 'Item 3 (FR)',
+                fr: 'Item 3 _FR',
               },
             },
           ],
@@ -134,28 +134,28 @@ const surveyJSON: any = {
           type: 'dropdown',
           name: 'question3',
           title: {
-            fr: 'question3(FR)',
+            fr: 'question3_FR',
           },
           choices: [
             {
               value: '1',
               text: {
                 default: 'item1',
-                fr: 'Item1 (FR)',
+                fr: 'Item1 _FR',
               },
             },
             {
               value: '2',
               text: {
                 default: 'item2',
-                fr: 'Item2 (FR)',
+                fr: 'Item2 _FR',
               },
             },
             {
               value: '3',
               text: {
                 default: 'item3',
-                fr: 'Item3 (FR)',
+                fr: 'Item3 _FR',
               },
             },
           ],
@@ -165,7 +165,7 @@ const surveyJSON: any = {
           name: 'question4',
           title: {
             default: 'test boolean question',
-            fr: 'test boolean question(FR)',
+            fr: 'test boolean question_FR',
           },
           labelTrue: {
             default: 'Yes',
@@ -183,7 +183,7 @@ const surveyJSON: any = {
           name: 'question5',
           title: {
             default: 'test boolean question',
-            fr: 'test boolean question(FR)',
+            fr: 'test boolean question_FR',
           },
           labelTrue: {
             default: 'Yes',

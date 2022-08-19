@@ -10,7 +10,7 @@ import { Component, Prop, Vue, Watch } from 'vue-property-decorator';
 
 @Component
 export default class IndividualBreakdownBarCard extends Vue {
-  allEmails: string[] = [];
+  allUserIds: string[] = [];
   userScores: any[][] = [];
   chartSeries: echarts.SeriesOption[] = [];
   chart!: ECharts;
@@ -56,11 +56,11 @@ export default class IndividualBreakdownBarCard extends Vue {
   }
 
   private extractAllUserEmails() {
-    this.allEmails = [];
+    this.allUserIds = [];
     this.userReportDataArray.forEach((t) => {
-      this.allEmails.push(t.email);
+      this.allUserIds.push(t.userId);
     });
-    this.chartSeries = this.allEmails.map((email) => ({
+    this.chartSeries = this.allUserIds.map((userId) => ({
       type: 'bar',
       label: { show: true, position: 'top' },
     }));
@@ -110,11 +110,11 @@ export default class IndividualBreakdownBarCard extends Vue {
     this.extractAllUserEmails();
     const option: EChartsOption = {
       legend: {
-        data: this.allEmails,
+        data: this.allUserIds,
       },
       tooltip: {},
       dataset: {
-        source: [['section', ...this.allEmails], ...this.userScores],
+        source: [['section', ...this.allUserIds], ...this.userScores],
       },
       xAxis: { type: 'category' },
       yAxis: {

@@ -1,5 +1,5 @@
 const survey1 = require('./20220528015116-survey-enfr.json');
-const teams = require('./20220531011139-teams.json');
+const teams = require('./20220528015116-teams.json');
 
 module.exports = {
   async up(db, client) {

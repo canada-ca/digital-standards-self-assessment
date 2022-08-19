@@ -34,7 +34,7 @@
 
 <script lang="ts">
 import { SurveyResult, Team } from '@/interfaces/api-models';
-import ErrorMessage from '@/interfaces/ErrorMessage';
+import { ErrorMessage } from '@/interfaces/ErrorMessage';
 import apiService from '@/services/api.service';
 import { SectionReportData, TeamReportData, TeamReportDataBundle, UserReportData } from '@/store/state';
 import { calcScore, calcSectionMaxScore } from '@/utils/utils';
@@ -50,19 +50,19 @@ export default class RetrieveTeamSurveys extends Vue {
   labels = {
     fr: {
       weekdayHeaderFormat: 'narrow',
-      labelPrevDecade: 'Prev Decade(FR)',
-      labelPrevYear: 'Prev Year(FR)',
-      labelPrevMonth: 'Prev Month(FR)',
-      labelCurrentMonth: 'Current Month(FR)',
-      labelNextMonth: 'Next Month(FR)',
-      labelNextYear: 'Next Year(FR)',
-      labelNextDecade: 'Next Decade(FR)',
-      labelToday: 'Today(FR)',
-      labelSelected: 'Selected Date(FR)',
-      labelNoDateSelected: 'Unselected Date(FR)',
-      labelCalendar: 'Calendar(FR)',
-      labelNav: 'Navigation(FR)',
-      labelHelp: 'Use cursor keys to navigate calendar dates(FR)',
+      labelPrevDecade: 'Décennie précédente',
+      labelPrevYear: 'Année précédente',
+      labelPrevMonth: 'Le mois précédent',
+      labelCurrentMonth: 'Mois en cours',
+      labelNextMonth: 'Le mois prochain',
+      labelNextYear: "L'année prochaine",
+      labelNextDecade: 'La prochaine décennie',
+      labelToday: "Aujourd'hui",
+      labelSelected: 'Date sélectionnée',
+      labelNoDateSelected: 'Date non sélectionnée',
+      labelCalendar: 'Calendrier',
+      labelNav: 'La navigation',
+      labelHelp: 'Utilisez les touches du curseur pour parcourir les dates du calendrier',
     },
   };
 
@@ -87,7 +87,7 @@ export default class RetrieveTeamSurveys extends Vue {
       }
       const strStartDate = moment(this.startDate).format('YYYY-MM-DD');
       const strEndDate = moment(this.endDate).format('YYYY-MM-DD');
-      const surveyResults = await apiService.findSurveyResults(strStartDate, strEndDate);
+      const surveyResults = await apiService.findSurveyResultsByDate(strStartDate, strEndDate);
       this.calculateResults(surveyResults);
       this.$emit('loadTeamReportData', [...this.teamReportDataBundles.values()]);
     } catch (err) {
@@ -110,11 +110,11 @@ export default class RetrieveTeamSurveys extends Vue {
   loadSurveyResults(result: SurveyResult) {
     const team: Team = result.team as Team;
     const teamId = team._id || '';
-    const userEmail = result.userEmail;
+    const userId = result.userId;
     const answers = result.answers;
 
     const userReportData: UserReportData = {
-      email: userEmail,
+      userId,
       sections: this.extractSectionReportData(answers, result.createdAt),
     };
 
@@ -132,7 +132,7 @@ export default class RetrieveTeamSurveys extends Vue {
     }
   }
 
-  private extractSectionReportData(answers: Map<string, any>, createdAt?: Date): Array<SectionReportData> {
+  private extractSectionReportData(answers: { [key: string]: any }, createdAt?: Date): Array<SectionReportData> {
     const sectionReportDataArray: Array<SectionReportData> = [];
     if (this.surveyJson) {
       let survey: Model = new Model(this.surveyJson);

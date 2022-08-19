@@ -1,4 +1,4 @@
-import { Survey, SurveyResult, Team } from '@/interfaces/api-models';
+import { JobTitle, SectionGroup, Survey, SurveyResult, Team } from '@/interfaces/api-models';
 import axios, { AxiosRequestConfig, AxiosResponse } from 'axios';
 
 const option: AxiosRequestConfig = {
@@ -31,10 +31,42 @@ class ApiService {
     }
   }
 
-  async findSurveyResults(startDate: string, endDate: string): Promise<SurveyResult[]> {
+  async findAllJobTitles(): Promise<JobTitle[]> {
+    try {
+      const res: AxiosResponse<JobTitle[]> = await axios.get<JobTitle[]>(`${this.apiBaseUrl}/job-title`, option);
+      return res.data;
+    } catch (err) {
+      throw err;
+    }
+  }
+
+  async findSectionGroups(): Promise<SectionGroup[]> {
+    try {
+      const res: AxiosResponse<SectionGroup[]> = await axios.get<SectionGroup[]>(
+        `${this.apiBaseUrl}/section-group`,
+        option
+      );
+      return res.data;
+    } catch (err) {
+      throw err;
+    }
+  }
+
+  async findSurveyResultsByDate(startDate: string, endDate: string): Promise<SurveyResult[]> {
     try {
       const res: AxiosResponse<SurveyResult[]> = await axios.get<SurveyResult[]>(
         `${this.apiBaseUrl}/survey-result?startDate=${startDate}&endDate=${endDate}`,
+        option
+      );
+      return res.data;
+    } catch (err) {
+      throw err;
+    }
+  }
+  async findSurveyResultsByUserId(userId: string): Promise<SurveyResult[]> {
+    try {
+      const res: AxiosResponse<SurveyResult[]> = await axios.get<SurveyResult[]>(
+        `${this.apiBaseUrl}/survey-result?userId=${userId}`,
         option
       );
       return res.data;
@@ -47,7 +79,7 @@ class ApiService {
     try {
       const res: AxiosResponse<SurveyResult> = await axios.post<SurveyResult>(
         `${this.apiBaseUrl}/survey-result`,
-        surveyResult,
+        { ...surveyResult, createdAt: new Date() },
         option
       );
       return res.data;
