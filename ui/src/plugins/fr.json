@@ -101,7 +101,7 @@
     "sectionResultsTitle": "Résultats pour la section",
     "pleaseFinishAllQuestions": "Veuillez répondre à toutes les questions.",
     "noProgress": "L'auto-évaluation DevOps n'a pas encore commencée. Veuillez choisir une section à compléter.",
-    "submittingMultipleTimesIsNotAllowed": "You can't submit multiple times(FR)"
+    "submittingMultipleTimesIsNotAllowed": "You can submit your answers only once.(FR)"
   },
   "teamResults": {
     "title": "Aperçu des résultats de l'équipe",
