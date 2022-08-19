@@ -35,9 +35,9 @@ const httpTrigger: AzureFunction = async function (context: Context, req: HttpRe
             },
           };
         }
-      } else {
-        const startDate = req.query['startDate'];
-        const endDate = req.query['endDate'];
+      } else if (!!req.query.startDate || !!req.query.endDate) {
+        const startDate = req.query.startDate;
+        const endDate = req.query.endDate;
         const results = await surveyResultService.findByDateRange(
           startDate ? new Date(startDate) : undefined,
           endDate ? new Date(endDate) : undefined
@@ -55,6 +55,29 @@ const httpTrigger: AzureFunction = async function (context: Context, req: HttpRe
             },
           };
         }
+      } else if (!!req.query.userId) {
+        const userId = req.query.userId;
+        const results = await surveyResultService.findByUserId(userId);
+        if (results && results.length > 0) {
+          context.res = {
+            // status: 200, /* Defaults to 200 */
+            body: results,
+          };
+        } else {
+          context.res = {
+            status: 404,
+            body: {
+              message: 'Survey Result not found',
+            },
+          };
+        }
+      } else {
+        context.res = {
+          status: 400,
+          body: {
+            message: 'Unsupported parameters',
+          },
+        };
       }
     }
   } catch (err) {

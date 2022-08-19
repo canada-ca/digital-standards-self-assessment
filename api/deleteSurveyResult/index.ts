@@ -4,26 +4,24 @@ import surveyResultService from '../services/survey-result.service';
 const httpTrigger: AzureFunction = async function (context: Context, req: HttpRequest): Promise<void> {
   try {
     const resultId = context.req.params.id;
-    if (resultId) {
-      const result = await surveyResultService.delete(resultId);
-      if (result) {
-        context.res = {
-          // status: 200, /* Defaults to 200 */
-          body: { message: 'The survey result was deleted' },
-        };
-      } else {
-        context.res = {
-          status: 404,
-          body: {
-            message: `The survey result was not found with ID = ${resultId}`,
-          },
-        };
+    const deleteCount = await surveyResultService.delete(resultId);
+    if (deleteCount > 0) {
+      let message = 'One surevey result was deleted.';
+      if (deleteCount > 1) {
+        message = `{deleteCount} survey results were deleted.`;
       }
-    } else {
       context.res = {
-        status: 400,
+        // status: 200, /* Defaults to 200 */
+        body: { message },
+      };
+    } else {
+      const message = resultId
+        ? `The survey result was not found with ID = ${resultId}`
+        : `The survey result was not found`;
+      context.res = {
+        status: 404,
         body: {
-          message: `Survey result ID is required`,
+          message,
         },
       };
     }
