@@ -6,6 +6,7 @@ const config = {
     // url: 'mongodb+srv://lcbdl:Password001@cluster0.1arfz.mongodb.net/dssa-db?retryWrites=true&w=majority',
     url: 'mongodb://tbsdssa:sK4yP76lrpsnaLmbPe3WOKVWL1I1a5NBdvMpKnXhJficXFuEhC7Vei7I6LH4RprqOS6TctGoRv5r9GnBdyuqSw%3D%3D@tbsdssa.mongo.cosmos.azure.com:10255/dssa-db?ssl=true&retrywrites=false&maxIdleTimeMS=120000&appName=@tbsdssa@',
 
+    // TODO Change this to your database name:
     databaseName: 'dssa-db',
 
     options: {
