@@ -14,78 +14,67 @@ class ApiService {
   }
 
   async findLatestSurvey(): Promise<Survey> {
-    try {
-      const res: AxiosResponse<Survey> = await axios.get<Survey>(`${this.apiBaseUrl}/survey?latest=true`, option);
-      return res.data;
-    } catch (err) {
-      throw err;
-    }
+    const res: AxiosResponse<Survey> = await axios.get<Survey>(`${this.apiBaseUrl}/survey?latest=true`, option);
+    return res.data;
   }
 
   async findAllTeams(): Promise<Team[]> {
-    try {
-      const res: AxiosResponse<Team[]> = await axios.get<Team[]>(`${this.apiBaseUrl}/team`, option);
-      return res.data;
-    } catch (err) {
-      throw err;
-    }
+    const res: AxiosResponse<Team[]> = await axios.get<Team[]>(`${this.apiBaseUrl}/team`, option);
+    return res.data;
   }
 
   async findAllJobTitles(): Promise<JobTitle[]> {
-    try {
-      const res: AxiosResponse<JobTitle[]> = await axios.get<JobTitle[]>(`${this.apiBaseUrl}/job-title`, option);
-      return res.data;
-    } catch (err) {
-      throw err;
-    }
+    const res: AxiosResponse<JobTitle[]> = await axios.get<JobTitle[]>(`${this.apiBaseUrl}/job-title`, option);
+    return res.data;
   }
 
   async findSectionGroups(): Promise<SectionGroup[]> {
-    try {
-      const res: AxiosResponse<SectionGroup[]> = await axios.get<SectionGroup[]>(
-        `${this.apiBaseUrl}/section-group`,
-        option
-      );
-      return res.data;
-    } catch (err) {
-      throw err;
-    }
+    const res: AxiosResponse<SectionGroup[]> = await axios.get<SectionGroup[]>(
+      `${this.apiBaseUrl}/section-group`,
+      option
+    );
+    return res.data;
   }
 
-  async findSurveyResultsByDate(startDate: string, endDate: string): Promise<SurveyResult[]> {
-    try {
-      const res: AxiosResponse<SurveyResult[]> = await axios.get<SurveyResult[]>(
-        `${this.apiBaseUrl}/survey-result?startDate=${startDate}&endDate=${endDate}`,
-        option
-      );
-      return res.data;
-    } catch (err) {
-      throw err;
-    }
+  async findAllSurveyResults(): Promise<SurveyResult[]> {
+    const res: AxiosResponse<SurveyResult[]> = await axios.get<SurveyResult[]>(
+      `${this.apiBaseUrl}/survey-result`,
+      option
+    );
+    return res.data;
   }
+
+  async findArchivedSurveyResults(archiveName: string): Promise<SurveyResult[]> {
+    const res: AxiosResponse<SurveyResult[]> = await axios.get<SurveyResult[]>(
+      `${this.apiBaseUrl}/survey-result?archiveName=${archiveName}`,
+      option
+    );
+    return res.data;
+  }
+
+  async findSurveyResultArchiveNames(): Promise<string[]> {
+    const res: AxiosResponse<string[]> = await axios.get<string[]>(
+      `${this.apiBaseUrl}/survey-result/archive-name`,
+      option
+    );
+    return res.data;
+  }
+
   async findSurveyResultsByUserId(userId: string): Promise<SurveyResult[]> {
-    try {
-      const res: AxiosResponse<SurveyResult[]> = await axios.get<SurveyResult[]>(
-        `${this.apiBaseUrl}/survey-result?userId=${userId}`,
-        option
-      );
-      return res.data;
-    } catch (err) {
-      throw err;
-    }
+    const res: AxiosResponse<SurveyResult[]> = await axios.get<SurveyResult[]>(
+      `${this.apiBaseUrl}/survey-result?userId=${userId}`,
+      option
+    );
+    return res.data;
   }
 
   async saveSurveyResult(surveyResult: SurveyResult): Promise<SurveyResult> {
-    try {
-      const res: AxiosResponse<SurveyResult> = await axios.post<SurveyResult>(
-        `${this.apiBaseUrl}/survey-result`,
-        { ...surveyResult, createdAt: new Date() },
-        option
-      );
-      return res.data;
-    } catch (err) {
-      throw err;
-    }
+    const res: AxiosResponse<SurveyResult> = await axios.post<SurveyResult>(
+      `${this.apiBaseUrl}/survey-result`,
+      { ...surveyResult, createdAt: new Date() },
+      option
+    );
+    return res.data;
   }
 }
 

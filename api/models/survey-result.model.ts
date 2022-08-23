@@ -8,6 +8,7 @@ export interface SurveyResult {
   userId: string; // either email or a random string
   jobTitle: string | Types.ObjectId | JobTitle;
   team: string | Types.ObjectId | Team;
+  timeInThePosition: string;
   survey: string | Types.ObjectId | Survey;
   createdAt: Date;
 }
@@ -35,6 +36,9 @@ const surveyResultSchema = new Schema<SurveyResultDocument, SurveyResultModel>(
     team: {
       type: Types.ObjectId,
       ref: 'Team',
+    },
+    timeInThePosition: {
+      type: String,
     },
     survey: {
       type: Types.ObjectId,

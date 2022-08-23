@@ -1,3 +1,4 @@
+/* eslint-disable security/detect-object-injection */
 import {
   BilingualText,
   JobTitle,
@@ -11,24 +12,31 @@ import {
   SurveyResult,
   Team,
 } from '@/interfaces/api-models';
+import { allTimePositions } from '@/interfaces/TimeInPosition';
+import VueI18n, { IVueI18n } from 'vue-i18n';
 
 class ExportService {
   convertToDataArray(
-    locale: string,
+    $i18n: VueI18n & IVueI18n,
     sectionGroups: SectionGroup[],
     surveyJson: Survey,
     surveyResults: SurveyResult[]
   ): Array<{ [key: string]: any }> {
+    const locale = $i18n.locale;
     const data: Array<{ [key: string]: any }> = [];
+    const teamLabel = $i18n.t('downloadUploadSurvey.team') as string;
+    const itLevelLabel = $i18n.t('downloadUploadSurvey.itLevel') as string;
+    const jobTitleLabel = $i18n.t('downloadUploadSurvey.jobTitle') as string;
+    const timeInThePositionLabel = $i18n.t('downloadUploadSurvey.timeInThePosition') as string;
+
     for (const result of surveyResults) {
       const team: Team = result.team as Team;
       const jobTitle: JobTitle = result.jobTitle as JobTitle;
-      const rowData: { [key: string]: any } = {
-        'Your Department': locale === 'fr' ? team?.teamNameFr : team?.teamNameEn,
-        'Your Position Level': jobTitle?.itLevel,
-        'Position Title': locale === 'fr' ? jobTitle?.titleFr : jobTitle?.titleEn,
-        'Time in the Position': result.timeInThePosition,
-      };
+      const rowData: { [key: string]: any } = {};
+      rowData[teamLabel] = locale === 'fr' ? team?.teamNameFr : team?.teamNameEn;
+      rowData[itLevelLabel] = jobTitle?.itLevel;
+      rowData[jobTitleLabel] = locale === 'fr' ? jobTitle?.titleFr : jobTitle?.titleEn;
+      rowData[timeInThePositionLabel] = this.getTimeInPositionText(locale, result.timeInThePosition);
 
       for (const sectionGroup of sectionGroups) {
         // section group title column
@@ -47,6 +55,15 @@ class ExportService {
       data.push(rowData);
     }
     return data;
+  }
+
+  private getTimeInPositionText(locale: string, value?: string) {
+    if (value) {
+      const item = allTimePositions.find((item) => item.value === value);
+      return locale === 'fr' ? item?.titleFr : item?.titleEn;
+    } else {
+      return undefined;
+    }
   }
 
   getSectionResults(locale: string, data: { [key: string]: any }, result: SurveyResult, section: Section) {

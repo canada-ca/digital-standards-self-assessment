@@ -56,7 +56,9 @@ class SurveyResultService {
   async findArchiveNames(): Promise<string[]> {
     try {
       await connectDB();
-      return await SurveyResultModel.distinct<string>('archive');
+      const data = await SurveyResultModel.find({ archive: { $ne: 'current' } }).distinct<string>('archive');
+      data.unshift('current');
+      return data;
     } catch (err) {
       if (err instanceof MongoServerError) {
         throw { ...err, message: err.message };
@@ -66,7 +68,7 @@ class SurveyResultService {
     }
   }
 
-  async findArchived(archiveName: string): Promise<SurveyResultDocument[]> {
+  async findByArchiveName(archiveName: string): Promise<SurveyResultDocument[]> {
     try {
       await connectDB();
       const surveyResults = await SurveyResultModel.find({ archive: archiveName })

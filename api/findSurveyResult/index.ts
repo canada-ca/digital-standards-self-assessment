@@ -71,6 +71,22 @@ const httpTrigger: AzureFunction = async function (context: Context, req: HttpRe
             },
           };
         }
+      } else if (!!req.query.archiveName) {
+        const archiveName = req.query.archiveName;
+        const results = await surveyResultService.findByArchiveName(archiveName);
+        if (results && results.length > 0) {
+          context.res = {
+            // status: 200, /* Defaults to 200 */
+            body: results,
+          };
+        } else {
+          context.res = {
+            status: 404,
+            body: {
+              message: 'Survey Result not found',
+            },
+          };
+        }
       } else {
         context.res = {
           status: 400,

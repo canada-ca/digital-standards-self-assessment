@@ -68,7 +68,12 @@
     "uploadSurvey": "Upload Survey",
     "downloadSurvey": "Download Full Survey",
     "inputFileName": "Please enter a file name",
-    "downloadTitle": "Download Survey"
+    "downloadTitle": "Download Survey",
+    "archiveName": "Archive Name:",
+    "yourTeam": "Department: ",
+    "itLevel": "IT Level: ",
+    "jobTitle": "Job Title: ",
+    "timeInThePosition": "Time in The Position"
   },
   "validation": {
     "file": {

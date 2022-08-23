@@ -13,6 +13,7 @@ import exportService from '@/services/export.service';
 
 import surveyJSON from './mock/survey.json';
 import sectionGroups from './mock/section-groups.json';
+import VueI18n, { IVueI18n } from 'vue-i18n';
 
 describe('ExportService', () => {
   beforeEach(() => {
@@ -264,16 +265,46 @@ describe('ExportService', () => {
         userId: 'userId',
         team,
         survey: '',
-        timeInThePosition: '10',
+        jobTitle: {
+          gcitCode: 'GCIT040011',
+          itLevel: 'IT-04',
+          titleEn: 'IT Senior Advisor, IT Software Solutions',
+          titleFr: 'Conseiller(-ère) principal(e) de la TI, Solutions logicielles de la TI',
+          shortTitleEn: 'IT Senior Advisor, SS',
+          shortTitleFr: 'Conseiller principal TI, SL',
+        },
+        timeInThePosition: 'lessThanAYear',
       },
     ];
 
-    const data = exportService.convertToDataArray('en', sectionGroups, surveyJSON as Survey, results);
+    const i18n = {} as VueI18n & IVueI18n;
+    i18n.t = (key: string) => {
+      let result = '';
+      switch (key) {
+        case 'downloadUploadSurvey.team':
+          result = 'Department';
+          break;
+        case 'downloadUploadSurvey.itLevel':
+          result = 'IT Level';
+          break;
+        case 'downloadUploadSurvey.jobTitle':
+          result = 'Job Title';
+          break;
+        case 'downloadUploadSurvey.timeInThePosition':
+          result = 'Time in the position';
+          break;
+      }
+      return result;
+    };
+
+    const data = exportService.convertToDataArray(i18n, sectionGroups, surveyJSON as Survey, results);
 
     expect(data).toEqual([
       {
-        'Your Department': 'Team1',
-        'Time in the Position': '10',
+        Department: 'Team1',
+        'Time in the position': 'Less than a year',
+        'IT Level': 'IT-04',
+        'Job Title': 'IT Senior Advisor, IT Software Solutions',
         'Group 1': '',
         'Section A1': '',
         'Question 1': 'Always',
