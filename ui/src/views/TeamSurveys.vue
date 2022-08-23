@@ -3,7 +3,6 @@
     <h1>
       {{ $t('teamResults.title') }}
     </h1>
-    <p v-if="!hasReportData">{{ $t('teamResults.description') }}</p>
     <p>
       <retrieve-team-surveys @loadTeamReportData="addTeamReportData" />
     </p>

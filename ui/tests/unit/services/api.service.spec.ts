@@ -58,10 +58,50 @@ describe('ApiService', () => {
       config: {},
     };
     mockedAxios.get.mockResolvedValueOnce(mockedResponse);
-    const startDate = '2022-04-01';
-    const endDate = '2022-04-30';
-    const result = await apiService.findSurveyResultsByDate(startDate, endDate);
-    expect(axios.get).toHaveBeenLastCalledWith('/survey-result?startDate=2022-04-01&endDate=2022-04-30', option);
+    const result = await apiService.findAllSurveyResults();
+    expect(axios.get).toHaveBeenLastCalledWith('/survey-result', option);
+    expect(result).toEqual([{}]);
+  });
+
+  it('findSurveyResultsByUserId', async () => {
+    const mockedResponse: AxiosResponse = {
+      data: [{}],
+      status: 200,
+      statusText: 'OK',
+      headers: {},
+      config: {},
+    };
+    mockedAxios.get.mockResolvedValueOnce(mockedResponse);
+    const result = await apiService.findSurveyResultsByUserId('userId');
+    expect(axios.get).toHaveBeenLastCalledWith('/survey-result?userId=userId', option);
+    expect(result).toEqual([{}]);
+  });
+
+  it('findArchivedSurveyResults', async () => {
+    const mockedResponse: AxiosResponse = {
+      data: [{}],
+      status: 200,
+      statusText: 'OK',
+      headers: {},
+      config: {},
+    };
+    mockedAxios.get.mockResolvedValueOnce(mockedResponse);
+    const result = await apiService.findArchivedSurveyResults('archive1');
+    expect(axios.get).toHaveBeenLastCalledWith('/survey-result?archiveName=archive1', option);
+    expect(result).toEqual([{}]);
+  });
+
+  it('findSectionGroups', async () => {
+    const mockedResponse: AxiosResponse = {
+      data: [{}],
+      status: 200,
+      statusText: 'OK',
+      headers: {},
+      config: {},
+    };
+    mockedAxios.get.mockResolvedValueOnce(mockedResponse);
+    const result = await apiService.findSectionGroups();
+    expect(axios.get).toHaveBeenLastCalledWith('/section-group', option);
     expect(result).toEqual([{}]);
   });
 

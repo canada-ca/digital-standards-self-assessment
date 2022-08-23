@@ -59,9 +59,8 @@
           v-if="collectJobTitle"
           @change="setTimeInThePosition"
           :value="timeInThePosition"
+          :options="allTimeInPositions"
         >
-          <option value="$t('navigation.lessThanAYear')">{{ $t('navigation.lessThanAYear') }}</option>
-          <option value="$t('navigation.oneYearOrMore')">{{ $t('navigation.oneYearOrMore') }}</option>
         </b-form-select>
       </div>
     </b-collapse>
@@ -78,6 +77,8 @@ import apiService from '@/services/api.service';
 import { JobTitle, Team } from '@/interfaces/api-models';
 import { ItLevels } from '@/interfaces/ITLevels';
 import { getCookie, setCookie } from 'typescript-cookie';
+import { allTimePositions } from '@/interfaces/TimeInPosition';
+import { time } from 'echarts';
 
 @Component({
   components: {
@@ -93,6 +94,7 @@ export default class NavBar extends Vue {
   itLevel? = '';
   allItLevels = ItLevels.map((v) => ({ value: v, text: v }));
   jobTitles: JobTitle[] = [];
+  allTimeInPositions: Array<{ value: string; text: string }> = [];
   jobTitleOptions: Array<{ value: string; text: string }> = [];
 
   async created() {
@@ -105,7 +107,7 @@ export default class NavBar extends Vue {
     this.teams = await apiService.findAllTeams();
     this.jobTitles = await apiService.findAllJobTitles();
     this.itLevel = this.profile?.jobTitle?.itLevel;
-    this.getJobTitleOptions();
+    this.handleOptions();
   }
 
   get collectEmail(): boolean {
@@ -127,12 +129,21 @@ export default class NavBar extends Vue {
   }
 
   @Watch('$i18n.locale')
-  getJobTitleOptions() {
+  handleOptions() {
+    // Job titles
     this.jobTitleOptions = this.jobTitles
       .filter((v) => v.itLevel === this.itLevel)
       .map((v) => ({ value: v.gcitCode, text: this.$i18n.locale === 'en' ? v.shortTitleEn : v.shortTitleFr }));
-    const result = this.jobTitleOptions.find((v) => v.value === this.profile?.jobTitle?.gcitCode);
-    this.profile?.jobTitle == result;
+    const jobTitle = this.jobTitleOptions.find((v) => v.value === this.profile?.jobTitle?.gcitCode);
+    this.profile?.jobTitle == jobTitle;
+
+    // Time in the positions
+    this.allTimeInPositions = allTimePositions.map((v) => ({
+      value: v.value,
+      text: this.$i18n.locale === 'fr' ? v.titleFr : v.titleEn,
+    }));
+    const timeInPosition = this.allTimeInPositions.find((v) => v.value === this.profile?.timeInPosition);
+    this.profile?.timeInPosition == timeInPosition;
   }
 
   @Watch('$store.getters.returnShowProfile')
@@ -197,7 +208,7 @@ export default class NavBar extends Vue {
 
   setItLevel(itLevel: string) {
     this.itLevel = itLevel;
-    this.getJobTitleOptions();
+    this.handleOptions();
     this.profile = { ...this.profile, jobTitle: undefined };
     this.$store.dispatch(ActionTypes.SaveProfile, this.profile);
   }

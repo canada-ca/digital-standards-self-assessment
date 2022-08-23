@@ -68,7 +68,12 @@
     "uploadSurvey": "Téléverser le sondage",
     "downloadSurvey": "Télécharger le sondage complet",
     "inputFileName": "Veuillez saisir un nom de fichier",
-    "downloadTitle": "Télécharger le sondage"
+    "downloadTitle": "Télécharger le sondage",
+    "archiveName": "Archive Name(FR)",
+    "yourTeam": "Département",
+    "itLevel": "Niveau en TI",
+    "jobTitle": "Titre du poste",
+    "timeInThePosition": "Durée dans le poste"
   },
   "validation": {
     "file": {
@@ -80,7 +85,7 @@
       "required": "Veuillez saisir un nom de fichier"
     },
     "email": {
-      "invalid": "Invalid email address(FR)"
+      "invalid": "Adresse courriel invalide"
     }
   },
   "showHideLink": {
@@ -101,12 +106,12 @@
     "sectionResultsTitle": "Résultats pour la section",
     "pleaseFinishAllQuestions": "Veuillez répondre à toutes les questions.",
     "noProgress": "L'auto-évaluation DevOps n'a pas encore commencée. Veuillez choisir une section à compléter.",
-    "submittingMultipleTimesIsNotAllowed": "You can submit your answers only once.(FR)"
+    "submittingMultipleTimesIsNotAllowed": "Vous pouvez envoyer vos réponses une seule fois."
   },
   "teamResults": {
     "title": "Aperçu des résultats de l'équipe",
-    "startDate": "Start Date:(FR)",
-    "endDate": "End Date:(FR)",
+    "startDate": "Date de début",
+    "endDate": "Date de fin",
     "description": "Les résultats s'afficheront ci-dessous une fois que vous aurez trouvé un ou plusieurs sondages.",
     "calcResults": "Calculer les résultats",
     "teamName": "Nom de l'équipe",
@@ -114,8 +119,11 @@
     "showIndividualBreakdown": "Cliquez pour afficher la répartition individuelle.",
     "hideIndividualBreakdown": "Masquer la répartition individuelle.",
     "actions": "Actions",
-    "submitSuccess": "Submit successfully!(FR)",
-    "submitFailed": "Submit failed, please try again later.(FR)",
+    "submitSuccess": "Envoi réussi",
+    "submitFailed": "Échec de l’envoi, veuillez réessayer plus tard.",
     "deleteTeam": "Cliquez pour supprimer cette équipe"
+  },
+  "exportExcel": {
+    "title": "Export Result to Excel(FR)"
   }
 }

@@ -1,32 +1,12 @@
 <template>
   <div>
     <div class="row">
-      <div class="col date-range">
-        <div class="form-group">
-          <label for="startDate">{{ $t('teamResults.startDate') }}</label>
-          <b-form-datepicker
-            id="startDate"
-            v-model="startDate"
-            :locale="locale"
-            v-bind="labels[locale] || {}"
-            :date-format-options="{ year: 'numeric', month: 'short', day: '2-digit' }"
-          />
-        </div>
-        <div class="form-group">
-          <label for="endDate">{{ $t('teamResults.endDate') }}</label>
-          <b-form-datepicker
-            id="endDate"
-            v-model="endDate"
-            :locale="locale"
-            v-bind="labels[locale] || {}"
-            :date-format-options="{ year: 'numeric', month: 'short', day: '2-digit' }"
-          />
-        </div>
-        <div class="form-group">
-          <b-button class="btn btn-primary minwidth-100" @click="retrieveTeamResults()">{{
-            $t('buttons.OK')
-          }}</b-button>
-        </div>
+      <div class="col form-inline">
+        <label class="archive-name-label mr-sm-4">{{ $t('downloadUploadSurvey.archiveName') }}</label>
+        <b-form-select v-model="archiveName" :options="archiveNames" class="form-control mr-sm-4"></b-form-select>
+        <b-button class="btn btn-primary minwidth-100 mr-sm-4" @click="retrieveTeamResults()">{{
+          $t('buttons.OK')
+        }}</b-button>
       </div>
     </div>
   </div>
@@ -34,37 +14,21 @@
 
 <script lang="ts">
 import { SurveyResult, Team } from '@/interfaces/api-models';
-import { ErrorMessage } from '@/interfaces/ErrorMessage';
 import apiService from '@/services/api.service';
 import { SectionReportData, TeamReportData, TeamReportDataBundle, UserReportData } from '@/store/state';
 import { calcScore, calcSectionMaxScore } from '@/utils/utils';
-import moment from 'moment';
 import { Model } from 'survey-vue';
 import { Component, Vue } from 'vue-property-decorator';
 
 @Component({})
 export default class RetrieveTeamSurveys extends Vue {
-  errorMessages: Array<ErrorMessage> = [];
-  startDate?: Date = moment().startOf('months').toDate();
-  endDate?: Date = moment().endOf('months').toDate();
-  labels = {
-    fr: {
-      weekdayHeaderFormat: 'narrow',
-      labelPrevDecade: 'Décennie précédente',
-      labelPrevYear: 'Année précédente',
-      labelPrevMonth: 'Le mois précédent',
-      labelCurrentMonth: 'Mois en cours',
-      labelNextMonth: 'Le mois prochain',
-      labelNextYear: "L'année prochaine",
-      labelNextDecade: 'La prochaine décennie',
-      labelToday: "Aujourd'hui",
-      labelSelected: 'Date sélectionnée',
-      labelNoDateSelected: 'Date non sélectionnée',
-      labelCalendar: 'Calendrier',
-      labelNav: 'La navigation',
-      labelHelp: 'Utilisez les touches du curseur pour parcourir les dates du calendrier',
-    },
-  };
+  archiveName: string = 'current';
+  archiveNames: string[] = [];
+
+  async created() {
+    this.archiveName = 'current';
+    this.archiveNames = await apiService.findSurveyResultArchiveNames();
+  }
 
   get locale() {
     return this.$i18n.locale;
@@ -79,15 +43,7 @@ export default class RetrieveTeamSurveys extends Vue {
   async retrieveTeamResults() {
     this.cleanData();
     try {
-      if (!this.startDate || !this.endDate) {
-        this.errorMessages.push({
-          message: 'validation.teamResult.date',
-        });
-        return;
-      }
-      const strStartDate = moment(this.startDate).format('YYYY-MM-DD');
-      const strEndDate = moment(this.endDate).format('YYYY-MM-DD');
-      const surveyResults = await apiService.findSurveyResultsByDate(strStartDate, strEndDate);
+      const surveyResults = await apiService.findArchivedSurveyResults(this.archiveName);
       this.calculateResults(surveyResults);
       this.$emit('loadTeamReportData', [...this.teamReportDataBundles.values()]);
     } catch (err) {
@@ -96,7 +52,6 @@ export default class RetrieveTeamSurveys extends Vue {
   }
 
   private cleanData() {
-    this.errorMessages = [];
     this.teamReportDataBundles = new Map();
   }
 
@@ -202,19 +157,15 @@ export default class RetrieveTeamSurveys extends Vue {
       }
     }
   }
-
-  hasError() {
-    return this.errorMessages.length > 0;
-  }
 }
 </script>
 
 <style>
 .date-range {
   display: grid;
-  grid-template-columns: 40% 40% 20%;
+  grid-template-columns: auto auto auto;
   grid-column-gap: 20px;
-  align-items: end;
+  align-items: flex-end;
 }
 
 .b-form-btn-label-control.dropdown.b-form-datepicker.form-control.show {
