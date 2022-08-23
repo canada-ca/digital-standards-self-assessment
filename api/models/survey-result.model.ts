@@ -3,6 +3,7 @@ import jobTitleModel, { JobTitle } from './job-title.model';
 import surveyModel, { Survey } from './survey.model';
 import teamModel, { Team } from './team.model';
 export interface SurveyResult {
+  archive: string;
   answers: { [key: string]: any };
   userId: string; // either email or a random string
   jobTitle: string | Types.ObjectId | JobTitle;
@@ -17,6 +18,9 @@ export interface SurveyResultModel extends Model<SurveyResultDocument> {}
 
 const surveyResultSchema = new Schema<SurveyResultDocument, SurveyResultModel>(
   {
+    archive: {
+      type: String,
+    },
     answers: {
       type: Map,
       of: String,
