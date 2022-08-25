@@ -3,7 +3,8 @@ import * as documentdb from "@pulumi/azure-native/documentdb";
 import { resourceGroup } from "./resourcegroup";
 import { Output } from "@pulumi/pulumi";
 const env = process.env.ENV_NAME
-export const dbAccount = new documentdb.DatabaseAccount(`${env}-dssa-dbacct-`, {
+const project = process.env.PROJECT_NAME
+export const dbAccount = new documentdb.DatabaseAccount(`${env}-${project}-dbacct-`, {
   kind: "MongoDB",
   location: resourceGroup.location,
   databaseAccountOfferType: "Standard",

@@ -7,16 +7,17 @@ import * as pulumi from "@pulumi/pulumi";
 
 
 const env = process.env.ENV_NAME
+const project = process.env.PROJECT_NAME
 
 
-export const newAzStorage = new storage.StorageAccount(`${env}dssastacct`, {
+export const newAzStorage = new storage.StorageAccount(`${env}${project}stacct`, {
   resourceGroupName: resourceGroup.name,
   sku: { name: storage.SkuName.Standard_LRS },
   kind: storage.Kind.StorageV2,
   enableHttpsTrafficOnly: true,
 });
 export const newStorageContainer = new storage.StorageAccountStaticWebsite(
-  `${env}-dssa-static-container`,
+  `${env}-${project}-static-container`,
   {
     accountName: newAzStorage.name,
     resourceGroupName: resourceGroup.name,

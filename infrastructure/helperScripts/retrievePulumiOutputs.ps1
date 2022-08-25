@@ -22,22 +22,22 @@ pulumi stack select $env:ENV_NAME
 We grab the outputs from the stack and then pass that variable into the pipeline variable command
 #>
 $faName = pulumi stack output -s $env:ENV_NAME faName
-$dssaStorageAccount = pulumi stack output -s $env:ENV_NAME storageAccountName
-$dssaRgName = pulumi stack output -s $env:ENV_NAME resourceGroupName
-$dssaAPIGW = pulumi stack output -s $env:ENV_NAME apimGWURL
-$dssaAPIGWName = pulumi stack output -s $env:ENV_NAME apimName
+$projectStorageAccount = pulumi stack output -s $env:ENV_NAME storageAccountName
+$projectRgName = pulumi stack output -s $env:ENV_NAME resourceGroupName
+$projectAPIGW = pulumi stack output -s $env:ENV_NAME apimGWURL
+$projectAPIGWName = pulumi stack output -s $env:ENV_NAME apimName
 
-$dssaSaKey = pulumi stack output -s $env:ENV_NAME saKey
-$dssadbString = pulumi stack output -s $env:ENV_NAME cosmosDB
-$dssaStaticURL = pulumi stack output -s $env:ENV_NAME staticURL
+$projectSaKey = pulumi stack output -s $env:ENV_NAME saKey
+$projectdbString = pulumi stack output -s $env:ENV_NAME cosmosDB
+$projectStaticURL = pulumi stack output -s $env:ENV_NAME staticURL
 
 
 Write-Host "##vso[task.setvariable variable=faName;isOutput=true]$faName"
-Write-Host "##vso[task.setvariable variable=dssaSA;isOutput=true]$dssaStorageAccount"
-Write-Host "##vso[task.setvariable variable=dssaRG;isOutput=true]$dssaRgName"
-Write-Host "##vso[task.setvariable variable=dssaAPIGW;isOutput=true]$dssaAPIGW"
-Write-Host "##vso[task.setvariable variable=dssaAPIGWName;isOutput=true]$dssaAPIGWName"
+Write-Host "##vso[task.setvariable variable=projectSA;isOutput=true]$projectStorageAccount"
+Write-Host "##vso[task.setvariable variable=projectRG;isOutput=true]$projectRgName"
+Write-Host "##vso[task.setvariable variable=projectAPIGW;isOutput=true]$projectAPIGW"
+Write-Host "##vso[task.setvariable variable=projectAPIGWName;isOutput=true]$projectAPIGWName"
 
-Write-Host "##vso[task.setvariable variable=dssaSaKey;isOutput=true]$dssaSaKey"
-Write-Host "##vso[task.setvariable variable=dssaDBString;isOutput=true]$dssadbString"
-Write-Host "##vso[task.setvariable variable=dssaStaticURL;isOutput=true]$dssaStaticURL"
+Write-Host "##vso[task.setvariable variable=projectSaKey;isOutput=true]$projectSaKey"
+Write-Host "##vso[task.setvariable variable=projectDBString;isOutput=true]$projectdbString"
+Write-Host "##vso[task.setvariable variable=projectStaticURL;isOutput=true]$projectStaticURL"

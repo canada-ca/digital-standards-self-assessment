@@ -2,6 +2,7 @@ import * as web from "@pulumi/azure-native/web";
 import { Output } from "@pulumi/pulumi";
 import * as pulumi from "@pulumi/pulumi";
 const env = process.env.ENV_NAME
+const project = process.env.PROJET_NAME
 //Build app service plan and deploy a function app to the account
 
 export const newAppPlan = ({
@@ -9,7 +10,7 @@ export const newAppPlan = ({
 }: {
   resourceGroup: Output<string>;
 }) => {
-  const plan = new web.AppServicePlan(`${env}-dssa-asp-`, {
+  const plan = new web.AppServicePlan(`${env}-${project}-asp-`, {
     resourceGroupName: resourceGroup,
     sku: { name: "Y1", tier: "Dynamic" },
   });
@@ -39,7 +40,7 @@ export const functionApp = ({
   corsURLs: Output<string>[];
   primaryConnectionString: Output<string>;
 }) => {
-  const newFa = new web.WebApp(`${env}-dssa-fa-`, {
+  const newFa = new web.WebApp(`${env}-${project}-fa-`, {
     resourceGroupName: resourceGroup,
     serverFarmId: plan,
     kind: "functionapp",
@@ -73,7 +74,7 @@ export const addSlotConfig = (
   rgName: Output<string>,
   appName: Output<string>
 ) => {
-  const webSlot = new web.WebAppSlotConfigurationNames(`${env}-dssa-wascn`, {
+  const webSlot = new web.WebAppSlotConfigurationNames(`${env}-${project}-wascn`, {
     name: appName,
     resourceGroupName: rgName,
     appSettingNames: [

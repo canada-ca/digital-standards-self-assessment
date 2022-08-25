@@ -11,6 +11,13 @@ $location="canadacentral"
 $env:RG_NAME="$(az group list -o tsv --query "[] | [? contains(name, 'pulumi-')] | [0].name")"
 if($env:RG_NAME.length -eq 0){$env:RG_NAME="gc-rg-pulumi-$random"}
 
+<#
+Because Pulumi doesn't append a random character sequence for API Management resources, we will find
+out if the resource exists in the environments resource group
+#>
+
+$group = az group list -o tsv --query "[] | [? contains (name, '${env:ENV_NAME}-${env:PROJECT_NAME}')] | [0].name"
+$env:APIM_NAME = az apim list -g $group -o tsv --query "[] | [? contains (name, '${env:ENV_NAME}-${env:PROJECT_NAME}')] | [0].name"
 
 
 function setResources{
@@ -45,7 +52,7 @@ if("true" -eq (az group exists -n $env:RG_NAME)){
     }else{
        
         az group create -n $env:RG_NAME -l $location
-        az storage account create -g $env:RG_NAME -n "sadssapulumistate$random" -l $location --sku Standard_LRS
+        az storage account create -g $env:RG_NAME -n "sa${env:PROJECT_NAME}pulumistate${random}" -l $location --sku Standard_LRS
         
         setResources
         setPulumiBackend
@@ -58,3 +65,4 @@ call our self hosted stack in blob storage
 Write-Host "##vso[task.setvariable variable=saAccount;isOutput=true]$env:AZURE_STORAGE_ACCOUNT"
 Write-Host "##vso[task.setvariable variable=container;isOutput=true]$env:sContainerName"
 Write-Host "##vso[task.setvariable variable=storageKey;isOutput=true]$env:AZURE_STORAGE_KEY"
+Write-Host "##vso[task.setvariable variable=currentAPIM;isOutput=true]$env:APIM_NAME"

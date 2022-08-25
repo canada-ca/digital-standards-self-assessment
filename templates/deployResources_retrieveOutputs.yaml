@@ -3,60 +3,60 @@ parameters:
   beContainer: ""
   beStorageAccount: ""
   AzureSub: ""
-  
+  currentAPIM: ""
 
 steps:
-
   - checkout: self
-    
 
   - task: Npm@1
     inputs:
-      command: 'install'
-      workingDir: 'infrastructure'
+      command: "install"
+      workingDir: "infrastructure"
 
   - task: AzureCLI@2
     displayName: "Create State Stack"
     env:
-        ENV_NAME: $(ENV)
-        PULUMI_CONFIG_PASSPHRASE: $(pass)
-        AZURE_STORAGE_KEY: ${{ parameters.beStorageKey }}
-        AZURE_STORAGE_ACCOUNT: ${{ parameters.beStorageAccount }}
+      ENV_NAME: $(ENV)
+      PULUMI_CONFIG_PASSPHRASE: $(pass)
+      AZURE_STORAGE_KEY: ${{ parameters.beStorageKey }}
+      AZURE_STORAGE_ACCOUNT: ${{ parameters.beStorageAccount }}
+
     inputs:
       azureSubscription: ${{ parameters.AzureSub }}
-      scriptType: 'ps'
-      scriptLocation: 'scriptPath'
+      scriptType: "ps"
+      scriptLocation: "scriptPath"
       scriptPath: '$(Build.SourcesDirectory)\infrastructure\helperScripts\createStack.ps1'
       workingDirectory: '$(Build.SourcesDirectory)\infrastructure'
-
-
 
   - task: Pulumi@1
     displayName: "Pulumi Up"
     env:
-        ENV_NAME: $(ENV)
-        PULUMI_CONFIG_PASSPHRASE: $(pass)
-        AZURE_STORAGE_KEY: ${{ parameters.beStorageKey }}
-        AZURE_STORAGE_ACCOUNT: ${{ parameters.beStorageAccount }}
+      ENV_NAME: $(ENV)
+      PROJECT_NAME: $(project)
+      PULUMI_CONFIG_PASSPHRASE: $(pass)
+      AZURE_STORAGE_KEY: ${{ parameters.beStorageKey }}
+      AZURE_STORAGE_ACCOUNT: ${{ parameters.beStorageAccount }}
+      CURRENT_APIM: ${{ parameters.currentAPIM }}
     inputs:
       azureSubscription: ${{ parameters.AzureSub }}
-      command: 'up'
-      args: '-y -f --suppress-outputs'
-      loginArgs: 'azblob://${{ parameters.beContainer }}'
-      cwd: 'infrastructure'
-      stack: '$(ENV)'
-    
+      command: "up"
+      args: "-y -f --suppress-outputs"
+      loginArgs: "azblob://${{ parameters.beContainer }}"
+      cwd: "infrastructure"
+      stack: "$(ENV)"
+
   - task: AzureCLI@2
     displayName: "Retrieve new resource names"
     env:
-        ENV_NAME: $(ENV)
-        PULUMI_CONFIG_PASSPHRASE: $(pass)
-        AZURE_STORAGE_KEY: ${{ parameters.beStorageKey }}
-        AZURE_STORAGE_ACCOUNT: ${{ parameters.beStorageAccount }}
+      ENV_NAME: $(ENV)
+      ROJECT_NAME: $(project)
+      PULUMI_CONFIG_PASSPHRASE: $(pass)
+      AZURE_STORAGE_KEY: ${{ parameters.beStorageKey }}
+      AZURE_STORAGE_ACCOUNT: ${{ parameters.beStorageAccount }}
     inputs:
       azureSubscription: ${{ parameters.AzureSub }}
-      scriptType: 'ps'
-      scriptLocation: 'scriptPath'
+      scriptType: "ps"
+      scriptLocation: "scriptPath"
       scriptPath: '$(Build.SourcesDirectory)\infrastructure\helperScripts\retrievePulumiOutputs.ps1'
       workingDirectory: '$(Build.SourcesDirectory)\infrastructure'
     name: pulumiOutputs
