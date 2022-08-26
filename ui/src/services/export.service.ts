@@ -24,7 +24,8 @@ class ExportService {
   ): Array<{ [key: string]: any }> {
     const locale = $i18n.locale;
     const data: Array<{ [key: string]: any }> = [];
-    const teamLabel = $i18n.t('downloadUploadSurvey.team') as string;
+    const submitTimeLabel = $i18n.t('downloadUploadSurvey.submitTime') as string;
+    const teamLabel = $i18n.t('downloadUploadSurvey.yourTeam') as string;
     const itLevelLabel = $i18n.t('downloadUploadSurvey.itLevel') as string;
     const jobTitleLabel = $i18n.t('downloadUploadSurvey.jobTitle') as string;
     const timeInThePositionLabel = $i18n.t('downloadUploadSurvey.timeInThePosition') as string;
@@ -33,6 +34,7 @@ class ExportService {
       const team: Team = result.team as Team;
       const jobTitle: JobTitle = result.jobTitle as JobTitle;
       const rowData: { [key: string]: any } = {};
+      rowData[submitTimeLabel] = result.createdAt ? new Date(result.createdAt).toLocaleString() : '';
       rowData[teamLabel] = locale === 'fr' ? team?.teamNameFr : team?.teamNameEn;
       rowData[itLevelLabel] = jobTitle?.itLevel;
       rowData[jobTitleLabel] = locale === 'fr' ? jobTitle?.titleFr : jobTitle?.titleEn;
@@ -74,20 +76,7 @@ class ExportService {
 
   getAnswer(locale: string, question: QuestionType, result: SurveyResult) {
     const value = result.answers[question.name];
-    if (!!value) {
-      if (question.type === 'rating') {
-        const answer = (question as RatingQuestion).rateValues.find((item) => item.value === value);
-        return this.translateText(locale, answer?.text);
-      } else if (question.type === 'radiogroup' || question.type === 'dropdown') {
-        const answer = (question as SingleSelectQuestion).choices.find((item) => item.value === value);
-        return this.translateText(locale, answer?.text);
-      } else if (question.type === 'checkbox') {
-        const filtered = (question as MultipleSelectQuestion).choices.filter(
-          (ch) => (value as any[]).indexOf(ch.value) > -1
-        );
-        return filtered.map((item) => this.translateText(locale, item.text));
-      }
-    }
+    return !!value ? (isNaN(value) ? value : Number(value)) : 0;
   }
 
   translateText(locale: string, text?: BilingualText): string {

@@ -42,7 +42,7 @@ export default class Questions extends Vue {
   survey: Model = new Model(this.$store.getters.returnSurveyJSON);
 
   get showScore() {
-    return process.env.VUE_APP_SHOW_SCORE;
+    return process.env.VUE_APP_SHOW_SCORE + '' === 'true';
   }
 
   goToSurvey() {

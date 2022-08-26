@@ -73,7 +73,8 @@
     "yourTeam": "Département",
     "itLevel": "Niveau en TI",
     "jobTitle": "Titre du poste",
-    "timeInThePosition": "Durée dans le poste"
+    "timeInThePosition": "Durée dans le poste",
+    "submitTime": "Submit Time(FR)"
   },
   "validation": {
     "file": {
@@ -124,6 +125,8 @@
     "deleteTeam": "Cliquez pour supprimer cette équipe"
   },
   "exportExcel": {
-    "title": "Export Result to Excel(FR)"
+    "title": "Export Result to Excel(FR)",
+    "dataNotFound": "No data was found.(FR)",
+    "submitTime": "Submit Time"
   }
 }
