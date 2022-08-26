@@ -88,8 +88,7 @@ export default class ExportExcel extends Vue {
       const data = exportService.convertToDataArray(this.$i18n, sectionGroups, surveyJSON, surveyResults);
       this.exportToExcel(this.fileName, data);
     } catch (error) {
-      console.log(error);
-      this.showMessage('teamResults.submitFailed', 'danger');
+      this.showMessage('exportExcel.dataNotFound', 'danger');
     }
   }
 

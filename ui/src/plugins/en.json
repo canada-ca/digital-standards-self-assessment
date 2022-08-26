@@ -69,11 +69,12 @@
     "downloadSurvey": "Download Full Survey",
     "inputFileName": "Please enter a file name",
     "downloadTitle": "Download Survey",
-    "archiveName": "Archive Name:",
-    "yourTeam": "Department: ",
-    "itLevel": "IT Level: ",
-    "jobTitle": "Job Title: ",
-    "timeInThePosition": "Time in The Position"
+    "archiveName": "Archive Name",
+    "yourTeam": "Department",
+    "itLevel": "IT Level",
+    "jobTitle": "Job Title",
+    "timeInThePosition": "Time in The Position",
+    "submitTime": "Submitted Time"
   },
   "validation": {
     "file": {
@@ -131,6 +132,7 @@
     "deleteTeam": "Click to delete this team"
   },
   "exportExcel": {
-    "title": "Export Result to Excel"
+    "title": "Export Result to Excel",
+    "dataNotFound": "No data was found."
   }
 }

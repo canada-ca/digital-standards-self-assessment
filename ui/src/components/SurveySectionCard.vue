@@ -47,7 +47,7 @@ export default class SurveySectionCard extends Vue {
   collapsed = true;
 
   get showScore() {
-    return process.env.VUE_APP_SHOW_SCORE;
+    return process.env.VUE_APP_SHOW_SCORE + '' === 'true';
   }
 
   toggleCollapsed() {
