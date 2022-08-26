@@ -126,7 +126,6 @@
   },
   "exportExcel": {
     "title": "Export Result to Excel(FR)",
-    "dataNotFound": "No data was found.(FR)",
-    "submitTime": "Submit Time"
+    "dataNotFound": "No data was found.(FR)"
   }
 }
