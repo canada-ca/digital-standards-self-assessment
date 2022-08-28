@@ -74,16 +74,12 @@
     "itLevel": "Niveau en TI",
     "jobTitle": "Titre du poste",
     "timeInThePosition": "Durée dans le poste",
-<<<<<<< HEAD
     "submitTime": "Submit Time(FR)",
     "inputArchiveName": "Veuillez saisir un nom de Archive(FR)",
     "archiveNameExists": "This archive name was alredy used, please change another one.(FR)",
     "archiveFailed": "Failed to archive, please try again later.(FR)",
     "archiveSucess": "Archive success(FR)",
     "noDataToArchive": "There is no data to archive(FR)"
-=======
-    "submitTime": "Submit Time(FR)"
->>>>>>> c96a79c29ed1611b35e08b0d0ade6e5f3c67ee18
   },
   "validation": {
     "file": {
