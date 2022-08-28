@@ -39,6 +39,11 @@ export default new Router({
       name: 'exportExcel',
       component: lazyLoad('ExportExcel'),
     },
+    {
+      path: '/archiveSurveyResults',
+      name: 'archiveSurveyResults',
+      component: lazyLoad('ArchiveSurveyResults'),
+    },
     { path: '*', name: 'notFound', component: Home },
   ],
 });
