@@ -190,7 +190,6 @@ export default class Survey extends Vue {
   private allQuestionAnswered() {
     for (const section of this.sections) {
       for (const question of section.questions) {
-        console.log(JSON.stringify(question));
         if (question.value === undefined) {
           return false;
         }

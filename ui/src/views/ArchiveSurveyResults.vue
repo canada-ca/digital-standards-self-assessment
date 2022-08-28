@@ -3,19 +3,16 @@
     <message ref="message" />
     <h1>{{ $t('exportExcel.title') }}</h1>
     <div class="field-section">
-      <label>{{ $t('downloadUploadSurvey.fileName') }}</label>
+      <label>{{ $t('downloadUploadSurvey.archiveName') }}</label>
       <b-form-input
-        id="fileNameInput"
-        ref="fileNameInput"
-        class="form-control file-name"
-        :class="{ 'is-invalid': hasError('fileName') }"
-        v-model="fileName"
-        :placeholder="$t('downloadUploadSurvey.inputFileName')"
+        id="archiveNameInput"
+        ref="archiveNameInput"
+        class="form-control archive-name"
+        :class="{ 'is-invalid': hasError('archiveName') }"
+        v-model="archiveName"
+        :placeholder="$t('downloadUploadSurvey.inputArchiveName')"
       />
-      <error-widget :fieldName="'fileName'" :errors="errors" />
-
-      <label class="archive-name-label">{{ $t('downloadUploadSurvey.archiveName') }}</label>
-      <b-form-select v-model="archiveName" :options="archiveNames" class="form-control"></b-form-select>
+      <error-widget :fieldName="'archiveName'" :errors="errors" />
     </div>
     <b-button class="btn btn-primary" style="width: 120px" @click="onOkClicked()">
       {{ $t('downloadUploadSurvey.OK') }}
@@ -25,21 +22,17 @@
 <script lang="ts">
 import ErrorWidget from '@/components/ErrorWidget.vue';
 import Message, { MessageVariantType } from '@/components/Message.vue';
-import { SectionGroup, SurveyResult } from '@/interfaces/api-models';
 import { Errors } from '@/interfaces/ErrorMessage';
 import apiService from '@/services/api.service';
-import exportService from '@/services/export.service';
+import { AxiosError } from 'axios';
 import Vue from 'vue';
 import Component from 'vue-class-component';
-import * as XLSX from 'xlsx';
 
 @Component({
   components: { ErrorWidget, Message },
 })
-export default class ExportExcel extends Vue {
-  fileName: string = '';
-  archiveName: string = 'current';
-  archiveNames: string[] = [];
+export default class ArchiveSurveyResults extends Vue {
+  archiveName: string = '';
   errors: Errors = { fieldErrors: [] };
 
   $refs!: {
@@ -53,9 +46,7 @@ export default class ExportExcel extends Vue {
   }
 
   async created() {
-    this.fileName = '';
-    this.archiveName = 'current';
-    this.archiveNames = await apiService.findSurveyResultArchiveNames();
+    this.archiveName = '';
   }
 
   validate(): boolean {
@@ -64,9 +55,18 @@ export default class ExportExcel extends Vue {
       globalErrors: [],
       fieldErrors: [],
     };
-    if (this.fileName.length == 0) {
+    if (this.archiveName.length == 0) {
       hasError = true;
-      this.errors.fieldErrors?.push({ fieldName: 'fileName', message: { message: 'validation.fileName.required' } });
+      this.errors.fieldErrors?.push({
+        fieldName: 'archiveName',
+        message: { message: 'validation.archiveName.required' },
+      });
+    } else if (this.archiveName === 'current') {
+      hasError = true;
+      this.errors.fieldErrors?.push({
+        fieldName: 'archiveName',
+        message: { message: 'validation.archiveName.canNotBeCurrent' },
+      });
     }
     return !hasError;
   }
@@ -82,24 +82,24 @@ export default class ExportExcel extends Vue {
       return;
     }
     try {
-      const surveyJSON: any = this.$store.state.surveyJSON;
-      const surveyResults: SurveyResult[] = await apiService.findArchivedSurveyResults(this.archiveName);
-      const sectionGroups: SectionGroup[] = this.$store.state.sectionGroups;
-      const data = exportService.convertToDataArray(this.$i18n, sectionGroups, surveyJSON, surveyResults);
-      this.exportToExcel(this.fileName, data);
+      const data = await apiService.archiveSurveyResults(this.archiveName);
+      this.showMessage('downloadUploadSurvey.archiveSucess', 'success');
     } catch (error) {
-      this.showMessage('exportExcel.dataNotFound', 'danger');
+      if (
+        error instanceof AxiosError &&
+        (error as AxiosError<{ message: string }>).response?.data.message ===
+          'This archive name was alredy used, please change another one.'
+      ) {
+        this.showMessage('downloadUploadSurvey.archiveNameExists', 'danger');
+      } else if (
+        error instanceof AxiosError &&
+        (error as AxiosError).message === 'Request failed with status code 404'
+      ) {
+        this.showMessage('downloadUploadSurvey.noDataToArchive', 'danger');
+      } else {
+        this.showMessage('downloadUploadSurvey.archiveFailed', 'danger');
+      }
     }
-  }
-
-  exportToExcel(fileName: string, data: Array<{ [key: string]: any }>) {
-    var ws = XLSX.utils.json_to_sheet(data);
-    var wb = XLSX.utils.book_new();
-
-    XLSX.utils.book_append_sheet(wb, ws, 'Answers');
-
-    // eslint-disable-next-line security/detect-non-literal-fs-filename
-    XLSX.writeFile(wb, fileName + '.xlsx'); // name of the file is 'book.xlsx'
   }
 }
 </script>
@@ -109,7 +109,7 @@ button {
   margin-top: 20px;
 }
 
-.file-name {
+.archive-name {
   z-index: 0;
 }
 
