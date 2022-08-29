@@ -2,7 +2,7 @@ import * as web from "@pulumi/azure-native/web";
 import { Output } from "@pulumi/pulumi";
 import * as pulumi from "@pulumi/pulumi";
 const env = process.env.ENV_NAME
-const project = process.env.PROJET_NAME
+const project = process.env.PROJECT_NAME
 //Build app service plan and deploy a function app to the account
 
 export const newAppPlan = ({

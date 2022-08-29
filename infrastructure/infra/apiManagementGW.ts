@@ -6,7 +6,7 @@ const project = process.env.PROJECT_NAME
 const random = Math.floor(Math.random() * 1000)
 let apimName = ""; 
 
-if(process.env.CURRENT_APIM == ""){
+if(!process.env.CURRENT_APIM){
     apimName = `${env}-${project}-apim-${random}`
 }else {
     apimName = process.env.CURRENT_APIM

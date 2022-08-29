@@ -32,12 +32,12 @@ $projectdbString = pulumi stack output -s $env:ENV_NAME cosmosDB
 $projectStaticURL = pulumi stack output -s $env:ENV_NAME staticURL
 
 
-Write-Host "##vso[task.setvariable variable=faName;isOutput=true]$faName"
-Write-Host "##vso[task.setvariable variable=projectSA;isOutput=true]$projectStorageAccount"
-Write-Host "##vso[task.setvariable variable=projectRG;isOutput=true]$projectRgName"
-Write-Host "##vso[task.setvariable variable=projectAPIGW;isOutput=true]$projectAPIGW"
-Write-Host "##vso[task.setvariable variable=projectAPIGWName;isOutput=true]$projectAPIGWName"
+Write-Host "##vso[task.setvariable variable=faName;isSecret=true;isOutput=true]$faName"
+Write-Host "##vso[task.setvariable variable=projectSA;isSecret=true;isOutput=true]$projectStorageAccount"
+Write-Host "##vso[task.setvariable variable=projectRG;isSecret=true;isOutput=true]$projectRgName"
+Write-Host "##vso[task.setvariable variable=projectAPIGW;isSecret=true;isOutput=true]$projectAPIGW"
+Write-Host "##vso[task.setvariable variable=projectAPIGWName;isSecret=true;isOutput=true]$projectAPIGWName"
 
-Write-Host "##vso[task.setvariable variable=projectSaKey;isOutput=true]$projectSaKey"
-Write-Host "##vso[task.setvariable variable=projectDBString;isOutput=true]$projectdbString"
+Write-Host "##vso[task.setvariable variable=projectSaKey;isSecret=true;isOutput=true]$projectSaKey"
+Write-Host "##vso[task.setvariable variable=projectDBString;isSecret=true;isOutput=true]$projectdbString"
 Write-Host "##vso[task.setvariable variable=projectStaticURL;isOutput=true]$projectStaticURL"

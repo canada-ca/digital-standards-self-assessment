@@ -1,12 +1,12 @@
 steps:
-        - task: Npm@1
-          displayName: Install API dependencies
-          inputs:
-            command: install
-            workingDir: '$(Build.SourcesDirectory)\api'
-        - task: Npm@1
-          displayName: Publish API
-          inputs:
-            command: custom
-            customCommand: run build
-            workingDir: '$(Build.SourcesDirectory)\api'
+  - task: Npm@1
+    displayName: Install API dependencies
+    inputs:
+      command: install
+      workingDir: "$(Build.SourcesDirectory)/api"
+  - task: Npm@1
+    displayName: Publish API
+    inputs:
+      command: custom
+      customCommand: run build
+      workingDir: "$(Build.SourcesDirectory)/api"

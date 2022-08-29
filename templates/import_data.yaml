@@ -1,14 +1,16 @@
 parameters:
   dbString: ""
+  projectName: ""
 
 steps:
   - task: PowerShell@2
     displayName: "Import Survey data"
     env:
       DB_CONNECTION_STRING: ${{ parameters.dbString }}
-    inputs: 
+      PROJECT_NAME: ${{ parameters.projectName }}
+    inputs:
       targetType: inline
       script: |
         npm install
         npm run up
-      workingDirectory: 'infrastructure/migration'
+      workingDirectory: "infrastructure/migration"

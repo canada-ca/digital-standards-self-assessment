@@ -3,6 +3,8 @@
 In this script we build the back end where the state referred to as stack will will be stored
 This script creates a new Resource group, storage account and keyvault with an encryption key
 #>
+Write-Host "name: $env:ENV-$env:PROJECT_NAME`nruntime: nodejs`ndescription: A full backend deployment for the ${env:PROJECT_NAME} project's ${env:ENV} environment" 
+Write-Output "name: $env:ENV-$env:PROJECT_NAME`nruntime: nodejs`ndescription: A full backend deployment for the ${env:PROJECT_NAME} project's ${env:ENV} environment" > Pulumi.yaml
 
 $env:PULUMI_SKIP_UPDATE_CHECK="true"
 
@@ -62,7 +64,7 @@ if("true" -eq (az group exists -n $env:RG_NAME)){
 Expose the Keyvault, Storage key and Storage account name to the pipeline so the infrastructure deployment can 
 call our self hosted stack in blob storage
 #>
-Write-Host "##vso[task.setvariable variable=saAccount;isOutput=true]$env:AZURE_STORAGE_ACCOUNT"
-Write-Host "##vso[task.setvariable variable=container;isOutput=true]$env:sContainerName"
-Write-Host "##vso[task.setvariable variable=storageKey;isOutput=true]$env:AZURE_STORAGE_KEY"
-Write-Host "##vso[task.setvariable variable=currentAPIM;isOutput=true]$env:APIM_NAME"
+Write-Host "##vso[task.setvariable variable=saAccount;isSecret=true;isOutput=true]$env:AZURE_STORAGE_ACCOUNT"
+Write-Host "##vso[task.setvariable variable=container;isSecret=true;isOutput=true]$env:sContainerName"
+Write-Host "##vso[task.setvariable variable=storageKey;isSecret=true;isOutput=true]$env:AZURE_STORAGE_KEY"
+Write-Host "##vso[task.setvariable variable=currentAPIM;isSecret=true;isOutput=true]$env:APIM_NAME"

@@ -2,8 +2,8 @@ parameters:
   beStorageKey: ""
   beContainer: ""
   beStorageAccount: ""
-  AzureSub: ""
-  currentAPIM: ""
+  azureSubscription: ""
+  existingAPIM: ""
 
 steps:
   - checkout: self
@@ -12,6 +12,11 @@ steps:
     inputs:
       command: "install"
       workingDir: "infrastructure"
+  - task: DownloadPipelineArtifact@2
+    inputs:
+      buildType: "current"
+      artifactName: "pulumifile"
+      targetPath: "$(Build.SourcesDirectory)/infrastructure"
 
   - task: AzureCLI@2
     displayName: "Create State Stack"
@@ -22,11 +27,11 @@ steps:
       AZURE_STORAGE_ACCOUNT: ${{ parameters.beStorageAccount }}
 
     inputs:
-      azureSubscription: ${{ parameters.AzureSub }}
+      azureSubscription: ${{ parameters.azureSubscription }}
       scriptType: "ps"
       scriptLocation: "scriptPath"
-      scriptPath: '$(Build.SourcesDirectory)\infrastructure\helperScripts\createStack.ps1'
-      workingDirectory: '$(Build.SourcesDirectory)\infrastructure'
+      scriptPath: "$(Build.SourcesDirectory)/infrastructure/helperScripts/createStack.ps1"
+      workingDirectory: "$(Build.SourcesDirectory)/infrastructure"
 
   - task: Pulumi@1
     displayName: "Pulumi Up"
@@ -36,9 +41,9 @@ steps:
       PULUMI_CONFIG_PASSPHRASE: $(pass)
       AZURE_STORAGE_KEY: ${{ parameters.beStorageKey }}
       AZURE_STORAGE_ACCOUNT: ${{ parameters.beStorageAccount }}
-      CURRENT_APIM: ${{ parameters.currentAPIM }}
+      CURRENT_APIM: ${{ parameters.existingAPIM }}
     inputs:
-      azureSubscription: ${{ parameters.AzureSub }}
+      azureSubscription: ${{ parameters.azureSubscription }}
       command: "up"
       args: "-y -f --suppress-outputs"
       loginArgs: "azblob://${{ parameters.beContainer }}"
@@ -54,9 +59,9 @@ steps:
       AZURE_STORAGE_KEY: ${{ parameters.beStorageKey }}
       AZURE_STORAGE_ACCOUNT: ${{ parameters.beStorageAccount }}
     inputs:
-      azureSubscription: ${{ parameters.AzureSub }}
+      azureSubscription: ${{ parameters.azureSubscription }}
       scriptType: "ps"
       scriptLocation: "scriptPath"
-      scriptPath: '$(Build.SourcesDirectory)\infrastructure\helperScripts\retrievePulumiOutputs.ps1'
-      workingDirectory: '$(Build.SourcesDirectory)\infrastructure'
+      scriptPath: "$(Build.SourcesDirectory)/infrastructure/helperScripts/retrievePulumiOutputs.ps1"
+      workingDirectory: "$(Build.SourcesDirectory)/infrastructure"
     name: pulumiOutputs
