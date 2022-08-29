@@ -4,11 +4,12 @@
 # pass (this can be a secret value)
 # project: Name of the project
 
-trigger: none
+trigger:
+  - main
 pool:
-  name: SelfPool
+  vmImage: windows-latest
 variables:
-  AzureSub: "Azure subscription 1 (1ff6c602-69fe-454f-a795-de22a178a6c0)"
+  AzureSub: "cipher-docio-svc-connection-devops"
 stages:
   - stage: "Pulumi"
     variables:
