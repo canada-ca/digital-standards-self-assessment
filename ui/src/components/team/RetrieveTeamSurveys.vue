@@ -1,5 +1,6 @@
 <template>
   <div>
+    <message ref="message" />
     <div class="row">
       <div class="col form-inline">
         <label class="archive-name-label mr-sm-4">{{ $t('downloadUploadSurvey.archiveName') }}</label>
@@ -19,11 +20,18 @@ import { SectionReportData, TeamReportData, TeamReportDataBundle, UserReportData
 import { calcScore, calcSectionMaxScore } from '@/utils/utils';
 import { Model } from 'survey-vue';
 import { Component, Vue } from 'vue-property-decorator';
+import Message, { MessageVariantType } from '../Message.vue';
 
-@Component({})
+@Component({
+  components: { Message },
+})
 export default class RetrieveTeamSurveys extends Vue {
   archiveName: string = 'current';
   archiveNames: string[] = [];
+
+  $refs!: {
+    message: Message;
+  };
 
   async created() {
     this.archiveName = 'current';
@@ -40,6 +48,12 @@ export default class RetrieveTeamSurveys extends Vue {
   // The key is teamId
   teamReportDataBundles: Map<string, TeamReportDataBundle> = new Map();
 
+  showMessage(messageKey: string, variant: MessageVariantType = 'primary') {
+    this.$refs.message.showMessage(messageKey, variant);
+    const top = document.getElementById('def-top')?.offsetTop;
+    window.scrollTo(0, top || 0);
+  }
+
   async retrieveTeamResults() {
     this.cleanData();
     try {
@@ -47,6 +61,7 @@ export default class RetrieveTeamSurveys extends Vue {
       this.calculateResults(surveyResults);
       this.$emit('loadTeamReportData', [...this.teamReportDataBundles.values()]);
     } catch (err) {
+      this.showMessage('exportExcel.dataNotFound', 'danger');
       this.$emit('loadTeamReportData', []);
     }
   }

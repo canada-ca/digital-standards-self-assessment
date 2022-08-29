@@ -44,6 +44,15 @@ class ApiService {
     return res.data;
   }
 
+  async archiveSurveyResults(archiveName: string): Promise<{ message: string }> {
+    const res: AxiosResponse<{ message: string }> = await axios.post<{ message: string }>(
+      `${this.apiBaseUrl}/survey-result/archive`,
+      { archiveName },
+      option
+    );
+    return res.data;
+  }
+
   async findArchivedSurveyResults(archiveName: string): Promise<SurveyResult[]> {
     const res: AxiosResponse<SurveyResult[]> = await axios.get<SurveyResult[]>(
       `${this.apiBaseUrl}/survey-result?archiveName=${archiveName}`,

@@ -73,7 +73,13 @@
     "yourTeam": "Département",
     "itLevel": "Niveau en TI",
     "jobTitle": "Titre du poste",
-    "timeInThePosition": "Durée dans le poste"
+    "timeInThePosition": "Durée dans le poste",
+    "submitTime": "Submit Time(FR)",
+    "inputArchiveName": "Veuillez saisir un nom de Archive(FR)",
+    "archiveNameExists": "This archive name was alredy used, please change another one.(FR)",
+    "archiveFailed": "Failed to archive, please try again later.(FR)",
+    "archiveSucess": "Archive success(FR)",
+    "noDataToArchive": "There is no data to archive(FR)"
   },
   "validation": {
     "file": {
@@ -86,6 +92,10 @@
     },
     "email": {
       "invalid": "Adresse courriel invalide"
+    },
+    "archiveName": {
+      "required": "Veuillez saisir un nom de archive(FR)",
+      "canNotBeCurrent": "Archive name can not be \"current\"(FR)"
     }
   },
   "showHideLink": {
@@ -124,6 +134,7 @@
     "deleteTeam": "Cliquez pour supprimer cette équipe"
   },
   "exportExcel": {
-    "title": "Export Result to Excel(FR)"
+    "title": "Export Result to Excel(FR)",
+    "dataNotFound": "No data was found.(FR)"
   }
 }

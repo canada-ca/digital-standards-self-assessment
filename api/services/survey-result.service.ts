@@ -168,7 +168,7 @@ class SurveyResultService {
       }
       const count = await SurveyResultModel.find({ archive: archiveName }).count();
       if (count > 0) {
-        throw { message: `Archive name "${archiveName}" was alredy used, please change another one.` };
+        throw { message: 'This archive name was alredy used, please change another one.' };
       }
       const result = await SurveyResultModel.updateMany(
         { archive: { $eq: 'current' } },
