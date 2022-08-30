@@ -1,14 +1,14 @@
 parameters:
   staticURL: ""
-  AzureSub: ""
+  azureSubscription: ""
 
 steps:
   - task: AzureCLI@2
     displayName: Display URL
     inputs:
-      azureSubscription: ${{ parameters.AzureSub }}
-      scriptType: 'ps'
-      scriptLocation: 'inlineScript'
+      azureSubscription: ${{ parameters.azureSubscription }}
+      scriptType: "ps"
+      scriptLocation: "inlineScript"
       inlineScript: |
         Write-Host "Deployment succeeded you can access your website at this url: ${{ parameters.staticURL }}"
-                  
+
