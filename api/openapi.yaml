@@ -83,42 +83,6 @@ paths:
                 properties:
                   message:
                     type: string
-    put:
-      tags:
-        - Survey
-      operationId: updateSurvey
-      summary: Update survey
-      parameters:
-        - in: path
-          name: id
-          description: Survey ID
-          required: true
-          schema:
-            type: string
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Survey'
-      responses:
-        '200':
-          description: 200 response
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  message:
-                    type: string
-        '404':
-          description: 404 response
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  message:
-                    type: string
     delete:
       tags:
         - Survey
@@ -167,34 +131,12 @@ paths:
                 properties:
                   message:
                     type: string
-    post:
-      tags:
-        - Team
-      operationId: createTeam
-      summary: Create one team or multiple teams
-      requestBody:
-        content:
-          application/json:
-            schema:
-              oneOf:
-                - $ref: '#/components/schemas/Team'
-                - $ref: '#/components/schemas/TeamArray'
-      responses:
-        '201':
-          description: 201 response
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  message:
-                    type: string
   /team/{id}:
-    put:
+    get:
       tags:
         - Team
-      operationId: updateTeam
-      summary: Update team
+      operationId: findTeamById
+      summary: Find Team by ID.
       parameters:
         - in: path
           name: id
@@ -202,21 +144,13 @@ paths:
           required: true
           schema:
             type: string
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Team'
       responses:
         '200':
           description: 200 response
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  message:
-                    type: string
+                $ref: '#/components/schemas/Team'
         '404':
           description: 404 response
           content:
@@ -226,21 +160,103 @@ paths:
                 properties:
                   message:
                     type: string
-    delete:
+  /job-title:
+    get:
       tags:
-        - Team
-      operationId: deleteTeam
-      summary: Delete Team
+        - Job Title
+      operationId: findJobTitle
+      summary: Find all job titles.
+      responses:
+        '200':
+          description: 200 response
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/JobTitle'
+        '404':
+          description: 404 response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+  /job-title/{id}:
+    get:
+      tags:
+        - Job Title
+      operationId: findJobTitleById
+      summary: Find job title by ID.
       parameters:
         - in: path
           name: id
-          description: Team ID
+          description: job title ID
           required: true
           schema:
             type: string
       responses:
         '200':
           description: 200 response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JobTitle'
+        '404':
+          description: 404 response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+  /section-group:
+    get:
+      tags:
+        - Section Group
+      operationId: findSectionGroup
+      summary: Find all section groups.
+      responses:
+        '200':
+          description: 200 response
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SectionGroup'
+        '404':
+          description: 404 response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+  /section-group/{id}:
+    get:
+      tags:
+        - Section Group
+      operationId: findSectionGroupById
+      summary: Find section group by ID.
+      parameters:
+        - in: path
+          name: id
+          description: section group ID
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: 200 response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SectionGroup'
         '404':
           description: 404 response
           content:
@@ -254,21 +270,15 @@ paths:
     get:
       tags:
         - Survey Result
-      operationId: findSurveyResult
-      summary: Find survey result by a date range.
       parameters:
         - in: query
-          name: startDate
-          description: The start date of the date range
+          name: archiveName
+          description: Find survey result by archive name.
+          required: false
           schema:
             type: string
-            format: date(yyyy-mm-dd)
-        - in: query
-          name: endDate
-          description: The start date of the date range
-          schema:
-            type: string
-            format: date(yyyy-mm-dd)
+      operationId: findSurveyResult
+      summary: Find all current survey results / Find survey results by archive name.
       responses:
         '200':
           description: 200 response
@@ -307,6 +317,48 @@ paths:
                 properties:
                   message:
                     type: string
+  /survey-result/archive:
+    post:
+      tags:
+        - Survey Result
+      operationId: archiveSurveyResults
+      summary: Archive current survey results
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                archiveName: 
+                  type: string
+      responses:
+        '200':
+          description: '200 Response'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message: 
+                    type: string
+        '400':
+          description: '404 Response - There is no data for current survey result '
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message: 
+                    type: string
+        '404':
+          description: 'Bad request - archive name is alreayd used'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message: 
+                    type: string
   /survey-result/{id}:
     get:
       tags:
@@ -327,30 +379,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/SurveyResult'
-        '404':
-          description: 404 response
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  message:
-                    type: string
-    delete:
-      tags:
-        - Survey Result
-      operationId: deleteSurveyResultById
-      summary: Delete survey result by survey result ID
-      parameters:
-        - in: path
-          name: id
-          required: true
-          description: The survey result ID
-          schema:
-            type: string
-      responses:
-        '200':
-          description: 200 response
         '404':
           description: 404 response
           content:
@@ -401,6 +429,8 @@ components:
     Section:
       type: object
       properties:
+        _id:
+          type: string
         name:
           type: string
         title:
@@ -520,6 +550,8 @@ components:
     Team:
       type: object
       properties:
+        _id:
+          type: string
         teamNameEn:
           type: string
         teamNameFr:
@@ -534,11 +566,50 @@ components:
     SurveyResult:
       type: object
       properties:
+        _id:
+          type: string
+        archive:
+          type: string
+        userId:
+          type: string
         answers:
           type: object
           additionalProperties:
             type: string
-        userEmail:
-          type: string
         team:
+          $ref: '#/components/schemas/Team'
+        jobTitle:
+          $ref: '#/components/schemas/JobTitle'
+    JobTitle:
+      type: object
+      properties:
+        _id:
           type: string
+        gcitCode:
+          type: string
+        itLevel:
+          type: string
+        titleEn:
+          type: string
+        titleFr:
+          type: string
+        shortTitleEn:
+          type: string
+        shortTitleFr:
+          type: string
+    Section-group: 
+      type: object
+      properties:
+        _id: 
+          type: string
+        titleEn: 
+          type: string
+        titleFr:
+          type: string
+        displayOrder:
+          type: number
+        sectionNames:
+          items:
+            type: string
+
+    
