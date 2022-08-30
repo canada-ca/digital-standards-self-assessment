@@ -3,7 +3,8 @@ import * as documentdb from "@pulumi/azure-native/documentdb";
 import { resourceGroup } from "./resourcegroup";
 import { Output } from "@pulumi/pulumi";
 const env = process.env.ENV_NAME
-export const dbAccount = new documentdb.DatabaseAccount(`${env}-dssa-dbacct-`, {
+const project = process.env.PROJECT_NAME
+export const dbAccount = new documentdb.DatabaseAccount(`${env}-${project}-dbacct-`, {
   kind: "MongoDB",
   location: resourceGroup.location,
   databaseAccountOfferType: "Standard",
@@ -16,12 +17,19 @@ export const dbAccount = new documentdb.DatabaseAccount(`${env}-dssa-dbacct-`, {
   ],
   resourceGroupName: resourceGroup.name,
 });
-export const mongoDB = new documentdb.MongoDBResourceMongoDBDatabase(`test`, {
+export const mongoDB = new documentdb.MongoDBResourceMongoDBDatabase(`${project}-db`, {
   accountName: dbAccount.name,
-  resource: { id: `test` },
+  resource: { id: `${project}-db` },
   resourceGroupName: resourceGroup.name,
   location: resourceGroup.location,
+  options:{ // Max RUs - due to the size of the migration the default RU of 1200 is not enough. 
+    throughput: 10000,
+    autoscaleSettings:{
+      maxThroughput: 10000
+    }
+  }
 });
+
 
 export const keys = (rgName: Output<string>, dbName: Output<string>) => {
   return pulumi

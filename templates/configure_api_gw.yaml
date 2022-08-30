@@ -3,28 +3,47 @@ parameters:
   apiURL: ""
   rgName: ""
   apiGWName: ""
-  AzureSub: ""
+  azureSubscription: ""
 
 steps:
-  - task: CmdLine@2
-    displayName: Build OpenAPI file
+  - task: AzurePowerShell@5
+    displayName: Build OpenAPI and Policy files
     env:
       FANAME: ${{ parameters.faName }}
       APIURL: ${{ parameters.apiURL }}
     inputs:
-      script: |
+      azureSubscription: ${{ parameters.azureSubscription }}
+      ScriptType: "InlineScript"
+      Inline: |
+        npm i js-yaml
         node fixSwagger.js
         node fixAPIMPolicy.js
-      workingDirectory: '$(Build.SourcesDirectory)\infrastructure\helperScripts'
-        
+      errorActionPreference: "continue"
+      azurePowerShellVersion: "LatestVersion"
+      workingDirectory: "$(Build.SourcesDirectory)/infrastructure/helperScripts"
+
   - task: AzureCLI@2
     displayName: Import OpenAPI file into APIM
     inputs:
-      azureSubscription: ${{ parameters.AzureSub }}
-      scriptType: 'ps'
-      scriptLocation: 'inlineScript'
+      azureSubscription: ${{ parameters.azureSubscription }}
+      scriptType: "ps"
+      scriptLocation: "inlineScript"
       inlineScript: |
+        ls
         az apim api import -g ${{ parameters.rgName }} --service-name ${{ parameters.apiGWName }} --path api --specification-path ./swagger.json --specification-format OpenApiJson --api-id ${{ parameters.faName }} --subscription-required false
+      workingDirectory: "$(Build.SourcesDirectory)/infrastructure"
+
+  - task: AzurePowerShell@5
+    displayName: Import APIM policy
+    inputs:
+      azureSubscription: ${{ parameters.azureSubscription }}
+      ScriptType: "InlineScript"
+      Inline: |
+        Install-Module Az.ApiManagement -Scope CurrentUser -Force
+        Import-Module Az.ApiManagement -Force
+
         $apimContext = New-AzApiManagementContext -ResourceGroupName ${{ parameters.rgName }} -ServiceName ${{ parameters.apiGWName }}
         Set-AzApiManagementPolicy -Context $apimContext -ApiId ${{ parameters.faName }} -PolicyFilePath "./newPolicy.xml"
-      workingDirectory: '$(Build.SourcesDirectory)\infrastructure'
+      errorActionPreference: "continue"
+      azurePowerShellVersion: "LatestVersion"
+      workingDirectory: "$(Build.SourcesDirectory)/infrastructure"

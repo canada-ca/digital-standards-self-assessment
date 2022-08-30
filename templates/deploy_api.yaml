@@ -1,15 +1,16 @@
 parameters:
   faName: ""
-  AzureSub: ""
+  azureSubscription: ""
 
 steps:
-
   - task: AzureCLI@2
     inputs:
-      azureSubscription: ${{ parameters.AzureSub }}
-      scriptType: 'ps'
-      scriptLocation: 'inlineScript'
-      inlineScript: 'func azure functionapp publish ${{ parameters.faName }}'
-      workingDirectory: '$(Build.SourcesDirectory)\api'
-    displayName: Deploy API to Function APP
+      azureSubscription: ${{ parameters.azureSubscription }}
+      scriptType: "ps"
+      scriptLocation: "inlineScript"
+      inlineScript: |
+        "npm install -g azure-functions-core-tools@3 --unsafe-perm true"
+        "func azure functionapp publish ${{ parameters.faName }}"
 
+      workingDirectory: "$(Build.SourcesDirectory)/api"
+    displayName: Deploy API to Function APP
