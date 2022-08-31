@@ -3,6 +3,8 @@ parameters:
   projectName: ""
 
 steps:
+  - checkout: self
+    clean: false
   - task: PowerShell@2
     displayName: "Import Survey data"
     env:

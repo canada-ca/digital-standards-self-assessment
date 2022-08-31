@@ -6,6 +6,8 @@ parameters:
   azureSubscription: ""
 
 steps:
+  - checkout: self
+    clean: false
   - task: AzurePowerShell@5
     displayName: Build OpenAPI and Policy files
     env:
@@ -15,7 +17,7 @@ steps:
       azureSubscription: ${{ parameters.azureSubscription }}
       ScriptType: "InlineScript"
       Inline: |
-        npm i js-yaml
+        npm i --no-audit js-yaml
         node fixSwagger.js
         node fixAPIMPolicy.js
       errorActionPreference: "continue"
@@ -29,7 +31,6 @@ steps:
       scriptType: "ps"
       scriptLocation: "inlineScript"
       inlineScript: |
-        ls
         az apim api import -g ${{ parameters.rgName }} --service-name ${{ parameters.apiGWName }} --path api --specification-path ./swagger.json --specification-format OpenApiJson --api-id ${{ parameters.faName }} --subscription-required false
       workingDirectory: "$(Build.SourcesDirectory)/infrastructure"
 

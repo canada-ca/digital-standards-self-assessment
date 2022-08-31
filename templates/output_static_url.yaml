@@ -3,6 +3,7 @@ parameters:
   azureSubscription: ""
 
 steps:
+  - checkout: none
   - task: AzureCLI@2
     displayName: Display URL
     inputs:
@@ -11,4 +12,3 @@ steps:
       scriptLocation: "inlineScript"
       inlineScript: |
         Write-Host "Deployment succeeded you can access your website at this url: ${{ parameters.staticURL }}"
-

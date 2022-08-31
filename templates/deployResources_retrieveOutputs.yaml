@@ -7,12 +7,16 @@ parameters:
 
 steps:
   - checkout: self
-
+    clean: false
   - task: Npm@1
+    displayName: "Pulumi dependecies install"
     inputs:
-      command: "install"
+      command: "custom"
       workingDir: "infrastructure"
+      customCommand: "install --no-audit"
+
   - task: DownloadPipelineArtifact@2
+    displayName: "Download Pulumi settings"
     inputs:
       buildType: "current"
       artifactName: "pulumifile"
@@ -22,6 +26,7 @@ steps:
     displayName: "Create State Stack"
     env:
       ENV_NAME: $(ENV)
+      PROJECT_NAME: $(project)
       PULUMI_CONFIG_PASSPHRASE: $(pass)
       AZURE_STORAGE_KEY: ${{ parameters.beStorageKey }}
       AZURE_STORAGE_ACCOUNT: ${{ parameters.beStorageAccount }}
@@ -32,6 +37,7 @@ steps:
       scriptLocation: "scriptPath"
       scriptPath: "$(Build.SourcesDirectory)/infrastructure/helperScripts/createStack.ps1"
       workingDirectory: "$(Build.SourcesDirectory)/infrastructure"
+      addSpnToEnvironment: true
 
   - task: Pulumi@1
     displayName: "Pulumi Up"
