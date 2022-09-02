@@ -1,9 +1,10 @@
-version: '3.5'
+version: '3.7'
 
 services:
   mongo:
     image: mongo:latest
-    container_name: mongo
+    container_name: mongodb
+    restart: always
     environment:
       MONGO_INITDB_DATABASE: ${DB_NAME}
       MONGO_INITDB_ROOT_USERNAME: ${DB_USERNAME}
@@ -15,6 +16,8 @@ services:
     volumes:
       - MONGO_DATA:/data/db
       - MONGO_CONFIG:/data/configdb
+      - ./mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+
   mongo-express:
     image: mongo-express:latest
     container_name: mongo-express
@@ -41,29 +44,23 @@ services:
       - tini
       - --
       - /docker-entrypoint.sh
-  migrate-mongo:
+  mongo-migrate:
     container_name: migrate-mongo
-    build:
-      context: ./data_migration
-      dockerfile: Dockerfile
+    image: node
     networks:
       - APP_NETWORK
     volumes:
       - type: bind
         source: ./wait-for.sh
         target: /wait-for.sh
-    environment:
-      DB_USERNAME: ${DB_USERNAME}
-      DB_PASSWORD: ${DB_PASSWORD}
-      DB_HOST: ${DB_HOST}
-      DB_PORT: ${DB_PORT}
-      DB_NAME: ${DB_NAME}
+      - type: bind
+        source: ./data_migration
+        target: /data_migration
+    working_dir: /data_migration
     depends_on:
       - mongo
-    entrypoint:
-      - /bin/sh
-      - /wait-for.sh
-      - mongo:27017
+    entrypoint: ['npx', 'migrate-mongo', 'up']
+
   api:
     container_name: api
     build:
@@ -75,6 +72,7 @@ services:
       - APP_NETWORK
     depends_on:
       - mongo
+      - mongo-migrate
 
 networks:
   APP_NETWORK:
