@@ -1,4 +1,4 @@
-version: '3.7'
+version: "3.7"
 
 services:
   mongo:
@@ -10,7 +10,7 @@ services:
       MONGO_INITDB_ROOT_USERNAME: ${DB_USERNAME}
       MONGO_INITDB_ROOT_PASSWORD: ${DB_PASSWORD}
     ports:
-      - '0.0.0.0:${DB_PORT}:${DB_PORT}'
+      - "0.0.0.0:${DB_PORT}:${DB_PORT}"
     networks:
       - APP_NETWORK
     volumes:
@@ -27,7 +27,7 @@ services:
       ME_CONFIG_MONGODB_SERVER: ${DB_HOST}
       ME_CONFIG_MONGODB_PORT: ${DB_PORT}
     ports:
-      - '0.0.0.0:8081:8081'
+      - "0.0.0.0:8081:8081"
     networks:
       - APP_NETWORK
     volumes:
@@ -46,20 +46,13 @@ services:
       - /docker-entrypoint.sh
   mongo-migrate:
     container_name: migrate-mongo
-    image: node
+    build:
+      context: ./data_migration
+      dockerfile: Dockerfile
     networks:
       - APP_NETWORK
-    volumes:
-      - type: bind
-        source: ./wait-for.sh
-        target: /wait-for.sh
-      - type: bind
-        source: ./data_migration
-        target: /data_migration
-    working_dir: /data_migration
     depends_on:
       - mongo
-    entrypoint: ['npx', 'migrate-mongo', 'up']
 
   api:
     container_name: api
@@ -67,7 +60,7 @@ services:
       context: ./api
       dockerfile: Dockerfile
     ports:
-      - '0.0.0.0:7071:80'
+      - "0.0.0.0:7071:80"
     networks:
       - APP_NETWORK
     depends_on:
