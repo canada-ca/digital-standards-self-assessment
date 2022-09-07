@@ -11,3 +11,5 @@ COPY ./.env.docker /home/site/wwwroot/.env
 RUN cd /home/site/wwwroot && \
     npm install && \
     npm run build
+
+EXPOSE 80

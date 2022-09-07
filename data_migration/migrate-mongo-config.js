@@ -2,7 +2,7 @@
 
 const config = {
   mongodb: {
-    url: "mongodb://api_user:api_user@mongo:27017/dssa-db",
+    url: "mongodb://api_user:api_user@mongodb:27017/dssa-db",
 
     // TODO Change this to your database name:
     databaseName: "dssa-db",
