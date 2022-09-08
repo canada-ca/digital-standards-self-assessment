@@ -3,14 +3,28 @@ parameters:
   azureSubscription: ""
 
 steps:
+  - checkout: self
+    clean: false
+  - task: Npm@1
+    displayName: Install API dependencies
+    inputs:
+      command: install
+      workingDir: "$(Build.SourcesDirectory)/api"
+  - task: Npm@1
+    displayName: Publish API
+    inputs:
+      command: custom
+      customCommand: run build
+      workingDir: "$(Build.SourcesDirectory)/api"
+
   - task: AzureCLI@2
     inputs:
       azureSubscription: ${{ parameters.azureSubscription }}
       scriptType: "ps"
       scriptLocation: "inlineScript"
       inlineScript: |
-        "npm install -g azure-functions-core-tools@3 --unsafe-perm true"
-        "func azure functionapp publish ${{ parameters.faName }}"
+        npm install -g azure-functions-core-tools@4 --unsafe-perm true
+        func azure functionapp publish ${{ parameters.faName }}
 
       workingDirectory: "$(Build.SourcesDirectory)/api"
     displayName: Deploy API to Function APP

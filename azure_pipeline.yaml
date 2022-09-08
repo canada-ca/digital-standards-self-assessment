@@ -17,6 +17,8 @@ stages:
     jobs:
       - job: "SetupPulumiBackend"
         steps:
+          - checkout: self
+            clean: false
           - task: AzureCLI@2
             env:
               ENV_NAME: $(ENV)
@@ -63,13 +65,8 @@ stages:
               azureSubscription: $(AzureSub)
               existingAPIM: $(currentAPIM)
 
-      - job: "Build_API"
-        dependsOn: Deploy_Infra
-        condition: succeeded()
-        steps:
-          - template: templates/build_api.yaml
-
       - job: "Deploy_API"
+
         dependsOn: Deploy_Infra
         condition: succeeded()
         variables:
@@ -81,9 +78,11 @@ stages:
               azureSubscription: $(AzureSub)
 
       - job: "Configure_API_GW"
-        dependsOn: Deploy_Infra
+        dependsOn:
+          - Deploy_Infra
+          - Deploy_API
 
-        condition: succeeded()
+        condition: and(succeeded('Deploy_Infra'), succeeded('Deploy_API'))
         variables:
           faName: $[ dependencies.Deploy_Infra.outputs['pulumiOutputs.faName'] ]
           apiURL: $[ dependencies.Deploy_Infra.outputs['pulumiOutputs.projectAPIGW'] ]
@@ -133,12 +132,10 @@ stages:
       - job: "Output_Static_URL"
         dependsOn:
           - Deploy_Infra
-          - Build_API
-          - Deploy_API
-          - Configure_API_GW
           - Deploy_UI
-          # - Import_Data
-        condition: and(succeeded('ImportData'),succeeded('Deploy_UI'),succeeded('Configure_API_GW'),succeeded('Deploy_API'),succeeded('Build_API'),succeeded('Deploy_Infra'))
+          - Configure_API_GW
+          - Deploy_API
+        condition: and(succeeded('Deploy_Infra'), succeeded('Deploy_UI'), succeeded('Configure_API_GW'), succeeded('Deploy_API'))
         variables:
           staticURL: $[ dependencies.Deploy_Infra.outputs['pulumiOutputs.projectStaticURL']]
         steps:
