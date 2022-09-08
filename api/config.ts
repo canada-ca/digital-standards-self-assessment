@@ -5,8 +5,6 @@ dotenv.config({
   path: '.env',
 });
 
-export const PORT = process.env.APP_PORT || 3000;
-
 export const MONGODB_PROTOCAL = process.env.MONGODB_PROTOCAL as string;
 export const MONGODB_URL = process.env.MONGODB_URL as string;
 export const MONGODB_USER = process.env.MONGODB_USER as string;

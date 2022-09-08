@@ -8,8 +8,10 @@ export async function connectDB() {
         `${config.MONGODB_PROTOCAL}://${config.MONGODB_USER}:${config.MONGODB_PASS}@${config.MONGODB_URL}/${config.MONGODB_DBNAME}?${config.MONGODB_OPTIONS}`,
         {
           autoIndex: true, //make this also true
+          dbName: `${config.MONGODB_DBNAME}`,
         }
       );
+
       console.log(`Connected to database ${config.MONGODB_DBNAME}`);
     }
   } catch (err) {

@@ -1,0 +1,90 @@
+version: "3.7"
+
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    restart: always
+    environment:
+      MONGO_INITDB_DATABASE: ${DB_NAME}
+      MONGO_INITDB_ROOT_USERNAME: ${DB_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${DB_PASSWORD}
+    ports:
+      - "0.0.0.0:${DB_PORT}:${DB_PORT}"
+    networks:
+      - APP_NETWORK
+    volumes:
+      - MONGO_DATA:/data/db
+      - MONGO_CONFIG:/data/configdb
+      - ./mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+
+  mongo-express:
+    image: mongo-express:latest
+    container_name: mongo-express
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: ${DB_USERNAME}
+      ME_CONFIG_MONGODB_ADMINPASSWORD: ${DB_PASSWORD}
+      ME_CONFIG_MONGODB_SERVER: ${DB_HOST}
+      ME_CONFIG_MONGODB_PORT: ${DB_PORT}
+    ports:
+      - "0.0.0.0:8081:8081"
+    networks:
+      - APP_NETWORK
+    volumes:
+      - type: bind
+        source: ./wait-for.sh
+        target: /wait-for.sh
+    depends_on:
+      - mongodb
+    entrypoint:
+      - /bin/sh
+      - /wait-for.sh
+      - mongodb:27017
+      - --
+      - tini
+      - --
+      - /docker-entrypoint.sh
+  mongo-migrate:
+    container_name: migrate-mongo
+    build:
+      context: ./data_migration
+      dockerfile: Dockerfile
+    networks:
+      - APP_NETWORK
+    depends_on:
+      - mongodb
+
+  api:
+    container_name: api
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    ports:
+      - "0.0.0.0:7071:80"
+    networks:
+      - APP_NETWORK
+    depends_on:
+      - mongodb
+      - mongo-migrate
+
+  ui:
+    container_name: ui
+    build:
+      context: ./ui
+      dockerfile: Dockerfile
+    ports:
+      - "0.0.0.0:80:80"
+    networks:
+      - APP_NETWORK
+    depends_on:
+      - api
+
+networks:
+  APP_NETWORK:
+    name: APP_NETWORK
+
+volumes:
+  MONGO_DATA:
+    name: MONGO_DATA
+  MONGO_CONFIG:
+    name: MONGO_CONFIG
