@@ -73,27 +73,11 @@ services:
       context: ./ui
       dockerfile: Dockerfile
     ports:
-      - "0.0.0.0:8080:8080"
-    networks:
-      - APP_NETWORK
-    depends_on:
-      - api
-
-  nginx:
-    image: nginx:latest
-    container_name: nginx
-    networks:
-      - APP_NETWORK
-    volumes:
-      - type: bind
-        source: ./nginx
-        target: /etc/nginx/conf.d/
-    ports:
       - "0.0.0.0:80:80"
-    command: ["nginx", "-g", "daemon off;"]
+    networks:
+      - APP_NETWORK
     depends_on:
       - api
-      - ui
 
 networks:
   APP_NETWORK:
