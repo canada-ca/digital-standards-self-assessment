@@ -53,6 +53,29 @@ class SurveyResultService {
     }
   }
 
+  async findByUserId(userId: string): Promise<SurveyResultDocument[]> {
+    if (!userId) {
+      throw new Error('userId is required.');
+    }
+
+    try {
+      await connectDB();
+      return await SurveyResultModel.find({
+        archive: 'current',
+        userId,
+      })
+        .populate('team')
+        .populate('jobTitle')
+        .exec();
+    } catch (err: any) {
+      if (err instanceof MongoServerError) {
+        throw { ...err, message: err.message };
+      } else {
+        throw err;
+      }
+    }
+  }
+
   async findArchiveNames(): Promise<string[]> {
     try {
       await connectDB();
