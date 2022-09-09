@@ -51,6 +51,13 @@ const httpTrigger: AzureFunction = async function (context: Context, req: HttpRe
             },
           };
         }
+      } else if (!!req.query.userId) {
+        const userId = req.query.userId;
+        const results = await surveyResultService.findByUserId(userId);
+        context.res = {
+          // status: 200, /* Defaults to 200 */
+          body: results,
+        };
       } else {
         context.res = {
           status: 400,

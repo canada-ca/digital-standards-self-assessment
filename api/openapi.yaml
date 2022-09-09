@@ -277,8 +277,14 @@ paths:
           required: false
           schema:
             type: string
+        - in: query
+          name: userId
+          description: Find survey result by user ID.
+          required: false
+          schema:
+            type: string
       operationId: findSurveyResult
-      summary: Find all current survey results / Find survey results by archive name.
+      summary: Find all current survey results / Find survey results by archive name / Find survey results by user ID.
       responses:
         '200':
           description: 200 response
