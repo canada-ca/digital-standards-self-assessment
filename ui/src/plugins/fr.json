@@ -76,7 +76,7 @@
     "timeInThePosition": "Durée dans le poste",
     "submitTime": "Submit Time(FR)",
     "inputArchiveName": "Veuillez saisir un nom de Archive(FR)",
-    "archiveNameExists": "This archive name was alredy used, please change another one.(FR)",
+    "archiveNameExists": "This archive name was already used, please input another one.(FR)",
     "archiveFailed": "Failed to archive, please try again later.(FR)",
     "archiveSucess": "Archive success(FR)",
     "noDataToArchive": "There is no data to archive(FR)"

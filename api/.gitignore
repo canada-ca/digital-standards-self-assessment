@@ -79,6 +79,9 @@ typings/
 # DynamoDB Local files
 .dynamodb/
 
+# VS Code config folder
+.vscode/
+
 # TypeScript output
 dist
 out
