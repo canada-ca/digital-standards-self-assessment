@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="table-wrapper">
     <b-table
       :striped="true"
       :bordered="true"
@@ -157,5 +157,9 @@ export default class TeamScoreDataTable extends Vue {
 }
 .delete-team {
   text-decoration: none !important;
+}
+.table-wrapper {
+  overflow: auto;
+  max-height: 500px;
 }
 </style>

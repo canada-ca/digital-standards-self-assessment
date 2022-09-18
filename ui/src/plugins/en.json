@@ -76,7 +76,7 @@
     "timeInThePosition": "Time in The Position",
     "submitTime": "Submitted Time",
     "inputArchiveName": "Please enter an archive name",
-    "archiveNameExists": "This archive name was alredy used, please change another one.",
+    "archiveNameExists": "This archive name was already used, please input another one.",
     "archiveFailed": "Failed to archive, please try again later.",
     "archiveSucess": "Archive success",
     "noDataToArchive": "There is no data to archive"

@@ -2,6 +2,7 @@
 FROM node as build-stage
 
 COPY . /data_migration
+COPY ./migrate-mongo-config.js.docker /data_migration/migrate-mongo-config.js
 WORKDIR /data_migration
 
 RUN apt-get update || : && \

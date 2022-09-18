@@ -162,6 +162,10 @@ export default class Survey extends Vue {
     return process.env.VUE_APP_COLLECT_USER_EMAIL + '' === 'true';
   }
 
+  get collectJobTitle(): boolean {
+    return process.env.VUE_APP_COLLECT_JOB_TITLE + '' === 'true';
+  }
+
   get showDownloadSurvey(): boolean {
     return process.env.VUE_APP_SHOW_DOWNLOAD_SURVEY + '' === 'true';
   }
@@ -183,7 +187,8 @@ export default class Survey extends Vue {
       !!profile &&
       !!profile.userId &&
       !!profile.team &&
-      (this.collectEmail === false || (this.collectEmail && !!profile.userId))
+      (this.collectEmail === false || (this.collectEmail && !!profile.userId)) &&
+      (this.collectJobTitle === false || (this.collectJobTitle && !!profile.jobTitle))
     );
   }
 
